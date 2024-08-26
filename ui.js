@@ -39,21 +39,19 @@ window.updateFooter = function(decoration) {
             .map(id => `<span class="badge">${categories[id]?.name || 'Unknown'}</span>`)
             .join(' ');
 
-        let metaText = `<div>${categoryBadges}</div>`;
+        let metaText = `<div class="badge-container">${categoryBadges}</div>`;
 
         if (unlockedDecorationIds.size > 0) {
-            metaText += count ? `<div>Count: ${count}</div>` : `<div>Unknown</div>`;
+            metaText += `<div class="muted">` + (count ? `Count: ${count}` : `Locked`) + `</div>`;
         }
 
         footer.innerHTML = `
             <div class="footer-content">
-                <img src="${imgUrl}" class="footer-img">
+                <img src="${imgUrl}" class="footer-img" title="ID: ${decoration.id}">
                 <div class="footer-info">
                     <div class="footer-name">${name}</div>
                     <div class="footer-description">${description}</div>
-                    <div class="footer-meta">
-                        ${metaText}
-                    </div>
+                    ${metaText}
                 </div>
             </div>
         `;
@@ -129,7 +127,7 @@ window.updateCategoryDropdown = function() {
 // Function to update the counter and dropdown text when an API key is provided
 window.updateCounter = function(totalCount, categoryId) {
     const counter = document.getElementById('counter');
-    const unlockedCount = decorations.filter(deco => unlockedDecorationIds.has(deco.id) && 
+    const unlockedCount = decorations.filter(deco => unlockedDecorationIds.has(deco.id) &&
         (categoryId === 'all' || deco.categories.includes(parseInt(categoryId)))).length;
 
     if (unlockedDecorationIds.size > 0) {
@@ -144,8 +142,8 @@ window.displayDecorations = function(categoryId) {
     const container = document.getElementById('iconContainer');
     container.innerHTML = ''; // Clear existing icons
 
-    let filteredDecorations = categoryId === 'all' 
-        ? decorations 
+    let filteredDecorations = categoryId === 'all'
+        ? decorations
         : decorations.filter(deco => deco.categories && deco.categories.includes(parseInt(categoryId)));
 
     // Sort decorations by their name
@@ -162,8 +160,8 @@ window.displayDecorations = function(categoryId) {
 // Function to reevaluate and update all items on the page
 window.reevaluateDecorations = function() {
     const categoryId = document.getElementById('categoryDropdown').value;
-    const filteredDecorations = categoryId === 'all' 
-        ? decorations 
+    const filteredDecorations = categoryId === 'all'
+        ? decorations
         : decorations.filter(deco => deco.categories && deco.categories.includes(parseInt(categoryId)));
 
     updateCounter(filteredDecorations.length, categoryId);
