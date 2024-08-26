@@ -45,7 +45,6 @@ body {
 	justify-content: center; /* Center the content */
 	align-items: flex-start; /* Align items to the top */
 	padding: 20px;
-	padding-bottom: 150px; /* Ensure content is not covered by the footer */
 }
 
 .icon {
@@ -70,7 +69,6 @@ body {
 	box-sizing: border-box;
 	display: flex;
 	align-items: center;
-	height: 150px; /* Set height of the footer */
 }
 
 .footer-content {
@@ -102,6 +100,21 @@ body {
 .footer-meta {
 	font-size: 0.875rem;
 	color: gray;
+}
+
+.footer-meta div {
+	margin-bottom: 5px;
+}
+
+.badge {
+	display: inline-block;
+	background-color: #007bff;
+	color: white;
+	padding: 3px 7px;
+	margin-right: 5px;
+	border-radius: 3px;
+	font-size: 0.75rem;
+	line-height: 1;
 }
 
 .orange-border {
