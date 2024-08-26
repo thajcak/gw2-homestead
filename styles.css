@@ -1,0 +1,121 @@
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+#header {
+	position: -webkit-sticky; /* For Safari */
+	position: sticky;
+	top: 0;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.95); /* Opaque white background */
+	padding: 10px 20px;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+	z-index: 1000;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
+#categoryDropdown {
+	padding: 5px;
+	font-size: 16px;
+}
+
+#counter {
+	font-size: 16px;
+	margin-left: 10px;
+	font-weight: bold;
+}
+
+#apiKeyInput {
+	padding: 5px;
+	font-size: 16px;
+	margin-left: 20px;
+	width: 100%;
+	max-width: 400px; /* Limit the width of the input field */
+	box-sizing: border-box;
+}
+
+.icon-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center; /* Center the content */
+	align-items: flex-start; /* Align items to the top */
+	padding: 20px;
+	padding-bottom: 150px; /* Ensure content is not covered by the footer */
+}
+
+.icon {
+	width: 68px; /* Set the icon width to 68px */
+	height: 68px; /* Set the icon height to 68px */
+	margin: 10px;
+	border: 0.2rem solid black; /* Default border is 0.2rem black */
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+#footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.95);
+	padding: 10px 20px;
+	box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+	z-index: 1000;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: left;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	height: 150px; /* Set height of the footer */
+}
+
+.footer-content {
+	display: flex;
+	align-items: center;
+}
+
+.footer-img {
+	width: 136px;
+	height: 136px;
+	margin-right: 20px;
+}
+
+.footer-info {
+	display: flex;
+	flex-direction: column;
+}
+
+.footer-name {
+	font-size: 1.5rem;
+	margin-bottom: 10px;
+}
+
+.footer-description {
+	font-size: 1rem;
+	margin-bottom: 10px;
+}
+
+.footer-meta {
+	font-size: 0.875rem;
+	color: gray;
+}
+
+.orange-border {
+	border-color: orange !important;
+}
+
+.unlocked {
+	border-color: blue;
+}
+
+.locked {
+	border-color: red;
+}
+
+.black {
+	border-color: black;
+}
