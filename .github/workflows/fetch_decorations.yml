@@ -1,0 +1,32 @@
+name: Fetch Decorations
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Runs every hour
+  workflow_dispatch: # Allows for manual trigger of the workflow
+
+jobs:
+  update-and-fetch-decorations:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Fetch Decorations List and Details
+      run: |
+        curl -s https://api.guildwars2.com/v2/homestead/decorations -o decorations_list.json
+
+        # Create a comma-separated list of IDs
+        ids=$(jq -r '. | join(",")' decorations_list.json)
+
+        # Fetch all decoration details in a single API call
+        curl -s "https://api.guildwars2.com/v2/homestead/decorations?ids=$ids" -o decorations.json
+
+    - name: Commit and push updated decorations.json
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git add decorations.json
+        git commit -m "Update decorations.json with detailed data"
+        git push
