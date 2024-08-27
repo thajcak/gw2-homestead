@@ -1,4 +1,4 @@
-name: Update and Fetch Decorations
+name: Update and Fetch Decorations and Categories
 
 on:
   schedule:
@@ -36,10 +36,29 @@ jobs:
         jq -s 'add' temp.json > decorations.json
         rm temp.json
 
-    - name: Commit and push updated decorations.json
+    - name: Fetch Decoration Categories
+      run: |
+        # Fetch the list of decoration category IDs
+        curl -s https://api.guildwars2.com/v2/homestead/decorations/categories -o decoration_categories_list.json
+
+        # Initialize an empty array to store the results
+        echo "[]" > decoration_categories.json
+
+        # Split the list into chunks of 200 IDs and fetch details
+        category_ids=$(jq -r '.[]' decoration_categories_list.json)
+        for chunk in $(echo "$category_ids" | xargs -n $chunk_size | sed 's/ /,/g'); do
+          curl -s "https://api.guildwars2.com/v2/homestead/decorations/categories?ids=$chunk" | \
+          jq -s 'add' >> temp_categories.json
+        done
+
+        # Combine all the chunks into a single JSON array
+        jq -s 'add' temp_categories.json > decoration_categories.json
+        rm temp_categories.json
+
+    - name: Commit and push updated decorations and categories
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
-        git add decorations.json
-        git commit -m "Update decorations.json with detailed data"
+        git add decorations.json decoration_categories.json
+        git commit -m "Update decorations.json and decoration_categories.json with detailed data"
         git push
