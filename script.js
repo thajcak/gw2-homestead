@@ -9,40 +9,48 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to fetch categories and then decorations
     async function fetchCategoriesAndDecorations() {
         try {
-            const categoryIds = await fetchCategories();
+            await fetchCategoriesFromFile(); // Load categories first
 
-            for (const id of categoryIds) {
-                const categoryData = await fetchCategoryById(id);
-                window.categories[id] = categoryData;
-            }
+            const decorationsData = await fetchDecorationsFromFile();
 
-            // Fetch decorations after categories are loaded
-            await fetchDecorations();
+            // Load decorations globally
+            window.decorations = decorationsData;
 
             // Update the category dropdown with accurate counts
             updateCategoryDropdown();
+
+            // Initially display all decorations
+            displayDecorations('all');
         } catch (error) {
             console.error("Error fetching categories and decorations:", error);
         }
     }
 
-    // Function to fetch decorations and display icons
-    async function fetchDecorations() {
+    // Function to fetch categories from the local decoration_categories.json file
+    async function fetchCategoriesFromFile() {
         try {
-            const decorationIds = await fetchDecorationIds();
+            const response = await fetch('./decoration_categories.json');
+            const categoriesData = await response.json();
 
-            window.decorations = []; // Clear existing decorations list
-
-            for (const id of decorationIds) {
-                const decorationData = await fetchDecorationById(id);
-                decorationCache[id] = decorationData;
-                window.decorations.push(decorationData);
-            }
-
-            // Initially display all decorations
-            displayDecorations('all');
+            // Store categories globally
+            window.categories = categoriesData.reduce((acc, category) => {
+                acc[category.id] = category;
+                return acc;
+            }, {});
         } catch (error) {
-            console.error("Error fetching decorations:", error);
+            console.error('Error fetching categories from file:', error);
+            window.categories = {};
+        }
+    }
+
+    // Function to fetch decorations from the local decorations.json file
+    async function fetchDecorationsFromFile() {
+        try {
+            const response = await fetch('./decorations.json');
+            return await response.json();
+        } catch (error) {
+            console.error('Error fetching decorations from file:', error);
+            return [];
         }
     }
 
@@ -55,10 +63,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if (apiKey === '') {
             // Clear the cookie and show the API key input field
             deleteCookie('apiKey');
-            apiKeyInput.style.display = 'block';
-            apiKeyInput.style.borderColor = '';
-            apiKeyStatus.style.display = 'none';
-            clearApiKeyButton.style.display = 'none';
+            apiKeyInput.classList.remove('hidden');
+            apiKeyInput.classList.remove('border-red', 'border-green');
+            apiKeyStatus.classList.add('hidden');
+            clearApiKeyButton.classList.add('hidden');
             window.unlockedDecorationIds = new Map();
             reevaluateDecorations();
             return;
@@ -70,16 +78,16 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isValid) {
             // Set the cookie and show the API key status
             setCookie('apiKey', apiKey, 30);
-            apiKeyInput.style.display = 'none';
-            apiKeyStatus.style.display = 'inline-block';
-            clearApiKeyButton.style.display = 'inline-block';
-            apiKeyInput.style.borderColor = 'green';
+            apiKeyInput.classList.add('hidden');
+            apiKeyStatus.classList.remove('hidden');
+            clearApiKeyButton.classList.remove('hidden');
+            apiKeyInput.classList.add('border-green');
             fetchUnlockedDecorations(apiKey).then(() => reevaluateDecorations());
         } else {
             // Outline the input in red if the API key is not valid
-            apiKeyInput.style.borderColor = 'red';
+            apiKeyInput.classList.add('border-red');
             deleteCookie('apiKey');
-            window.unlockedDecorationIds = new Map(); // Reset to black borders if the API key is removed or invalid
+            window.unlockedDecorationIds = new Map(); // Reset to blank if the API key is removed or invalid
             reevaluateDecorations();
         }
     }
@@ -100,6 +108,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Adjust UI elements based on API key state
+    function adjustUIBasedOnApiKey(apiKey) {
+        const apiKeyInput = document.getElementById('apiKeyInput');
+        const apiKeyStatus = document.getElementById('apiKeyStatus');
+        const clearApiKeyButton = document.getElementById('clearApiKeyButton');
+
+        if (apiKey) {
+            apiKeyInput.classList.add('hidden');
+            apiKeyStatus.classList.remove('hidden');
+            clearApiKeyButton.classList.remove('hidden');
+        } else {
+            apiKeyInput.classList.remove('hidden');
+            apiKeyStatus.classList.add('hidden');
+            clearApiKeyButton.classList.add('hidden');
+        }
+    }
+
     // Event listener for API Key input
     document.getElementById('apiKeyInput').addEventListener('input', function() {
         handleApiKeyInput(this.value.trim());
@@ -110,14 +135,65 @@ document.addEventListener('DOMContentLoaded', function() {
         handleApiKeyInput('');
     });
 
+    // Event listener for category dropdown change
+    document.getElementById('categoryDropdown').addEventListener('change', function() {
+        const selectedCategoryId = this.value;
+        displayDecorations(selectedCategoryId);
+    });
+
     // Load the categories and decorations when the page loads
     if (apiKey) {
-        handleApiKeyInput(apiKey);
+        adjustUIBasedOnApiKey(apiKey);
+        handleApiKeyInput(apiKey); // Ensure the API key is handled, which triggers all the necessary updates
     } else {
-        document.getElementById('apiKeyInput').style.display = 'block';
-        document.getElementById('apiKeyStatus').style.display = 'none';
-        document.getElementById('clearApiKeyButton').style.display = 'none';
+        adjustUIBasedOnApiKey('');
     }
 
     fetchCategoriesAndDecorations();
+
+    // Function to update the dropdown with correct category counts
+    window.updateCategoryDropdown = function() {
+        const dropdown = document.getElementById('categoryDropdown');
+        dropdown.innerHTML = ''; // Clear existing options
+
+        // Add "All" option
+        const allOption = document.createElement('option');
+        allOption.value = 'all';
+        allOption.textContent = `All (${decorations.length})`;
+        dropdown.appendChild(allOption);
+
+        // Add categories with correct counts
+        for (const id in categories) {
+            const categoryData = categories[id];
+            const count = decorations.filter(deco => deco.categories && deco.categories.includes(parseInt(id))).length;
+            const option = document.createElement('option');
+            option.value = id;
+            option.textContent = `${categoryData.name} (${count})`;
+            dropdown.appendChild(option);
+        }
+    }
+
+    // Function to display decorations based on selected category
+    window.displayDecorations = function(categoryId) {
+        const container = document.getElementById('iconContainer');
+        container.innerHTML = ''; // Clear existing icons
+
+        let filteredDecorations = categoryId === 'all'
+            ? decorations
+            : decorations.filter(deco => deco.categories && deco.categories.includes(parseInt(categoryId)));
+
+        // Sort decorations by their name
+        filteredDecorations = filteredDecorations.sort((a, b) => a.name.localeCompare(b.name));
+
+        filteredDecorations.forEach(decoration => {
+            displayIcon(decoration.icon, decoration);
+        });
+
+    }
+
+    // Function to reevaluate and update all items on the page
+    window.reevaluateDecorations = function() {
+        const categoryId = document.getElementById('categoryDropdown').value;
+        displayDecorations(categoryId);
+    }
 });

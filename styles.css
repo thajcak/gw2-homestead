@@ -1,4 +1,3 @@
-
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -9,7 +8,7 @@ body {
 
 #header {
     background: white;
-    padding: 10px;
+    padding: 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     z-index: 10;
     position: sticky;
@@ -20,13 +19,30 @@ body {
     border-bottom: 1px solid gray;
 }
 
+#footer {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    border-top: 1px solid gray;
+    min-height: 150px;
+}
+
 #iconContainer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;  /* Center align the decorations */
+    justify-content: center;
     overflow-y: auto;
     padding: 10px;
-    flex: 1;  /* Ensures the container takes up available space */
+    margin-bottom: auto;
 }
 
 .icon {
@@ -42,28 +58,7 @@ body {
 }
 
 .unlocked {
-    border-color: blue !important;
-}
-
-.locked {
-    border-color: red !important;
-}
-
-#footer {
-    position: sticky;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: white;
-    padding: 15px;  /* Add padding around the content */
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.4);
-    z-index: 10;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 150px;  /* Fixed height */
-    box-sizing: border-box;
-    border-top: 1px solid gray;
+    border-color: blue;
 }
 
 .footer-content {
@@ -72,8 +67,8 @@ body {
 }
 
 .footer-img {
-    width: 136px;  /* Double size */
-    height: 136px; /* Double size */
+    width: 136px;
+    height: 136px;
     margin-right: 10px;
 }
 
@@ -115,4 +110,20 @@ body {
 .muted {
     font-size: 80%;
     color: gray;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible-block {
+    display: block;
+}
+
+.border-green {
+    border-color: green;
+}
+
+.border-red {
+    border-color: red;
 }

@@ -42,7 +42,7 @@ window.updateFooter = function(decoration) {
         let metaText = `<div class="badge-container">${categoryBadges}</div>`;
 
         if (unlockedDecorationIds.size > 0) {
-            metaText += `<div class="muted">` + (count ? `Count: ${count}` : `Locked`) + `</div>`;
+            metaText += `<div class="muted">Available: ` + (count ? `${count}` : `0`) + `</div>`;
         }
 
         footer.innerHTML = `
@@ -71,7 +71,6 @@ window.handleHoverDecoration = function(decoration, img) {
     }
 
     img.classList.add('orange-border');
-    img.classList.remove('black', 'blue', 'red', 'unlocked', 'locked');
     window.currentHoveredDecoration = decoration;
     updateFooter(decoration);
 
@@ -83,10 +82,6 @@ window.handleHoverDecoration = function(decoration, img) {
 window.getBorderClass = function(decoration) {
     if (unlockedDecorationIds.has(decoration.id)) {
         return 'unlocked';
-    } else if (unlockedDecorationIds.size > 0) {
-        return 'locked';
-    } else {
-        return 'black';
     }
 }
 
@@ -124,19 +119,6 @@ window.updateCategoryDropdown = function() {
     }
 }
 
-// Function to update the counter and dropdown text when an API key is provided
-window.updateCounter = function(totalCount, categoryId) {
-    const counter = document.getElementById('counter');
-    const unlockedCount = decorations.filter(deco => unlockedDecorationIds.has(deco.id) &&
-        (categoryId === 'all' || deco.categories.includes(parseInt(categoryId)))).length;
-
-    if (unlockedDecorationIds.size > 0) {
-        counter.textContent = `${unlockedCount} of ${totalCount} known`;
-    } else {
-        counter.textContent = `Total: ${totalCount}`;
-    }
-}
-
 // Function to display decorations based on selected category
 window.displayDecorations = function(categoryId) {
     const container = document.getElementById('iconContainer');
@@ -152,9 +134,6 @@ window.displayDecorations = function(categoryId) {
     filteredDecorations.forEach(decoration => {
         displayIcon(decoration.icon, decoration);
     });
-
-    // Update the counter
-    updateCounter(filteredDecorations.length, categoryId);
 }
 
 // Function to reevaluate and update all items on the page
@@ -164,6 +143,5 @@ window.reevaluateDecorations = function() {
         ? decorations
         : decorations.filter(deco => deco.categories && deco.categories.includes(parseInt(categoryId)));
 
-    updateCounter(filteredDecorations.length, categoryId);
     displayDecorations(categoryId);
 }
