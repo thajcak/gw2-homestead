@@ -1,4 +1,4 @@
-name: Fetch Decorations
+name: Update and Fetch Decorations
 
 on:
   schedule:
@@ -13,15 +13,28 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
+    - name: Install jq for JSON processing
+      run: sudo apt-get update && sudo apt-get install -y jq
+
     - name: Fetch Decorations List and Details
       run: |
+        # Fetch the list of decoration IDs
         curl -s https://api.guildwars2.com/v2/homestead/decorations -o decorations_list.json
 
-        # Create a comma-separated list of IDs
-        ids=$(jq -r '. | join(",")' decorations_list.json)
+        # Initialize an empty array to store the results
+        echo "[]" > decorations.json
 
-        # Fetch all decoration details in a single API call
-        curl -s "https://api.guildwars2.com/v2/homestead/decorations?ids=$ids" -o decorations.json
+        # Split the list into chunks of 200 IDs and fetch details
+        ids=$(jq -r '.[]' decorations_list.json)
+        chunk_size=200
+        for chunk in $(echo "$ids" | xargs -n $chunk_size | sed 's/ /,/g'); do
+          curl -s "https://api.guildwars2.com/v2/homestead/decorations?ids=$chunk" | \
+          jq -s 'add' >> temp.json
+        done
+
+        # Combine all the chunks into a single JSON array
+        jq -s 'add' temp.json > decorations.json
+        rm temp.json
 
     - name: Commit and push updated decorations.json
       run: |
