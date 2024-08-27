@@ -2,7 +2,7 @@ name: Update and Fetch Decorations and Categories
 
 on:
   schedule:
-    - cron: '0 * * * *' # Runs every hour
+  - cron: '0 * * * *' # Runs every hour
   workflow_dispatch: # Allows for manual trigger of the workflow
 
 jobs:
