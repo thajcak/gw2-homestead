@@ -2,7 +2,7 @@ name: Update and Fetch Decorations and Categories
 
 on:
   schedule:
-    - cron: '0 * * * *' # Runs every hour
+  - cron: '0 * * * *' # Runs every hour
   workflow_dispatch: # Allows for manual trigger of the workflow
 
 jobs:
@@ -46,6 +46,7 @@ jobs:
 
         # Split the list into chunks of 200 IDs and fetch details
         category_ids=$(jq -r '.[]' decoration_categories_list.json)
+        chunk_size=200
         for chunk in $(echo "$category_ids" | xargs -n $chunk_size | sed 's/ /,/g'); do
           curl -s "https://api.guildwars2.com/v2/homestead/decorations/categories?ids=$chunk" | \
           jq -s 'add' >> temp_categories.json
