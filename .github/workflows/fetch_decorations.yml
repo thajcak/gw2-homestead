@@ -39,13 +39,13 @@ jobs:
     - name: Fetch Decoration Categories
       run: |
         # Fetch the list of decoration category IDs
-        curl -s https://api.guildwars2.com/v2/homestead/decorations/categories -o decoration_categories.json
+        curl -s https://api.guildwars2.com/v2/homestead/decorations/categories -o decoration_categories_list.json
 
         # Initialize an empty array to store the results
         echo "[]" > decoration_categories.json
 
         # Split the list into chunks of 200 IDs and fetch details
-        category_ids=$(jq -r '.[]' decoration_categories.json)
+        category_ids=$(jq -r '.[]' decoration_categories_list.json)
         chunk_size=200
         for chunk in $(echo "$category_ids" | xargs -n $chunk_size | sed 's/ /,/g'); do
           curl -s "https://api.guildwars2.com/v2/homestead/decorations/categories?ids=$chunk" | \
