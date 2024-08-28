@@ -63,5 +63,10 @@ jobs:
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
         git add decorations.json decoration_categories.json
-        git commit -m "Update decorations.json and decoration_categories.json with detailed data"
-        git push
+        # Check if there are changes to commit
+        if git diff --cached --quiet; then
+          echo "No changes to commit."
+        else
+          git commit -m "Update decorations.json and decoration_categories.json with detailed data"
+          git push
+        fi
