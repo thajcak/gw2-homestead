@@ -19,7 +19,7 @@ jobs:
     - name: Fetch Decorations List and Details
       run: |
         # Fetch the list of decoration IDs
-        curl -s https://api.guildwars2.com/v2/homestead/decorations -o decorations_list.json
+        curl -s https://api.guildwars2.com/v2/homestead/decorations -o decorations.json
 
         # Initialize an empty array to store the results
         echo "[]" > decorations.json
@@ -39,7 +39,7 @@ jobs:
     - name: Fetch Decoration Categories
       run: |
         # Fetch the list of decoration category IDs
-        curl -s https://api.guildwars2.com/v2/homestead/decorations/categories -o decoration_categories_list.json
+        curl -s https://api.guildwars2.com/v2/homestead/decorations/categories -o decoration_categories.json
 
         # Initialize an empty array to store the results
         echo "[]" > decoration_categories.json
