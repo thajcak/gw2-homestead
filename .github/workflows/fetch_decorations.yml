@@ -25,7 +25,7 @@ jobs:
         echo "[]" > decorations.json
 
         # Split the list into chunks of 200 IDs and fetch details
-        ids=$(jq -r '.[]' decorations_list.json)
+        ids=$(jq -r '.[]' decorations.json)
         chunk_size=200
         for chunk in $(echo "$ids" | xargs -n $chunk_size | sed 's/ /,/g'); do
           curl -s "https://api.guildwars2.com/v2/homestead/decorations?ids=$chunk" | \
@@ -45,7 +45,7 @@ jobs:
         echo "[]" > decoration_categories.json
 
         # Split the list into chunks of 200 IDs and fetch details
-        category_ids=$(jq -r '.[]' decoration_categories_list.json)
+        category_ids=$(jq -r '.[]' decoration_categories.json)
         chunk_size=200
         for chunk in $(echo "$category_ids" | xargs -n $chunk_size | sed 's/ /,/g'); do
           curl -s "https://api.guildwars2.com/v2/homestead/decorations/categories?ids=$chunk" | \
