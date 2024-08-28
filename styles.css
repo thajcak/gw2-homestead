@@ -45,12 +45,20 @@ body {
     margin-bottom: auto;
 }
 
+a {
+    text-decoration: none;
+}
+
 .icon {
     width: 68px;
     height: 68px;
     margin: 5px;
     border: 0.2rem solid black;
     cursor: pointer;
+}
+
+.gold-border {
+    border-color: gold !important;
 }
 
 .orange-border {
