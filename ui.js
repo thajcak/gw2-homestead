@@ -1,6 +1,5 @@
 // Set global variables
 window.currentHoveredDecoration = null;
-window.currentClickedDecoration = null;
 window.isFooterLocked = false; // To track whether the footer is locked by a click
 
 // Function to set a cookie
@@ -41,25 +40,51 @@ window.updateFooter = function(decoration) {
             .join(' ');
 
         let metaText = `<div class="badge-container">${categoryBadges}</div>`;
-
         if (unlockedDecorationIds.size > 0) {
             metaText += `<div class="muted">Available: ` + (count ? `${count}` : `0`) + `</div>`;
         }
 
-        const encodedName = encodeURIComponent(decoration.name + ' (Handiwork)');
-        const url = `https://wiki.guildwars2.com/index.php?search=${encodedName}`;
+        const wikiUrl = `https://wiki.guildwars2.com/index.php?search=${encodeURIComponent(decoration.name + ' (Handiwork)')}`;
+
         footer.innerHTML = `
             <div class="footer-content">
-                <img src="${imgUrl}" class="footer-img" title="ID: ${decoration.id}">
+                <div class="footer-name">${name} <a class="wiki-link" href="${wikiUrl}" title="Wiki">(wiki)</a></div>
                 <div class="footer-info">
-                    <div class="footer-name">${name} <a href="${url}" title="Wiki">&#9881;</a></div>
-                    <div class="footer-description">${description}</div>
                     ${metaText}
                 </div>
             </div>
         `;
+
+        // Add event listener for thumbnail click
+        const thumbnailImg = footer.querySelector('.footer-preview');
+        if (thumbnailImg && decoration.original) {
+            thumbnailImg.addEventListener('click', () => {
+                showModal(decoration.original);
+            });
+        }
     } else {
         footer.innerHTML = '';
+    }
+}
+
+function showModal(decoration) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+
+    modal.style.display = "block";
+    modalImg.src = decoration.original?.source ?? "https://static.staticwars.com/quaggans/lost.jpg";
+
+    // Close the modal when the user clicks on <span> (x)
+    const span = document.getElementsByClassName("close")[0];
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Close the modal when the user clicks anywhere outside of the modal image
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
     }
 }
 
@@ -73,17 +98,6 @@ window.handleHoverDecoration = function(decoration, img) {
         const prevImg = document.querySelector(`.icon[data-id='${window.currentHoveredDecoration.id}']`);
         if (prevImg) {
             prevImg.classList.remove('orange-border');
-            if (window.currentHoveredDecoration !== window.currentClickedDecoration) {
-                prevImg.classList.add(getBorderClass(window.currentHoveredDecoration));
-            }
-        }
-    }
-
-    if (window.currentClickedDecoration && window.currentClickedDecoration.id !== decoration.id) {
-        const clickedImg = document.querySelector(`.icon[data-id='${window.currentClickedDecoration.id}']`);
-        if (clickedImg) {
-            clickedImg.classList.remove('orange-border');
-            clickedImg.classList.add('gold-border');
         }
     }
 
@@ -93,28 +107,53 @@ window.handleHoverDecoration = function(decoration, img) {
 
 // Function to handle click on a decoration
 window.handleClickDecoration = function(decoration, img) {
-    if (window.currentClickedDecoration && window.currentClickedDecoration.id !== decoration.id) {
-        const prevImg = document.querySelector(`.icon[data-id='${window.currentClickedDecoration.id}']`);
-        if (prevImg) {
-            prevImg.classList.remove('gold-border');
-            prevImg.classList.add(getBorderClass(window.currentClickedDecoration));
-        }
-    }
+    updateFooter(decoration);
 
-    if (window.currentClickedDecoration && window.currentClickedDecoration.id === decoration.id) {
-        // If the same item is clicked again, unlock the footer and reset the clicked decoration
-        window.isFooterLocked = false;
-        window.currentClickedDecoration = null;
-        img.classList.remove('gold-border');
-        img.classList.add('orange-border'); // Reapply orange border on hover
-    } else {
-        // If a new item is clicked, lock the footer and update it with the clicked decoration
-        window.isFooterLocked = true;
-        window.currentClickedDecoration = decoration;
-        img.classList.remove('orange-border');
-        img.classList.add('gold-border');
-        updateFooter(decoration);
-    }
+    // Generate API URL
+    const encodedName = encodeURIComponent(decoration.name);
+    const titles = `${encodedName}%20(Handiwork)|${encodedName}`;
+    const apiUrl = `https://wiki.guildwars2.com/api.php?action=query&titles=${titles}&prop=pageimages&piprop=original|thumbnail&format=json&origin=*`;
+
+    // Fetch data from the API
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            // Extract the image URLs
+            const pages = data.query.pages;
+            let imageInfo = null;
+
+            for (const pageId in pages) {
+                const page = pages[pageId];
+                if (page.title.includes("Handiwork")) {
+                    imageInfo = page;
+                    break;
+                } else if (!imageInfo && pageId !== "-1") {
+                    imageInfo = page;
+                }
+            }
+
+            if (imageInfo) {
+                console.log('imageInfo', imageInfo);
+                // Add the image URLs and dimensions to the decoration object
+                decoration.thumbnail = imageInfo.thumbnail ? {
+                    source: imageInfo.thumbnail.source,
+                    width: imageInfo.thumbnail.width,
+                    height: imageInfo.thumbnail.height
+                } : null;
+
+                decoration.original = imageInfo.original ? {
+                    source: imageInfo.original.source,
+                    width: imageInfo.original.width,
+                    height: imageInfo.original.height
+                } : null;
+
+                // Update the footer with the new image
+                updateFooter(decoration);
+                showModal(decoration);
+            }
+        })
+        .catch(error => console.error('Error fetching image:', error));
+
 }
 
 // Function to get the border class based on the decoration state
@@ -132,37 +171,9 @@ window.displayIcon = function(iconUrl, decoration) {
     img.dataset.id = decoration.id;
 
     img.addEventListener('mouseover', () => handleHoverDecoration(decoration, img));
-    img.addEventListener('mouseout', () => {
-        if (window.currentClickedDecoration !== decoration) {
-            img.classList.remove('orange-border');
-            img.classList.add(getBorderClass(decoration));
-        }
-    });
     img.addEventListener('click', () => handleClickDecoration(decoration, img));
 
     document.getElementById('iconContainer').appendChild(img);
-}
-
-// Function to update the dropdown with correct category counts
-window.updateCategoryDropdown = function() {
-    const dropdown = document.getElementById('categoryDropdown');
-    dropdown.innerHTML = ''; // Clear existing options
-
-    // Add "All" option
-    const allOption = document.createElement('option');
-    allOption.value = 'all';
-    allOption.textContent = `All (${decorations.length})`;
-    dropdown.appendChild(allOption);
-
-    // Add categories with correct counts
-    for (const id in categories) {
-        const categoryData = categories[id];
-        const count = decorations.filter(deco => deco.categories && deco.categories.includes(parseInt(id))).length;
-        const option = document.createElement('option');
-        option.value = id;
-        option.textContent = `${categoryData.name} (${count})`;
-        dropdown.appendChild(option);
-    }
 }
 
 // Function to display decorations based on selected category

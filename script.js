@@ -1,7 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // In-memory cache for storing fetched decoration and category data
-    const decorationCache = {};
-    window.categories = {};  // Make categories globally accessible
     window.decorations = [];  // Make decorations globally accessible
     window.unlockedDecorationIds = new Map();  // Make unlockedDecorationIds globally accessible
     let apiKey = getCookie('apiKey');
@@ -30,16 +27,31 @@ document.addEventListener('DOMContentLoaded', function() {
     async function fetchCategoriesFromFile() {
         try {
             const response = await fetch('./decoration_categories.json');
-            const categoriesData = await response.json();
-
-            // Store categories globally
-            window.categories = categoriesData.reduce((acc, category) => {
-                acc[category.id] = category;
-                return acc;
-            }, {});
+            categories = await response.json();
+            categories.sort((a, b) => a.name.localeCompare(b.name));
         } catch (error) {
             console.error('Error fetching categories from file:', error);
-            window.categories = {};
+            categories = [];
+        }
+    }
+
+    updateCategoryDropdown = function() {
+        const dropdown = document.getElementById('categoryDropdown');
+        dropdown.innerHTML = ''; // Clear existing options
+
+        // Add "All" option
+        const allOption = document.createElement('option');
+        allOption.value = 'all';
+        allOption.textContent = `All (${decorations.length})`;
+        dropdown.appendChild(allOption);
+
+        // Add categories with correct counts
+        for (const category of categories) {
+            const count = decorations.filter(deco => deco.categories && deco.categories.includes(category.id)).length;
+            const option = document.createElement('option');
+            option.value = category.id;
+            option.textContent = `${category.name} (${count})`;
+            dropdown.appendChild(option);
         }
     }
 
@@ -150,28 +162,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     fetchCategoriesAndDecorations();
-
-    // Function to update the dropdown with correct category counts
-    window.updateCategoryDropdown = function() {
-        const dropdown = document.getElementById('categoryDropdown');
-        dropdown.innerHTML = ''; // Clear existing options
-
-        // Add "All" option
-        const allOption = document.createElement('option');
-        allOption.value = 'all';
-        allOption.textContent = `All (${decorations.length})`;
-        dropdown.appendChild(allOption);
-
-        // Add categories with correct counts
-        for (const id in categories) {
-            const categoryData = categories[id];
-            const count = decorations.filter(deco => deco.categories && deco.categories.includes(parseInt(id))).length;
-            const option = document.createElement('option');
-            option.value = id;
-            option.textContent = `${categoryData.name} (${count})`;
-            dropdown.appendChild(option);
-        }
-    }
 
     // Function to display decorations based on selected category
     window.displayDecorations = function(categoryId) {

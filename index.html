@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Homestead Decorations</title>
-	<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-	<div id="header">
-		<div>
-			<select id="categoryDropdown">
-				<option value="all">All</option>
-			</select>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Homestead Decorations</title>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		<div id="header">
+			<div>
+				<select id="categoryDropdown">
+					<option value="all">All</option>
+				</select>
+			</div>
+			<div id="apiKeyContainer" class="hidden">
+				<input type="text" id="apiKeyInput" placeholder="Enter API Key">
+				<span id="apiKeyStatus" class="hidden">API Key ✔️</span>
+				<button id="clearApiKeyButton" class="hidden">❌</button>
+			</div>
 		</div>
-		<div id="apiKeyContainer">
-			<input type="text" id="apiKeyInput" placeholder="Enter API Key">
-			<span id="apiKeyStatus" class="hidden">API Key ✔️</span>
-			<button id="clearApiKeyButton" class="hidden">❌</button>
+		<div class="icon-container" id="iconContainer"></div>
+		<div id="footer"></div>
+
+		<div id="imageModal" class="modal">
+			<span class="close">&times;</span>
+			<img class="modal-content" id="modalImage">
 		</div>
-	</div>
-	<div class="icon-container" id="iconContainer"></div>
-	<div id="footer"></div>
-	<script src="ui.js"></script>
-	<script src="script.js"></script>
-</body>
+
+		<script src="ui.js"></script>
+		<script src="script.js"></script>
+	</body>
 </html>
