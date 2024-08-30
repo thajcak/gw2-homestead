@@ -1,6 +1,5 @@
 // Set global variables
 window.currentHoveredDecoration = null;
-window.isFooterLocked = false; // To track whether the footer is locked by a click
 
 // Function to set a cookie
 window.setCookie = function(name, value, days) {
@@ -92,9 +91,7 @@ function showModal(decoration) {
 
 // Function to handle hover over a decoration
 window.handleHoverDecoration = function(decoration, img) {
-    if (!window.isFooterLocked) {
-        updateFooter(decoration);
-    }
+    updateFooter(decoration);
 
     if (window.currentHoveredDecoration && window.currentHoveredDecoration.id !== decoration.id) {
         const prevImg = document.querySelector(`.icon[data-id='${window.currentHoveredDecoration.id}']`);
@@ -109,7 +106,7 @@ window.handleHoverDecoration = function(decoration, img) {
 
 // Function to handle click on a decoration
 window.handleClickDecoration = function(decoration, img) {
-    updateFooter(decoration);
+    // updateFooter(decoration);
 
     // Generate API URL
     const encodedName = encodeURIComponent(decoration.name);
