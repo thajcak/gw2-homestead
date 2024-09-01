@@ -17,4 +17,4 @@ A grid of decoration icons loaded from the repo is populated on load. Clicking o
 
 ---
 
-*This is an experimental project built entirely with ChatGPT (with some handmade adjustments) to test the limits of prompt engineering for code building.*
+*This is an experimental project built utilizing ChatGPT to test the abilities of prompt engineering. The goal is to treat ChatGPT like a junior developer by giving it specific tasks with targeted guidance. The work is reviewed, tested, and modified in a process similar to a code review. Additional enhancements and changes are made by me to produce the final build.*
