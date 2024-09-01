@@ -109,7 +109,8 @@ window.handleHoverDecoration = function(decoration, img) {
 
 // Function to handle click on a decoration
 window.handleClickDecoration = function(decoration, img) {
-    // updateFooter(decoration);
+    // Add the loading indicator
+    img.classList.add('loading');
 
     // Generate API URL
     const encodedName = encodeURIComponent(decoration.name);
@@ -138,7 +139,6 @@ window.handleClickDecoration = function(decoration, img) {
                 }
             }
             decoration.wikiTitle = imageInfo.title;
-            console.log('imageInfo', imageInfo);
 
             // Check if imageInfo contains 'original'
             if (imageInfo && imageInfo.original) {
@@ -148,6 +148,7 @@ window.handleClickDecoration = function(decoration, img) {
 
                 updateFooter(decoration);
                 showModal(decoration);
+                img.classList.remove('loading');
             } else {
                 // If 'original' is missing, make another API call to fetch RDF data
                 const rdfTitle = imageInfo.title.replace(/ /g, '_');
@@ -197,13 +198,17 @@ window.handleClickDecoration = function(decoration, img) {
                                         }
                                         updateFooter(decoration);
                                         showModal(decoration);
+                                        img.classList.remove('loading');
                                     })
                                     .catch(error => console.error('Error fetching image using filename:', error));
                             } else {
                                 console.error('No valid filename found in RDF response.');
                             }
                         } else {
-                            console.error('No Has_appearance element found in RDF response.');
+                            console.info('No Has_appearance element found in RDF response.');
+                            updateFooter(decoration);
+                            showModal(decoration);
+                            img.classList.remove('loading');
                         }
                     })
                 .catch(error => console.error('Error fetching RDF data:', error));
@@ -212,18 +217,11 @@ window.handleClickDecoration = function(decoration, img) {
         .catch(error => console.error('Error fetching image:', error));
 }
 
-// Function to get the border class based on the decoration state
-window.getBorderClass = function(decoration) {
-    if (unlockedDecorationIds.has(decoration.id)) {
-        return 'unlocked';
-    }
-}
-
 // Modified displayIcon function to include hover and click event listeners
 window.displayIcon = function(iconUrl, decoration) {
-    const img = document.createElement('img');
-    img.src = iconUrl;
-    img.className = `icon ${getBorderClass(decoration)}`;
+    const img = document.createElement('div');
+    img.style.backgroundImage = `url(${iconUrl})`;
+    img.className = "icon";
     img.dataset.id = decoration.id;
 
     img.addEventListener('mouseover', () => handleHoverDecoration(decoration, img));

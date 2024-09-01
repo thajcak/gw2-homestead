@@ -55,6 +55,7 @@ a {
     margin: 5px;
     border: 0.2rem solid black;
     cursor: pointer;
+    background-size: cover;
 }
 
 .gold-border {
@@ -184,4 +185,15 @@ a {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
+}
+
+.icon.loading::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 68px;
+    height: 68px;
+    background-image: url('loading-spinner.gif');
+    background-color: rgba(255, 255, 255, 0.5);
+    background-size: cover;
 }
