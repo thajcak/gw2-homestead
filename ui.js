@@ -1,31 +1,8 @@
 // Set global variables
 window.currentHoveredDecoration = null;
 
-// Function to set a cookie
-window.setCookie = function(name, value, days) {
-    const expires = new Date(Date.now() + days * 86400000).toUTCString();
-    document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/`;
-}
-
-// Function to get a cookie
-window.getCookie = function(name) {
-    const cookieArr = document.cookie.split("; ");
-    for (let cookie of cookieArr) {
-        const [cookieName, cookieValue] = cookie.split("=");
-        if (cookieName === name) {
-            return decodeURIComponent(cookieValue);
-        }
-    }
-    return null;
-}
-
-// Function to delete a cookie
-window.deleteCookie = function(name) {
-    setCookie(name, "", -1);
-}
-
 // Function to update the footer
-window.updateFooter = function(decoration) {
+function updateFooter(decoration) {
     const footer = document.getElementById('footer');
     if (decoration) {
         const isUnlocked = unlockedDecorationIds.has(decoration.id);
@@ -93,7 +70,7 @@ function showModal(decoration) {
 }
 
 // Function to handle hover over a decoration
-window.handleHoverDecoration = function(decoration, img) {
+function handleHoverDecoration(decoration, img) {
     updateFooter(decoration);
 
     if (window.currentHoveredDecoration && window.currentHoveredDecoration.id !== decoration.id) {
@@ -108,7 +85,7 @@ window.handleHoverDecoration = function(decoration, img) {
 }
 
 // Function to handle click on a decoration
-window.handleClickDecoration = function(decoration, img) {
+function handleClickDecoration(decoration, img) {
     // Add the loading indicator
     img.classList.add('loading');
 
@@ -218,7 +195,7 @@ window.handleClickDecoration = function(decoration, img) {
 }
 
 // Modified displayIcon function to include hover and click event listeners
-window.displayIcon = function(iconUrl, decoration) {
+function displayIcon(iconUrl, decoration) {
     const img = document.createElement('div');
     img.style.backgroundImage = `url(${iconUrl})`;
     img.className = "icon";
@@ -231,7 +208,7 @@ window.displayIcon = function(iconUrl, decoration) {
 }
 
 // Function to display decorations based on selected category
-window.displayDecorations = function(categoryId) {
+function displayDecorations(categoryId) {
     const container = document.getElementById('iconContainer');
     container.innerHTML = ''; // Clear existing icons
 
@@ -239,16 +216,27 @@ window.displayDecorations = function(categoryId) {
         ? decorations
         : decorations.filter(deco => deco.categories && deco.categories.includes(parseInt(categoryId)));
 
+    const query = document.getElementById('searchInput').value;
+    if (query) {
+        filteredDecorations = filteredDecorations.filter(deco =>
+            deco.name.toLowerCase().includes(query.toLowerCase())
+        );
+    }
+
     // Sort decorations by their name
     filteredDecorations = filteredDecorations.sort((a, b) => a.name.localeCompare(b.name));
-
-    filteredDecorations.forEach(decoration => {
-        displayIcon(decoration.icon, decoration);
-    });
+    if (filteredDecorations.length > 0) {
+        // Display the filtered decorations
+        filteredDecorations.forEach(decoration => {
+            displayIcon(decoration.icon, decoration);
+        });
+    } else {
+        container.innerHTML = '<p class="no-results">No decorations found.</p>';
+    }
 }
 
 // Function to reevaluate and update all items on the page
-window.reevaluateDecorations = function() {
+function reevaluateDecorations() {
     const categoryId = document.getElementById('categoryDropdown').value;
     const filteredDecorations = categoryId === 'all'
         ? decorations
@@ -256,3 +244,53 @@ window.reevaluateDecorations = function() {
 
     displayDecorations(categoryId);
 }
+
+// Function to filter and display decorations based on search input
+function searchDecorations(query) {
+    const container = document.getElementById('iconContainer');
+    container.innerHTML = ''; // Clear existing icons
+
+    const categoryId = document.getElementById('categoryDropdown').value;
+    let filteredDecorations = decorations;
+
+    // Filter by category if not "all"
+    if (categoryId !== 'all') {
+        filteredDecorations = filteredDecorations.filter(deco =>
+            deco.categories && deco.categories.includes(parseInt(categoryId))
+        );
+    }
+
+    // Filter by search query
+    filteredDecorations = filteredDecorations.filter(deco =>
+        deco.name.toLowerCase().includes(query.toLowerCase())
+    );
+
+    // Sort decorations by their name
+    const sortedDecorations = filteredDecorations.sort((a, b) => a.name.localeCompare(b.name));
+
+    sortedDecorations.forEach(decoration => {
+        displayIcon(decoration.icon, decoration);
+    });
+
+    // Show or hide the clear search button based on input
+    const clearSearchButton = document.getElementById('clearSearchButton');
+    if (query) {
+        clearSearchButton.classList.remove('hidden');
+    } else {
+        clearSearchButton.classList.add('hidden');
+    }
+}
+
+// Event listener for search input
+document.getElementById('searchInput').addEventListener('input', function() {
+    const query = this.value;
+    searchDecorations(query);
+});
+
+// Event listener for clear search button
+document.getElementById('clearSearchButton').addEventListener('click', function() {
+    document.getElementById('searchInput').value = '';
+    this.classList.add('hidden');
+    const categoryId = document.getElementById('categoryDropdown').value;
+    displayDecorations(categoryId); // Reset to showing decorations for the selected category
+});
