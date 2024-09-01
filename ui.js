@@ -35,7 +35,10 @@ window.updateFooter = function(decoration) {
         const name = decoration.name;
         const description = decoration.description || "No description available.";
         const categoryBadges = decoration.categories
-            .map(id => `<span class="badge">${categories[id]?.name || 'Unknown'}</span>`)
+            .map(id => {
+                const matchedCategory = categories.find(category => category.id === id);
+                return `<span class="badge">${matchedCategory ? matchedCategory.name : 'Unknown'}</span>`;
+            })
             .join(' ');
 
         let metaText = `<div class="badge-container">${categoryBadges}</div>`;
@@ -135,14 +138,14 @@ window.handleClickDecoration = function(decoration, img) {
                 }
             }
             decoration.wikiTitle = imageInfo.title;
+            console.log('imageInfo', imageInfo);
 
             // Check if imageInfo contains 'original'
             if (imageInfo && imageInfo.original) {
                 // Add the image URLs and dimensions to the decoration object
-                decoration.thumbnail;
+                decoration.thumbnail = imageInfo.thumbnail;
                 decoration.original = imageInfo.original;
 
-                // Update the footer with the new image
                 updateFooter(decoration);
                 showModal(decoration);
             } else {
@@ -192,6 +195,8 @@ window.handleClickDecoration = function(decoration, img) {
                                         } else {
                                             console.error('No original image found using filename.');
                                         }
+                                        updateFooter(decoration);
+                                        showModal(decoration);
                                     })
                                     .catch(error => console.error('Error fetching image using filename:', error));
                             } else {
@@ -201,12 +206,7 @@ window.handleClickDecoration = function(decoration, img) {
                             console.error('No Has_appearance element found in RDF response.');
                         }
                     })
-                .catch(error => console.error('Error fetching RDF data:', error))
-                .finally(() => {
-                    // Update the footer with the new image
-                    updateFooter(decoration);
-                    showModal(decoration);
-                });
+                .catch(error => console.error('Error fetching RDF data:', error));
             }
         })
         .catch(error => console.error('Error fetching image:', error));
