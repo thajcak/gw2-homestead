@@ -71,27 +71,27 @@ jobs:
             titles="${encodedName}%20(Handiwork)|${encodedName}%20Decoration|${encodedName}"
             apiUrl="https://wiki.guildwars2.com/api.php?action=query&titles=${titles}&prop=pageimages&piprop=original|thumbnail&format=json&origin=*"
 
-            # Debugging: Fetch and display the raw response
+            # Fetch the primary image data
             echo "Fetching data for: $name"
             imageResponse=$(curl -s "$apiUrl")
             echo "Raw response: $imageResponse" # Debug: Check raw response
 
             # Validate that the raw response is valid JSON
             if ! echo "$imageResponse" | jq empty; then
-              echo "Invalid JSON response for decoration: $name" # Debug: Log invalid response
+              echo "Invalid JSON response for decoration: $name"
               continue # Skip this decoration if the response is invalid
             fi
 
-            # Extract pages safely
-            page=$(echo "$imageResponse" | jq -c '.query.pages | to_entries[] | select(.value.original != null) | .value')
+            # Extract and prioritize the page based on titles
+            page=$(echo "$imageResponse" | jq -c '.query.pages | to_entries[] | select(.value.original != null) | .value' | jq 'select(.title | contains("Handiwork")) // select(.title | contains("Decoration")) // .')
 
-            # Check if any valid page data is found
+            # Check if valid page data is found
             if [ -n "$page" ]; then
               # Extract the image URLs
               originalUrl=$(echo "$page" | jq -r '.original.source // empty')
               thumbnailUrl=$(echo "$page" | jq -r '.thumbnail.source // empty')
 
-              # Validate extracted URLs before updating the decoration
+              # Update the decoration object with URLs if found
               if [ -n "$originalUrl" ]; then
                 decoration=$(echo "$decoration" | jq --arg original "$originalUrl" --arg thumbnail "$thumbnailUrl" '. + {original: $original, thumbnail: $thumbnail}')
                 echo "Updated decoration with images: $name"
@@ -100,6 +100,39 @@ jobs:
               fi
             else
               echo "No matching page with valid image data found for: $name"
+
+              # Fallback: Fetch RDF data if no valid image found
+              rdfTitle=$(echo "$name" | sed 's/ /_/g')
+              rdfApiUrl="https://corsproxy.io/?$(echo "https://wiki.guildwars2.com/index.php?title=Special:ExportRDF/$rdfTitle" | jq -Rr @uri)"
+
+              rdfResponse=$(curl -s "$rdfApiUrl")
+              if [ -n "$rdfResponse" ]; then
+                # Extract appearance details from RDF data
+                fullFilename=$(echo "$rdfResponse" | grep -oP 'rdf:resource="[^"]*"' | grep 'Has_appearance' | sed -e 's/rdf:resource="//' -e 's/"//')
+
+                if [ -n "$fullFilename" ]; then
+                  # Extract file title and create fallback URL
+                  filenameTitle=$(basename "$fullFilename" | sed 's/-3A/:/g')
+                  fallbackApiUrl="https://wiki.guildwars2.com/api.php?action=query&titles=$(echo "$filenameTitle" | jq -Rr @uri)&prop=pageimages&piprop=original|thumbnail&format=json&origin=*"
+
+                  fallbackResponse=$(curl -s "$fallbackApiUrl")
+                  fallbackPage=$(echo "$fallbackResponse" | jq '.query.pages | to_entries[] | select(.value.original != null) | .value')
+                  fallbackOriginal=$(echo "$fallbackPage" | jq -r '.original.source // empty')
+                  fallbackThumbnail=$(echo "$fallbackPage" | jq -r '.thumbnail.source // empty')
+
+                  # Update decoration with fallback data
+                  if [ -n "$fallbackOriginal" ]; then
+                    decoration=$(echo "$decoration" | jq --arg original "$fallbackOriginal" --arg thumbnail "$fallbackThumbnail" '. + {original: $original, thumbnail: $thumbnail}')
+                    echo "Updated decoration with fallback images: $name"
+                  else
+                    echo "No original image found using RDF fallback for: $name"
+                  fi
+                else
+                  echo "No valid RDF resource found for: $name"
+                fi
+              else
+                echo "Error fetching RDF data for: $name"
+              fi
             fi
 
             # Append the updated decoration back to the JSON array
