@@ -76,27 +76,30 @@ jobs:
             imageResponse=$(curl -s "$apiUrl")
             echo "Raw response: $imageResponse" # Debug: Check raw response
 
-            # Validate JSON response format before using jq
+            # Validate that the raw response is valid JSON
             if ! echo "$imageResponse" | jq empty; then
               echo "Invalid JSON response for decoration: $name" # Debug: Log invalid response
               continue # Skip this decoration if the response is invalid
             fi
 
-            # Extract image information safely
-            # Fetch the pages and ensure the selection handles missing values gracefully
-            page=$(echo "$imageResponse" | jq -c '.query.pages[] | select(.original != null) | select(.title | contains("Handiwork")) // select(.title | contains("Decoration")) // .')
+            # Extract pages safely
+            page=$(echo "$imageResponse" | jq -c '.query.pages | to_entries[] | select(.value.original != null) | .value')
 
-            # If image data is found, add it to the decoration object
+            # Check if any valid page data is found
             if [ -n "$page" ]; then
+              # Extract the image URLs
               originalUrl=$(echo "$page" | jq -r '.original.source // empty')
               thumbnailUrl=$(echo "$page" | jq -r '.thumbnail.source // empty')
 
-              # Update the decoration JSON object with image URLs if available
+              # Validate extracted URLs before updating the decoration
               if [ -n "$originalUrl" ]; then
                 decoration=$(echo "$decoration" | jq --arg original "$originalUrl" --arg thumbnail "$thumbnailUrl" '. + {original: $original, thumbnail: $thumbnail}')
+                echo "Updated decoration with images: $name"
+              else
+                echo "No valid original URL found for: $name"
               fi
             else
-              echo "No matching image data found for: $name"
+              echo "No matching page with valid image data found for: $name"
             fi
 
             # Append the updated decoration back to the JSON array
