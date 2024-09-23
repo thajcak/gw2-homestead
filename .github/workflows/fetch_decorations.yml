@@ -62,6 +62,9 @@ jobs:
         run: |
           # Iterate over each decoration and fetch additional image data
           jq -c '.[]' decorations.json | while read decoration; do
+            # Debug: Print the full decoration object at the start of each loop
+            echo "Processing decoration: $decoration"
+
             # Extract the decoration name and ID
             name=$(echo "$decoration" | jq -r '.name')
             id=$(echo "$decoration" | jq -r '.id')
