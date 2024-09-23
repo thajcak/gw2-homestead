@@ -2,7 +2,7 @@ name: Update and Fetch Decorations and Categories
 
 on:
   schedule:
-  - cron: '0 * * * *' # Runs every hour
+    - cron: '0 * * * *' # Runs every hour
   workflow_dispatch: # Allows for manual trigger of the workflow
 
 jobs:
@@ -10,63 +10,97 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Install jq for JSON processing
-      run: sudo apt-get update && sudo apt-get install -y jq
+      - name: Install jq and curl for JSON processing
+        run: sudo apt-get update && sudo apt-get install -y jq curl
 
-    - name: Fetch Decorations List and Details
-      run: |
-        # Fetch the list of decoration IDs
-        curl -s https://api.guildwars2.com/v2/homestead/decorations -o decorations_list.json
+      - name: Fetch Decorations List and Details
+        run: |
+          # Fetch the list of decoration IDs
+          curl -s https://api.guildwars2.com/v2/homestead/decorations -o decorations_list.json
 
-        # Initialize an empty array to store the results
-        echo "[]" > decorations.json
+          # Initialize an empty array to store the results
+          echo "[]" > decorations.json
 
-        # Split the list into chunks of 200 IDs and fetch details
-        ids=$(jq -r '.[]' decorations_list.json)
-        chunk_size=200
-        for chunk in $(echo "$ids" | xargs -n $chunk_size | sed 's/ /,/g'); do
-          curl -s "https://api.guildwars2.com/v2/homestead/decorations?ids=$chunk" | \
-          jq -s 'add' >> temp.json
-        done
+          # Split the list into chunks of 200 IDs and fetch details
+          ids=$(jq -r '.[]' decorations_list.json)
+          chunk_size=200
+          for chunk in $(echo "$ids" | xargs -n $chunk_size | sed 's/ /,/g'); do
+            curl -s "https://api.guildwars2.com/v2/homestead/decorations?ids=$chunk" | \
+            jq -s 'add' >> temp.json
+          done
 
-        # Combine all the chunks into a single JSON array
-        jq -s 'add' temp.json > decorations.json
-        rm temp.json
-        rm decorations_list.json
+          # Combine all the chunks into a single JSON array
+          jq -s 'add' temp.json > decorations.json
+          rm temp.json
+          rm decorations_list.json
 
-    - name: Fetch Decoration Categories
-      run: |
-        # Fetch the list of decoration category IDs
-        curl -s https://api.guildwars2.com/v2/homestead/decorations/categories -o decoration_categories_list.json
+      - name: Fetch Decoration Categories
+        run: |
+          # Fetch the list of decoration category IDs
+          curl -s https://api.guildwars2.com/v2/homestead/decorations/categories -o decoration_categories_list.json
 
-        # Initialize an empty array to store the results
-        echo "[]" > decoration_categories.json
+          # Initialize an empty array to store the results
+          echo "[]" > decoration_categories.json
 
-        # Split the list into chunks of 200 IDs and fetch details
-        category_ids=$(jq -r '.[]' decoration_categories_list.json)
-        chunk_size=200
-        for chunk in $(echo "$category_ids" | xargs -n $chunk_size | sed 's/ /,/g'); do
-          curl -s "https://api.guildwars2.com/v2/homestead/decorations/categories?ids=$chunk" | \
-          jq -s 'add' >> temp_categories.json
-        done
+          # Split the list into chunks of 200 IDs and fetch details
+          category_ids=$(jq -r '.[]' decoration_categories_list.json)
+          chunk_size=200
+          for chunk in $(echo "$category_ids" | xargs -n $chunk_size | sed 's/ /,/g'); do
+            curl -s "https://api.guildwars2.com/v2/homestead/decorations/categories?ids=$chunk" | \
+            jq -s 'add' >> temp_categories.json
+          done
 
-        # Combine all the chunks into a single JSON array
-        jq -s 'add' temp_categories.json > decoration_categories.json
-        rm temp_categories.json
-        rm decoration_categories_list.json
+          # Combine all the chunks into a single JSON array
+          jq -s 'add' temp_categories.json > decoration_categories.json
+          rm temp_categories.json
+          rm decoration_categories_list.json
 
-    - name: Commit and push updated decorations and categories
-      run: |
-        git config user.name "github-actions[bot]"
-        git config user.email "github-actions[bot]@users.noreply.github.com"
-        git add decorations.json decoration_categories.json
-        # Check if there are changes to commit
-        if git diff --cached --quiet; then
-          echo "No changes to commit."
-        else
-          git commit -m "Update decorations.json and decoration_categories.json with detailed data"
-          git push
-        fi
+      - name: Fetch and Update Decorations with Image Data
+        run: |
+          # Iterate over each decoration and fetch additional image data
+          jq -c '.[]' decorations.json | while read decoration; do
+            # Extract the decoration name
+            name=$(echo "$decoration" | jq -r '.name')
+            id=$(echo "$decoration" | jq -r '.id')
+
+            # URL encode the decoration name for API requests
+            encodedName=$(echo "$name" | jq -Rr @uri)
+            titles="${encodedName}%20(Handiwork)|${encodedName}%20Decoration|${encodedName}"
+            apiUrl="https://wiki.guildwars2.com/api.php?action=query&titles=${titles}&prop=pageimages&piprop=original|thumbnail&format=json&origin=*"
+
+            # Fetch image data from the wiki API
+            imageResponse=$(curl -s "$apiUrl")
+            page=$(echo "$imageResponse" | jq '.query.pages[] | select(.original != null)')
+
+            # If image data is found, add it to the decoration object
+            if [ -n "$page" ]; then
+              originalUrl=$(echo "$page" | jq -r '.original.source')
+              thumbnailUrl=$(echo "$page" | jq -r '.thumbnail.source // empty')
+
+              # Update the decoration JSON object with image URLs
+              decoration=$(echo "$decoration" | jq --arg original "$originalUrl" --arg thumbnail "$thumbnailUrl" '. + {original: $original, thumbnail: $thumbnail}')
+            fi
+
+            # Append the updated decoration back to the JSON array
+            echo "$decoration" >> updated_decorations.json
+          done
+
+          # Combine updated decorations into a single JSON array
+          jq -s '.' updated_decorations.json > decorations.json
+          rm updated_decorations.json
+
+      - name: Commit and push updated decorations and categories
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add decorations.json decoration_categories.json
+          # Check if there are changes to commit
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update decorations.json and decoration_categories.json with detailed data"
+            git push
+          fi
