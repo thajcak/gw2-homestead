@@ -71,8 +71,18 @@ jobs:
             titles="${encodedName}%20(Handiwork)|${encodedName}%20Decoration|${encodedName}"
             apiUrl="https://wiki.guildwars2.com/api.php?action=query&titles=${titles}&prop=pageimages&piprop=original|thumbnail&format=json&origin=*"
 
-            # Fetch image data from the wiki API
+            # Debugging: Fetch and display the raw response
+            echo "Fetching data for: $name"
             imageResponse=$(curl -s "$apiUrl")
+            echo "Raw response: $imageResponse" # Debug: Check raw response
+
+            # Verify if the response is a valid JSON
+            if ! echo "$imageResponse" | jq empty; then
+              echo "Invalid JSON response for decoration: $name" # Debug: Log invalid response
+              continue # Skip this decoration if the response is invalid
+            fi
+
+            # Extract image information
             page=$(echo "$imageResponse" | jq '.query.pages[] | select(.original != null)')
 
             # If image data is found, add it to the decoration object
