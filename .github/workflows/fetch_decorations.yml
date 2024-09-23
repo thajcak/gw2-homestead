@@ -62,7 +62,7 @@ jobs:
         run: |
           # Iterate over each decoration and fetch additional image data
           jq -c '.[]' decorations.json | while read decoration; do
-            # Extract the decoration name
+            # Extract the decoration name and ID
             name=$(echo "$decoration" | jq -r '.name')
             id=$(echo "$decoration" | jq -r '.id')
 
@@ -76,22 +76,27 @@ jobs:
             imageResponse=$(curl -s "$apiUrl")
             echo "Raw response: $imageResponse" # Debug: Check raw response
 
-            # Verify if the response is a valid JSON
+            # Validate JSON response format before using jq
             if ! echo "$imageResponse" | jq empty; then
               echo "Invalid JSON response for decoration: $name" # Debug: Log invalid response
               continue # Skip this decoration if the response is invalid
             fi
 
-            # Extract image information
-            page=$(echo "$imageResponse" | jq '.query.pages[] | select(.original != null)')
+            # Extract image information safely
+            # Fetch the pages and ensure the selection handles missing values gracefully
+            page=$(echo "$imageResponse" | jq -c '.query.pages[] | select(.original != null) | select(.title | contains("Handiwork")) // select(.title | contains("Decoration")) // .')
 
             # If image data is found, add it to the decoration object
             if [ -n "$page" ]; then
-              originalUrl=$(echo "$page" | jq -r '.original.source')
+              originalUrl=$(echo "$page" | jq -r '.original.source // empty')
               thumbnailUrl=$(echo "$page" | jq -r '.thumbnail.source // empty')
 
-              # Update the decoration JSON object with image URLs
-              decoration=$(echo "$decoration" | jq --arg original "$originalUrl" --arg thumbnail "$thumbnailUrl" '. + {original: $original, thumbnail: $thumbnail}')
+              # Update the decoration JSON object with image URLs if available
+              if [ -n "$originalUrl" ]; then
+                decoration=$(echo "$decoration" | jq --arg original "$originalUrl" --arg thumbnail "$thumbnailUrl" '. + {original: $original, thumbnail: $thumbnail}')
+              fi
+            else
+              echo "No matching image data found for: $name"
             fi
 
             # Append the updated decoration back to the JSON array
