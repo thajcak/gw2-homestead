@@ -70,6 +70,7 @@ jobs:
 
             # Explicitly escape double quotes in the description
             escaped_description=$(echo "$description" | sed 's/"/\\"/g')
+            echo "Escaped decoration: $escaped_description"
 
             # Rebuild the decoration JSON object with the escaped description
             decoration=$(echo "$decoration" | jq --arg description "$escaped_description" '.description = $description')
