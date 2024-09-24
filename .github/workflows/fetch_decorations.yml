@@ -63,20 +63,8 @@ jobs:
           # Process each decoration directly within jq, avoiding shell misinterpretations
           jq -c '.[]' decorations.json | while IFS= read -r decoration; do
 
-            # Check if 'original' and 'thumbnail' properties are already set
-            originalSet=$(echo "$decoration" | jq -r '.original != null and .original != ""')
-            thumbnailSet=$(echo "$decoration" | jq -r '.thumbnail != null and .thumbnail != ""')
-            wikiTitleSet=$(echo "$decoration" | jq -r '.wikiTitle != null and .wikiTitle != ""')
-
-            # Debugging output to verify current state
-            echo "Current decoration state before updates: $decoration"
-
-            # Skip fetching if 'original', 'thumbnail', and 'wikiTitle' are already set
-            if [ "$originalSet" = "true" ] && [ "$thumbnailSet" = "true" ] && [ "$wikiTitleSet" = "true" ]; then
-              echo "Skipping update for decoration: $(echo "$decoration" | jq -r '.name'), URLs and wikiTitle already set."
-              echo "$decoration" >> updated_decorations.json
-              continue
-            fi
+            # Print the initial state of the decoration object
+            echo "Initial state of decoration: $decoration"
 
             # Extract the name and ID fields directly from the decoration
             name=$(echo "$decoration" | jq -r '.name')
@@ -97,30 +85,27 @@ jobs:
             fi
 
             # Extract and prioritize the page based on titles
-            page=$(echo "$imageResponse" | jq -c '.query.pages | to_entries[] | select(.value.original != null) | .value' | jq 'select(.title | contains("Handiwork")) // select(.title | contains("Decoration")) // .')
+            prioritizedPage=$(echo "$imageResponse" | jq -c '.query.pages | to_entries[] | .value' | jq 'select(.title | contains("Handiwork")) // select(.title | contains("Decoration")) // .')
 
-            # Extract and clean the wiki title
-            wikiTitle=$(echo "$page" | jq -r '.title // empty' | tr -d '\n' | xargs)
+            # Extract the wiki title and clean it
+            wikiTitle=$(echo "$prioritizedPage" | jq -r '.title // empty' | xargs)
 
-            # Check if valid page data is found
-            if [ -n "$page" ]; then
-              # Extract the image URLs and clean them
-              originalUrl=$(echo "$page" | jq -r '.original.source // empty' | tr -d '\n' | xargs)
-              thumbnailUrl=$(echo "$page" | jq -r '.thumbnail.source // empty' | tr -d '\n' | xargs)
+            # Check if a valid prioritized page is found and set the values accordingly
+            if [ -n "$prioritizedPage" ]; then
+              originalUrl=$(echo "$prioritizedPage" | jq -r '.original.source // empty' | xargs)
+              thumbnailUrl=$(echo "$prioritizedPage" | jq -r '.thumbnail.source // empty' | xargs)
 
-              # Debugging output to verify fetched URLs and titles
-              echo "Fetched original URL: $originalUrl"
-              echo "Fetched thumbnail URL: $thumbnailUrl"
-              echo "Fetched wikiTitle: $wikiTitle"
-
-              # Validate and ensure only clean replacement of URLs and titles
-              decoration=$(echo "$decoration" | jq --arg original "$originalUrl" --arg thumbnail "$thumbnailUrl" --arg wikiTitle "$wikiTitle" '
-                .original = ($original | gsub("[\n\r]"; "")) |
-                .thumbnail = ($thumbnail | gsub("[\n\r]"; "")) |
-                .wikiTitle = ($wikiTitle | gsub("[\n\r]"; ""))
-              ')
+              # Set the values based on the first valid prioritized match
+              if [ -n "$originalUrl" ] && [ -n "$thumbnailUrl" ]; then
+                decoration=$(echo "$decoration" | jq --arg original "$originalUrl" --arg thumbnail "$thumbnailUrl" --arg wikiTitle "$wikiTitle" '
+                  .original = $original |
+                  .thumbnail = $thumbnail |
+                  .wikiTitle = $wikiTitle
+                ')
+                echo "Updated decoration with prioritized page data."
+              fi
             else
-              # Fallback: Fetch RDF data if no valid image found
+              # Fallback: Fetch RDF data if no valid prioritized page is found
               rdfTitle=$(echo "$name" | sed 's/ /_/g')
               rdfApiUrl="https://corsproxy.io/?$(echo "https://wiki.guildwars2.com/index.php?title=Special:ExportRDF/$rdfTitle" | jq -Rr @uri)"
 
@@ -136,27 +121,22 @@ jobs:
 
                   fallbackResponse=$(curl -s "$fallbackApiUrl")
                   fallbackPage=$(echo "$fallbackResponse" | jq '.query.pages | to_entries[] | select(.value.original != null) | .value')
-                  fallbackOriginal=$(echo "$fallbackPage" | jq -r '.original.source // empty' | tr -d '\n' | xargs)
-                  fallbackThumbnail=$(echo "$fallbackPage" | jq -r '.thumbnail.source // empty' | tr -d '\n' | xargs)
-                  fallbackWikiTitle=$(echo "$fallbackPage" | jq -r '.title // empty' | tr -d '\n' | xargs)
+                  fallbackOriginal=$(echo "$fallbackPage" | jq -r '.original.source // empty' | xargs)
+                  fallbackThumbnail=$(echo "$fallbackPage" | jq -r '.thumbnail.source // empty' | xargs)
+                  fallbackWikiTitle=$(echo "$fallbackPage" | jq -r '.title // empty' | xargs)
 
-                  # Debugging output to verify fetched fallback data
-                  echo "Fetched fallback original URL: $fallbackOriginal"
-                  echo "Fetched fallback thumbnail URL: $fallbackThumbnail"
-                  echo "Fetched fallback wikiTitle: $fallbackWikiTitle"
-
-                  # Validate and ensure only clean replacement of fallback data
-                  decoration=$(echo "$decoration" | jq --arg original "$fallbackOriginal" --arg thumbnail "$fallbackThumbnail" --arg wikiTitle "$fallbackWikiTitle" '
-                    .original = ($original | gsub("[\n\r]"; "")) |
-                    .thumbnail = ($thumbnail | gsub("[\n\r]"; "")) |
-                    .wikiTitle = ($wikiTitle | gsub("[\n\r]"; ""))
-                  ')
+                  # Only set fallback data if original prioritized match wasn't found
+                  if [ -n "$fallbackOriginal" ] && [ -n "$fallbackThumbnail" ]; then
+                    decoration=$(echo "$decoration" | jq --arg original "$fallbackOriginal" --arg thumbnail "$fallbackThumbnail" --arg wikiTitle "$fallbackWikiTitle" '
+                      .original = $original |
+                      .thumbnail = $thumbnail |
+                      .wikiTitle = $wikiTitle
+                    ')
+                    echo "Updated decoration with fallback page data."
+                  fi
                 fi
               fi
             fi
-
-            # Debugging output to confirm final state of decoration
-            echo "Updated decoration state: $decoration"
 
             # Append the updated decoration back to the JSON array
             echo "$decoration" >> updated_decorations.json
