@@ -72,11 +72,11 @@ jobs:
             echo "Current decoration state: $decoration"
 
             # Skip fetching if 'original', 'thumbnail', and 'wikiTitle' are already set
-            # if [ "$originalSet" = "true" ] && [ "$thumbnailSet" = "true" ] && [ "$wikiTitleSet" = "true" ]; then
-            #   echo "Skipping update for decoration: $(echo "$decoration" | jq -r '.name'), URLs and wikiTitle already set."
-            #   echo "$decoration" >> updated_decorations.json
-            #   continue
-            # fi
+            if [ "$originalSet" = "true" ] && [ "$thumbnailSet" = "true" ] && [ "$wikiTitleSet" = "true" ]; then
+              echo "Skipping update for decoration: $(echo "$decoration" | jq -r '.name'), URLs and wikiTitle already set."
+              echo "$decoration" >> updated_decorations.json
+              continue
+            fi
 
             # Extract the name and ID fields directly from the decoration
             name=$(echo "$decoration" | jq -r '.name')
