@@ -60,18 +60,12 @@ jobs:
 
       - name: Fetch and Update Decorations with Image Data
         run: |
-          # Iterate over each decoration and fetch additional image data
-          jq -c '.[]' decorations.json | while read decoration; do
+          # Process each decoration directly within jq, avoiding shell misinterpretations
+          jq -c '.[]' decorations.json | while IFS= read -r decoration; do
             # Debug: Print the full decoration object at the start of each loop
             echo "Processing decoration: $decoration"
 
-            # Pre-sanitize the JSON string to escape all problematic quotes
-            decoration=$(echo "$decoration" | sed 's/\(["]\)/\\\1/g')
-
-            # Debug: Print the pre-sanitized decoration object
-            echo "Pre-sanitized decoration: $decoration"
-
-            # Now process the sanitized JSON object with jq as planned
+            # Extract the name and ID fields directly from the decoration
             name=$(echo "$decoration" | jq -r '.name')
             id=$(echo "$decoration" | jq -r '.id')
 
