@@ -65,6 +65,12 @@ jobs:
             # Debug: Print the full decoration object at the start of each loop
             echo "Processing decoration: $decoration"
 
+            # Sanitize the decoration JSON to escape problematic characters like embedded double quotes
+            decoration=$(echo "$decoration" | sed 's/\"/\\\"/g')
+
+            # Debug: Print the sanitized decoration object
+            echo "Sanitized decoration: $decoration"
+
             # Extract the decoration name and ID
             name=$(echo "$decoration" | jq -r '.name')
             id=$(echo "$decoration" | jq -r '.id')
