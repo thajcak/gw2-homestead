@@ -20,6 +20,8 @@ jobs:
 
       - name: Fetch Decorations List and Details
         run: |
+          set -e
+          set -x
           # Fetch the list of decoration IDs
           curl -s https://api.guildwars2.com/v2/homestead/decorations -o decorations_list.json
 
@@ -41,6 +43,8 @@ jobs:
 
       - name: Fetch Decoration Categories
         run: |
+          set -e
+          set -x
           # Fetch the list of decoration category IDs
           curl -s https://api.guildwars2.com/v2/homestead/decorations/categories -o decoration_categories_list.json
 
@@ -62,20 +66,35 @@ jobs:
 
       - name: Fetch Decoration Images and Update Data
         run: |
+          set -e
+          set -x
           # Read decorations.json and process each decoration
           jq -c '.[]' decorations.json | while read -r decoration; do
             name=$(echo "$decoration" | jq -r '.name')
             id=$(echo "$decoration" | jq -r '.id')
+
+            echo "Processing decoration: $name (ID: $id)"
 
             # Generate API URL
             encodedName=$(printf %s "$name" | jq -sRr @uri)
             titles="${encodedName}%20(Handiwork)|${encodedName}%20Decoration|${encodedName}"
             apiUrl="https://wiki.guildwars2.com/api.php?action=query&titles=${titles}&prop=pageimages&piprop=original|thumbnail&format=json&origin=*"
 
+            echo "API URL: $apiUrl"
+
             # Fetch data from the API
             response=$(curl -s "$apiUrl")
+            if [ $? -ne 0 ] || [ -z "$response" ]; then
+              echo "Error fetching data from API for decoration $name"
+              continue
+            fi
+
             # Extract pages
             pages=$(echo "$response" | jq '.query.pages')
+            if [ $? -ne 0 ] || [ -z "$pages" ]; then
+              echo "Error parsing JSON response for decoration $name"
+              continue
+            fi
 
             # Initialize imageInfo
             imageInfo=null
@@ -100,6 +119,8 @@ jobs:
             if [[ "$imageInfo" != "null" ]]; then
               wikiTitle=$(echo "$imageInfo" | jq -r '.title')
               decoration=$(echo "$decoration" | jq --arg wikiTitle "$wikiTitle" '. + {wikiTitle: $wikiTitle}')
+            else
+              echo "No valid page found for decoration $name"
             fi
 
             # Check if imageInfo contains 'original'
@@ -114,11 +135,17 @@ jobs:
               rdfTitle=$(echo "$imageInfo" | jq -r '.title' | sed 's/ /_/g')
               rdfApiUrl="https://wiki.guildwars2.com/index.php?title=Special:ExportRDF/${rdfTitle}"
 
+              echo "Fetching RDF data from: $rdfApiUrl"
+
               # Fetch RDF data
               rdfData=$(curl -s "$rdfApiUrl")
+              if [ $? -ne 0 ] || [ -z "$rdfData" ]; then
+                echo "Error fetching RDF data for decoration $name"
+                continue
+              fi
 
               # Parse RDF data to find Has_appearance
-              fullFilename=$(echo "$rdfData" | xmlstarlet sel -N rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" -N property="http://wiki.guildwars2.com/wiki/Special:URIResolver/Property-3A" -t -v "//property:Has_appearance/@rdf:resource" 2>/dev/null)
+              fullFilename=$(echo "$rdfData" | xmlstarlet sel -N rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" -N property="http://wiki.guildwars2.com/wiki/Special:URIResolver/Property-3A" -t -v "//property:Has_appearance/@rdf:resource" 2>/dev/null || true)
 
               if [[ -n "$fullFilename" ]]; then
                 # Truncate the filename to get only the last part of the path
@@ -127,9 +154,20 @@ jobs:
                 filenameTitle=$(echo "$truncatedFilename" | sed 's/-3A/:/g' | jq -sRr @uri)
                 fallbackApiUrl="https://wiki.guildwars2.com/api.php?action=query&titles=${filenameTitle}&prop=pageimages&piprop=original|thumbnail&format=json&origin=*"
 
+                echo "Fetching image using filename from: $fallbackApiUrl"
+
                 # Fetch data from the API using the filename
                 fallbackResponse=$(curl -s "$fallbackApiUrl")
+                if [ $? -ne 0 ] || [ -z "$fallbackResponse" ]; then
+                  echo "Error fetching fallback image data for decoration $name"
+                  continue
+                fi
+
                 fallbackPages=$(echo "$fallbackResponse" | jq '.query.pages')
+                if [ $? -ne 0 ] || [ -z "$fallbackPages" ]; then
+                  echo "Error parsing fallback JSON response for decoration $name"
+                  continue
+                fi
 
                 # Loop through fallback pages
                 fallbackImageInfo=null
@@ -159,8 +197,13 @@ jobs:
           done
 
           # Combine updated decorations into a JSON array
-          jq -s '.' decorations_updated.json > decorations.json
-          rm decorations_updated.json
+          if [ -f decorations_updated.json ]; then
+            jq -s '.' decorations_updated.json > decorations.json
+            rm decorations_updated.json
+          else
+            echo "No decorations were processed successfully."
+            exit 1
+          fi
 
       - name: Commit and push updated decorations and categories
         run: |
