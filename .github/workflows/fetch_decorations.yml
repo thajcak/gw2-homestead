@@ -75,6 +75,17 @@ jobs:
 
             echo "Processing decoration: $name (ID: $id)"
 
+            # Check if 'thumbnail' and 'original' fields are present and not null
+            hasThumbnail=$(echo "$decoration" | jq '.thumbnail != null')
+            hasOriginal=$(echo "$decoration" | jq '.original != null')
+
+            if [ "$hasThumbnail" = "true" ] && [ "$hasOriginal" = "true" ]; then
+              echo "Decoration $name already has image data. Skipping."
+              # Append the decoration as is to the updated file
+              echo "$decoration" >> decorations_updated.json
+              continue
+            fi
+
             # Generate API URL
             encodedName=$(printf %s "$name" | jq -sRr @uri)
             titles="${encodedName}%20(Handiwork)|${encodedName}%20Decoration|${encodedName}"
@@ -86,6 +97,8 @@ jobs:
             response=$(curl -s "$apiUrl")
             if [ $? -ne 0 ] || [ -z "$response" ]; then
               echo "Error fetching data from API for decoration $name"
+              # Append the decoration as is to the updated file
+              echo "$decoration" >> decorations_updated.json
               continue
             fi
 
@@ -93,6 +106,8 @@ jobs:
             pages=$(echo "$response" | jq '.query.pages')
             if [ $? -ne 0 ] || [ -z "$pages" ]; then
               echo "Error parsing JSON response for decoration $name"
+              # Append the decoration as is to the updated file
+              echo "$decoration" >> decorations_updated.json
               continue
             fi
 
@@ -124,8 +139,8 @@ jobs:
             fi
 
             # Check if imageInfo contains 'original'
-            hasOriginal=$(echo "$imageInfo" | jq '.original')
-            if [[ "$imageInfo" != "null" && "$hasOriginal" != "null" ]]; then
+            hasOriginal=$(echo "$imageInfo" | jq '.original != null')
+            if [[ "$imageInfo" != "null" && "$hasOriginal" = "true" ]]; then
               # Add the image URLs and dimensions to the decoration object
               thumbnail=$(echo "$imageInfo" | jq '.thumbnail')
               original=$(echo "$imageInfo" | jq '.original')
@@ -141,6 +156,8 @@ jobs:
               rdfData=$(curl -s "$rdfApiUrl")
               if [ $? -ne 0 ] || [ -z "$rdfData" ]; then
                 echo "Error fetching RDF data for decoration $name"
+                # Append the decoration as is to the updated file
+                echo "$decoration" >> decorations_updated.json
                 continue
               fi
 
@@ -160,12 +177,16 @@ jobs:
                 fallbackResponse=$(curl -s "$fallbackApiUrl")
                 if [ $? -ne 0 ] || [ -z "$fallbackResponse" ]; then
                   echo "Error fetching fallback image data for decoration $name"
+                  # Append the decoration as is to the updated file
+                  echo "$decoration" >> decorations_updated.json
                   continue
                 fi
 
                 fallbackPages=$(echo "$fallbackResponse" | jq '.query.pages')
                 if [ $? -ne 0 ] || [ -z "$fallbackPages" ]; then
                   echo "Error parsing fallback JSON response for decoration $name"
+                  # Append the decoration as is to the updated file
+                  echo "$decoration" >> decorations_updated.json
                   continue
                 fi
 
