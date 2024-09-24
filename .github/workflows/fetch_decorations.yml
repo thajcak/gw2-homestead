@@ -67,6 +67,7 @@ jobs:
 
             # Extract the description field
             description=$(echo "$decoration" | jq -r '.description')
+            echo "Description: $description"
 
             # Explicitly escape double quotes in the description
             escaped_description=$(echo "$description" | sed 's/"/\\"/g')
