@@ -87,13 +87,13 @@ jobs:
             # Extract and prioritize the page based on titles
             prioritizedPage=$(echo "$imageResponse" | jq -c '.query.pages | to_entries[] | .value' | jq 'select(.title | contains("Handiwork")) // select(.title | contains("Decoration")) // .')
 
-            # Extract the wiki title and clean it
-            wikiTitle=$(echo "$prioritizedPage" | jq -r '.title // empty' | xargs)
+            # Extract the wiki title and clean it using jq
+            wikiTitle=$(echo "$prioritizedPage" | jq -r '.title // empty' | jq -Rr @sh)
 
             # Check if a valid prioritized page is found and set the values accordingly
             if [ -n "$prioritizedPage" ]; then
-              originalUrl=$(echo "$prioritizedPage" | jq -r '.original.source // empty' | xargs)
-              thumbnailUrl=$(echo "$prioritizedPage" | jq -r '.thumbnail.source // empty' | xargs)
+              originalUrl=$(echo "$prioritizedPage" | jq -r '.original.source // empty' | jq -Rr @sh)
+              thumbnailUrl=$(echo "$prioritizedPage" | jq -r '.thumbnail.source // empty' | jq -Rr @sh)
 
               # Set the values based on the first valid prioritized match
               if [ -n "$originalUrl" ] && [ -n "$thumbnailUrl" ]; then
@@ -121,9 +121,9 @@ jobs:
 
                   fallbackResponse=$(curl -s "$fallbackApiUrl")
                   fallbackPage=$(echo "$fallbackResponse" | jq '.query.pages | to_entries[] | select(.value.original != null) | .value')
-                  fallbackOriginal=$(echo "$fallbackPage" | jq -r '.original.source // empty' | xargs)
-                  fallbackThumbnail=$(echo "$fallbackPage" | jq -r '.thumbnail.source // empty' | xargs)
-                  fallbackWikiTitle=$(echo "$fallbackPage" | jq -r '.title // empty' | xargs)
+                  fallbackOriginal=$(echo "$fallbackPage" | jq -r '.original.source // empty' | jq -Rr @sh)
+                  fallbackThumbnail=$(echo "$fallbackPage" | jq -r '.thumbnail.source // empty' | jq -Rr @sh)
+                  fallbackWikiTitle=$(echo "$fallbackPage" | jq -r '.title // empty' | jq -Rr @sh)
 
                   # Only set fallback data if original prioritized match wasn't found
                   if [ -n "$fallbackOriginal" ] && [ -n "$fallbackThumbnail" ]; then
