@@ -2,7 +2,7 @@ name: Update and Fetch Decorations and Categories
 
 on:
   schedule:
-  - cron: '0 * * * *' # Runs every hour
+    - cron: '0 * * * *' # Runs every hour
   workflow_dispatch: # Allows for manual trigger of the workflow
 
 jobs:
@@ -10,63 +10,231 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Install jq for JSON processing
-      run: sudo apt-get update && sudo apt-get install -y jq
+      - name: Install required packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq xmlstarlet
 
-    - name: Fetch Decorations List and Details
-      run: |
-        # Fetch the list of decoration IDs
-        curl -s https://api.guildwars2.com/v2/homestead/decorations -o decorations_list.json
+      - name: Fetch Decorations List and Details
+        run: |
+          set -e
+          set -x
+          # Fetch the list of decoration IDs
+          curl -s https://api.guildwars2.com/v2/homestead/decorations -o decorations_list.json
 
-        # Initialize an empty array to store the results
-        echo "[]" > decorations.json
+          # Initialize an empty array to store the results
+          echo "[]" > decorations.json
 
-        # Split the list into chunks of 200 IDs and fetch details
-        ids=$(jq -r '.[]' decorations_list.json)
-        chunk_size=200
-        for chunk in $(echo "$ids" | xargs -n $chunk_size | sed 's/ /,/g'); do
-          curl -s "https://api.guildwars2.com/v2/homestead/decorations?ids=$chunk" | \
-          jq -s 'add' >> temp.json
-        done
+          # Split the list into chunks of 200 IDs and fetch details
+          ids=$(jq -r '.[]' decorations_list.json)
+          chunk_size=200
+          for chunk in $(echo "$ids" | xargs -n $chunk_size | sed 's/ /,/g'); do
+            curl -s "https://api.guildwars2.com/v2/homestead/decorations?ids=$chunk" | \
+            jq -s 'add' >> temp.json
+          done
 
-        # Combine all the chunks into a single JSON array
-        jq -s 'add' temp.json > decorations.json
-        rm temp.json
-        rm decorations_list.json
+          # Combine all the chunks into a single JSON array
+          jq -s 'add' temp.json > decorations.json
+          rm temp.json
+          rm decorations_list.json
 
-    - name: Fetch Decoration Categories
-      run: |
-        # Fetch the list of decoration category IDs
-        curl -s https://api.guildwars2.com/v2/homestead/decorations/categories -o decoration_categories_list.json
+      - name: Fetch Decoration Categories
+        run: |
+          set -e
+          set -x
+          # Fetch the list of decoration category IDs
+          curl -s https://api.guildwars2.com/v2/homestead/decorations/categories -o decoration_categories_list.json
 
-        # Initialize an empty array to store the results
-        echo "[]" > decoration_categories.json
+          # Initialize an empty array to store the results
+          echo "[]" > decoration_categories.json
 
-        # Split the list into chunks of 200 IDs and fetch details
-        category_ids=$(jq -r '.[]' decoration_categories_list.json)
-        chunk_size=200
-        for chunk in $(echo "$category_ids" | xargs -n $chunk_size | sed 's/ /,/g'); do
-          curl -s "https://api.guildwars2.com/v2/homestead/decorations/categories?ids=$chunk" | \
-          jq -s 'add' >> temp_categories.json
-        done
+          # Split the list into chunks of 200 IDs and fetch details
+          category_ids=$(jq -r '.[]' decoration_categories_list.json)
+          chunk_size=200
+          for chunk in $(echo "$category_ids" | xargs -n $chunk_size | sed 's/ /,/g'); do
+            curl -s "https://api.guildwars2.com/v2/homestead/decorations/categories?ids=$chunk" | \
+            jq -s 'add' >> temp_categories.json
+          done
 
-        # Combine all the chunks into a single JSON array
-        jq -s 'add' temp_categories.json > decoration_categories.json
-        rm temp_categories.json
-        rm decoration_categories_list.json
+          # Combine all the chunks into a single JSON array
+          jq -s 'add' temp_categories.json > decoration_categories.json
+          rm temp_categories.json
+          rm decoration_categories_list.json
 
-    - name: Commit and push updated decorations and categories
-      run: |
-        git config user.name "github-actions[bot]"
-        git config user.email "github-actions[bot]@users.noreply.github.com"
-        git add decorations.json decoration_categories.json
-        # Check if there are changes to commit
-        if git diff --cached --quiet; then
-          echo "No changes to commit."
-        else
-          git commit -m "Update decorations.json and decoration_categories.json with detailed data"
-          git push
-        fi
+      - name: Fetch Decoration Images and Update Data
+        run: |
+          set -e
+          set -x
+          # Read decorations.json and process each decoration
+          jq -c '.[]' decorations.json | while read -r decoration; do
+            name=$(echo "$decoration" | jq -r '.name')
+            id=$(echo "$decoration" | jq -r '.id')
+
+            echo "Processing decoration: $name (ID: $id)"
+
+            # Check if 'thumbnail' and 'original' fields are present and not null
+            hasThumbnail=$(echo "$decoration" | jq '.thumbnail != null')
+            hasOriginal=$(echo "$decoration" | jq '.original != null')
+
+            if [ "$hasThumbnail" = "true" ] && [ "$hasOriginal" = "true" ]; then
+              echo "Decoration $name already has image data. Skipping."
+              # Append the decoration as is to the updated file
+              echo "$decoration" >> decorations_updated.json
+              continue
+            fi
+
+            # Generate API URL
+            encodedName=$(printf %s "$name" | jq -sRr @uri)
+            titles="${encodedName}%20(Handiwork)|${encodedName}%20Decoration|${encodedName}"
+            apiUrl="https://wiki.guildwars2.com/api.php?action=query&titles=${titles}&prop=pageimages&piprop=original|thumbnail&format=json&origin=*"
+
+            echo "API URL: $apiUrl"
+
+            # Fetch data from the API
+            response=$(curl -s "$apiUrl")
+            if [ $? -ne 0 ] || [ -z "$response" ]; then
+              echo "Error fetching data from API for decoration $name"
+              # Append the decoration as is to the updated file
+              echo "$decoration" >> decorations_updated.json
+              continue
+            fi
+
+            # Extract pages
+            pages=$(echo "$response" | jq '.query.pages')
+            if [ $? -ne 0 ] || [ -z "$pages" ]; then
+              echo "Error parsing JSON response for decoration $name"
+              # Append the decoration as is to the updated file
+              echo "$decoration" >> decorations_updated.json
+              continue
+            fi
+
+            # Initialize imageInfo
+            imageInfo=null
+
+            # Loop through pages
+            for pageId in $(echo "$pages" | jq -r 'keys[]'); do
+              if [[ ! "$pageId" =~ ^- ]]; then
+                page=$(echo "$pages" | jq ".\"$pageId\"")
+                pageTitle=$(echo "$page" | jq -r '.title')
+                if [[ "$pageTitle" == *"Handiwork"* ]]; then
+                  imageInfo="$page"
+                  break
+                elif [[ "$pageTitle" == *"Decoration"* ]]; then
+                  imageInfo="$page"
+                elif [[ "$imageInfo" == "null" ]]; then
+                  imageInfo="$page"
+                fi
+              fi
+            done
+
+            # Update decoration with wikiTitle
+            if [[ "$imageInfo" != "null" ]]; then
+              wikiTitle=$(echo "$imageInfo" | jq -r '.title')
+              decoration=$(echo "$decoration" | jq --arg wikiTitle "$wikiTitle" '. + {wikiTitle: $wikiTitle}')
+            else
+              echo "No valid page found for decoration $name"
+            fi
+
+            # Check if imageInfo contains 'original'
+            hasOriginal=$(echo "$imageInfo" | jq '.original != null')
+            if [[ "$imageInfo" != "null" && "$hasOriginal" = "true" ]]; then
+              # Add the image URLs and dimensions to the decoration object
+              thumbnail=$(echo "$imageInfo" | jq '.thumbnail')
+              original=$(echo "$imageInfo" | jq '.original')
+              decoration=$(echo "$decoration" | jq --argjson thumbnail "$thumbnail" --argjson original "$original" '. + {thumbnail: $thumbnail, original: $original}')
+            elif [[ "$imageInfo" != "null" ]]; then
+              # Fallback to RDF data
+              rdfTitle=$(echo "$imageInfo" | jq -r '.title' | sed 's/ /_/g')
+              rdfApiUrl="https://wiki.guildwars2.com/index.php?title=Special:ExportRDF/${rdfTitle}"
+
+              echo "Fetching RDF data from: $rdfApiUrl"
+
+              # Fetch RDF data
+              rdfData=$(curl -s "$rdfApiUrl")
+              if [ $? -ne 0 ] || [ -z "$rdfData" ]; then
+                echo "Error fetching RDF data for decoration $name"
+                # Append the decoration as is to the updated file
+                echo "$decoration" >> decorations_updated.json
+                continue
+              fi
+
+              # Parse RDF data to find Has_appearance
+              fullFilename=$(echo "$rdfData" | xmlstarlet sel -N rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" -N property="http://wiki.guildwars2.com/wiki/Special:URIResolver/Property-3A" -t -v "//property:Has_appearance/@rdf:resource" 2>/dev/null || true)
+
+              if [[ -n "$fullFilename" ]]; then
+                # Truncate the filename to get only the last part of the path
+                truncatedFilename=$(basename "$fullFilename")
+                # Replace "-3A" with ":"
+                filenameTitle=$(echo "$truncatedFilename" | sed 's/-3A/:/g' | jq -sRr @uri)
+                fallbackApiUrl="https://wiki.guildwars2.com/api.php?action=query&titles=${filenameTitle}&prop=pageimages&piprop=original|thumbnail&format=json&origin=*"
+
+                echo "Fetching image using filename from: $fallbackApiUrl"
+
+                # Fetch data from the API using the filename
+                fallbackResponse=$(curl -s "$fallbackApiUrl")
+                if [ $? -ne 0 ] || [ -z "$fallbackResponse" ]; then
+                  echo "Error fetching fallback image data for decoration $name"
+                  # Append the decoration as is to the updated file
+                  echo "$decoration" >> decorations_updated.json
+                  continue
+                fi
+
+                fallbackPages=$(echo "$fallbackResponse" | jq '.query.pages')
+                if [ $? -ne 0 ] || [ -z "$fallbackPages" ]; then
+                  echo "Error parsing fallback JSON response for decoration $name"
+                  # Append the decoration as is to the updated file
+                  echo "$decoration" >> decorations_updated.json
+                  continue
+                fi
+
+                # Loop through fallback pages
+                fallbackImageInfo=null
+                for fallbackPageId in $(echo "$fallbackPages" | jq -r 'keys[]'); do
+                  if [[ "$fallbackPageId" != "-1" ]]; then
+                    fallbackImageInfo=$(echo "$fallbackPages" | jq ".\"$fallbackPageId\"")
+                    break
+                  fi
+                done
+
+                if [[ "$fallbackImageInfo" != "null" ]]; then
+                  thumbnail=$(echo "$fallbackImageInfo" | jq '.thumbnail')
+                  original=$(echo "$fallbackImageInfo" | jq '.original')
+                  decoration=$(echo "$decoration" | jq --argjson thumbnail "$thumbnail" --argjson original "$original" '. + {thumbnail: $thumbnail, original: $original}')
+                else
+                  echo "No original image found using filename for decoration $name"
+                fi
+              else
+                echo "No valid filename found in RDF response for decoration $name"
+              fi
+            else
+              echo "No image information found for decoration $name"
+            fi
+
+            # Append updated decoration to a new file
+            echo "$decoration" >> decorations_updated.json
+          done
+
+          # Combine updated decorations into a JSON array
+          if [ -f decorations_updated.json ]; then
+            jq -s '.' decorations_updated.json > decorations.json
+            rm decorations_updated.json
+          else
+            echo "No decorations were processed successfully."
+            exit 1
+          fi
+
+      - name: Commit and push updated decorations and categories
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add decorations.json decoration_categories.json
+          # Check if there are changes to commit
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update decorations.json and decoration_categories.json with detailed data"
+            git push
+          fi

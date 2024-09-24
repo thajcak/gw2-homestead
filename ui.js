@@ -85,113 +85,8 @@ function handleHoverDecoration(decoration, img) {
 }
 
 // Function to handle click on a decoration
-function handleClickDecoration(decoration, img) {
-    // Add the loading indicator
-    img.classList.add('loading');
-
-    // Generate API URL
-    const encodedName = encodeURIComponent(decoration.name);
-    const titles = `${encodedName}%20(Handiwork)|${encodedName}%20Decoration|${encodedName}`;
-    const apiUrl = `https://wiki.guildwars2.com/api.php?action=query&titles=${titles}&prop=pageimages&piprop=original|thumbnail&format=json&origin=*`;
-
-    // Fetch data from the API
-    fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => {
-            // Extract the image URLs
-            const pages = data.query.pages;
-            let imageInfo = null;
-
-            for (const pageId in pages) {
-                if (!pageId.startsWith("-")) {
-                    const page = pages[pageId];
-                    if (page.title.includes("Handiwork")) {
-                        imageInfo = page;
-                        break;
-                    } else if (page.title.includes("Decoration")) {
-                        imageInfo = page;
-                    } else if (!imageInfo) {
-                        imageInfo = page;
-                    }
-                }
-            }
-            decoration.wikiTitle = imageInfo.title;
-
-            // Check if imageInfo contains 'original'
-            if (imageInfo && imageInfo.original) {
-                // Add the image URLs and dimensions to the decoration object
-                decoration.thumbnail = imageInfo.thumbnail;
-                decoration.original = imageInfo.original;
-
-                updateFooter(decoration);
-                showModal(decoration);
-                img.classList.remove('loading');
-            } else {
-                // If 'original' is missing, make another API call to fetch RDF data
-                const rdfTitle = imageInfo.title.replace(/ /g, '_');
-                const rdfApiUrl = `https://corsproxy.io/?${encodeURIComponent("https://wiki.guildwars2.com/index.php?title=Special:ExportRDF/" + rdfTitle)}`;
-
-                fetch(rdfApiUrl)
-                    .then(response => response.text())
-                    .then(rdfData => {
-                        // Parse the XML response
-                        const parser = new DOMParser();
-                        const xmlDoc = parser.parseFromString(rdfData, "application/xml");
-
-                        // Use getElementsByTagName to find the element with the "property:Has_appearance" tag
-                        const appearanceElements = xmlDoc.getElementsByTagName("property:Has_appearance");
-
-                        if (appearanceElements.length > 0) {
-                            // Get the "rdf:resource" attribute value from the first matching element
-                            const fullFilename = appearanceElements[0].getAttribute("rdf:resource");
-
-                            if (fullFilename) {
-                                // Truncate the filename to get only the last part of the path
-                                const truncatedFilename = fullFilename.substring(fullFilename.lastIndexOf('/') + 1);
-
-                                // Replace "-3A" with ":"
-                                const filenameTitle = encodeURIComponent(truncatedFilename.replace(/-3A/g, ":"));
-                                const fallbackApiUrl = `https://wiki.guildwars2.com/api.php?action=query&titles=${filenameTitle}&prop=pageimages&piprop=original|thumbnail&format=json&origin=*`;
-
-                                // Fetch data from the API using the filename
-                                fetch(fallbackApiUrl)
-                                    .then(response => response.json())
-                                    .then(fallbackData => {
-                                        const fallbackPages = fallbackData.query.pages;
-                                        let fallbackImageInfo = null;
-                                        // Loop through pages and find the first non "-1" page
-                                        for (const fallbackPageId in fallbackPages) {
-                                            if (fallbackPageId !== "-1") {
-                                                const fallbackPage = fallbackPages[fallbackPageId];
-                                                fallbackImageInfo = fallbackPage;
-                                                break;
-                                            }
-                                        }
-                                        if (fallbackImageInfo) {
-                                            decoration.original = fallbackImageInfo.original;
-                                            decoration.thumbnail = fallbackImageInfo.thumbnail;
-                                        } else {
-                                            console.error('No original image found using filename.');
-                                        }
-                                        updateFooter(decoration);
-                                        showModal(decoration);
-                                        img.classList.remove('loading');
-                                    })
-                                    .catch(error => console.error('Error fetching image using filename:', error));
-                            } else {
-                                console.error('No valid filename found in RDF response.');
-                            }
-                        } else {
-                            console.info('No Has_appearance element found in RDF response.');
-                            updateFooter(decoration);
-                            showModal(decoration);
-                            img.classList.remove('loading');
-                        }
-                    })
-                .catch(error => console.error('Error fetching RDF data:', error));
-            }
-        })
-        .catch(error => console.error('Error fetching image:', error));
+function handleClickDecoration(decoration) {
+    showModal(decoration);
 }
 
 // Modified displayIcon function to include hover and click event listeners
@@ -202,7 +97,7 @@ function displayIcon(iconUrl, decoration) {
     img.dataset.id = decoration.id;
 
     img.addEventListener('mouseover', () => handleHoverDecoration(decoration, img));
-    img.addEventListener('click', () => handleClickDecoration(decoration, img));
+    img.addEventListener('click', () => handleClickDecoration(decoration));
 
     document.getElementById('iconContainer').appendChild(img);
 }
