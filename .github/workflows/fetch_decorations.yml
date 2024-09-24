@@ -65,8 +65,11 @@ jobs:
             # Debug: Print the full decoration object at the start of each loop
             echo "Processing decoration: $decoration"
 
-            # Sanitize the decoration JSON to escape problematic characters like embedded double quotes
-            decoration=$(echo "$decoration" | sed 's/\"/\\\"/g')
+            # Extract the description field and sanitize it if necessary
+            description=$(echo "$decoration" | jq -r '.description' | sed 's/"/\\"/g')
+
+            # Rebuild the JSON object with the sanitized description field
+            decoration=$(echo "$decoration" | jq --arg description "$description" '.description = $description')
 
             # Debug: Print the sanitized decoration object
             echo "Sanitized decoration: $decoration"
