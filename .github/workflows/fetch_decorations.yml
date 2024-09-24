@@ -13,8 +13,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install jq and curl for JSON processing
-        run: sudo apt-get update && sudo apt-get install -y jq curl
+      - name: Install required packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq xmlstarlet
 
       - name: Fetch Decorations List and Details
         run: |
@@ -58,93 +60,107 @@ jobs:
           rm temp_categories.json
           rm decoration_categories_list.json
 
-      - name: Fetch and Update Decorations with Image Data
+      - name: Fetch Decoration Images and Update Data
         run: |
-          # Process each decoration directly within jq, avoiding shell misinterpretations
-          jq -c '.[]' decorations.json | while IFS= read -r decoration; do
-
-            # Print the initial state of the decoration object
-            echo "Initial state of decoration: $decoration"
-
-            # Extract the name and ID fields directly from the decoration
+          # Read decorations.json and process each decoration
+          jq -c '.[]' decorations.json | while read -r decoration; do
             name=$(echo "$decoration" | jq -r '.name')
             id=$(echo "$decoration" | jq -r '.id')
 
-            # URL encode the decoration name for API requests
-            encodedName=$(echo "$name" | jq -Rr @uri)
+            # Generate API URL
+            encodedName=$(printf %s "$name" | jq -sRr @uri)
             titles="${encodedName}%20(Handiwork)|${encodedName}%20Decoration|${encodedName}"
             apiUrl="https://wiki.guildwars2.com/api.php?action=query&titles=${titles}&prop=pageimages&piprop=original|thumbnail&format=json&origin=*"
 
-            # Fetch the primary image data
-            imageResponse=$(curl -s "$apiUrl")
+            # Fetch data from the API
+            response=$(curl -s "$apiUrl")
+            # Extract pages
+            pages=$(echo "$response" | jq '.query.pages')
 
-            # Validate that the raw response is valid JSON
-            if ! echo "$imageResponse" | jq empty; then
-              echo "Invalid JSON response for decoration: $name"
-              continue # Skip this decoration if the response is invalid
-            fi
+            # Initialize imageInfo
+            imageInfo=null
 
-            # Extract and prioritize the page based on titles
-            prioritizedPage=$(echo "$imageResponse" | jq -c '.query.pages | to_entries[] | .value' | jq 'select(.title | contains("Handiwork")) // select(.title | contains("Decoration")) // .')
-
-            # Extract the wiki title and clean it using jq
-            wikiTitle=$(echo "$prioritizedPage" | jq -r '.title // empty' | jq -Rr @sh)
-
-            # Check if a valid prioritized page is found and set the values accordingly
-            if [ -n "$prioritizedPage" ]; then
-              originalUrl=$(echo "$prioritizedPage" | jq -r '.original.source // empty' | jq -Rr @sh)
-              thumbnailUrl=$(echo "$prioritizedPage" | jq -r '.thumbnail.source // empty' | jq -Rr @sh)
-
-              # Set the values based on the first valid prioritized match
-              if [ -n "$originalUrl" ] && [ -n "$thumbnailUrl" ]; then
-                decoration=$(echo "$decoration" | jq --arg original "$originalUrl" --arg thumbnail "$thumbnailUrl" --arg wikiTitle "$wikiTitle" '
-                  .original = $original |
-                  .thumbnail = $thumbnail |
-                  .wikiTitle = $wikiTitle
-                ')
-                echo "Updated decoration with prioritized page data."
-              fi
-            else
-              # Fallback: Fetch RDF data if no valid prioritized page is found
-              rdfTitle=$(echo "$name" | sed 's/ /_/g')
-              rdfApiUrl="https://corsproxy.io/?$(echo "https://wiki.guildwars2.com/index.php?title=Special:ExportRDF/$rdfTitle" | jq -Rr @uri)"
-
-              rdfResponse=$(curl -s "$rdfApiUrl")
-              if [ -n "$rdfResponse" ]; then
-                # Extract appearance details from RDF data
-                fullFilename=$(echo "$rdfResponse" | grep -oP 'rdf:resource="[^"]*"' | grep 'Has_appearance' | sed -e 's/rdf:resource="//' -e 's/"//')
-
-                if [ -n "$fullFilename" ]; then
-                  # Extract file title and create fallback URL
-                  filenameTitle=$(basename "$fullFilename" | sed 's/-3A/:/g')
-                  fallbackApiUrl="https://wiki.guildwars2.com/api.php?action=query&titles=$(echo "$filenameTitle" | jq -Rr @uri)&prop=pageimages&piprop=original|thumbnail&format=json&origin=*"
-
-                  fallbackResponse=$(curl -s "$fallbackApiUrl")
-                  fallbackPage=$(echo "$fallbackResponse" | jq '.query.pages | to_entries[] | select(.value.original != null) | .value')
-                  fallbackOriginal=$(echo "$fallbackPage" | jq -r '.original.source // empty' | jq -Rr @sh)
-                  fallbackThumbnail=$(echo "$fallbackPage" | jq -r '.thumbnail.source // empty' | jq -Rr @sh)
-                  fallbackWikiTitle=$(echo "$fallbackPage" | jq -r '.title // empty' | jq -Rr @sh)
-
-                  # Only set fallback data if original prioritized match wasn't found
-                  if [ -n "$fallbackOriginal" ] && [ -n "$fallbackThumbnail" ]; then
-                    decoration=$(echo "$decoration" | jq --arg original "$fallbackOriginal" --arg thumbnail "$fallbackThumbnail" --arg wikiTitle "$fallbackWikiTitle" '
-                      .original = $original |
-                      .thumbnail = $thumbnail |
-                      .wikiTitle = $wikiTitle
-                    ')
-                    echo "Updated decoration with fallback page data."
-                  fi
+            # Loop through pages
+            for pageId in $(echo "$pages" | jq -r 'keys[]'); do
+              if [[ ! "$pageId" =~ ^- ]]; then
+                page=$(echo "$pages" | jq ".\"$pageId\"")
+                pageTitle=$(echo "$page" | jq -r '.title')
+                if [[ "$pageTitle" == *"Handiwork"* ]]; then
+                  imageInfo="$page"
+                  break
+                elif [[ "$pageTitle" == *"Decoration"* ]]; then
+                  imageInfo="$page"
+                elif [[ "$imageInfo" == "null" ]]; then
+                  imageInfo="$page"
                 fi
               fi
+            done
+
+            # Update decoration with wikiTitle
+            if [[ "$imageInfo" != "null" ]]; then
+              wikiTitle=$(echo "$imageInfo" | jq -r '.title')
+              decoration=$(echo "$decoration" | jq --arg wikiTitle "$wikiTitle" '. + {wikiTitle: $wikiTitle}')
             fi
 
-            # Append the updated decoration back to the JSON array
-            echo "$decoration" >> updated_decorations.json
+            # Check if imageInfo contains 'original'
+            hasOriginal=$(echo "$imageInfo" | jq '.original')
+            if [[ "$imageInfo" != "null" && "$hasOriginal" != "null" ]]; then
+              # Add the image URLs and dimensions to the decoration object
+              thumbnail=$(echo "$imageInfo" | jq '.thumbnail')
+              original=$(echo "$imageInfo" | jq '.original')
+              decoration=$(echo "$decoration" | jq --argjson thumbnail "$thumbnail" --argjson original "$original" '. + {thumbnail: $thumbnail, original: $original}')
+            elif [[ "$imageInfo" != "null" ]]; then
+              # Fallback to RDF data
+              rdfTitle=$(echo "$imageInfo" | jq -r '.title' | sed 's/ /_/g')
+              rdfApiUrl="https://wiki.guildwars2.com/index.php?title=Special:ExportRDF/${rdfTitle}"
+
+              # Fetch RDF data
+              rdfData=$(curl -s "$rdfApiUrl")
+
+              # Parse RDF data to find Has_appearance
+              fullFilename=$(echo "$rdfData" | xmlstarlet sel -N rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" -N property="http://wiki.guildwars2.com/wiki/Special:URIResolver/Property-3A" -t -v "//property:Has_appearance/@rdf:resource" 2>/dev/null)
+
+              if [[ -n "$fullFilename" ]]; then
+                # Truncate the filename to get only the last part of the path
+                truncatedFilename=$(basename "$fullFilename")
+                # Replace "-3A" with ":"
+                filenameTitle=$(echo "$truncatedFilename" | sed 's/-3A/:/g' | jq -sRr @uri)
+                fallbackApiUrl="https://wiki.guildwars2.com/api.php?action=query&titles=${filenameTitle}&prop=pageimages&piprop=original|thumbnail&format=json&origin=*"
+
+                # Fetch data from the API using the filename
+                fallbackResponse=$(curl -s "$fallbackApiUrl")
+                fallbackPages=$(echo "$fallbackResponse" | jq '.query.pages')
+
+                # Loop through fallback pages
+                fallbackImageInfo=null
+                for fallbackPageId in $(echo "$fallbackPages" | jq -r 'keys[]'); do
+                  if [[ "$fallbackPageId" != "-1" ]]; then
+                    fallbackImageInfo=$(echo "$fallbackPages" | jq ".\"$fallbackPageId\"")
+                    break
+                  fi
+                done
+
+                if [[ "$fallbackImageInfo" != "null" ]]; then
+                  thumbnail=$(echo "$fallbackImageInfo" | jq '.thumbnail')
+                  original=$(echo "$fallbackImageInfo" | jq '.original')
+                  decoration=$(echo "$decoration" | jq --argjson thumbnail "$thumbnail" --argjson original "$original" '. + {thumbnail: $thumbnail, original: $original}')
+                else
+                  echo "No original image found using filename for decoration $name"
+                fi
+              else
+                echo "No valid filename found in RDF response for decoration $name"
+              fi
+            else
+              echo "No image information found for decoration $name"
+            fi
+
+            # Append updated decoration to a new file
+            echo "$decoration" >> decorations_updated.json
           done
 
-          # Combine updated decorations into a single JSON array
-          jq -s '.' updated_decorations.json > decorations.json
-          rm updated_decorations.json
+          # Combine updated decorations into a JSON array
+          jq -s '.' decorations_updated.json > decorations.json
+          rm decorations_updated.json
 
       - name: Commit and push updated decorations and categories
         run: |
