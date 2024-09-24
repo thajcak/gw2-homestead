@@ -68,9 +68,6 @@ jobs:
             thumbnailSet=$(echo "$decoration" | jq -r '.thumbnail != null and .thumbnail != ""')
             wikiTitleSet=$(echo "$decoration" | jq -r '.wikiTitle != null and .wikiTitle != ""')
 
-            # Debugging output to verify current state
-            echo "Current decoration state: $decoration"
-
             # Skip fetching if 'original', 'thumbnail', and 'wikiTitle' are already set
             if [ "$originalSet" = "true" ] && [ "$thumbnailSet" = "true" ] && [ "$wikiTitleSet" = "true" ]; then
               echo "Skipping update for decoration: $(echo "$decoration" | jq -r '.name'), URLs and wikiTitle already set."
@@ -99,30 +96,22 @@ jobs:
             # Extract and prioritize the page based on titles
             page=$(echo "$imageResponse" | jq -c '.query.pages | to_entries[] | select(.value.original != null) | .value' | jq 'select(.title | contains("Handiwork")) // select(.title | contains("Decoration")) // .')
 
-            # Extract the wiki title and clean it
-            wikiTitle=$(echo "$page" | jq -r '.title // empty' | tr -d '\n')
+            # Extract and clean the wiki title
+            wikiTitle=$(echo "$page" | jq -r '.title // empty' | tr -d '\n' | xargs)
 
             # Check if valid page data is found
             if [ -n "$page" ]; then
               # Extract the image URLs and clean them
-              originalUrl=$(echo "$page" | jq -r '.original.source // empty' | tr -d '\n')
-              thumbnailUrl=$(echo "$page" | jq -r '.thumbnail.source // empty' | tr -d '\n')
+              originalUrl=$(echo "$page" | jq -r '.original.source // empty' | tr -d '\n' | xargs)
+              thumbnailUrl=$(echo "$page" | jq -r '.thumbnail.source // empty' | tr -d '\n' | xargs)
 
               # Debugging output to verify fetched URLs and titles
               echo "Fetched original URL: $originalUrl"
               echo "Fetched thumbnail URL: $thumbnailUrl"
               echo "Fetched wikiTitle: $wikiTitle"
 
-              # Update the decoration object with URLs and wikiTitle if found, ensuring no duplication
-              if [ -n "$originalUrl" ] && [ "$originalSet" != "true" ]; then
-                decoration=$(echo "$decoration" | jq --arg original "$originalUrl" '.original = $original')
-              fi
-              if [ -n "$thumbnailUrl" ] && [ "$thumbnailSet" != "true" ]; then
-                decoration=$(echo "$decoration" | jq --arg thumbnail "$thumbnailUrl" '.thumbnail = $thumbnail')
-              fi
-              if [ -n "$wikiTitle" ] && [ "$wikiTitleSet" != "true" ]; then
-                decoration=$(echo "$decoration" | jq --arg wikiTitle "$wikiTitle" '.wikiTitle = $wikiTitle')
-              fi
+              # Ensure clean replacement of URLs and titles
+              decoration=$(echo "$decoration" | jq --arg original "$originalUrl" --arg thumbnail "$thumbnailUrl" --arg wikiTitle "$wikiTitle" '.original = $original | .thumbnail = $thumbnail | .wikiTitle = $wikiTitle')
             else
               # Fallback: Fetch RDF data if no valid image found
               rdfTitle=$(echo "$name" | sed 's/ /_/g')
@@ -140,25 +129,17 @@ jobs:
 
                   fallbackResponse=$(curl -s "$fallbackApiUrl")
                   fallbackPage=$(echo "$fallbackResponse" | jq '.query.pages | to_entries[] | select(.value.original != null) | .value')
-                  fallbackOriginal=$(echo "$fallbackPage" | jq -r '.original.source // empty' | tr -d '\n')
-                  fallbackThumbnail=$(echo "$fallbackPage" | jq -r '.thumbnail.source // empty' | tr -d '\n')
-                  fallbackWikiTitle=$(echo "$fallbackPage" | jq -r '.title // empty' | tr -d '\n')
+                  fallbackOriginal=$(echo "$fallbackPage" | jq -r '.original.source // empty' | tr -d '\n' | xargs)
+                  fallbackThumbnail=$(echo "$fallbackPage" | jq -r '.thumbnail.source // empty' | tr -d '\n' | xargs)
+                  fallbackWikiTitle=$(echo "$fallbackPage" | jq -r '.title // empty' | tr -d '\n' | xargs)
 
                   # Debugging output to verify fetched fallback data
                   echo "Fetched fallback original URL: $fallbackOriginal"
                   echo "Fetched fallback thumbnail URL: $fallbackThumbnail"
                   echo "Fetched fallback wikiTitle: $fallbackWikiTitle"
 
-                  # Update decoration with fallback data and wikiTitle, ensuring no duplication
-                  if [ -n "$fallbackOriginal" ] && [ "$originalSet" != "true" ]; then
-                    decoration=$(echo "$decoration" | jq --arg original "$fallbackOriginal" '.original = $original')
-                  fi
-                  if [ -n "$fallbackThumbnail" ] && [ "$thumbnailSet" != "true" ]; then
-                    decoration=$(echo "$decoration" | jq --arg thumbnail "$fallbackThumbnail" '.thumbnail = $thumbnail')
-                  fi
-                  if [ -n "$fallbackWikiTitle" ] && [ "$wikiTitleSet" != "true" ]; then
-                    decoration=$(echo "$decoration" | jq --arg wikiTitle "$fallbackWikiTitle" '.wikiTitle = $wikiTitle')
-                  fi
+                  # Ensure clean replacement of fallback data
+                  decoration=$(echo "$decoration" | jq --arg original "$fallbackOriginal" --arg thumbnail "$fallbackThumbnail" --arg wikiTitle "$fallbackWikiTitle" '.original = $original | .thumbnail = $thumbnail | .wikiTitle = $wikiTitle')
                 fi
               fi
             fi
