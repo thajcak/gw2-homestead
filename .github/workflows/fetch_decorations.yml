@@ -161,8 +161,15 @@ jobs:
                 continue
               fi
 
-              # Parse RDF data to find Has_appearance
-              fullFilename=$(echo "$rdfData" | xmlstarlet sel -N rdf="*" -N property="*" -t -v "//property:Has_appearance/@rdf:resource" 2>/dev/null || true)
+              # Attempt to extract the full filename
+              tempFilename=$(echo "$rdfData" | xmlstarlet sel -N rdf="*" -N property="*" -t -v "//property:Has_appearance/@rdf:resource")
+
+              # Check if a valid filename was found
+              if [ -n "$tempFilename" ]; then
+                fullFilename="$tempFilename"
+              else
+                echo "No valid filename found in RDF response for decoration $name"
+              fi
 
               if [[ -n "$fullFilename" ]]; then
                 # Truncate the filename to get only the last part of the path
