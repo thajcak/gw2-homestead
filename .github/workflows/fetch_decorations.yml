@@ -161,9 +161,9 @@ jobs:
               fi
 
               # Attempt to extract the full filename
-              echo "Processing RDF data"
               tempFile=$(mktemp)
               printf '%s' "$rdfData" > "$tempFile"
+              echo "Processing RDF data"
               tempFilename=$(xmlstarlet sel -N rdf="*" -N property="*" -t -v "//property:Has_appearance/@rdf:resource" "$tempFile")
               rm "$tempFile"
               if [ $? -ne 0 ]; then
