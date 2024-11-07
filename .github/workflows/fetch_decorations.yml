@@ -163,10 +163,16 @@ jobs:
               # Attempt to extract the full filename
               echo "Processing RDF data"
               tempFilename=$(echo "$rdfData" | {
-                xmlstarlet sel -N rdf="*" -N property="*" -t -v "//property:Has_appearance/@rdf:resource"
+                xmlstarlet sel -N rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" \
+               -N property1="http://wiki-en.guildwars2.com/wiki/Special:URIResolver/Property-3A" \
+               -N property2="http://wiki.guildwars2.com/wiki/Special:URIResolver/Property-3A" \
+               -t -v "//property1:Has_appearance/@rdf:resource" \
+               -o " " \
+               -v "//property2:Has_appearance/@rdf:resource"
                 cat >/dev/null
               })
               echo "Temp filename: $tempFilename"
+              
               if [ $? -ne 0 ]; then
                 echo "Error processing RDF data with xmlstarlet for decoration $name"
                 # Append the decoration as is to the updated file
