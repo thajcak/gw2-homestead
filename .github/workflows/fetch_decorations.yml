@@ -162,7 +162,7 @@ jobs:
 
               # Attempt to extract the full filename
               echo "Processing RDF data"
-              tempFilename=$(echo "$rdfData" | xmlstarlet sel -N rdf="*" -N property="*" -t -v "//property:Has_appearance/@rdf:resource")
+              tempFilename=$(xmlstarlet sel -N rdf="*" -N property="*" -t -v "//property:Has_appearance/@rdf:resource" << EOF $rdfData EOF)
               if [ $? -ne 0 ]; then
                 echo "Error processing RDF data with xmlstarlet for decoration $name"
                 # Append the decoration as is to the updated file
