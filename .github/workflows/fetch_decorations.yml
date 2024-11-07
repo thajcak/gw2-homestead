@@ -162,7 +162,7 @@ jobs:
               fi
 
               # Parse RDF data to find Has_appearance
-              fullFilename=$(echo "$rdfData" | xmlstarlet sel -N rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" -N property="http://wiki.guildwars2.com/wiki/Special:URIResolver/Property-3A" -t -v "//property:Has_appearance/@rdf:resource" 2>/dev/null || true)
+              fullFilename=$(echo "$rdfData" | xmlstarlet sel -N rdf="*" -N property="*" -t -v "//property:Has_appearance/@rdf:resource" 2>/dev/null || true)
 
               if [[ -n "$fullFilename" ]]; then
                 # Truncate the filename to get only the last part of the path
