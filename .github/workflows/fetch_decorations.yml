@@ -192,7 +192,8 @@ jobs:
                 # Truncate the filename to get only the last part of the path
                 truncatedFilename=$(basename "$fullFilename")
                 # Replace "-3A" with ":"
-                filenameTitle=$(echo "$truncatedFilename" | sed 's/-3A/:/g' | jq -sRr @uri)
+                filenameTitle=$(echo "$truncatedFilename" | tr -d '\r\n' | sed 's/[[:space:]]*$//' | sed 's/-3A/:/g' | jq -sRr @uri)
+                echo "Filename title: '$filenameTitle'"
                 fallbackApiUrl="https://wiki.guildwars2.com/api.php?action=query&titles=${filenameTitle}&prop=pageimages&piprop=original|thumbnail&format=json&origin=*"
 
                 echo "Fetching image using filename from: $fallbackApiUrl"
