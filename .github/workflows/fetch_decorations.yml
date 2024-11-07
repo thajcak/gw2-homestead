@@ -21,7 +21,7 @@ jobs:
       - name: Fetch Decorations List and Details
         run: |
           set -e
-          set -x
+          # set -x
           # Fetch the list of decoration IDs
           curl -s https://api.guildwars2.com/v2/homestead/decorations -o decorations_list.json
 
@@ -44,7 +44,7 @@ jobs:
       - name: Fetch Decoration Categories
         run: |
           set -e
-          set -x
+          # set -x
           # Fetch the list of decoration category IDs
           curl -s https://api.guildwars2.com/v2/homestead/decorations/categories -o decoration_categories_list.json
 
@@ -67,7 +67,7 @@ jobs:
       - name: Fetch Decoration Images and Update Data
         run: |
           set -e
-          set -x
+          # set -x
           # Read decorations.json and process each decoration
           jq -c '.[]' decorations.json | while read -r decoration; do
             name=$(echo "$decoration" | jq -r '.name')
