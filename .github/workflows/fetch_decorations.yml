@@ -163,6 +163,7 @@ jobs:
 
               # Attempt to extract the full filename
               echo "$rdfData" > temp.rdf
+              echo "Temp RDF: $(cat temp.rdf)"
               tempFilename=$(xmlstarlet sel -N rdf="*" -N property="*" -t -v "//property:Has_appearance/@rdf:resource" temp.rdf)
               echo "Temp filename: $tempFilename"
               rm temp.rdf
