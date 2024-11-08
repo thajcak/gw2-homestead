@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Decoration, Category } from '../types';
 import { ExpandedDecoration } from './ExpandedDecoration';
+import { AnimatePresence } from 'framer-motion';
 
 interface IconGridProps {
   decorations: Decoration[];
@@ -41,9 +42,12 @@ export const IconGrid: React.FC<IconGridProps> = ({
       const offset = 30;
       const itemTop = clickedItemRef.current.offsetTop;
       
-      window.scrollTo({
-        top: itemTop - headerHeight - offset,
-        behavior: 'smooth'
+      // Wait for the next frame to ensure DOM updates
+      requestAnimationFrame(() => {
+        window.scrollTo({
+          top: itemTop - headerHeight - offset,
+          behavior: 'smooth'
+        });
       });
     }
   };
@@ -52,21 +56,22 @@ export const IconGrid: React.FC<IconGridProps> = ({
     if (expandedItem === decoration.id) {
       setExpandedItem(null);
     } else {
-      // If there's already an expanded item, close it first
       if (expandedItem !== null) {
         setExpandedItem(null);
-        // Wait for the closing transition (300ms) before opening the new one
+        // Wait for closing animation to complete
         setTimeout(() => {
           setExpandedItem(decoration.id);
-          // Wait for the next frame to ensure the new expanded section is rendered
+          // Wait for the expanded section to be added to DOM
           requestAnimationFrame(() => {
-            scrollToItem();
+            requestAnimationFrame(scrollToItem);
           });
-        }, 0); // Match this with your CSS transition duration
+        }, 300); // Match this with your animation duration
       } else {
         setExpandedItem(decoration.id);
-        // Wait for the expanding transition
-        setTimeout(scrollToItem, 50);
+        // Wait for the expanded section to be added to DOM
+        requestAnimationFrame(() => {
+          requestAnimationFrame(scrollToItem);
+        });
       }
     }
   };
@@ -108,14 +113,16 @@ export const IconGrid: React.FC<IconGridProps> = ({
                 />
               </div>
               
-              {shouldRenderExpanded && expandedDecoration && (
-                <ExpandedDecoration
-                  decoration={expandedDecoration}
-                  categories={categories}
-                  itemsPerRow={itemsPerRow}
-                  decorationIndex={decorations.findIndex(d => d.id === expandedItem)}
-                />
-              )}
+              <AnimatePresence>
+                {shouldRenderExpanded && expandedDecoration && (
+                  <ExpandedDecoration
+                    decoration={expandedDecoration}
+                    categories={categories}
+                    itemsPerRow={itemsPerRow}
+                    decorationIndex={decorations.findIndex(d => d.id === expandedItem)}
+                  />
+                )}
+              </AnimatePresence>
             </React.Fragment>
           );
         })}
