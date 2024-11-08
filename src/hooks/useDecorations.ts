@@ -11,9 +11,10 @@ export function useDecorations() {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        const baseUrl = process.env.PUBLIC_URL || '';
         const [decorationsResponse, categoriesResponse] = await Promise.all([
-          fetch('/decorations.json'),
-          fetch('/decoration_categories.json')
+          fetch(`${baseUrl}/decorations.json`),
+          fetch(`${baseUrl}/decoration_categories.json`)
         ]);
         
         if (!decorationsResponse.ok || !categoriesResponse.ok) {
