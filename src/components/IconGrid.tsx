@@ -37,12 +37,12 @@ export const IconGrid: React.FC<IconGridProps> = ({
 
   const scrollToItem = () => {
     if (clickedItemRef.current) {
-      const headerHeight = 64; // Adjust this value based on your header height
-      const itemPosition = clickedItemRef.current.getBoundingClientRect().top;
-      const scrollPosition = window.pageYOffset + itemPosition - headerHeight - 30;
+      const headerHeight = 64;
+      const offset = 30;
+      const itemTop = clickedItemRef.current.offsetTop;
       
       window.scrollTo({
-        top: scrollPosition,
+        top: itemTop - headerHeight - offset,
         behavior: 'smooth'
       });
     }
