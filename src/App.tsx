@@ -2,7 +2,6 @@ import React from 'react';
 import { Header } from './components/Header';
 import { IconGrid } from './components/IconGrid';
 import { useDecorations } from './hooks/useDecorations';
-import { Decoration } from './types'; // Add this import
 import './App.css';
 
 function App() {
