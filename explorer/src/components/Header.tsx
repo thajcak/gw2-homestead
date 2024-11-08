@@ -30,41 +30,46 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <div id="header">
-      <div>
-        <div className="search-container">
-          <input 
-            type="text" 
-            id="searchInput" 
-            placeholder="Search decorations..."
-            value={searchValue}
-            onChange={handleSearchChange}
-          />
-          {searchValue && (
-            <button 
-              id="clearSearchButton" 
-              className="clear-search"
-              onClick={handleClearSearch}
+    <header className="bg-white shadow-sm sticky top-0 z-50">
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex flex-col gap-4">
+          <h1 className="text-xl font-bold text-gray-900 text-right">
+            Homestead Decorations
+          </h1>
+          
+          <div className="flex flex-wrap items-center gap-4">
+            <select 
+              className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              onChange={(e) => onCategoryChange(e.target.value)}
             >
-              ❌
-            </button>
-          )}
+              <option value="all">All ({totalDecorations})</option>
+              {categories.map(category => (
+                <option key={category.id} value={category.id}>
+                  {category.name} ({getCategoryCount(category.id)})
+                </option>
+              ))}
+            </select>
+
+            <div className="relative flex-1 min-w-[200px]">
+              <input 
+                type="text" 
+                placeholder="Search decorations..."
+                value={searchValue}
+                onChange={handleSearchChange}
+                className="w-full pl-3 pr-8 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              />
+              {searchValue && (
+                <button 
+                  onClick={handleClearSearch}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                >
+                  ×
+                </button>
+              )}
+            </div>
+          </div>
         </div>
-        <select 
-          id="categoryDropdown"
-          onChange={(e) => onCategoryChange(e.target.value)}
-        >
-          <option value="all">All ({totalDecorations})</option>
-          {categories.map(category => (
-            <option key={category.id} value={category.id}>
-              {category.name} ({getCategoryCount(category.id)})
-            </option>
-          ))}
-        </select>
       </div>
-      <div>
-        Homestead Decorations
-      </div>
-    </div>
+    </header>
   );
 };

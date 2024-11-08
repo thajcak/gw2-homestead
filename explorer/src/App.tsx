@@ -1,16 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Header } from './components/Header';
-import { Footer } from './components/Footer';
 import { IconGrid } from './components/IconGrid';
-import { Modal } from './components/Modal';
 import { useDecorations } from './hooks/useDecorations';
-import { Decoration } from './types';
+import { Decoration } from './types'; // Add this import
 import './App.css';
 
 function App() {
   const { decorations, categories, setSelectedCategory, setSearchQuery } = useDecorations();
-  const [selectedDecoration, setSelectedDecoration] = useState<Decoration>();
-  const [modalDecoration, setModalDecoration] = useState<Decoration>();
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);
@@ -20,55 +16,27 @@ function App() {
     setSelectedCategory(categoryId);
   };
 
-  const handleDecorationClick = (decoration: Decoration) => {
-    setModalDecoration(decoration); // Open modal
-  };
-
   const handleDecorationHover = (decoration: Decoration) => {
-    setSelectedDecoration(decoration); // Update footer
-  };
-
-  const handleCloseModal = () => {
-    setModalDecoration(undefined);
-  };
-
-  // Calculate total decorations
-  const totalDecorations = decorations.length;
-
-  // Function to get count of decorations in a category
-  const getCategoryCount = (categoryId: number) => {
-    return decorations.filter(deco => 
-      deco.categories && deco.categories.includes(categoryId)
-    ).length;
+    // Optional: Implement hover effects if needed
   };
 
   return (
-    <div className="app-container">
+    <div className="min-h-screen bg-gray-100">
       <Header 
         onSearch={handleSearch}
         onCategoryChange={handleCategoryChange}
         categories={categories}
-        totalDecorations={totalDecorations}
-        getCategoryCount={getCategoryCount}
+        totalDecorations={decorations.length}
+        getCategoryCount={(id) => decorations.filter(d => d.categories.includes(id)).length}
       />
 
-      <main className="app-main">
+      <main className="container mx-auto px-6">
         <IconGrid
           decorations={decorations}
-          onDecorationClick={handleDecorationClick}
+          categories={categories}
           onDecorationHover={handleDecorationHover}
         />
       </main>
-
-      <Footer 
-        selectedDecoration={selectedDecoration}
-        categories={categories}
-      />
-
-      <Modal 
-        decoration={modalDecoration}
-        onClose={handleCloseModal}
-      />
     </div>
   );
 }
