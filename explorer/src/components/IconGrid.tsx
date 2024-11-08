@@ -75,7 +75,7 @@ export const IconGrid: React.FC<IconGridProps> = ({
               
               {shouldRenderExpanded && expandedDecoration && (
                 <div 
-                  className="col-span-full text-white py-12 px-6 md:px-12 w-screen relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw]"
+                  className="col-span-full text-white py-12 w-screen relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw]"
                   style={{ 
                     gridRow: 'span 8',
                     minHeight: 'min-content',
@@ -90,51 +90,55 @@ export const IconGrid: React.FC<IconGridProps> = ({
                 >
                   {/* Notch */}
                   <div 
-                    className="absolute w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-b-[12px] border-b-[rgb(31,41,55)] -top-3"
+                    className="absolute w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-b-[12px] border-b-black -top-3"
                     style={{
-                      left: `calc(50% + (${(decorations.findIndex(d => d.id === expandedItem) % itemsPerRow) - Math.floor(itemsPerRow/2)} * (74px + 16px))`,
+                      left: '50%',
+                      marginLeft: `calc(${(decorations.findIndex(d => d.id === expandedItem) % itemsPerRow) * (74 + 16)}px - ${(itemsPerRow * (74 + 16) - 16) / 2}px + 37px)`,
                       transform: 'translateX(-50%)'
                     }}
                   />
                   
-                  <div className="max-w-7xl mx-auto">
-                    <div className="flex flex-col mb-6 -mt-6">
-                      <div className="relative flex items-start">
-                        <h2 className="text-2xl font-bold pr-32">{expandedDecoration.name}</h2>
-                        {expandedDecoration.wikiTitle && (
-                          <a
-                            href={`https://wiki.guildwars2.com/index.php?search=${encodeURIComponent(expandedDecoration.wikiTitle)}`}
-                            className="text-blue-400 hover:text-blue-300 transition-colors whitespace-nowrap absolute right-0 top-[0.375rem]"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            View on Wiki →
-                          </a>
-                        )}
-                      </div>
-                      <div className="flex flex-wrap gap-1.5 mt-2">
-                        {expandedDecoration.categories.map(catId => {
-                          const category = categories.find((cat: Category) => cat.id === catId);
-                          return category ? (
-                            <span key={catId} className="px-2 py-0.5 bg-gray-700 rounded-full text-xs text-gray-300">
-                              {category.name}
-                            </span>
-                          ) : null;
-                        })}
-                      </div>
-                    </div>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                      <div className="flex justify-center items-center w-full">
-                        <div className="w-full h-full flex items-center justify-center">
-                          <img
-                            src={expandedDecoration.original?.source}
-                            alt={expandedDecoration.name}
-                            className="w-full h-auto max-h-[50vh] object-contain"
-                            style={{ minHeight: 0 }}
-                          />
+                  <div className="max-w-7xl mx-auto px-4">
+                    {/* Grid for text content only */}
+                    <div className="grid grid-cols-[minmax(auto,74px)] auto-rows-[74px] gap-4" 
+                         style={{
+                           gridTemplateColumns: `repeat(${itemsPerRow}, 74px)`,
+                           justifyContent: 'center'
+                         }}>
+                      <div className="col-span-full -mt-6">
+                        <div className="relative flex items-start">
+                          <h2 className="text-2xl font-bold pr-32">{expandedDecoration.name}</h2>
+                          {expandedDecoration.wikiTitle && (
+                            <a
+                              href={`https://wiki.guildwars2.com/index.php?search=${encodeURIComponent(expandedDecoration.wikiTitle)}`}
+                              className="text-blue-400 hover:text-blue-300 transition-colors whitespace-nowrap absolute right-0 top-[0.375rem]"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              View on Wiki →
+                            </a>
+                          )}
+                        </div>
+                        <div className="flex flex-wrap gap-1.5 mt-2">
+                          {expandedDecoration.categories.map(catId => {
+                            const category = categories.find((cat: Category) => cat.id === catId);
+                            return category ? (
+                              <span key={catId} className="px-2 py-0.5 bg-gray-700 rounded-full text-xs text-gray-300">
+                                {category.name}
+                              </span>
+                            ) : null;
+                          })}
                         </div>
                       </div>
+                    </div>
+
+                    {/* Image outside of grid */}
+                    <div className="flex justify-center">
+                      <img
+                        src={expandedDecoration.original?.source}
+                        alt={expandedDecoration.name}
+                        className="w-auto h-auto max-h-[50vh] object-contain"
+                      />
                     </div>
                   </div>
                 </div>
