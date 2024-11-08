@@ -1,17 +1,16 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Decoration, Category } from '../types';
 import { ExpandedDecoration } from './ExpandedDecoration';
+import { AnimatePresence } from 'framer-motion';
 
 interface IconGridProps {
   decorations: Decoration[];
   categories: Category[];
-  onDecorationHover: (decoration: Decoration) => void;
 }
 
 export const IconGrid: React.FC<IconGridProps> = ({
   decorations,
   categories,
-  onDecorationHover
 }) => {
   const [expandedItem, setExpandedItem] = useState<number | null>(null);
   const gridRef = useRef<HTMLDivElement>(null);
@@ -37,9 +36,9 @@ export const IconGrid: React.FC<IconGridProps> = ({
 
   const scrollToItem = () => {
     if (clickedItemRef.current) {
-      const headerHeight = 64;
-      const offset = 30;
-      const itemTop = clickedItemRef.current.offsetTop;
+      const headerHeight = 64; // Height of the fixed header
+      const offset = 30; // Reduced offset for more precise positioning
+      const itemTop = clickedItemRef.current.getBoundingClientRect().top + window.scrollY;
       
       window.scrollTo({
         top: itemTop - headerHeight - offset,
@@ -49,24 +48,37 @@ export const IconGrid: React.FC<IconGridProps> = ({
   };
 
   const handleItemClick = (decoration: Decoration) => {
+    const newIndex = decorations.findIndex(d => d.id === decoration.id);
+    const currentIndex = decorations.findIndex(d => d.id === expandedItem);
+    const isSameRow = Math.floor(newIndex / itemsPerRow) === Math.floor(currentIndex / itemsPerRow);
+
     if (expandedItem === decoration.id) {
       setExpandedItem(null);
+    } else if (expandedItem !== null && isSameRow) {
+      // Instantly switch without animation for same row
+      setExpandedItem(decoration.id);
+      requestAnimationFrame(scrollToItem);
     } else {
-      // If there's already an expanded item, close it first
       if (expandedItem !== null) {
+        // Wait for exit animation to complete before expanding new item
         setExpandedItem(null);
-        // Wait for the closing transition (300ms) before opening the new one
         setTimeout(() => {
           setExpandedItem(decoration.id);
-          // Wait for the next frame to ensure the new expanded section is rendered
+          // Use double RAF to ensure DOM has updated
           requestAnimationFrame(() => {
-            scrollToItem();
+            setTimeout(() => {
+              scrollToItem();
+            }, 100); // Small delay to let expansion animation start
           });
-        }, 0); // Match this with your CSS transition duration
+        }, 300); // Match the exit animation duration
       } else {
         setExpandedItem(decoration.id);
-        // Wait for the expanding transition
-        setTimeout(scrollToItem, 50);
+        // Use double RAF to ensure DOM has updated
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            scrollToItem();
+          }, 100); // Small delay to let expansion animation start
+        });
       }
     }
   };
@@ -99,7 +111,6 @@ export const IconGrid: React.FC<IconGridProps> = ({
                 ref={decoration.id === expandedItem ? clickedItemRef : null}
                 className="relative w-74 h-74 cursor-pointer transition-transform hover:scale-105"
                 onClick={() => handleItemClick(decoration)}
-                onMouseEnter={() => onDecorationHover(decoration)}
               >
                 <img
                   src={decoration.icon}
@@ -108,14 +119,16 @@ export const IconGrid: React.FC<IconGridProps> = ({
                 />
               </div>
               
-              {shouldRenderExpanded && expandedDecoration && (
-                <ExpandedDecoration
-                  decoration={expandedDecoration}
-                  categories={categories}
-                  itemsPerRow={itemsPerRow}
-                  decorationIndex={decorations.findIndex(d => d.id === expandedItem)}
-                />
-              )}
+              <AnimatePresence>
+                {shouldRenderExpanded && expandedDecoration && (
+                  <ExpandedDecoration
+                    decoration={expandedDecoration}
+                    categories={categories}
+                    itemsPerRow={itemsPerRow}
+                    decorationIndex={decorations.findIndex(d => d.id === expandedItem)}
+                  />
+                )}
+              </AnimatePresence>
             </React.Fragment>
           );
         })}

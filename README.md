@@ -13,7 +13,7 @@ The backend of the site is a GitHub action that runs hourly to pull all decorati
 Currently only the API responses are stored in the repo and all image assets are requested on demand.
 
 ## Frontend
-A grid of decoration icons loaded from the repo is populated on load. Clicking on a decoration opens a modal that pulls a preview image from the [Guild Wars 2 Wiki](https://wiki.guildwars2.com). The wiki page is guessed at by trying to determine the proper page based on the item name. Once found the image is pulled from one of two sources and a link to the wiki page is added to the footer.
+A grid of decoration icons loaded from the repo is populated on load. Clicking on a decoration opens a detail panel that pulls a preview image from the [Guild Wars 2 Wiki](https://wiki.guildwars2.com). The wiki page is guessed at by trying to determine the proper page based on the item name. Once found the image is pulled from one of two sources and a link to the wiki page is added to the footer.
 
 ---
 

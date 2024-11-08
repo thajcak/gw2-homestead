@@ -61,19 +61,11 @@ export function useDecorations() {
     return [...filtered].sort((a, b) => a.name.localeCompare(b.name));
   }, [decorations, selectedCategory, searchQuery]);
 
-  const handleSearch = (query: string) => {
-    setSearchQuery(query);
-  };
-
-  const handleCategoryChange = (categoryId: string) => {
-    setSelectedCategory(categoryId);
-  };
-
   return {
     decorations: filteredDecorations,
     categories,
-    setSelectedCategory: handleCategoryChange,
-    setSearchQuery: handleSearch,
+    setSelectedCategory,
+    setSearchQuery,
     searchQuery,
     selectedCategory
   };
