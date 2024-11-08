@@ -18,6 +18,7 @@ export const Header: React.FC<HeaderProps> = ({
   getCategoryCount
 }) => {
   const [searchValue, setSearchValue] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('all');
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -30,19 +31,27 @@ export const Header: React.FC<HeaderProps> = ({
     onSearch('');
   };
 
+  const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const value = e.target.value;
+    setSelectedCategory(value);
+    onCategoryChange(value);
+  };
+
+  const handleReset = () => {
+    setSearchValue('');
+    setSelectedCategory('all');
+    onSearch('');
+    onCategoryChange('all');
+  };
+
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center gap-4">
-          <img 
-            src={homesteadIcon} 
-            alt="Homestead" 
-            className="w-8 h-8"
-          />
-          
+        <div className="flex items-center justify-center gap-8">
           <select 
-            className="h-8 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"
-            onChange={(e) => onCategoryChange(e.target.value)}
+            value={selectedCategory}
+            className="w-[200px] h-8 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"
+            onChange={handleCategoryChange}
           >
             <option value="all">All Categories ({totalDecorations})</option>
             {categories.map(category => (
@@ -52,7 +61,14 @@ export const Header: React.FC<HeaderProps> = ({
             ))}
           </select>
 
-          <div className="relative max-w-[300px] flex-1">
+          <img 
+            src={homesteadIcon} 
+            alt="Homestead" 
+            className="w-8 h-8 cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={handleReset}
+          />
+
+          <div className="relative w-[200px]">
             <input 
               type="text" 
               placeholder="Search decorations..."
