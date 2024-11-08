@@ -123,12 +123,17 @@ export const IconGrid: React.FC<IconGridProps> = ({
                     </div>
 
                     {/* Image outside of grid */}
-                    <div className="flex justify-center">
+                    <div className="flex justify-center relative w-fit mx-auto">
                       <img
-                        src={expandedDecoration.original?.source}
+                        src={expandedDecoration.original?.source ?? "https://static.staticwars.com/quaggans/lost.jpg"}
                         alt={expandedDecoration.name}
                         className="w-auto h-auto max-h-[50vh] object-contain"
                       />
+                      {!expandedDecoration.original?.source && (
+                        <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-black bg-opacity-50">
+                          <span className="text-white text-lg font-semibold">Image not found</span>
+                        </div>
+                      )}
                     </div>
                     <div className="flex justify-center flex-wrap gap-1.5 mt-4">
                           {expandedDecoration.categories.map(catId => {
