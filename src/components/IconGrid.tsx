@@ -53,22 +53,27 @@ export const IconGrid: React.FC<IconGridProps> = ({
   };
 
   const handleItemClick = (decoration: Decoration) => {
+    const newIndex = decorations.findIndex(d => d.id === decoration.id);
+    const currentIndex = decorations.findIndex(d => d.id === expandedItem);
+    const isSameRow = Math.floor(newIndex / itemsPerRow) === Math.floor(currentIndex / itemsPerRow);
+
     if (expandedItem === decoration.id) {
       setExpandedItem(null);
+    } else if (expandedItem !== null && isSameRow) {
+      // Instantly switch without animation for same row
+      setExpandedItem(decoration.id);
+      requestAnimationFrame(scrollToItem);
     } else {
       if (expandedItem !== null) {
         setExpandedItem(null);
-        // Wait for closing animation to complete
         setTimeout(() => {
           setExpandedItem(decoration.id);
-          // Wait for the expanded section to be added to DOM
           requestAnimationFrame(() => {
             requestAnimationFrame(scrollToItem);
           });
-        }, 300); // Match this with your animation duration
+        }, 300);
       } else {
         setExpandedItem(decoration.id);
-        // Wait for the expanded section to be added to DOM
         requestAnimationFrame(() => {
           requestAnimationFrame(scrollToItem);
         });
