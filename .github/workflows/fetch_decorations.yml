@@ -26,7 +26,7 @@ jobs:
           curl -s https://api.guildwars2.com/v2/homestead/decorations -o decorations_list.json
 
           # Initialize an empty array to store the results
-          echo "[]" > decorations.json
+          echo "[]" > public/decorations.json
 
           # Split the list into chunks of 200 IDs and fetch details
           ids=$(jq -r '.[]' decorations_list.json)
@@ -37,7 +37,7 @@ jobs:
           done
 
           # Combine all the chunks into a single JSON array
-          jq -s 'add' temp.json > decorations.json
+          jq -s 'add' temp.json > public/decorations.json
           rm temp.json
           rm decorations_list.json
 
@@ -49,7 +49,7 @@ jobs:
           curl -s https://api.guildwars2.com/v2/homestead/decorations/categories -o decoration_categories_list.json
 
           # Initialize an empty array to store the results
-          echo "[]" > decoration_categories.json
+          echo "[]" > public/decoration_categories.json
 
           # Split the list into chunks of 200 IDs and fetch details
           category_ids=$(jq -r '.[]' decoration_categories_list.json)
@@ -60,7 +60,7 @@ jobs:
           done
 
           # Combine all the chunks into a single JSON array
-          jq -s 'add' temp_categories.json > decoration_categories.json
+          jq -s 'add' temp_categories.json > public/decoration_categories.json
           rm temp_categories.json
           rm decoration_categories_list.json
 
@@ -68,7 +68,7 @@ jobs:
         run: |
           set -e
           # Read decorations.json and process each decoration
-          jq -c '.[]' decorations.json | while read -r decoration; do
+          jq -c '.[]' public/decorations.json | while read -r decoration; do
             name=$(echo "$decoration" | jq -r '.name')
             id=$(echo "$decoration" | jq -r '.id')
 
@@ -244,7 +244,7 @@ jobs:
 
           # Combine updated decorations into a JSON array
           if [ -f decorations_updated.json ]; then
-            jq -s '.' decorations_updated.json > decorations.json
+            jq -s '.' decorations_updated.json > public/decorations.json
             rm decorations_updated.json
           else
             echo "No decorations were processed successfully."
@@ -255,7 +255,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add decorations.json decoration_categories.json
+          git add public/decorations.json public/decoration_categories.json
           # Check if there are changes to commit
           if git diff --cached --quiet; then
             echo "No changes to commit."
