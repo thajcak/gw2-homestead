@@ -14,6 +14,7 @@ export const IconGrid: React.FC<IconGridProps> = ({
 }) => {
   const [expandedItem, setExpandedItem] = useState<number | null>(null);
   const gridRef = useRef<HTMLDivElement>(null);
+  const clickedItemRef = useRef<HTMLDivElement | null>(null);
   const [itemsPerRow, setItemsPerRow] = useState(0);
 
   // Calculate items per row on mount and window resize
@@ -33,8 +34,40 @@ export const IconGrid: React.FC<IconGridProps> = ({
     return () => window.removeEventListener('resize', calculateItemsPerRow);
   }, []);
 
+  const scrollToItem = () => {
+    if (clickedItemRef.current) {
+      const headerHeight = 64; // Adjust this value based on your header height
+      const itemPosition = clickedItemRef.current.getBoundingClientRect().top;
+      const scrollPosition = window.pageYOffset + itemPosition - headerHeight - 30;
+      
+      window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   const handleItemClick = (decoration: Decoration) => {
-    setExpandedItem(expandedItem === decoration.id ? null : decoration.id);
+    if (expandedItem === decoration.id) {
+      setExpandedItem(null);
+    } else {
+      // If there's already an expanded item, close it first
+      if (expandedItem !== null) {
+        setExpandedItem(null);
+        // Wait for the closing transition (300ms) before opening the new one
+        setTimeout(() => {
+          setExpandedItem(decoration.id);
+          // Wait for the next frame to ensure the new expanded section is rendered
+          requestAnimationFrame(() => {
+            scrollToItem();
+          });
+        }, 0); // Match this with your CSS transition duration
+      } else {
+        setExpandedItem(decoration.id);
+        // Wait for the expanding transition
+        setTimeout(scrollToItem, 50);
+      }
+    }
   };
 
   const getRowNumber = (index: number) => {
@@ -62,6 +95,7 @@ export const IconGrid: React.FC<IconGridProps> = ({
           return (
             <React.Fragment key={decoration.id}>
               <div 
+                ref={decoration.id === expandedItem ? clickedItemRef : null}
                 className="relative w-74 h-74 cursor-pointer transition-transform hover:scale-105"
                 onClick={() => handleItemClick(decoration)}
                 onMouseEnter={() => onDecorationHover(decoration)}
