@@ -17,19 +17,23 @@ export const ExpandedDecoration: React.FC<ExpandedDecorationProps> = ({
 }) => {
   return (
     <motion.div 
+      layoutId={`expanded-${decoration.id}`}
       className="col-span-full text-white w-screen relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw]"
-      initial={{ opacity: 1, height: 0 }}
+      initial={{ opacity: 0, height: 0 }}
       animate={{ opacity: 1, height: "auto" }}
-      exit={{ opacity: 1, height: 0 }}
+      exit={{ opacity: 0, height: 0 }}
       transition={{ 
         duration: 0.3,
-        ease: "easeInOut"
+        ease: "easeInOut",
+        layout: { duration: 0.3 }
       }}
       style={{ 
         gridRow: 'span 8',
         minHeight: 'min-content',
         marginTop: '8px',
         marginBottom: '8px',
+        position: 'relative',
+        zIndex: 10
       }}
     >
       <div 

@@ -16,10 +16,6 @@ function App() {
     setSelectedCategory(categoryId);
   };
 
-  const handleDecorationHover = (decoration: Decoration) => {
-    // Optional: Implement hover effects if needed
-  };
-
   return (
     <div className="min-h-screen bg-gray-100">
       <Header 
@@ -34,7 +30,6 @@ function App() {
         <IconGrid
           decorations={decorations}
           categories={categories}
-          onDecorationHover={handleDecorationHover}
         />
       </main>
     </div>

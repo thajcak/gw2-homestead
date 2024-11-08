@@ -6,13 +6,11 @@ import { AnimatePresence } from 'framer-motion';
 interface IconGridProps {
   decorations: Decoration[];
   categories: Category[];
-  onDecorationHover: (decoration: Decoration) => void;
 }
 
 export const IconGrid: React.FC<IconGridProps> = ({
   decorations,
   categories,
-  onDecorationHover
 }) => {
   const [expandedItem, setExpandedItem] = useState<number | null>(null);
   const gridRef = useRef<HTMLDivElement>(null);
@@ -38,16 +36,13 @@ export const IconGrid: React.FC<IconGridProps> = ({
 
   const scrollToItem = () => {
     if (clickedItemRef.current) {
-      const headerHeight = 64;
-      const offset = 30;
-      const itemTop = clickedItemRef.current.offsetTop;
+      const headerHeight = 64; // Height of the fixed header
+      const offset = 30; // Reduced offset for more precise positioning
+      const itemTop = clickedItemRef.current.getBoundingClientRect().top + window.scrollY;
       
-      // Wait for the next frame to ensure DOM updates
-      requestAnimationFrame(() => {
-        window.scrollTo({
-          top: itemTop - headerHeight - offset,
-          behavior: 'smooth'
-        });
+      window.scrollTo({
+        top: itemTop - headerHeight - offset,
+        behavior: 'smooth'
       });
     }
   };
@@ -65,17 +60,24 @@ export const IconGrid: React.FC<IconGridProps> = ({
       requestAnimationFrame(scrollToItem);
     } else {
       if (expandedItem !== null) {
+        // Wait for exit animation to complete before expanding new item
         setExpandedItem(null);
         setTimeout(() => {
           setExpandedItem(decoration.id);
+          // Use double RAF to ensure DOM has updated
           requestAnimationFrame(() => {
-            requestAnimationFrame(scrollToItem);
+            setTimeout(() => {
+              scrollToItem();
+            }, 100); // Small delay to let expansion animation start
           });
-        }, 300);
+        }, 300); // Match the exit animation duration
       } else {
         setExpandedItem(decoration.id);
+        // Use double RAF to ensure DOM has updated
         requestAnimationFrame(() => {
-          requestAnimationFrame(scrollToItem);
+          setTimeout(() => {
+            scrollToItem();
+          }, 100); // Small delay to let expansion animation start
         });
       }
     }
@@ -109,7 +111,6 @@ export const IconGrid: React.FC<IconGridProps> = ({
                 ref={decoration.id === expandedItem ? clickedItemRef : null}
                 className="relative w-74 h-74 cursor-pointer transition-transform hover:scale-105"
                 onClick={() => handleItemClick(decoration)}
-                onMouseEnter={() => onDecorationHover(decoration)}
               >
                 <img
                   src={decoration.icon}
