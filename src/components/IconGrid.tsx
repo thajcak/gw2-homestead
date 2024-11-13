@@ -91,12 +91,7 @@ export const IconGrid: React.FC<IconGridProps> = ({
     <div className="container mx-auto px-4 md:px-8 lg:px-16 py-8">
       <div 
         ref={gridRef}
-        className="grid auto-rows-[74px] gap-4"
-        style={{
-          gridTemplateColumns: `repeat(auto-fill, 74px)`,
-          justifyContent: 'center',
-          gridAutoRows: '74px auto'
-        }}
+        className="grid-layout"
       >
         {decorations.map((decoration, index) => {
           const currentRow = getRowNumber(index);
