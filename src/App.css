@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .grid-layout {
+    @apply grid auto-rows-[74px] gap-4;
+    grid-template-columns: repeat(auto-fill, 74px);
+    justify-content: center;
+    grid-auto-rows: max-content;
+  }
+  
+  .expanded-decoration {
+    @apply col-span-full text-white w-screen relative mt-2 mb-2 z-10;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    min-height: min-content;
+  }
+  
+  .expanded-decoration-gradient {
+    @apply overflow-hidden h-full;
+    background: linear-gradient(to bottom, black, rgb(31,41,55) 2%, rgb(31,41,55) 98%, black);
+  }
+  
+  .decoration-indicator {
+    @apply absolute w-0 h-0 -top-3;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid black;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
