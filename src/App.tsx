@@ -5,24 +5,40 @@ import { useDecorations } from './hooks/useDecorations';
 import './App.css';
 
 function App() {
-  const { decorations, categories, setSelectedCategory, setSearchQuery } = useDecorations();
+  const { 
+    decorations, 
+    allDecorations, 
+    categories, 
+    setSelectedCategory, 
+    setSearchQuery,
+    searchQuery 
+  } = useDecorations();
 
-  const handleSearch = (query: string) => {
-    setSearchQuery(query);
-  };
-
-  const handleCategoryChange = (categoryId: string) => {
-    setSelectedCategory(categoryId);
+  const getFilteredCount = (categoryId?: number) => {
+    return allDecorations.filter(deco => {
+      if (searchQuery) {
+        const query = searchQuery.toLowerCase();
+        const nameMatch = deco.name.toLowerCase().includes(query);
+        const descriptionMatch = deco.description?.toLowerCase().includes(query);
+        if (!nameMatch && !descriptionMatch) return false;
+      }
+      
+      if (categoryId !== undefined) {
+        return deco.categories && deco.categories.includes(categoryId);
+      }
+      
+      return true;
+    }).length;
   };
 
   return (
     <div className="min-h-screen bg-gray-100">
       <Header 
-        onSearch={handleSearch}
-        onCategoryChange={handleCategoryChange}
+        onSearch={setSearchQuery}
+        onCategoryChange={setSelectedCategory}
         categories={categories}
-        totalDecorations={decorations.length}
-        getCategoryCount={(id) => decorations.filter(d => d.categories.includes(id)).length}
+        totalDecorations={getFilteredCount()}
+        getCategoryTotalCount={(id) => getFilteredCount(id)}
       />
 
       <main className="container mx-auto px-6">

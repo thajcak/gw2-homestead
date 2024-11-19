@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { Decoration, Category } from '../types';
 
 export function useDecorations() {
-  const [decorations, setDecorations] = useState<Decoration[]>([]);
+  const [allDecorations, setAllDecorations] = useState<Decoration[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -24,7 +24,7 @@ export function useDecorations() {
         const decorationsData = await decorationsResponse.json();
         const categoriesData = await categoriesResponse.json();
         
-        setDecorations(decorationsData);
+        setAllDecorations(decorationsData);
         setCategories(categoriesData.sort((a: Category, b: Category) => 
           a.name.localeCompare(b.name)
         ));
@@ -36,9 +36,21 @@ export function useDecorations() {
     fetchData();
   }, []);
 
-  // Use useMemo to optimize filtering
+  // First, filter by search query only
+  const searchFilteredDecorations = useMemo(() => {
+    if (!searchQuery) return allDecorations;
+    
+    const query = searchQuery.toLowerCase();
+    return allDecorations.filter(deco => {
+      const nameMatch = deco.name.toLowerCase().includes(query);
+      const descriptionMatch = deco.description?.toLowerCase().includes(query);
+      return nameMatch || descriptionMatch;
+    });
+  }, [allDecorations, searchQuery]);
+
+  // Then apply category filter to the search results
   const filteredDecorations = useMemo(() => {
-    let filtered = decorations;
+    let filtered = searchFilteredDecorations;
 
     // Filter by category
     if (selectedCategory !== 'all') {
@@ -47,26 +59,26 @@ export function useDecorations() {
       );
     }
 
-    // Filter by search query
-    if (searchQuery) {
-      const query = searchQuery.toLowerCase();
-      filtered = filtered.filter(deco => {
-        const nameMatch = deco.name.toLowerCase().includes(query);
-        const descriptionMatch = deco.description?.toLowerCase().includes(query);
-        return nameMatch || descriptionMatch;
-      });
-    }
-
     // Sort by name
     return [...filtered].sort((a, b) => a.name.localeCompare(b.name));
-  }, [decorations, selectedCategory, searchQuery]);
+  }, [searchFilteredDecorations, selectedCategory]);
+
+  // Calculate counts based on search-filtered items
+  const getCategoryTotalCount = (categoryId: number) => {
+    return searchFilteredDecorations.filter(deco => 
+      deco.categories && deco.categories.includes(categoryId)
+    ).length;
+  };
 
   return {
     decorations: filteredDecorations,
+    allDecorations,
     categories,
     setSelectedCategory,
     setSearchQuery,
     searchQuery,
-    selectedCategory
+    selectedCategory,
+    getCategoryTotalCount,
+    totalDecorations: searchFilteredDecorations.length
   };
 }

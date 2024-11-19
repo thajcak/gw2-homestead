@@ -7,7 +7,7 @@ interface HeaderProps {
   onCategoryChange: (categoryId: string) => void;
   categories: Category[];
   totalDecorations: number;
-  getCategoryCount: (categoryId: number) => number;
+  getCategoryTotalCount: (categoryId: number) => number;
 }
 
 export const Header: React.FC<HeaderProps> = ({ 
@@ -15,7 +15,7 @@ export const Header: React.FC<HeaderProps> = ({
   onCategoryChange,
   categories,
   totalDecorations,
-  getCategoryCount
+  getCategoryTotalCount
 }) => {
   const [searchValue, setSearchValue] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -56,7 +56,7 @@ export const Header: React.FC<HeaderProps> = ({
             <option value="all">All Categories ({totalDecorations})</option>
             {categories.map(category => (
               <option key={category.id} value={category.id}>
-                {category.name} ({getCategoryCount(category.id)})
+                {category.name} ({getCategoryTotalCount(category.id)})
               </option>
             ))}
           </select>
