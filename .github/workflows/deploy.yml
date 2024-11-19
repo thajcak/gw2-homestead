@@ -2,8 +2,15 @@ name: Deploy React App to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]  # Or your default branch name
+    branches:
+      - main
   workflow_dispatch:
+  workflow_run:
+    workflows: ["*"]
+    types:
+      - completed
+    branches:
+      - main
 
 permissions:
   contents: read
@@ -20,7 +27,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'  # Or your preferred Node version
+          node-version: '20'
           cache: 'npm'
 
       - name: Install dependencies
@@ -37,7 +44,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './build'  # Or your build output directory
+          path: './build'
 
   deploy:
     needs: build
