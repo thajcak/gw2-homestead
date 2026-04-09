@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { Decoration, Category } from '../types';
 import { ExpandedDecoration } from './ExpandedDecoration';
 import { AnimatePresence } from 'framer-motion';
@@ -36,7 +36,7 @@ export const IconGrid: React.FC<IconGridProps> = ({
     return () => window.removeEventListener('resize', calculateItemsPerRow);
   }, []);
 
-  const scrollToItem = () => {
+  const scrollToItem = useCallback(() => {
     if (clickedItemRef.current) {
       const headerHeight = 64; // Height of the fixed header
       const offset = 30; // Reduced offset for more precise positioning
@@ -47,24 +47,36 @@ export const IconGrid: React.FC<IconGridProps> = ({
         behavior: 'smooth'
       });
     }
-  };
+  }, []);
 
-  const handleItemClick = (decoration: Decoration) => {
-    const newIndex = decorations.findIndex(d => d.id === decoration.id);
-    const currentIndex = decorations.findIndex(d => d.id === expandedItem);
-    const isSameRow = Math.floor(newIndex / itemsPerRow) === Math.floor(currentIndex / itemsPerRow);
+  const applyOpenDecoration = useCallback(
+    (decoration: Decoration) => {
+      const newIndex = decorations.findIndex(d => d.id === decoration.id);
+      const currentIndex = decorations.findIndex(d => d.id === expandedItem);
+      const isSameRow =
+        itemsPerRow > 0 &&
+        Math.floor(newIndex / itemsPerRow) === Math.floor(currentIndex / itemsPerRow);
 
-    if (expandedItem === decoration.id) {
-      setExpandedItem(null);
-    } else if (expandedItem !== null && isSameRow) {
-      // Instantly switch without animation for same row
-      setExpandedItem(decoration.id);
-      requestAnimationFrame(scrollToItem);
-    } else {
-      if (expandedItem !== null) {
-        // Wait for exit animation to complete before expanding new item
+      if (expandedItem === decoration.id) {
         setExpandedItem(null);
-        setTimeout(() => {
+      } else if (expandedItem !== null && isSameRow) {
+        // Instantly switch without animation for same row
+        setExpandedItem(decoration.id);
+        requestAnimationFrame(scrollToItem);
+      } else {
+        if (expandedItem !== null) {
+          // Wait for exit animation to complete before expanding new item
+          setExpandedItem(null);
+          setTimeout(() => {
+            setExpandedItem(decoration.id);
+            // Use double RAF to ensure DOM has updated
+            requestAnimationFrame(() => {
+              setTimeout(() => {
+                scrollToItem();
+              }, 100); // Small delay to let expansion animation start
+            });
+          }, 300); // Match the exit animation duration
+        } else {
           setExpandedItem(decoration.id);
           // Use double RAF to ensure DOM has updated
           requestAnimationFrame(() => {
@@ -72,21 +84,21 @@ export const IconGrid: React.FC<IconGridProps> = ({
               scrollToItem();
             }, 100); // Small delay to let expansion animation start
           });
-        }, 300); // Match the exit animation duration
-      } else {
-        setExpandedItem(decoration.id);
-        // Use double RAF to ensure DOM has updated
-        requestAnimationFrame(() => {
-          setTimeout(() => {
-            scrollToItem();
-          }, 100); // Small delay to let expansion animation start
-        });
+        }
       }
-    }
+    },
+    [decorations, expandedItem, itemsPerRow, scrollToItem]
+  );
+
+  const handleItemClick = (decoration: Decoration) => {
+    applyOpenDecoration(decoration);
   };
+
+  const lastHandledOpenIdRef = useRef<number | null>(null);
 
   useEffect(() => {
     if (openDecorationId == null) {
+      lastHandledOpenIdRef.current = null;
       return;
     }
 
@@ -95,13 +107,13 @@ export const IconGrid: React.FC<IconGridProps> = ({
       return;
     }
 
-    setExpandedItem(targetDecoration.id);
-    requestAnimationFrame(() => {
-      setTimeout(() => {
-        scrollToItem();
-      }, 100);
-    });
-  }, [openDecorationId, decorations]);
+    if (lastHandledOpenIdRef.current === openDecorationId) {
+      return;
+    }
+
+    lastHandledOpenIdRef.current = openDecorationId;
+    applyOpenDecoration(targetDecoration);
+  }, [openDecorationId, decorations, applyOpenDecoration]);
 
   const getRowNumber = (index: number) => {
     return Math.floor(index / itemsPerRow);
