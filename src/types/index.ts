@@ -1,3 +1,25 @@
+export interface DecorationRecipeIngredient {
+  slot: number;
+  quantity: number | null;
+  item: string;
+}
+
+export interface DecorationRecipe {
+  name?: string;
+  source?: string;
+  sheet?: string;
+  type?: string;
+  disciplines?: string;
+  rating?: number;
+  /** Recipe id(s) from the wiki; may be a number or comma-separated string when multiple ids are listed. */
+  id?: number | string;
+  quantity?: number;
+  upper_quantity?: number;
+  guild_upgrade?: string;
+  timegate?: boolean;
+  ingredients: DecorationRecipeIngredient[];
+}
+
 export interface Decoration {
   id: number;
   name: string;
@@ -6,6 +28,7 @@ export interface Decoration {
   max_count: number;
   icon: string;
   wikiTitle?: string;
+  recipe?: DecorationRecipe | null;
   thumbnail?: {
     source: string;
     width: number;

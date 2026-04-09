@@ -121,6 +121,150 @@ jobs:
 
             return 1
           }
+
+          fetch_wiki_wikitext() {
+            local title="$1"
+            local encoded response
+            encoded=$(printf %s "$title" | jq -sRr @uri)
+            response=$(fetch_json_with_retries "https://wiki.guildwars2.com/api.php?action=query&titles=${encoded}&prop=revisions&rvprop=content&rvslots=main&format=json&origin=*" 5 2 || true)
+            [[ -z "$response" ]] && { echo ""; return; }
+            printf '%s' "$response" | jq -r '
+              .query.pages | to_entries[0].value as $p |
+              if ($p | has("missing")) or ($p | has("invalid")) then empty
+              else ($p.revisions[0].slots.main["*"] // empty)
+              end
+            '
+          }
+
+          wikitext_to_recipe_json() {
+            local wikitext="$1"
+            local lines
+            lines=$(printf '%s' "$wikitext" | awk -f <(cat <<'AWK'
+          function strip_wiki(s) {
+            gsub(/\[\[[^|\]]*\|([^\]]+)\]\]/, "\\1", s)
+            gsub(/\[\[([^\]]+)\]\]/, "\\1", s)
+            return s
+          }
+          function extract_block(s,   lower, pos, i, n, depth, c2) {
+            lower = tolower(s)
+            pos = index(lower, "{{recipe")
+            if (!pos) return ""
+            n = length(s)
+            i = pos
+            depth = 0
+            while (i <= n) {
+              c2 = substr(s, i, 2)
+              if (c2 == "{{") { depth++; i += 2; continue }
+              if (c2 == "}}") { depth--; i += 2; if (depth == 0) return substr(s, pos, i - pos); continue }
+              i++
+            }
+            return ""
+          }
+          function parse_ing_line(slot, val,   qty, item) {
+            val = strip_wiki(val)
+            if (match(val, /^[0-9]+[[:space:]]+/)) {
+              qty = substr(val, RSTART, RLENGTH)
+              gsub(/[[:space:]]+$/, "", qty)
+              item = substr(val, RSTART + RLENGTH)
+              gsub(/^[[:space:]]+|[[:space:]]+$/, "", item)
+            } else {
+              qty = ""
+              item = val
+            }
+            printf "ING\t%d\t%s\t%s\n", slot, qty, item
+          }
+          { content = content $0 "\n" }
+          END {
+            block = extract_block(content)
+            if (block == "") { exit 0 }
+            sub(/^\{\{[Rr]ecipe[[:space:]]*/, "", block)
+            sub(/\}\}[[:space:]]*$/, "", block)
+            inner = block
+            gsub(/^[[:space:]]+|[[:space:]]+$/, "", inner)
+            if (substr(inner, 1, 1) != "|") inner = "|" inner
+            nlines = split(inner, L, "\n")
+            delete params
+            for (li = 1; li <= nlines; li++) {
+              line = L[li]
+              gsub(/^[[:space:]]+|[[:space:]]+$/, "", line)
+              if (line ~ /^\|/) {
+                line = substr(line, 2)
+                gsub(/^[[:space:]]+|[[:space:]]+$/, "", line)
+                eq = index(line, "=")
+                if (eq > 0) {
+                  key = substr(line, 1, eq - 1)
+                  val = substr(line, eq + 1)
+                  gsub(/^[[:space:]]+|[[:space:]]+$/, "", key)
+                  gsub(/^[[:space:]]+|[[:space:]]+$/, "", val)
+                  key = tolower(key)
+                  gsub(/ /, "_", key)
+                  params[key] = val
+                }
+              }
+            }
+            has = 0
+            for (k in params) {
+              if (k ~ /^ingredient[1-4]$/) continue
+              has = 1
+              printf "PAIR\t%s\t%s\n", k, strip_wiki(params[k])
+            }
+            for (s = 1; s <= 4; s++) {
+              ik = "ingredient" s
+              if ((ik in params) && params[ik] != "") {
+                has = 1
+                parse_ing_line(s, params[ik])
+              }
+            }
+            if (!has) exit 0
+          }
+          AWK
+          ))
+            [[ -z "$lines" ]] && { echo "null"; return; }
+            echo "$lines" | jq -Rs -f <(cat <<'JQ'
+          split("\n") | map(select(length > 0) | split("\t"))
+          | reduce .[] as $row ({ingredients: [], m: {}}; 
+              if $row[0] == "PAIR" and ($row | length) >= 3 then
+                .m[$row[1]] = ($row[2:] | join("\t"))
+              elif $row[0] == "ING" and ($row | length) >= 4 then
+                .ingredients += [{
+                  slot: ($row[1] | tonumber),
+                  quantity: (if $row[2] == "" then null else ($row[2] | tonumber) end),
+                  item: ($row[3:] | join("\t"))
+                }]
+              else . end)
+            | .m + {ingredients: .ingredients}
+            | .rating = (if .rating != null and (.rating | test("^[0-9]+$")) then (.rating | tonumber) else .rating end)
+            | .quantity = (if .quantity != null and (.quantity | test("^[0-9]+$")) then (.quantity | tonumber) else .quantity end)
+            | .upper_quantity = (if .upper_quantity != null and (.upper_quantity | test("^[0-9]+$")) then (.upper_quantity | tonumber) else .upper_quantity end)
+            | .id = (if .id == null then null elif (.id | test("^[0-9]+$")) then (.id | tonumber) elif (.id | test("^[0-9]+(,[0-9]+)+$")) then .id else .id end)
+            | if .timegate != null and ((.timegate | ascii_downcase) == "y" or (.timegate | ascii_downcase) == "yes") then .timegate = true else del(.timegate) end
+            | if .quantity == null then del(.quantity) else . end
+            | if .upper_quantity == null then del(.upper_quantity) else . end
+            | with_entries(select(.value != null))
+            | if (.ingredients | length) == 0 and (.name == null or .name == "") and (.id == null) then null else . end
+          JQ
+          )
+          }
+
+          apply_wiki_recipe_if_needed() {
+            local decoration="$1"
+            local wt wikitext recipe_json
+            wt=$(echo "$decoration" | jq -r '.wikiTitle // empty')
+            [[ -z "$wt" ]] && { echo "$decoration"; return; }
+            if echo "$decoration" | jq -e '.recipe != null' >/dev/null 2>&1; then
+              echo "$decoration"
+              return
+            fi
+            wikitext=$(fetch_wiki_wikitext "$wt")
+            [[ -z "$wikitext" ]] && { echo "$decoration"; return; }
+            recipe_json=$(wikitext_to_recipe_json "$wikitext")
+            if ! echo "$recipe_json" | jq -e 'type == "object"' >/dev/null 2>&1; then
+              echo "$decoration"
+              return
+            fi
+            echo "$decoration" | jq --argjson r "$recipe_json" '. + {recipe: $r}'
+          }
+
           # Read decorations.json and process each decoration
           jq -c '.[]' public/decorations.json | while read -r decoration; do
             name=$(echo "$decoration" | jq -r '.name')
@@ -133,8 +277,8 @@ jobs:
             hasOriginal=$(echo "$decoration" | jq '.original != null')
 
             if [ "$hasThumbnail" = "true" ] && [ "$hasOriginal" = "true" ]; then
-              echo "Decoration $name already has image data. Skipping."
-              # Append the decoration as is to the updated file
+              echo "Decoration $name already has image data. Skipping image fetch."
+              decoration=$(apply_wiki_recipe_if_needed "$decoration")
               echo "$decoration" >> decorations_updated.json
               continue
             fi
@@ -301,7 +445,7 @@ jobs:
               echo "No image information found for decoration $name"
             fi
 
-            # Append updated decoration to a new file
+            decoration=$(apply_wiki_recipe_if_needed "$decoration")
             echo "$decoration" >> decorations_updated.json
           done
 
@@ -381,6 +525,13 @@ jobs:
                     field: "description",
                     before: $oldDescription,
                     after: $newDescription
+                  }
+                else empty end,
+                if (($oldItem.recipe // null) | tojson) != (($newItem.recipe // null) | tojson) then
+                  {
+                    field: "recipe",
+                    before: ($oldItem.recipe // null),
+                    after: ($newItem.recipe // null)
                   }
                 else empty end
               ]
