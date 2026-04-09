@@ -22,3 +22,28 @@ export interface Category {
   id: number;
   name: string;
 }
+
+export type ChangeLogEntryType = 'New Item' | 'Item Update' | 'Item Removed' | 'Image Update';
+
+export interface ChangeLogFieldChange {
+  field: string;
+  detail?: string;
+  before: unknown;
+  after: unknown;
+}
+
+export interface ChangeLogEntry {
+  id: number;
+  type: ChangeLogEntryType;
+  name: string;
+  changes?: ChangeLogFieldChange[];
+}
+
+export interface ChangeLogDay {
+  day: string;
+  entries: ChangeLogEntry[];
+}
+
+export interface ChangeLogData {
+  days: ChangeLogDay[];
+}

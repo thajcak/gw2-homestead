@@ -18,6 +18,27 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y jq xmlstarlet
 
+      - name: Preserve previous snapshots for changelog diff
+        run: |
+          set -e
+          if [ -f public/decorations.json ]; then
+            cp public/decorations.json old_decorations.json
+          else
+            echo "[]" > old_decorations.json
+          fi
+
+          if [ -f public/decoration_categories.json ]; then
+            cp public/decoration_categories.json old_decoration_categories.json
+          else
+            echo "[]" > old_decoration_categories.json
+          fi
+
+          if [ -f public/changelog.json ]; then
+            cp public/changelog.json existing_changelog.json
+          else
+            echo '{"days":[]}' > existing_changelog.json
+          fi
+
       - name: Fetch Decorations List and Details
         run: |
           set -e
@@ -251,15 +272,178 @@ jobs:
             exit 1
           fi
 
+      - name: Generate changelog
+        run: |
+          set -e
+
+          : > changelog_entries.jsonl
+          utc_day=$(date -u +%F)
+
+          old_decoration_ids=$(jq '[.[].id]' old_decorations.json)
+          new_decoration_ids=$(jq '[.[].id]' public/decorations.json)
+          old_category_ids=$(jq '[.[].id]' old_decoration_categories.json)
+          new_category_ids=$(jq '[.[].id]' public/decoration_categories.json)
+
+          # Decorations: new items
+          jq -c --argjson old_ids "$old_decoration_ids" '.[] | select((.id as $id | $old_ids | index($id)) | not) | {id:.id, type:"New Item", name:.name}' public/decorations.json >> changelog_entries.jsonl
+          # Decorations: removed items
+          jq -c --argjson new_ids "$new_decoration_ids" '.[] | select((.id as $id | $new_ids | index($id)) | not) | {id:.id, type:"Item Removed", name:.name}' old_decorations.json >> changelog_entries.jsonl
+          # Decorations: item updates (excluding image fields)
+          jq -c --slurpfile old old_decorations.json --slurpfile oldCategories old_decoration_categories.json --slurpfile newCategories public/decoration_categories.json '
+            ($old[0] | map({key:(.id|tostring), value:.}) | from_entries) as $oldById
+            | (
+                (
+                  (if ($oldCategories[0] | type) == "array" then $oldCategories[0] else [] end)
+                  + (if ($newCategories[0] | type) == "array" then $newCategories[0] else [] end)
+                )
+                | map({key:(.id|tostring), value:.name})
+                | from_entries
+              ) as $categoryNames
+            | .[]
+            | . as $newItem
+            | ($oldById[$newItem.id|tostring]) as $oldItem
+            | select($oldItem != null)
+            | (($oldItem.description // "") | tostring) as $oldDescription
+            | (($newItem.description // "") | tostring) as $newDescription
+            | ([
+                if (($oldItem.name // null) != ($newItem.name // null)) then
+                  {
+                    field: "name",
+                    before: ($oldItem.name // null),
+                    after: ($newItem.name // null)
+                  }
+                else empty end,
+                if (($oldItem.max_count // null) != ($newItem.max_count // null)) then
+                  {
+                    field: "max_count",
+                    before: ($oldItem.max_count // null),
+                    after: ($newItem.max_count // null)
+                  }
+                else empty end,
+                if (($oldDescription | length) == 0 and ($newDescription | length) > 0) then
+                  {
+                    field: "description",
+                    detail: "Added Description",
+                    before: "",
+                    after: $newDescription
+                  }
+                elif (($oldDescription | length) > 0 and ($newDescription | length) == 0) then
+                  {
+                    field: "description",
+                    detail: "Removed Description",
+                    before: $oldDescription,
+                    after: ""
+                  }
+                elif ($oldDescription != $newDescription) then
+                  {
+                    field: "description",
+                    before: $oldDescription,
+                    after: $newDescription
+                  }
+                else empty end
+              ]
+              + (
+                (($newItem.categories // []) - ($oldItem.categories // []))
+                | map({
+                    field: "categories",
+                    detail: ((($categoryNames[(.|tostring)] // ("Category " + (. | tostring))) | tostring) + " was added"),
+                    before: null,
+                    after: .
+                  })
+              )
+              + (
+                (($oldItem.categories // []) - ($newItem.categories // []))
+                | map({
+                    field: "categories",
+                    detail: ((($categoryNames[(.|tostring)] // ("Category " + (. | tostring))) | tostring) + " was removed"),
+                    before: .,
+                    after: null
+                  })
+              )
+            ) as $changes
+            | select(($changes | length) > 0)
+            | {id:$newItem.id, type:"Item Update", name:$newItem.name, changes:$changes}
+          ' public/decorations.json >> changelog_entries.jsonl
+          # Decorations: image updates
+          jq -c --slurpfile old old_decorations.json '
+            ($old[0] | map({key:(.id|tostring), value:.}) | from_entries) as $oldById
+            | .[]
+            | . as $newItem
+            | ($oldById[$newItem.id|tostring]) as $oldItem
+            | select($oldItem != null)
+            | select((($newItem.thumbnail // null) != ($oldItem.thumbnail // null)) or (($newItem.original // null) != ($oldItem.original // null)))
+            | {id:$newItem.id, type:"Image Update", name:$newItem.name}
+          ' public/decorations.json >> changelog_entries.jsonl
+
+          # Categories: new items
+          jq -c --argjson old_ids "$old_category_ids" '.[] | select((.id as $id | $old_ids | index($id)) | not) | {id:.id, type:"New Item", name:.name}' public/decoration_categories.json >> changelog_entries.jsonl
+          # Categories: removed items
+          jq -c --argjson new_ids "$new_category_ids" '.[] | select((.id as $id | $new_ids | index($id)) | not) | {id:.id, type:"Item Removed", name:.name}' old_decoration_categories.json >> changelog_entries.jsonl
+          # Categories: updates
+          jq -c --slurpfile old old_decoration_categories.json '
+            ($old[0] | map({key:(.id|tostring), value:.}) | from_entries) as $oldById
+            | .[]
+            | . as $newItem
+            | ($oldById[$newItem.id|tostring]) as $oldItem
+            | select($oldItem != null)
+            | (["name"]
+              | map(
+                  . as $field
+                  | select(($newItem[$field] // null) != ($oldItem[$field] // null))
+                  | {
+                      field: $field,
+                      before: ($oldItem[$field] // null),
+                      after: ($newItem[$field] // null)
+                    }
+                )) as $changes
+            | select(($changes | length) > 0)
+            | {id:$newItem.id, type:"Item Update", name:$newItem.name, changes:$changes}
+          ' public/decoration_categories.json >> changelog_entries.jsonl
+
+          if [ -s changelog_entries.jsonl ]; then
+            jq -s '.' changelog_entries.jsonl > new_entries.json
+          else
+            echo '[]' > new_entries.json
+          fi
+
+          jq --arg day "$utc_day" --slurpfile newEntries new_entries.json '
+            def clean_entry:
+              if (.changes? != null and (.changes | length) > 0)
+              then .
+              else del(.changes)
+              end;
+            .days = (.days // [])
+            | .days = (.days | map(.entries = ((.entries // []) | map(clean_entry))))
+            | $newEntries[0] as $incoming
+            | if ($newEntries[0] | length) == 0 then
+                .days = (.days | sort_by(.day) | reverse)
+              else
+                .days = (
+                  .days
+                  | map(
+                      if .day == $day then
+                        .entries = (((.entries // []) + ($incoming | map(clean_entry))) | unique_by(.id, .type, .name, ((.changes // []) | tostring)))
+                      else .
+                      end
+                    )
+                  | if any(.day == $day) then . else . + [{day:$day, entries:(($incoming | map(clean_entry)) | unique_by(.id, .type, .name, ((.changes // []) | tostring)))}] end
+                  | sort_by(.day)
+                  | reverse
+                )
+              end
+          ' existing_changelog.json > public/changelog.json
+
+          rm -f changelog_entries.jsonl new_entries.json old_decorations.json old_decoration_categories.json existing_changelog.json
+
       - name: Commit and push updated decorations and categories
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/decorations.json public/decoration_categories.json
+          git add public/decorations.json public/decoration_categories.json public/changelog.json
           # Check if there are changes to commit
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Update decorations.json and decoration_categories.json with detailed data"
+            git commit -m "Update decoration data and changelog"
             git push
           fi

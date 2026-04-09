@@ -6,11 +6,13 @@ import { AnimatePresence } from 'framer-motion';
 interface IconGridProps {
   decorations: Decoration[];
   categories: Category[];
+  openDecorationId?: number | null;
 }
 
 export const IconGrid: React.FC<IconGridProps> = ({
   decorations,
   categories,
+  openDecorationId,
 }) => {
   const [expandedItem, setExpandedItem] = useState<number | null>(null);
   const gridRef = useRef<HTMLDivElement>(null);
@@ -82,6 +84,24 @@ export const IconGrid: React.FC<IconGridProps> = ({
       }
     }
   };
+
+  useEffect(() => {
+    if (openDecorationId == null) {
+      return;
+    }
+
+    const targetDecoration = decorations.find((decoration) => decoration.id === openDecorationId);
+    if (!targetDecoration) {
+      return;
+    }
+
+    setExpandedItem(targetDecoration.id);
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        scrollToItem();
+      }, 100);
+    });
+  }, [openDecorationId, decorations]);
 
   const getRowNumber = (index: number) => {
     return Math.floor(index / itemsPerRow);
