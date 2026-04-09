@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Header } from './components/Header';
 import { IconGrid } from './components/IconGrid';
 import { ChangeLogPanel } from './components/ChangeLogPanel';
@@ -24,6 +24,11 @@ function App() {
     error: decorationsError
   } = useDecorations();
   const { days: changelogDays, loading: changelogLoading } = useChangelog();
+
+  const clearFilters = useCallback(() => {
+    setSearchQuery('');
+    setSelectedCategory('all');
+  }, [setSearchQuery, setSelectedCategory]);
 
   const getFilteredCount = (categoryId?: number) => {
     return allDecorations.filter(deco => {
@@ -82,6 +87,7 @@ function App() {
       <Header 
         onSearch={setSearchQuery}
         onCategoryChange={setSelectedCategory}
+        onResetFilters={clearFilters}
         onOpenChangelog={() => setIsChangelogOpen(true)}
         searchValue={searchQuery}
         selectedCategory={selectedCategory}
@@ -136,8 +142,7 @@ function App() {
               onClick={() => {
                 const targetId = filterVisibilityPrompt.id;
                 setFilterVisibilityPrompt(null);
-                setSelectedCategory('all');
-                setSearchQuery('');
+                clearFilters();
                 setPendingOpenAfterFilterResetId(targetId);
               }}
             >

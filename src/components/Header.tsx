@@ -5,6 +5,7 @@ import homesteadIcon from '../assets/homestead.png';
 interface HeaderProps {
   onSearch: (query: string) => void;
   onCategoryChange: (categoryId: string) => void;
+  onResetFilters: () => void;
   onOpenChangelog: () => void;
   searchValue: string;
   selectedCategory: string;
@@ -16,6 +17,7 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ 
   onSearch, 
   onCategoryChange,
+  onResetFilters,
   onOpenChangelog,
   searchValue,
   selectedCategory,
@@ -35,11 +37,6 @@ export const Header: React.FC<HeaderProps> = ({
   const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const value = e.target.value;
     onCategoryChange(value);
-  };
-
-  const handleReset = () => {
-    onSearch('');
-    onCategoryChange('all');
   };
 
   return (
@@ -62,12 +59,22 @@ export const Header: React.FC<HeaderProps> = ({
               ))}
             </select>
 
-            <img 
-              src={homesteadIcon} 
-              alt="Homestead" 
-              className="w-8 h-8 cursor-pointer hover:opacity-80 transition-opacity"
-              onClick={handleReset}
-            />
+            <div className="flex items-center gap-4">
+              <img 
+                src={homesteadIcon} 
+                alt="Homestead" 
+                className="w-8 h-8 cursor-pointer hover:opacity-80 transition-opacity"
+                onClick={onResetFilters}
+              />
+              <button
+                type="button"
+                onClick={onOpenChangelog}
+                className="border-0 bg-transparent p-0 text-3xl font-bold leading-none text-red-600 shadow-none outline-none ring-0 hover:opacity-90 focus:outline-none"
+                aria-label="View updates"
+              >
+                ?
+              </button>
+            </div>
 
             <div className="relative w-[200px]">
               <input 
@@ -88,14 +95,7 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
           </div>
 
-          <div className="flex-1 flex justify-end">
-            <button
-              onClick={onOpenChangelog}
-              className="h-8 px-3 border border-gray-300 rounded-md text-sm text-gray-700 hover:bg-gray-50"
-            >
-              Updates
-            </button>
-          </div>
+          <div className="flex-1" />
         </div>
       </div>
     </header>

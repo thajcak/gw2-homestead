@@ -13,6 +13,8 @@ const normalizeType = (value: unknown): ChangeLogEntryType | null => {
   if (normalized === 'item update' || normalized === 'item updated') return 'Item Update';
   if (normalized === 'item removed') return 'Item Removed';
   if (normalized === 'image update' || normalized === 'image updated') return 'Image Update';
+  if (normalized === 'recipe added') return 'Recipe Added';
+  if (normalized === 'recipe updated' || normalized === 'recipe update') return 'Recipe Updated';
   return null;
 };
 

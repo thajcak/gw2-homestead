@@ -46,7 +46,13 @@ export interface Category {
   name: string;
 }
 
-export type ChangeLogEntryType = 'New Item' | 'Item Update' | 'Item Removed' | 'Image Update';
+export type ChangeLogEntryType =
+  | 'New Item'
+  | 'Item Update'
+  | 'Item Removed'
+  | 'Image Update'
+  | 'Recipe Added'
+  | 'Recipe Updated';
 
 export interface ChangeLogFieldChange {
   field: string;

@@ -2,7 +2,21 @@ import React from 'react';
 import { ChangeLogDay, ChangeLogEntryType } from '../types';
 
 const PANEL_MAX_WIDTH_PX = 500;
-const ENTRY_TYPE_ORDER: ChangeLogEntryType[] = ['New Item', 'Item Update', 'Item Removed', 'Image Update'];
+const ENTRY_TYPE_ORDER: ChangeLogEntryType[] = [
+  'New Item',
+  'Item Update',
+  'Item Removed',
+  'Image Update',
+  'Recipe Added',
+  'Recipe Updated'
+];
+
+const CHIP_ENTRY_TYPES: ChangeLogEntryType[] = [
+  'New Item',
+  'Image Update',
+  'Recipe Added',
+  'Recipe Updated'
+];
 
 interface ChangeLogPanelProps {
   isOpen: boolean;
@@ -174,7 +188,7 @@ export const ChangeLogPanel: React.FC<ChangeLogPanelProps> = ({
                         <h4 className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-1.5">
                           {entryType}
                         </h4>
-                        {(entryType === 'New Item' || entryType === 'Image Update') ? (
+                        {CHIP_ENTRY_TYPES.includes(entryType) ? (
                           <ul className="flex flex-wrap gap-1.5">
                             {entriesForType.map((entry, index) => (
                               <li key={`${dayGroup.day}-${entry.type}-${entry.id}-${index}`}>
