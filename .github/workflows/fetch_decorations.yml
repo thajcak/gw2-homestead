@@ -87,7 +87,40 @@ jobs:
 
       - name: Fetch Decoration Images and Update Data
         run: |
-          set -e
+          set -eo pipefail
+
+          fetch_json_with_retries() {
+            local url="$1"
+            local max_attempts="${2:-4}"
+            local default_sleep_seconds="${3:-2}"
+            local rate_limit_sleep_seconds="${4:-5}"
+            local attempt=1
+            local response=""
+            local wait_seconds=0
+
+            while [ "$attempt" -le "$max_attempts" ]; do
+              response=$(curl -fsSL --connect-timeout 15 --max-time 45 "$url" 2>/dev/null || true)
+              if [ -n "$response" ] && printf '%s' "$response" | jq -e . >/dev/null 2>&1; then
+                printf '%s' "$response"
+                return 0
+              fi
+
+              wait_seconds="$default_sleep_seconds"
+              if [ -n "$response" ] && echo "$response" | rg -qi 'ratelimit|rate limit|too many requests|maxlag'; then
+                wait_seconds="$rate_limit_sleep_seconds"
+                echo "Rate limit detected from wiki API (attempt $attempt/$max_attempts). Sleeping ${wait_seconds}s before retry: $url"
+              else
+                echo "Non-JSON/empty response (attempt $attempt/$max_attempts). Sleeping ${wait_seconds}s before retry: $url"
+              fi
+
+              if [ "$attempt" -lt "$max_attempts" ]; then
+                sleep "$wait_seconds"
+              fi
+              attempt=$((attempt + 1))
+            done
+
+            return 1
+          }
           # Read decorations.json and process each decoration
           jq -c '.[]' public/decorations.json | while read -r decoration; do
             name=$(echo "$decoration" | jq -r '.name')
@@ -114,19 +147,23 @@ jobs:
             echo "API URL: $apiUrl"
 
             # Fetch data from the API
-            response=$(curl -s "$apiUrl")
-            if [ $? -ne 0 ] || [ -z "$response" ]; then
-              echo "Error fetching data from API for decoration $name"
+            response=$(fetch_json_with_retries "$apiUrl" 5 2 || true)
+            if [ -z "$response" ]; then
+              echo "Error fetching valid JSON from API for decoration $name"
               # Append the decoration as is to the updated file
               echo "$decoration" >> decorations_updated.json
               continue
             fi
 
             # Extract pages
-            pages=$(echo "$response" | jq '.query.pages')
-            if [ $? -ne 0 ] || [ -z "$pages" ]; then
-              echo "Error parsing JSON response for decoration $name"
+            if ! pages=$(printf '%s' "$response" | jq -ce '.query.pages // empty' 2>/dev/null); then
+              echo "Error parsing JSON response for decoration $name (invalid or unexpected payload)"
               # Append the decoration as is to the updated file
+              echo "$decoration" >> decorations_updated.json
+              continue
+            fi
+            if [ -z "$pages" ]; then
+              echo "No pages found in JSON response for decoration $name"
               echo "$decoration" >> decorations_updated.json
               continue
             fi
@@ -167,14 +204,15 @@ jobs:
               decoration=$(echo "$decoration" | jq --argjson thumbnail "$thumbnail" --argjson original "$original" '. + {thumbnail: $thumbnail, original: $original}')
             elif [[ "$imageInfo" != "null" ]]; then
               # Fallback to RDF data
+              fullFilename=""
               rdfTitle=$(echo "$imageInfo" | jq -r '.title' | sed 's/ /_/g')
               rdfApiUrl="https://wiki.guildwars2.com/index.php?title=Special:ExportRDF/${rdfTitle}"
 
               echo "Fetching RDF data from: $rdfApiUrl"
 
               # Fetch RDF data
-              rdfData=$(curl -s "$rdfApiUrl")
-              if [ $? -ne 0 ] || [ -z "$rdfData" ]; then
+              rdfData=$(curl -fsSL --connect-timeout 15 --max-time 45 "$rdfApiUrl" 2>/dev/null || true)
+              if [ -z "$rdfData" ]; then
                 echo "Error fetching RDF data for decoration $name"
                 # Append the decoration as is to the updated file
                 echo "$decoration" >> decorations_updated.json
@@ -220,18 +258,22 @@ jobs:
                 echo "Fetching image using filename from: $fallbackApiUrl"
 
                 # Fetch data from the API using the filename
-                fallbackResponse=$(curl -s "$fallbackApiUrl")
-                if [ $? -ne 0 ] || [ -z "$fallbackResponse" ]; then
-                  echo "Error fetching fallback image data for decoration $name"
+                fallbackResponse=$(fetch_json_with_retries "$fallbackApiUrl" 5 2 || true)
+                if [ -z "$fallbackResponse" ]; then
+                  echo "Error fetching valid fallback JSON for decoration $name"
                   # Append the decoration as is to the updated file
                   echo "$decoration" >> decorations_updated.json
                   continue
                 fi
 
-                fallbackPages=$(echo "$fallbackResponse" | jq '.query.pages')
-                if [ $? -ne 0 ] || [ -z "$fallbackPages" ]; then
-                  echo "Error parsing fallback JSON response for decoration $name"
+                if ! fallbackPages=$(printf '%s' "$fallbackResponse" | jq -ce '.query.pages // empty' 2>/dev/null); then
+                  echo "Error parsing fallback JSON response for decoration $name (invalid or unexpected payload)"
                   # Append the decoration as is to the updated file
+                  echo "$decoration" >> decorations_updated.json
+                  continue
+                fi
+                if [ -z "$fallbackPages" ]; then
+                  echo "No fallback pages found for decoration $name"
                   echo "$decoration" >> decorations_updated.json
                   continue
                 fi
