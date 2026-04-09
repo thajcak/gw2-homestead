@@ -36433,6 +36433,11 @@
         },
         {
           "id": 1118,
+          "type": "Image Update",
+          "name": "Ship Stern"
+        },
+        {
+          "id": 1118,
           "type": "Item Update",
           "name": "Ship Stern",
           "changes": [
@@ -36456,6 +36461,37 @@
               }
             }
           ]
+        },
+        {
+          "id": 1118,
+          "type": "Item Update",
+          "name": "Ship Stern",
+          "changes": [
+            {
+              "field": "recipe",
+              "before": {
+                "rating": 1,
+                "type": "Homestead Decoration",
+                "source": "automatic",
+                "disciplines": "Handiworker",
+                "name": "Ship Stern",
+                "id": 15583,
+                "ingredients": [
+                  {
+                    "slot": 1,
+                    "quantity": 10,
+                    "item": "Refined Homestead Wood"
+                  }
+                ]
+              },
+              "after": null
+            }
+          ]
+        },
+        {
+          "id": 1120,
+          "type": "Image Update",
+          "name": "Slothasor Blue Mushroom"
         },
         {
           "id": 1120,
@@ -36490,6 +36526,43 @@
           ]
         },
         {
+          "id": 1120,
+          "type": "Item Update",
+          "name": "Slothasor Blue Mushroom",
+          "changes": [
+            {
+              "field": "recipe",
+              "before": {
+                "rating": 1,
+                "type": "Homestead Decoration",
+                "source": "recipe sheet",
+                "disciplines": "Handiworker",
+                "name": "Slothasor Blue Mushroom",
+                "sheet": "Recipe: Slothasor Blue Mushroom",
+                "id": 15570,
+                "ingredients": [
+                  {
+                    "slot": 1,
+                    "quantity": 5,
+                    "item": "Refined Homestead Metal"
+                  },
+                  {
+                    "slot": 2,
+                    "quantity": 1,
+                    "item": "Slothasor Mushroom (trophy)"
+                  }
+                ]
+              },
+              "after": null
+            }
+          ]
+        },
+        {
+          "id": 1121,
+          "type": "Image Update",
+          "name": "Roof Piece"
+        },
+        {
           "id": 1121,
           "type": "Item Update",
           "name": "Roof Piece",
@@ -36521,6 +36594,42 @@
           ]
         },
         {
+          "id": 1121,
+          "type": "Item Update",
+          "name": "Roof Piece",
+          "changes": [
+            {
+              "field": "recipe",
+              "before": {
+                "rating": 1,
+                "type": "Homestead Decoration",
+                "source": "automatic",
+                "disciplines": "Handiworker",
+                "name": "Roof Piece",
+                "id": 15557,
+                "ingredients": [
+                  {
+                    "slot": 1,
+                    "quantity": 10,
+                    "item": "Refined Homestead Wood"
+                  },
+                  {
+                    "slot": 2,
+                    "quantity": 3,
+                    "item": "Refined Homestead Metal"
+                  }
+                ]
+              },
+              "after": null
+            }
+          ]
+        },
+        {
+          "id": 1123,
+          "type": "Image Update",
+          "name": "Deimos Statue"
+        },
+        {
           "id": 1123,
           "type": "Item Update",
           "name": "Deimos Statue",
@@ -36546,6 +36655,38 @@
               }
             }
           ]
+        },
+        {
+          "id": 1123,
+          "type": "Item Update",
+          "name": "Deimos Statue",
+          "changes": [
+            {
+              "field": "recipe",
+              "before": {
+                "rating": 1,
+                "type": "Homestead Decoration",
+                "source": "recipe sheet",
+                "disciplines": "Handiworker",
+                "name": "Deimos Statue",
+                "sheet": "Recipe: Deimos Statue",
+                "id": 15530,
+                "ingredients": [
+                  {
+                    "slot": 1,
+                    "quantity": 20,
+                    "item": "Refined Homestead Metal"
+                  }
+                ]
+              },
+              "after": null
+            }
+          ]
+        },
+        {
+          "id": 1126,
+          "type": "Image Update",
+          "name": "Jungle Log"
         },
         {
           "id": 1126,
@@ -36579,6 +36720,42 @@
           ]
         },
         {
+          "id": 1126,
+          "type": "Item Update",
+          "name": "Jungle Log",
+          "changes": [
+            {
+              "field": "recipe",
+              "before": {
+                "rating": 1,
+                "type": "Homestead Decoration",
+                "source": "automatic",
+                "disciplines": "Handiworker",
+                "name": "Jungle Log",
+                "id": 15482,
+                "ingredients": [
+                  {
+                    "slot": 1,
+                    "quantity": 5,
+                    "item": "Refined Homestead Wood"
+                  },
+                  {
+                    "slot": 2,
+                    "quantity": 1,
+                    "item": "Palm Lumber Core"
+                  }
+                ]
+              },
+              "after": null
+            }
+          ]
+        },
+        {
+          "id": 1127,
+          "type": "Image Update",
+          "name": "Vale Guardian Pylon"
+        },
+        {
           "id": 1127,
           "type": "Item Update",
           "name": "Vale Guardian Pylon",
@@ -36607,6 +36784,38 @@
                   }
                 ]
               }
+            }
+          ]
+        },
+        {
+          "id": 1127,
+          "type": "Item Update",
+          "name": "Vale Guardian Pylon",
+          "changes": [
+            {
+              "field": "recipe",
+              "before": {
+                "rating": 1,
+                "type": "Homestead Decoration",
+                "source": "recipe sheet",
+                "disciplines": "Handiworker",
+                "name": "Vale Guardian Pylon",
+                "sheet": "Recipe: Vale Guardian Pylon",
+                "id": 15519,
+                "ingredients": [
+                  {
+                    "slot": 1,
+                    "quantity": 5,
+                    "item": "Refined Homestead Wood"
+                  },
+                  {
+                    "slot": 2,
+                    "quantity": 10,
+                    "item": "Bolt of Cotton"
+                  }
+                ]
+              },
+              "after": null
             }
           ]
         },
