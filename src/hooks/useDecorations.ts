@@ -6,11 +6,15 @@ export function useDecorations() {
   const [categories, setCategories] = useState<Category[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
   // Fetch initial data
   useEffect(() => {
     const fetchData = async () => {
       try {
+        setLoading(true);
+        setError(null);
         const baseUrl = process.env.PUBLIC_URL || '';
         const [decorationsResponse, categoriesResponse] = await Promise.all([
           fetch(`${baseUrl}/decorations.json`),
@@ -23,6 +27,10 @@ export function useDecorations() {
 
         const decorationsData = await decorationsResponse.json();
         const categoriesData = await categoriesResponse.json();
+
+        if (!Array.isArray(decorationsData) || !Array.isArray(categoriesData)) {
+          throw new Error('Invalid data shape from JSON assets');
+        }
         
         setAllDecorations(decorationsData);
         setCategories(categoriesData.sort((a: Category, b: Category) => 
@@ -30,6 +38,9 @@ export function useDecorations() {
         ));
       } catch (error) {
         console.error('Error fetching data:', error);
+        setError(error instanceof Error ? error.message : 'Unknown error while loading decorations');
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -79,6 +90,8 @@ export function useDecorations() {
     searchQuery,
     selectedCategory,
     getCategoryTotalCount,
-    totalDecorations: searchFilteredDecorations.length
+    totalDecorations: searchFilteredDecorations.length,
+    loading,
+    error
   };
 }

@@ -19,7 +19,9 @@ function App() {
     setSelectedCategory, 
     setSearchQuery,
     searchQuery,
-    selectedCategory
+    selectedCategory,
+    loading: decorationsLoading,
+    error: decorationsError
   } = useDecorations();
   const { days: changelogDays, loading: changelogLoading } = useChangelog();
 
@@ -89,11 +91,21 @@ function App() {
       />
 
       <main className="container mx-auto px-6">
+        {decorationsError && (
+          <div className="mt-6 rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">
+            Failed to load decoration data: {decorationsError}
+          </div>
+        )}
         <IconGrid
           decorations={decorations}
           categories={categories}
           openDecorationId={selectedChangelogItemId}
         />
+        {!decorationsLoading && !decorationsError && decorations.length === 0 && (
+          <div className="py-10 text-center text-sm text-gray-600">
+            No decorations found.
+          </div>
+        )}
       </main>
 
       <ChangeLogPanel
