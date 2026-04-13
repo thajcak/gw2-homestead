@@ -10782,6 +10782,37 @@
       "source": "https://wiki.guildwars2.com/images/6/60/Bronze_Tequatl_Trophy.jpg",
       "width": 549,
       "height": 814
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Bronze Tequatl Trophy",
+      "sheet": "Recipe: Bronze Tequatl Trophy",
+      "id": 14574,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 34,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 1,
+          "item": "Pile of Putrid Essence"
+        },
+        {
+          "slot": 3,
+          "quantity": 25,
+          "item": "Glob of Ectoplasm"
+        },
+        {
+          "slot": 4,
+          "quantity": 1,
+          "item": "Tequatl Tail Piece"
+        }
+      ]
     }
   },
   {
@@ -10792,7 +10823,44 @@
       5
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/09FCEF4C4F7B362E422B91A0CC6791FA71C8BC74/1225163.png"
+    "icon": "https://render.guildwars2.com/file/09FCEF4C4F7B362E422B91A0CC6791FA71C8BC74/1225163.png",
+    "wikiTitle": "Rustic Brazier (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/8/8d/Rustic_Brazier.jpg/24px-Rustic_Brazier.jpg",
+      "width": 24,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/8/8d/Rustic_Brazier.jpg",
+      "width": 470,
+      "height": 968
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Rustic Brazier",
+      "sheet": "Homestead Recipe Book: Lights, Volume 2",
+      "id": 14829,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 28,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 1,
+          "item": "Molten Fragment"
+        },
+        {
+          "slot": 3,
+          "quantity": 5,
+          "item": "Intricate Totem"
+        }
+      ]
+    }
   },
   {
     "id": 242,
