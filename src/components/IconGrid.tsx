@@ -7,16 +7,21 @@ interface IconGridProps {
   decorations: Decoration[];
   categories: Category[];
   openDecorationId?: number | null;
+  /** Incremented from the parent (e.g. home reset) to collapse any expanded row. */
+  closeExpandedSignal?: number;
 }
 
 export const IconGrid: React.FC<IconGridProps> = ({
   decorations,
   categories,
   openDecorationId,
+  closeExpandedSignal,
 }) => {
   const [expandedItem, setExpandedItem] = useState<number | null>(null);
   const gridRef = useRef<HTMLDivElement>(null);
   const clickedItemRef = useRef<HTMLDivElement | null>(null);
+  const closeExpandedSignalRef = useRef(closeExpandedSignal ?? 0);
+  const lastHandledOpenIdRef = useRef<number | null>(null);
   const [itemsPerRow, setItemsPerRow] = useState(0);
 
   // Calculate items per row on mount and window resize
@@ -94,7 +99,17 @@ export const IconGrid: React.FC<IconGridProps> = ({
     applyOpenDecoration(decoration);
   };
 
-  const lastHandledOpenIdRef = useRef<number | null>(null);
+  useEffect(() => {
+    if (closeExpandedSignal === undefined) {
+      return;
+    }
+    if (closeExpandedSignal === closeExpandedSignalRef.current) {
+      return;
+    }
+    closeExpandedSignalRef.current = closeExpandedSignal;
+    setExpandedItem(null);
+    lastHandledOpenIdRef.current = null;
+  }, [closeExpandedSignal]);
 
   useEffect(() => {
     if (openDecorationId == null) {

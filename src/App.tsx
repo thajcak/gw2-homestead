@@ -12,6 +12,7 @@ function App() {
   const [pendingOpenAfterFilterResetId, setPendingOpenAfterFilterResetId] = useState<number | null>(null);
   const [changelogScrollTop, setChangelogScrollTop] = useState<number>(0);
   const [filterVisibilityPrompt, setFilterVisibilityPrompt] = useState<{ id: number; name: string } | null>(null);
+  const [iconGridCloseSignal, setIconGridCloseSignal] = useState(0);
   const { 
     decorations, 
     allDecorations, 
@@ -29,6 +30,16 @@ function App() {
     setSearchQuery('');
     setSelectedCategory('all');
   }, [setSearchQuery, setSelectedCategory]);
+
+  const handleHomeReset = useCallback(() => {
+    clearFilters();
+    setSelectedChangelogItemId(null);
+    setIsChangelogOpen(false);
+    setFilterVisibilityPrompt(null);
+    setPendingOpenAfterFilterResetId(null);
+    setIconGridCloseSignal((n) => n + 1);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [clearFilters]);
 
   const getFilteredCount = (categoryId?: number) => {
     return allDecorations.filter(deco => {
@@ -87,7 +98,7 @@ function App() {
       <Header 
         onSearch={setSearchQuery}
         onCategoryChange={setSelectedCategory}
-        onResetFilters={clearFilters}
+        onResetFilters={handleHomeReset}
         onOpenChangelog={() => setIsChangelogOpen(true)}
         searchValue={searchQuery}
         selectedCategory={selectedCategory}
@@ -106,6 +117,7 @@ function App() {
           decorations={decorations}
           categories={categories}
           openDecorationId={selectedChangelogItemId}
+          closeExpandedSignal={iconGridCloseSignal}
         />
         {!decorationsLoading && !decorationsError && decorations.length === 0 && (
           <div className="py-10 text-center text-sm text-gray-600">
