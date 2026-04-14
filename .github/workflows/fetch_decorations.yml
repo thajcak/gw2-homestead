@@ -560,7 +560,7 @@ jobs:
             | select((($newItem.thumbnail // null) != ($oldItem.thumbnail // null)) or (($newItem.original // null) != ($oldItem.original // null)))
             | {id:$newItem.id, type:"Image Update", name:$newItem.name}
           ' public/decorations.json >> changelog_entries.jsonl
-          # Decorations: recipe changes (Recipe Added omitted for current run — all qualify as "today")
+          # Decorations: recipe added (was empty) vs updated (had content and changed)
           jq -c --slurpfile old old_decorations.json '
             def recipeEmpty: . as $x | ($x == null or $x == {});
             ($old[0] | map({key:(.id|tostring), value:.}) | from_entries) as $oldById
@@ -570,8 +570,13 @@ jobs:
             | select($oldItem != null)
             | ($oldItem.recipe // null) as $or
             | ($newItem.recipe // null) as $nr
-            | select(($or | recipeEmpty | not) and (($or | tojson) != ($nr | tojson)))
-            | {id:$newItem.id, type:"Recipe Updated", name:$newItem.name}
+            | if ($or | recipeEmpty | not) and (($or | tojson) != ($nr | tojson)) then
+                {id:$newItem.id, type:"Recipe Updated", name:$newItem.name}
+              elif ($or | recipeEmpty) and ($nr | recipeEmpty | not) then
+                {id:$newItem.id, type:"Recipe Added", name:$newItem.name}
+              else
+                empty
+              end
           ' public/decorations.json >> changelog_entries.jsonl
 
           # Categories: new items
