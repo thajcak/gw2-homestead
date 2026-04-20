@@ -9118,6 +9118,30 @@
       "source": "https://wiki.guildwars2.com/images/9/9f/Kodan_Decorative_Wardrobe.jpg",
       "width": 918,
       "height": 1224
+    },
+    "recipe": {
+      "rating": 75,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "id": 14541,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 30,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 10,
+          "item": "Lowland Pine Log"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Tub of Wood Glue"
+        }
+      ]
     }
   },
   {
@@ -9128,7 +9152,39 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/B021D7E2D7066534F6A4FE557AFFBC3E0CCF6DB7/1341366.png"
+    "icon": "https://render.guildwars2.com/file/B021D7E2D7066534F6A4FE557AFFBC3E0CCF6DB7/1341366.png",
+    "wikiTitle": "Shatterer Crystal (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/8/8b/Shatterer_Crystal.jpg/50px-Shatterer_Crystal.jpg",
+      "width": 50,
+      "height": 29
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/8/8b/Shatterer_Crystal.jpg",
+      "width": 671,
+      "height": 384
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Shatterer Crystal",
+      "sheet": "Recipe: Shatterer Crystal",
+      "id": 14215,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 27,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 1,
+          "item": "Crystal Lodestone"
+        }
+      ]
+    }
   },
   {
     "id": 204,
@@ -9138,7 +9194,44 @@
       22
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/C14DC83F746CC455074AF33AB05601D57EF4B21B/2281908.png"
+    "icon": "https://render.guildwars2.com/file/C14DC83F746CC455074AF33AB05601D57EF4B21B/2281908.png",
+    "wikiTitle": "Super Mushroom Platform (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/8/89/Super_Mushroom_Platform.jpg/50px-Super_Mushroom_Platform.jpg",
+      "width": 50,
+      "height": 38
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/8/89/Super_Mushroom_Platform.jpg",
+      "width": 1000,
+      "height": 769
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Super Mushroom Platform",
+      "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 5",
+      "id": 14701,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 32,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 8,
+          "item": "Bauble"
+        },
+        {
+          "slot": 3,
+          "quantity": 4,
+          "item": "Pouch of Brown Pigment"
+        }
+      ]
+    }
   },
   {
     "id": 205,
@@ -13044,44 +13137,7 @@
       1
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/F90FC662D7063C767BD7A0FF4A5BB517D8AEFEEC/3122180.png",
-    "wikiTitle": "Astral Ward Gate (Handiwork)",
-    "thumbnail": {
-      "source": "https://wiki.guildwars2.com/images/thumb/1/17/Astral_Ward_Gate.jpg/50px-Astral_Ward_Gate.jpg",
-      "width": 50,
-      "height": 50
-    },
-    "original": {
-      "source": "https://wiki.guildwars2.com/images/1/17/Astral_Ward_Gate.jpg",
-      "width": 1440,
-      "height": 1440
-    },
-    "recipe": {
-      "rating": 400,
-      "type": "Homestead Decoration",
-      "source": "Recipe Sheet",
-      "disciplines": "Handiworker",
-      "name": "Astral Ward Gate",
-      "sheet": "Homestead Recipe Book: Skywatch Archipelago, Volume 1",
-      "id": 14774,
-      "ingredients": [
-        {
-          "slot": 1,
-          "quantity": 35,
-          "item": "Refined Homestead Metal"
-        },
-        {
-          "slot": 2,
-          "quantity": 1,
-          "item": "Pouch of Stardust"
-        },
-        {
-          "slot": 3,
-          "quantity": 5,
-          "item": "Opal Orb"
-        }
-      ]
-    }
+    "icon": "https://render.guildwars2.com/file/F90FC662D7063C767BD7A0FF4A5BB517D8AEFEEC/3122180.png"
   },
   {
     "id": 294,
@@ -13091,44 +13147,7 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/69E33529F8C4A97E5D9D78EA6D06F90EAA95CED9/2039286.png",
-    "wikiTitle": "Gold Conjured Amalgamate Trophy (Handiwork)",
-    "thumbnail": {
-      "source": "https://wiki.guildwars2.com/images/thumb/6/68/Gold_Conjured_Amalgamate_Trophy.jpg/47px-Gold_Conjured_Amalgamate_Trophy.jpg",
-      "width": 47,
-      "height": 50
-    },
-    "original": {
-      "source": "https://wiki.guildwars2.com/images/6/68/Gold_Conjured_Amalgamate_Trophy.jpg",
-      "width": 400,
-      "height": 423
-    },
-    "recipe": {
-      "rating": 400,
-      "type": "Homestead Decoration",
-      "source": "Recipe Sheet",
-      "disciplines": "Handiworker",
-      "name": "Gold Conjured Amalgamate Trophy",
-      "sheet": "Recipe: Gold Conjured Amalgamate Trophy",
-      "id": 14876,
-      "ingredients": [
-        {
-          "slot": 1,
-          "quantity": 130,
-          "item": "Refined Homestead Wood"
-        },
-        {
-          "slot": 2,
-          "quantity": 100,
-          "item": "Magnetite Shard"
-        },
-        {
-          "slot": 3,
-          "quantity": 5,
-          "item": "Conjured Amalgamate Token (trophy)"
-        }
-      ]
-    }
+    "icon": "https://render.guildwars2.com/file/69E33529F8C4A97E5D9D78EA6D06F90EAA95CED9/2039286.png"
   },
   {
     "id": 295,
@@ -14641,6 +14660,32 @@
       "source": "https://wiki.guildwars2.com/images/d/d1/Fuchsia_Balloon.jpg",
       "width": 407,
       "height": 828
+    },
+    "recipe": {
+      "rating": 150,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Fuchsia Balloon",
+      "sheet": "Homestead Recipe Book: Balloons",
+      "id": 14830,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 2,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 3,
+          "item": "Pouch of White Pigment"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Spool of Linen Thread"
+        }
+      ]
     }
   },
   {
@@ -14651,7 +14696,44 @@
       11
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/070E0DB7C1BFCD742B386F0802C47D799E4AFCF3/1701371.png"
+    "icon": "https://render.guildwars2.com/file/070E0DB7C1BFCD742B386F0802C47D799E4AFCF3/1701371.png",
+    "wikiTitle": "Superior Ballista Siege (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/d/d0/Superior_Ballista_Siege.jpg/50px-Superior_Ballista_Siege.jpg",
+      "width": 50,
+      "height": 38
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/d/d0/Superior_Ballista_Siege.jpg",
+      "width": 1920,
+      "height": 1440
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Superior Ballista Siege",
+      "sheet": "Homestead Recipe Book: World vs. World, Volume 2",
+      "id": 14659,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 34,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 8,
+          "item": "WvW Skirmish Claim Ticket"
+        },
+        {
+          "slot": 3,
+          "quantity": 10,
+          "item": "Airship Part"
+        }
+      ]
+    }
   },
   {
     "id": 330,
@@ -14661,7 +14743,44 @@
       22
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/22C4283D0DD7E670D8A0D729091302E336F8F764/1418354.png"
+    "icon": "https://render.guildwars2.com/file/22C4283D0DD7E670D8A0D729091302E336F8F764/1418354.png",
+    "wikiTitle": "Super Rock Wall (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/a/ae/Super_Rock_Wall.jpg/50px-Super_Rock_Wall.jpg",
+      "width": 50,
+      "height": 42
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/a/ae/Super_Rock_Wall.jpg",
+      "width": 573,
+      "height": 480
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Super Rock Wall",
+      "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 1",
+      "id": 14802,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 32,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 4,
+          "item": "Bauble"
+        },
+        {
+          "slot": 3,
+          "quantity": 2,
+          "item": "Pouch of Green Pigment"
+        }
+      ]
+    }
   },
   {
     "id": 331,
@@ -14671,7 +14790,44 @@
       10
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/5FDCACAE95D3A009A2FCEE7E4C1CED072BEA4875/1225307.png"
+    "icon": "https://render.guildwars2.com/file/5FDCACAE95D3A009A2FCEE7E4C1CED072BEA4875/1225307.png",
+    "wikiTitle": "Charr Summit Flag (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/9/9e/Charr_Summit_Flag.jpg/17px-Charr_Summit_Flag.jpg",
+      "width": 17,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/9/9e/Charr_Summit_Flag.jpg",
+      "width": 297,
+      "height": 852
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Charr Summit Flag",
+      "sheet": "Homestead Recipe Book: Summit Flags, Volume 1",
+      "id": 14551,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 28,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 5,
+          "item": "Bolt of Gossamer"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Superior Rune of the Citadel"
+        }
+      ]
+    }
   },
   {
     "id": 332,
@@ -14681,7 +14837,44 @@
       1
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/656425E8C3FBC2E42E69F809C154080997A7B906/1227614.png"
+    "icon": "https://render.guildwars2.com/file/656425E8C3FBC2E42E69F809C154080997A7B906/1227614.png",
+    "wikiTitle": "Elegant Pillar (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/8/8f/Elegant_Pillar.jpg/17px-Elegant_Pillar.jpg",
+      "width": 17,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/8/8f/Elegant_Pillar.jpg",
+      "width": 333,
+      "height": 947
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Elegant Pillar",
+      "sheet": "Homestead Recipe Book: Arches and Pillars",
+      "id": 14430,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 25,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 20,
+          "item": "Elaborate Totem"
+        },
+        {
+          "slot": 3,
+          "quantity": 3,
+          "item": "Lapis Lump"
+        }
+      ]
+    }
   },
   {
     "id": 333,
@@ -14691,7 +14884,49 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/763BB61B54AACCD24DA41BA4FA2AAA7533F809F1/1341269.png"
+    "icon": "https://render.guildwars2.com/file/763BB61B54AACCD24DA41BA4FA2AAA7533F809F1/1341269.png",
+    "wikiTitle": "Bronze Mordremoth Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/7/72/Bronze_Mordremoth_Trophy.jpg/30px-Bronze_Mordremoth_Trophy.jpg",
+      "width": 30,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/7/72/Bronze_Mordremoth_Trophy.jpg",
+      "width": 485,
+      "height": 796
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Bronze Mordremoth Trophy",
+      "sheet": "Recipe: Bronze Mordremoth Trophy",
+      "id": 14237,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 34,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 25,
+          "item": "Barbed Thorn"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Mordremoth Mandible Piece"
+        },
+        {
+          "slot": 4,
+          "quantity": 1,
+          "item": "Mordrem Lodestone"
+        }
+      ]
+    }
   },
   {
     "id": 334,
@@ -14702,7 +14937,44 @@
       1
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/CB289A937A1E25E95450C90ECBD93465296E1F16/3122184.png"
+    "icon": "https://render.guildwars2.com/file/CB289A937A1E25E95450C90ECBD93465296E1F16/3122184.png",
+    "wikiTitle": "Astral Ward Wall (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/f/f2/Astral_Ward_Wall.jpg/50px-Astral_Ward_Wall.jpg",
+      "width": 50,
+      "height": 40
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/f/f2/Astral_Ward_Wall.jpg",
+      "width": 1647,
+      "height": 1317
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Astral Ward Wall",
+      "sheet": "Homestead Recipe Book: Amnytas, Volume 1",
+      "id": 14788,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 29,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 24,
+          "item": "Static Charge"
+        },
+        {
+          "slot": 3,
+          "quantity": 10,
+          "item": "Research Note"
+        }
+      ]
+    }
   },
   {
     "id": 335,
@@ -14712,7 +14984,44 @@
       9
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/5B280DAED9B3A1EA0BBAB00742AA056F5F383E27/1228105.png"
+    "icon": "https://render.guildwars2.com/file/5B280DAED9B3A1EA0BBAB00742AA056F5F383E27/1228105.png",
+    "wikiTitle": "Mists Griffon Statue (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/a/aa/Mists_Griffon_Statue.jpg/30px-Mists_Griffon_Statue.jpg",
+      "width": 30,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/a/aa/Mists_Griffon_Statue.jpg",
+      "width": 583,
+      "height": 959
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Mists Griffon Statue",
+      "sheet": "Homestead Recipe Book: World vs. World, Volume 2",
+      "id": 14147,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 32,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 25,
+          "item": "WvW Skirmish Claim Ticket"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Superior Rune of the Eagle"
+        }
+      ]
+    }
   },
   {
     "id": 336,
@@ -14723,7 +15032,44 @@
       14
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/02E7F7C3C9DE766A053E05C32B920C0314746F5D/2056167.png"
+    "icon": "https://render.guildwars2.com/file/02E7F7C3C9DE766A053E05C32B920C0314746F5D/2056167.png",
+    "wikiTitle": "Decorated Casket (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/0/05/Decorated_Casket.jpg/50px-Decorated_Casket.jpg",
+      "width": 50,
+      "height": 28
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/0/05/Decorated_Casket.jpg",
+      "width": 2364,
+      "height": 1330
+    },
+    "recipe": {
+      "rating": 150,
+      "type": "Homestead Decoration",
+      "source": "sheet",
+      "disciplines": "Handiworker",
+      "name": "Decorated Casket",
+      "sheet": "Homestead Recipe Book: Halloween, Volume 4",
+      "id": 14898,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 32,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 40,
+          "item": "Piece of Candy Corn"
+        },
+        {
+          "slot": 3,
+          "quantity": 10,
+          "item": "Bone"
+        }
+      ]
+    }
   },
   {
     "id": 337,
@@ -14733,7 +15079,44 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/5633E3E14FECE51CEB3C775DF7D57AB1ADF89679/1634874.png"
+    "icon": "https://render.guildwars2.com/file/5633E3E14FECE51CEB3C775DF7D57AB1ADF89679/1634874.png",
+    "wikiTitle": "Silver Deimos Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/1/16/Silver_Deimos_Trophy_Decoration.jpg/22px-Silver_Deimos_Trophy_Decoration.jpg",
+      "width": 22,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/1/16/Silver_Deimos_Trophy_Decoration.jpg",
+      "width": 457,
+      "height": 1019
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Silver Deimos Trophy",
+      "sheet": "Recipe: Silver Deimos Trophy",
+      "id": 14705,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 90,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 40,
+          "item": "Magnetite Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 3,
+          "item": "Fragment of Saul's Burden (trophy)"
+        }
+      ]
+    }
   },
   {
     "id": 338,
@@ -14744,7 +15127,44 @@
       24
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/57789EF707B7B36202A2C453E1F003F8914FBCAC/2323855.png"
+    "icon": "https://render.guildwars2.com/file/57789EF707B7B36202A2C453E1F003F8914FBCAC/2323855.png",
+    "wikiTitle": "Zephyr Scaffolding (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/5/52/Zephyr_Scaffolding.jpg/50px-Zephyr_Scaffolding.jpg",
+      "width": 50,
+      "height": 41
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/5/52/Zephyr_Scaffolding.jpg",
+      "width": 1760,
+      "height": 1440
+    },
+    "recipe": {
+      "rating": 150,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Zephyr Scaffolding",
+      "sheet": "Homestead Recipe Book: Four Winds, Volume 3",
+      "id": 14796,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 28,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 20,
+          "item": "Jute Scrap"
+        },
+        {
+          "slot": 3,
+          "quantity": 12,
+          "item": "Ursus Oblige"
+        }
+      ]
+    }
   },
   {
     "id": 339,
@@ -14755,7 +15175,44 @@
       1
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/55A204686A6824C4610317C743272E0441591E49/3122171.png"
+    "icon": "https://render.guildwars2.com/file/55A204686A6824C4610317C743272E0441591E49/3122171.png",
+    "wikiTitle": "Complete Academic Arch (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/4/48/Complete_Academic_Arch.jpg/50px-Complete_Academic_Arch.jpg",
+      "width": 50,
+      "height": 28
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/4/48/Complete_Academic_Arch.jpg",
+      "width": 2560,
+      "height": 1440
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Complete Academic Arch",
+      "sheet": "Homestead Recipe Book: Skywatch Archipelago, Volume 1",
+      "id": 14622,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 38,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 20,
+          "item": "Bag of Mortar"
+        },
+        {
+          "slot": 3,
+          "quantity": 3,
+          "item": "Onyx Lodestone"
+        }
+      ]
+    }
   },
   {
     "id": 340,
@@ -14766,7 +15223,44 @@
       16
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/689ABA45482ACB14D548F90BD827C9D224D8B52A/1769452.png"
+    "icon": "https://render.guildwars2.com/file/689ABA45482ACB14D548F90BD827C9D224D8B52A/1769452.png",
+    "wikiTitle": "Elonian Hawk Statue (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/8/85/Elonian_Hawk_Statue.jpg/28px-Elonian_Hawk_Statue.jpg",
+      "width": 28,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/8/85/Elonian_Hawk_Statue.jpg",
+      "width": 797,
+      "height": 1418
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Elonian Hawk Statue",
+      "sheet": "Homestead Recipe Book: Statues",
+      "id": 14556,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 30,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 12,
+          "item": "Sunstone Lump"
+        },
+        {
+          "slot": 3,
+          "quantity": 52,
+          "item": "Trade Contract"
+        }
+      ]
+    }
   },
   {
     "id": 341,
@@ -14776,7 +15270,44 @@
       6
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/4F727FB37D18C8FA46A61D0608C6D52DFDE294DB/1224768.png"
+    "icon": "https://render.guildwars2.com/file/4F727FB37D18C8FA46A61D0608C6D52DFDE294DB/1224768.png",
+    "wikiTitle": "Block Topiary (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/b/b4/Block_Topiary.jpg/50px-Block_Topiary.jpg",
+      "width": 50,
+      "height": 33
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/b/b4/Block_Topiary.jpg",
+      "width": 1299,
+      "height": 869
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Block Topiary",
+      "sheet": "Homestead Recipe Book: Plants, Volume 2",
+      "id": 14189,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 34,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 2,
+          "item": "Onyx Lodestone"
+        },
+        {
+          "slot": 3,
+          "quantity": 50,
+          "item": "Volatile Magic"
+        }
+      ]
+    }
   },
   {
     "id": 342,
@@ -14786,7 +15317,44 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/96D4AB27E556432079E9D6030CDA4FDE05E1AC5E/1341304.png"
+    "icon": "https://render.guildwars2.com/file/96D4AB27E556432079E9D6030CDA4FDE05E1AC5E/1341304.png",
+    "wikiTitle": "Gold Vale Guardian Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/d/da/Gold_Vale_Guardian_Trophy.jpg/33px-Gold_Vale_Guardian_Trophy.jpg",
+      "width": 33,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/d/da/Gold_Vale_Guardian_Trophy.jpg",
+      "width": 703,
+      "height": 1049
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Gold Vale Guardian Trophy",
+      "sheet": "Recipe: Gold Vale Guardian Trophy",
+      "id": 14834,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 130,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 100,
+          "item": "Magnetite Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 5,
+          "item": "Vale Guardian Fragment"
+        }
+      ]
+    }
   },
   {
     "id": 343,
@@ -14796,7 +15364,44 @@
       2
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/21E2752DBECD94E319EDA2D2E56F0C4254FC2AFA/1227676.png"
+    "icon": "https://render.guildwars2.com/file/21E2752DBECD94E319EDA2D2E56F0C4254FC2AFA/1227676.png",
+    "wikiTitle": "Fancy Round Table (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/b/bc/Fancy_Round_Table.jpg/50px-Fancy_Round_Table.jpg",
+      "width": 50,
+      "height": 31
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/b/bc/Fancy_Round_Table.jpg",
+      "width": 1335,
+      "height": 839
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Fancy Round Table",
+      "sheet": "Homestead Recipe Book: Tables and Chairs",
+      "id": 14138,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 32,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 6,
+          "item": "Evergreen Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Standard Maintenance Oil"
+        }
+      ]
+    }
   },
   {
     "id": 344,
@@ -14806,7 +15411,49 @@
       9
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/AAFC1A597A773A2CB179212FD9700C04FB51F64D/2247490.png"
+    "icon": "https://render.guildwars2.com/file/AAFC1A597A773A2CB179212FD9700C04FB51F64D/2247490.png",
+    "wikiTitle": "Corrupted Ox Shrine (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/8/8e/Corrupted_Ox_Shrine_Token.jpg/50px-Corrupted_Ox_Shrine_Token.jpg",
+      "width": 50,
+      "height": 28
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/8/8e/Corrupted_Ox_Shrine_Token.jpg",
+      "width": 1920,
+      "height": 1080
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Corrupted Ox Shrine",
+      "sheet": "Homestead Recipe Book: Statues and Trophies",
+      "id": 14333,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 90,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 100,
+          "item": "Eternal Ice Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 3,
+          "item": "Corrupted Lodestone"
+        },
+        {
+          "slot": 4,
+          "quantity": 1,
+          "item": "Glacial Lodestone"
+        }
+      ]
+    }
   },
   {
     "id": 345,
@@ -14817,7 +15464,44 @@
       2
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/E6CF42B3792A90370C763541697103900277386C/1862048.png"
+    "icon": "https://render.guildwars2.com/file/E6CF42B3792A90370C763541697103900277386C/1862048.png",
+    "wikiTitle": "Haunted Armchair (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/b/b7/Haunted_Armchair.jpg/30px-Haunted_Armchair.jpg",
+      "width": 30,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/b/b7/Haunted_Armchair.jpg",
+      "width": 661,
+      "height": 1080
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "sheet",
+      "disciplines": "Handiworker",
+      "name": "Haunted Armchair",
+      "sheet": "Homestead Recipe Book: Halloween, Volume 3",
+      "id": 14486,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 29,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 75,
+          "item": "Pieces of Candy Corn"
+        },
+        {
+          "slot": 3,
+          "quantity": 10,
+          "item": "Thick Leather Section"
+        }
+      ]
+    }
   },
   {
     "id": 346,
@@ -14828,7 +15512,44 @@
       1
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/60B37668D51FDCC0984D0DC5F3FB0E0B2CD8C3DF/1769468.png"
+    "icon": "https://render.guildwars2.com/file/60B37668D51FDCC0984D0DC5F3FB0E0B2CD8C3DF/1769468.png",
+    "wikiTitle": "Weathered Elonian Obelisk (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/4/44/Weathered_Elonian_Obelisk_details.jpg/34px-Weathered_Elonian_Obelisk_details.jpg",
+      "width": 34,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/4/44/Weathered_Elonian_Obelisk_details.jpg",
+      "width": 651,
+      "height": 956
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Weathered Elonian Obelisk",
+      "sheet": "Homestead Recipe Book: Arches and Pillars",
+      "id": 14335,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 30,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 25,
+          "item": "Trade Contract"
+        },
+        {
+          "slot": 3,
+          "quantity": 25,
+          "item": "Ley-Infused Sand"
+        }
+      ]
+    }
   },
   {
     "id": 347,
@@ -14838,7 +15559,18 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/E2EFCF4D07A17201C9BC0E3964F19B93B70FD7B1/1313330.png"
+    "icon": "https://render.guildwars2.com/file/E2EFCF4D07A17201C9BC0E3964F19B93B70FD7B1/1313330.png",
+    "wikiTitle": "Season 6: Bronze Guild Challenger Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/3/3a/Season_1-_Bronze_Guild_Challenger_Trophy.jpg/50px-Season_1-_Bronze_Guild_Challenger_Trophy.jpg",
+      "width": 50,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/3/3a/Season_1-_Bronze_Guild_Challenger_Trophy.jpg",
+      "width": 768,
+      "height": 768
+    }
   },
   {
     "id": 348,
@@ -14848,7 +15580,44 @@
       14
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/0FDB010C1AFDE29430EAE17C4E511A0CF515389E/1494192.png"
+    "icon": "https://render.guildwars2.com/file/0FDB010C1AFDE29430EAE17C4E511A0CF515389E/1494192.png",
+    "wikiTitle": "Large Male Norn Holo-Dancer (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/5/59/Large_Male_Norn_Holo-Dancer.jpg/34px-Large_Male_Norn_Holo-Dancer.jpg",
+      "width": 34,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/5/59/Large_Male_Norn_Holo-Dancer.jpg",
+      "width": 729,
+      "height": 1080
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Large Male Norn Holo-Dancer",
+      "sheet": "Homestead Recipe Book: Fractals of the Mists, Volume 2",
+      "id": 14320,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 38,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 5,
+          "item": "Pile of Luminous Dust"
+        },
+        {
+          "slot": 3,
+          "quantity": 12,
+          "item": "Stabilizing Matrix"
+        }
+      ]
+    }
   },
   {
     "id": 349,
@@ -14859,7 +15628,44 @@
       1
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/F8940061AC029EF7421E38B1C45CA830EB2C4ACD/3122175.png"
+    "icon": "https://render.guildwars2.com/file/F8940061AC029EF7421E38B1C45CA830EB2C4ACD/3122175.png",
+    "wikiTitle": "Round Academic Column (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/0/01/Round_Academic_Column.jpg/25px-Round_Academic_Column.jpg",
+      "width": 25,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/0/01/Round_Academic_Column.jpg",
+      "width": 720,
+      "height": 1440
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Round Academic Column",
+      "sheet": "Homestead Recipe Book: Skywatch Archipelago, Volume 1",
+      "id": 14283,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 25,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 10,
+          "item": "Bag of Mortar"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Onyx Lodestone"
+        }
+      ]
+    }
   },
   {
     "id": 350,
@@ -14869,7 +15675,44 @@
       9
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/D9B76342CD69EBD5021AF8D4ED270F0CDEF63C39/1227579.png"
+    "icon": "https://render.guildwars2.com/file/D9B76342CD69EBD5021AF8D4ED270F0CDEF63C39/1227579.png",
+    "wikiTitle": "Armor Stand (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/d/d1/Armor_Stand.jpg/20px-Armor_Stand.jpg",
+      "width": 20,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/d/d1/Armor_Stand.jpg",
+      "width": 390,
+      "height": 965
+    },
+    "recipe": {
+      "rating": 150,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Armor Stand",
+      "sheet": "Homestead Recipe Book: Basic Decorations",
+      "id": 14784,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 30,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 5,
+          "item": "Armored Scale"
+        },
+        {
+          "slot": 3,
+          "quantity": 3,
+          "item": "Blade Shard"
+        }
+      ]
+    }
   },
   {
     "id": 351,
@@ -14880,7 +15723,44 @@
       5
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/4EFF55AB7AF3082A099FF7CC3BA8634B0279D104/2162999.png"
+    "icon": "https://render.guildwars2.com/file/4EFF55AB7AF3082A099FF7CC3BA8634B0279D104/2162999.png",
+    "wikiTitle": "Dragon's Tooth Lantern (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/0/0d/Dragon%27s_Tooth_Lantern.jpg/50px-Dragon%27s_Tooth_Lantern.jpg",
+      "width": 50,
+      "height": 17
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/0/0d/Dragon%27s_Tooth_Lantern.jpg",
+      "width": 1920,
+      "height": 646
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Dragon's Tooth Lantern",
+      "sheet": "Homestead Recipe Book: Dragon Bash, Volume 1",
+      "id": 14635,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 25,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 1,
+          "item": "Destroyer Core"
+        },
+        {
+          "slot": 3,
+          "quantity": 10,
+          "item": "Large Bone"
+        }
+      ]
+    }
   },
   {
     "id": 352,
@@ -14891,7 +15771,44 @@
       21
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/B32C6BF3BBD50D171B30D244B412D49772AE6165/1341433.png"
+    "icon": "https://render.guildwars2.com/file/B32C6BF3BBD50D171B30D244B412D49772AE6165/1341433.png",
+    "wikiTitle": "Red Festival Umbrella (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/3/30/Red_Festival_Umbrella.jpg/49px-Red_Festival_Umbrella.jpg",
+      "width": 49,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/3/30/Red_Festival_Umbrella.jpg",
+      "width": 934,
+      "height": 960
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Red Festival Umbrella",
+      "sheet": "Homestead Recipe Book: Lunar New Year, Volume 1",
+      "id": 14104,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 24,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 6,
+          "item": "Pouch of Red Pigment"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Spool of Silk Thread"
+        }
+      ]
+    }
   },
   {
     "id": 353,
@@ -14903,7 +15820,44 @@
       21
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/AF4344AED6043E6EC96BBDE8024F56C738681E80/1341434.png"
+    "icon": "https://render.guildwars2.com/file/AF4344AED6043E6EC96BBDE8024F56C738681E80/1341434.png",
+    "wikiTitle": "Lunar Arch (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/d/d6/Lunar_Arch.jpg/50px-Lunar_Arch.jpg",
+      "width": 50,
+      "height": 42
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/d/d6/Lunar_Arch.jpg",
+      "width": 1153,
+      "height": 960
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Lunar Arch",
+      "sheet": "Homestead Recipe Book: Lunar New Year, Volume 1",
+      "id": 14177,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 35,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 12,
+          "item": "Large Scale"
+        },
+        {
+          "slot": 3,
+          "quantity": 4,
+          "item": "Imperial Favor"
+        }
+      ]
+    }
   },
   {
     "id": 354,
@@ -14913,7 +15867,44 @@
       1
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/7829221C39EE95540AB31622F7330C70D4746EC7/1223825.png"
+    "icon": "https://render.guildwars2.com/file/7829221C39EE95540AB31622F7330C70D4746EC7/1223825.png",
+    "wikiTitle": "Capped Gold Pillar (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/b/bc/Capped_Gold_Pillar_close-up.jpg/50px-Capped_Gold_Pillar_close-up.jpg",
+      "width": 50,
+      "height": 49
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/b/bc/Capped_Gold_Pillar_close-up.jpg",
+      "width": 987,
+      "height": 965
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Capped Gold Pillar",
+      "sheet": "Homestead Recipe Book: Auric Basin, Volume 1",
+      "id": 14105,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 32,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 60,
+          "item": "Auric Sliver"
+        },
+        {
+          "slot": 3,
+          "quantity": 60,
+          "item": "Lump of Aurillium"
+        }
+      ]
+    }
   },
   {
     "id": 355,
@@ -14924,7 +15915,44 @@
       23
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/5C9895A9ACEED00AB72C5A025A989C1C930BC6CE/2162997.png"
+    "icon": "https://render.guildwars2.com/file/5C9895A9ACEED00AB72C5A025A989C1C930BC6CE/2162997.png",
+    "wikiTitle": "Purple Dragon Target (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/a/ae/Purple_Dragon_Target.jpg/50px-Purple_Dragon_Target.jpg",
+      "width": 50,
+      "height": 33
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/a/ae/Purple_Dragon_Target.jpg",
+      "width": 1682,
+      "height": 1121
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Purple Dragon Target",
+      "sheet": "Homestead Recipe Book: Dragon Bash, Volume 1",
+      "id": 14638,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 25,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 15,
+          "item": "Piece of Zhaitaffy"
+        },
+        {
+          "slot": 3,
+          "quantity": 5,
+          "item": "Pouch of Purple Pigment"
+        }
+      ]
+    }
   },
   {
     "id": 356,
@@ -14934,7 +15962,44 @@
       22
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/92E2A923E3DAD0B96AB017EF1A79156FEC9C0B7A/2424345.png"
+    "icon": "https://render.guildwars2.com/file/92E2A923E3DAD0B96AB017EF1A79156FEC9C0B7A/2424345.png",
+    "wikiTitle": "Super Pointing Sad Hand (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/0/05/Super_Pointing_Sad_Hand.jpg/50px-Super_Pointing_Sad_Hand.jpg",
+      "width": 50,
+      "height": 46
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/0/05/Super_Pointing_Sad_Hand.jpg",
+      "width": 246,
+      "height": 225
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Super Pointing Sad Hand",
+      "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 6",
+      "id": 14496,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 32,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 8,
+          "item": "Bauble"
+        },
+        {
+          "slot": 3,
+          "quantity": 4,
+          "item": "Pouch of White Pigment"
+        }
+      ]
+    }
   },
   {
     "id": 357,
@@ -14945,7 +16010,44 @@
       15
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/037999B05824B4CAE3BCABA3585C9F065130D91E/1225821.png"
+    "icon": "https://render.guildwars2.com/file/037999B05824B4CAE3BCABA3585C9F065130D91E/1225821.png",
+    "wikiTitle": "Potted Lady Palm (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/4/45/Potted_Lady_Palm.jpg/50px-Potted_Lady_Palm.jpg",
+      "width": 50,
+      "height": 40
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/4/45/Potted_Lady_Palm.jpg",
+      "width": 1140,
+      "height": 916
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Potted Lady Palm",
+      "sheet": "Homestead Recipe Book: Trees",
+      "id": 14661,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 26,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 2,
+          "item": "Evergreen Fragment"
+        },
+        {
+          "slot": 3,
+          "quantity": 5,
+          "item": "Bone Shard"
+        }
+      ]
+    }
   },
   {
     "id": 358,
@@ -14955,7 +16057,44 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/2A68DAA574B1DF3A52E2D364075747309E556159/1341324.png"
+    "icon": "https://render.guildwars2.com/file/2A68DAA574B1DF3A52E2D364075747309E556159/1341324.png",
+    "wikiTitle": "Gold Sabetha Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/f/fd/Gold_Sabetha_Trophy.jpg/28px-Gold_Sabetha_Trophy.jpg",
+      "width": 28,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/f/fd/Gold_Sabetha_Trophy.jpg",
+      "width": 498,
+      "height": 877
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Gold Sabetha Trophy",
+      "sheet": "Recipe: Gold Sabetha Trophy",
+      "id": 14727,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 130,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 100,
+          "item": "Magnetite Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 5,
+          "item": "Sabetha Flamethrower Fragment Piece"
+        }
+      ]
+    }
   },
   {
     "id": 359,
@@ -14965,7 +16104,44 @@
       9
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/CF091D0AD970C00D7A4F4D077EFCBD480115C11E/1225649.png"
+    "icon": "https://render.guildwars2.com/file/CF091D0AD970C00D7A4F4D077EFCBD480115C11E/1225649.png",
+    "wikiTitle": "Majority Disciplines Research Commemorative Statue (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/0/0f/Majority_Disciplines_Research_Commemorative_Statue.jpg/30px-Majority_Disciplines_Research_Commemorative_Statue.jpg",
+      "width": 30,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/0/0f/Majority_Disciplines_Research_Commemorative_Statue.jpg",
+      "width": 452,
+      "height": 757
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Majority Disciplines Research Commemorative Statue",
+      "sheet": "Homestead Recipe Book: Statues",
+      "id": 14168,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 35,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 9,
+          "item": "Guild Commendation"
+        },
+        {
+          "slot": 3,
+          "quantity": 20,
+          "item": "Research Note"
+        }
+      ]
+    }
   },
   {
     "id": 360,
@@ -14975,7 +16151,44 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/0B2000BE572ACDC30F1C4CBAFCE440092A9649AA/1341255.png"
+    "icon": "https://render.guildwars2.com/file/0B2000BE572ACDC30F1C4CBAFCE440092A9649AA/1341255.png",
+    "wikiTitle": "Gold Gorseval Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/8/88/Gold_Gorseval_Trophy.jpg/34px-Gold_Gorseval_Trophy.jpg",
+      "width": 34,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/8/88/Gold_Gorseval_Trophy.jpg",
+      "width": 480,
+      "height": 703
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Gold Gorseval Trophy",
+      "sheet": "Recipe: Gold Gorseval Trophy",
+      "id": 14251,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 130,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 100,
+          "item": "Magnetite Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 5,
+          "item": "Gorseval Tentacle Piece"
+        }
+      ]
+    }
   },
   {
     "id": 361,
@@ -14985,7 +16198,44 @@
       11
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/58C493F548D59AD59F32112652F96A03404D0BB9/1202583.png"
+    "icon": "https://render.guildwars2.com/file/58C493F548D59AD59F32112652F96A03404D0BB9/1202583.png",
+    "wikiTitle": "Obstacle: Wide Lava Floor (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/8/87/Obstacle-_Wide_Lava_Floor.jpg/50px-Obstacle-_Wide_Lava_Floor.jpg",
+      "width": 50,
+      "height": 33
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/8/87/Obstacle-_Wide_Lava_Floor.jpg",
+      "width": 1853,
+      "height": 1235
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Obstacle: Wide Lava Floor",
+      "sheet": "Homestead Recipe Book: Guild Arena",
+      "id": 14401,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 31,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 4,
+          "item": "Molten Fragment"
+        },
+        {
+          "slot": 3,
+          "quantity": 3,
+          "item": "Lump of Aurillium"
+        }
+      ]
+    }
   },
   {
     "id": 362,
@@ -14996,7 +16246,44 @@
       24
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/52A507FA150A4CFAA2024895714DB01932F9E229/2323852.png"
+    "icon": "https://render.guildwars2.com/file/52A507FA150A4CFAA2024895714DB01932F9E229/2323852.png",
+    "wikiTitle": "Zephyr Support (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/8/8e/Zephyr_Support.jpg/18px-Zephyr_Support.jpg",
+      "width": 18,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/8/8e/Zephyr_Support.jpg",
+      "width": 1238,
+      "height": 3440
+    },
+    "recipe": {
+      "rating": 75,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Zephyr Support",
+      "sheet": "Homestead Recipe Book: Four Winds, Volume 3",
+      "id": 14207,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 22,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 10,
+          "item": "Jute Scrap"
+        },
+        {
+          "slot": 3,
+          "quantity": 10,
+          "item": "Ursus Oblige"
+        }
+      ]
+    }
   },
   {
     "id": 363,
@@ -15006,7 +16293,44 @@
       1
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/091614B7A01D56740A166E0AEAB677CAF01F1EF7/1223821.png"
+    "icon": "https://render.guildwars2.com/file/091614B7A01D56740A166E0AEAB677CAF01F1EF7/1223821.png",
+    "wikiTitle": "Gold Wall (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/d/db/Gold_Wall.jpg/31px-Gold_Wall.jpg",
+      "width": 31,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/d/db/Gold_Wall.jpg",
+      "width": 603,
+      "height": 965
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Gold Wall",
+      "sheet": "Homestead Recipe Book: Auric Basin, Volume 1",
+      "id": 14227,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 35,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 100,
+          "item": "Auric Sliver"
+        },
+        {
+          "slot": 3,
+          "quantity": 100,
+          "item": "Lump of Aurillium"
+        }
+      ]
+    }
   },
   {
     "id": 364,
@@ -15016,7 +16340,44 @@
       22
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/EFF403D90BA8B3F540F8DE969F0F4263F4177349/3023819.png"
+    "icon": "https://render.guildwars2.com/file/EFF403D90BA8B3F540F8DE969F0F4263F4177349/3023819.png",
+    "wikiTitle": "Super Cave Stalagmite (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/6/60/Super_Cave_Stalagmite.jpg/29px-Super_Cave_Stalagmite.jpg",
+      "width": 29,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/6/60/Super_Cave_Stalagmite.jpg",
+      "width": 819,
+      "height": 1410
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Super Cave Stalagmite",
+      "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 8",
+      "id": 14624,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 32,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 8,
+          "item": "Bauble"
+        },
+        {
+          "slot": 3,
+          "quantity": 4,
+          "item": "Pouch of Brown Pigment"
+        }
+      ]
+    }
   },
   {
     "id": 365,
@@ -15026,7 +16387,44 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/05B9A2411EA216D6FC5E08042F25740C913F5606/1894793.png"
+    "icon": "https://render.guildwars2.com/file/05B9A2411EA216D6FC5E08042F25740C913F5606/1894793.png",
+    "wikiTitle": "Bronze Dhuum Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/f/f3/Bronze_Dhuum_Trophy.jpg/25px-Bronze_Dhuum_Trophy.jpg",
+      "width": 25,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/f/f3/Bronze_Dhuum_Trophy.jpg",
+      "width": 511,
+      "height": 1005
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Bronze Dhuum Trophy",
+      "sheet": "Recipe: Bronze Dhuum Trophy",
+      "id": 14518,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 36,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 10,
+          "item": "Magnetite Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Dhuum's Token (trophy)"
+        }
+      ]
+    }
   },
   {
     "id": 366,
@@ -15037,7 +16435,42 @@
       4
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/3755C8FA085CBC0851A95E24D36BC7FD963704E9/3374968.png"
+    "icon": "https://render.guildwars2.com/file/3755C8FA085CBC0851A95E24D36BC7FD963704E9/3374968.png",
+    "wikiTitle": "Deep Pot",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/3/34/Deep_Pot.jpg/50px-Deep_Pot.jpg",
+      "width": 50,
+      "height": 31
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/3/34/Deep_Pot.jpg",
+      "width": 1747,
+      "height": 1080
+    },
+    "recipe": {
+      "rating": 75,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "id": 14450,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 24,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 10,
+          "item": "Ursus Oblige"
+        },
+        {
+          "slot": 3,
+          "quantity": 2,
+          "item": "Thin Leather Section"
+        }
+      ]
+    }
   },
   {
     "id": 367,
@@ -15048,7 +16481,44 @@
       6
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/D4070B5B2F2ABAD80DE2176EB541680B4D0CD41D/1226071.png"
+    "icon": "https://render.guildwars2.com/file/D4070B5B2F2ABAD80DE2176EB541680B4D0CD41D/1226071.png",
+    "wikiTitle": "Pumpkin (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/f/f7/Pumpkin.jpg/39px-Pumpkin.jpg",
+      "width": 39,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/f/f7/Pumpkin.jpg",
+      "width": 741,
+      "height": 950
+    },
+    "recipe": {
+      "rating": 150,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Pumpkin",
+      "sheet": "Homestead Recipe Book: Basic Decorations",
+      "id": 14590,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 2,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 5,
+          "item": "Pile of Shimmering Dust"
+        },
+        {
+          "slot": 3,
+          "quantity": 50,
+          "item": "Karma"
+        }
+      ]
+    }
   },
   {
     "id": 368,
@@ -15058,7 +16528,44 @@
       6
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/581C0243270DB6CA6E03CC4D53B921A597D10B07/1227630.png"
+    "icon": "https://render.guildwars2.com/file/581C0243270DB6CA6E03CC4D53B921A597D10B07/1227630.png",
+    "wikiTitle": "Hedge (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/4/4c/Hedge.jpg/33px-Hedge.jpg",
+      "width": 33,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/4/4c/Hedge.jpg",
+      "width": 633,
+      "height": 944
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Hedge",
+      "sheet": "Homestead Recipe Book: Hedge Mazes",
+      "id": 14620,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 3,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 2,
+          "item": "Evergreen Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Bolt of Cotton"
+        }
+      ]
+    }
   },
   {
     "id": 369,
@@ -15068,7 +16575,44 @@
       14
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/5665022406AF56266E934DBD016BFFE4265D1739/1226133.png"
+    "icon": "https://render.guildwars2.com/file/5665022406AF56266E934DBD016BFFE4265D1739/1226133.png",
+    "wikiTitle": "Massive Balloon Bouquet (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/d/df/Massive_Balloon_Bouquet.jpg/29px-Massive_Balloon_Bouquet.jpg",
+      "width": 29,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/d/df/Massive_Balloon_Bouquet.jpg",
+      "width": 514,
+      "height": 879
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Massive Balloon Bouquet",
+      "sheet": "Homestead Recipe Book: Balloons",
+      "id": 14436,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 22,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 10,
+          "item": "Pile of Incandescent Dust"
+        },
+        {
+          "slot": 3,
+          "quantity": 10,
+          "item": "Spool of Gossamer Thread"
+        }
+      ]
+    }
   },
   {
     "id": 370,
@@ -15078,7 +16622,44 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/1D51E308962629469BBD4AAC0A4B4E3E11C96033/1451135.png"
+    "icon": "https://render.guildwars2.com/file/1D51E308962629469BBD4AAC0A4B4E3E11C96033/1451135.png",
+    "wikiTitle": "Gold Siege the Stronghold Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/a/a1/Gold_Siege_the_Stronghold_Trophy_Front.jpg/18px-Gold_Siege_the_Stronghold_Trophy_Front.jpg",
+      "width": 18,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/a/a1/Gold_Siege_the_Stronghold_Trophy_Front.jpg",
+      "width": 266,
+      "height": 740
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Gold Siege the Stronghold Trophy",
+      "sheet": "Recipe: Gold Siege the Stronghold Trophy",
+      "id": 14337,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 130,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 100,
+          "item": "Magnetite Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 5,
+          "item": "Turret Fragment"
+        }
+      ]
+    }
   },
   {
     "id": 371,
@@ -15088,7 +16669,44 @@
       14
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/9C6C4594E79D9B7107B742C2DD50029DBEFE983C/1226139.png"
+    "icon": "https://render.guildwars2.com/file/9C6C4594E79D9B7107B742C2DD50029DBEFE983C/1226139.png",
+    "wikiTitle": "Festival Tent (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/4/44/Festival_Tent.jpg/36px-Festival_Tent.jpg",
+      "width": 36,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/4/44/Festival_Tent.jpg",
+      "width": 690,
+      "height": 944
+    },
+    "recipe": {
+      "rating": 75,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Festival Tent",
+      "sheet": "Homestead Recipe Book: Misc. Items, Volume 1",
+      "id": 14312,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 30,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 4,
+          "item": "Bolt of Silk"
+        },
+        {
+          "slot": 3,
+          "quantity": 2,
+          "item": "Thick Leather Section"
+        }
+      ]
+    }
   },
   {
     "id": 372,
@@ -15098,7 +16716,44 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/A205709544FD17969C3E09D1F8531D121E12F5B5/1894795.png"
+    "icon": "https://render.guildwars2.com/file/A205709544FD17969C3E09D1F8531D121E12F5B5/1894795.png",
+    "wikiTitle": "Silver Dhuum Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/b/bc/Silver_Dhuum_Trophy.jpg/24px-Silver_Dhuum_Trophy.jpg",
+      "width": 24,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/b/bc/Silver_Dhuum_Trophy.jpg",
+      "width": 529,
+      "height": 1079
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Silver Dhuum Trophy",
+      "sheet": "Recipe: Silver Dhuum Trophy",
+      "id": 14259,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 90,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 40,
+          "item": "Magnetite Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 3,
+          "item": "Dhuum's Token (trophy)"
+        }
+      ]
+    }
   },
   {
     "id": 373,
@@ -15109,7 +16764,44 @@
       25
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/F02AF2DAAAEE55BAB5E0D276FBA41556FFB609D3/2752280.png"
+    "icon": "https://render.guildwars2.com/file/F02AF2DAAAEE55BAB5E0D276FBA41556FFB609D3/2752280.png",
+    "wikiTitle": "Spider's Web Floor (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/4/46/Spider%27s_Web_Floor_top.jpg/50px-Spider%27s_Web_Floor_top.jpg",
+      "width": 50,
+      "height": 48
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/4/46/Spider%27s_Web_Floor_top.jpg",
+      "width": 984,
+      "height": 947
+    },
+    "recipe": {
+      "rating": 150,
+      "type": "Homestead Decoration",
+      "source": "sheet",
+      "disciplines": "Handiworker",
+      "name": "Spider's Web Floor",
+      "sheet": "Homestead Recipe Book: Halloween, Volume 8",
+      "id": 14464,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 30,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 15,
+          "item": "Silk Scrap"
+        },
+        {
+          "slot": 3,
+          "quantity": 20,
+          "item": "Piece of Candy Corn"
+        }
+      ]
+    }
   },
   {
     "id": 374,
@@ -15120,7 +16812,44 @@
       26
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/65F74E2B069D15FAF79CC4261A2734EBEF98719E/1914836.png"
+    "icon": "https://render.guildwars2.com/file/65F74E2B069D15FAF79CC4261A2734EBEF98719E/1914836.png",
+    "wikiTitle": "Blue Wintersday Gift (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/d/d2/Blue_Wintersday_Gift.jpg/50px-Blue_Wintersday_Gift.jpg",
+      "width": 50,
+      "height": 32
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/d/d2/Blue_Wintersday_Gift.jpg",
+      "width": 1425,
+      "height": 912
+    },
+    "recipe": {
+      "rating": 0,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Blue Wintersday Gift",
+      "sheet": "Homestead Recipe Book: Wintersday, Volume 3",
+      "id": 14387,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 26,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 10,
+          "item": "Gossamer Scrap"
+        },
+        {
+          "slot": 3,
+          "quantity": 6,
+          "item": "Pouch of Blue Pigment"
+        }
+      ]
+    }
   },
   {
     "id": 375,
@@ -15130,7 +16859,38 @@
       27
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/9E9900AFB2FFD5EE3CEB63EB03F3E8A6BC40B5F2/3374953.png"
+    "icon": "https://render.guildwars2.com/file/9E9900AFB2FFD5EE3CEB63EB03F3E8A6BC40B5F2/3374953.png",
+    "wikiTitle": "Wayfinder's Versatile Table Decoration",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/9/9a/Wayfinder%27s_Versatile_Table.jpg/50px-Wayfinder%27s_Versatile_Table.jpg",
+      "width": 50,
+      "height": 38
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/9/9a/Wayfinder%27s_Versatile_Table.jpg",
+      "width": 1206,
+      "height": 911
+    },
+    "recipe": {
+      "rating": 0,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "sheet": "Wayfinder's Versatile Table Recipe",
+      "id": 14883,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 10,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 10,
+          "item": "Refined Homestead Metal"
+        }
+      ]
+    }
   },
   {
     "id": 376,
@@ -15140,7 +16900,44 @@
       6
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/45CE6AE1B974A69A98F5C761B41D0957120B0215/1224765.png"
+    "icon": "https://render.guildwars2.com/file/45CE6AE1B974A69A98F5C761B41D0957120B0215/1224765.png",
+    "wikiTitle": "Basic Shrub (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/9/9b/Basic_Shrub.jpg/36px-Basic_Shrub.jpg",
+      "width": 36,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/9/9b/Basic_Shrub.jpg",
+      "width": 524,
+      "height": 724
+    },
+    "recipe": {
+      "rating": 150,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Basic Shrub",
+      "sheet": "Homestead Recipe Book: Basic Decorations",
+      "id": 14481,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 22,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 1,
+          "item": "Mordrem Sliver"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Brick of Clay"
+        }
+      ]
+    }
   },
   {
     "id": 377,
@@ -15151,7 +16948,44 @@
       1
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/CC5327C8DAADC9AE94A8775E0C11614540727E9C/1223802.png"
+    "icon": "https://render.guildwars2.com/file/CC5327C8DAADC9AE94A8775E0C11614540727E9C/1223802.png",
+    "wikiTitle": "Broken Sandstone Pillar (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/e/e1/Broken_Sandstone_Pillar.jpg/21px-Broken_Sandstone_Pillar.jpg",
+      "width": 21,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/e/e1/Broken_Sandstone_Pillar.jpg",
+      "width": 414,
+      "height": 954
+    },
+    "recipe": {
+      "rating": 150,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Broken Sandstone Pillar",
+      "sheet": "Homestead Recipe Book: Pillars",
+      "id": 14536,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 4,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 10,
+          "item": "Pile of Coarse Sand"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Bag of Mortar"
+        }
+      ]
+    }
   },
   {
     "id": 378,
@@ -15161,7 +16995,44 @@
       11
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/706A2644ECB89E4030C59F2DB44FFD7E80B6B5C1/1701380.png"
+    "icon": "https://render.guildwars2.com/file/706A2644ECB89E4030C59F2DB44FFD7E80B6B5C1/1701380.png",
+    "wikiTitle": "Superior Catapult Siege (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/4/43/Superior_Catapult_Siege.jpg/49px-Superior_Catapult_Siege.jpg",
+      "width": 49,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/4/43/Superior_Catapult_Siege.jpg",
+      "width": 1870,
+      "height": 1910
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Superior Catapult Siege",
+      "sheet": "Homestead Recipe Book: World vs. World, Volume 2",
+      "id": 14513,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 33,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 8,
+          "item": "WvW Skirmish Claim Ticket"
+        },
+        {
+          "slot": 3,
+          "quantity": 35,
+          "item": "Wool Scrap"
+        }
+      ]
+    }
   },
   {
     "id": 379,
@@ -15171,7 +17042,44 @@
       22
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/FAA1EFF7EE7BD236FAE2FFFA3A0E32067A2F08D0/1418358.png"
+    "icon": "https://render.guildwars2.com/file/FAA1EFF7EE7BD236FAE2FFFA3A0E32067A2F08D0/1418358.png",
+    "wikiTitle": "Unimpressive King Frog (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/0/0d/Unimpressive_King_Frog.jpg/50px-Unimpressive_King_Frog.jpg",
+      "width": 50,
+      "height": 36
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/0/0d/Unimpressive_King_Frog.jpg",
+      "width": 1856,
+      "height": 1331
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Unimpressive King Frog",
+      "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 1",
+      "id": 14769,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 32,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 8,
+          "item": "Bauble"
+        },
+        {
+          "slot": 3,
+          "quantity": 16,
+          "item": "Silver Ingot"
+        }
+      ]
+    }
   },
   {
     "id": 380,
@@ -15181,7 +17089,44 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/3448686DF4D5B6FD39F8BD800702D83FBD1AEC7D/2155908.png"
+    "icon": "https://render.guildwars2.com/file/3448686DF4D5B6FD39F8BD800702D83FBD1AEC7D/2155908.png",
+    "wikiTitle": "Gold Ether Djinn Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/3/3b/Gold_Ether_Djinn_Trophy.jpg/31px-Gold_Ether_Djinn_Trophy.jpg",
+      "width": 31,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/3/3b/Gold_Ether_Djinn_Trophy.jpg",
+      "width": 669,
+      "height": 1064
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Gold Ether Djinn Trophy",
+      "sheet": "Recipe: Gold Ether Djinn Trophy",
+      "id": 14741,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 130,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 100,
+          "item": "Magnetite Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 5,
+          "item": "Ether Djinn's Token (trophy)"
+        }
+      ]
+    }
   },
   {
     "id": 381,
@@ -15192,7 +17137,44 @@
       15
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/029A4028A5ECD8D4BD99AF7CCD5BA8FFE80C34E4/1225847.png"
+    "icon": "https://render.guildwars2.com/file/029A4028A5ECD8D4BD99AF7CCD5BA8FFE80C34E4/1225847.png",
+    "wikiTitle": "Potted Cypress (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/a/a5/Potted_Cypress.jpg/12px-Potted_Cypress.jpg",
+      "width": 12,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/a/a5/Potted_Cypress.jpg",
+      "width": 270,
+      "height": 1060
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Potted Cypress",
+      "sheet": "Homestead Recipe Book: Trees",
+      "id": 14275,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 26,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 1,
+          "item": "Ascalonian Lumber Core"
+        },
+        {
+          "slot": 3,
+          "quantity": 5,
+          "item": "Brick of Clay"
+        }
+      ]
+    }
   },
   {
     "id": 382,
@@ -15202,7 +17184,44 @@
       2
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/215A7851E362AED2A5FBD7164F2209067943C3F3/1225940.png"
+    "icon": "https://render.guildwars2.com/file/215A7851E362AED2A5FBD7164F2209067943C3F3/1225940.png",
+    "wikiTitle": "Short Guild Bar (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/a/ac/Short_Guild_Bar.jpg/50px-Short_Guild_Bar.jpg",
+      "width": 50,
+      "height": 32
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/a/ac/Short_Guild_Bar.jpg",
+      "width": 1392,
+      "height": 903
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Short Guild Bar",
+      "sheet": "Homestead Recipe Book: Tables",
+      "id": 14569,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 32,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 4,
+          "item": "Beryl Crystal"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Vial of Linseed Oil"
+        }
+      ]
+    }
   },
   {
     "id": 383,
@@ -15212,7 +17231,44 @@
       2
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/7E3DA248D3CA02AF335151CBB4403C03C43317F9/1227619.png"
+    "icon": "https://render.guildwars2.com/file/7E3DA248D3CA02AF335151CBB4403C03C43317F9/1227619.png",
+    "wikiTitle": "Yellow Cushion (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/c/ca/Yellow_Cushion.jpg/50px-Yellow_Cushion.jpg",
+      "width": 50,
+      "height": 25
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/c/ca/Yellow_Cushion.jpg",
+      "width": 1557,
+      "height": 792
+    },
+    "recipe": {
+      "rating": 150,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Yellow Cushion",
+      "sheet": "Homestead Recipe Book: Cushions",
+      "id": 14232,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 22,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 5,
+          "item": "Bolt of Cotton"
+        },
+        {
+          "slot": 3,
+          "quantity": 5,
+          "item": "Pouch of Yellow Pigment"
+        }
+      ]
+    }
   },
   {
     "id": 384,
@@ -15222,7 +17278,44 @@
       5
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/44076EB4E1F819CA0B5EDF1B5026A7C93794A00A/1227692.png"
+    "icon": "https://render.guildwars2.com/file/44076EB4E1F819CA0B5EDF1B5026A7C93794A00A/1227692.png",
+    "wikiTitle": "Square Firepit (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/f/f4/Square_Firepit.jpg/50px-Square_Firepit.jpg",
+      "width": 50,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/f/f4/Square_Firepit.jpg",
+      "width": 1413,
+      "height": 1413
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Square Firepit",
+      "sheet": "Homestead Recipe Book: Lights",
+      "id": 14439,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 28,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 1,
+          "item": "Molten Core"
+        },
+        {
+          "slot": 3,
+          "quantity": 5,
+          "item": "Bag of Mortar"
+        }
+      ]
+    }
   },
   {
     "id": 385,
@@ -15233,7 +17326,42 @@
       19
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/E0051B7F0AC90A4374510AC9B515FD6FA21B195F/3375008.png"
+    "icon": "https://render.guildwars2.com/file/E0051B7F0AC90A4374510AC9B515FD6FA21B195F/3375008.png",
+    "wikiTitle": "Kodan Ivory Couch",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/3/35/Kodan_Ivory_Couch.jpg/50px-Kodan_Ivory_Couch.jpg",
+      "width": 50,
+      "height": 39
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/3/35/Kodan_Ivory_Couch.jpg",
+      "width": 1401,
+      "height": 1080
+    },
+    "recipe": {
+      "rating": 150,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "id": 14681,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 34,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 15,
+          "item": "Cotton Scrap"
+        },
+        {
+          "slot": 3,
+          "quantity": 20,
+          "item": "Honey Flower"
+        }
+      ]
+    }
   },
   {
     "id": 386,
@@ -15243,7 +17371,44 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/355D6C5065703E984F955ED60D9F17F32EACA2BD/2155902.png"
+    "icon": "https://render.guildwars2.com/file/355D6C5065703E984F955ED60D9F17F32EACA2BD/2155902.png",
+    "wikiTitle": "Cardinal Adina's Token (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/2/2f/Cardinal_Adina%27s_Token.jpg/50px-Cardinal_Adina%27s_Token.jpg",
+      "width": 50,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/2/2f/Cardinal_Adina%27s_Token.jpg",
+      "width": 474,
+      "height": 471
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Cardinal Adina's Token",
+      "sheet": "Recipe: Cardinal Adina's Token",
+      "id": 14241,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 30,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 200,
+          "item": "Volatile Magic"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Cardinal Adina's Token (trophy)"
+        }
+      ]
+    }
   },
   {
     "id": 387,
@@ -15254,7 +17419,42 @@
       6
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/E5DFE1976C6F3DA3CDD463E2C01D5ECD6205253B/3374970.png"
+    "icon": "https://render.guildwars2.com/file/E5DFE1976C6F3DA3CDD463E2C01D5ECD6205253B/3374970.png",
+    "wikiTitle": "Planter Box",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/c/c6/Planter_Box.jpg/50px-Planter_Box.jpg",
+      "width": 50,
+      "height": 48
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/c/c6/Planter_Box.jpg",
+      "width": 975,
+      "height": 935
+    },
+    "recipe": {
+      "rating": 150,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "id": 14313,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 26,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 15,
+          "item": "Honey Flower"
+        },
+        {
+          "slot": 3,
+          "quantity": 2,
+          "item": "Large Bone"
+        }
+      ]
+    }
   },
   {
     "id": 388,
@@ -15264,7 +17464,44 @@
       9
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/696A0E95CA567A047724E74B9CB26BF878566F5F/1224090.png"
+    "icon": "https://render.guildwars2.com/file/696A0E95CA567A047724E74B9CB26BF878566F5F/1224090.png",
+    "wikiTitle": "Distressed Lion Statue (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/3/35/Distressed_Lion_Statue.jpg/37px-Distressed_Lion_Statue.jpg",
+      "width": 37,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/3/35/Distressed_Lion_Statue.jpg",
+      "width": 1033,
+      "height": 1378
+    },
+    "recipe": {
+      "rating": 150,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Distressed Lion Statue",
+      "sheet": "Homestead Recipe Book: Statues",
+      "id": 14849,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 27,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 17,
+          "item": "Sharp Claw"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Bag of Mortar"
+        }
+      ]
+    }
   },
   {
     "id": 389,
@@ -15275,7 +17512,44 @@
       26
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/FF93936CA0AE58466D065A95CB04FB2CBC9DFAA8/1614392.png"
+    "icon": "https://render.guildwars2.com/file/FF93936CA0AE58466D065A95CB04FB2CBC9DFAA8/1614392.png",
+    "wikiTitle": "Large Cube of Snow (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/0/02/Cube_of_Snow.jpg/50px-Cube_of_Snow.jpg",
+      "width": 50,
+      "height": 46
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/0/02/Cube_of_Snow.jpg",
+      "width": 1014,
+      "height": 927
+    },
+    "recipe": {
+      "rating": 150,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Large Cube of Snow",
+      "sheet": "Homestead Recipe Book: Wintersday, Volume 2",
+      "id": 14367,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 32,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 40,
+          "item": "Snowflake"
+        },
+        {
+          "slot": 3,
+          "quantity": 2,
+          "item": "Crystal Core"
+        }
+      ]
+    }
   },
   {
     "id": 390,
@@ -15286,7 +17560,44 @@
       24
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/32440EE72DD65DABE2045F0D463E49998063910A/2015169.png"
+    "icon": "https://render.guildwars2.com/file/32440EE72DD65DABE2045F0D463E49998063910A/2015169.png",
+    "wikiTitle": "Zephyr Lantern (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/7/7f/Zephyr_Lantern.jpg/33px-Zephyr_Lantern.jpg",
+      "width": 33,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/7/7f/Zephyr_Lantern.jpg",
+      "width": 960,
+      "height": 1440
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Zephyr Lantern",
+      "sheet": "Homestead Recipe Book: Four Winds, Volume 1",
+      "id": 14317,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 28,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 1,
+          "item": "Molten Core"
+        },
+        {
+          "slot": 3,
+          "quantity": 12,
+          "item": "Charged Titan Ore"
+        }
+      ]
+    }
   },
   {
     "id": 391,
@@ -15296,7 +17607,44 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/23C9229021553CE84E26F6617921C55307F64815/2155907.png"
+    "icon": "https://render.guildwars2.com/file/23C9229021553CE84E26F6617921C55307F64815/2155907.png",
+    "wikiTitle": "Bronze Ether Djinn Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/0/07/Bronze_Ether_Djinn_Trophy.jpg/21px-Bronze_Ether_Djinn_Trophy.jpg",
+      "width": 21,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/0/07/Bronze_Ether_Djinn_Trophy.jpg",
+      "width": 347,
+      "height": 824
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Bronze Ether Djinn Trophy",
+      "sheet": "Recipe: Bronze Ether Djinn Trophy",
+      "id": 14885,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 36,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 10,
+          "item": "Magnetite Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Ether Djinn's Token (trophy)"
+        }
+      ]
+    }
   },
   {
     "id": 392,
@@ -15306,7 +17654,44 @@
       10
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/25665A406679E744DF2B0FCE2204C2EC786175A8/1225609.png"
+    "icon": "https://render.guildwars2.com/file/25665A406679E744DF2B0FCE2204C2EC786175A8/1225609.png",
+    "wikiTitle": "Summit Flag (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/4/49/Summit_Flag.jpg/19px-Summit_Flag.jpg",
+      "width": 19,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/4/49/Summit_Flag.jpg",
+      "width": 421,
+      "height": 1077
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Summit Flag",
+      "sheet": "Homestead Recipe Book: Summit Flags, Volume 1",
+      "id": 14730,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 28,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 5,
+          "item": "Bolt of Gossamer"
+        },
+        {
+          "slot": 3,
+          "quantity": 50,
+          "item": "Bandit Crest"
+        }
+      ]
+    }
   },
   {
     "id": 393,
@@ -15316,7 +17701,44 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/CEECEF3EE5296E16A15E459F9B6D34D172622DC7/1634879.png"
+    "icon": "https://render.guildwars2.com/file/CEECEF3EE5296E16A15E459F9B6D34D172622DC7/1634879.png",
+    "wikiTitle": "Bronze Samarog Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/b/be/Bronze_Samarog_Trophy.jpg/29px-Bronze_Samarog_Trophy.jpg",
+      "width": 29,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/b/be/Bronze_Samarog_Trophy.jpg",
+      "width": 690,
+      "height": 1200
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Bronze Samarog Trophy",
+      "sheet": "Recipe: Bronze Samarog Trophy",
+      "id": 14224,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 36,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 10,
+          "item": "Magnetite Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Impaled Prisoner Token"
+        }
+      ]
+    }
   },
   {
     "id": 394,
@@ -15326,7 +17748,44 @@
       6
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/A11AA6A29590F803F037FF9A20D22597E86651CB/1676608.png"
+    "icon": "https://render.guildwars2.com/file/A11AA6A29590F803F037FF9A20D22597E86651CB/1676608.png",
+    "wikiTitle": "Oakheart's Essence (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/d/d1/Oakheart%27s_Essence_%28decoration%29.jpg/39px-Oakheart%27s_Essence_%28decoration%29.jpg",
+      "width": 39,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/d/d1/Oakheart%27s_Essence_%28decoration%29.jpg",
+      "width": 656,
+      "height": 831
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Oakheart's Essence",
+      "sheet": "Homestead Recipe Book: Statues and Trophies",
+      "id": 14157,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 28,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 100,
+          "item": "Fire Orchid Blossom"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Mordrem Lodestone"
+        }
+      ]
+    }
   },
   {
     "id": 395,
@@ -15336,7 +17795,18 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/4D4B77E31F5B392D6FBB53DEAA72EB59B7A5CD6E/1313333.png"
+    "icon": "https://render.guildwars2.com/file/4D4B77E31F5B392D6FBB53DEAA72EB59B7A5CD6E/1313333.png",
+    "wikiTitle": "Season 6: Silver Guild Challenger Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/9/90/Season_1-_Silver_Guild_Challenger_Trophy.jpg/46px-Season_1-_Silver_Guild_Challenger_Trophy.jpg",
+      "width": 46,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/9/90/Season_1-_Silver_Guild_Challenger_Trophy.jpg",
+      "width": 1080,
+      "height": 1181
+    }
   },
   {
     "id": 397,
@@ -15347,7 +17817,44 @@
       5
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/1A3208414A13010EE0B959763D027A421E54EE49/1322810.png"
+    "icon": "https://render.guildwars2.com/file/1A3208414A13010EE0B959763D027A421E54EE49/1322810.png",
+    "wikiTitle": "Festive Streetlamp (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/7/75/Festive_Streetlamp.jpg/12px-Festive_Streetlamp.jpg",
+      "width": 12,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/7/75/Festive_Streetlamp.jpg",
+      "width": 240,
+      "height": 960
+    },
+    "recipe": {
+      "rating": 75,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Festive Streetlamp",
+      "sheet": "Homestead Recipe Book: Wintersday, Volume 1",
+      "id": 14578,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 27,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 20,
+          "item": "Snowflake"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Charged Lodestone"
+        }
+      ]
+    }
   },
   {
     "id": 398,
@@ -15358,7 +17865,44 @@
       26
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/0391373052E24BA3CDA17368E4F4F9444F690CE6/2376877.png"
+    "icon": "https://render.guildwars2.com/file/0391373052E24BA3CDA17368E4F4F9444F690CE6/2376877.png",
+    "wikiTitle": "Embellished Wintersday Star (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/e/e5/Embellished_Wintersday_Star.jpg/43px-Embellished_Wintersday_Star.jpg",
+      "width": 43,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/e/e5/Embellished_Wintersday_Star.jpg",
+      "width": 759,
+      "height": 873
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Embellished Wintersday Star",
+      "sheet": "Homestead Recipe Book: Wintersday, Volume 6",
+      "id": 14879,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 27,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 27,
+          "item": "Unbound Magic"
+        },
+        {
+          "slot": 3,
+          "quantity": 27,
+          "item": "Pinch of Stardust"
+        }
+      ]
+    }
   },
   {
     "id": 399,
@@ -15368,7 +17912,18 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/E02B120D3B6B3DD311A32DE616A12DDDE93B9DE4/1313331.png"
+    "icon": "https://render.guildwars2.com/file/E02B120D3B6B3DD311A32DE616A12DDDE93B9DE4/1313331.png",
+    "wikiTitle": "Season 5: Gold Guild Challenger Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/2/2e/Season_1-_Gold_Guild_Challenger_Trophy.jpg/50px-Season_1-_Gold_Guild_Challenger_Trophy.jpg",
+      "width": 50,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/2/2e/Season_1-_Gold_Guild_Challenger_Trophy.jpg",
+      "width": 768,
+      "height": 768
+    }
   },
   {
     "id": 400,
@@ -15378,7 +17933,44 @@
       9
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/6BCC68C006A8CE6ADD67B3235400B2CD0F790807/1225339.png"
+    "icon": "https://render.guildwars2.com/file/6BCC68C006A8CE6ADD67B3235400B2CD0F790807/1225339.png",
+    "wikiTitle": "Kormir Statue (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/c/cf/Kormir_Statue.jpg/29px-Kormir_Statue.jpg",
+      "width": 29,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/c/cf/Kormir_Statue.jpg",
+      "width": 577,
+      "height": 992
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Kormir Statue",
+      "sheet": "Homestead Recipe Book: Human Gods",
+      "id": 14899,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 34,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 12,
+          "item": "Sapphire Orb"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Visage of Kormir"
+        }
+      ]
+    }
   },
   {
     "id": 401,
@@ -15388,7 +17980,44 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/FE99CD0B42FD4ACC01F70F352870B7727D7321D1/1451119.png"
+    "icon": "https://render.guildwars2.com/file/FE99CD0B42FD4ACC01F70F352870B7727D7321D1/1451119.png",
+    "wikiTitle": "Gold Keep Construct Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/c/c6/Keep_Construct_Chest.jpg/28px-Keep_Construct_Chest.jpg",
+      "width": 28,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/c/c6/Keep_Construct_Chest.jpg",
+      "width": 368,
+      "height": 646
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Gold Keep Construct Trophy",
+      "sheet": "Recipe: Gold Keep Construct Trophy",
+      "id": 14276,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 130,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 100,
+          "item": "Magnetite Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 5,
+          "item": "Keep Construct Rubble (trophy)"
+        }
+      ]
+    }
   },
   {
     "id": 402,
@@ -15399,7 +18028,18 @@
       7
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/3D533AF8593B511D9795F1E152AD7ADEB7796F55/3374958.png"
+    "icon": "https://render.guildwars2.com/file/3D533AF8593B511D9795F1E152AD7ADEB7796F55/3374958.png",
+    "wikiTitle": "Janthir Grass (Large)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/4/48/Janthir_Grass_%28Large%29.jpg/50px-Janthir_Grass_%28Large%29.jpg",
+      "width": 50,
+      "height": 21
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/4/48/Janthir_Grass_%28Large%29.jpg",
+      "width": 3440,
+      "height": 1440
+    }
   },
   {
     "id": 403,
@@ -15409,7 +18049,44 @@
       10
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/3EA32001CB157B08BBC7D362155B2AE644B9D51B/1225295.png"
+    "icon": "https://render.guildwars2.com/file/3EA32001CB157B08BBC7D362155B2AE644B9D51B/1225295.png",
+    "wikiTitle": "Summit Banner (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/2/27/Summit_Banner.jpg/17px-Summit_Banner.jpg",
+      "width": 17,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/2/27/Summit_Banner.jpg",
+      "width": 370,
+      "height": 1064
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Summit Banner",
+      "sheet": "Homestead Recipe Book: Summit Banners, Volume 1",
+      "id": 14323,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 26,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 5,
+          "item": "Bolt of Silk"
+        },
+        {
+          "slot": 3,
+          "quantity": 30,
+          "item": "Bandit Crest"
+        }
+      ]
+    }
   },
   {
     "id": 404,
@@ -15420,7 +18097,42 @@
       6
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/C5685565E665473E1AFBAB95DD555AD543DBB959/3374986.png"
+    "icon": "https://render.guildwars2.com/file/C5685565E665473E1AFBAB95DD555AD543DBB959/3374986.png",
+    "wikiTitle": "Small Elonian Planter",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/7/79/Small_Elonian_Planter.jpg/24px-Small_Elonian_Planter.jpg",
+      "width": 24,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/7/79/Small_Elonian_Planter.jpg",
+      "width": 678,
+      "height": 1376
+    },
+    "recipe": {
+      "rating": 150,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "id": 14869,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 28,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 5,
+          "item": "Lowland Pine Log"
+        },
+        {
+          "slot": 3,
+          "quantity": 10,
+          "item": "Volatile Magic"
+        }
+      ]
+    }
   },
   {
     "id": 405,
@@ -15431,7 +18143,18 @@
       15
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/4138DFFA451D480417F3216AC2009E1BFAC49C0E/1225736.png"
+    "icon": "https://render.guildwars2.com/file/4138DFFA451D480417F3216AC2009E1BFAC49C0E/1225736.png",
+    "wikiTitle": "Potted Palm (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/f/fd/Potted_Palm.jpg/26px-Potted_Palm.jpg",
+      "width": 26,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/f/fd/Potted_Palm.jpg",
+      "width": 477,
+      "height": 922
+    }
   },
   {
     "id": 406,
@@ -15441,7 +18164,44 @@
       9
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/9027335C5CE9DBD15950E6A19B1C424F2348BA02/1227513.png"
+    "icon": "https://render.guildwars2.com/file/9027335C5CE9DBD15950E6A19B1C424F2348BA02/1227513.png",
+    "wikiTitle": "Charr Statue (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/7/7b/Charr_Statue.jpg/37px-Charr_Statue.jpg",
+      "width": 37,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/7/7b/Charr_Statue.jpg",
+      "width": 750,
+      "height": 1000
+    },
+    "recipe": {
+      "rating": 150,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Charr Statue",
+      "sheet": "Homestead Recipe Book: Statues",
+      "id": 14613,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 30,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 5,
+          "item": "Superior Rune of the Citadel"
+        },
+        {
+          "slot": 3,
+          "quantity": 24,
+          "item": "Hatched Chili"
+        }
+      ]
+    }
   },
   {
     "id": 407,
@@ -15451,7 +18211,44 @@
       9
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/202E604ABBAD54A30660F892A921F5B63D64500C/1228111.png"
+    "icon": "https://render.guildwars2.com/file/202E604ABBAD54A30660F892A921F5B63D64500C/1228111.png",
+    "wikiTitle": "Mists Rock Dog Statue (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/2/2f/Mists_Rock_Dog_Statue.jpg/50px-Mists_Rock_Dog_Statue.jpg",
+      "width": 50,
+      "height": 35
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/2/2f/Mists_Rock_Dog_Statue.jpg",
+      "width": 1331,
+      "height": 934
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Mists Rock Dog Statue",
+      "sheet": "Homestead Recipe Book: World vs. World, Volume 2",
+      "id": 14221,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 32,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 25,
+          "item": "WvW Skirmish Claim Ticket"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Superior Rune of the Pack"
+        }
+      ]
+    }
   },
   {
     "id": 408,
@@ -15461,7 +18258,44 @@
       9
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/07F6425BDE66CF71CD420E354324A93AA77665D2/1228099.png"
+    "icon": "https://render.guildwars2.com/file/07F6425BDE66CF71CD420E354324A93AA77665D2/1228099.png",
+    "wikiTitle": "Mists Dolyak Statue (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/0/0a/Mists_Dolyak_Statue.jpg/28px-Mists_Dolyak_Statue.jpg",
+      "width": 28,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/0/0a/Mists_Dolyak_Statue.jpg",
+      "width": 540,
+      "height": 955
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Mists Dolyak Statue",
+      "sheet": "Homestead Recipe Book: Misc. Items, Volume 4",
+      "id": 14748,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 32,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 25,
+          "item": "WvW Skirmish Claim Ticket"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Superior Rune of the Dolyak"
+        }
+      ]
+    }
   },
   {
     "id": 409,
@@ -15472,7 +18306,44 @@
       5
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/19C37A9695261B4CBA10FF73B3AD6CF1E86944DA/1227545.png"
+    "icon": "https://render.guildwars2.com/file/19C37A9695261B4CBA10FF73B3AD6CF1E86944DA/1227545.png",
+    "wikiTitle": "Refined Streetlamp (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/0/0a/Refined_Street_Lamp_%28detail%29.jpg/50px-Refined_Street_Lamp_%28detail%29.jpg",
+      "width": 50,
+      "height": 44
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/0/0a/Refined_Street_Lamp_%28detail%29.jpg",
+      "width": 1137,
+      "height": 1001
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Refined Streetlamp",
+      "sheet": "Homestead Recipe Book: Lights, Volume 2",
+      "id": 14744,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 30,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 1,
+          "item": "Molten Core"
+        },
+        {
+          "slot": 3,
+          "quantity": 5,
+          "item": "Trade Contract"
+        }
+      ]
+    }
   },
   {
     "id": 410,
@@ -15483,7 +18354,44 @@
       21
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/605D0301500B02566D1CFD2E423E5303080D93B7/2571007.png"
+    "icon": "https://render.guildwars2.com/file/605D0301500B02566D1CFD2E423E5303080D93B7/2571007.png",
+    "wikiTitle": "Tiger Statue (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/f/f1/Tiger_Statue.jpg/39px-Tiger_Statue.jpg",
+      "width": 39,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/f/f1/Tiger_Statue.jpg",
+      "width": 745,
+      "height": 960
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Tiger Statue",
+      "sheet": "Homestead Recipe Book: Lunar New Year Celestials",
+      "id": 14203,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 35,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 50,
+          "item": "Pouch of Red Pigment"
+        },
+        {
+          "slot": 3,
+          "quantity": 20,
+          "item": "Large Fang"
+        }
+      ]
+    }
   },
   {
     "id": 411,
@@ -15493,7 +18401,44 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/2A57F7104625620A1F164C56F8C0FAB0D8082AF2/1451136.png"
+    "icon": "https://render.guildwars2.com/file/2A57F7104625620A1F164C56F8C0FAB0D8082AF2/1451136.png",
+    "wikiTitle": "Silver Siege the Stronghold Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/8/89/Silver_Siege_the_Stronghold_Trophy.jpg/25px-Silver_Siege_the_Stronghold_Trophy.jpg",
+      "width": 25,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/8/89/Silver_Siege_the_Stronghold_Trophy.jpg",
+      "width": 772,
+      "height": 1532
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Silver Siege the Stronghold Trophy",
+      "sheet": "Recipe: Silver Siege the Stronghold Trophy",
+      "id": 14160,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 90,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 40,
+          "item": "Magnetite Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 3,
+          "item": "Turret Fragment"
+        }
+      ]
+    }
   },
   {
     "id": 412,
@@ -15503,7 +18448,44 @@
       2
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/C7E53A2E5107EBA5C5C56954F9D3F4AECC591BAE/1225954.png"
+    "icon": "https://render.guildwars2.com/file/C7E53A2E5107EBA5C5C56954F9D3F4AECC591BAE/1225954.png",
+    "wikiTitle": "Square Guild Banquet Table (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/f/f1/Square_Guild_Banquet_Table.jpg/50px-Square_Guild_Banquet_Table.jpg",
+      "width": 50,
+      "height": 30
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/f/f1/Square_Guild_Banquet_Table.jpg",
+      "width": 1467,
+      "height": 869
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Square Guild Banquet Table",
+      "sheet": "Homestead Recipe Book: Tables and Chairs",
+      "id": 14495,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 30,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 3,
+          "item": "Chrysocola Crystal"
+        },
+        {
+          "slot": 3,
+          "quantity": 2,
+          "item": "Bolt of Gossamer"
+        }
+      ]
+    }
   },
   {
     "id": 413,
@@ -15513,7 +18495,44 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/B85B29E937B35E090B2921BC3B08B8F93D3B29CB/2155898.png"
+    "icon": "https://render.guildwars2.com/file/B85B29E937B35E090B2921BC3B08B8F93D3B29CB/2155898.png",
+    "wikiTitle": "Cardinal Sabir's Token (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/8/8b/Cardinal_Sabir%27s_Token.jpg/50px-Cardinal_Sabir%27s_Token.jpg",
+      "width": 50,
+      "height": 44
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/8/8b/Cardinal_Sabir%27s_Token.jpg",
+      "width": 632,
+      "height": 551
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Cardinal Sabir's Token",
+      "sheet": "Recipe: Cardinal Sabir's Token",
+      "id": 14117,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 30,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 200,
+          "item": "Volatile Magic"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Cardinal Sabir's Token (trophy)"
+        }
+      ]
+    }
   },
   {
     "id": 414,
@@ -15524,7 +18543,44 @@
       25
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/5360FA3F3AE6345F249E25DFFDE64EDB565DAF44/2752284.png"
+    "icon": "https://render.guildwars2.com/file/5360FA3F3AE6345F249E25DFFDE64EDB565DAF44/2752284.png",
+    "wikiTitle": "Ephemeral Spider's Web Wall (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/7/7b/Ephemeral_Spider%27s_Web_Wall.jpg/50px-Ephemeral_Spider%27s_Web_Wall.jpg",
+      "width": 50,
+      "height": 43
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/7/7b/Ephemeral_Spider%27s_Web_Wall.jpg",
+      "width": 519,
+      "height": 442
+    },
+    "recipe": {
+      "rating": 150,
+      "type": "Homestead Decoration",
+      "source": "sheet",
+      "disciplines": "Handiworker",
+      "name": "Ephemeral Spider's Web Wall",
+      "sheet": "Homestead Recipe Book: Halloween, Volume 8",
+      "id": 14600,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 30,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 15,
+          "item": "Silk Scrap"
+        },
+        {
+          "slot": 3,
+          "quantity": 20,
+          "item": "Piece of Candy Corn"
+        }
+      ]
+    }
   },
   {
     "id": 415,
@@ -15534,7 +18590,18 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/4D4B77E31F5B392D6FBB53DEAA72EB59B7A5CD6E/1313333.png"
+    "icon": "https://render.guildwars2.com/file/4D4B77E31F5B392D6FBB53DEAA72EB59B7A5CD6E/1313333.png",
+    "wikiTitle": "Season 3: Silver Guild Challenger Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/9/90/Season_1-_Silver_Guild_Challenger_Trophy.jpg/46px-Season_1-_Silver_Guild_Challenger_Trophy.jpg",
+      "width": 46,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/9/90/Season_1-_Silver_Guild_Challenger_Trophy.jpg",
+      "width": 1080,
+      "height": 1181
+    }
   },
   {
     "id": 416,
@@ -15544,7 +18611,43 @@
       9
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/0C80CBC1C45BEE57FF0D005D540E15F41BAC06BA/2760305.png"
+    "icon": "https://render.guildwars2.com/file/0C80CBC1C45BEE57FF0D005D540E15F41BAC06BA/2760305.png",
+    "wikiTitle": "Leaping Lion Statue",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/5/52/Leaping_Lion_Statue_Token.jpg/50px-Leaping_Lion_Statue_Token.jpg",
+      "width": 50,
+      "height": 40
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/5/52/Leaping_Lion_Statue_Token.jpg",
+      "width": 1396,
+      "height": 1117
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "sheet": "Homestead Recipe Book: Lion Statues, Volume 1",
+      "id": 14494,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 90,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 1,
+          "item": "Leaping Lion Statue Token"
+        },
+        {
+          "slot": 3,
+          "quantity": 1000,
+          "item": "Karma"
+        }
+      ]
+    }
   },
   {
     "id": 417,
@@ -15554,7 +18657,18 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/4D4B77E31F5B392D6FBB53DEAA72EB59B7A5CD6E/1313333.png"
+    "icon": "https://render.guildwars2.com/file/4D4B77E31F5B392D6FBB53DEAA72EB59B7A5CD6E/1313333.png",
+    "wikiTitle": "Season 2: Silver Guild Challenger Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/9/90/Season_1-_Silver_Guild_Challenger_Trophy.jpg/46px-Season_1-_Silver_Guild_Challenger_Trophy.jpg",
+      "width": 46,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/9/90/Season_1-_Silver_Guild_Challenger_Trophy.jpg",
+      "width": 1080,
+      "height": 1181
+    }
   },
   {
     "id": 418,
@@ -15565,7 +18679,44 @@
       9
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/9763F26793F417C33CA4020F9A9435CA0A02AC04/1999099.png"
+    "icon": "https://render.guildwars2.com/file/9763F26793F417C33CA4020F9A9435CA0A02AC04/1999099.png",
+    "wikiTitle": "Statue of Joko the Victorious (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/d/dd/Statue_of_Joko_the_Victorious_front.jpg/30px-Statue_of_Joko_the_Victorious_front.jpg",
+      "width": 30,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/d/dd/Statue_of_Joko_the_Victorious_front.jpg",
+      "width": 591,
+      "height": 965
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Statue of Joko the Victorious",
+      "sheet": "Homestead Recipe: Statue of Joko the Victorious",
+      "id": 14490,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 34,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 40,
+          "item": "Congealed Putrescence"
+        },
+        {
+          "slot": 3,
+          "quantity": 5,
+          "item": "Elegy Mosaic"
+        }
+      ]
+    }
   },
   {
     "id": 419,
@@ -15576,7 +18727,42 @@
       19
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/3D5E0765101A10BFEF46FF5B54967936A13A30FD/3375042.png"
+    "icon": "https://render.guildwars2.com/file/3D5E0765101A10BFEF46FF5B54967936A13A30FD/3375042.png",
+    "wikiTitle": "Kodan Timber Stool",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/7/7a/Kodan_Timber_Stool.jpg/50px-Kodan_Timber_Stool.jpg",
+      "width": 50,
+      "height": 43
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/7/7a/Kodan_Timber_Stool.jpg",
+      "width": 1072,
+      "height": 921
+    },
+    "recipe": {
+      "rating": 75,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "id": 14173,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 25,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 8,
+          "item": "Rugged Leather Section"
+        },
+        {
+          "slot": 3,
+          "quantity": 6,
+          "item": "Honey Flower"
+        }
+      ]
+    }
   },
   {
     "id": 420,
@@ -15586,7 +18772,43 @@
       13
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/DC5BECC3D1F203C9A7E2DFE4E3939FBFF616D595/2069917.png"
+    "icon": "https://render.guildwars2.com/file/DC5BECC3D1F203C9A7E2DFE4E3939FBFF616D595/2069917.png",
+    "wikiTitle": "Racetrack Downward Ramp (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/f/f6/Racetrack_Downward_Ramp.jpg/50px-Racetrack_Downward_Ramp.jpg",
+      "width": 50,
+      "height": 28
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/f/f6/Racetrack_Downward_Ramp.jpg",
+      "width": 2348,
+      "height": 1321
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe sheet",
+      "disciplines": "Handiworker",
+      "sheet": "Homestead Recipe Book: Roller Beetle Racetracks",
+      "id": 14696,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 30,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 10,
+          "item": "Charged Titan Ore"
+        },
+        {
+          "slot": 3,
+          "quantity": 5,
+          "item": "Racing Medallion"
+        }
+      ]
+    }
   },
   {
     "id": 421,
@@ -15596,7 +18818,44 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/0F1BB8E812AD4A025A6704A1B3F5AA7CDF6CC590/2039287.png"
+    "icon": "https://render.guildwars2.com/file/0F1BB8E812AD4A025A6704A1B3F5AA7CDF6CC590/2039287.png",
+    "wikiTitle": "Silver Conjured Amalgamate Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/2/22/Silver_Conjured_Amalgamate_Trophy.jpg/40px-Silver_Conjured_Amalgamate_Trophy.jpg",
+      "width": 40,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/2/22/Silver_Conjured_Amalgamate_Trophy.jpg",
+      "width": 826,
+      "height": 1035
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Silver Conjured Amalgamate Trophy",
+      "sheet": "Recipe: Silver Conjured Amalgamate Trophy",
+      "id": 14353,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 90,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 40,
+          "item": "Magnetite Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 3,
+          "item": "Conjured Amalgamate Token (trophy)"
+        }
+      ]
+    }
   },
   {
     "id": 422,
@@ -15606,7 +18865,44 @@
       2
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/0C1640B6F7440172F7ED636CEE0C9AE3593BCDDF/1227617.png"
+    "icon": "https://render.guildwars2.com/file/0C1640B6F7440172F7ED636CEE0C9AE3593BCDDF/1227617.png",
+    "wikiTitle": "Plush Sofa (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/0/07/Plush_Sofa.jpg/50px-Plush_Sofa.jpg",
+      "width": 50,
+      "height": 45
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/0/07/Plush_Sofa.jpg",
+      "width": 1038,
+      "height": 944
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Plush Sofa",
+      "sheet": "Homestead Recipe Book: Tables and Chairs",
+      "id": 14608,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 35,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 10,
+          "item": "Bolt of Silk"
+        },
+        {
+          "slot": 3,
+          "quantity": 3,
+          "item": "Vial of Linseed Oil"
+        }
+      ]
+    }
   },
   {
     "id": 423,
@@ -15616,7 +18912,44 @@
       11
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/F7F9C5F33EC4994018FD2CBCF25D912F53FF03C7/1701375.png"
+    "icon": "https://render.guildwars2.com/file/F7F9C5F33EC4994018FD2CBCF25D912F53FF03C7/1701375.png",
+    "wikiTitle": "Guild Arrow Cart Siege (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/8/8e/Guild_Arrow_Cart.jpg/50px-Guild_Arrow_Cart.jpg",
+      "width": 50,
+      "height": 40
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/8/8e/Guild_Arrow_Cart.jpg",
+      "width": 2400,
+      "height": 1930
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Guild Arrow Cart Siege",
+      "sheet": "Homestead Recipe Book: World vs. World",
+      "id": 14851,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 34,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 5,
+          "item": "WvW Skirmish Claim Ticket"
+        },
+        {
+          "slot": 3,
+          "quantity": 4,
+          "item": "Guild Commendation"
+        }
+      ]
+    }
   },
   {
     "id": 424,
@@ -15626,7 +18959,44 @@
       11
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/07FDF08004C82F78B874DB9D52B5B5A412F002E4/1701388.png"
+    "icon": "https://render.guildwars2.com/file/07FDF08004C82F78B874DB9D52B5B5A412F002E4/1701388.png",
+    "wikiTitle": "Guild Trebuchet Siege (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/e/e3/Guild_Trebuchet.jpg/35px-Guild_Trebuchet.jpg",
+      "width": 35,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/e/e3/Guild_Trebuchet.jpg",
+      "width": 1500,
+      "height": 2160
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Guild Trebuchet Siege",
+      "sheet": "Homestead Recipe Book: World vs. World",
+      "id": 14570,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 36,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 6,
+          "item": "WvW Skirmish Claim Ticket"
+        },
+        {
+          "slot": 3,
+          "quantity": 4,
+          "item": "Guild Commendation"
+        }
+      ]
+    }
   },
   {
     "id": 425,
@@ -15636,7 +19006,44 @@
       22
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/F96B9504403E10C02054A8AF65BD977FEED6DA0B/2424337.png"
+    "icon": "https://render.guildwars2.com/file/F96B9504403E10C02054A8AF65BD977FEED6DA0B/2424337.png",
+    "wikiTitle": "Super Pointing Hand (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/4/40/Super_Pointing_Hand.jpg/50px-Super_Pointing_Hand.jpg",
+      "width": 50,
+      "height": 41
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/4/40/Super_Pointing_Hand.jpg",
+      "width": 476,
+      "height": 386
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Super Pointing Hand",
+      "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 6",
+      "id": 14384,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 32,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 8,
+          "item": "Bauble"
+        },
+        {
+          "slot": 3,
+          "quantity": 4,
+          "item": "Pouch of White Pigment"
+        }
+      ]
+    }
   },
   {
     "id": 426,
@@ -15647,7 +19054,44 @@
       23
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/55AA0ADAD62CE1160AE7036DC9AF0999111C4050/2162996.png"
+    "icon": "https://render.guildwars2.com/file/55AA0ADAD62CE1160AE7036DC9AF0999111C4050/2162996.png",
+    "wikiTitle": "Blue Dragon Target (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/b/b5/Blue_Dragon_Target.jpg/50px-Blue_Dragon_Target.jpg",
+      "width": 50,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/b/b5/Blue_Dragon_Target.jpg",
+      "width": 1143,
+      "height": 1143
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Blue Dragon Target",
+      "sheet": "Homestead Recipe Book: Dragon Bash, Volume 1",
+      "id": 14892,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 25,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 15,
+          "item": "Piece of Zhaitaffy"
+        },
+        {
+          "slot": 3,
+          "quantity": 5,
+          "item": "Pouch of Blue Pigment"
+        }
+      ]
+    }
   },
   {
     "id": 427,
@@ -15657,7 +19101,44 @@
       2
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/6AC43E72CF535BD97F668022FA0634BB363A75E9/1225933.png"
+    "icon": "https://render.guildwars2.com/file/6AC43E72CF535BD97F668022FA0634BB363A75E9/1225933.png",
+    "wikiTitle": "Guild Stool (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/a/ad/Guild_Stool.jpg/42px-Guild_Stool.jpg",
+      "width": 42,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/a/ad/Guild_Stool.jpg",
+      "width": 750,
+      "height": 881
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Guild Stool",
+      "sheet": "Homestead Recipe Book: Benches, Chairs, Stools",
+      "id": 14877,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 25,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 5,
+          "item": "Cured Rugged Leather Square"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Tub of Wood Glue"
+        }
+      ]
+    }
   },
   {
     "id": 428,
@@ -15668,7 +19149,44 @@
       14
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/F77E9EB92172D401C9F49EACD57D49571CF1A052/1769608.png"
+    "icon": "https://render.guildwars2.com/file/F77E9EB92172D401C9F49EACD57D49571CF1A052/1769608.png",
+    "wikiTitle": "Awakened Tar Pit (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/6/61/Awakened_Tar_Pit.jpg/50px-Awakened_Tar_Pit.jpg",
+      "width": 50,
+      "height": 38
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/6/61/Awakened_Tar_Pit.jpg",
+      "width": 1233,
+      "height": 932
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Awakened Tar Pit",
+      "sheet": "Homestead Recipe Book: Awakened, Volume 1",
+      "id": 14426,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 32,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 40,
+          "item": "Congealed Putrescence"
+        },
+        {
+          "slot": 3,
+          "quantity": 15,
+          "item": "Pouch of Black Pigment"
+        }
+      ]
+    }
   },
   {
     "id": 429,
@@ -15678,7 +19196,44 @@
       3
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/07FEA4AEA6C27E6BBA6A77CE630526CF04FBA638/1227586.png"
+    "icon": "https://render.guildwars2.com/file/07FEA4AEA6C27E6BBA6A77CE630526CF04FBA638/1227586.png",
+    "wikiTitle": "Keg (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/5/5e/Keg_%28decoration%29.jpg/50px-Keg_%28decoration%29.jpg",
+      "width": 50,
+      "height": 44
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/5/5e/Keg_%28decoration%29.jpg",
+      "width": 1082,
+      "height": 953
+    },
+    "recipe": {
+      "rating": 75,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Keg",
+      "sheet": "Homestead Recipe Book: Misc. Items, Volume 1",
+      "id": 14707,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 25,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 25,
+          "item": "Stein of Hearty Ale"
+        },
+        {
+          "slot": 3,
+          "quantity": 25,
+          "item": "Fresh Winterberry"
+        }
+      ]
+    }
   },
   {
     "id": 430,
@@ -15689,7 +19244,44 @@
       24
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/D805D94EF7590F376F11DAA1B56838CADB7CE83D/2718365.png"
+    "icon": "https://render.guildwars2.com/file/D805D94EF7590F376F11DAA1B56838CADB7CE83D/2718365.png",
+    "wikiTitle": "Windmill Wheel (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/5/52/Windmill_Wheel.jpg/42px-Windmill_Wheel.jpg",
+      "width": 42,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/5/52/Windmill_Wheel.jpg",
+      "width": 1009,
+      "height": 1185
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Windmill Wheel",
+      "sheet": "Homestead Recipe Book: Four Winds, Volume 5",
+      "id": 14195,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 26,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 15,
+          "item": "Jute Scrap"
+        },
+        {
+          "slot": 3,
+          "quantity": 6,
+          "item": "Coarse Leather Section"
+        }
+      ]
+    }
   },
   {
     "id": 431,
@@ -15699,7 +19291,44 @@
       1
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/5EE5935110580F020BF09256912DAAF234653764/1225562.png"
+    "icon": "https://render.guildwars2.com/file/5EE5935110580F020BF09256912DAAF234653764/1225562.png",
+    "wikiTitle": "Well (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/5/52/Well_%28decoration%29.jpg/37px-Well_%28decoration%29.jpg",
+      "width": 37,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/5/52/Well_%28decoration%29.jpg",
+      "width": 1060,
+      "height": 1413
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Well",
+      "sheet": "Homestead Recipe Book: Misc. Items, Volume 2",
+      "id": 14233,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 32,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 10,
+          "item": "Linen Scrap"
+        },
+        {
+          "slot": 3,
+          "quantity": 10,
+          "item": "Pile of Shimmering Dust"
+        }
+      ]
+    }
   },
   {
     "id": 432,
@@ -15710,7 +19339,44 @@
       26
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/35E1CB75F9AB0E7BE8000E5AF1F56052DB55F83A/2376875.png"
+    "icon": "https://render.guildwars2.com/file/35E1CB75F9AB0E7BE8000E5AF1F56052DB55F83A/2376875.png",
+    "wikiTitle": "Snowfall Drift (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/8/8c/Snowfall_Drift.jpg/50px-Snowfall_Drift.jpg",
+      "width": 50,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/8/8c/Snowfall_Drift.jpg",
+      "width": 921,
+      "height": 912
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Snowfall Drift",
+      "sheet": "Homestead Recipe Book: Wintersday, Volume 6",
+      "id": 14524,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 30,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 22,
+          "item": "Snowflake"
+        },
+        {
+          "slot": 3,
+          "quantity": 12,
+          "item": "Eternal Ice Shard"
+        }
+      ]
+    }
   },
   {
     "id": 433,
@@ -15720,7 +19386,18 @@
       11
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/52BF257791BDBA6FEFFA06F27DD9536F9CDFA291/1202577.png"
+    "icon": "https://render.guildwars2.com/file/52BF257791BDBA6FEFFA06F27DD9536F9CDFA291/1202577.png",
+    "wikiTitle": "Obstacle: Weakness Turret (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/d/d7/Obstacle-_Weakness_Turret.jpg/44px-Obstacle-_Weakness_Turret.jpg",
+      "width": 44,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/d/d7/Obstacle-_Weakness_Turret.jpg",
+      "width": 492,
+      "height": 561
+    }
   },
   {
     "id": 434,
@@ -15731,7 +19408,44 @@
       25
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/D8C418E91CCBC60D73525D0EE9807F702A3325F1/3171896.png"
+    "icon": "https://render.guildwars2.com/file/D8C418E91CCBC60D73525D0EE9807F702A3325F1/3171896.png",
+    "wikiTitle": "Raptor Rental Post (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/f/f7/Raptor_Rental_Post.jpg/50px-Raptor_Rental_Post.jpg",
+      "width": 50,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/f/f7/Raptor_Rental_Post.jpg",
+      "width": 1304,
+      "height": 1304
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "sheet",
+      "disciplines": "Handiworker",
+      "name": "Raptor Rental Post",
+      "sheet": "Homestead Recipe Book: Halloween, Volume 9",
+      "id": 14254,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 34,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 1,
+          "item": "Candy Corn Cob"
+        },
+        {
+          "slot": 3,
+          "quantity": 50,
+          "item": "Eye of Kormir"
+        }
+      ]
+    }
   },
   {
     "id": 435,
@@ -15741,7 +19455,49 @@
       22
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/A325BCC7A8327802220E66B959020BB59F31085B/2117552.png"
+    "icon": "https://render.guildwars2.com/file/A325BCC7A8327802220E66B959020BB59F31085B/2117552.png",
+    "wikiTitle": "Super Cliff Face (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/f/fb/Super_Cliff_Face.jpg/36px-Super_Cliff_Face.jpg",
+      "width": 36,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/f/fb/Super_Cliff_Face.jpg",
+      "width": 899,
+      "height": 1245
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Super Cliff Face",
+      "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 4",
+      "id": 14599,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 32,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 8,
+          "item": "Bauble"
+        },
+        {
+          "slot": 3,
+          "quantity": 2,
+          "item": "Pouch of White Pigment"
+        },
+        {
+          "slot": 4,
+          "quantity": 2,
+          "item": "Pouch of Black Pigment"
+        }
+      ]
+    }
   },
   {
     "id": 436,
@@ -15752,7 +19508,42 @@
       3
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/2E197AF7ABF970533934131D0174CB79E96F20BC/3375004.png"
+    "icon": "https://render.guildwars2.com/file/2E197AF7ABF970533934131D0174CB79E96F20BC/3375004.png",
+    "wikiTitle": "Kodan Woodsy Cabinet (Tall)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/7/7a/Kodan_Woodsy_Cabinet_%28Tall%29.jpg/34px-Kodan_Woodsy_Cabinet_%28Tall%29.jpg",
+      "width": 34,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/7/7a/Kodan_Woodsy_Cabinet_%28Tall%29.jpg",
+      "width": 728,
+      "height": 1080
+    },
+    "recipe": {
+      "rating": 150,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "id": 14222,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 33,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 6,
+          "item": "Evergreen Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 16,
+          "item": "Lowland Pine Log"
+        }
+      ]
+    }
   },
   {
     "id": 437,
@@ -20257,44 +24048,7 @@
       10
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/0DC63955C1900F07FFC8366647F7770CD6C2DF0C/1225297.png",
-    "wikiTitle": "Asuran Summit Banner (Handiwork)",
-    "thumbnail": {
-      "source": "https://wiki.guildwars2.com/images/thumb/4/47/Asuran_Summit_Banner.jpg/26px-Asuran_Summit_Banner.jpg",
-      "width": 26,
-      "height": 50
-    },
-    "original": {
-      "source": "https://wiki.guildwars2.com/images/4/47/Asuran_Summit_Banner.jpg",
-      "width": 371,
-      "height": 695
-    },
-    "recipe": {
-      "rating": 400,
-      "type": "Homestead Decoration",
-      "source": "Recipe Sheet",
-      "disciplines": "Handiworker",
-      "name": "Asuran Summit Banner",
-      "sheet": "Homestead Recipe Book: Summit Banners, Volume 1",
-      "id": 14289,
-      "ingredients": [
-        {
-          "slot": 1,
-          "quantity": 26,
-          "item": "Refined Homestead Wood"
-        },
-        {
-          "slot": 2,
-          "quantity": 5,
-          "item": "Bolt of Silk"
-        },
-        {
-          "slot": 3,
-          "quantity": 1,
-          "item": "Superior Rune of Rata Sum"
-        }
-      ]
-    }
+    "icon": "https://render.guildwars2.com/file/0DC63955C1900F07FFC8366647F7770CD6C2DF0C/1225297.png"
   },
   {
     "id": 539,
@@ -20305,44 +24059,7 @@
       1
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/ACFA0415A979C7D7239778A82404DFAB4E05A64D/1769440.png",
-    "wikiTitle": "Short Elonian Column (Handiwork)",
-    "thumbnail": {
-      "source": "https://wiki.guildwars2.com/images/thumb/7/74/Short_Elonian_Column.jpg/25px-Short_Elonian_Column.jpg",
-      "width": 25,
-      "height": 50
-    },
-    "original": {
-      "source": "https://wiki.guildwars2.com/images/7/74/Short_Elonian_Column.jpg",
-      "width": 676,
-      "height": 1352
-    },
-    "recipe": {
-      "rating": 150,
-      "type": "Homestead Decoration",
-      "source": "Recipe Sheet",
-      "disciplines": "Handiworker",
-      "name": "Short Elonian Column",
-      "sheet": "Homestead Recipe Book: Elonian Architecture",
-      "id": 14442,
-      "ingredients": [
-        {
-          "slot": 1,
-          "quantity": 26,
-          "item": "Refined Homestead Metal"
-        },
-        {
-          "slot": 2,
-          "quantity": 10,
-          "item": "Trade Contract"
-        },
-        {
-          "slot": 3,
-          "quantity": 5,
-          "item": "Ley-Infused Sand"
-        }
-      ]
-    }
+    "icon": "https://render.guildwars2.com/file/ACFA0415A979C7D7239778A82404DFAB4E05A64D/1769440.png"
   },
   {
     "id": 540,
@@ -20352,44 +24069,7 @@
       9
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/2A95C920C200EFB329E7EE9E3346AFB170487F0D/1227670.png",
-    "wikiTitle": "Griffon Statue (Handiwork)",
-    "thumbnail": {
-      "source": "https://wiki.guildwars2.com/images/thumb/b/b1/Griffon_Statue.jpg/33px-Griffon_Statue.jpg",
-      "width": 33,
-      "height": 50
-    },
-    "original": {
-      "source": "https://wiki.guildwars2.com/images/b/b1/Griffon_Statue.jpg",
-      "width": 960,
-      "height": 1440
-    },
-    "recipe": {
-      "rating": 150,
-      "type": "Homestead Decoration",
-      "source": "Recipe Sheet",
-      "disciplines": "Handiworker",
-      "name": "Griffon Statue",
-      "sheet": "Homestead Recipe Book: Statues",
-      "id": 14510,
-      "ingredients": [
-        {
-          "slot": 1,
-          "quantity": 30,
-          "item": "Refined Homestead Metal"
-        },
-        {
-          "slot": 2,
-          "quantity": 8,
-          "item": "Topaz Lump"
-        },
-        {
-          "slot": 3,
-          "quantity": 10,
-          "item": "Large Claw"
-        }
-      ]
-    }
+    "icon": "https://render.guildwars2.com/file/2A95C920C200EFB329E7EE9E3346AFB170487F0D/1227670.png"
   },
   {
     "id": 541,
@@ -20399,44 +24079,7 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/BFBD0C321201AA240DCABE4D0ABE79FB923EDD5B/2039285.png",
-    "wikiTitle": "Conjured Amalgamate's Token (Handiwork)",
-    "thumbnail": {
-      "source": "https://wiki.guildwars2.com/images/thumb/6/6e/Conjured_Amalgamate_Token.jpg/50px-Conjured_Amalgamate_Token.jpg",
-      "width": 50,
-      "height": 47
-    },
-    "original": {
-      "source": "https://wiki.guildwars2.com/images/6/6e/Conjured_Amalgamate_Token.jpg",
-      "width": 689,
-      "height": 642
-    },
-    "recipe": {
-      "rating": 300,
-      "type": "Homestead Decoration",
-      "source": "Recipe Sheet",
-      "disciplines": "Handiworker",
-      "name": "Conjured Amalgamate's Token",
-      "sheet": "Recipe: Conjured Amalgamate's Token",
-      "id": 14500,
-      "ingredients": [
-        {
-          "slot": 1,
-          "quantity": 30,
-          "item": "Refined Homestead Wood"
-        },
-        {
-          "slot": 2,
-          "quantity": 2,
-          "item": "Platinum Doubloon"
-        },
-        {
-          "slot": 3,
-          "quantity": 1,
-          "item": "Conjured Amalgamate Token (trophy)"
-        }
-      ]
-    }
+    "icon": "https://render.guildwars2.com/file/BFBD0C321201AA240DCABE4D0ABE79FB923EDD5B/2039285.png"
   },
   {
     "id": 542,
@@ -22196,6 +25839,32 @@
       "source": "https://wiki.guildwars2.com/images/a/af/Eternal_Flame_%28decoration%29.jpg",
       "width": 742,
       "height": 1318
+    },
+    "recipe": {
+      "rating": 150,
+      "type": "Homestead Decoration",
+      "source": "sheet",
+      "disciplines": "Handiworker",
+      "name": "Eternal Flame",
+      "sheet": "Homestead Recipe Book: Halloween, Volume 2",
+      "id": 14128,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 32,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 2,
+          "item": "Molten Lodestone"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Essence of Light"
+        }
+      ]
     }
   },
   {
@@ -22207,7 +25876,44 @@
       24
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/5B5C3C0FD525B0E30CD6C8FE2901D6F6BFA2329F/2718363.png"
+    "icon": "https://render.guildwars2.com/file/5B5C3C0FD525B0E30CD6C8FE2901D6F6BFA2329F/2718363.png",
+    "wikiTitle": "Netted Crates (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/b/b1/Netted_Crates.jpg/25px-Netted_Crates.jpg",
+      "width": 25,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/b/b1/Netted_Crates.jpg",
+      "width": 720,
+      "height": 1440
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Netted Crates",
+      "sheet": "Homestead Recipe Book: Four Winds, Volume 5",
+      "id": 14583,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 28,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 16,
+          "item": "Jute Scrap"
+        },
+        {
+          "slot": 3,
+          "quantity": 15,
+          "item": "Ursus Oblige"
+        }
+      ]
+    }
   },
   {
     "id": 583,
@@ -22218,7 +25924,34 @@
       26
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/1AFC6AE991BECCDD2F4C0F13F16C152B90465D39/2075486.png"
+    "icon": "https://render.guildwars2.com/file/1AFC6AE991BECCDD2F4C0F13F16C152B90465D39/2075486.png",
+    "wikiTitle": "Ice Castle: Roof (Handiwork)",
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Ice Castle: Roof",
+      "sheet": "Homestead Recipe Book: Wintersday, Volume 4",
+      "id": 14358,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 25,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 40,
+          "item": "Snowflake"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Superior Rune of Snowfall"
+        }
+      ]
+    }
   },
   {
     "id": 584,
@@ -22229,7 +25962,44 @@
       9
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/F00C55A15DA2776A44A1CA2C554C02CF09D5A17A/2604273.png"
+    "icon": "https://render.guildwars2.com/file/F00C55A15DA2776A44A1CA2C554C02CF09D5A17A/2604273.png",
+    "wikiTitle": "Stylized Stone Dragon Head (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/e/ef/Stone_Dragon_Head.jpg/36px-Stone_Dragon_Head.jpg",
+      "width": 36,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/e/ef/Stone_Dragon_Head.jpg",
+      "width": 1034,
+      "height": 1440
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Stylized Stone Dragon Head",
+      "sheet": "Homestead Recipe Book: Dragon's End, Volume 1",
+      "id": 14473,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 27,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 1,
+          "item": "Onyx Lodestone"
+        },
+        {
+          "slot": 3,
+          "quantity": 10,
+          "item": "Imperial Favor"
+        }
+      ]
+    }
   },
   {
     "id": 585,
@@ -22239,7 +26009,44 @@
       5
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/B1E61DD317E790F2BEFDA596F83A99F2DF559B14/1227737.png"
+    "icon": "https://render.guildwars2.com/file/B1E61DD317E790F2BEFDA596F83A99F2DF559B14/1227737.png",
+    "wikiTitle": "Pillar Candle (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/d/d1/Pillar_Candle.jpg/36px-Pillar_Candle.jpg",
+      "width": 36,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/d/d1/Pillar_Candle.jpg",
+      "width": 116,
+      "height": 161
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Pillar Candle",
+      "sheet": "Homestead Recipe Book: Pillars",
+      "id": 14328,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 4,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 3,
+          "item": "Bone Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Molten Sliver"
+        }
+      ]
+    }
   },
   {
     "id": 586,
@@ -22250,7 +26057,42 @@
       14
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/339C6BDCB1D7CC55EBA903390BF2B8CDB8CE4D62/3374966.png"
+    "icon": "https://render.guildwars2.com/file/339C6BDCB1D7CC55EBA903390BF2B8CDB8CE4D62/3374966.png",
+    "wikiTitle": "Kodan Soup Kettle",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/b/bd/Kodan_Soup_Kettle.jpg/50px-Kodan_Soup_Kettle.jpg",
+      "width": 50,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/b/bd/Kodan_Soup_Kettle.jpg",
+      "width": 1422,
+      "height": 1422
+    },
+    "recipe": {
+      "rating": 75,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "id": 14594,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 26,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 6,
+          "item": "Lowland Pine Log"
+        },
+        {
+          "slot": 3,
+          "quantity": 5,
+          "item": "Slab of Red Meat"
+        }
+      ]
+    }
   },
   {
     "id": 587,
@@ -22260,7 +26102,44 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/79DD492C546BD174DA0EE092641C22073305BD29/2039312.png"
+    "icon": "https://render.guildwars2.com/file/79DD492C546BD174DA0EE092641C22073305BD29/2039312.png",
+    "wikiTitle": "Silver Twin Largos Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/9/94/Silver_Twin_Largos_Trophy.jpg/27px-Silver_Twin_Largos_Trophy.jpg",
+      "width": 27,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/9/94/Silver_Twin_Largos_Trophy.jpg",
+      "width": 557,
+      "height": 1026
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Silver Twin Largos Trophy",
+      "sheet": "Recipe: Silver Twin Largos Trophy",
+      "id": 14462,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 90,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 40,
+          "item": "Magnetite Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 3,
+          "item": "Twin Largos Token (trophy)"
+        }
+      ]
+    }
   },
   {
     "id": 588,
@@ -22270,7 +26149,44 @@
       1
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/1E7EB3D2100205AD6747E734B675C67CB85DD0F4/1227654.png"
+    "icon": "https://render.guildwars2.com/file/1E7EB3D2100205AD6747E734B675C67CB85DD0F4/1227654.png",
+    "wikiTitle": "Elegant Wall Panel (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/7/70/Elegant_Wall_Panel.jpg/47px-Elegant_Wall_Panel.jpg",
+      "width": 47,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/7/70/Elegant_Wall_Panel.jpg",
+      "width": 887,
+      "height": 946
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Elegant Wall Panel",
+      "sheet": "Homestead Recipe Book: Paintings, Walls, Fountains",
+      "id": 14330,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 30,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 40,
+          "item": "Elaborate Totem"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Lapis Lump"
+        }
+      ]
+    }
   },
   {
     "id": 589,
@@ -33645,7 +37561,43 @@
     ],
     "max_count": 250,
     "icon": "https://render.guildwars2.com/file/01363223A64804AD072114267A2518C143ECD2F7/3441821.png",
-    "wikiTitle": "Bronze Decima Trophy (Handiwork)"
+    "wikiTitle": "Bronze Decima Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/d/d2/Bronze_Decima_Trophy.jpg/19px-Bronze_Decima_Trophy.jpg",
+      "width": 19,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/d/d2/Bronze_Decima_Trophy.jpg",
+      "width": 755,
+      "height": 1920
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Bronze Decima Trophy",
+      "sheet": "Recipe: Bronze Decima Trophy",
+      "id": 14989,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 36,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 10,
+          "item": "Magnetite Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Decima's Token"
+        }
+      ]
+    }
   },
   {
     "id": 842,
@@ -33655,7 +37607,44 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/F71EFD90082E24EF2C0EF0721E60E2EF17A6B706/3441826.png"
+    "icon": "https://render.guildwars2.com/file/F71EFD90082E24EF2C0EF0721E60E2EF17A6B706/3441826.png",
+    "wikiTitle": "Silver Greer Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/9/91/Silver_Greer_Trophy.jpg/20px-Silver_Greer_Trophy.jpg",
+      "width": 20,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/9/91/Silver_Greer_Trophy.jpg",
+      "width": 783,
+      "height": 1920
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Silver Greer Trophy",
+      "sheet": "Recipe: Silver Greer Trophy",
+      "id": 14953,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 90,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 40,
+          "item": "Magnetite Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 3,
+          "item": "Greer's Token"
+        }
+      ]
+    }
   },
   {
     "id": 843,
@@ -33665,7 +37654,8 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/46E020AF554C9677FBDB56711E2D494FF47E3408/3441822.png"
+    "icon": "https://render.guildwars2.com/file/46E020AF554C9677FBDB56711E2D494FF47E3408/3441822.png",
+    "wikiTitle": "Gold Decima Trophy (Handiwork)"
   },
   {
     "id": 844,
@@ -33675,7 +37665,44 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/E20DD056D8AA466C3B772008A29D3E0CE50EA857/3441823.png"
+    "icon": "https://render.guildwars2.com/file/E20DD056D8AA466C3B772008A29D3E0CE50EA857/3441823.png",
+    "wikiTitle": "Silver Decima Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/a/ab/Silver_Decima_Trophy.jpg/18px-Silver_Decima_Trophy.jpg",
+      "width": 18,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/a/ab/Silver_Decima_Trophy.jpg",
+      "width": 709,
+      "height": 1920
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Silver Decima Trophy",
+      "sheet": "Recipe: Silver Decima Trophy",
+      "id": 14952,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 90,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 40,
+          "item": "Magnetite Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 3,
+          "item": "Decima's Token"
+        }
+      ]
+    }
   },
   {
     "id": 845,
@@ -33685,7 +37712,43 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/5D01955BAA69010F5A19CD0A42DB19030F9451F7/3441817.png"
+    "icon": "https://render.guildwars2.com/file/5D01955BAA69010F5A19CD0A42DB19030F9451F7/3441817.png",
+    "wikiTitle": "Ura's Token (Homestead)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/7/7e/Ura%27s_Token.jpg/50px-Ura%27s_Token.jpg",
+      "width": 50,
+      "height": 37
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/7/7e/Ura%27s_Token.jpg",
+      "width": 831,
+      "height": 607
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "sheet": "Recipe: Ura's Token",
+      "id": 14971,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 30,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 1,
+          "item": "Magnetite Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Ura's Token"
+        }
+      ]
+    }
   },
   {
     "id": 846,
@@ -33695,7 +37758,44 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/B49FF5F44064EC783301CB365B19E901D3FE61A6/3441820.png"
+    "icon": "https://render.guildwars2.com/file/B49FF5F44064EC783301CB365B19E901D3FE61A6/3441820.png",
+    "wikiTitle": "Silver Ura Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/1/1c/Silver_Ura_Trophy.jpg/24px-Silver_Ura_Trophy.jpg",
+      "width": 24,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/1/1c/Silver_Ura_Trophy.jpg",
+      "width": 941,
+      "height": 1920
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Silver Ura Trophy",
+      "sheet": "Recipe: Silver Ura Trophy",
+      "id": 14965,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 90,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 40,
+          "item": "Magnetite Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 3,
+          "item": "Ura's Token"
+        }
+      ]
+    }
   },
   {
     "id": 847,
@@ -36416,6 +40516,26 @@
       "source": "https://wiki.guildwars2.com/images/8/80/Brasswork_T-Pipe.jpg",
       "width": 1152,
       "height": 1440
+    },
+    "recipe": {
+      "rating": 0,
+      "type": "Homestead Decoration",
+      "source": "Recipe sheet",
+      "disciplines": "Handiworker",
+      "sheet": "Black Lion Brasswork T-Pipe Recipe",
+      "id": 15114,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 5,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 5,
+          "item": "Refined Homestead Fiber"
+        }
+      ]
     }
   },
   {
@@ -36427,7 +40547,44 @@
       5
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/2AA8F21C9DF1EAC39E754EE4D92969BEDD477271/3629216.png"
+    "icon": "https://render.guildwars2.com/file/2AA8F21C9DF1EAC39E754EE4D92969BEDD477271/3629216.png",
+    "wikiTitle": "Norn Brazier (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/7/70/Norn_Brazier.jpg/28px-Norn_Brazier.jpg",
+      "width": 28,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/7/70/Norn_Brazier.jpg",
+      "width": 769,
+      "height": 1366
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Norn Brazier",
+      "sheet": "Recipe: Norn Brazier",
+      "id": 15116,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 30,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 5,
+          "item": "Molten Core"
+        },
+        {
+          "slot": 3,
+          "quantity": 10,
+          "item": "Piece of Zhaitaffy"
+        }
+      ]
+    }
   },
   {
     "id": 914,
@@ -36438,7 +40595,43 @@
       3
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/3EF80E06099335497A061731110A4174BE3DBB49/3629233.png"
+    "icon": "https://render.guildwars2.com/file/3EF80E06099335497A061731110A4174BE3DBB49/3629233.png",
+    "wikiTitle": "Kodan Book: 20 Flavors of Sand",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/2/2f/Kodan_Book-_20_Flavors_of_Sand.jpg/37px-Kodan_Book-_20_Flavors_of_Sand.jpg",
+      "width": 37,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/2/2f/Kodan_Book-_20_Flavors_of_Sand.jpg",
+      "width": 989,
+      "height": 1319
+    },
+    "recipe": {
+      "rating": 500,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "sheet": "Homestead Recipe Book: Books",
+      "id": 15145,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 30,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 2,
+          "item": "Cured Hardened Leather Square"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Tub of Wood Glue"
+        }
+      ]
+    }
   },
   {
     "id": 915,
@@ -36449,7 +40642,42 @@
       4
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/0269DB910E0BBDC438F7A357FC60EC4207B4704A/3629235.png"
+    "icon": "https://render.guildwars2.com/file/0269DB910E0BBDC438F7A357FC60EC4207B4704A/3629235.png",
+    "wikiTitle": "Whale Hologram",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/1/12/Whale_Hologram.jpg/50px-Whale_Hologram.jpg",
+      "width": 50,
+      "height": 32
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/1/12/Whale_Hologram.jpg",
+      "width": 1761,
+      "height": 1133
+    },
+    "recipe": {
+      "rating": 500,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "id": 15115,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 100,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 100,
+          "item": "Flawless Fish Fillet"
+        },
+        {
+          "slot": 3,
+          "quantity": 100,
+          "item": "Imperial Favor"
+        }
+      ]
+    }
   },
   {
     "id": 916,
@@ -36459,7 +40687,38 @@
       27
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/F3485EE338D9339B4604CA43A504C3B5FB5C030E/3629243.png"
+    "icon": "https://render.guildwars2.com/file/F3485EE338D9339B4604CA43A504C3B5FB5C030E/3629243.png",
+    "wikiTitle": "Brasswork Engine",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/d/d8/Brasswork_Engine.jpg/28px-Brasswork_Engine.jpg",
+      "width": 28,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/d/d8/Brasswork_Engine.jpg",
+      "width": 752,
+      "height": 1337
+    },
+    "recipe": {
+      "rating": 0,
+      "type": "Homestead Decoration",
+      "source": "Recipe sheet",
+      "disciplines": "Handiworker",
+      "sheet": "Black Lion Brasswork Engine Recipe",
+      "id": 15118,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 10,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 10,
+          "item": "Refined Homestead Wood"
+        }
+      ]
+    }
   },
   {
     "id": 917,
@@ -36469,7 +40728,38 @@
       27
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/65B351C0F4209801A4B5430F983502A77EDBC9FE/3629240.png"
+    "icon": "https://render.guildwars2.com/file/65B351C0F4209801A4B5430F983502A77EDBC9FE/3629240.png",
+    "wikiTitle": "Brasswork Pipe Cap",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/9/9e/Brasswork_Pipe_Cap.jpg/50px-Brasswork_Pipe_Cap.jpg",
+      "width": 50,
+      "height": 29
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/9/9e/Brasswork_Pipe_Cap.jpg",
+      "width": 1301,
+      "height": 743
+    },
+    "recipe": {
+      "rating": 0,
+      "type": "Homestead Decoration",
+      "source": "Recipe sheet",
+      "disciplines": "Handiworker",
+      "sheet": "Black Lion Brasswork Pipe Cap Recipe",
+      "id": 15158,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 5,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 5,
+          "item": "Refined Homestead Fiber"
+        }
+      ]
+    }
   },
   {
     "id": 918,
@@ -36479,7 +40769,38 @@
       27
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/07C9A0A376007631BC6644730DEC9A0F53ACC2D9/3629244.png"
+    "icon": "https://render.guildwars2.com/file/07C9A0A376007631BC6644730DEC9A0F53ACC2D9/3629244.png",
+    "wikiTitle": "Brasswork Straight Pipe",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/a/a0/Brasswork_Straight_Pipe.jpg/28px-Brasswork_Straight_Pipe.jpg",
+      "width": 28,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/a/a0/Brasswork_Straight_Pipe.jpg",
+      "width": 795,
+      "height": 1414
+    },
+    "recipe": {
+      "rating": 0,
+      "type": "Homestead Decoration",
+      "source": "Recipe sheet",
+      "disciplines": "Handiworker",
+      "sheet": "Black Lion Brasswork Straight Pipe Recipe",
+      "id": 15122,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 5,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 5,
+          "item": "Refined Homestead Fiber"
+        }
+      ]
+    }
   },
   {
     "id": 919,
@@ -36490,7 +40811,44 @@
       1
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/06F8E8681A3706A0399735342420EA30156E54C8/3629218.png"
+    "icon": "https://render.guildwars2.com/file/06F8E8681A3706A0399735342420EA30156E54C8/3629218.png",
+    "wikiTitle": "Norn Stone Structure (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/1/16/Norn_Stone_Structure.jpg/50px-Norn_Stone_Structure.jpg",
+      "width": 50,
+      "height": 36
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/1/16/Norn_Stone_Structure.jpg",
+      "width": 1886,
+      "height": 1347
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Norn Stone Structure",
+      "sheet": "Recipe: Norn Stone Structure",
+      "id": 15143,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 35,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 5,
+          "item": "Molten Core"
+        },
+        {
+          "slot": 3,
+          "quantity": 20,
+          "item": "Piece of Zhaitaffy"
+        }
+      ]
+    }
   },
   {
     "id": 920,
@@ -40434,42 +44792,7 @@
     ],
     "max_count": 250,
     "icon": "https://render.guildwars2.com/file/41676868AFF9E4F91CD61DD0D177C250785AAA2C/3708870.png",
-    "wikiTitle": "Roped Fence (Handiwork)",
-    "thumbnail": {
-      "source": "https://wiki.guildwars2.com/images/thumb/b/b5/Roped_Fence.jpg/50px-Roped_Fence.jpg",
-      "width": 50,
-      "height": 12
-    },
-    "original": {
-      "source": "https://wiki.guildwars2.com/images/b/b5/Roped_Fence.jpg",
-      "width": 1561,
-      "height": 361
-    },
-    "recipe": {
-      "rating": 1,
-      "type": "Homestead Decoration",
-      "source": "automatic",
-      "disciplines": "Handiworker",
-      "name": "Roped Fence",
-      "id": 15326,
-      "ingredients": [
-        {
-          "slot": 1,
-          "quantity": 5,
-          "item": "Refined Homestead Wood"
-        },
-        {
-          "slot": 2,
-          "quantity": 5,
-          "item": "Refined Homestead Fiber"
-        },
-        {
-          "slot": 3,
-          "quantity": 5,
-          "item": "Flax Fiber"
-        }
-      ]
-    }
+    "wikiTitle": "Roped Fence (Handiwork)"
   },
   {
     "id": 1029,
@@ -40480,38 +44803,7 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/FDC79BF128CCC9C649DE09D7FC20D3A6CA375A0D/3708912.png",
-    "wikiTitle": "Wall Bracket Half (960) (Handiwork)",
-    "thumbnail": {
-      "source": "https://wiki.guildwars2.com/images/thumb/7/75/Wall_Bracket_Half_%28960%29.jpg/50px-Wall_Bracket_Half_%28960%29.jpg",
-      "width": 50,
-      "height": 17
-    },
-    "original": {
-      "source": "https://wiki.guildwars2.com/images/7/75/Wall_Bracket_Half_%28960%29.jpg",
-      "width": 1432,
-      "height": 473
-    },
-    "recipe": {
-      "rating": 1,
-      "type": "Homestead Decoration",
-      "source": "automatic",
-      "disciplines": "Handiworker",
-      "name": "Wall Bracket Half (960)",
-      "id": 15310,
-      "ingredients": [
-        {
-          "slot": 1,
-          "quantity": 10,
-          "item": "Refined Homestead Wood"
-        },
-        {
-          "slot": 2,
-          "quantity": 4,
-          "item": "Elder Wood Plank"
-        }
-      ]
-    }
+    "icon": "https://render.guildwars2.com/file/FDC79BF128CCC9C649DE09D7FC20D3A6CA375A0D/3708912.png"
   },
   {
     "id": 1030,
@@ -40522,38 +44814,7 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/AC09111CF07CBCD425084A9A80D2B3F6424CD9CE/3708900.png",
-    "wikiTitle": "Stairs (120 x 60) (Handiwork)",
-    "thumbnail": {
-      "source": "https://wiki.guildwars2.com/images/thumb/d/d9/Stairs_%28120_x_60%29.jpg/50px-Stairs_%28120_x_60%29.jpg",
-      "width": 50,
-      "height": 42
-    },
-    "original": {
-      "source": "https://wiki.guildwars2.com/images/d/d9/Stairs_%28120_x_60%29.jpg",
-      "width": 660,
-      "height": 558
-    },
-    "recipe": {
-      "rating": 1,
-      "type": "Homestead Decoration",
-      "source": "automatic",
-      "disciplines": "Handiworker",
-      "name": "Stairs (120 x 60)",
-      "id": 15352,
-      "ingredients": [
-        {
-          "slot": 1,
-          "quantity": 5,
-          "item": "Refined Homestead Wood"
-        },
-        {
-          "slot": 2,
-          "quantity": 2,
-          "item": "Elder Wood Plank"
-        }
-      ]
-    }
+    "icon": "https://render.guildwars2.com/file/AC09111CF07CBCD425084A9A80D2B3F6424CD9CE/3708900.png"
   },
   {
     "id": 1031,
@@ -40564,8 +44825,7 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/010D715DDF59250F09A5B95E0BAAB8CC65232504/3708865.png",
-    "wikiTitle": "Wooden Beam (16 x 120 x 30) (Handiwork)"
+    "icon": "https://render.guildwars2.com/file/010D715DDF59250F09A5B95E0BAAB8CC65232504/3708865.png"
   },
   {
     "id": 1032,
@@ -40576,33 +44836,7 @@
       7
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/011F22C0530059A865AD56F391CFE24C9DA40D7A/3708897.png",
-    "wikiTitle": "Tropical Shrub (Handiwork)",
-    "thumbnail": {
-      "source": "https://wiki.guildwars2.com/images/thumb/e/e3/Tropical_Shrub_top.jpg/50px-Tropical_Shrub_top.jpg",
-      "width": 50,
-      "height": 50
-    },
-    "original": {
-      "source": "https://wiki.guildwars2.com/images/e/e3/Tropical_Shrub_top.jpg",
-      "width": 1440,
-      "height": 1440
-    },
-    "recipe": {
-      "rating": 1,
-      "type": "Homestead Decoration",
-      "source": "automatic",
-      "disciplines": "Handiworker",
-      "name": "Tropical Shrub",
-      "id": 15321,
-      "ingredients": [
-        {
-          "slot": 1,
-          "quantity": 5,
-          "item": "Refined Homestead Fiber"
-        }
-      ]
-    }
+    "icon": "https://render.guildwars2.com/file/011F22C0530059A865AD56F391CFE24C9DA40D7A/3708897.png"
   },
   {
     "id": 1033,
@@ -40613,38 +44847,7 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/FFF4510BD1A8AED822E10317F32F3F3E90AB3F09/3708917.png",
-    "wikiTitle": "Wide Entryway Wall (Single) (Handiwork)",
-    "thumbnail": {
-      "source": "https://wiki.guildwars2.com/images/thumb/2/2c/Wide_Entryway_Wall_%28Single%29.jpg/48px-Wide_Entryway_Wall_%28Single%29.jpg",
-      "width": 48,
-      "height": 50
-    },
-    "original": {
-      "source": "https://wiki.guildwars2.com/images/2/2c/Wide_Entryway_Wall_%28Single%29.jpg",
-      "width": 405,
-      "height": 421
-    },
-    "recipe": {
-      "rating": 1,
-      "type": "Homestead Decoration",
-      "source": "automatic",
-      "disciplines": "Handiworker",
-      "name": "Wide Entryway Wall (Single)",
-      "id": 15197,
-      "ingredients": [
-        {
-          "slot": 1,
-          "quantity": 20,
-          "item": "Refined Homestead Wood"
-        },
-        {
-          "slot": 2,
-          "quantity": 10,
-          "item": "Elder Wood Plank"
-        }
-      ]
-    }
+    "icon": "https://render.guildwars2.com/file/FFF4510BD1A8AED822E10317F32F3F3E90AB3F09/3708917.png"
   },
   {
     "id": 1034,
@@ -40655,43 +44858,7 @@
       4
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/64382C1A236B4742DAE8D5EFF09A9DC3C999BEB7/3708859.png",
-    "wikiTitle": "Changing Tent (Handiwork)",
-    "thumbnail": {
-      "source": "https://wiki.guildwars2.com/images/thumb/b/b8/Changing_Tent_%28decoration%29.jpg/44px-Changing_Tent_%28decoration%29.jpg",
-      "width": 44,
-      "height": 50
-    },
-    "original": {
-      "source": "https://wiki.guildwars2.com/images/b/b8/Changing_Tent_%28decoration%29.jpg",
-      "width": 847,
-      "height": 968
-    },
-    "recipe": {
-      "rating": 225,
-      "type": "Homestead Decoration",
-      "source": "automatic",
-      "disciplines": "Handiworker",
-      "name": "Changing Tent",
-      "id": 15383,
-      "ingredients": [
-        {
-          "slot": 1,
-          "quantity": 30,
-          "item": "Refined Homestead Fiber"
-        },
-        {
-          "slot": 2,
-          "quantity": 10,
-          "item": "Cured Thick Leather Square"
-        },
-        {
-          "slot": 3,
-          "quantity": 10,
-          "item": "Bolt of Silk"
-        }
-      ]
-    }
+    "icon": "https://render.guildwars2.com/file/64382C1A236B4742DAE8D5EFF09A9DC3C999BEB7/3708859.png"
   },
   {
     "id": 1035,
@@ -40702,48 +44869,7 @@
       5
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/7CD9ECAF17F1C3CDF821B279732F6CF2C962B0A9/3708858.png",
-    "wikiTitle": "Canthan Lantern (Handiwork)",
-    "thumbnail": {
-      "source": "https://wiki.guildwars2.com/images/thumb/1/1e/Canthan_Lantern.jpg/50px-Canthan_Lantern.jpg",
-      "width": 50,
-      "height": 49
-    },
-    "original": {
-      "source": "https://wiki.guildwars2.com/images/1/1e/Canthan_Lantern.jpg",
-      "width": 516,
-      "height": 507
-    },
-    "recipe": {
-      "rating": 1,
-      "type": "Homestead Decoration",
-      "source": "automatic",
-      "disciplines": "Handiworker",
-      "name": "Canthan Lantern",
-      "id": 15243,
-      "ingredients": [
-        {
-          "slot": 1,
-          "quantity": 10,
-          "item": "Refined Homestead Metal"
-        },
-        {
-          "slot": 2,
-          "quantity": 1,
-          "item": "Lump of Glass"
-        },
-        {
-          "slot": 3,
-          "quantity": 2,
-          "item": "Molten Core"
-        },
-        {
-          "slot": 4,
-          "quantity": 1,
-          "item": "Lamp Finial"
-        }
-      ]
-    }
+    "icon": "https://render.guildwars2.com/file/7CD9ECAF17F1C3CDF821B279732F6CF2C962B0A9/3708858.png"
   },
   {
     "id": 1036,
@@ -43315,6 +47441,22 @@
       "source": "https://wiki.guildwars2.com/images/c/ca/Sandcastle.jpg",
       "width": 431,
       "height": 509
+    },
+    "recipe": {
+      "rating": 1,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Sandcastle",
+      "sheet": "Recipe: Sandcastle",
+      "id": 15590,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 10,
+          "item": "Pile of Coarse Sand"
+        }
+      ]
     }
   },
   {
@@ -43326,7 +47468,38 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/ECE012F70EB296261CC9A0F80C42492476753B96/3744682.png"
+    "icon": "https://render.guildwars2.com/file/ECE012F70EB296261CC9A0F80C42492476753B96/3744682.png",
+    "wikiTitle": "Roof 720 x 200 x 240 (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/9/98/Roof_720_x_200_x_240.jpg/50px-Roof_720_x_200_x_240.jpg",
+      "width": 50,
+      "height": 28
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/9/98/Roof_720_x_200_x_240.jpg",
+      "width": 1366,
+      "height": 768
+    },
+    "recipe": {
+      "rating": 1,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "name": "Roof 720 x 200 x 240",
+      "id": 15468,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 15,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 5,
+          "item": "Refined Homestead Metal"
+        }
+      ]
+    }
   },
   {
     "id": 1117,
@@ -43337,7 +47510,44 @@
       14
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/B70138FD0C2166D89C5C92129B03E1EEE98061F2/3744697.png"
+    "icon": "https://render.guildwars2.com/file/B70138FD0C2166D89C5C92129B03E1EEE98061F2/3744697.png",
+    "wikiTitle": "Stable Pen (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/1/14/Stable_Pen.jpg/50px-Stable_Pen.jpg",
+      "width": 50,
+      "height": 40
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/1/14/Stable_Pen.jpg",
+      "width": 1800,
+      "height": 1440
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Stable Pen",
+      "sheet": "Recipe: Stable Pen",
+      "id": 15588,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 27,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 10,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 3,
+          "quantity": 8,
+          "item": "Exotic Essence of Luck"
+        }
+      ]
+    }
   },
   {
     "id": 1118,
@@ -43348,7 +47558,33 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/709E7B09070DB6B3C5FD4A2EAB9F57261856B202/3744685.png"
+    "icon": "https://render.guildwars2.com/file/709E7B09070DB6B3C5FD4A2EAB9F57261856B202/3744685.png",
+    "wikiTitle": "Ship Stern (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/3/31/Ship_Stern.jpg/50px-Ship_Stern.jpg",
+      "width": 50,
+      "height": 37
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/3/31/Ship_Stern.jpg",
+      "width": 1831,
+      "height": 1340
+    },
+    "recipe": {
+      "rating": 1,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "name": "Ship Stern",
+      "id": 15583,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 10,
+          "item": "Refined Homestead Wood"
+        }
+      ]
+    }
   },
   {
     "id": 1120,
@@ -43359,7 +47595,39 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/7DE1D1B1FF300A55062147E43393CDA40D393D6A/3744677.png"
+    "icon": "https://render.guildwars2.com/file/7DE1D1B1FF300A55062147E43393CDA40D393D6A/3744677.png",
+    "wikiTitle": "Slothasor Blue Mushroom (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/d/df/Slothasor_Blue_Mushroom.jpg/33px-Slothasor_Blue_Mushroom.jpg",
+      "width": 33,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/d/df/Slothasor_Blue_Mushroom.jpg",
+      "width": 919,
+      "height": 1378
+    },
+    "recipe": {
+      "rating": 1,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Slothasor Blue Mushroom",
+      "sheet": "Recipe: Slothasor Blue Mushroom",
+      "id": 15570,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 5,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 1,
+          "item": "Slothasor Mushroom (trophy)"
+        }
+      ]
+    }
   },
   {
     "id": 1121,
@@ -43370,7 +47638,38 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/D352527EF5A69A15DEA10867A119D4553FF81ECA/3744680.png"
+    "icon": "https://render.guildwars2.com/file/D352527EF5A69A15DEA10867A119D4553FF81ECA/3744680.png",
+    "wikiTitle": "Roof Piece (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/f/fb/Roof_Piece.jpg/50px-Roof_Piece.jpg",
+      "width": 50,
+      "height": 28
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/f/fb/Roof_Piece.jpg",
+      "width": 1366,
+      "height": 768
+    },
+    "recipe": {
+      "rating": 1,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "name": "Roof Piece",
+      "id": 15557,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 10,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 3,
+          "item": "Refined Homestead Metal"
+        }
+      ]
+    }
   },
   {
     "id": 1123,
@@ -43381,7 +47680,34 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/F66CB907997BD1F69F9ABCA97C726F697806DF4B/3744687.png"
+    "icon": "https://render.guildwars2.com/file/F66CB907997BD1F69F9ABCA97C726F697806DF4B/3744687.png",
+    "wikiTitle": "Deimos Statue (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/6/63/Deimos_Statue.jpg/40px-Deimos_Statue.jpg",
+      "width": 40,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/6/63/Deimos_Statue.jpg",
+      "width": 1152,
+      "height": 1440
+    },
+    "recipe": {
+      "rating": 1,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Deimos Statue",
+      "sheet": "Recipe: Deimos Statue",
+      "id": 15530,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 20,
+          "item": "Refined Homestead Metal"
+        }
+      ]
+    }
   },
   {
     "id": 1126,
@@ -43392,7 +47718,38 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/616B096C0304CAE2FCB296A0B1F27E07370BD461/3744671.png"
+    "icon": "https://render.guildwars2.com/file/616B096C0304CAE2FCB296A0B1F27E07370BD461/3744671.png",
+    "wikiTitle": "Jungle Log (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/5/50/Jungle_Log.jpg/50px-Jungle_Log.jpg",
+      "width": 50,
+      "height": 28
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/5/50/Jungle_Log.jpg",
+      "width": 1366,
+      "height": 768
+    },
+    "recipe": {
+      "rating": 1,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "name": "Jungle Log",
+      "id": 15482,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 5,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 1,
+          "item": "Palm Lumber Core"
+        }
+      ]
+    }
   },
   {
     "id": 1127,
@@ -43403,7 +47760,39 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/D1EB6EAF5393EBD729EC521AEEB8C8EABDB47C7F/3744690.png"
+    "icon": "https://render.guildwars2.com/file/D1EB6EAF5393EBD729EC521AEEB8C8EABDB47C7F/3744690.png",
+    "wikiTitle": "Vale Guardian Pylon (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/2/2f/Vale_Guardian_Pylon.jpg/25px-Vale_Guardian_Pylon.jpg",
+      "width": 25,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/2/2f/Vale_Guardian_Pylon.jpg",
+      "width": 705,
+      "height": 1410
+    },
+    "recipe": {
+      "rating": 1,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Vale Guardian Pylon",
+      "sheet": "Recipe: Vale Guardian Pylon",
+      "id": 15519,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 5,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 10,
+          "item": "Bolt of Cotton"
+        }
+      ]
+    }
   },
   {
     "id": 1130,
@@ -44000,39 +48389,7 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/C164A225E463A736DFD69BEBE099964BB4041AA9/3744675.png",
-    "wikiTitle": "Maddening Tower (Handiwork)",
-    "thumbnail": {
-      "source": "https://wiki.guildwars2.com/images/thumb/1/16/Maddening_Tower.jpg/23px-Maddening_Tower.jpg",
-      "width": 23,
-      "height": 50
-    },
-    "original": {
-      "source": "https://wiki.guildwars2.com/images/1/16/Maddening_Tower.jpg",
-      "width": 553,
-      "height": 1183
-    },
-    "recipe": {
-      "rating": 1,
-      "type": "Homestead Decoration",
-      "source": "recipe sheet",
-      "disciplines": "Handiworker",
-      "name": "Maddening Tower",
-      "sheet": "Recipe: Maddening Tower",
-      "id": 15471,
-      "ingredients": [
-        {
-          "slot": 1,
-          "quantity": 12,
-          "item": "Refined Homestead Metal"
-        },
-        {
-          "slot": 2,
-          "quantity": 2,
-          "item": "Bloodstone Brick"
-        }
-      ]
-    }
+    "icon": "https://render.guildwars2.com/file/C164A225E463A736DFD69BEBE099964BB4041AA9/3744675.png"
   },
   {
     "id": 1157,
@@ -44043,39 +48400,7 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/02CD7494AE75729A3D7C181DE82B3B5EB7B6504A/3744670.png",
-    "wikiTitle": "Earth Elemental Right Hand (Handiwork)",
-    "thumbnail": {
-      "source": "https://wiki.guildwars2.com/images/thumb/b/b9/Earth_Elemental_Right_Hand.jpg/33px-Earth_Elemental_Right_Hand.jpg",
-      "width": 33,
-      "height": 50
-    },
-    "original": {
-      "source": "https://wiki.guildwars2.com/images/b/b9/Earth_Elemental_Right_Hand.jpg",
-      "width": 530,
-      "height": 801
-    },
-    "recipe": {
-      "rating": 1,
-      "type": "Homestead Decoration",
-      "source": "recipe sheet",
-      "disciplines": "Handiworker",
-      "name": "Earth Elemental Right Hand",
-      "sheet": "Recipe: Earth Elemental Right Hand",
-      "id": 15465,
-      "ingredients": [
-        {
-          "slot": 1,
-          "quantity": 5,
-          "item": "Onyx Core"
-        },
-        {
-          "slot": 2,
-          "quantity": 10,
-          "item": "Lump of Primordium"
-        }
-      ]
-    }
+    "icon": "https://render.guildwars2.com/file/02CD7494AE75729A3D7C181DE82B3B5EB7B6504A/3744670.png"
   },
   {
     "id": 1159,
@@ -44086,44 +48411,7 @@
       14
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/7646EF03EEED53EA30C83E2DCE5356DC41D146ED/3744694.png",
-    "wikiTitle": "Stable Fence (Handiwork)",
-    "thumbnail": {
-      "source": "https://wiki.guildwars2.com/images/thumb/f/fb/Stable_Fence.jpg/50px-Stable_Fence.jpg",
-      "width": 50,
-      "height": 36
-    },
-    "original": {
-      "source": "https://wiki.guildwars2.com/images/f/fb/Stable_Fence.jpg",
-      "width": 2016,
-      "height": 1440
-    },
-    "recipe": {
-      "rating": 225,
-      "type": "Homestead Decoration",
-      "source": "recipe sheet",
-      "disciplines": "Handiworker",
-      "name": "Stable Fence",
-      "sheet": "Recipe: Stable Fence",
-      "id": 15456,
-      "ingredients": [
-        {
-          "slot": 1,
-          "quantity": 17,
-          "item": "Refined Homestead Wood"
-        },
-        {
-          "slot": 2,
-          "quantity": 2,
-          "item": "Refined Homestead Metal"
-        },
-        {
-          "slot": 3,
-          "quantity": 8,
-          "item": "Exotic Essence of Luck"
-        }
-      ]
-    }
+    "icon": "https://render.guildwars2.com/file/7646EF03EEED53EA30C83E2DCE5356DC41D146ED/3744694.png"
   },
   {
     "id": 1160,
