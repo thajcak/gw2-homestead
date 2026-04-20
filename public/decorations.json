@@ -41279,6 +41279,26 @@
       "source": "https://wiki.guildwars2.com/images/e/ef/Brasswork_Wall.jpg",
       "width": 1370,
       "height": 1370
+    },
+    "recipe": {
+      "rating": 0,
+      "type": "Homestead Decoration",
+      "source": "Recipe sheet",
+      "disciplines": "Handiworker",
+      "sheet": "Black Lion Brasswork Wall Recipe",
+      "id": 15110,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 10,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 10,
+          "item": "Refined Homestead Wood"
+        }
+      ]
     }
   },
   {
@@ -41289,7 +41309,38 @@
       27
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/D8EDE5F90616F4B3A3B9B077E86E12548039685E/3629242.png"
+    "icon": "https://render.guildwars2.com/file/D8EDE5F90616F4B3A3B9B077E86E12548039685E/3629242.png",
+    "wikiTitle": "Brasswork Small Gear",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/a/af/Brasswork_Small_Gear.jpg/50px-Brasswork_Small_Gear.jpg",
+      "width": 50,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/a/af/Brasswork_Small_Gear.jpg",
+      "width": 1199,
+      "height": 1199
+    },
+    "recipe": {
+      "rating": 0,
+      "type": "Homestead Decoration",
+      "source": "Recipe sheet",
+      "disciplines": "Handiworker",
+      "sheet": "Black Lion Brasswork Small Gear Recipe",
+      "id": 15154,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 5,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 5,
+          "item": "Refined Homestead Wood"
+        }
+      ]
+    }
   },
   {
     "id": 926,
@@ -41300,7 +41351,43 @@
       3
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/A85E69981D66800135D6FF0F64CA52A905BB1958/3629221.png"
+    "icon": "https://render.guildwars2.com/file/A85E69981D66800135D6FF0F64CA52A905BB1958/3629221.png",
+    "wikiTitle": "Kodan Book: The Beauty of Blue",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/8/8d/Kodan_Book-_The_Beauty_of_Blue.jpg/37px-Kodan_Book-_The_Beauty_of_Blue.jpg",
+      "width": 37,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/8/8d/Kodan_Book-_The_Beauty_of_Blue.jpg",
+      "width": 992,
+      "height": 1322
+    },
+    "recipe": {
+      "rating": 500,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "sheet": "Homestead Recipe Book: Books",
+      "id": 15151,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 30,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 2,
+          "item": "Cured Hardened Leather Square"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Tub of Wood Glue"
+        }
+      ]
+    }
   },
   {
     "id": 927,
@@ -41311,7 +41398,18 @@
       4
     ],
     "max_count": 1,
-    "icon": "https://render.guildwars2.com/file/C61975234AD30103EF7DAD0BD52578F00B0CDF5B/3629148.png"
+    "icon": "https://render.guildwars2.com/file/C61975234AD30103EF7DAD0BD52578F00B0CDF5B/3629148.png",
+    "wikiTitle": "Orrax Contained (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/6/61/Orrax_Contained_front.jpg/41px-Orrax_Contained_front.jpg",
+      "width": 41,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/6/61/Orrax_Contained_front.jpg",
+      "width": 1141,
+      "height": 1399
+    }
   },
   {
     "id": 928,
