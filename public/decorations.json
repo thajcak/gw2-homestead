@@ -27875,7 +27875,42 @@
       3
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/2ED055F75FC3B52AFF06FE974895A32D0CBE4D4B/3592741.png"
+    "icon": "https://render.guildwars2.com/file/2ED055F75FC3B52AFF06FE974895A32D0CBE4D4B/3592741.png",
+    "wikiTitle": "Jewelry Display Case",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/d/d4/Jewelry_Display_Case.jpg/36px-Jewelry_Display_Case.jpg",
+      "width": 36,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/d/d4/Jewelry_Display_Case.jpg",
+      "width": 993,
+      "height": 1390
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Automatic",
+      "disciplines": "Handiworker",
+      "id": 14710,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 30,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 30,
+          "item": "Gossamer Scrap"
+        },
+        {
+          "slot": 3,
+          "quantity": 30,
+          "item": "Mursaat Obsidian Chunk"
+        }
+      ]
+    }
   },
   {
     "id": 621,
@@ -27885,7 +27920,18 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/E02B120D3B6B3DD311A32DE616A12DDDE93B9DE4/1313331.png"
+    "icon": "https://render.guildwars2.com/file/E02B120D3B6B3DD311A32DE616A12DDDE93B9DE4/1313331.png",
+    "wikiTitle": "Season 6: Gold Guild Challenger Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/2/2e/Season_1-_Gold_Guild_Challenger_Trophy.jpg/50px-Season_1-_Gold_Guild_Challenger_Trophy.jpg",
+      "width": 50,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/2/2e/Season_1-_Gold_Guild_Challenger_Trophy.jpg",
+      "width": 768,
+      "height": 768
+    }
   },
   {
     "id": 622,
@@ -44240,6 +44286,31 @@
       "source": "https://wiki.guildwars2.com/images/3/36/Curved_Roof_Dormer.jpg",
       "width": 851,
       "height": 1080
+    },
+    "recipe": {
+      "rating": 1,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "name": "Curved Roof Dormer",
+      "id": 15223,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 10,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 2,
+          "item": "Lump of Glass"
+        },
+        {
+          "slot": 3,
+          "quantity": 2,
+          "item": "Brick of Clay"
+        }
+      ]
     }
   },
   {
@@ -44251,7 +44322,43 @@
       4
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/A8053B28F401C10325DCFE256C1C2119E1BFD80D/3708887.png"
+    "icon": "https://render.guildwars2.com/file/A8053B28F401C10325DCFE256C1C2119E1BFD80D/3708887.png",
+    "wikiTitle": "Simple Brick Fireplace (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/9/9b/Simple_Brick_Fireplace.jpg/50px-Simple_Brick_Fireplace.jpg",
+      "width": 50,
+      "height": 37
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/9/9b/Simple_Brick_Fireplace.jpg",
+      "width": 1467,
+      "height": 1080
+    },
+    "recipe": {
+      "rating": 1,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "name": "Simple Brick Fireplace",
+      "id": 15363,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 15,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 5,
+          "item": "Brick of Clay"
+        },
+        {
+          "slot": 3,
+          "quantity": 10,
+          "item": "Molten Core"
+        }
+      ]
+    }
   },
   {
     "id": 1004,
@@ -44262,7 +44369,33 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/0271567D05D6B199222AECB444AEBFC2E63E9A29/3708847.png"
+    "icon": "https://render.guildwars2.com/file/0271567D05D6B199222AECB444AEBFC2E63E9A29/3708847.png",
+    "wikiTitle": "Tropical Bridge (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/9/9b/Tropical_Bridge.jpg/50px-Tropical_Bridge.jpg",
+      "width": 50,
+      "height": 28
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/9/9b/Tropical_Bridge.jpg",
+      "width": 1920,
+      "height": 1080
+    },
+    "recipe": {
+      "rating": 1,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "name": "Tropical Bridge",
+      "id": 15349,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 20,
+          "item": "Refined Homestead Wood"
+        }
+      ]
+    }
   },
   {
     "id": 1005,
@@ -44273,7 +44406,38 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/797F09219E0B58563EC524C2B411530576CAE735/3708889.png"
+    "icon": "https://render.guildwars2.com/file/797F09219E0B58563EC524C2B411530576CAE735/3708889.png",
+    "wikiTitle": "Cabana Roof Long (A) (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/9/9b/Cabana_Roof_Long_%28A%29_side.jpg/50px-Cabana_Roof_Long_%28A%29_side.jpg",
+      "width": 50,
+      "height": 28
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/9/9b/Cabana_Roof_Long_%28A%29_side.jpg",
+      "width": 1749,
+      "height": 967
+    },
+    "recipe": {
+      "rating": 1,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "name": "Cabana Roof Long (A)",
+      "id": 15208,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 25,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 15,
+          "item": "Brick of Clay"
+        }
+      ]
+    }
   },
   {
     "id": 1006,
