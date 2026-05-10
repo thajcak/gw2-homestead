@@ -44152,7 +44152,38 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/C1792B4EE87C0F2D964CB5EA75E26CABF849FF3F/3708919.png"
+    "icon": "https://render.guildwars2.com/file/C1792B4EE87C0F2D964CB5EA75E26CABF849FF3F/3708919.png",
+    "wikiTitle": "Wall (120 x 240) (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/e/ef/Wall_%28120_x_240%29.jpg/28px-Wall_%28120_x_240%29.jpg",
+      "width": 28,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/e/ef/Wall_%28120_x_240%29.jpg",
+      "width": 810,
+      "height": 1440
+    },
+    "recipe": {
+      "rating": 1,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "name": "Wall (120 x 240)",
+      "id": 15241,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 8,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 4,
+          "item": "Elder Wood Plank"
+        }
+      ]
+    }
   },
   {
     "id": 998,
@@ -44163,7 +44194,18 @@
       4
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/C86A3BF3932059BC22044CC762A74F6D6180E00A/3708852.png"
+    "icon": "https://render.guildwars2.com/file/C86A3BF3932059BC22044CC762A74F6D6180E00A/3708852.png",
+    "wikiTitle": "Burlap Sack Pile (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/7/74/Burlap_Sack_Pile.jpg/50px-Burlap_Sack_Pile.jpg",
+      "width": 50,
+      "height": 42
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/7/74/Burlap_Sack_Pile.jpg",
+      "width": 1141,
+      "height": 968
+    }
   },
   {
     "id": 999,
@@ -44174,7 +44216,8 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/04B363C6492F164A5416D8E23B523C9856060C2C/3708867.png"
+    "icon": "https://render.guildwars2.com/file/04B363C6492F164A5416D8E23B523C9856060C2C/3708867.png",
+    "wikiTitle": "Wooden Beam (16 x 120 x 16) (Handiwork)"
   },
   {
     "id": 1000,
@@ -44185,7 +44228,43 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/0C381FB521560FDC6FDFA6A43807AE5D42244059/3708881.png"
+    "icon": "https://render.guildwars2.com/file/0C381FB521560FDC6FDFA6A43807AE5D42244059/3708881.png",
+    "wikiTitle": "Galleon Hull (Stern) (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/0/05/Galleon_Hull_%28Stern%29.jpg/45px-Galleon_Hull_%28Stern%29.jpg",
+      "width": 45,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/0/05/Galleon_Hull_%28Stern%29.jpg",
+      "width": 976,
+      "height": 1080
+    },
+    "recipe": {
+      "rating": 1,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "name": "Galleon Hull (Stern)",
+      "id": 15277,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 150,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 60,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 3,
+          "quantity": 6,
+          "item": "Lump of Glass"
+        }
+      ]
+    }
   },
   {
     "id": 1002,
