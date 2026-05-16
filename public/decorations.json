@@ -30799,6 +30799,32 @@
       "source": "https://wiki.guildwars2.com/images/0/0f/Fancy_Wagon.jpg",
       "width": 2320,
       "height": 1416
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Fancy Wagon",
+      "sheet": "Homestead Recipe Book: Misc. Items, Volume 3",
+      "id": 14742,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 34,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 2,
+          "item": "Charged Core"
+        },
+        {
+          "slot": 3,
+          "quantity": 3,
+          "item": "Bolt of Gossamer"
+        }
+      ]
     }
   },
   {
@@ -30809,7 +30835,44 @@
       14
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/03012102B64BD27944B8FD255A13B47D0D06546A/1226127.png"
+    "icon": "https://render.guildwars2.com/file/03012102B64BD27944B8FD255A13B47D0D06546A/1226127.png",
+    "wikiTitle": "Orange Balloon (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/c/c9/Orange_Balloon.jpg/25px-Orange_Balloon.jpg",
+      "width": 25,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/c/c9/Orange_Balloon.jpg",
+      "width": 422,
+      "height": 846
+    },
+    "recipe": {
+      "rating": 150,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Orange Balloon",
+      "sheet": "Homestead Recipe Book: Balloons",
+      "id": 14309,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 2,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 3,
+          "item": "Pouch of Orange Pigment"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Spool of Linen Thread"
+        }
+      ]
+    }
   },
   {
     "id": 686,
@@ -50189,8 +50252,7 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/293C942BF4DB795DBC77585654391B40E5E0EF2A/3770113.png",
-    "wikiTitle": "Iron Window (Handiwork)"
+    "icon": "https://render.guildwars2.com/file/293C942BF4DB795DBC77585654391B40E5E0EF2A/3770113.png"
   },
   {
     "id": 1203,
@@ -50201,8 +50263,7 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/F3416146BE693415E3DDEF76FEDAE8AB1F0FA7F3/3744662.png",
-    "wikiTitle": "Iron Wall 60 x 240 (Handiwork)"
+    "icon": "https://render.guildwars2.com/file/F3416146BE693415E3DDEF76FEDAE8AB1F0FA7F3/3744662.png"
   },
   {
     "id": 1204,
@@ -50213,8 +50274,7 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/06BBE9E8EE9B6E69B07AAAD4DD657B3036040837/3770090.png",
-    "wikiTitle": "Iron Floor 960 x 600 (Handiwork)"
+    "icon": "https://render.guildwars2.com/file/06BBE9E8EE9B6E69B07AAAD4DD657B3036040837/3770090.png"
   },
   {
     "id": 1205,
