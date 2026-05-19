@@ -13480,6 +13480,30 @@
       "source": "https://wiki.guildwars2.com/images/a/a9/Kodan_Cottage_Wall_%28Small%29.jpg",
       "width": 1347,
       "height": 1080
+    },
+    "recipe": {
+      "rating": 150,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "id": 14687,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 4,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 4,
+          "item": "Fang"
+        },
+        {
+          "slot": 3,
+          "quantity": 6,
+          "item": "Lowland Pine Log"
+        }
+      ]
     }
   },
   {
@@ -13491,7 +13515,44 @@
       23
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/0633DF40CAD3F4D07002351A0C050F9BC473CEF5/2694536.png"
+    "icon": "https://render.guildwars2.com/file/0633DF40CAD3F4D07002351A0C050F9BC473CEF5/2694536.png",
+    "wikiTitle": "Racing Power-Up Projector (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/7/76/Racing_Power-Up_Projector.jpg/20px-Racing_Power-Up_Projector.jpg",
+      "width": 20,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/7/76/Racing_Power-Up_Projector.jpg",
+      "width": 261,
+      "height": 633
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Racing Power-Up Projector",
+      "sheet": "Homestead Recipe Book: Dragon Bash, Volume 4",
+      "id": 14555,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 35,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 50,
+          "item": "Piece of Zhaitaffy"
+        },
+        {
+          "slot": 3,
+          "quantity": 15,
+          "item": "Piles of Crystalline Dust"
+        }
+      ]
+    }
   },
   {
     "id": 302,
