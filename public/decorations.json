@@ -2096,6 +2096,32 @@
       "source": "https://wiki.guildwars2.com/images/c/c6/Pumpkin_Lanterns.jpg",
       "width": 982,
       "height": 532
+    },
+    "recipe": {
+      "rating": 150,
+      "type": "Homestead Decoration",
+      "source": "sheet",
+      "disciplines": "Handiworker",
+      "name": "Pumpkin Lanterns",
+      "sheet": "Homestead Recipe Book: Halloween, Volume 6",
+      "id": 14684,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 24,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 16,
+          "item": "Piece of Candy Corn"
+        },
+        {
+          "slot": 3,
+          "quantity": 3,
+          "item": "Molten Sliver"
+        }
+      ]
     }
   },
   {
@@ -2106,7 +2132,44 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/1D1D51D3D2D863AF1E03A7237DEB0E5E2F08BB4F/2039309.png"
+    "icon": "https://render.guildwars2.com/file/1D1D51D3D2D863AF1E03A7237DEB0E5E2F08BB4F/2039309.png",
+    "wikiTitle": "Twin Largos' Token (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/8/81/Twin_Largos_Token_Top_view.jpg/50px-Twin_Largos_Token_Top_view.jpg",
+      "width": 50,
+      "height": 48
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/8/81/Twin_Largos_Token_Top_view.jpg",
+      "width": 266,
+      "height": 253
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Twin Largos' Token",
+      "sheet": "Recipe: Twin Largos' Token",
+      "id": 14758,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 30,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 2,
+          "item": "Freshwater Pearl"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Twin Largos Token (trophy)"
+        }
+      ]
+    }
   },
   {
     "id": 50,
@@ -2117,7 +2180,49 @@
       26
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/0041D40A913D21D9226834A041E4A25E34011E0B/2571009.png"
+    "icon": "https://render.guildwars2.com/file/0041D40A913D21D9226834A041E4A25E34011E0B/2571009.png",
+    "wikiTitle": "Infinirarium Deck (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/7/77/Infinirarium_Deck_top.jpg/50px-Infinirarium_Deck_top.jpg",
+      "width": 50,
+      "height": 49
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/7/77/Infinirarium_Deck_top.jpg",
+      "width": 993,
+      "height": 965
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Infinirarium Deck",
+      "sheet": "Homestead Recipe Book: Wintersday, Volume 7",
+      "id": 14587,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 140,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 50,
+          "item": "Difluorite Crystal"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Case of Captured Lightning"
+        },
+        {
+          "slot": 4,
+          "quantity": 100,
+          "item": "Research Note"
+        }
+      ]
+    }
   },
   {
     "id": 51,
@@ -2127,7 +2232,44 @@
       10
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/F732915FD831A6A7D5BFC6E6D751AAF51DDC6B2F/1225299.png"
+    "icon": "https://render.guildwars2.com/file/F732915FD831A6A7D5BFC6E6D751AAF51DDC6B2F/1225299.png",
+    "wikiTitle": "Charr Summit Banner (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/2/2f/Charr_Summit_Banner.jpg/35px-Charr_Summit_Banner.jpg",
+      "width": 35,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/2/2f/Charr_Summit_Banner.jpg",
+      "width": 511,
+      "height": 717
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Charr Summit Banner",
+      "sheet": "Homestead Recipe Book: Summit Banners, Volume 1",
+      "id": 14141,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 26,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 5,
+          "item": "Bolt of Silk"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Superior Rune of the Citadel"
+        }
+      ]
+    }
   },
   {
     "id": 52,
@@ -2137,7 +2279,44 @@
       2
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/EE50E9BD39A3E255DE6870BF25BC58152A176631/1227605.png"
+    "icon": "https://render.guildwars2.com/file/EE50E9BD39A3E255DE6870BF25BC58152A176631/1227605.png",
+    "wikiTitle": "Fancy Chair (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/c/c6/Fancy_Chair.jpg/30px-Fancy_Chair.jpg",
+      "width": 30,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/c/c6/Fancy_Chair.jpg",
+      "width": 588,
+      "height": 966
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Fancy Chair",
+      "sheet": "Homestead Recipe Book: Benches, Chairs, Stools",
+      "id": 14306,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 27,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 10,
+          "item": "Thin Leather Section"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Vial of Linseed Oil"
+        }
+      ]
+    }
   },
   {
     "id": 53,
@@ -43809,7 +43988,27 @@
     ],
     "max_count": 250,
     "icon": "https://render.guildwars2.com/file/475D08AE102D512F97A16707F1C927AD563E2F24/3708929.png",
-    "wikiTitle": "Trimmed Wall (960 x 240) (Handiwork)"
+    "wikiTitle": "Trimmed Wall (960 x 240) (Handiwork)",
+    "recipe": {
+      "rating": 1,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "name": "Trimmed Wall (960 x 240)",
+      "id": 15327,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 15,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 6,
+          "item": "Elder Wood Plank"
+        }
+      ]
+    }
   },
   {
     "id": 992,
@@ -43820,7 +44019,38 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/A90C0059B42BB5A9F92E240D23A7F37CB3236D7C/3708913.png"
+    "icon": "https://render.guildwars2.com/file/A90C0059B42BB5A9F92E240D23A7F37CB3236D7C/3708913.png",
+    "wikiTitle": "Wall Bracket Half (480) (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/9/94/Wall_Bracket_Half_%28480%29.jpg/50px-Wall_Bracket_Half_%28480%29.jpg",
+      "width": 50,
+      "height": 21
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/9/94/Wall_Bracket_Half_%28480%29.jpg",
+      "width": 1354,
+      "height": 581
+    },
+    "recipe": {
+      "rating": 1,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "name": "Wall Bracket Half (480)",
+      "id": 15286,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 5,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 2,
+          "item": "Elder Wood Plank"
+        }
+      ]
+    }
   },
   {
     "id": 993,
@@ -43831,7 +44061,8 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/49D7A2B30DEAFBD5D809F4FC0829DF01B404E767/3708862.png"
+    "icon": "https://render.guildwars2.com/file/49D7A2B30DEAFBD5D809F4FC0829DF01B404E767/3708862.png",
+    "wikiTitle": "Wooden Beam Corner (30 x 120 x 30) (Handiwork)"
   },
   {
     "id": 994,
@@ -43842,7 +44073,38 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/C0E47E0890930780B56033429471C596031DD1A0/3708928.png"
+    "icon": "https://render.guildwars2.com/file/C0E47E0890930780B56033429471C596031DD1A0/3708928.png",
+    "wikiTitle": "Windowed Wall (600 x 240) (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/e/e5/Windowed_Wall_%28600_x_240%29.jpg/50px-Windowed_Wall_%28600_x_240%29.jpg",
+      "width": 50,
+      "height": 21
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/e/e5/Windowed_Wall_%28600_x_240%29.jpg",
+      "width": 3440,
+      "height": 1440
+    },
+    "recipe": {
+      "rating": 1,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "name": "Windowed Wall (600 x 240)",
+      "id": 15393,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 10,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 4,
+          "item": "Elder Wood Plank"
+        }
+      ]
+    }
   },
   {
     "id": 995,
