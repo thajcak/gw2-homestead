@@ -22250,6 +22250,32 @@
       "source": "https://wiki.guildwars2.com/images/e/ec/Grenth%27s_Palm.jpg",
       "width": 1484,
       "height": 1397
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Grenth's Palm",
+      "sheet": "Homestead Recipe Book: Trees",
+      "id": 14509,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 27,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 5,
+          "item": "Pile of Vile Essence"
+        },
+        {
+          "slot": 3,
+          "quantity": 100,
+          "item": "Volatile Magic"
+        }
+      ]
     }
   },
   {
@@ -22261,7 +22287,44 @@
       2
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/5059DE30C75E22D9E70C51BB27F766FC012BBDDF/1769520.png"
+    "icon": "https://render.guildwars2.com/file/5059DE30C75E22D9E70C51BB27F766FC012BBDDF/1769520.png",
+    "wikiTitle": "Elonian Wood Table (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/e/e3/Elonian_Wood_Table.jpg/36px-Elonian_Wood_Table.jpg",
+      "width": 36,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/e/e3/Elonian_Wood_Table.jpg",
+      "width": 948,
+      "height": 1327
+    },
+    "recipe": {
+      "rating": 150,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Elonian Wood Table",
+      "sheet": "Homestead Recipe Book: Tables",
+      "id": 14517,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 26,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 10,
+          "item": "Trade Contract"
+        },
+        {
+          "slot": 3,
+          "quantity": 5,
+          "item": "Elegy Mosaic"
+        }
+      ]
+    }
   },
   {
     "id": 499,
@@ -22271,7 +22334,44 @@
       4
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/A00908060C033D19ABBB227104C720167DD70D96/1634118.png"
+    "icon": "https://render.guildwars2.com/file/A00908060C033D19ABBB227104C720167DD70D96/1634118.png",
+    "wikiTitle": "Portrait of Caudecus (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/8/85/Portrait_of_Caudecus.jpg/42px-Portrait_of_Caudecus.jpg",
+      "width": 42,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/8/85/Portrait_of_Caudecus.jpg",
+      "width": 758,
+      "height": 892
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Portrait of Caudecus",
+      "sheet": "Homestead Recipe Book: Paintings, Walls, Fountains",
+      "id": 14664,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 25,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 1,
+          "item": "Portrait of Caudecus (trophy)"
+        },
+        {
+          "slot": 3,
+          "quantity": 25,
+          "item": "Unbound Magic"
+        }
+      ]
+    }
   },
   {
     "id": 500,
@@ -37840,7 +37940,43 @@
     ],
     "max_count": 250,
     "icon": "https://render.guildwars2.com/file/E20DD056D8AA466C3B772008A29D3E0CE50EA857/3441823.png",
-    "wikiTitle": "Silver Decima Trophy (Handiwork)"
+    "wikiTitle": "Silver Decima Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/a/ab/Silver_Decima_Trophy.jpg/18px-Silver_Decima_Trophy.jpg",
+      "width": 18,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/a/ab/Silver_Decima_Trophy.jpg",
+      "width": 709,
+      "height": 1920
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Silver Decima Trophy",
+      "sheet": "Recipe: Silver Decima Trophy",
+      "id": 14952,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 90,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 40,
+          "item": "Magnetite Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 3,
+          "item": "Decima's Token"
+        }
+      ]
+    }
   },
   {
     "id": 845,
@@ -37850,7 +37986,43 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/5D01955BAA69010F5A19CD0A42DB19030F9451F7/3441817.png"
+    "icon": "https://render.guildwars2.com/file/5D01955BAA69010F5A19CD0A42DB19030F9451F7/3441817.png",
+    "wikiTitle": "Ura's Token (Homestead)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/7/7e/Ura%27s_Token.jpg/50px-Ura%27s_Token.jpg",
+      "width": 50,
+      "height": 37
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/7/7e/Ura%27s_Token.jpg",
+      "width": 831,
+      "height": 607
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "sheet": "Recipe: Ura's Token",
+      "id": 14971,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 30,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 1,
+          "item": "Magnetite Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Ura's Token"
+        }
+      ]
+    }
   },
   {
     "id": 846,
@@ -37860,7 +38032,44 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/B49FF5F44064EC783301CB365B19E901D3FE61A6/3441820.png"
+    "icon": "https://render.guildwars2.com/file/B49FF5F44064EC783301CB365B19E901D3FE61A6/3441820.png",
+    "wikiTitle": "Silver Ura Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/1/1c/Silver_Ura_Trophy.jpg/24px-Silver_Ura_Trophy.jpg",
+      "width": 24,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/1/1c/Silver_Ura_Trophy.jpg",
+      "width": 941,
+      "height": 1920
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Silver Ura Trophy",
+      "sheet": "Recipe: Silver Ura Trophy",
+      "id": 14965,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 90,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 40,
+          "item": "Magnetite Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 3,
+          "item": "Ura's Token"
+        }
+      ]
+    }
   },
   {
     "id": 847,
@@ -37870,7 +38079,44 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/9F6FE0A40EC363086159185B04DD2E27E75BA84B/3441824.png"
+    "icon": "https://render.guildwars2.com/file/9F6FE0A40EC363086159185B04DD2E27E75BA84B/3441824.png",
+    "wikiTitle": "Bronze Greer Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/8/8e/Bronze_Greer_Trophy.jpg/19px-Bronze_Greer_Trophy.jpg",
+      "width": 19,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/8/8e/Bronze_Greer_Trophy.jpg",
+      "width": 736,
+      "height": 1920
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Bronze Greer Trophy",
+      "sheet": "Recipe: Bronze Greer Trophy",
+      "id": 14992,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 36,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 10,
+          "item": "Magnetite Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Greer's Token"
+        }
+      ]
+    }
   },
   {
     "id": 848,
@@ -47038,6 +47284,26 @@
       "source": "https://wiki.guildwars2.com/images/4/45/Gingerbread_Friend_front.jpg",
       "width": 755,
       "height": 961
+    },
+    "recipe": {
+      "rating": 0,
+      "type": "Homestead Decoration",
+      "source": "Recipe sheet",
+      "disciplines": "Handiworker",
+      "sheet": "Black Lion Gingerbread Friend Recipe",
+      "id": 15434,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 5,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 5,
+          "item": "Refined Homestead Wood"
+        }
+      ]
     }
   },
   {
