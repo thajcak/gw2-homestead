@@ -5071,6 +5071,32 @@
       "source": "https://wiki.guildwars2.com/images/2/2b/Fun_Balloon_Bundle.jpg",
       "width": 574,
       "height": 897
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Fun Balloon Bundle",
+      "sheet": "Homestead Recipe Book: Balloons",
+      "id": 14618,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 4,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 6,
+          "item": "Pouch of Blue Pigment"
+        },
+        {
+          "slot": 3,
+          "quantity": 6,
+          "item": "Pouch of Red Pigment"
+        }
+      ]
     }
   },
   {
@@ -5081,7 +5107,44 @@
       11
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/A19EBCC97B3C1DD629AFEFF6096DD93BB5395B69/1202567.png"
+    "icon": "https://render.guildwars2.com/file/A19EBCC97B3C1DD629AFEFF6096DD93BB5395B69/1202567.png",
+    "wikiTitle": "Obstacle: Fan Trap (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/8/80/Obstacle-_Fan_Trap.jpg/50px-Obstacle-_Fan_Trap.jpg",
+      "width": 50,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/8/80/Obstacle-_Fan_Trap.jpg",
+      "width": 1250,
+      "height": 1250
+    },
+    "recipe": {
+      "rating": 150,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Obstacle: Fan Trap",
+      "sheet": "Homestead Recipe Book: Guild Arena",
+      "id": 14750,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 32,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 4,
+          "item": "Watchwork Sprocket"
+        },
+        {
+          "slot": 3,
+          "quantity": 5,
+          "item": "Airship Part"
+        }
+      ]
+    }
   },
   {
     "id": 115,
@@ -5091,7 +5154,44 @@
       22
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/CE4C5BCA010BB933CA741FACE0A14735BEC907F4/2117555.png"
+    "icon": "https://render.guildwars2.com/file/CE4C5BCA010BB933CA741FACE0A14735BEC907F4/2117555.png",
+    "wikiTitle": "Super Snowy Cliff Face (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/2/21/Super_Snowy_Cliff_Face.jpg/50px-Super_Snowy_Cliff_Face.jpg",
+      "width": 50,
+      "height": 30
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/2/21/Super_Snowy_Cliff_Face.jpg",
+      "width": 2144,
+      "height": 1303
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Super Snowy Cliff Face",
+      "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 4",
+      "id": 14813,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 32,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 8,
+          "item": "Bauble"
+        },
+        {
+          "slot": 3,
+          "quantity": 4,
+          "item": "Pouch of White Pigment"
+        }
+      ]
+    }
   },
   {
     "id": 116,
@@ -5101,7 +5201,44 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/4FC6B8B044DBCDF03B7A45CBC2A3551012751A13/2155906.png"
+    "icon": "https://render.guildwars2.com/file/4FC6B8B044DBCDF03B7A45CBC2A3551012751A13/2155906.png",
+    "wikiTitle": "Ether Djinn's Token (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/6/6d/Ether_Djinn%27s_Token.jpg/50px-Ether_Djinn%27s_Token.jpg",
+      "width": 50,
+      "height": 27
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/6/6d/Ether_Djinn%27s_Token.jpg",
+      "width": 737,
+      "height": 398
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Ether Djinn's Token",
+      "sheet": "Recipe: Ether Djinn's Token",
+      "id": 14299,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 30,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 200,
+          "item": "Volatile Magic"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Ether Djinn's Token (trophy)"
+        }
+      ]
+    }
   },
   {
     "id": 117,
@@ -5111,7 +5248,43 @@
       13
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/93BCB5507BEF9E073BAF0275E0D8FD07492E4A9F/2069923.png"
+    "icon": "https://render.guildwars2.com/file/93BCB5507BEF9E073BAF0275E0D8FD07492E4A9F/2069923.png",
+    "wikiTitle": "Racetrack Straightaway (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/1/1a/Racetrack_Straightaway.jpg/50px-Racetrack_Straightaway.jpg",
+      "width": 50,
+      "height": 40
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/1/1a/Racetrack_Straightaway.jpg",
+      "width": 1440,
+      "height": 1152
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe sheet",
+      "disciplines": "Handiworker",
+      "sheet": "Homestead Recipe Book: Roller Beetle Racetracks",
+      "id": 14223,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 30,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 10,
+          "item": "Charged Titan Ore"
+        },
+        {
+          "slot": 3,
+          "quantity": 5,
+          "item": "Racing Medallion"
+        }
+      ]
+    }
   },
   {
     "id": 118,
@@ -5121,7 +5294,44 @@
       1
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/A9DEC7C17DF3D00DD5669299091CC31433A36C59/1494134.png"
+    "icon": "https://render.guildwars2.com/file/A9DEC7C17DF3D00DD5669299091CC31433A36C59/1494134.png",
+    "wikiTitle": "Large Block of the Solid Ocean (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/d/d0/Large_Block_of_the_Solid_Ocean.jpg/50px-Large_Block_of_the_Solid_Ocean.jpg",
+      "width": 50,
+      "height": 33
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/d/d0/Large_Block_of_the_Solid_Ocean.jpg",
+      "width": 1900,
+      "height": 1267
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Large Block of the Solid Ocean",
+      "sheet": "Homestead Recipe Book: Solid Ocean Fractal",
+      "id": 14845,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 30,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 12,
+          "item": "Fractal Relic"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Writ of Dragon's End"
+        }
+      ]
+    }
   },
   {
     "id": 119,
