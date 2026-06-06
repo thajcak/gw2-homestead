@@ -13562,7 +13562,44 @@
       2
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/710B10332630A31506F1AF946D33E5F25DF0923D/1227592.png"
+    "icon": "https://render.guildwars2.com/file/710B10332630A31506F1AF946D33E5F25DF0923D/1227592.png",
+    "wikiTitle": "Fancy Table (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/7/76/Fancy_Table.jpg/50px-Fancy_Table.jpg",
+      "width": 50,
+      "height": 41
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/7/76/Fancy_Table.jpg",
+      "width": 1113,
+      "height": 920
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Fancy Table",
+      "sheet": "Homestead Recipe Book: Tables and Chairs",
+      "id": 14354,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 30,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 5,
+          "item": "Evergreen Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Standard Maintenance Oil"
+        }
+      ]
+    }
   },
   {
     "id": 303,
@@ -44518,6 +44555,26 @@
       "source": "https://wiki.guildwars2.com/images/f/f5/Cabana_Wall_%28960%29.jpg",
       "width": 1513,
       "height": 970
+    },
+    "recipe": {
+      "rating": 1,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "name": "Cabana Wall (960)",
+      "id": 15295,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 15,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 8,
+          "item": "Elder Wood Plank"
+        }
+      ]
     }
   },
   {
@@ -44529,7 +44586,8 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/6EADAEA01469DC017FBA9ABB2446A142DDE62824/3708861.png"
+    "icon": "https://render.guildwars2.com/file/6EADAEA01469DC017FBA9ABB2446A142DDE62824/3708861.png",
+    "wikiTitle": "Wooden Beam (16 x 240 x 30) (Handiwork)"
   },
   {
     "id": 1011,
@@ -44540,7 +44598,38 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/FF5A44177F7817EAE9AAFA2C681E353FF8709B4F/3708891.png"
+    "icon": "https://render.guildwars2.com/file/FF5A44177F7817EAE9AAFA2C681E353FF8709B4F/3708891.png",
+    "wikiTitle": "Curved Roof Corner (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/c/c7/Curved_Roof_Corner.jpg/38px-Curved_Roof_Corner.jpg",
+      "width": 38,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/c/c7/Curved_Roof_Corner.jpg",
+      "width": 825,
+      "height": 1080
+    },
+    "recipe": {
+      "rating": 1,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "name": "Curved Roof Corner",
+      "id": 15194,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 5,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 2,
+          "item": "Brick of Clay"
+        }
+      ]
+    }
   },
   {
     "id": 1013,
@@ -44551,7 +44640,33 @@
       7
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/0E0C777B3BF8AD1D59A1AA054D7F2862CD09A867/3708853.png"
+    "icon": "https://render.guildwars2.com/file/0E0C777B3BF8AD1D59A1AA054D7F2862CD09A867/3708853.png",
+    "wikiTitle": "Branchless Bush (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/d/db/Branchless_Bush.jpg/50px-Branchless_Bush.jpg",
+      "width": 50,
+      "height": 31
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/d/db/Branchless_Bush.jpg",
+      "width": 1758,
+      "height": 1080
+    },
+    "recipe": {
+      "rating": 1,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "name": "Branchless Bush",
+      "id": 15294,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 7,
+          "item": "Refined Homestead Fiber"
+        }
+      ]
+    }
   },
   {
     "id": 1014,
@@ -44562,7 +44677,38 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/0E95A4150C70374E99031E0168C67C0205F9BAC0/3708915.png"
+    "icon": "https://render.guildwars2.com/file/0E95A4150C70374E99031E0168C67C0205F9BAC0/3708915.png",
+    "wikiTitle": "Cabana Wall (120) (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/5/5c/Cabana_Wall_%28120%29.jpg/36px-Cabana_Wall_%28120%29.jpg",
+      "width": 36,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/5/5c/Cabana_Wall_%28120%29.jpg",
+      "width": 697,
+      "height": 970
+    },
+    "recipe": {
+      "rating": 1,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "name": "Cabana Wall (120)",
+      "id": 15386,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 10,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 5,
+          "item": "Elder Wood Plank"
+        }
+      ]
+    }
   },
   {
     "id": 1015,
