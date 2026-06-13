@@ -50459,7 +50459,27 @@
     ],
     "max_count": 250,
     "icon": "https://render.guildwars2.com/file/523560154357EA14ED9AF7F9A3EB4E323B5F75E0/3770089.png",
-    "wikiTitle": "Iron Floor 960 x 840 (Handiwork)"
+    "wikiTitle": "Iron Floor 960 x 840 (Handiwork)",
+    "recipe": {
+      "rating": 1,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "name": "Iron Floor 960 x 840",
+      "id": 15638,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 20,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 30,
+          "item": "Iron Ingot"
+        }
+      ]
+    }
   },
   {
     "id": 1218,
