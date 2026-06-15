@@ -561,7 +561,9 @@ jobs:
             | . as $newItem
             | ($oldById[$newItem.id|tostring]) as $oldItem
             | select($oldItem != null)
-            | select((($newItem.thumbnail // null) != ($oldItem.thumbnail // null)) or (($newItem.original // null) != ($oldItem.original // null)))
+            | ($newItem.original.source // null) as $newRemote
+            | ($oldItem.original.remoteSource // $oldItem.original.source // null) as $oldRemote
+            | select($newRemote != null and $oldRemote != $newRemote)
             | {id:$newItem.id, type:"Image Update", name:$newItem.name}
           ' decorations_work.json >> changelog_entries.jsonl
           # Decorations: recipe added (was empty) vs updated (had content and changed)
@@ -631,6 +633,11 @@ jobs:
 
           rm -f changelog_entries.jsonl new_entries.json old_decorations.json old_decoration_categories.json existing_today_changelog.json
 
+      - name: Localize decoration images
+        run: |
+          set -e
+          node scripts/localize-decoration-images.mjs decorations_work.json
+
       - name: Sync work files to content collections
         run: |
           set -e
@@ -643,7 +650,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add src/content/
+          git add src/content/ public/decorations/ public/images/
           # Check if there are changes to commit
           if git diff --cached --quiet; then
             echo "No changes to commit."

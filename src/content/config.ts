@@ -4,6 +4,8 @@ const imageSchema = z.object({
   source: z.string(),
   width: z.number(),
   height: z.number(),
+  /** Remote wiki URL retained for CI sync and changelog diffs only. */
+  remoteSource: z.string().optional(),
 });
 
 const decorationRecipeIngredientSchema = z.object({

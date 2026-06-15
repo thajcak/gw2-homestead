@@ -38,6 +38,8 @@ export interface Decoration {
     source: string;
     width: number;
     height: number;
+    /** Remote wiki URL retained for CI sync and changelog diffs only. */
+    remoteSource?: string;
   };
 }
 

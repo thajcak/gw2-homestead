@@ -25,6 +25,22 @@ const ENTRY_TYPE_ORDER = [
 
 const ANIMATION_MS = 300;
 
+function resolveAsset(path: string | undefined, base: string): string {
+  const placeholder =
+    (typeof window !== 'undefined' &&
+      (window as Window & { __catalogPlaceholderPreview?: string }).__catalogPlaceholderPreview) ||
+    `${base.replace(/\/?$/, '/')}images/placeholder.png`;
+
+  if (!path) {
+    return placeholder;
+  }
+  if (path.startsWith('http://') || path.startsWith('https://')) {
+    return path;
+  }
+  const normalizedBase = base.endsWith('/') ? base : `${base}/`;
+  return `${normalizedBase}${path.replace(/^\//, '')}`;
+}
+
 function escapeHtml(value: string): string {
   return value
     .replace(/&/g, '&amp;')
@@ -65,11 +81,11 @@ function renderExpandedDecoration(
   decoration: Decoration,
   categoryMap: Map<number, string>,
   itemsPerRow: number,
-  decorationIndex: number
+  decorationIndex: number,
+  baseUrl: string
 ): string {
   const indicatorLeftPosition = `calc(${(decorationIndex % itemsPerRow) * (74 + 16)}px - ${(itemsPerRow * (74 + 16) - 16) / 2}px + 37px)`;
-  const imageSource =
-    decoration.original?.source ?? 'https://static.staticwars.com/quaggans/lost.jpg';
+  const imageSource = resolveAsset(decoration.original?.source, baseUrl);
   const hasOriginal = Boolean(decoration.original?.source);
 
   const categoryTags = decoration.categories
@@ -138,7 +154,7 @@ function renderExpandedDecoration(
   </div>`;
 }
 
-export function initCatalog(data: CatalogData): void {
+export function initCatalog(data: CatalogData, baseUrl: string = '/'): void {
   const searchInput = document.getElementById('search-input') as HTMLInputElement | null;
   const clearSearchButton = document.getElementById('clear-search') as HTMLButtonElement | null;
   const categorySelect = document.getElementById('category-select') as HTMLSelectElement | null;
@@ -325,7 +341,8 @@ export function initCatalog(data: CatalogData): void {
       decoration,
       categoryMap,
       itemsPerRow,
-      decorationIndex
+      decorationIndex,
+      baseUrl
     );
     const panel = wrapper.firstElementChild as HTMLElement;
     insertAfter.insertAdjacentElement('afterend', panel);

@@ -1,11 +1,13 @@
 ---
 import type { Decoration } from '../types';
+import { assetUrl } from '../utils/assetUrl';
 
 interface Props {
   decorations: Decoration[];
 }
 
 const { decorations } = Astro.props;
+const placeholderPreview = assetUrl('images/placeholder.png');
 ---
 
 <div class="container mx-auto px-4 md:px-8 lg:px-16 py-8">
@@ -19,7 +21,7 @@ const { decorations } = Astro.props;
           data-search-text={`${decoration.name} ${decoration.description ?? ''}`.toLowerCase()}
         >
           <img
-            src={decoration.icon}
+            src={assetUrl(decoration.icon)}
             alt={decoration.name}
             width={74}
             height={74}
@@ -31,3 +33,7 @@ const { decorations } = Astro.props;
     }
   </div>
 </div>
+
+<script define:vars={{ placeholderPreview }}>
+  window.__catalogPlaceholderPreview = placeholderPreview;
+</script>
