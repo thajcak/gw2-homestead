@@ -1,4 +1,4 @@
-import type { Category, ChangeLogDay, Decoration } from '../types';
+import type { Category, Decoration } from '../types';
 
 export interface SearchIndexEntry {
   id: number;
@@ -15,8 +15,6 @@ const ENTRY_TYPE_ORDER = [
   'Recipe Added',
   'Recipe Updated',
 ] as const;
-
-const CHIP_ENTRY_TYPES = new Set(['New Item', 'Image Update', 'Recipe Added', 'Recipe Updated']);
 
 const ANIMATION_MS = 200;
 const MAX_ICON_LOADS = 6;
@@ -159,58 +157,6 @@ function renderExpandedDecoration(
       </div>
     </div>
     </div>`;
-}
-
-function renderChangelogHtml(days: ChangeLogDay[]): string {
-  if (days.length === 0) {
-    return '<p class="changelog-panel__empty">No recent changes yet.</p>';
-  }
-
-  return days
-    .map((dayGroup) => {
-      const sections = ENTRY_TYPE_ORDER.map((entryType) => {
-        const entriesForType = dayGroup.entries.filter((entry) => entry.type === entryType);
-        if (entriesForType.length === 0) {
-          return '';
-        }
-
-        const entriesHtml = CHIP_ENTRY_TYPES.has(entryType)
-          ? `<ul class="changelog-chip-list">${entriesForType
-              .map(
-                (entry) =>
-                  `<li><button type="button" class="changelog-entry changelog-entry--chip" data-entry-type="${escapeHtml(entry.type)}" data-changelog-entry="${entry.id}" data-changelog-name="${escapeHtml(entry.name)}">${escapeHtml(entry.name)}</button></li>`
-              )
-              .join('')}</ul>`
-          : `<ul class="changelog-entry-list">${entriesForType
-              .map((entry) => {
-                const changesHtml =
-                  entry.type === 'Item Update' && entry.changes && entry.changes.length > 0
-                    ? `<ul class="changelog-entry__changes">${entry.changes
-                        .slice(0, 3)
-                        .map((change) =>
-                          `<li>${escapeHtml(
-                            change.detail
-                              ? change.detail
-                              : `${change.field}: ${JSON.stringify(change.before)} -> ${JSON.stringify(change.after)}`
-                          )}</li>`
-                        )
-                        .join('')}${
-                        entry.changes.length > 3
-                          ? `<li>+${entry.changes.length - 3} more</li>`
-                          : ''
-                      }</ul>`
-                    : '';
-
-                return `<li><button type="button" class="changelog-entry" data-entry-type="${escapeHtml(entry.type)}" data-changelog-entry="${entry.id}" data-changelog-name="${escapeHtml(entry.name)}"><div>${escapeHtml(entry.name)}</div>${changesHtml}</button></li>`;
-              })
-              .join('')}</ul>`;
-
-        return `<div class="changelog-type-section"><h4 class="changelog-type-section__title">${entryType}</h4>${entriesHtml}</div>`;
-      }).join('');
-
-      return `<section class="changelog-day-section" data-day="${escapeHtml(dayGroup.day)}"><h3 class="changelog-day-section__title">${escapeHtml(dayGroup.day)}</h3>${sections}</section>`;
-    })
-    .join('');
 }
 
 export async function initCatalog(baseUrl: string = '/'): Promise<void> {
@@ -589,13 +535,12 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     }
 
     changelogLoading = (async () => {
-      const response = await fetch(`${catalogBase}/changelog.json`);
+      const response = await fetch(catalogUrl(baseUrl, 'catalog/changelog.html'));
       if (!response.ok || !changelogScrollContainer) {
         return;
       }
 
-      const days = (await response.json()) as ChangeLogDay[];
-      changelogScrollContainer.innerHTML = renderChangelogHtml(days);
+      changelogScrollContainer.innerHTML = await response.text();
       changelogLoaded = true;
       updateChangelogVisibility();
     })();

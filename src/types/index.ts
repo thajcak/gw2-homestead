@@ -85,7 +85,3 @@ export interface ChangeLogDay {
   day: string;
   entries: ChangeLogEntry[];
 }
-
-export interface ChangeLogData {
-  days: ChangeLogDay[];
-}

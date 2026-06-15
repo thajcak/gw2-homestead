@@ -6,60 +6,12 @@ const rootDir = join(fileURLToPath(new URL('.', import.meta.url)), '..');
 const decorationsContentDir = join(rootDir, 'src/content/decorations');
 const categoriesContentDir = join(rootDir, 'src/content/categories');
 
-const ENTRY_TYPE_ORDER = [
-  'New Item',
-  'Item Update',
-  'Item Removed',
-  'Image Update',
-  'Recipe Added',
-  'Recipe Updated',
-];
-
-function historyToEntry(id, history) {
-  return {
-    id,
-    type: history.type,
-    name: history.name,
-    ...(history.changes?.length ? { changes: history.changes } : {}),
-  };
-}
-
-function buildChangelogDays(decorations, categories) {
-  const byDay = new Map();
-
-  const addEntries = (id, history = []) => {
-    for (const item of history) {
-      const dayEntries = byDay.get(item.day) ?? [];
-      dayEntries.push(historyToEntry(id, item));
-      byDay.set(item.day, dayEntries);
-    }
-  };
-
-  for (const decoration of decorations) {
-    addEntries(decoration.id, decoration.history);
-  }
-
-  for (const category of categories) {
-    addEntries(category.id, category.history);
-  }
-
-  return Array.from(byDay.entries())
-    .map(([day, entries]) => ({
-      day,
-      entries: entries.sort((a, b) => {
-        const typeOrder = (type) => ENTRY_TYPE_ORDER.indexOf(type);
-        return typeOrder(a.type) - typeOrder(b.type) || a.name.localeCompare(b.name);
-      }),
-    }))
-    .sort((a, b) => b.day.localeCompare(a.day));
-}
-
 export async function generateCatalogArtifacts() {
   const catalogDir = join(rootDir, 'public/catalog');
   await mkdir(join(catalogDir, 'decorations'), { recursive: true });
   await rm(join(catalogDir, 'icons'), { recursive: true, force: true });
+  await rm(join(catalogDir, 'changelog.json'), { force: true });
 
-  const allDecorations = [];
   const categories = [];
 
   for (const filename of await readdir(categoriesContentDir)) {
@@ -72,15 +24,11 @@ export async function generateCatalogArtifacts() {
       id: category.id,
       name: category.name,
       removed: category.removed ?? false,
-      history: category.history ?? [],
     });
   }
 
   categories.sort((a, b) => a.name.localeCompare(b.name));
-  await writeFile(
-    join(catalogDir, 'categories.json'),
-    `${JSON.stringify(categories.map(({ id, name, removed }) => ({ id, name, removed })))}\n`
-  );
+  await writeFile(join(catalogDir, 'categories.json'), `${JSON.stringify(categories)}\n`);
 
   const searchIndex = [];
 
@@ -90,7 +38,6 @@ export async function generateCatalogArtifacts() {
     }
 
     const decoration = JSON.parse(await readFile(join(decorationsContentDir, filename), 'utf8'));
-    allDecorations.push(decoration);
     const { history: _history, ...catalogDecoration } = decoration;
 
     await writeFile(
@@ -110,9 +57,6 @@ export async function generateCatalogArtifacts() {
 
   searchIndex.sort((a, b) => a.name.localeCompare(b.name));
   await writeFile(join(catalogDir, 'search-index.json'), `${JSON.stringify(searchIndex)}\n`);
-
-  const changelogDays = buildChangelogDays(allDecorations, categories);
-  await writeFile(join(catalogDir, 'changelog.json'), `${JSON.stringify(changelogDays)}\n`);
 }
 
 if (import.meta.url === new URL(process.argv[1], 'file:').href) {

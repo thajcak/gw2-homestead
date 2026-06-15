@@ -8,7 +8,7 @@
 The Homestead Catalog is a static site that pulls data from the `/v2/homestead` endpoint to provide a quick way to view all Homestead decorations that are presumably available in game.
 
 ## Backend
-The backend of the site is a GitHub action that runs hourly to pull all decorations from the API and commit any changes to the repo. Decoration, category, and changelog data live in Astro Content Collections under `src/content/`. Each decoration and category entry stores its own `history` array of changes. The Recent Changes panel is built at compile time by aggregating those per-item histories.
+The backend of the site is a GitHub action that runs hourly to pull all decorations from the API and commit any changes to the repo. Decoration, category, and changelog data live in Astro Content Collections under `src/content/`. Each decoration and category entry stores its own `history` array of changes. The Recent Changes panel loads an HTML fragment at `/catalog/changelog.html`, which Astro builds by aggregating those per-item histories from the content collections.
 
 Decoration icons live in `src/assets/decorations/{id}/icon.png` and are optimized at build time via Astro's asset pipeline. The build emits `/catalog/icon-manifest.json`, mapping decoration IDs to optimized `/_astro/` URLs that the client grid loads lazily. Preview images stay in `public/decorations/{id}/preview.*` and are loaded on demand when a decoration is expanded. Wiki URLs are kept only as `remoteSource` metadata for CI changelog diffs.
 
@@ -28,7 +28,7 @@ Other commands:
 
 - `npm run build` — production build to `dist/`
 - `npm run preview` — preview the production build locally
-- `npm run generate-catalog` — build `public/catalog/` JSON and changelog artifacts
+- `npm run generate-catalog` — build `public/catalog/` search index and decoration JSON artifacts
 - `npm run localize-images` — download remote decoration icons into `src/assets/decorations/` and preview images into `public/decorations/`
 
 ---
