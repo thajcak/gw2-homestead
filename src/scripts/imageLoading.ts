@@ -1,15 +1,12 @@
 export type ImageLoadState = 'pending' | 'loading' | 'loaded' | 'error' | 'missing';
 
 const STATE_CLASSES: ImageLoadState[] = ['pending', 'loading', 'loaded', 'error', 'missing'];
-const WIRE_BATCH_SIZE = 10;
-const REVEAL_BATCH_SIZE = 16;
-const OBSERVER_ROOT_MARGIN = '120px 0px';
+const MAX_CONCURRENT_ICON_LOADS = 6;
+const OBSERVER_ROOT_MARGIN = '80px 0px';
 
 let frameObserver: IntersectionObserver | null = null;
-const wireQueue: HTMLElement[] = [];
-let wireFlushScheduled = false;
-const revealQueue: Array<() => void> = [];
-let revealFlushScheduled = false;
+const iconLoadQueue: HTMLElement[] = [];
+let activeIconLoads = 0;
 
 function setImageState(frame: HTMLElement, state: ImageLoadState): void {
   if (frame.dataset.imageState === state) {
@@ -29,94 +26,66 @@ function markLoaded(frame: HTMLElement, img: HTMLImageElement): void {
   setImageState(frame, 'loaded');
 }
 
-function queueReveal(task: () => void): void {
-  revealQueue.push(task);
-  if (revealFlushScheduled) {
+function isFrameScheduled(frame: HTMLElement): boolean {
+  return frame.dataset.imageWired === 'true' || frame.dataset.imageQueued === 'true';
+}
+
+function enqueueIconLoad(frame: HTMLElement): void {
+  if (isFrameScheduled(frame)) {
     return;
   }
-  revealFlushScheduled = true;
-  requestAnimationFrame(flushRevealQueue);
+
+  frame.dataset.imageQueued = 'true';
+  iconLoadQueue.push(frame);
+  processIconLoadQueue();
 }
 
-function flushRevealQueue(): void {
-  const batch = revealQueue.splice(0, REVEAL_BATCH_SIZE);
-  for (const task of batch) {
-    task();
+function processIconLoadQueue(): void {
+  while (activeIconLoads < MAX_CONCURRENT_ICON_LOADS && iconLoadQueue.length > 0) {
+    const frame = iconLoadQueue.shift();
+    if (!frame) {
+      return;
+    }
+    delete frame.dataset.imageQueued;
+    beginImageLoad(frame);
   }
-  if (revealQueue.length > 0) {
-    requestAnimationFrame(flushRevealQueue);
-    return;
-  }
-  revealFlushScheduled = false;
 }
 
-function revealExpanded(frame: HTMLElement, img: HTMLImageElement): void {
-  const reveal = () => markLoaded(frame, img);
-  if (typeof img.decode === 'function') {
-    img.decode().then(reveal).catch(reveal);
-    return;
-  }
-  reveal();
+function releaseIconLoadSlot(): void {
+  activeIconLoads = Math.max(0, activeIconLoads - 1);
+  processIconLoadQueue();
 }
 
-function revealIcon(frame: HTMLElement, img: HTMLImageElement): void {
-  queueReveal(() => markLoaded(frame, img));
-}
-
-function scheduleWire(frame: HTMLElement): void {
-  wireQueue.push(frame);
-  if (wireFlushScheduled) {
-    return;
-  }
-  wireFlushScheduled = true;
-  requestAnimationFrame(flushWireQueue);
-}
-
-function flushWireQueue(): void {
-  const batch = wireQueue.splice(0, WIRE_BATCH_SIZE);
-  for (const frame of batch) {
-    wireImageFrame(frame);
-  }
-  if (wireQueue.length > 0) {
-    requestAnimationFrame(flushWireQueue);
-    return;
-  }
-  wireFlushScheduled = false;
-}
-
-function getFrameObserver(): IntersectionObserver {
-  if (!frameObserver) {
-    frameObserver = new IntersectionObserver(
-      (entries, observer) => {
-        for (const entry of entries) {
-          if (!entry.isIntersecting) {
-            continue;
-          }
-          observer.unobserve(entry.target);
-          scheduleWire(entry.target as HTMLElement);
-        }
-      },
-      { rootMargin: OBSERVER_ROOT_MARGIN }
-    );
-  }
-  return frameObserver;
-}
-
-export function wireImageFrame(frame: HTMLElement): void {
+function beginImageLoad(frame: HTMLElement, options: { bypassConcurrencyLimit?: boolean } = {}): void {
   if (frame.dataset.imageWired === 'true') {
     return;
   }
+
+  const reserved = !options.bypassConcurrencyLimit;
+  if (reserved) {
+    activeIconLoads += 1;
+  }
+
+  const release = () => {
+    if (reserved) {
+      releaseIconLoadSlot();
+    }
+  };
+
   frame.dataset.imageWired = 'true';
+  delete frame.dataset.imageQueued;
 
   const initialState = frame.dataset.imageState as ImageLoadState | undefined;
   if (initialState === 'missing' || initialState === 'error') {
     setImageState(frame, initialState);
+    release();
     return;
   }
 
   const img = frame.querySelector<HTMLImageElement>('.image-frame__img');
   if (!img) {
     setImageState(frame, 'error');
+    release();
     return;
   }
 
@@ -129,13 +98,18 @@ export function wireImageFrame(frame: HTMLElement): void {
   }
 
   const handleLoad = () => {
-    if (isExpanded) {
-      revealExpanded(frame, img);
+    release();
+    if (isExpanded && typeof img.decode === 'function') {
+      img.decode().then(() => markLoaded(frame, img)).catch(() => markLoaded(frame, img));
       return;
     }
-    revealIcon(frame, img);
+    markLoaded(frame, img);
   };
-  const handleError = () => setImageState(frame, 'error');
+
+  const handleError = () => {
+    release();
+    setImageState(frame, 'error');
+  };
 
   img.addEventListener('load', handleLoad, { once: true });
   img.addEventListener('error', handleError, { once: true });
@@ -145,12 +119,39 @@ export function wireImageFrame(frame: HTMLElement): void {
   }
 }
 
+function getFrameObserver(): IntersectionObserver {
+  if (!frameObserver) {
+    frameObserver = new IntersectionObserver(
+      (entries, observer) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) {
+            continue;
+          }
+          observer.unobserve(entry.target);
+          enqueueIconLoad(entry.target as HTMLElement);
+        }
+      },
+      { rootMargin: OBSERVER_ROOT_MARGIN }
+    );
+  }
+  return frameObserver;
+}
+
+/** Start loading a single frame immediately (expanded previews bypass the icon queue). */
+export function wireImageFrame(frame: HTMLElement): void {
+  const bypass = frame.classList.contains('image-frame--expanded');
+  if (bypass) {
+    beginImageLoad(frame, { bypassConcurrencyLimit: true });
+    return;
+  }
+  enqueueIconLoad(frame);
+}
+
 export function wireImageFrames(root: ParentNode = document): void {
   const frames = root.querySelectorAll<HTMLElement>(
-    '.image-frame:not([data-image-wired="true"])'
+    '.image-frame:not([data-image-wired="true"]):not([data-image-queued="true"])'
   );
   const observer = 'IntersectionObserver' in window ? getFrameObserver() : null;
-  const immediate: HTMLElement[] = [];
 
   for (const frame of frames) {
     if (
@@ -164,7 +165,7 @@ export function wireImageFrames(root: ParentNode = document): void {
     }
 
     if (frame.classList.contains('image-frame--expanded')) {
-      immediate.push(frame);
+      wireImageFrame(frame);
       continue;
     }
 
@@ -175,12 +176,9 @@ export function wireImageFrames(root: ParentNode = document): void {
 
     if (observer) {
       observer.observe(frame);
-    } else {
-      immediate.push(frame);
+      continue;
     }
-  }
 
-  for (const frame of immediate) {
-    scheduleWire(frame);
+    enqueueIconLoad(frame);
   }
 }
