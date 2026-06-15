@@ -8,7 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "split-content": "node scripts/split-json-to-content.mjs",
-    "localize-images": "node scripts/localize-decoration-images.mjs"
+    "localize-images": "node scripts/localize-decoration-images.mjs",
+    "migrate-changelog": "node scripts/migrate-changelog-to-items.mjs"
   },
   "dependencies": {
     "@astrojs/tailwind": "^6.0.2",

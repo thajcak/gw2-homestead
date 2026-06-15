@@ -8,7 +8,7 @@
 The Homestead Catalog is a static site that pulls data from the `/v2/homestead` endpoint to provide a quick way to view all Homestead decorations that are presumably available in game.
 
 ## Backend
-The backend of the site is a GitHub action that runs hourly to pull all decorations from the API and commit any changes to the repo. Decoration, category, and changelog data live in Astro Content Collections under `src/content/`, validated at build time with Zod schemas.
+The backend of the site is a GitHub action that runs hourly to pull all decorations from the API and commit any changes to the repo. Decoration, category, and changelog data live in Astro Content Collections under `src/content/`. Each decoration and category entry stores its own `history` array of changes. The Recent Changes panel is built at compile time by aggregating those per-item histories.
 
 Currently decoration icons and preview images are stored locally under `public/decorations/` and synced by the hourly GitHub Action. Wiki URLs are kept only as `remoteSource` metadata for CI changelog diffs.
 

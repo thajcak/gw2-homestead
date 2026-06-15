@@ -1,7 +1,8 @@
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const root = new URL('..', import.meta.url).pathname;
+const root = fileURLToPath(new URL('..', import.meta.url));
 
 function writeEntries(dir, items, getFilename) {
   mkdirSync(dir, { recursive: true });
@@ -17,26 +18,17 @@ const decorations = JSON.parse(
 const categories = JSON.parse(
   readFileSync(join(root, 'public/decoration_categories.json'), 'utf8')
 );
-const changelog = JSON.parse(readFileSync(join(root, 'public/changelog.json'), 'utf8'));
 
 writeEntries(
   join(root, 'src/content/decorations'),
-  decorations,
+  decorations.map((item) => ({ ...item, history: item.history ?? [] })),
   (item) => `${item.id}.json`
 );
 
 writeEntries(
   join(root, 'src/content/categories'),
-  categories,
+  categories.map((item) => ({ ...item, history: item.history ?? [] })),
   (item) => `${item.id}.json`
 );
 
-writeEntries(
-  join(root, 'src/content/changelog'),
-  changelog.days ?? [],
-  (day) => `${day.day}.json`
-);
-
-console.log(
-  `Split ${decorations.length} decorations, ${categories.length} categories, ${(changelog.days ?? []).length} changelog days.`
-);
+console.log(`Split ${decorations.length} decorations and ${categories.length} categories.`);

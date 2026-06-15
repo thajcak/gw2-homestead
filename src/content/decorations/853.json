@@ -7,5 +7,25 @@
   ],
   "max_count": 250,
   "icon": "decorations/853/icon.png",
-  "wikiTitle": "Gold Greer Trophy (Handiwork)"
+  "wikiTitle": "Gold Greer Trophy (Handiwork)",
+  "history": [
+    {
+      "day": "2025-10-30",
+      "type": "Item Update",
+      "name": "Gold Greer Trophy",
+      "changes": [
+        {
+          "field": "description",
+          "detail": "Added Description",
+          "before": "",
+          "after": "Crafted with Homesteading Mastery."
+        }
+      ]
+    },
+    {
+      "day": "2025-03-11",
+      "type": "New Item",
+      "name": "Gold Greer Trophy"
+    }
+  ]
 }

@@ -2,7 +2,6 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-OUTPUT_DIR="${1:-$ROOT_DIR/src/content/changelog}"
 TODAY_UTC=$(date -u +%F)
 
 DECORATIONS_DIR="src/content/decorations"
@@ -228,29 +227,12 @@ while IFS='|' read -r commit epoch; do
   emit_events_for_array "$day" "$old_categories" "$new_categories" "false" "$old_categories" "$new_categories"
 done < <(git log --reverse --format='%H|%ct' -- "$DECORATIONS_DIR" "$CATEGORIES_DIR")
 
-mkdir -p "$OUTPUT_DIR"
-rm -f "$OUTPUT_DIR"/*.json
+mkdir -p "$ROOT_DIR/$DECORATIONS_DIR" "$ROOT_DIR/$CATEGORIES_DIR"
 
 if [[ -s "$EVENTS_FILE" ]]; then
-  jq -s '
-    map(select(.id != null and .name != null and .name != "" and .type != null and .type != ""))
-    | map(
-        {id, type, name}
-        + (if (.changes? != null and (.changes | length) > 0) then {changes: .changes} else {} end)
-        + {day}
-      )
-    | group_by(.day)
-    | map({
-        day: .[0].day,
-        entries: (map(del(.day)) | unique_by(.id, .type, .name, ((.changes // []) | tostring)))
-      })
-    | .[]
-  ' "$EVENTS_FILE" | while read -r day_object; do
-    day="$(echo "$day_object" | jq -r '.day')"
-    echo "$day_object" | jq '.' > "${OUTPUT_DIR}/${day}.json"
-  done
+  node "$ROOT_DIR/scripts/distribute-changelog-events.mjs" "$EVENTS_FILE" "$ROOT_DIR/$DECORATIONS_DIR" "$ROOT_DIR/$CATEGORIES_DIR" --reset-history
 else
   echo "No changelog events found in git history."
 fi
 
-echo "Generated changelog day files in $OUTPUT_DIR"
+echo "Distributed changelog events into item content entries."

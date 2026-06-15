@@ -29,24 +29,6 @@ const decorationRecipeSchema = z.object({
   ingredients: z.array(decorationRecipeIngredientSchema),
 });
 
-const decorationSchema = z.object({
-  id: z.number(),
-  name: z.string(),
-  description: z.string(),
-  categories: z.array(z.number()),
-  max_count: z.number(),
-  icon: z.string(),
-  wikiTitle: z.string().optional(),
-  recipe: decorationRecipeSchema.nullable().optional(),
-  thumbnail: imageSchema.optional(),
-  original: imageSchema.optional(),
-});
-
-const categorySchema = z.object({
-  id: z.number(),
-  name: z.string(),
-});
-
 const changeLogEntryTypeSchema = z.enum([
   'New Item',
   'Item Update',
@@ -63,16 +45,33 @@ const changeLogFieldChangeSchema = z.object({
   after: z.unknown(),
 });
 
-const changeLogEntrySchema = z.object({
-  id: z.number(),
+const historyEntrySchema = z.object({
+  day: z.string(),
   type: changeLogEntryTypeSchema,
   name: z.string(),
   changes: z.array(changeLogFieldChangeSchema).optional(),
 });
 
-const changeLogDaySchema = z.object({
-  day: z.string(),
-  entries: z.array(changeLogEntrySchema),
+const decorationSchema = z.object({
+  id: z.number(),
+  name: z.string(),
+  description: z.string(),
+  categories: z.array(z.number()),
+  max_count: z.number(),
+  icon: z.string(),
+  wikiTitle: z.string().optional(),
+  recipe: decorationRecipeSchema.nullable().optional(),
+  thumbnail: imageSchema.optional(),
+  original: imageSchema.optional(),
+  history: z.array(historyEntrySchema).default([]),
+  removed: z.boolean().optional(),
+});
+
+const categorySchema = z.object({
+  id: z.number(),
+  name: z.string(),
+  history: z.array(historyEntrySchema).default([]),
+  removed: z.boolean().optional(),
 });
 
 const decorations = defineCollection({
@@ -85,13 +84,7 @@ const categories = defineCollection({
   schema: categorySchema,
 });
 
-const changelog = defineCollection({
-  type: 'data',
-  schema: changeLogDaySchema,
-});
-
 export const collections = {
   decorations,
   categories,
-  changelog,
 };

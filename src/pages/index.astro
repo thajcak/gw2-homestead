@@ -6,22 +6,22 @@ import IconGrid from '../components/IconGrid.astro';
 import ChangeLogPanel from '../components/ChangeLogPanel.astro';
 import FilterPrompt from '../components/FilterPrompt.astro';
 import type { CatalogData } from '../scripts/catalog';
+import { buildChangelogDays } from '../utils/buildChangelogDays';
 
 const decorationEntries = await getCollection('decorations');
 const categoryEntries = await getCollection('categories');
-const changelogEntries = await getCollection('changelog');
 
-const decorations = decorationEntries
+const allDecorations = decorationEntries
   .map((entry) => entry.data)
   .sort((a, b) => a.name.localeCompare(b.name));
+
+const decorations = allDecorations.filter((decoration) => !decoration.removed);
 
 const categories = categoryEntries
   .map((entry) => entry.data)
   .sort((a, b) => a.name.localeCompare(b.name));
 
-const changelogDays = changelogEntries
-  .map((entry) => entry.data)
-  .sort((a, b) => b.day.localeCompare(a.day));
+const changelogDays = buildChangelogDays(allDecorations, categories);
 
 const catalogData: CatalogData = {
   searchIndex: decorations.map((decoration) => ({
@@ -31,7 +31,10 @@ const catalogData: CatalogData = {
     categories: decoration.categories,
   })),
   decorations: Object.fromEntries(
-    decorations.map((decoration) => [String(decoration.id), decoration])
+    allDecorations.map((decoration) => {
+      const { history: _history, ...catalogDecoration } = decoration;
+      return [String(decoration.id), catalogDecoration];
+    })
   ),
   categories,
   changelogDays,
@@ -40,7 +43,7 @@ const catalogData: CatalogData = {
 
 <BaseLayout>
   <div class="min-h-screen bg-gray-100">
-    <Header categories={categories} />
+    <Header categories={categories.filter((category) => !category.removed)} />
 
     <main class="container mx-auto px-6">
       <IconGrid decorations={decorations} />

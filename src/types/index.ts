@@ -41,11 +41,15 @@ export interface Decoration {
     /** Remote wiki URL retained for CI sync and changelog diffs only. */
     remoteSource?: string;
   };
+  history?: ChangeLogHistoryEntry[];
+  removed?: boolean;
 }
 
 export interface Category {
   id: number;
   name: string;
+  history?: ChangeLogHistoryEntry[];
+  removed?: boolean;
 }
 
 export type ChangeLogEntryType =
@@ -61,6 +65,13 @@ export interface ChangeLogFieldChange {
   detail?: string;
   before: unknown;
   after: unknown;
+}
+
+export interface ChangeLogHistoryEntry {
+  day: string;
+  type: ChangeLogEntryType;
+  name: string;
+  changes?: ChangeLogFieldChange[];
 }
 
 export interface ChangeLogEntry {

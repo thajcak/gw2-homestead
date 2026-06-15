@@ -22,7 +22,7 @@ jobs:
         run: |
           set -e
           chmod +x scripts/combine-content-dir.sh scripts/sync-array-to-content.sh
-          mkdir -p src/content/decorations src/content/categories src/content/changelog
+          mkdir -p src/content/decorations src/content/categories
 
           if [ -n "$(ls -A src/content/decorations/*.json 2>/dev/null)" ]; then
             ./scripts/combine-content-dir.sh src/content/decorations > old_decorations.json
@@ -34,13 +34,6 @@ jobs:
             ./scripts/combine-content-dir.sh src/content/categories > old_decoration_categories.json
           else
             echo "[]" > old_decoration_categories.json
-          fi
-
-          utc_day=$(date -u +%F)
-          if [ -f "src/content/changelog/${utc_day}.json" ]; then
-            cp "src/content/changelog/${utc_day}.json" existing_today_changelog.json
-          else
-            echo "{\"day\":\"${utc_day}\",\"entries\":[]}" > existing_today_changelog.json
           fi
 
       - name: Fetch Decorations List and Details
@@ -616,22 +609,9 @@ jobs:
             echo '[]' > new_entries.json
           fi
 
-          jq --arg day "$utc_day" --slurpfile newEntries new_entries.json '
-            def clean_entry:
-              if (.changes? != null and (.changes | length) > 0)
-              then .
-              else del(.changes)
-              end;
-            .entries = ((.entries // []) | map(clean_entry))
-            | if ($newEntries[0] | length) == 0 then
-                .
-              else
-                .entries = (((.entries // []) + ($newEntries[0] | map(clean_entry))) | unique_by(.id, .type, .name, ((.changes // []) | tostring)))
-              end
-            | .day = $day
-          ' existing_today_changelog.json > "src/content/changelog/${utc_day}.json"
+          node scripts/apply-changelog-entries.mjs "$utc_day" new_entries.json decorations_work.json categories_work.json src/content/decorations src/content/categories
 
-          rm -f changelog_entries.jsonl new_entries.json old_decorations.json old_decoration_categories.json existing_today_changelog.json
+          rm -f changelog_entries.jsonl new_entries.json old_decorations.json old_decoration_categories.json
 
       - name: Localize decoration images
         run: |

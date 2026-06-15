@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       commit_to_branch:
-        description: "Commit generated changelog files to current branch"
+        description: "Commit generated per-item changelog history to current branch"
         required: false
         default: false
         type: boolean
@@ -28,15 +28,15 @@ jobs:
         run: |
           set -e
           chmod +x scripts/generate-changelog-from-git-history.sh
-          ./scripts/generate-changelog-from-git-history.sh src/content/changelog
-          echo "Generated changelog day count:"
-          ls -1 src/content/changelog | wc -l
+          ./scripts/generate-changelog-from-git-history.sh
 
       - name: Upload changelog artifact
         uses: actions/upload-artifact@v4
         with:
           name: changelog-from-history
-          path: src/content/changelog/
+          path: |
+            src/content/decorations/
+            src/content/categories/
 
       - name: Commit changelog to branch
         if: ${{ github.event.inputs.commit_to_branch == 'true' }}
@@ -44,10 +44,10 @@ jobs:
           set -e
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add src/content/changelog/
+          git add src/content/decorations/ src/content/categories/
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Populate changelog from git history"
+            git commit -m "Populate per-item changelog history from git history"
             git push
           fi
