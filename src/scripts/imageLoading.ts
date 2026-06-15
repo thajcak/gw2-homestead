@@ -36,6 +36,11 @@ export function wireImageFrame(frame: HTMLElement): void {
 
   setImageState(frame, 'loading');
 
+  const deferredSrc = img.dataset.src;
+  if (deferredSrc && !img.getAttribute('src')) {
+    img.src = deferredSrc;
+  }
+
   const handleLoad = () => markLoaded(frame, img);
   const handleError = () => setImageState(frame, 'error');
 

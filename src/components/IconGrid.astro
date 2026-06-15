@@ -23,11 +23,10 @@ const { decorations } = Astro.props;
             <div class="image-frame__skeleton" aria-hidden="true"></div>
             <img
               class="image-frame__img"
-              src={assetUrl(decoration.icon)}
+              data-src={assetUrl(decoration.icon)}
               alt={decoration.name}
               width={74}
               height={74}
-              loading="lazy"
               decoding="async"
             />
             <div class="image-frame__fallback" aria-hidden="true">?</div>
