@@ -24,7 +24,7 @@ const ENTRY_TYPE_ORDER = [
   'Recipe Updated',
 ] as const;
 
-const ANIMATION_MS = 300;
+const ANIMATION_MS = 200;
 
 function resolveAsset(path: string | undefined, base: string): string {
   const placeholder =
@@ -189,6 +189,21 @@ export function initCatalog(data: CatalogData, baseUrl: string = '/'): void {
     return;
   }
 
+  const basePath = baseUrl.replace(/\/$/, '');
+  const catalogIndexPath = basePath ? `${basePath}/` : '/';
+
+  function normalizeCatalogPathname(pathname: string): string {
+    if (basePath && pathname === basePath) {
+      return catalogIndexPath;
+    }
+    return pathname;
+  }
+
+  function syncCatalogUrl(url: URL): void {
+    url.pathname = normalizeCatalogPathname(url.pathname);
+    window.history.replaceState({}, '', url);
+  }
+
   const categoryMap = getCategoryMap(data.categories);
   const decorationById = new Map(
     Object.entries(data.decorations).map(([id, decoration]) => [Number(id), decoration])
@@ -284,6 +299,8 @@ export function initCatalog(data: CatalogData, baseUrl: string = '/'): void {
       pendingOpenAfterFilterResetId = null;
       openDecorationById(targetId);
     }
+
+    wireImageFrames(grid!);
   }
 
   function removeExpandedPanel(): void {
@@ -307,7 +324,6 @@ export function initCatalog(data: CatalogData, baseUrl: string = '/'): void {
     const panel = grid!.querySelector<HTMLElement>('.expanded-decoration');
     if (panel) {
       panel.classList.add('is-collapsed');
-      panel.style.height = '0px';
       setTimeout(() => {
         removeExpandedPanel();
       }, ANIMATION_MS);
@@ -323,7 +339,7 @@ export function initCatalog(data: CatalogData, baseUrl: string = '/'): void {
     } else {
       url.searchParams.set('open', String(id));
     }
-    window.history.replaceState({}, '', url);
+    syncCatalogUrl(url);
   }
 
   function insertExpandedPanel(decorationId: number, animate: boolean): void {
@@ -363,15 +379,19 @@ export function initCatalog(data: CatalogData, baseUrl: string = '/'): void {
       wireImageFrame(imageFrame);
     }
 
-    requestAnimationFrame(() => {
-      panel.classList.remove('is-collapsed');
-      const targetHeight = Math.max(window.innerHeight * 0.7, 320);
-      panel.style.height = animate ? '0px' : `${targetHeight}px`;
+    const targetHeight = Math.max(window.innerHeight * 0.7, 320);
+    panel.style.height = `${targetHeight}px`;
+
+    if (animate) {
+      panel.classList.add('is-collapsed');
       requestAnimationFrame(() => {
-        panel.style.height = `${targetHeight}px`;
-        setTimeout(() => scrollToItem(clickedItem), animate ? 100 : 0);
+        panel.classList.remove('is-collapsed');
+        setTimeout(() => scrollToItem(clickedItem), 50);
       });
-    });
+    } else {
+      panel.classList.remove('is-collapsed');
+      scrollToItem(clickedItem);
+    }
 
     expandedItemId = decorationId;
     updateDeepLink(decorationId);
@@ -403,7 +423,6 @@ export function initCatalog(data: CatalogData, baseUrl: string = '/'): void {
       const panel = grid!.querySelector<HTMLElement>('.expanded-decoration');
       if (panel) {
         panel.classList.add('is-collapsed');
-        panel.style.height = '0px';
         setTimeout(() => insertExpandedPanel(id, true), ANIMATION_MS);
         return;
       }
@@ -562,17 +581,29 @@ export function initCatalog(data: CatalogData, baseUrl: string = '/'): void {
     });
   });
 
+  let resizeTimer: ReturnType<typeof setTimeout> | null = null;
   window.addEventListener('resize', () => {
     calculateItemsPerRow();
-    if (expandedItemId != null) {
-      insertExpandedPanel(expandedItemId, false);
+    if (expandedItemId == null) {
+      return;
     }
+    if (resizeTimer != null) {
+      clearTimeout(resizeTimer);
+    }
+    resizeTimer = setTimeout(() => {
+      resizeTimer = null;
+      if (expandedItemId != null) {
+        insertExpandedPanel(expandedItemId, false);
+      }
+    }, 150);
   });
 
   calculateItemsPerRow();
   applyFilters();
   updateChangelogVisibility();
   wireImageFrames(grid!);
+
+  syncCatalogUrl(new URL(window.location.href));
 
   const openParam = new URLSearchParams(window.location.search).get('open');
   if (openParam) {

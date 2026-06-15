@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "node scripts/preview-server.mjs",
     "split-content": "node scripts/split-json-to-content.mjs",
     "localize-images": "node scripts/localize-decoration-images.mjs",
     "migrate-changelog": "node scripts/migrate-changelog-to-items.mjs"

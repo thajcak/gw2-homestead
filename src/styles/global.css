@@ -19,6 +19,12 @@ body {
     grid-auto-rows: max-content;
   }
 
+  .catalog-item {
+    content-visibility: auto;
+    contain-intrinsic-size: 74px 74px;
+    contain: layout style paint;
+  }
+
   .expanded-decoration {
     @apply col-span-full text-white w-screen relative mt-2 mb-2 z-10;
     left: 50%;
@@ -28,7 +34,7 @@ body {
     max-height: 70vh;
     min-height: min-content;
     overflow: hidden;
-    transition: height 0.3s ease-out, opacity 0.3s ease-out;
+    transition: opacity 0.2s ease-out;
   }
 
   .expanded-decoration.is-collapsed {
@@ -101,11 +107,11 @@ body {
   }
 
   .image-frame__skeleton {
-    @apply absolute inset-0 z-0 bg-gray-200 animate-pulse;
+    @apply absolute inset-0 z-0 bg-gray-200;
   }
 
   .image-frame--expanded .image-frame__skeleton {
-    @apply bg-gray-700/70 animate-pulse;
+    @apply bg-gray-700/70;
   }
 
   .image-frame--icon .image-frame__img {
@@ -129,7 +135,7 @@ body {
   }
 
   .image-frame.is-loaded .image-frame--icon .image-frame__img {
-    @apply relative z-[1] block w-full h-full object-cover opacity-100 transition-opacity duration-200 ease-out;
+    @apply relative z-[1] block w-full h-full object-cover opacity-100;
   }
 
   .image-frame.is-loaded .image-frame--expanded .image-frame__img {
@@ -168,5 +174,12 @@ body {
   .image-frame.is-error .image-frame__fallback,
   .image-frame.is-missing .image-frame__fallback {
     @apply flex;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .expanded-decoration,
+    .image-frame.is-loaded .image-frame--expanded .image-frame__img {
+      transition: none;
+    }
   }
 }

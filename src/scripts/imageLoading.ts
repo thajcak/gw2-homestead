@@ -59,7 +59,9 @@ export function wireImageFrame(frame: HTMLElement): void {
 }
 
 export function wireImageFrames(root: ParentNode = document): void {
-  root.querySelectorAll<HTMLElement>('.image-frame').forEach((frame) => {
+  const frames = Array.from(root.querySelectorAll<HTMLElement>('.image-frame'));
+
+  for (const frame of frames) {
     if (
       !frame.classList.contains('is-loading') &&
       !frame.classList.contains('is-loaded') &&
@@ -68,6 +70,44 @@ export function wireImageFrames(root: ParentNode = document): void {
     ) {
       frame.classList.add('is-loading');
     }
-    wireImageFrame(frame);
+  }
+
+  const pending = frames.filter((frame) => {
+    if (frame.dataset.imageWired === 'true') {
+      return false;
+    }
+    if (frame.classList.contains('image-frame--expanded')) {
+      wireImageFrame(frame);
+      return false;
+    }
+    const item = frame.closest('.catalog-item');
+    if (item?.classList.contains('is-hidden')) {
+      return false;
+    }
+    return true;
   });
+
+  if (pending.length === 0) {
+    return;
+  }
+
+  if (!('IntersectionObserver' in window)) {
+    pending.forEach(wireImageFrame);
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) {
+          continue;
+        }
+        wireImageFrame(entry.target as HTMLElement);
+        obs.unobserve(entry.target);
+      }
+    },
+    { rootMargin: '300px 0px' }
+  );
+
+  pending.forEach((frame) => observer.observe(frame));
 }

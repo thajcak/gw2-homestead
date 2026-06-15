@@ -14,7 +14,7 @@ const { decorations } = Astro.props;
     {
       decorations.map((decoration) => (
         <div
-          class="catalog-item relative w-74 h-74 cursor-pointer transition-transform hover:scale-105"
+          class="catalog-item relative w-74 h-74 cursor-pointer rounded-lg hover:ring-2 hover:ring-blue-400 hover:ring-offset-1"
           data-id={decoration.id}
           data-categories={decoration.categories.join(',')}
           data-search-text={`${decoration.name} ${decoration.description ?? ''}`.toLowerCase()}
