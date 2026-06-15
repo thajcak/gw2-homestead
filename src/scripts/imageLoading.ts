@@ -1,4 +1,4 @@
-export type ImageLoadState = 'loading' | 'loaded' | 'error' | 'missing';
+export type ImageLoadState = 'pending' | 'loading' | 'loaded' | 'error' | 'missing';
 
 const STATE_CLASSES: ImageLoadState[] = ['loading', 'loaded', 'error', 'missing'];
 
@@ -68,12 +68,13 @@ export function wireImageFrames(root: ParentNode = document): void {
 
   for (const frame of frames) {
     if (
+      !frame.classList.contains('is-pending') &&
       !frame.classList.contains('is-loading') &&
       !frame.classList.contains('is-loaded') &&
       !frame.classList.contains('is-error') &&
       !frame.classList.contains('is-missing')
     ) {
-      frame.classList.add('is-loading');
+      setImageState(frame, 'pending');
     }
   }
 

@@ -19,7 +19,7 @@ const { decorations } = Astro.props;
           data-categories={decoration.categories.join(',')}
           data-search-text={`${decoration.name} ${decoration.description ?? ''}`.toLowerCase()}
         >
-          <div class="image-frame image-frame--icon is-loading" data-image-state="loading">
+          <div class="image-frame image-frame--icon is-pending" data-image-state="pending">
             <div class="image-frame__skeleton" aria-hidden="true"></div>
             <img
               class="image-frame__img"

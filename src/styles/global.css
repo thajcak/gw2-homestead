@@ -122,6 +122,7 @@ body {
     @apply max-h-full max-w-full w-auto object-contain;
   }
 
+  .image-frame.image-frame--icon.is-pending .image-frame__img,
   .image-frame.image-frame--icon.is-loading .image-frame__img {
     @apply absolute inset-0 z-[1] opacity-0;
   }
@@ -130,8 +131,13 @@ body {
     @apply relative z-[1] max-h-full max-w-full opacity-0;
   }
 
+  .image-frame.is-pending .image-frame__skeleton,
   .image-frame.is-loading .image-frame__skeleton {
     @apply block;
+  }
+
+  .image-frame.is-loading .image-frame__skeleton {
+    @apply animate-pulse;
   }
 
   .image-frame.image-frame--icon.is-loaded .image-frame__img {
@@ -143,10 +149,7 @@ body {
   }
 
   .image-frame.is-loaded .image-frame__skeleton,
-  .image-frame.is-loaded .image-frame__fallback {
-    @apply hidden;
-  }
-
+  .image-frame.is-pending .image-frame__fallback,
   .image-frame.is-loading .image-frame__fallback,
   .image-frame.is-loaded .image-frame__fallback {
     @apply hidden;
@@ -178,8 +181,10 @@ body {
 
   @media (prefers-reduced-motion: reduce) {
     .expanded-decoration,
-    .image-frame.image-frame--expanded.is-loaded .image-frame__img {
+    .image-frame.image-frame--expanded.is-loaded .image-frame__img,
+    .image-frame.is-loading .image-frame__skeleton {
       transition: none;
+      animation: none;
     }
   }
 }
