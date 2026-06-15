@@ -8,9 +8,7 @@
     "build": "astro build",
     "preview": "node scripts/preview-server.mjs",
     "generate-catalog": "node scripts/generate-catalog-artifacts.mjs",
-    "split-content": "node scripts/split-json-to-content.mjs",
-    "localize-images": "node scripts/localize-decoration-images.mjs",
-    "migrate-changelog": "node scripts/migrate-changelog-to-items.mjs"
+    "localize-images": "node scripts/localize-decoration-images.mjs"
   },
   "dependencies": {
     "astro": "^5.7.10",
