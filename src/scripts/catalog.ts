@@ -146,12 +146,12 @@ function renderExpandedDecoration(
   return `<div class="expanded-decoration is-collapsed" data-expanded-for="${decoration.id}" style="grid-row: auto;">
     <div class="decoration-indicator" style="margin-left: ${indicatorLeftPosition}"></div>
     <div class="expanded-decoration-gradient">
-      <div class="h-full min-h-0 flex flex-col container mx-auto px-6">
-        <div class="flex-1 min-h-0 grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-x-0 px-4 md:px-8 lg:px-16">
-          <div class="relative min-h-0 min-w-0 flex items-center justify-center py-4" style="min-height: 50vh;">
+      <div class="h-full min-h-0 flex flex-col container mx-auto px-6 expanded-decoration__body">
+        <div class="expanded-decoration__layout">
+          <div class="expanded-decoration__media">
             ${imageFrameContent}
           </div>
-          <div class="min-h-0 min-w-0 flex flex-col items-start text-left overflow-y-auto overflow-x-hidden py-4 lg:pl-4 lg:border-l lg:border-gray-700/60">
+          <div class="expanded-decoration__details">
             <div class="w-full mb-3">
               <h2 class="text-xl font-bold break-words">${escapeHtml(decoration.name)}</h2>
               ${wikiLink}
