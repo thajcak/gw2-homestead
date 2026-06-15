@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 
 const rootDir = join(fileURLToPath(new URL('.', import.meta.url)), '..');
 const publicDir = join(rootDir, 'public');
+const assetsDir = join(rootDir, 'src/assets');
 const decorationsContentDir = join(rootDir, 'src/content/decorations');
 
 const PLACEHOLDER_URL = 'https://static.staticwars.com/quaggans/lost.jpg';
@@ -66,16 +67,15 @@ async function fileHash(path) {
 }
 
 async function localizeDecoration(decoration, options = {}) {
-  const { publicRoot = publicDir, force = false } = options;
+  const { publicRoot = publicDir, assetsRoot = assetsDir, force = false } = options;
   const id = decoration.id;
-  const assetDir = join(publicRoot, 'decorations', String(id));
   let changed = false;
 
   if (isRemoteUrl(decoration.icon)) {
     const remoteIcon = decoration.icon;
     const iconExt = extensionFromUrl(remoteIcon);
     const iconRelative = `decorations/${id}/icon.${iconExt}`;
-    const iconAbsolute = join(publicRoot, iconRelative);
+    const iconAbsolute = join(assetsRoot, iconRelative);
     const existingHash = await fileHash(iconAbsolute);
 
     if (force || existingHash == null) {

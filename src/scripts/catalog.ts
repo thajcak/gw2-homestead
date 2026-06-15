@@ -1,5 +1,4 @@
 import type { Category, ChangeLogDay, Decoration } from '../types';
-import { wireImageFrame, wireImageFrames } from './imageLoading';
 
 export interface SearchIndexEntry {
   id: number;
@@ -89,20 +88,18 @@ function renderExpandedDecoration(
   const hasOriginal = Boolean(decoration.original?.source);
   const imageSource = hasOriginal ? resolveAsset(decoration.original?.source, baseUrl) : '';
   const imageFrameContent = hasOriginal
-    ? `<div class="image-frame image-frame--expanded is-loading" data-image-state="loading">
-        <div class="image-frame__skeleton" aria-hidden="true"></div>
+    ? `<div class="expanded-preview">
+        <div class="expanded-preview__skeleton" aria-hidden="true"></div>
         <img
-          class="image-frame__img"
+          class="expanded-preview__img"
           src="${escapeHtml(imageSource)}"
           alt="${escapeHtml(decoration.name)}"
           loading="eager"
           decoding="async"
+          onload="this.closest('.expanded-preview')?.classList.add('is-loaded')"
         />
-        <div class="image-frame__fallback" role="status">Image not found</div>
       </div>`
-    : `<div class="image-frame image-frame--expanded is-missing" data-image-state="missing">
-        <div class="image-frame__fallback" role="status">Image not found</div>
-      </div>`;
+    : `<div class="expanded-preview is-missing" role="status">Image not found</div>`;
 
   const categoryTags = decoration.categories
     .map((catId) => {
@@ -299,8 +296,6 @@ export function initCatalog(data: CatalogData, baseUrl: string = '/'): void {
       pendingOpenAfterFilterResetId = null;
       openDecorationById(targetId);
     }
-
-    wireImageFrames(grid!);
   }
 
   function removeExpandedPanel(): void {
@@ -373,11 +368,6 @@ export function initCatalog(data: CatalogData, baseUrl: string = '/'): void {
     );
     const panel = wrapper.firstElementChild as HTMLElement;
     insertAfter.insertAdjacentElement('afterend', panel);
-
-    const imageFrame = panel.querySelector<HTMLElement>('.image-frame');
-    if (imageFrame) {
-      wireImageFrame(imageFrame);
-    }
 
     const targetHeight = Math.max(window.innerHeight * 0.7, 320);
     panel.style.height = `${targetHeight}px`;
@@ -601,7 +591,6 @@ export function initCatalog(data: CatalogData, baseUrl: string = '/'): void {
   calculateItemsPerRow();
   applyFilters();
   updateChangelogVisibility();
-  wireImageFrames(grid!);
 
   syncCatalogUrl(new URL(window.location.href));
 

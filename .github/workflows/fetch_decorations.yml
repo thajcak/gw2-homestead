@@ -630,7 +630,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add src/content/ public/decorations/ public/images/
+          git add src/content/ src/assets/decorations/ public/decorations/ public/images/
           # Check if there are changes to commit
           if git diff --cached --quiet; then
             echo "No changes to commit."

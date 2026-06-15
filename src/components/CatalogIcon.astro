@@ -1,0 +1,40 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import type { Decoration } from '../types';
+
+interface Props {
+  decoration: Decoration;
+  icon?: ImageMetadata;
+}
+
+const { decoration, icon } = Astro.props;
+---
+
+<div
+  class="catalog-item relative w-74 h-74 cursor-pointer rounded-lg hover:ring-2 hover:ring-blue-400 hover:ring-offset-1"
+  data-id={decoration.id}
+  data-categories={decoration.categories.join(',')}
+  data-search-text={`${decoration.name} ${decoration.description ?? ''}`.toLowerCase()}
+>
+  {
+    icon ? (
+      <div class="catalog-icon">
+        <Image
+          src={icon}
+          alt={decoration.name}
+          width={74}
+          height={74}
+          loading="lazy"
+          decoding="async"
+          class="catalog-icon__img"
+          onload="this.closest('.catalog-icon')?.classList.add('is-loaded')"
+        />
+      </div>
+    ) : (
+      <div class="catalog-icon catalog-icon--missing" aria-hidden="true">
+        ?
+      </div>
+    )
+  }
+</div>
