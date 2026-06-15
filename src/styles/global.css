@@ -11,6 +11,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@keyframes image-skeleton-shimmer {
+  0% {
+    background-position: 120% 0;
+  }
+  100% {
+    background-position: -120% 0;
+  }
+}
+
 @layer components {
   .grid-layout {
     @apply grid auto-rows-[74px] gap-4;
@@ -99,7 +108,7 @@ body {
   }
 
   .image-frame--icon {
-    @apply w-full h-full min-w-[74px] min-h-[74px] border-2 border-gray-200 rounded-lg bg-gray-200;
+    @apply w-full h-full min-w-[74px] min-h-[74px] border-2 border-gray-200 rounded-lg bg-gray-100;
   }
 
   .image-frame--expanded {
@@ -107,11 +116,24 @@ body {
   }
 
   .image-frame__skeleton {
-    @apply absolute inset-0 z-0 bg-gray-200;
+    @apply absolute inset-0 z-0;
+    background: linear-gradient(
+      100deg,
+      #e5e7eb 20%,
+      #f9fafb 45%,
+      #e5e7eb 60%
+    );
+    background-size: 200% 100%;
   }
 
   .image-frame--expanded .image-frame__skeleton {
-    @apply bg-gray-700/70;
+    background: linear-gradient(
+      100deg,
+      rgb(55 65 81 / 0.55) 20%,
+      rgb(75 85 99 / 0.85) 45%,
+      rgb(55 65 81 / 0.55) 60%
+    );
+    background-size: 200% 100%;
   }
 
   .image-frame--icon .image-frame__img {
@@ -139,7 +161,7 @@ body {
   .image-frame.image-frame--icon.is-pending .image-frame__skeleton,
   .image-frame.image-frame--icon.is-loading .image-frame__skeleton,
   .image-frame.image-frame--expanded.is-loading .image-frame__skeleton {
-    @apply animate-pulse;
+    animation: image-skeleton-shimmer 1.25s ease-in-out infinite;
   }
 
   .image-frame.image-frame--icon.is-loaded .image-frame__img {
@@ -188,6 +210,7 @@ body {
     .image-frame.image-frame--icon.is-loading .image-frame__skeleton,
     .image-frame.image-frame--expanded.is-loading .image-frame__skeleton {
       animation: none;
+      background-position: 0 0;
     }
   }
 }
