@@ -88,9 +88,8 @@ function renderExpandedDecoration(
   const indicatorLeftPosition = `calc(${(decorationIndex % itemsPerRow) * (74 + 16)}px - ${(itemsPerRow * (74 + 16) - 16) / 2}px + 37px)`;
   const hasOriginal = Boolean(decoration.original?.source);
   const imageSource = hasOriginal ? resolveAsset(decoration.original?.source, baseUrl) : '';
-  const imageFrameState = hasOriginal ? 'loading' : 'missing';
   const imageFrameContent = hasOriginal
-    ? `<div class="image-frame image-frame--expanded" data-image-state="${imageFrameState}">
+    ? `<div class="image-frame image-frame--expanded is-loading" data-image-state="loading">
         <div class="image-frame__skeleton" aria-hidden="true"></div>
         <img
           class="image-frame__img"
@@ -101,7 +100,7 @@ function renderExpandedDecoration(
         />
         <div class="image-frame__fallback" role="status">Image not found</div>
       </div>`
-    : `<div class="image-frame image-frame--expanded" data-image-state="missing">
+    : `<div class="image-frame image-frame--expanded is-missing" data-image-state="missing">
         <div class="image-frame__fallback" role="status">Image not found</div>
       </div>`;
 

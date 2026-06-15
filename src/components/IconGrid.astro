@@ -19,7 +19,7 @@ const { decorations } = Astro.props;
           data-categories={decoration.categories.join(',')}
           data-search-text={`${decoration.name} ${decoration.description ?? ''}`.toLowerCase()}
         >
-          <div class="image-frame image-frame--icon" data-image-state="loading">
+          <div class="image-frame image-frame--icon is-loading" data-image-state="loading">
             <div class="image-frame__skeleton" aria-hidden="true"></div>
             <img
               class="image-frame__img"
@@ -37,3 +37,12 @@ const { decorations } = Astro.props;
     }
   </div>
 </div>
+
+<script>
+  import { wireImageFrames } from '../scripts/imageLoading';
+
+  const grid = document.getElementById('icon-grid');
+  if (grid) {
+    wireImageFrames(grid);
+  }
+</script>
