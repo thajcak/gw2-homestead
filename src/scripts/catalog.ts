@@ -1,4 +1,5 @@
 import type { Category, ChangeLogDay, Decoration } from '../types';
+import { wireImageFrame, wireImageFrames } from './imageLoading';
 
 export interface SearchIndexEntry {
   id: number;
@@ -85,8 +86,24 @@ function renderExpandedDecoration(
   baseUrl: string
 ): string {
   const indicatorLeftPosition = `calc(${(decorationIndex % itemsPerRow) * (74 + 16)}px - ${(itemsPerRow * (74 + 16) - 16) / 2}px + 37px)`;
-  const imageSource = resolveAsset(decoration.original?.source, baseUrl);
   const hasOriginal = Boolean(decoration.original?.source);
+  const imageSource = hasOriginal ? resolveAsset(decoration.original?.source, baseUrl) : '';
+  const imageFrameState = hasOriginal ? 'loading' : 'missing';
+  const imageFrameContent = hasOriginal
+    ? `<div class="image-frame image-frame--expanded" data-image-state="${imageFrameState}">
+        <div class="image-frame__skeleton" aria-hidden="true"></div>
+        <img
+          class="image-frame__img"
+          src="${escapeHtml(imageSource)}"
+          alt="${escapeHtml(decoration.name)}"
+          loading="eager"
+          decoding="async"
+        />
+        <div class="image-frame__fallback" role="status">Image not found</div>
+      </div>`
+    : `<div class="image-frame image-frame--expanded" data-image-state="missing">
+        <div class="image-frame__fallback" role="status">Image not found</div>
+      </div>`;
 
   const categoryTags = decoration.categories
     .map((catId) => {
@@ -133,12 +150,7 @@ function renderExpandedDecoration(
       <div class="h-full min-h-0 flex flex-col container mx-auto px-6">
         <div class="flex-1 min-h-0 grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-x-0 px-4 md:px-8 lg:px-16">
           <div class="relative min-h-0 min-w-0 flex items-center justify-center py-4" style="min-height: 50vh;">
-            <img src="${escapeHtml(imageSource)}" alt="${escapeHtml(decoration.name)}" class="max-h-full max-w-full w-auto object-contain" loading="eager" />
-            ${
-              hasOriginal
-                ? ''
-                : '<div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50"><span class="text-white text-lg font-semibold">Image not found</span></div>'
-            }
+            ${imageFrameContent}
           </div>
           <div class="min-h-0 min-w-0 flex flex-col items-start text-left overflow-y-auto overflow-x-hidden py-4 lg:pl-4 lg:border-l lg:border-gray-700/60">
             <div class="w-full mb-3">
@@ -346,6 +358,11 @@ export function initCatalog(data: CatalogData, baseUrl: string = '/'): void {
     );
     const panel = wrapper.firstElementChild as HTMLElement;
     insertAfter.insertAdjacentElement('afterend', panel);
+
+    const imageFrame = panel.querySelector<HTMLElement>('.image-frame');
+    if (imageFrame) {
+      wireImageFrame(imageFrame);
+    }
 
     requestAnimationFrame(() => {
       panel.classList.remove('is-collapsed');
@@ -556,6 +573,7 @@ export function initCatalog(data: CatalogData, baseUrl: string = '/'): void {
   calculateItemsPerRow();
   applyFilters();
   updateChangelogVisibility();
+  wireImageFrames(grid!);
 
   const openParam = new URLSearchParams(window.location.search).get('open');
   if (openParam) {
