@@ -86,6 +86,19 @@ jobs:
         run: |
           set -eo pipefail
 
+          # Keep recipes already stored in content so wiki re-parsing does not
+          # produce false Recipe Updated changelog entries on subsequent runs.
+          jq --slurpfile old old_decorations.json '
+            def recipeEmpty: . as $x | ($x == null or $x == {});
+            ($old[0] | map({key:(.id|tostring), value:.recipe}) | from_entries) as $recipesById
+            | map(
+                . as $item
+                | ($recipesById[($item.id|tostring)] // null) as $storedRecipe
+                | if ($storedRecipe | recipeEmpty | not) then $item + {recipe: $storedRecipe} else $item end
+              )
+          ' decorations_work.json > decorations_work.merged.json
+          mv decorations_work.merged.json decorations_work.json
+
           fetch_json_with_retries() {
             local url="$1"
             local max_attempts="${2:-4}"
@@ -569,10 +582,10 @@ jobs:
             | select($oldItem != null)
             | ($oldItem.recipe // null) as $or
             | ($newItem.recipe // null) as $nr
-            | if ($or | recipeEmpty | not) and (($or | tojson) != ($nr | tojson)) then
-                {id:$newItem.id, type:"Recipe Updated", name:$newItem.name}
-              elif ($or | recipeEmpty) and ($nr | recipeEmpty | not) then
+            | if ($or | recipeEmpty) and ($nr | recipeEmpty | not) then
                 {id:$newItem.id, type:"Recipe Added", name:$newItem.name}
+              elif ($or | recipeEmpty | not) and ($nr | recipeEmpty | not) and (($or | tojson) != ($nr | tojson)) then
+                {id:$newItem.id, type:"Recipe Updated", name:$newItem.name}
               else
                 empty
               end

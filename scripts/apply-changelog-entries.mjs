@@ -23,6 +23,16 @@ function eventToHistoryEntry(event, day) {
   };
 }
 
+function dedupeRecipeChangelogEntries(entries) {
+  const recipeAddedIds = new Set(
+    entries.filter((entry) => entry.type === 'Recipe Added').map((entry) => entry.id)
+  );
+
+  return entries.filter(
+    (entry) => !(entry.type === 'Recipe Updated' && recipeAddedIds.has(entry.id))
+  );
+}
+
 function applyEntriesToArray(items, entries, day) {
   const byId = new Map(items.map((item) => [item.id, item]));
 
@@ -68,7 +78,7 @@ const categoriesFile = process.argv[5];
 const decorationsDir = process.argv[6];
 const categoriesDir = process.argv[7];
 
-const entries = JSON.parse(readFileSync(entriesFile, 'utf8'));
+const entries = dedupeRecipeChangelogEntries(JSON.parse(readFileSync(entriesFile, 'utf8')));
 let decorations = JSON.parse(readFileSync(decorationsFile, 'utf8'));
 let categories = JSON.parse(readFileSync(categoriesFile, 'utf8'));
 
