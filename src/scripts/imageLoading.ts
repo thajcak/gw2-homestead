@@ -1,6 +1,6 @@
 export type ImageLoadState = 'pending' | 'loading' | 'loaded' | 'error' | 'missing';
 
-const STATE_CLASSES: ImageLoadState[] = ['loading', 'loaded', 'error', 'missing'];
+const STATE_CLASSES: ImageLoadState[] = ['pending', 'loading', 'loaded', 'error', 'missing'];
 
 function setImageState(frame: HTMLElement, state: ImageLoadState): void {
   frame.dataset.imageState = state;
@@ -14,6 +14,24 @@ function markLoaded(frame: HTMLElement, img: HTMLImageElement): void {
     return;
   }
   setImageState(frame, 'loaded');
+}
+
+function finishWhenReady(frame: HTMLElement, img: HTMLImageElement): void {
+  const reveal = () => {
+    if (img.naturalWidth === 0) {
+      setImageState(frame, 'error');
+      return;
+    }
+    markLoaded(frame, img);
+  };
+
+  requestAnimationFrame(() => {
+    if (typeof img.decode === 'function') {
+      img.decode().then(reveal).catch(reveal);
+      return;
+    }
+    requestAnimationFrame(reveal);
+  });
 }
 
 export function wireImageFrame(frame: HTMLElement): void {
@@ -41,7 +59,7 @@ export function wireImageFrame(frame: HTMLElement): void {
     img.src = deferredSrc;
   }
 
-  const handleLoad = () => markLoaded(frame, img);
+  const handleLoad = () => finishWhenReady(frame, img);
   const handleError = () => setImageState(frame, 'error');
 
   img.addEventListener('load', handleLoad, { once: true });
@@ -52,7 +70,6 @@ export function wireImageFrame(frame: HTMLElement): void {
     return;
   }
 
-  // Lazy-loaded images can finish after the first complete check.
   requestAnimationFrame(() => {
     if (frame.classList.contains('is-loaded') || frame.classList.contains('is-error')) {
       return;

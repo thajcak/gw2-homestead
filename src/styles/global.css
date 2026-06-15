@@ -22,7 +22,7 @@ body {
   .catalog-item {
     content-visibility: auto;
     contain-intrinsic-size: 74px 74px;
-    contain: layout style paint;
+    contain: layout style;
   }
 
   .expanded-decoration {
@@ -136,7 +136,9 @@ body {
     @apply block;
   }
 
-  .image-frame.is-loading .image-frame__skeleton {
+  .image-frame.image-frame--icon.is-pending .image-frame__skeleton,
+  .image-frame.image-frame--icon.is-loading .image-frame__skeleton,
+  .image-frame.image-frame--expanded.is-loading .image-frame__skeleton {
     @apply animate-pulse;
   }
 
@@ -182,8 +184,9 @@ body {
   @media (prefers-reduced-motion: reduce) {
     .expanded-decoration,
     .image-frame.image-frame--expanded.is-loaded .image-frame__img,
-    .image-frame.is-loading .image-frame__skeleton {
-      transition: none;
+    .image-frame.image-frame--icon.is-pending .image-frame__skeleton,
+    .image-frame.image-frame--icon.is-loading .image-frame__skeleton,
+    .image-frame.image-frame--expanded.is-loading .image-frame__skeleton {
       animation: none;
     }
   }
