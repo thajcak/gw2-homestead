@@ -73,8 +73,7 @@ async function localizeDecoration(decoration, options = {}) {
 
   if (isRemoteUrl(decoration.icon)) {
     const remoteIcon = decoration.icon;
-    const iconExt = extensionFromUrl(remoteIcon);
-    const iconRelative = `decorations/${id}/icon.${iconExt}`;
+    const iconRelative = `decorations/${id}/icon.png`;
     const iconAbsolute = join(assetsRoot, iconRelative);
     const existingHash = await fileHash(iconAbsolute);
 

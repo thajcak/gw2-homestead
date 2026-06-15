@@ -616,6 +616,8 @@ jobs:
       - name: Localize decoration images
         run: |
           set -e
+          # Icons -> src/assets/decorations/{id}/icon.png (optimized at Astro build via icon-manifest)
+          # Previews -> public/decorations/{id}/preview.{ext} (loaded on expand)
           node scripts/localize-decoration-images.mjs decorations_work.json
 
       - name: Sync work files to content collections
@@ -631,6 +633,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add src/content/ src/assets/decorations/ public/decorations/ public/images/
+          # public/catalog/ is build output and intentionally not committed
           # Check if there are changes to commit
           if git diff --cached --quiet; then
             echo "No changes to commit."

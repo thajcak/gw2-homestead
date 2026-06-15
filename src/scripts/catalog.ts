@@ -241,12 +241,15 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   const catalogIndexPath = basePath ? `${basePath}/` : '/';
   const catalogBase = catalogUrl(baseUrl, 'catalog');
 
-  const [searchIndex, categories] = await Promise.all([
+  const [searchIndex, categories, iconManifest] = await Promise.all([
     fetch(catalogUrl(baseUrl, 'catalog/search-index.json')).then(
       (response) => response.json() as Promise<SearchIndexEntry[]>
     ),
     fetch(catalogUrl(baseUrl, 'catalog/categories.json')).then(
       (response) => response.json() as Promise<Category[]>
+    ),
+    fetch(catalogUrl(baseUrl, 'catalog/icon-manifest.json')).then(
+      (response) => response.json() as Promise<Record<string, string>>
     ),
   ]);
 
@@ -637,7 +640,17 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   const iconLoadQueue: HTMLElement[] = [];
 
   function iconUrl(id: number): string {
-    return `${catalogBase}/icons/${id}.png`;
+    const optimized = iconManifest[String(id)];
+    if (!optimized) {
+      return resolveAsset(undefined, baseUrl);
+    }
+    if (optimized.startsWith('http://') || optimized.startsWith('https://')) {
+      return optimized;
+    }
+    if (optimized.startsWith('/')) {
+      return basePath ? `${basePath}${optimized}` : optimized;
+    }
+    return catalogUrl(baseUrl, optimized);
   }
 
   function loadIconForItem(item: HTMLElement): void {

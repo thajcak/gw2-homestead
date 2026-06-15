@@ -1,31 +1,10 @@
-import { cp, mkdir, readdir, readFile, stat, writeFile } from 'node:fs/promises';
+import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const rootDir = join(fileURLToPath(new URL('.', import.meta.url)), '..');
 const decorationsContentDir = join(rootDir, 'src/content/decorations');
 const categoriesContentDir = join(rootDir, 'src/content/categories');
-const assetsDecorationsDir = join(rootDir, 'src/assets/decorations');
-async function copyIfChanged(source, destination) {
-  try {
-    const [sourceStat, destinationStat] = await Promise.all([
-      stat(source),
-      stat(destination).catch(() => null),
-    ]);
-
-    if (
-      destinationStat &&
-      destinationStat.mtimeMs >= sourceStat.mtimeMs &&
-      destinationStat.size === sourceStat.size
-    ) {
-      return;
-    }
-  } catch {
-    return;
-  }
-
-  await cp(source, destination);
-}
 
 const ENTRY_TYPE_ORDER = [
   'New Item',
@@ -78,7 +57,7 @@ function buildChangelogDays(decorations, categories) {
 export async function generateCatalogArtifacts() {
   const catalogDir = join(rootDir, 'public/catalog');
   await mkdir(join(catalogDir, 'decorations'), { recursive: true });
-  await mkdir(join(catalogDir, 'icons'), { recursive: true });
+  await rm(join(catalogDir, 'icons'), { recursive: true, force: true });
 
   const allDecorations = [];
   const categories = [];
@@ -126,16 +105,6 @@ export async function generateCatalogArtifacts() {
         description: decoration.description,
         categories: decoration.categories,
       });
-    }
-
-    const iconSource = join(assetsDecorationsDir, String(decoration.id), 'icon.png');
-    const iconDestination = join(catalogDir, 'icons', `${decoration.id}.png`);
-
-    try {
-      await stat(iconSource);
-      await copyIfChanged(iconSource, iconDestination);
-    } catch {
-      // Icon assets are optional for individual decorations.
     }
   }
 
