@@ -1,0 +1,47 @@
+{
+  "id": 211,
+  "name": "Guild Ballista Siege",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    11
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/D90AC60063EB33C34AE3C59E3496C5ACE75E1733/1701369.png",
+  "wikiTitle": "Guild Ballista Siege (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/d/df/Guild_Ballistae.jpg/50px-Guild_Ballistae.jpg",
+    "width": 50,
+    "height": 39
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/d/df/Guild_Ballistae.jpg",
+    "width": 2480,
+    "height": 1910
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Guild Ballista Siege",
+    "sheet": "Homestead Recipe Book: World vs. World",
+    "id": 14523,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 33,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "WvW Skirmish Claim Ticket"
+      },
+      {
+        "slot": 3,
+        "quantity": 4,
+        "item": "Guild Commendation"
+      }
+    ]
+  }
+}

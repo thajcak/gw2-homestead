@@ -1,0 +1,47 @@
+{
+  "id": 114,
+  "name": "Obstacle: Fan Trap",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    11
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/A19EBCC97B3C1DD629AFEFF6096DD93BB5395B69/1202567.png",
+  "wikiTitle": "Obstacle: Fan Trap (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/8/80/Obstacle-_Fan_Trap.jpg/50px-Obstacle-_Fan_Trap.jpg",
+    "width": 50,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/8/80/Obstacle-_Fan_Trap.jpg",
+    "width": 1250,
+    "height": 1250
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Obstacle: Fan Trap",
+    "sheet": "Homestead Recipe Book: Guild Arena",
+    "id": 14750,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 4,
+        "item": "Watchwork Sprocket"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Airship Part"
+      }
+    ]
+  }
+}

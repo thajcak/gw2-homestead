@@ -1,0 +1,47 @@
+{
+  "id": 492,
+  "name": "Bronze Vale Guardian Trophy",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    12
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/0AD13DC746E217380BBD90C94D64DE19D65E5904/1341303.png",
+  "wikiTitle": "Bronze Vale Guardian Trophy (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/5/5c/Bronze_Vale_Guardian_Trophy.jpg/25px-Bronze_Vale_Guardian_Trophy.jpg",
+    "width": 25,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/5/5c/Bronze_Vale_Guardian_Trophy.jpg",
+    "width": 535,
+    "height": 1049
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Bronze Vale Guardian Trophy",
+    "sheet": "Recipe: Bronze Vale Guardian Trophy",
+    "id": 14539,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 36,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Vale Guardian Fragment"
+      }
+    ]
+  }
+}

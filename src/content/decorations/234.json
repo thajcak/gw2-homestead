@@ -1,0 +1,47 @@
+{
+  "id": 234,
+  "name": "Purple Balloon",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    14
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/E4734103B5DC341432B39870F09C623D5CB4A960/1226128.png",
+  "wikiTitle": "Purple Balloon (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/d/d9/Purple_Balloon.jpg/26px-Purple_Balloon.jpg",
+    "width": 26,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/d/d9/Purple_Balloon.jpg",
+    "width": 435,
+    "height": 835
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Purple Balloon",
+    "sheet": "Homestead Recipe Book: Balloons",
+    "id": 14419,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 2,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Pouch of Purple Pigment"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Spool of Linen Thread"
+      }
+    ]
+  }
+}

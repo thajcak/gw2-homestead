@@ -1,0 +1,46 @@
+{
+  "id": 213,
+  "name": "Steel Pan",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    19,
+    4
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/E945F3637707CFDC15035020B5DD9238336A0473/3374972.png",
+  "wikiTitle": "Steel Pan",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/5/58/Steel_Pan.jpg/50px-Steel_Pan.jpg",
+    "width": 50,
+    "height": 33
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/5/58/Steel_Pan.jpg",
+    "width": 501,
+    "height": 329
+  },
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14596,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 23,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Ursus Oblige"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Jar of Vegetable Oil"
+      }
+    ]
+  }
+}

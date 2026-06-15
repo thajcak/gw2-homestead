@@ -1,0 +1,47 @@
+{
+  "id": 195,
+  "name": "Gold Qadim Trophy",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    12
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/B4BE0FC2ADB0EAC7070850DA9D41BBAE2BE9210C/2039319.png",
+  "wikiTitle": "Gold Qadim Trophy (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/e/e0/Gold_Qadim_Trophy.jpg/23px-Gold_Qadim_Trophy.jpg",
+    "width": 23,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/e/e0/Gold_Qadim_Trophy.jpg",
+    "width": 228,
+    "height": 497
+  },
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Gold Qadim Trophy",
+    "sheet": "Recipe: Gold Qadim Trophy",
+    "id": 14467,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 130,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 100,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Qadim's Token (trophy)"
+      }
+    ]
+  }
+}

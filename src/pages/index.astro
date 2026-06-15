@@ -1,0 +1,65 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import IconGrid from '../components/IconGrid.astro';
+import ChangeLogPanel from '../components/ChangeLogPanel.astro';
+import FilterPrompt from '../components/FilterPrompt.astro';
+import type { CatalogData } from '../scripts/catalog';
+
+const decorationEntries = await getCollection('decorations');
+const categoryEntries = await getCollection('categories');
+const changelogEntries = await getCollection('changelog');
+
+const decorations = decorationEntries
+  .map((entry) => entry.data)
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const categories = categoryEntries
+  .map((entry) => entry.data)
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const changelogDays = changelogEntries
+  .map((entry) => entry.data)
+  .sort((a, b) => b.day.localeCompare(a.day));
+
+const catalogData: CatalogData = {
+  searchIndex: decorations.map((decoration) => ({
+    id: decoration.id,
+    name: decoration.name,
+    description: decoration.description,
+    categories: decoration.categories,
+  })),
+  decorations: Object.fromEntries(
+    decorations.map((decoration) => [String(decoration.id), decoration])
+  ),
+  categories,
+  changelogDays,
+};
+---
+
+<BaseLayout>
+  <div class="min-h-screen bg-gray-100">
+    <Header categories={categories} />
+
+    <main class="container mx-auto px-6">
+      <IconGrid decorations={decorations} />
+      <div id="empty-state" class="hidden py-10 text-center text-sm text-gray-600">
+        No decorations found.
+      </div>
+    </main>
+
+    <ChangeLogPanel days={changelogDays} />
+    <FilterPrompt />
+  </div>
+
+  <script id="catalog-data" type="application/json" set:html={JSON.stringify(catalogData)}></script>
+  <script>
+    import { initCatalog } from '../scripts/catalog';
+
+    const dataElement = document.getElementById('catalog-data');
+    if (dataElement?.textContent) {
+      initCatalog(JSON.parse(dataElement.textContent));
+    }
+  </script>
+</BaseLayout>

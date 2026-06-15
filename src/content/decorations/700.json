@@ -1,0 +1,47 @@
+{
+  "id": 700,
+  "name": "Potted Bamboo",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    6
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/0B06A647B03F9A619A90B174CED3D9FE56A5D64D/1225732.png",
+  "wikiTitle": "Potted Bamboo (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/c/c8/Potted_Bamboo.jpg/22px-Potted_Bamboo.jpg",
+    "width": 22,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/c/c8/Potted_Bamboo.jpg",
+    "width": 439,
+    "height": 1001
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Potted Bamboo",
+    "sheet": "Homestead Recipe Book: Plants, Volume 3",
+    "id": 14151,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 28,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Bone Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Jungle Grass Seed"
+      }
+    ]
+  }
+}

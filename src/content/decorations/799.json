@@ -1,0 +1,47 @@
+{
+  "id": 799,
+  "name": "Bloodstone Turret Fragment",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    12
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/780C63D598D79D37C2FC3928D5DC40567DABB0AC/1451137.png",
+  "wikiTitle": "Bloodstone Turret Fragment (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/e/ea/Bloodstone_Turret_Fragment.jpg/42px-Bloodstone_Turret_Fragment.jpg",
+    "width": 42,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/e/ea/Bloodstone_Turret_Fragment.jpg",
+    "width": 464,
+    "height": 554
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Bloodstone Turret Fragment",
+    "sheet": "Recipe: Bloodstone Turret Fragment",
+    "id": 14204,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 50,
+        "item": "Blood Ruby"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Turret Fragment"
+      }
+    ]
+  }
+}

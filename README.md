@@ -8,12 +8,27 @@
 The Homestead Catalog is a static site that pulls data from the `/v2/homestead` endpoint to provide a quick way to view all Homestead decorations that are presumably available in game.
 
 ## Backend
-The backend of the site is a GitHub action that runs hourly to pull all decorations from the API and commit any changes to the repo. This provides a static list of decorations and their details for the page to load.
+The backend of the site is a GitHub action that runs hourly to pull all decorations from the API and commit any changes to the repo. Decoration, category, and changelog data live in Astro Content Collections under `src/content/`, validated at build time with Zod schemas.
 
 Currently only the API responses are stored in the repo and all image assets are requested on demand.
 
 ## Frontend
-A grid of decoration icons loaded from the repo is populated on load. Clicking on a decoration opens a detail panel that pulls a preview image from the [Guild Wars 2 Wiki](https://wiki.guildwars2.com). The wiki page is guessed at by trying to determine the proper page based on the item name. Once found the image is pulled from one of two sources and a link to the wiki page is added to the footer.
+Built with [Astro](https://astro.build) and Tailwind CSS. The catalog is a single static page with client-side search, category filtering, expandable decoration details, and a changelog panel. Decoration data is loaded at build time from content collections; interactivity is handled with vanilla TypeScript.
+
+Deep links use the `?open={id}` query parameter to automatically expand a specific decoration.
+
+## Development
+
+```bash
+npm install
+npm run dev
+```
+
+Other commands:
+
+- `npm run build` — production build to `dist/`
+- `npm run preview` — preview the production build locally
+- `npm run split-content` — one-time migration helper to split legacy `public/*.json` blobs into content collection files
 
 ---
 

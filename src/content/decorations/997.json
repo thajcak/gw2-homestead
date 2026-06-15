@@ -1,0 +1,42 @@
+{
+  "id": 997,
+  "name": "Wall (120 x 240)",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/C1792B4EE87C0F2D964CB5EA75E26CABF849FF3F/3708919.png",
+  "wikiTitle": "Wall (120 x 240) (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/e/ef/Wall_%28120_x_240%29.jpg/28px-Wall_%28120_x_240%29.jpg",
+    "width": 28,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/e/ef/Wall_%28120_x_240%29.jpg",
+    "width": 810,
+    "height": 1440
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Wall (120 x 240)",
+    "id": 15241,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 8,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 4,
+        "item": "Elder Wood Plank"
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": 727,
+  "name": "Kodan Kitchen Hearth",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    19,
+    1
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/C8DCF5C26C6E0D9B2633ED7D94CEFE9901CA9397/3375030.png",
+  "wikiTitle": "Kodan Kitchen Hearth",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/e/e1/Kodan_Kitchen_Hearth.jpg/50px-Kodan_Kitchen_Hearth.jpg",
+    "width": 50,
+    "height": 38
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/e/e1/Kodan_Kitchen_Hearth.jpg",
+    "width": 1422,
+    "height": 1080
+  },
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14764,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Molten Core"
+      },
+      {
+        "slot": 3,
+        "quantity": 24,
+        "item": "Charged Titan Ore"
+      }
+    ]
+  }
+}

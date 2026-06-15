@@ -1,0 +1,46 @@
+{
+  "id": 86,
+  "name": "Leaping Lion Fountain",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    9
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/FFDAC17E089C17ABAA9AA60B7B3E3FD1B769936D/2760310.png",
+  "wikiTitle": "Leaping Lion Fountain",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/d/d0/Lion_Fountain_Token.jpg/50px-Lion_Fountain_Token.jpg",
+    "width": 50,
+    "height": 38
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/d/d0/Lion_Fountain_Token.jpg",
+    "width": 1778,
+    "height": 1334
+  },
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Homestead Recipe Book: Lion Statues, Volume 1",
+    "id": 14164,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 90,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Lion Fountain Token"
+      },
+      {
+        "slot": 3,
+        "quantity": 1000,
+        "item": "Karma"
+      }
+    ]
+  }
+}

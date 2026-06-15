@@ -1,0 +1,47 @@
+{
+  "id": 360,
+  "name": "Gold Gorseval Trophy",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    12
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/0B2000BE572ACDC30F1C4CBAFCE440092A9649AA/1341255.png",
+  "wikiTitle": "Gold Gorseval Trophy (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/8/88/Gold_Gorseval_Trophy.jpg/34px-Gold_Gorseval_Trophy.jpg",
+    "width": 34,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/8/88/Gold_Gorseval_Trophy.jpg",
+    "width": 480,
+    "height": 703
+  },
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Gold Gorseval Trophy",
+    "sheet": "Recipe: Gold Gorseval Trophy",
+    "id": 14251,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 130,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 100,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Gorseval Tentacle Piece"
+      }
+    ]
+  }
+}

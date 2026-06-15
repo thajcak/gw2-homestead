@@ -1,0 +1,47 @@
+{
+  "id": 455,
+  "name": "Basic Grave Marker",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    10
+  ],
+  "max_count": 15,
+  "icon": "https://render.guildwars2.com/file/ED1C5CFF6597C24254802FFA40E066F6403E02D4/1466229.png",
+  "wikiTitle": "Basic Grave Marker (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/6/6b/Basic_Grave_Marker.jpg/40px-Basic_Grave_Marker.jpg",
+    "width": 40,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/6/6b/Basic_Grave_Marker.jpg",
+    "width": 1142,
+    "height": 1428
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Basic Grave Marker",
+    "sheet": "Homestead Recipe Book: Basic Decorations",
+    "id": 14107,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Vial of Potent Blood"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Large Bone"
+      }
+    ]
+  }
+}

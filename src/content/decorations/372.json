@@ -1,0 +1,47 @@
+{
+  "id": 372,
+  "name": "Silver Dhuum Trophy",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    12
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/A205709544FD17969C3E09D1F8531D121E12F5B5/1894795.png",
+  "wikiTitle": "Silver Dhuum Trophy (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/b/bc/Silver_Dhuum_Trophy.jpg/24px-Silver_Dhuum_Trophy.jpg",
+    "width": 24,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/b/bc/Silver_Dhuum_Trophy.jpg",
+    "width": 529,
+    "height": 1079
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Silver Dhuum Trophy",
+    "sheet": "Recipe: Silver Dhuum Trophy",
+    "id": 14259,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 90,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 40,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Dhuum's Token (trophy)"
+      }
+    ]
+  }
+}

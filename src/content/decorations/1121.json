@@ -1,0 +1,42 @@
+{
+  "id": 1121,
+  "name": "Roof Piece",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/D352527EF5A69A15DEA10867A119D4553FF81ECA/3744680.png",
+  "wikiTitle": "Roof Piece (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/f/fb/Roof_Piece.jpg/50px-Roof_Piece.jpg",
+    "width": 50,
+    "height": 28
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/f/fb/Roof_Piece.jpg",
+    "width": 1366,
+    "height": 768
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Roof Piece",
+    "id": 15557,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Refined Homestead Metal"
+      }
+    ]
+  }
+}

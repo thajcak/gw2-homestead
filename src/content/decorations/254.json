@@ -1,0 +1,48 @@
+{
+  "id": 254,
+  "name": "Clock Tower Gear",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    14,
+    25
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/A13D9C44BECDF825292E306C600163BAD4A9A977/2343750.png",
+  "wikiTitle": "Clock Tower Gear (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/7/7c/Clock_Tower_Gear.jpg/50px-Clock_Tower_Gear.jpg",
+    "width": 50,
+    "height": 36
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/7/7c/Clock_Tower_Gear.jpg",
+    "width": 1573,
+    "height": 1123
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Clock Tower Gear",
+    "sheet": "Homestead Recipe Book: Halloween, Volume 6",
+    "id": 14672,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 28,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "Watchwork Sprocket"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Charged Titan Ore"
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 371,
+  "name": "Festival Tent",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    14
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/9C6C4594E79D9B7107B742C2DD50029DBEFE983C/1226139.png",
+  "wikiTitle": "Festival Tent (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/4/44/Festival_Tent.jpg/36px-Festival_Tent.jpg",
+    "width": 36,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/4/44/Festival_Tent.jpg",
+    "width": 690,
+    "height": 944
+  },
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Festival Tent",
+    "sheet": "Homestead Recipe Book: Misc. Items, Volume 1",
+    "id": 14312,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 4,
+        "item": "Bolt of Silk"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Thick Leather Section"
+      }
+    ]
+  }
+}

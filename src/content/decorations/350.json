@@ -1,0 +1,47 @@
+{
+  "id": 350,
+  "name": "Armor Stand",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    9
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/D9B76342CD69EBD5021AF8D4ED270F0CDEF63C39/1227579.png",
+  "wikiTitle": "Armor Stand (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/d/d1/Armor_Stand.jpg/20px-Armor_Stand.jpg",
+    "width": 20,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/d/d1/Armor_Stand.jpg",
+    "width": 390,
+    "height": 965
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Armor Stand",
+    "sheet": "Homestead Recipe Book: Basic Decorations",
+    "id": 14784,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Armored Scale"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Blade Shard"
+      }
+    ]
+  }
+}

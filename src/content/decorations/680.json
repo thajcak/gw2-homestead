@@ -1,0 +1,42 @@
+{
+  "id": 680,
+  "name": "Basic Crate",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    3
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/AE0B580F951FDAD2BE6CD40808C758E2513AD0BE/1227550.png",
+  "wikiTitle": "Basic Crate (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/f/f6/Basic_Crate.jpg/50px-Basic_Crate.jpg",
+    "width": 50,
+    "height": 47
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/f/f6/Basic_Crate.jpg",
+    "width": 1154,
+    "height": 1080
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Basic Crate",
+    "sheet": "Homestead Recipe Book: Basic Decorations",
+    "id": 14292,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Small Fang"
+      }
+    ]
+  }
+}

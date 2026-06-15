@@ -1,0 +1,48 @@
+{
+  "id": 367,
+  "name": "Pumpkin",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    25,
+    6
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/D4070B5B2F2ABAD80DE2176EB541680B4D0CD41D/1226071.png",
+  "wikiTitle": "Pumpkin (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/f/f7/Pumpkin.jpg/39px-Pumpkin.jpg",
+    "width": 39,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/f/f7/Pumpkin.jpg",
+    "width": 741,
+    "height": 950
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Pumpkin",
+    "sheet": "Homestead Recipe Book: Basic Decorations",
+    "id": 14590,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 2,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Pile of Shimmering Dust"
+      },
+      {
+        "slot": 3,
+        "quantity": 50,
+        "item": "Karma"
+      }
+    ]
+  }
+}

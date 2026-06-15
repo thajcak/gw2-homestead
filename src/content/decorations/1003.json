@@ -1,0 +1,47 @@
+{
+  "id": 1003,
+  "name": "Simple Brick Fireplace",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    20,
+    4
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/A8053B28F401C10325DCFE256C1C2119E1BFD80D/3708887.png",
+  "wikiTitle": "Simple Brick Fireplace (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/9/9b/Simple_Brick_Fireplace.jpg/50px-Simple_Brick_Fireplace.jpg",
+    "width": 50,
+    "height": 37
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/9/9b/Simple_Brick_Fireplace.jpg",
+    "width": 1467,
+    "height": 1080
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Simple Brick Fireplace",
+    "id": 15363,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 15,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Brick of Clay"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Molten Core"
+      }
+    ]
+  }
+}

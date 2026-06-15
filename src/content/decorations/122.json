@@ -1,0 +1,47 @@
+{
+  "id": 122,
+  "name": "Thorny Mushroom",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    7
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/3FD56F9553535CD33CEB4A1D08499537BC5FF306/1224808.png",
+  "wikiTitle": "Thorny Mushroom (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/7/73/Thorny_Mushroom.jpg/28px-Thorny_Mushroom.jpg",
+    "width": 28,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/7/73/Thorny_Mushroom.jpg",
+    "width": 810,
+    "height": 1440
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Thorny Mushroom",
+    "sheet": "Homestead Recipe Book: Plants, Volume 2",
+    "id": 14415,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 4,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Barbed Thorn"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Giant Mushroom Spore"
+      }
+    ]
+  }
+}

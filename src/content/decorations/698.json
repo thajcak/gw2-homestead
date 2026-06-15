@@ -1,0 +1,47 @@
+{
+  "id": 698,
+  "name": "Ballista Siege",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    11
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/D90AC60063EB33C34AE3C59E3496C5ACE75E1733/1701369.png",
+  "wikiTitle": "Ballista Siege (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/6/68/Ballista_Siege.jpg/50px-Ballista_Siege.jpg",
+    "width": 50,
+    "height": 40
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/6/68/Ballista_Siege.jpg",
+    "width": 1706,
+    "height": 1365
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Ballista Siege",
+    "sheet": "Homestead Recipe Book: World vs. World",
+    "id": 14165,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 4,
+        "item": "WvW Skirmish Claim Ticket"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Airship Part"
+      }
+    ]
+  }
+}

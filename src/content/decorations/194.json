@@ -1,0 +1,47 @@
+{
+  "id": 194,
+  "name": "Chandelier",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    5
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/3F73CE046A675EDF3C0F80C612F1C740C16B15B3/1634119.png",
+  "wikiTitle": "Chandelier (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/f/fa/Chandelier.jpg/33px-Chandelier.jpg",
+    "width": 33,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/f/fa/Chandelier.jpg",
+    "width": 454,
+    "height": 678
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Chandelier",
+    "sheet": "Homestead Recipe Book: Misc. Items, Volume 2",
+    "id": 14643,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 27,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Molten Sliver"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Curious Lowland Honeycomb"
+      }
+    ]
+  }
+}

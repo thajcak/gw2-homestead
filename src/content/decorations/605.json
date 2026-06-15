@@ -1,0 +1,48 @@
+{
+  "id": 605,
+  "name": "Zephyr Banner",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    10,
+    24
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/01B7B9F83009F77C2B80DC13B243E61EBE490D64/2485569.png",
+  "wikiTitle": "Zephyr Banner (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/6/62/Zephyr_Banner.jpg/25px-Zephyr_Banner.jpg",
+    "width": 25,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/6/62/Zephyr_Banner.jpg",
+    "width": 720,
+    "height": 1440
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Zephyr Banner",
+    "sheet": "Homestead Recipe Book: Four Winds, Volume 4",
+    "id": 14310,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 24,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "Pouch of Red Pigment"
+      },
+      {
+        "slot": 3,
+        "quantity": 20,
+        "item": "Festival Token"
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": 25,
+  "name": "Blue Balloon",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    14
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/CE0CC960081C4D240D5714D525B273B7C7A5AEFA/1226124.png",
+  "wikiTitle": "Blue Balloon (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/1/1d/Blue_Balloon.jpg/23px-Blue_Balloon.jpg",
+    "width": 23,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/1/1d/Blue_Balloon.jpg",
+    "width": 398,
+    "height": 845
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Homestead Recipe Book: Balloons",
+    "id": 14648,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 2,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Pouch of Blue Pigment"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Spool of Linen Thread"
+      }
+    ]
+  }
+}

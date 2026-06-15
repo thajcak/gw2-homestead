@@ -1,0 +1,48 @@
+{
+  "id": 410,
+  "name": "Tiger Statue",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    9,
+    21
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/605D0301500B02566D1CFD2E423E5303080D93B7/2571007.png",
+  "wikiTitle": "Tiger Statue (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/f/f1/Tiger_Statue.jpg/39px-Tiger_Statue.jpg",
+    "width": 39,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/f/f1/Tiger_Statue.jpg",
+    "width": 745,
+    "height": 960
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Tiger Statue",
+    "sheet": "Homestead Recipe Book: Lunar New Year Celestials",
+    "id": 14203,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 50,
+        "item": "Pouch of Red Pigment"
+      },
+      {
+        "slot": 3,
+        "quantity": 20,
+        "item": "Large Fang"
+      }
+    ]
+  }
+}

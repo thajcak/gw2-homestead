@@ -1,0 +1,46 @@
+{
+  "id": 315,
+  "name": "Kodan Heritage Chest",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    19,
+    3
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/DD25656052D921051515A7BB92E86BE603FEC49E/3374990.png",
+  "wikiTitle": "Kodan Heritage Chest",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/8/83/Kodan_Heritage_Chest.jpg/50px-Kodan_Heritage_Chest.jpg",
+    "width": 50,
+    "height": 34
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/8/83/Kodan_Heritage_Chest.jpg",
+    "width": 1606,
+    "height": 1080
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14291,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Rotted Titan Amber"
+      },
+      {
+        "slot": 3,
+        "quantity": 12,
+        "item": "Large Fang"
+      }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": 1141,
+  "name": "Jungle Bush",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/6351C2A50D2BBA3EE25C532B573F75D30B101D29/3744672.png",
+  "wikiTitle": "Jungle Bush (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/a/a3/Jungle_Bush.jpg/50px-Jungle_Bush.jpg",
+    "width": 50,
+    "height": 28
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/a/a3/Jungle_Bush.jpg",
+    "width": 1366,
+    "height": 768
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Jungle Bush",
+    "id": 15531,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 7,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Evergreen Lodestone"
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": 939,
+  "name": "Sun Aspect Crystal",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    1,
+    24
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/4D7EFE9AE0722769DC04D37EEADFBF0FEDD52920/3653510.png",
+  "wikiTitle": "Sun Aspect Crystal (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/f/f7/Sun_Aspect_Crystal.jpg/28px-Sun_Aspect_Crystal.jpg",
+    "width": 28,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/f/f7/Sun_Aspect_Crystal.jpg",
+    "width": 727,
+    "height": 1293
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Sun Aspect Crystal",
+    "sheet": "Recipe: Sun Aspect Crystal",
+    "id": 15165,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 20,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Charged Quartz Crystal"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Destroyer Core"
+      }
+    ]
+  }
+}

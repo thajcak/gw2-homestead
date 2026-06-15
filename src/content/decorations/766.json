@@ -1,0 +1,47 @@
+{
+  "id": 766,
+  "name": "Palm Tree",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    7
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/6A9AB6C2203A6D0CE0ECF7D63D04E39D276414F4/1228212.png",
+  "wikiTitle": "Palm Tree (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/1/10/Palm_Tree.jpg/33px-Palm_Tree.jpg",
+    "width": 33,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/1/10/Palm_Tree.jpg",
+    "width": 960,
+    "height": 1440
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Palm Tree",
+    "sheet": "Homestead Recipe Book: Trees, Volume 2",
+    "id": 14388,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Palm Lumber Core"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Petrified Wood"
+      }
+    ]
+  }
+}

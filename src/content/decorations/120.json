@@ -1,0 +1,53 @@
+{
+  "id": 120,
+  "name": "Snowman Ice Sculpture",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    9,
+    26
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/080D0D6694717DDC710EB7F86D94699F3C35340D/1614396.png",
+  "wikiTitle": "Snowman Ice Sculpture (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/1/1b/Snowman_Ice_Sculpture.jpg/48px-Snowman_Ice_Sculpture.jpg",
+    "width": 48,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/1/1b/Snowman_Ice_Sculpture.jpg",
+    "width": 1384,
+    "height": 1456
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Snowman Ice Sculpture",
+    "sheet": "Homestead Recipe Book: Wintersday, Volume 2",
+    "id": 14735,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 30,
+        "item": "Snowflake"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Glacial Lodestone"
+      },
+      {
+        "slot": 4,
+        "quantity": 2,
+        "item": "Lump of Coal"
+      }
+    ]
+  }
+}

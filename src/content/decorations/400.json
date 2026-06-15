@@ -1,0 +1,47 @@
+{
+  "id": 400,
+  "name": "Kormir Statue",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    9
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/6BCC68C006A8CE6ADD67B3235400B2CD0F790807/1225339.png",
+  "wikiTitle": "Kormir Statue (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/c/cf/Kormir_Statue.jpg/29px-Kormir_Statue.jpg",
+    "width": 29,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/c/cf/Kormir_Statue.jpg",
+    "width": 577,
+    "height": 992
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Kormir Statue",
+    "sheet": "Homestead Recipe Book: Human Gods",
+    "id": 14899,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 34,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 12,
+        "item": "Sapphire Orb"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Visage of Kormir"
+      }
+    ]
+  }
+}

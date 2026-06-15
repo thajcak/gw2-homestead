@@ -1,0 +1,51 @@
+{
+  "id": 279,
+  "name": "Kodan Fish Tank",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    19,
+    4
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/EE1FF1716D4824B4F361CCD2C7ED0AAE92E69858/3441827.png",
+  "wikiTitle": "Kodan Fish Tank",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/e/ed/Kodan_Fish_Tank.jpg/50px-Kodan_Fish_Tank.jpg",
+    "width": 50,
+    "height": 46
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/e/ed/Kodan_Fish_Tank.jpg",
+    "width": 2355,
+    "height": 2159
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14133,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Beacon's Perch"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Mystic Remora"
+      },
+      {
+        "slot": 4,
+        "quantity": 10,
+        "item": "Charged Titan Ore"
+      }
+    ]
+  }
+}

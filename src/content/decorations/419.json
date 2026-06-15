@@ -1,0 +1,46 @@
+{
+  "id": 419,
+  "name": "Kodan Timber Stool",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    2,
+    19
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/3D5E0765101A10BFEF46FF5B54967936A13A30FD/3375042.png",
+  "wikiTitle": "Kodan Timber Stool",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/7/7a/Kodan_Timber_Stool.jpg/50px-Kodan_Timber_Stool.jpg",
+    "width": 50,
+    "height": 43
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/7/7a/Kodan_Timber_Stool.jpg",
+    "width": 1072,
+    "height": 921
+  },
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14173,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "Rugged Leather Section"
+      },
+      {
+        "slot": 3,
+        "quantity": 6,
+        "item": "Honey Flower"
+      }
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": 344,
+  "name": "Corrupted Ox Shrine",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    9
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/AAFC1A597A773A2CB179212FD9700C04FB51F64D/2247490.png",
+  "wikiTitle": "Corrupted Ox Shrine (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/8/8e/Corrupted_Ox_Shrine_Token.jpg/50px-Corrupted_Ox_Shrine_Token.jpg",
+    "width": 50,
+    "height": 28
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/8/8e/Corrupted_Ox_Shrine_Token.jpg",
+    "width": 1920,
+    "height": 1080
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Corrupted Ox Shrine",
+    "sheet": "Homestead Recipe Book: Statues and Trophies",
+    "id": 14333,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 90,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 100,
+        "item": "Eternal Ice Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Corrupted Lodestone"
+      },
+      {
+        "slot": 4,
+        "quantity": 1,
+        "item": "Glacial Lodestone"
+      }
+    ]
+  }
+}

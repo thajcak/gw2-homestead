@@ -1,0 +1,42 @@
+{
+  "id": 1053,
+  "name": "Ship Windmill",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/0303BDFC16AD132F3E2DEF1878F6ECA635055006/3708882.png",
+  "wikiTitle": "Ship Windmill (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/7/70/Ship_Windmill.jpg/39px-Ship_Windmill.jpg",
+    "width": 39,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/7/70/Ship_Windmill.jpg",
+    "width": 835,
+    "height": 1080
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Ship Windmill",
+    "id": 15348,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 20,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 20,
+        "item": "Refined Homestead Fiber"
+      }
+    ]
+  }
+}

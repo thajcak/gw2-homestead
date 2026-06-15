@@ -1,0 +1,47 @@
+{
+  "id": 995,
+  "name": "Island Fern",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    20,
+    7
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/AE07DECF930BDEF59AF93F684D6C9A68D60E6BC3/3708873.png",
+  "wikiTitle": "Island Fern (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/b/b9/Island_Fern_top.jpg/50px-Island_Fern_top.jpg",
+    "width": 50,
+    "height": 32
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/b/b9/Island_Fern_top.jpg",
+    "width": 2208,
+    "height": 1394
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Island Fern",
+    "id": 15196,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 3,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Evergreen Lodestone"
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 250,
+  "name": "Kodan Painting",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    19,
+    4
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/367AA933584D174B05B2E25EF45B2A534525D63C/3374982.png",
+  "wikiTitle": "Kodan Painting",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/5/55/Kodan_Painting.jpg/50px-Kodan_Painting.jpg",
+    "width": 50,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/5/55/Kodan_Painting.jpg",
+    "width": 1373,
+    "height": 1382
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "sheet": "Homestead Recipe Book: Paintings and Shelves",
+    "id": 14679,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Honey Flower"
+      },
+      {
+        "slot": 3,
+        "quantity": 6,
+        "item": "Pouch of Red Pigment"
+      }
+    ]
+  }
+}

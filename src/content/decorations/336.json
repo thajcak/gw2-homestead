@@ -1,0 +1,48 @@
+{
+  "id": 336,
+  "name": "Decorated Casket",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    25,
+    14
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/02E7F7C3C9DE766A053E05C32B920C0314746F5D/2056167.png",
+  "wikiTitle": "Decorated Casket (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/0/05/Decorated_Casket.jpg/50px-Decorated_Casket.jpg",
+    "width": 50,
+    "height": 28
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/0/05/Decorated_Casket.jpg",
+    "width": 2364,
+    "height": 1330
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Decorated Casket",
+    "sheet": "Homestead Recipe Book: Halloween, Volume 4",
+    "id": 14898,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 40,
+        "item": "Piece of Candy Corn"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Bone"
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 1034,
+  "name": "Changing Tent",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    20,
+    4
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/64382C1A236B4742DAE8D5EFF09A9DC3C999BEB7/3708859.png",
+  "wikiTitle": "Changing Tent (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/b/b8/Changing_Tent_%28decoration%29.jpg/44px-Changing_Tent_%28decoration%29.jpg",
+    "width": 44,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/b/b8/Changing_Tent_%28decoration%29.jpg",
+    "width": 847,
+    "height": 968
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Changing Tent",
+    "id": 15383,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Cured Thick Leather Square"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Bolt of Silk"
+      }
+    ]
+  }
+}

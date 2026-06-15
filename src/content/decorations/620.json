@@ -1,0 +1,46 @@
+{
+  "id": 620,
+  "name": "Jewelry Display Case",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    19,
+    3
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/2ED055F75FC3B52AFF06FE974895A32D0CBE4D4B/3592741.png",
+  "wikiTitle": "Jewelry Display Case",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/d/d4/Jewelry_Display_Case.jpg/36px-Jewelry_Display_Case.jpg",
+    "width": 36,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/d/d4/Jewelry_Display_Case.jpg",
+    "width": 993,
+    "height": 1390
+  },
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Automatic",
+    "disciplines": "Handiworker",
+    "id": 14710,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 30,
+        "item": "Gossamer Scrap"
+      },
+      {
+        "slot": 3,
+        "quantity": 30,
+        "item": "Mursaat Obsidian Chunk"
+      }
+    ]
+  }
+}

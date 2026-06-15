@@ -1,0 +1,43 @@
+{
+  "id": 1139,
+  "name": "Resurrection Tablet",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/793323E29003E05562E03E0E457128115E16375E/3744674.png",
+  "wikiTitle": "Resurrection Tablet (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/a/aa/Resurrection_Tablet.jpg/50px-Resurrection_Tablet.jpg",
+    "width": 50,
+    "height": 36
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/a/aa/Resurrection_Tablet.jpg",
+    "width": 1352,
+    "height": 972
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Resurrection Tablet",
+    "sheet": "Recipe: Resurrection Tablet",
+    "id": 15483,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Bloodstone Brick"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Refined Homestead Metal"
+      }
+    ]
+  }
+}

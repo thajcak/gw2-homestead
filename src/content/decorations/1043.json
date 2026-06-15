@@ -1,0 +1,42 @@
+{
+  "id": 1043,
+  "name": "Canthan Glass Bottle",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    17,
+    4
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/060AF794D02160300C9B2DCD2DD3A75667D753AB/3708856.png",
+  "wikiTitle": "Canthan Glass Bottle (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/a/a9/Canthan_Glass_Bottle.jpg/25px-Canthan_Glass_Bottle.jpg",
+    "width": 25,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/a/a9/Canthan_Glass_Bottle.jpg",
+    "width": 556,
+    "height": 1080
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Canthan Glass Bottle",
+    "id": 15378,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 1,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Lump of Glass"
+      }
+    ]
+  }
+}

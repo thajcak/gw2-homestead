@@ -1,0 +1,48 @@
+{
+  "id": 513,
+  "name": "Elonian Vase",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    4,
+    16
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/594154E4779CD3FAE39A68A7B503EF5FB253C0BB/1769386.png",
+  "wikiTitle": "Elonian Vase (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/1/1e/Elonian_Vase.jpg/32px-Elonian_Vase.jpg",
+    "width": 32,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/1/1e/Elonian_Vase.jpg",
+    "width": 614,
+    "height": 962
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Elonian Vase",
+    "sheet": "Homestead Recipe Book: Misc. Items, Volume 3",
+    "id": 14167,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 31,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 20,
+        "item": "Eye of Kormir"
+      },
+      {
+        "slot": 3,
+        "quantity": 20,
+        "item": "Pouch of Blue Pigment"
+      }
+    ]
+  }
+}

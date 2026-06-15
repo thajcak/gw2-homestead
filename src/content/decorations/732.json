@@ -1,0 +1,46 @@
+{
+  "id": 732,
+  "name": "Kodan Rocky Fireplace",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    19,
+    1
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/D79D184B5BAB0E01CCA0E306CA421705E11F9DDD/3375034.png",
+  "wikiTitle": "Kodan Rocky Fireplace",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/8/89/Kodan_Rocky_Fireplace_detail.jpg/50px-Kodan_Rocky_Fireplace_detail.jpg",
+    "width": 50,
+    "height": 28
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/8/89/Kodan_Rocky_Fireplace_detail.jpg",
+    "width": 1920,
+    "height": 1080
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14135,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Molten Core"
+      },
+      {
+        "slot": 3,
+        "quantity": 15,
+        "item": "Rotted Titan Amber"
+      }
+    ]
+  }
+}

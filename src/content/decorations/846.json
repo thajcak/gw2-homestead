@@ -1,0 +1,47 @@
+{
+  "id": 846,
+  "name": "Silver Ura Trophy",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    12
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/B49FF5F44064EC783301CB365B19E901D3FE61A6/3441820.png",
+  "wikiTitle": "Silver Ura Trophy (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/1/1c/Silver_Ura_Trophy.jpg/24px-Silver_Ura_Trophy.jpg",
+    "width": 24,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/1/1c/Silver_Ura_Trophy.jpg",
+    "width": 941,
+    "height": 1920
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Silver Ura Trophy",
+    "sheet": "Recipe: Silver Ura Trophy",
+    "id": 14965,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 90,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 40,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Ura's Token"
+      }
+    ]
+  }
+}

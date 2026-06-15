@@ -1,0 +1,43 @@
+{
+  "id": 1127,
+  "name": "Vale Guardian Pylon",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/D1EB6EAF5393EBD729EC521AEEB8C8EABDB47C7F/3744690.png",
+  "wikiTitle": "Vale Guardian Pylon (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/2/2f/Vale_Guardian_Pylon.jpg/25px-Vale_Guardian_Pylon.jpg",
+    "width": 25,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/2/2f/Vale_Guardian_Pylon.jpg",
+    "width": 705,
+    "height": 1410
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Vale Guardian Pylon",
+    "sheet": "Recipe: Vale Guardian Pylon",
+    "id": 15519,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Bolt of Cotton"
+      }
+    ]
+  }
+}

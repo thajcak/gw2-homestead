@@ -1,0 +1,48 @@
+{
+  "id": 870,
+  "name": "Dragon Statue",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    21,
+    9
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/1B1CCC4EEBDD2F182CAED55BDAB10B932DCAE544/3240045.png",
+  "wikiTitle": "Dragon Statue (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/f/f9/Dragon_Statue_%28decoration%29.jpg/41px-Dragon_Statue_%28decoration%29.jpg",
+    "width": 41,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/f/f9/Dragon_Statue_%28decoration%29.jpg",
+    "width": 793,
+    "height": 960
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Dragon Statue",
+    "sheet": "Homestead Recipe Book: Lunar New Year Celestials",
+    "id": 15016,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 20,
+        "item": "Pouch of Red Pigment"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Destroyer Shard"
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": 581,
+  "name": "Eternal Flame",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    5,
+    25
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/E90B0F6765334941C0FB0AB992F83C03B40C60DC/1508168.png",
+  "wikiTitle": "Eternal Flame (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/a/af/Eternal_Flame_%28decoration%29.jpg/28px-Eternal_Flame_%28decoration%29.jpg",
+    "width": 28,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/a/af/Eternal_Flame_%28decoration%29.jpg",
+    "width": 742,
+    "height": 1318
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Eternal Flame",
+    "sheet": "Homestead Recipe Book: Halloween, Volume 2",
+    "id": 14128,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Molten Lodestone"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Essence of Light"
+      }
+    ]
+  }
+}

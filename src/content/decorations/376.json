@@ -1,0 +1,47 @@
+{
+  "id": 376,
+  "name": "Basic Shrub",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    6
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/45CE6AE1B974A69A98F5C761B41D0957120B0215/1224765.png",
+  "wikiTitle": "Basic Shrub (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/9/9b/Basic_Shrub.jpg/36px-Basic_Shrub.jpg",
+    "width": 36,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/9/9b/Basic_Shrub.jpg",
+    "width": 524,
+    "height": 724
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Basic Shrub",
+    "sheet": "Homestead Recipe Book: Basic Decorations",
+    "id": 14481,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 22,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Mordrem Sliver"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Brick of Clay"
+      }
+    ]
+  }
+}

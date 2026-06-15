@@ -1,0 +1,47 @@
+{
+  "id": 713,
+  "name": "Lion Statue",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    9
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/1313F3163B585427733F0E5C104BD7240636505D/1224087.png",
+  "wikiTitle": "Lion Statue (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/0/01/Lion_Statue.jpg/35px-Lion_Statue.jpg",
+    "width": 35,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/0/01/Lion_Statue.jpg",
+    "width": 663,
+    "height": 948
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Lion Statue",
+    "sheet": "Homestead Recipe Book: Statues",
+    "id": 14690,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 29,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 20,
+        "item": "Sharp Claw"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Bag of Mortar"
+      }
+    ]
+  }
+}

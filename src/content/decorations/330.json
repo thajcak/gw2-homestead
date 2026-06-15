@@ -1,0 +1,47 @@
+{
+  "id": 330,
+  "name": "Super Rock Wall",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    22
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/22C4283D0DD7E670D8A0D729091302E336F8F764/1418354.png",
+  "wikiTitle": "Super Rock Wall (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/a/ae/Super_Rock_Wall.jpg/50px-Super_Rock_Wall.jpg",
+    "width": 50,
+    "height": 42
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/a/ae/Super_Rock_Wall.jpg",
+    "width": 573,
+    "height": 480
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Super Rock Wall",
+    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 1",
+    "id": 14802,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 4,
+        "item": "Bauble"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Pouch of Green Pigment"
+      }
+    ]
+  }
+}

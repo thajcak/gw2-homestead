@@ -1,0 +1,46 @@
+{
+  "id": 184,
+  "name": "Tea Set",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    19,
+    4
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/540D713F57070AAA1DF126026A2D7B971FDEFC07/3374976.png",
+  "wikiTitle": "Tea Set",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/0/0c/Tea_Set.jpg/50px-Tea_Set.jpg",
+    "width": 50,
+    "height": 40
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/0/0c/Tea_Set.jpg",
+    "width": 1165,
+    "height": 932
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14396,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 7,
+        "item": "Rotted Titan Amber"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Opal Orb"
+      }
+    ]
+  }
+}

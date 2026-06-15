@@ -1,0 +1,51 @@
+{
+  "id": 309,
+  "name": "Canthan Condiments",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    19,
+    4
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/04DD06937B54EFAA592C91E358A8C7FFF10A420A/3374962.png",
+  "wikiTitle": "Canthan Condiments",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/6/63/Canthan_Condiments.jpg/45px-Canthan_Condiments.jpg",
+    "width": 45,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/6/63/Canthan_Condiments.jpg",
+    "width": 859,
+    "height": 945
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14162,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 24,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Egg"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Bag of Sugar"
+      },
+      {
+        "slot": 4,
+        "quantity": 1,
+        "item": "Packet of Salt"
+      }
+    ]
+  }
+}

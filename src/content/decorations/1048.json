@@ -1,0 +1,42 @@
+{
+  "id": 1048,
+  "name": "Window",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/102699E6340B19511F3EE79EEEFE4B709E2CD6B6/3708932.png",
+  "wikiTitle": "Window (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/7/77/Window.jpg/33px-Window.jpg",
+    "width": 33,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/7/77/Window.jpg",
+    "width": 960,
+    "height": 1440
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Window",
+    "id": 15359,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Lump of Glass"
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": 48,
+  "name": "Pumpkin Lanterns",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    5,
+    25
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/52EA790193C60970F6943CD7126DEFD231506204/2343752.png",
+  "wikiTitle": "Pumpkin Lanterns (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/c/c6/Pumpkin_Lanterns.jpg/50px-Pumpkin_Lanterns.jpg",
+    "width": 50,
+    "height": 27
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/c/c6/Pumpkin_Lanterns.jpg",
+    "width": 982,
+    "height": 532
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Pumpkin Lanterns",
+    "sheet": "Homestead Recipe Book: Halloween, Volume 6",
+    "id": 14684,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 24,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 16,
+        "item": "Piece of Candy Corn"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Molten Sliver"
+      }
+    ]
+  }
+}

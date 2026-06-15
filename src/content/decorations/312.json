@@ -1,0 +1,46 @@
+{
+  "id": 312,
+  "name": "Kodan Crystal Candle",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    19,
+    5
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/9FB63D09069C30B604DC02DD1C3E2E3FC5F30D47/3375048.png",
+  "wikiTitle": "Kodan Crystal Candle",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/1/19/Kodan_Crystal_Candle.jpg/47px-Kodan_Crystal_Candle.jpg",
+    "width": 47,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/1/19/Kodan_Crystal_Candle.jpg",
+    "width": 1019,
+    "height": 1080
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14794,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Charged Fragment"
+      },
+      {
+        "slot": 3,
+        "quantity": 8,
+        "item": "Lowland Pine Log"
+      }
+    ]
+  }
+}

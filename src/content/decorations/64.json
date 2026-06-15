@@ -1,0 +1,47 @@
+{
+  "id": 64,
+  "name": "Divinity Lamp",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    5
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/25131F995DC87CF744ED7509E23002E896919621/1227546.png",
+  "wikiTitle": "Divinity Lamp (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/1/14/Divinity_Lamp.jpg/24px-Divinity_Lamp.jpg",
+    "width": 24,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/1/14/Divinity_Lamp.jpg",
+    "width": 268,
+    "height": 554
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Divinity Lamp",
+    "sheet": "Homestead Recipe Book: Lights, Volume 2",
+    "id": 14382,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 28,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Molten Core"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Pile of Coarse Sand"
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": 726,
+  "name": "Large Elonian Planter",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    16,
+    6
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/4AA8F3BBE04946DD9314DCA5754A70AEB5FDDD00/3374984.png",
+  "wikiTitle": "Large Elonian Planter",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/e/e5/Large_Elonian_Planter.jpg/30px-Large_Elonian_Planter.jpg",
+    "width": 30,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/e/e5/Large_Elonian_Planter.jpg",
+    "width": 849,
+    "height": 1420
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14257,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 28,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Lowland Pine Log"
+      },
+      {
+        "slot": 3,
+        "quantity": 20,
+        "item": "Volatile Magic"
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 447,
+  "name": "Branded Crystal",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    14
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/CCF30749D8789B27A7D16BF7CC7FE09499BA6B42/1769366.png",
+  "wikiTitle": "Branded Crystal (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/f/fa/Branded_Crystal_%28decoration%29.jpg/50px-Branded_Crystal_%28decoration%29.jpg",
+    "width": 50,
+    "height": 45
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/f/fa/Branded_Crystal_%28decoration%29.jpg",
+    "width": 1200,
+    "height": 1080
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Branded Crystal",
+    "sheet": "Homestead Recipe Book: Statues and Trophies",
+    "id": 14182,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 28,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 30,
+        "item": "Pulsing Brandspark"
+      },
+      {
+        "slot": 3,
+        "quantity": 25,
+        "item": "Branded Mass"
+      }
+    ]
+  }
+}

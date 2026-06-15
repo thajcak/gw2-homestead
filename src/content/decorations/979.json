@@ -1,0 +1,42 @@
+{
+  "id": 979,
+  "name": "Entryway Wall (Double)",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/97974BA5684E9615A4DEFBDDC70FD1ED23080090/3708916.png",
+  "wikiTitle": "Entryway Wall (Double) (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/0/0a/Entryway_Wall_%28Double%29.jpg/50px-Entryway_Wall_%28Double%29.jpg",
+    "width": 50,
+    "height": 21
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/0/0a/Entryway_Wall_%28Double%29.jpg",
+    "width": 1920,
+    "height": 795
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Entryway Wall (Double)",
+    "id": 15330,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 20,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Elder Wood Plank"
+      }
+    ]
+  }
+}

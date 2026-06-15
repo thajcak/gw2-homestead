@@ -1,0 +1,42 @@
+{
+  "id": 119,
+  "name": "Worn Pillar",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    1
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/9FB3E5F7459252B13335051873039506216150DC/1224097.png",
+  "wikiTitle": "Worn Pillar (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/f/fb/Worn_Pillar.jpg/15px-Worn_Pillar.jpg",
+    "width": 15,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/f/fb/Worn_Pillar.jpg",
+    "width": 286,
+    "height": 951
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Worn Pillar",
+    "sheet": "Homestead Recipe Book: Pillars",
+    "id": 14113,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Onyx Fragment"
+      }
+    ]
+  }
+}

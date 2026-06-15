@@ -1,0 +1,47 @@
+{
+  "id": 471,
+  "name": "Plush Rug",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    4
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/F9B213913F0A43F59E109406EB3AD6AEB1DF96F1/1634123.png",
+  "wikiTitle": "Plush Rug (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/c/ca/Plush_Rug_top_view.jpg/43px-Plush_Rug_top_view.jpg",
+    "width": 43,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/c/ca/Plush_Rug_top_view.jpg",
+    "width": 825,
+    "height": 959
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Apprentice Decorations",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Plush Rug",
+    "sheet": "Homestead Recipe Book: Rugs",
+    "id": 14386,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 20,
+        "item": "Jade Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Gossamer Scrap"
+      }
+    ]
+  }
+}

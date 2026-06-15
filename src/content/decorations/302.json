@@ -1,0 +1,47 @@
+{
+  "id": 302,
+  "name": "Fancy Table",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    2
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/710B10332630A31506F1AF946D33E5F25DF0923D/1227592.png",
+  "wikiTitle": "Fancy Table (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/7/76/Fancy_Table.jpg/50px-Fancy_Table.jpg",
+    "width": 50,
+    "height": 41
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/7/76/Fancy_Table.jpg",
+    "width": 1113,
+    "height": 920
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Fancy Table",
+    "sheet": "Homestead Recipe Book: Tables and Chairs",
+    "id": 14354,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Evergreen Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Standard Maintenance Oil"
+      }
+    ]
+  }
+}

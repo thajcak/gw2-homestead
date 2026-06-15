@@ -1,0 +1,47 @@
+{
+  "id": 529,
+  "name": "Basic Planter",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    6
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/4F33EC3E7DA7091247C79DB0590E967D0466D995/1224826.png",
+  "wikiTitle": "Basic Planter (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/e/e4/Basic_Planter.jpg/50px-Basic_Planter.jpg",
+    "width": 50,
+    "height": 45
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/e/e4/Basic_Planter.jpg",
+    "width": 1065,
+    "height": 950
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Basic Planter",
+    "sheet": "Homestead Recipe Book: Basic Decorations",
+    "id": 14284,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 24,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Onyx Sliver"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Pile of Coarse Sand"
+      }
+    ]
+  }
+}

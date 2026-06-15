@@ -1,0 +1,48 @@
+{
+  "id": 255,
+  "name": "Dock Crane",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    14,
+    24
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/2F73520327F1BB580513EF770F384864BC29DA5F/2718364.png",
+  "wikiTitle": "Dock Crane (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/0/0f/Dock_Crane.jpg/44px-Dock_Crane.jpg",
+    "width": 44,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/0/0f/Dock_Crane.jpg",
+    "width": 1255,
+    "height": 1440
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Dock Crane",
+    "sheet": "Homestead Recipe Book: Four Winds, Volume 5",
+    "id": 14279,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 36,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Rotted Titan Amber"
+      },
+      {
+        "slot": 3,
+        "quantity": 50,
+        "item": "Jute Scrap"
+      }
+    ]
+  }
+}

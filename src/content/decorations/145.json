@@ -1,0 +1,47 @@
+{
+  "id": 145,
+  "name": "Grenth Statue",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    9
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/31FEDDA900CDCB946D19C0CC43900870F568F40D/1225338.png",
+  "wikiTitle": "Grenth Statue (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/b/b1/Grenth_Statue.jpg/30px-Grenth_Statue.jpg",
+    "width": 30,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/b/b1/Grenth_Statue.jpg",
+    "width": 634,
+    "height": 1057
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Grenth Statue",
+    "sheet": "Homestead Recipe Book: Human Gods",
+    "id": 14799,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 34,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 12,
+        "item": "Chrysocola Orb"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Visage of Grenth"
+      }
+    ]
+  }
+}

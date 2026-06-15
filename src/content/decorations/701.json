@@ -1,0 +1,47 @@
+{
+  "id": 701,
+  "name": "Woodfire Grill",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    1
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/1721555E2AF4782FFB623632E3A291BB6290EB99/1223980.png",
+  "wikiTitle": "Woodfire Grill (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/7/7c/Woodfire_Grill.jpg/27px-Woodfire_Grill.jpg",
+    "width": 27,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/7/7c/Woodfire_Grill.jpg",
+    "width": 531,
+    "height": 965
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Woodfire Grill",
+    "sheet": "Homestead Recipe Book: Misc. Items, Volume 2",
+    "id": 14558,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Molten Core"
+      },
+      {
+        "slot": 3,
+        "quantity": 25,
+        "item": "Brick of Clay"
+      }
+    ]
+  }
+}

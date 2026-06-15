@@ -1,0 +1,47 @@
+{
+  "id": 449,
+  "name": "Basic Fountain",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    9
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/C1CC03FF0494A44DC95DBB5039BC9A933D74431A/1225671.png",
+  "wikiTitle": "Basic Fountain (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/8/88/Basic_Fountain.jpg/50px-Basic_Fountain.jpg",
+    "width": 50,
+    "height": 41
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/8/88/Basic_Fountain.jpg",
+    "width": 1126,
+    "height": 917
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Basic Fountain",
+    "sheet": "Homestead Recipe Book: Misc. Items, Volume 2",
+    "id": 14668,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 28,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Bag of Mortar"
+      },
+      {
+        "slot": 3,
+        "quantity": 100,
+        "item": "Karma"
+      }
+    ]
+  }
+}

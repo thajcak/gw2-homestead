@@ -1,0 +1,48 @@
+{
+  "id": 467,
+  "name": "Fog Machine",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    14,
+    26
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/AF532D0B6C01D1652BC6102159509871329A6BBF/1914837.png",
+  "wikiTitle": "Fog Machine (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/4/41/Fog_Machine.jpg/50px-Fog_Machine.jpg",
+    "width": 50,
+    "height": 33
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/4/41/Fog_Machine.jpg",
+    "width": 675,
+    "height": 441
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Fog Machine",
+    "sheet": "Homestead Recipe Book: Wintersday, Volume 3",
+    "id": 14847,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 20,
+        "item": "Snowflake"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Pile of Incandescent Dust"
+      }
+    ]
+  }
+}

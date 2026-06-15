@@ -1,0 +1,47 @@
+{
+  "id": 326,
+  "name": "Guild Bench",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    2
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/34F7F7FCE6CC9E657404F53666AE2DBCD016E21A/1225927.png",
+  "wikiTitle": "Guild Bench (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/4/4b/Guild_Bench.jpg/50px-Guild_Bench.jpg",
+    "width": 50,
+    "height": 25
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/4/4b/Guild_Bench.jpg",
+    "width": 1847,
+    "height": 920
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Guild Bench",
+    "sheet": "Homestead Recipe Book: Benches, Chairs, Stools",
+    "id": 14593,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 6,
+        "item": "Linen Scrap"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Smooth Scale"
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": 72,
+  "name": "Snow Mound",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    8,
+    26
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/D40EBE25332778333AED4B994C68B8E1CA359EF7/1914852.png",
+  "wikiTitle": "Snow Mound (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/f/f3/Snow_Mound_top.jpg/50px-Snow_Mound_top.jpg",
+    "width": 50,
+    "height": 48
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/f/f3/Snow_Mound_top.jpg",
+    "width": 990,
+    "height": 960
+  },
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Snow Mound",
+    "sheet": "Homestead Recipe Book: Wintersday, Volume 3",
+    "id": 14654,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 24,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 15,
+        "item": "Snowflake"
+      },
+      {
+        "slot": 3,
+        "quantity": 4,
+        "item": "Glacial Fragment"
+      }
+    ]
+  }
+}

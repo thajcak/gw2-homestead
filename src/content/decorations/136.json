@@ -1,0 +1,47 @@
+{
+  "id": 136,
+  "name": "Guild Catapult Siege",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    11
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/D002621C023C32479913214BC65CDB6D20ED681F/1701379.png",
+  "wikiTitle": "Guild Catapult Siege (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/3/3b/Guild_Catapult.jpg/40px-Guild_Catapult.jpg",
+    "width": 40,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/3/3b/Guild_Catapult.jpg",
+    "width": 1740,
+    "height": 2160
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Guild Catapult Siege",
+    "sheet": "Homestead Recipe Book: World vs. World",
+    "id": 14129,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "WvW Skirmish Claim Ticket"
+      },
+      {
+        "slot": 3,
+        "quantity": 4,
+        "item": "Guild Commendation"
+      }
+    ]
+  }
+}

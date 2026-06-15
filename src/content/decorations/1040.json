@@ -1,0 +1,42 @@
+{
+  "id": 1040,
+  "name": "Galleon Hull with Gunports",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/066C2CB1364BAA51C6F27635BF5EA4BD05CED5E6/3708880.png",
+  "wikiTitle": "Galleon Hull with Gunports (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/f/fc/Galleon_Hull_with_Gunports.jpg/50px-Galleon_Hull_with_Gunports.jpg",
+    "width": 50,
+    "height": 37
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/f/fc/Galleon_Hull_with_Gunports.jpg",
+    "width": 1291,
+    "height": 950
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Galleon Hull with Gunports",
+    "id": 15226,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 100,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 40,
+        "item": "Refined Homestead Metal"
+      }
+    ]
+  }
+}

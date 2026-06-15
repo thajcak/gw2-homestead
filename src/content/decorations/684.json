@@ -1,0 +1,47 @@
+{
+  "id": 684,
+  "name": "Fancy Wagon",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    14
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/0E17FE1022F736B4C17B7525F5105757A522B6BE/1227554.png",
+  "wikiTitle": "Fancy Wagon (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/0/0f/Fancy_Wagon.jpg/50px-Fancy_Wagon.jpg",
+    "width": 50,
+    "height": 31
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/0/0f/Fancy_Wagon.jpg",
+    "width": 2320,
+    "height": 1416
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Fancy Wagon",
+    "sheet": "Homestead Recipe Book: Misc. Items, Volume 3",
+    "id": 14742,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 34,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Charged Core"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Bolt of Gossamer"
+      }
+    ]
+  }
+}

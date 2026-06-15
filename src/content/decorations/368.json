@@ -1,0 +1,47 @@
+{
+  "id": 368,
+  "name": "Hedge",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    6
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/581C0243270DB6CA6E03CC4D53B921A597D10B07/1227630.png",
+  "wikiTitle": "Hedge (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/4/4c/Hedge.jpg/33px-Hedge.jpg",
+    "width": 33,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/4/4c/Hedge.jpg",
+    "width": 633,
+    "height": 944
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Hedge",
+    "sheet": "Homestead Recipe Book: Hedge Mazes",
+    "id": 14620,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 3,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Evergreen Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Bolt of Cotton"
+      }
+    ]
+  }
+}

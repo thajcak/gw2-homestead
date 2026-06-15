@@ -1,0 +1,42 @@
+{
+  "id": 965,
+  "name": "Bamboo Awning",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/43407ED0DC11E022541ABB46D390640DB546BE15/3708842.png",
+  "wikiTitle": "Bamboo Awning (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/8/87/Bamboo_Awning.jpg/50px-Bamboo_Awning.jpg",
+    "width": 50,
+    "height": 21
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/8/87/Bamboo_Awning.jpg",
+    "width": 1809,
+    "height": 776
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Bamboo Awning",
+    "id": 15400,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Bolt of Cotton"
+      }
+    ]
+  }
+}

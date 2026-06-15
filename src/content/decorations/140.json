@@ -1,0 +1,48 @@
+{
+  "id": 140,
+  "name": "Sandstone Pillar",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    16,
+    1
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/A2DBDD1E546A2F5EDAC301BA07FEA20F1B1C12A7/1223799.png",
+  "wikiTitle": "Sandstone Pillar (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/6/6c/Sandstone_Pillar_close-up.jpg/43px-Sandstone_Pillar_close-up.jpg",
+    "width": 43,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/6/6c/Sandstone_Pillar_close-up.jpg",
+    "width": 807,
+    "height": 944
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Sandstone Pillar",
+    "sheet": "Homestead Recipe Book: Pillars",
+    "id": 14835,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 27,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Onyx Fragment"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Pile of Coarse Sand"
+      }
+    ]
+  }
+}

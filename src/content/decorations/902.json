@@ -1,0 +1,41 @@
+{
+  "id": 902,
+  "name": "Sea Raider Statue",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    27
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/DDFD9FAA7439FF94942BB5D90A02AE1A0FE1951A/3620555.png",
+  "wikiTitle": "Sea Raider Statue",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/a/a2/Sea_Raider_Statue.jpg/50px-Sea_Raider_Statue.jpg",
+    "width": 50,
+    "height": 43
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/a/a2/Sea_Raider_Statue.jpg",
+    "width": 1679,
+    "height": 1440
+  },
+  "recipe": {
+    "rating": 0,
+    "type": "Homestead Decoration",
+    "source": "Recipe sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Black Lion Sea Raider Statue Recipe",
+    "id": 15103,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Refined Homestead Wood"
+      }
+    ]
+  }
+}

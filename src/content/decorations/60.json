@@ -1,0 +1,48 @@
+{
+  "id": 60,
+  "name": "Dragon Plate",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    9,
+    23
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/FCF0D6DDE5E909C49140DE00FA0F355FB6139DA8/2306762.png",
+  "wikiTitle": "Dragon Plate (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/c/c3/Dragon_Plate.jpg/50px-Dragon_Plate.jpg",
+    "width": 50,
+    "height": 29
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/c/c3/Dragon_Plate.jpg",
+    "width": 781,
+    "height": 451
+  },
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Dragon Plate",
+    "sheet": "Homestead Recipe Book: Dragon Bash, Volume 2",
+    "id": 14413,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Topaz Lump"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Piece of Zhaitaffy"
+      }
+    ]
+  }
+}

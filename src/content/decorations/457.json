@@ -1,0 +1,47 @@
+{
+  "id": 457,
+  "name": "Gilded Banner",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    10
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/B2CB7B360CEFFD47B847060F16655807292425BC/1225540.png",
+  "wikiTitle": "Gilded Banner (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/e/e9/Gilded_Banner.jpg/25px-Gilded_Banner.jpg",
+    "width": 25,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/e/e9/Gilded_Banner.jpg",
+    "width": 671,
+    "height": 1342
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Gilded Banner",
+    "sheet": "Homestead Recipe Book: Banners",
+    "id": 14519,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Bolt of Gossamer"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Ruby Orb"
+      }
+    ]
+  }
+}

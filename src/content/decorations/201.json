@@ -1,0 +1,48 @@
+{
+  "id": 201,
+  "name": "Jack-o'-Lantern",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    5,
+    25
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/16A97AC3083B41C49A0CD70CEBF4B958EDADAD10/1226068.png",
+  "wikiTitle": "Jack-o'-Lantern (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/e/eb/Jack-o%27-Lantern.jpg/37px-Jack-o%27-Lantern.jpg",
+    "width": 37,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/e/eb/Jack-o%27-Lantern.jpg",
+    "width": 629,
+    "height": 843
+  },
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Jack-o'-Lantern",
+    "sheet": "Homestead Recipe Book: Halloween, Volume 1",
+    "id": 14798,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 23,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Sugar Pumpkin"
+      },
+      {
+        "slot": 3,
+        "quantity": 6,
+        "item": "Pieces of Candy Corn"
+      }
+    ]
+  }
+}

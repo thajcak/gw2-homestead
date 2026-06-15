@@ -1,0 +1,46 @@
+{
+  "id": 876,
+  "name": "Fancy Small Rug",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    19,
+    4
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/F3F205DCA84B035CD14132AC5ACC111DB8D12219/3592751.png",
+  "wikiTitle": "Fancy Small Rug",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/6/6a/Fancy_Small_Rug.jpg/50px-Fancy_Small_Rug.jpg",
+    "width": 50,
+    "height": 26
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/6/6a/Fancy_Small_Rug.jpg",
+    "width": 2040,
+    "height": 1064
+  },
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Automatic",
+    "disciplines": "Handiworker",
+    "id": 15057,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Bolt of Wool"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Unidentified Dye"
+      }
+    ]
+  }
+}

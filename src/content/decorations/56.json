@@ -1,0 +1,47 @@
+{
+  "id": 56,
+  "name": "Body Topiary",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    6
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/1AC3D190045A2812D10014DE09CAA9D1B9E14760/1224774.png",
+  "wikiTitle": "Body Topiary (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/c/c4/Body_Topiary.jpg/50px-Body_Topiary.jpg",
+    "width": 50,
+    "height": 35
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/c/c4/Body_Topiary.jpg",
+    "width": 542,
+    "height": 376
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Body Topiary",
+    "sheet": "Homestead Recipe Book: Plants, Volume 3",
+    "id": 14407,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Onyx Lodestone"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Pristine Feather"
+      }
+    ]
+  }
+}

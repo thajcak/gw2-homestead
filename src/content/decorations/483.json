@@ -1,0 +1,45 @@
+{
+  "id": 483,
+  "name": "Kodan Decorative Torch",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    5
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/2DB477E9E05D6A3650D201AC2206D968047EA96B/3375044.png",
+  "wikiTitle": "Kodan Decorative Torch",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/f/fe/Kodan_Decorative_Torch.jpg/26px-Kodan_Decorative_Torch.jpg",
+    "width": 26,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/f/fe/Kodan_Decorative_Torch.jpg",
+    "width": 519,
+    "height": 983
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14120,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Molten Fragment"
+      },
+      {
+        "slot": 3,
+        "quantity": 6,
+        "item": "Honey Flower"
+      }
+    ]
+  }
+}

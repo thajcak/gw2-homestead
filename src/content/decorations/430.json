@@ -1,0 +1,48 @@
+{
+  "id": 430,
+  "name": "Windmill Wheel",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    10,
+    24
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/D805D94EF7590F376F11DAA1B56838CADB7CE83D/2718365.png",
+  "wikiTitle": "Windmill Wheel (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/5/52/Windmill_Wheel.jpg/42px-Windmill_Wheel.jpg",
+    "width": 42,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/5/52/Windmill_Wheel.jpg",
+    "width": 1009,
+    "height": 1185
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Windmill Wheel",
+    "sheet": "Homestead Recipe Book: Four Winds, Volume 5",
+    "id": 14195,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 15,
+        "item": "Jute Scrap"
+      },
+      {
+        "slot": 3,
+        "quantity": 6,
+        "item": "Coarse Leather Section"
+      }
+    ]
+  }
+}

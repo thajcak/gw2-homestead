@@ -1,0 +1,47 @@
+{
+  "id": 528,
+  "name": "Super Rock",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    22
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/1F450A5B18DAD747CFC89304C0CB6211E96D94DA/1418361.png",
+  "wikiTitle": "Super Rock (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/f/fb/Super_Rock.jpg/50px-Super_Rock.jpg",
+    "width": 50,
+    "height": 45
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/f/fb/Super_Rock.jpg",
+    "width": 444,
+    "height": 399
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Super Rock",
+    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 1",
+    "id": 14324,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 4,
+        "item": "Bauble"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Pouch of Yellow Pigment"
+      }
+    ]
+  }
+}

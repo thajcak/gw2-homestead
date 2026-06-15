@@ -1,0 +1,47 @@
+{
+  "id": 1222,
+  "name": "Leopard Totem",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    23
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/1C5FC4C3BFBBA70F95CF365D04F172BED2096872/3780228.png",
+  "wikiTitle": "Leopard Totem (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/b/b0/Leopard_Totem.jpg/37px-Leopard_Totem.jpg",
+    "width": 37,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/b/b0/Leopard_Totem.jpg",
+    "width": 805,
+    "height": 1078
+  },
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Leopard Totem",
+    "sheet": "Recipe: Leopard Totem",
+    "id": 15699,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Molten Core"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Piece of Zhaitaffy"
+      }
+    ]
+  }
+}

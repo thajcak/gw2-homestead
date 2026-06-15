@@ -1,0 +1,42 @@
+{
+  "id": 1036,
+  "name": "Island Pitcher Plant Patch",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    20,
+    7
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/B0316354F36A64BC9765C44736402A0A67F0D234/3708888.png",
+  "wikiTitle": "Island Pitcher Plant Patch (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/1/18/Island_Pitcher_Plant_Patch.jpg/37px-Island_Pitcher_Plant_Patch.jpg",
+    "width": 37,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/1/18/Island_Pitcher_Plant_Patch.jpg",
+    "width": 1080,
+    "height": 1440
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Island Pitcher Plant Patch",
+    "id": 15280,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 50,
+        "item": "Leaf Fossil"
+      }
+    ]
+  }
+}

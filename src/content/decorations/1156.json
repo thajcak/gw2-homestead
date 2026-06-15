@@ -1,0 +1,43 @@
+{
+  "id": 1156,
+  "name": "Maddening Tower",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/C164A225E463A736DFD69BEBE099964BB4041AA9/3744675.png",
+  "wikiTitle": "Maddening Tower (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/1/16/Maddening_Tower.jpg/23px-Maddening_Tower.jpg",
+    "width": 23,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/1/16/Maddening_Tower.jpg",
+    "width": 553,
+    "height": 1183
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Maddening Tower",
+    "sheet": "Recipe: Maddening Tower",
+    "id": 15471,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 12,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Bloodstone Brick"
+      }
+    ]
+  }
+}

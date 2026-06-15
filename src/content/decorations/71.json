@@ -1,0 +1,48 @@
+{
+  "id": 71,
+  "name": "Pot of Chrysanthemums",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    6,
+    25
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/236D6ECF6A37A7F6C3C025DF140E42BAFBC4AD4E/2056168.png",
+  "wikiTitle": "Pot of Chrysanthemums (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/4/4e/Pot_of_Chrysanthemums_top.jpg/48px-Pot_of_Chrysanthemums_top.jpg",
+    "width": 48,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/4/4e/Pot_of_Chrysanthemums_top.jpg",
+    "width": 879,
+    "height": 908
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Pot of Chrysanthemums",
+    "sheet": "Homestead Recipe Book: Halloween, Volume 4",
+    "id": 14833,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 23,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Pouch of White Pigment"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Evergreen Fragment"
+      }
+    ]
+  }
+}

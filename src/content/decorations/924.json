@@ -1,0 +1,41 @@
+{
+  "id": 924,
+  "name": "Brasswork Wall",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    27
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/CE7C42E0DCEDFB151E5AFC0DC1C29B6832C4B431/3629246.png",
+  "wikiTitle": "Brasswork Wall",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/e/ef/Brasswork_Wall.jpg/50px-Brasswork_Wall.jpg",
+    "width": 50,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/e/ef/Brasswork_Wall.jpg",
+    "width": 1370,
+    "height": 1370
+  },
+  "recipe": {
+    "rating": 0,
+    "type": "Homestead Decoration",
+    "source": "Recipe sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Black Lion Brasswork Wall Recipe",
+    "id": 15110,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Refined Homestead Wood"
+      }
+    ]
+  }
+}

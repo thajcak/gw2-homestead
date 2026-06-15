@@ -1,0 +1,48 @@
+{
+  "id": 67,
+  "name": "Phoenix Lantern",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    5,
+    24
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/EB01FEEC2B5FAC02494ED79603D36AACA3594015/2015172.png",
+  "wikiTitle": "Phoenix Lantern (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/c/c0/Phoenix_Lantern.jpg/50px-Phoenix_Lantern.jpg",
+    "width": 50,
+    "height": 38
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/c/c0/Phoenix_Lantern.jpg",
+    "width": 1920,
+    "height": 1440
+  },
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Phoenix Lantern",
+    "sheet": "Homestead Recipe Book: Four Winds, Volume 1",
+    "id": 14640,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Molten Core"
+      },
+      {
+        "slot": 3,
+        "quantity": 100,
+        "item": "Festival Token"
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 236,
+  "name": "Fine Armor Stand",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    9
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/3F0862BAB0E93DDEB03101DEFF7502ACFF2CE101/1227576.png",
+  "wikiTitle": "Fine Armor Stand (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/d/d7/Fine_Armor_Stand.jpg/27px-Fine_Armor_Stand.jpg",
+    "width": 27,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/d/d7/Fine_Armor_Stand.jpg",
+    "width": 501,
+    "height": 936
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Fine Armor Stand",
+    "sheet": "Homestead Recipe Book: Misc. Items, Volume 1",
+    "id": 14504,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Armored Scale"
+      },
+      {
+        "slot": 3,
+        "quantity": 25,
+        "item": "War Supply"
+      }
+    ]
+  }
+}

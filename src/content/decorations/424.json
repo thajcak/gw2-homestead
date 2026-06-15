@@ -1,0 +1,47 @@
+{
+  "id": 424,
+  "name": "Guild Trebuchet Siege",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    11
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/07FDF08004C82F78B874DB9D52B5B5A412F002E4/1701388.png",
+  "wikiTitle": "Guild Trebuchet Siege (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/e/e3/Guild_Trebuchet.jpg/35px-Guild_Trebuchet.jpg",
+    "width": 35,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/e/e3/Guild_Trebuchet.jpg",
+    "width": 1500,
+    "height": 2160
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Guild Trebuchet Siege",
+    "sheet": "Homestead Recipe Book: World vs. World",
+    "id": 14570,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 36,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 6,
+        "item": "WvW Skirmish Claim Ticket"
+      },
+      {
+        "slot": 3,
+        "quantity": 4,
+        "item": "Guild Commendation"
+      }
+    ]
+  }
+}

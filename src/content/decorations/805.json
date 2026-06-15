@@ -1,0 +1,47 @@
+{
+  "id": 805,
+  "name": "Green Tree",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    7
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/67D5E0280709A2F7DB23D89F5DF66EB97AC8244A/1228207.png",
+  "wikiTitle": "Green Tree (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/0/03/Green_Tree.jpg/42px-Green_Tree.jpg",
+    "width": 42,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/0/03/Green_Tree.jpg",
+    "width": 1186,
+    "height": 1398
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Green Tree",
+    "sheet": "Homestead Recipe Book: Trees, Volume 2",
+    "id": 14118,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 36,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Coastal Lumber Core"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Petrified Wood"
+      }
+    ]
+  }
+}

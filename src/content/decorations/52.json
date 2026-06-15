@@ -1,0 +1,47 @@
+{
+  "id": 52,
+  "name": "Fancy Chair",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    2
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/EE50E9BD39A3E255DE6870BF25BC58152A176631/1227605.png",
+  "wikiTitle": "Fancy Chair (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/c/c6/Fancy_Chair.jpg/30px-Fancy_Chair.jpg",
+    "width": 30,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/c/c6/Fancy_Chair.jpg",
+    "width": 588,
+    "height": 966
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Fancy Chair",
+    "sheet": "Homestead Recipe Book: Benches, Chairs, Stools",
+    "id": 14306,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 27,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Thin Leather Section"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Vial of Linseed Oil"
+      }
+    ]
+  }
+}

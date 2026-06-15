@@ -1,0 +1,48 @@
+{
+  "id": 857,
+  "name": "Icicle",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    4,
+    26
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/B31524B7AA04AA05A4724DA99BE6AAD2E3CB59F2/3568369.png",
+  "wikiTitle": "Icicle (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/8/8d/Icicle_%28decoration%29.jpg/32px-Icicle_%28decoration%29.jpg",
+    "width": 32,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/8/8d/Icicle_%28decoration%29.jpg",
+    "width": 700,
+    "height": 1080
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Icicle",
+    "sheet": "Homestead Recipe Book: Wintersday, Volume 10;Recipe: Icicle",
+    "id": 15005,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 20,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 30,
+        "item": "Snowflake"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Glacial Shard"
+      }
+    ]
+  }
+}

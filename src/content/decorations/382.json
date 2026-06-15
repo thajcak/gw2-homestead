@@ -1,0 +1,47 @@
+{
+  "id": 382,
+  "name": "Short Guild Bar",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    2
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/215A7851E362AED2A5FBD7164F2209067943C3F3/1225940.png",
+  "wikiTitle": "Short Guild Bar (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/a/ac/Short_Guild_Bar.jpg/50px-Short_Guild_Bar.jpg",
+    "width": 50,
+    "height": 32
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/a/ac/Short_Guild_Bar.jpg",
+    "width": 1392,
+    "height": 903
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Short Guild Bar",
+    "sheet": "Homestead Recipe Book: Tables",
+    "id": 14569,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 4,
+        "item": "Beryl Crystal"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Vial of Linseed Oil"
+      }
+    ]
+  }
+}

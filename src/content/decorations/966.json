@@ -1,0 +1,42 @@
+{
+  "id": 966,
+  "name": "Bamboo Canopy",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    20,
+    1
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/E5ED3F252C6ECC5AC6E914FA70CF239F179BBB31/3708843.png",
+  "wikiTitle": "Bamboo Canopy (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/6/66/Bamboo_Canopy.jpg/22px-Bamboo_Canopy.jpg",
+    "width": 22,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/6/66/Bamboo_Canopy.jpg",
+    "width": 423,
+    "height": 964
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Bamboo Canopy",
+    "id": 15261,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Bolt of Cotton"
+      }
+    ]
+  }
+}

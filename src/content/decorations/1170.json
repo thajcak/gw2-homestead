@@ -1,0 +1,43 @@
+{
+  "id": 1170,
+  "name": "Samarog's Door",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/083D02B8CBD797A2E6F60CEE6303A7B9D4DED77A/3744668.png",
+  "wikiTitle": "Samarog's Door (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/1/1c/Samarog%27s_Door.jpg/37px-Samarog%27s_Door.jpg",
+    "width": 37,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/1/1c/Samarog%27s_Door.jpg",
+    "width": 1080,
+    "height": 1440
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Samarog's Door",
+    "sheet": "Recipe: Samarog's Door",
+    "id": 15458,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Refined Homestead Metal"
+      }
+    ]
+  }
+}

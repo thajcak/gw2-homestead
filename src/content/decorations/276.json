@@ -1,0 +1,46 @@
+{
+  "id": 276,
+  "name": "Red Bowl of Food",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    17,
+    4
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/7A18A7EE4FAB180A02DE251B920FCA0303E4FC0D/3374956.png",
+  "wikiTitle": "Red Bowl of Food",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/3/3b/Red_Bowl_of_Food_top.jpg/50px-Red_Bowl_of_Food_top.jpg",
+    "width": 50,
+    "height": 49
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/3/3b/Red_Bowl_of_Food_top.jpg",
+    "width": 942,
+    "height": 932
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14181,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 22,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Pouch of Red Pigment"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Lowland Pine Log"
+      }
+    ]
+  }
+}

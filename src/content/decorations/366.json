@@ -1,0 +1,46 @@
+{
+  "id": 366,
+  "name": "Deep Pot",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    19,
+    4
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/3755C8FA085CBC0851A95E24D36BC7FD963704E9/3374968.png",
+  "wikiTitle": "Deep Pot",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/3/34/Deep_Pot.jpg/50px-Deep_Pot.jpg",
+    "width": 50,
+    "height": 31
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/3/34/Deep_Pot.jpg",
+    "width": 1747,
+    "height": 1080
+  },
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14450,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 24,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Ursus Oblige"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Thin Leather Section"
+      }
+    ]
+  }
+}

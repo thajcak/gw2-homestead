@@ -1,0 +1,47 @@
+{
+  "id": 1219,
+  "name": "Bear Totem",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    23
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/A00749A59DAB2234D0E615B6ACF76795DF190897/3780226.png",
+  "wikiTitle": "Bear Totem (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/c/cb/Bear_Totem.jpg/37px-Bear_Totem.jpg",
+    "width": 37,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/c/cb/Bear_Totem.jpg",
+    "width": 805,
+    "height": 1080
+  },
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Bear Totem",
+    "sheet": "Recipe: Bear Totem",
+    "id": 15696,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Molten Core"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Piece of Zhaitaffy"
+      }
+    ]
+  }
+}

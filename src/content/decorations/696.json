@@ -1,0 +1,47 @@
+{
+  "id": 696,
+  "name": "Branded Spire",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    14
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/B80558A191F7D0E3340D9B0EDD6A3038320145AD/1769378.png",
+  "wikiTitle": "Branded Spire (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/b/bb/Branded_Spire.jpg/28px-Branded_Spire.jpg",
+    "width": 28,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/b/bb/Branded_Spire.jpg",
+    "width": 600,
+    "height": 1080
+  },
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Branded Spire",
+    "sheet": "Homestead Recipe: Branded Spire",
+    "id": 14743,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 28,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 25,
+        "item": "Pulsing Brandspark"
+      },
+      {
+        "slot": 3,
+        "quantity": 30,
+        "item": "Branded Mass"
+      }
+    ]
+  }
+}

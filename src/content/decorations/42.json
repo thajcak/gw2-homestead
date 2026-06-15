@@ -1,0 +1,46 @@
+{
+  "id": 42,
+  "name": "Kodan Feast",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    19,
+    4
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/39F257F09E281AC4DAB5CC28DFC020ECF9E1D016/3375028.png",
+  "wikiTitle": "Kodan Feast",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/d/d5/Kodan_Feast.jpg/50px-Kodan_Feast.jpg",
+    "width": 50,
+    "height": 42
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/d/d5/Kodan_Feast.jpg",
+    "width": 1283,
+    "height": 1080
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14682,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 28,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Slab of Red Meat"
+      },
+      {
+        "slot": 3,
+        "quantity": 50,
+        "item": "Ursus Oblige"
+      }
+    ]
+  }
+}

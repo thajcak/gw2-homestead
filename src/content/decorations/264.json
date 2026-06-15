@@ -1,0 +1,47 @@
+{
+  "id": 264,
+  "name": "Broken Square Pillar",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    1
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/00B6B392BB65FF0AD1A3AD99039EC746C8774E03/1223916.png",
+  "wikiTitle": "Broken Square Pillar (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/b/b8/Basic_Column_reference.jpg/36px-Basic_Column_reference.jpg",
+    "width": 36,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/b/b8/Basic_Column_reference.jpg",
+    "width": 899,
+    "height": 1259
+  },
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Broken Square Pillar",
+    "sheet": "Homestead Recipe Book: Pillars",
+    "id": 14889,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 24,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Destroyer Sliver"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Bag of Mortar"
+      }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": 1023,
+  "name": "Tall Ship Stairs",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/6715D733152E22BD3BF868A64C12FDEF7052E076/3708884.png",
+  "wikiTitle": "Tall Ship Stairs (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/7/7c/Tall_Ship_Stairs.jpg/40px-Tall_Ship_Stairs.jpg",
+    "width": 40,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/7/7c/Tall_Ship_Stairs.jpg",
+    "width": 1152,
+    "height": 1440
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Tall Ship Stairs",
+    "id": 15303,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 15,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Elder Wood Plank"
+      }
+    ]
+  }
+}

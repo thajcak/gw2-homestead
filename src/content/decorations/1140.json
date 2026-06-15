@@ -1,0 +1,43 @@
+{
+  "id": 1140,
+  "name": "Qadim Pylon",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/49DC095692D550A1F2A6D3A0DBDBAB4C0978E802/3744679.png",
+  "wikiTitle": "Qadim Pylon (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/4/4a/Qadim_Pylon.jpg/25px-Qadim_Pylon.jpg",
+    "width": 25,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/4/4a/Qadim_Pylon.jpg",
+    "width": 640,
+    "height": 1280
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Qadim Pylon",
+    "sheet": "Recipe: Qadim Pylon",
+    "id": 15507,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Molten Core"
+      }
+    ]
+  }
+}

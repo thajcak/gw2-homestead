@@ -1,0 +1,46 @@
+{
+  "id": 387,
+  "name": "Planter Box",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    19,
+    6
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/E5DFE1976C6F3DA3CDD463E2C01D5ECD6205253B/3374970.png",
+  "wikiTitle": "Planter Box",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/c/c6/Planter_Box.jpg/50px-Planter_Box.jpg",
+    "width": 50,
+    "height": 48
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/c/c6/Planter_Box.jpg",
+    "width": 975,
+    "height": 935
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14313,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 15,
+        "item": "Honey Flower"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Large Bone"
+      }
+    ]
+  }
+}

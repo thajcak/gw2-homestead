@@ -1,0 +1,48 @@
+{
+  "id": 938,
+  "name": "Wind Aspect Crystal",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    1,
+    24
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/90B5DC0D5956F609A1BB69223FB66E7B67BF2029/3653511.png",
+  "wikiTitle": "Wind Aspect Crystal (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/c/cf/Wind_Aspect_Crystal.jpg/28px-Wind_Aspect_Crystal.jpg",
+    "width": 28,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/c/cf/Wind_Aspect_Crystal.jpg",
+    "width": 698,
+    "height": 1242
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Wind Aspect Crystal",
+    "sheet": "Recipe: Wind Aspect Crystal",
+    "id": 15164,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 20,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Charged Quartz Crystal"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Corrupted Core"
+      }
+    ]
+  }
+}

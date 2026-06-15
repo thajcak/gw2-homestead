@@ -1,0 +1,47 @@
+{
+  "id": 736,
+  "name": "Fire Circle",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    5
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/430C3616BBB75FACCC533A767CA6441F943BC201/1225158.png",
+  "wikiTitle": "Fire Circle (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/e/eb/Fire_Circle.jpg/50px-Fire_Circle.jpg",
+    "width": 50,
+    "height": 29
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/e/eb/Fire_Circle.jpg",
+    "width": 747,
+    "height": 430
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Fire Circle",
+    "sheet": "Homestead Recipe Book: Lights",
+    "id": 14420,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Molten Core"
+      },
+      {
+        "slot": 3,
+        "quantity": 20,
+        "item": "Totem"
+      }
+    ]
+  }
+}

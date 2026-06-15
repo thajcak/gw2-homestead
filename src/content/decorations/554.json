@@ -1,0 +1,47 @@
+{
+  "id": 554,
+  "name": "Rug",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    4
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/E44FE09FDCCE4FDD7DA601F517487766D2BF4F94/2039211.png",
+  "wikiTitle": "Rug (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/6/63/Rug.jpg/37px-Rug.jpg",
+    "width": 37,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/6/63/Rug.jpg",
+    "width": 989,
+    "height": 1335
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "automatic; sheet",
+    "disciplines": "Handiworker",
+    "name": "Rug",
+    "sheet": "Homestead Recipe Book: Rugs",
+    "id": 14394,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Lump of Mistonium"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Trade Contract"
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": 815,
+  "name": "Silver Vale Guardian Trophy",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    12
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/049B9373EF6B95D89A04225F3FD028D05357CA16/1341308.png",
+  "wikiTitle": "Silver Vale Guardian Trophy (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/8/85/Silver_Vale_Guardian_Trophy.jpg/23px-Silver_Vale_Guardian_Trophy.jpg",
+    "width": 23,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/8/85/Silver_Vale_Guardian_Trophy.jpg",
+    "width": 477,
+    "height": 1047
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Silver Vale Guardian Trophy",
+    "sheet": "Recipe: Silver Vale Guardian Trophy",
+    "id": 14576,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 90,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 40,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Vale Guardian Fragment"
+      }
+    ]
+  }
+}

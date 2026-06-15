@@ -1,0 +1,47 @@
+{
+  "id": 678,
+  "name": "Obstacle: Blue Torch",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    5
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/396B6C4DBE5C4B31139C6E411503499FB228B7F2/1202578.png",
+  "wikiTitle": "Obstacle: Blue Torch (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/3/38/Obstacle-_Blue_Torch.jpg/40px-Obstacle-_Blue_Torch.jpg",
+    "width": 40,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/3/38/Obstacle-_Blue_Torch.jpg",
+    "width": 1001,
+    "height": 1251
+  },
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Obstacle: Blue Torch",
+    "sheet": "Homestead Recipe Book: Guild Arena",
+    "id": 14460,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Pouch of Blue Pigment"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Ley Line Crystal"
+      }
+    ]
+  }
+}

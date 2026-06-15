@@ -1,0 +1,42 @@
+{
+  "id": 1137,
+  "name": "Mimosa Tree",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/BAA0A4C6E816A405201AD67F62513F535561DCA5/3744676.png",
+  "wikiTitle": "Mimosa Tree (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/e/ec/Mimosa_Tree.jpg/50px-Mimosa_Tree.jpg",
+    "width": 50,
+    "height": 37
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/e/ec/Mimosa_Tree.jpg",
+    "width": 1353,
+    "height": 1006
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Mimosa Tree",
+    "id": 15580,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Palm Lumber Core"
+      }
+    ]
+  }
+}

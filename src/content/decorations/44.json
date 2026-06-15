@@ -1,0 +1,48 @@
+{
+  "id": 44,
+  "name": "Monkey Statue",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    9,
+    21
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/D90F7DE52C14EC0E01E36F9614D60F49B2730279/1341438.png",
+  "wikiTitle": "Monkey Statue (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/3/3a/Monkey_Statue.jpg/32px-Monkey_Statue.jpg",
+    "width": 32,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/3/3a/Monkey_Statue.jpg",
+    "width": 619,
+    "height": 960
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Monkey Statue",
+    "sheet": "Homestead Recipe Book: Lunar New Year Celestials",
+    "id": 14149,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 50,
+        "item": "Pouch of Red Pigment"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Jungle Grass Seed"
+      }
+    ]
+  }
+}

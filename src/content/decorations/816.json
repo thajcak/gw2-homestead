@@ -1,0 +1,47 @@
+{
+  "id": 816,
+  "name": "White Balloon",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    14
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/F40F5840D07E6321F14ED710787C0AF6DB60CB97/1226134.png",
+  "wikiTitle": "White Balloon (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/8/84/White_Balloon.jpg/23px-White_Balloon.jpg",
+    "width": 23,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/8/84/White_Balloon.jpg",
+    "width": 403,
+    "height": 857
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "White Balloon",
+    "sheet": "Homestead Recipe Book: Balloons",
+    "id": 14896,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 2,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Pouch of White Pigment"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Spool of Linen Thread"
+      }
+    ]
+  }
+}

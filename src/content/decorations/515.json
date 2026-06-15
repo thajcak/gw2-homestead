@@ -1,0 +1,47 @@
+{
+  "id": 515,
+  "name": "Library Shelf",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    3
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/3151C0307DA502AA592EDCB339532297FB45A366/1227642.png",
+  "wikiTitle": "Library Shelf (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/f/fd/Library_Shelf.jpg/28px-Library_Shelf.jpg",
+    "width": 28,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/f/fd/Library_Shelf.jpg",
+    "width": 753,
+    "height": 1326
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Library Shelf",
+    "sheet": "Homestead Recipe Book: Paintings and Shelves",
+    "id": 14477,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Cured Thick Leather Square"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Pouch of Black Pigment"
+      }
+    ]
+  }
+}

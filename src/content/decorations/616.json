@@ -1,0 +1,47 @@
+{
+  "id": 616,
+  "name": "Red Flag",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    10
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/69045D9AD6410562E802494AEBFB42995A15452E/1227677.png",
+  "wikiTitle": "Red Flag (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/3/39/Red_Flag.jpg/33px-Red_Flag.jpg",
+    "width": 33,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/3/39/Red_Flag.jpg",
+    "width": 727,
+    "height": 1091
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Red Flag",
+    "sheet": "Homestead Recipe Book: Banners",
+    "id": 14099,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 24,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Bolt of Cotton"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Pouch of Red Pigment"
+      }
+    ]
+  }
+}

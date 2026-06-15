@@ -1,0 +1,47 @@
+{
+  "id": 1002,
+  "name": "Curved Roof Dormer",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/EEC1ABD125D3A4B9EDB967CD1E096108C2023A77/3708892.png",
+  "wikiTitle": "Curved Roof Dormer (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/3/36/Curved_Roof_Dormer.jpg/39px-Curved_Roof_Dormer.jpg",
+    "width": 39,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/3/36/Curved_Roof_Dormer.jpg",
+    "width": 851,
+    "height": 1080
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Curved Roof Dormer",
+    "id": 15223,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Lump of Glass"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Brick of Clay"
+      }
+    ]
+  }
+}

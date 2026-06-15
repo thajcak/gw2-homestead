@@ -1,0 +1,46 @@
+{
+  "id": 416,
+  "name": "Leaping Lion Statue",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    9
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/0C80CBC1C45BEE57FF0D005D540E15F41BAC06BA/2760305.png",
+  "wikiTitle": "Leaping Lion Statue",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/5/52/Leaping_Lion_Statue_Token.jpg/50px-Leaping_Lion_Statue_Token.jpg",
+    "width": 50,
+    "height": 40
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/5/52/Leaping_Lion_Statue_Token.jpg",
+    "width": 1396,
+    "height": 1117
+  },
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Homestead Recipe Book: Lion Statues, Volume 1",
+    "id": 14494,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 90,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Leaping Lion Statue Token"
+      },
+      {
+        "slot": 3,
+        "quantity": 1000,
+        "item": "Karma"
+      }
+    ]
+  }
+}

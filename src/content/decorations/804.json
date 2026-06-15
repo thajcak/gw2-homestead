@@ -1,0 +1,48 @@
+{
+  "id": 804,
+  "name": "Rat Statue",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    9,
+    21
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/2F2C552FA3B3A3AF6306CB974772A9B768CA9911/2242597.png",
+  "wikiTitle": "Rat Statue (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/9/9b/Rat_Statue.jpg/43px-Rat_Statue.jpg",
+    "width": 43,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/9/9b/Rat_Statue.jpg",
+    "width": 829,
+    "height": 960
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Rat Statue",
+    "sheet": "Homestead Recipe Book: Lunar New Year Celestials",
+    "id": 14737,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 50,
+        "item": "Pouch of Red Pigment"
+      },
+      {
+        "slot": 3,
+        "quantity": 20,
+        "item": "Large Claw"
+      }
+    ]
+  }
+}

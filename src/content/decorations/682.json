@@ -1,0 +1,47 @@
+{
+  "id": 682,
+  "name": "Silver Desmina Trophy",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    12
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/730BE99F31313CC1AACD040907082C090CB11B50/1894791.png",
+  "wikiTitle": "Silver Desmina Trophy (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/2/24/Silver_Desmina_Trophy.jpg/23px-Silver_Desmina_Trophy.jpg",
+    "width": 23,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/2/24/Silver_Desmina_Trophy.jpg",
+    "width": 421,
+    "height": 907
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Silver Desmina Trophy",
+    "sheet": "Recipe: Silver Desmina Trophy",
+    "id": 14427,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 90,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 40,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Desmina's Token (trophy)"
+      }
+    ]
+  }
+}

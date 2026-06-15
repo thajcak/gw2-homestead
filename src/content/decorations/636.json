@@ -1,0 +1,47 @@
+{
+  "id": 636,
+  "name": "Teleporter Entrance",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    14
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/EA0D4A20C31B3B2B78CB5527779C6536952BFD2E/2038588.png",
+  "wikiTitle": "Teleporter Entrance (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/4/4e/Djinn_Teleportation_Device.jpg/40px-Djinn_Teleportation_Device.jpg",
+    "width": 40,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/4/4e/Djinn_Teleportation_Device.jpg",
+    "width": 555,
+    "height": 691
+  },
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Teleporter Entrance",
+    "sheet": "Recipe: Teleporter Entrance",
+    "id": 14208,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 95,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 120,
+        "item": "Volatile Magic"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Brilliant Djinn Doubloon"
+      }
+    ]
+  }
+}

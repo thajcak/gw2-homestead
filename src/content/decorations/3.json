@@ -1,0 +1,48 @@
+{
+  "id": 3,
+  "name": "Ice Castle: Floor",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    1,
+    26
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/3CFEA76BCED1F55022A03BC401C4A4E03D7CA450/2075485.png",
+  "wikiTitle": "Ice Castle: Floor (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/5/5f/Ice_Castle-_Floor.jpg/50px-Ice_Castle-_Floor.jpg",
+    "width": 50,
+    "height": 40
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/5/5f/Ice_Castle-_Floor.jpg",
+    "width": 1098,
+    "height": 882
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Ice Castle: Floor",
+    "sheet": "Homestead Recipe Book: Wintersday, Volume 4",
+    "id": 14595,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 30,
+        "item": "Snowflake"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Superior Rune of Snowfall"
+      }
+    ]
+  }
+}

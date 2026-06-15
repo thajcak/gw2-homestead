@@ -1,0 +1,48 @@
+{
+  "id": 863,
+  "name": "Scarred Ice Sheet",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    8,
+    26
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/02C5A7080D2FFFD4731595522495B7CF36A74BF1/3215300.png",
+  "wikiTitle": "Scarred Ice Sheet (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/3/35/Scarred_Ice_Sheet.jpg/50px-Scarred_Ice_Sheet.jpg",
+    "width": 50,
+    "height": 25
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/3/35/Scarred_Ice_Sheet.jpg",
+    "width": 1920,
+    "height": 959
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Scarred Ice Sheet",
+    "sheet": "Homestead Recipe Book: Wintersday, Volume 9",
+    "id": 15002,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 36,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 30,
+        "item": "Snowflake"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Corrupted Lodestone"
+      }
+    ]
+  }
+}

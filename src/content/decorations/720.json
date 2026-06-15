@@ -1,0 +1,51 @@
+{
+  "id": 720,
+  "name": "Weapon Display Case",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    19,
+    9
+  ],
+  "max_count": 20,
+  "icon": "https://render.guildwars2.com/file/5440A7179B2F44FA05392FC1F30F01D331DE33D5/3441833.png",
+  "wikiTitle": "Weapon Display Case",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/d/d0/Weapon_Display_Case.jpg/50px-Weapon_Display_Case.jpg",
+    "width": 50,
+    "height": 30
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/d/d0/Weapon_Display_Case.jpg",
+    "width": 1360,
+    "height": 818
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14561,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 99,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 49,
+        "item": "Charged Titan Ore"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Destroyer Lodestone"
+      },
+      {
+        "slot": 4,
+        "quantity": 79,
+        "item": "Rare Rift Essence"
+      }
+    ]
+  }
+}

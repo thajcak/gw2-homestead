@@ -1,0 +1,47 @@
+{
+  "id": 894,
+  "name": "Super Red Crystal",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    22
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/065BCBF9D4061596B6931A29BF9A2A274440734F/3278174.png",
+  "wikiTitle": "Super Red Crystal (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/8/85/Super_Red_Crystal.jpg/20px-Super_Red_Crystal.jpg",
+    "width": 20,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/8/85/Super_Red_Crystal.jpg",
+    "width": 228,
+    "height": 561
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Super Red Crystal",
+    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 9",
+    "id": 15082,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "Bauble"
+      },
+      {
+        "slot": 3,
+        "quantity": 4,
+        "item": "Pouch of Red Pigment"
+      }
+    ]
+  }
+}

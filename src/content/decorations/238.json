@@ -1,0 +1,47 @@
+{
+  "id": 238,
+  "name": "Golem Siege",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    11
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/CB7378D5C960BF01CAA364241F5A7978C6707376/1701381.png",
+  "wikiTitle": "Golem Siege (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/b/b8/Golem_Siege.jpg/45px-Golem_Siege.jpg",
+    "width": 45,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/b/b8/Golem_Siege.jpg",
+    "width": 1284,
+    "height": 1440
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Golem Siege",
+    "sheet": "Homestead Recipe Book: World vs. World",
+    "id": 14327,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 6,
+        "item": "WvW Skirmish Claim Ticket"
+      },
+      {
+        "slot": 3,
+        "quantity": 4,
+        "item": "Charged Quartz Crystal"
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": 260,
+  "name": "Rooster Statue",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    21,
+    9
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/61C70395BB775BFD3100BB9AD63E082E7F02036C/1624012.png",
+  "wikiTitle": "Rooster Statue (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/8/8e/Rooster_Statue.jpg/36px-Rooster_Statue.jpg",
+    "width": 36,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/8/8e/Rooster_Statue.jpg",
+    "width": 688,
+    "height": 960
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Rooster Statue",
+    "sheet": "Homestead Recipe Book: Lunar New Year Celestials",
+    "id": 14637,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 50,
+        "item": "Pouch of Red Pigment"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Sunstone Lump"
+      }
+    ]
+  }
+}

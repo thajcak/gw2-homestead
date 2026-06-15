@@ -1,0 +1,47 @@
+{
+  "id": 521,
+  "name": "Throne",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    2
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/060F73ABF8809B11EC283C2AFE15E50A167C207D/1227607.png",
+  "wikiTitle": "Throne (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/d/dd/Throne.jpg/25px-Throne.jpg",
+    "width": 25,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/d/dd/Throne.jpg",
+    "width": 495,
+    "height": 966
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Throne",
+    "sheet": "Homestead Recipe Book: Tables and Chairs",
+    "id": 14211,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 37,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 50,
+        "item": "Geode"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Vial of Linseed Oil"
+      }
+    ]
+  }
+}

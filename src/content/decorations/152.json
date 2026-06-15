@@ -1,0 +1,42 @@
+{
+  "id": 152,
+  "name": "Mushroom",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    7
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/6AE24FC1C7485839AA790F1C6FCDE8A76653BEC4/1224794.png",
+  "wikiTitle": "Mushroom (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/3/38/Mushroom_%28decoration%29.jpg/25px-Mushroom_%28decoration%29.jpg",
+    "width": 25,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/3/38/Mushroom_%28decoration%29.jpg",
+    "width": 720,
+    "height": 1440
+  },
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Mushroom",
+    "sheet": "Homestead Recipe Book: Plants, Volume 1",
+    "id": 14311,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 3,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Mordrem Sliver"
+      }
+    ]
+  }
+}

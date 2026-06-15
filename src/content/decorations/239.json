@@ -1,0 +1,42 @@
+{
+  "id": 239,
+  "name": "Basic Basket",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    4
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/1305ABB023362DF1DF63DB2E4A28B01B013FE574/1227706.png",
+  "wikiTitle": "Basic Basket (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/e/e6/Basic_Basket.jpg/50px-Basic_Basket.jpg",
+    "width": 50,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/e/e6/Basic_Basket.jpg",
+    "width": 916,
+    "height": 913
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Basic Basket",
+    "sheet": "Homestead Recipe Book: Basic Decorations",
+    "id": 14872,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Cotton Scrap"
+      }
+    ]
+  }
+}

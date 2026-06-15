@@ -1,0 +1,48 @@
+{
+  "id": 373,
+  "name": "Spider's Web Floor",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    8,
+    25
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/F02AF2DAAAEE55BAB5E0D276FBA41556FFB609D3/2752280.png",
+  "wikiTitle": "Spider's Web Floor (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/4/46/Spider%27s_Web_Floor_top.jpg/50px-Spider%27s_Web_Floor_top.jpg",
+    "width": 50,
+    "height": 48
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/4/46/Spider%27s_Web_Floor_top.jpg",
+    "width": 984,
+    "height": 947
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Spider's Web Floor",
+    "sheet": "Homestead Recipe Book: Halloween, Volume 8",
+    "id": 14464,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 15,
+        "item": "Silk Scrap"
+      },
+      {
+        "slot": 3,
+        "quantity": 20,
+        "item": "Piece of Candy Corn"
+      }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": 1134,
+  "name": "Desert Sofa",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/4BB6EBE5BE593E24ABA50A690D29AADAF30D177A/3744667.png",
+  "wikiTitle": "Desert Sofa (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/3/35/Desert_Sofa.jpg/50px-Desert_Sofa.jpg",
+    "width": 50,
+    "height": 28
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/3/35/Desert_Sofa.jpg",
+    "width": 2560,
+    "height": 1440
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Desert Sofa",
+    "sheet": "Recipe: Desert Sofa",
+    "id": 15509,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Bolt of Cotton"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Bolt of Silk"
+      },
+      {
+        "slot": 4,
+        "quantity": 5,
+        "item": "Refined Homestead Fiber"
+      }
+    ]
+  }
+}

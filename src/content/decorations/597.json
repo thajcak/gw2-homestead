@@ -1,0 +1,48 @@
+{
+  "id": 597,
+  "name": "Bat Lanterns",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    5,
+    25
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/55AA340EA6705C08C81FAA0428D37202342A9C10/2343749.png",
+  "wikiTitle": "Bat Lanterns (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/2/2a/Bat_Lanterns.jpg/50px-Bat_Lanterns.jpg",
+    "width": 50,
+    "height": 15
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/2/2a/Bat_Lanterns.jpg",
+    "width": 1920,
+    "height": 567
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Bat Lanterns",
+    "sheet": "Homestead Recipe Book: Halloween, Volume 6",
+    "id": 14821,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 24,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 15,
+        "item": "Pieces of Candy Corn"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Emerald Shard"
+      }
+    ]
+  }
+}

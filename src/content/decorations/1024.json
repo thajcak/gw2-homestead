@@ -1,0 +1,42 @@
+{
+  "id": 1024,
+  "name": "Island Tree (Tall)",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    20,
+    7
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/59A30C423B22150A572DEF335BFF80C114EE12A2/3708905.png",
+  "wikiTitle": "Island Tree (Tall) (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/8/85/Island_Tree_%28Tall%29_top.jpg/50px-Island_Tree_%28Tall%29_top.jpg",
+    "width": 50,
+    "height": 42
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/8/85/Island_Tree_%28Tall%29_top.jpg",
+    "width": 1600,
+    "height": 1354
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Island Tree (Tall)",
+    "id": 15389,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Refined Homestead Fiber"
+      }
+    ]
+  }
+}

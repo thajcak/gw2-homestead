@@ -1,0 +1,46 @@
+{
+  "id": 877,
+  "name": "Lotus Rug",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    19,
+    4
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/ABCE9C3E1CAD7C5B445FA239509568027DD2DE54/3592755.png",
+  "wikiTitle": "Lotus Rug",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/3/3c/Lotus_Rug.jpg/36px-Lotus_Rug.jpg",
+    "width": 36,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/3/3c/Lotus_Rug.jpg",
+    "width": 1008,
+    "height": 1400
+  },
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Automatic",
+    "disciplines": "Handiworker",
+    "id": 15077,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Bolt of Wool"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Honey Flower"
+      }
+    ]
+  }
+}

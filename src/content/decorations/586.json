@@ -1,0 +1,46 @@
+{
+  "id": 586,
+  "name": "Kodan Soup Kettle",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    19,
+    14
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/339C6BDCB1D7CC55EBA903390BF2B8CDB8CE4D62/3374966.png",
+  "wikiTitle": "Kodan Soup Kettle",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/b/bd/Kodan_Soup_Kettle.jpg/50px-Kodan_Soup_Kettle.jpg",
+    "width": 50,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/b/bd/Kodan_Soup_Kettle.jpg",
+    "width": 1422,
+    "height": 1422
+  },
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14594,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 6,
+        "item": "Lowland Pine Log"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Slab of Red Meat"
+      }
+    ]
+  }
+}

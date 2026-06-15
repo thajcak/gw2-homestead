@@ -1,0 +1,42 @@
+{
+  "id": 1011,
+  "name": "Curved Roof Corner",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/FF5A44177F7817EAE9AAFA2C681E353FF8709B4F/3708891.png",
+  "wikiTitle": "Curved Roof Corner (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/c/c7/Curved_Roof_Corner.jpg/38px-Curved_Roof_Corner.jpg",
+    "width": 38,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/c/c7/Curved_Roof_Corner.jpg",
+    "width": 825,
+    "height": 1080
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Curved Roof Corner",
+    "id": 15194,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Brick of Clay"
+      }
+    ]
+  }
+}

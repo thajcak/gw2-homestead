@@ -1,0 +1,42 @@
+{
+  "id": 1063,
+  "name": "Tropical Bush",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    20,
+    7
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/4BD4ED1168D0D990D54B6D16D3C823669423EE21/3708854.png",
+  "wikiTitle": "Tropical Bush (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/9/90/Tropical_Bush.jpg/50px-Tropical_Bush.jpg",
+    "width": 50,
+    "height": 36
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/9/90/Tropical_Bush.jpg",
+    "width": 2016,
+    "height": 1440
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Tropical Bush",
+    "id": 15306,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 3,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Refined Homestead Fiber"
+      }
+    ]
+  }
+}

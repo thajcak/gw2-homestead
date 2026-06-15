@@ -1,0 +1,47 @@
+{
+  "id": 73,
+  "name": "Super Campfire",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    22
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/C7157B599E214F132A21EC11D4434E0EBB1D03A4/1663866.png",
+  "wikiTitle": "Super Campfire (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/c/cf/Super_Campfire.jpg/50px-Super_Campfire.jpg",
+    "width": 50,
+    "height": 42
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/c/cf/Super_Campfire.jpg",
+    "width": 509,
+    "height": 428
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Super Campfire",
+    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 2",
+    "id": 14303,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 4,
+        "item": "Bauble"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Pouch of Red Pigment"
+      }
+    ]
+  }
+}

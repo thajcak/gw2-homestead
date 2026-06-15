@@ -1,0 +1,47 @@
+{
+  "id": 99,
+  "name": "Basic Pedestal",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    3
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/F505E9C95BD44E12F70AFB130EADCB2A4660FDBE/1227589.png",
+  "wikiTitle": "Basic Pedestal (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/9/9e/Basic_Pedestal.jpg/40px-Basic_Pedestal.jpg",
+    "width": 40,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/9/9e/Basic_Pedestal.jpg",
+    "width": 818,
+    "height": 1022
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Basic Pedestal",
+    "sheet": "Recipe: Basic Pedestal",
+    "id": 14785,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 22,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 50,
+        "item": "Karma"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Bag of Mortar"
+      }
+    ]
+  }
+}

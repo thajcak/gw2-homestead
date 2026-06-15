@@ -1,0 +1,52 @@
+{
+  "id": 437,
+  "name": "Armor Display Case",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    19,
+    9
+  ],
+  "max_count": 5,
+  "icon": "https://render.guildwars2.com/file/763CE305CFE0AD556F4A0DF99E1490434FF1C5F2/3592769.png",
+  "wikiTitle": "Armor Display Case",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/d/df/Armor_Display_Case_Salute.jpg/50px-Armor_Display_Case_Salute.jpg",
+    "width": 50,
+    "height": 48
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/d/df/Armor_Display_Case_Salute.jpg",
+    "width": 1349,
+    "height": 1284
+  },
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Automatic",
+    "disciplines": "Handiworker",
+    "name": "Armor Display Case",
+    "id": 14411,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 115,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Superior Rune of the Mesmer"
+      },
+      {
+        "slot": 3,
+        "quantity": 20,
+        "item": "Glob of Ectoplasm"
+      },
+      {
+        "slot": 4,
+        "quantity": 50,
+        "item": "Titan Heatstone"
+      }
+    ]
+  }
+}

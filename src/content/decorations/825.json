@@ -1,0 +1,47 @@
+{
+  "id": 825,
+  "name": "Flame-Bearing Gargoyle",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    25
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/40C3051E170397119A0EC4C5304B493CA9A5ACD3/3429924.png",
+  "wikiTitle": "Flame-Bearing Gargoyle (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/a/a0/Flame-Bearing_Gargoyle.jpg/36px-Flame-Bearing_Gargoyle.jpg",
+    "width": 36,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/a/a0/Flame-Bearing_Gargoyle.jpg",
+    "width": 768,
+    "height": 1063
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Flame-Bearing Gargoyle",
+    "sheet": "Recipe: Flame-Bearing Gargoyle;Homestead Recipe Book: Halloween, Volume 10",
+    "id": 14920,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Mithril Ore"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Molten Core"
+      }
+    ]
+  }
+}

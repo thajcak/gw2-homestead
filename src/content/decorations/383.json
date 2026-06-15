@@ -1,0 +1,47 @@
+{
+  "id": 383,
+  "name": "Yellow Cushion",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    2
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/7E3DA248D3CA02AF335151CBB4403C03C43317F9/1227619.png",
+  "wikiTitle": "Yellow Cushion (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/c/ca/Yellow_Cushion.jpg/50px-Yellow_Cushion.jpg",
+    "width": 50,
+    "height": 25
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/c/ca/Yellow_Cushion.jpg",
+    "width": 1557,
+    "height": 792
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Yellow Cushion",
+    "sheet": "Homestead Recipe Book: Cushions",
+    "id": 14232,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 22,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Bolt of Cotton"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Pouch of Yellow Pigment"
+      }
+    ]
+  }
+}

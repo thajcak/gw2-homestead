@@ -1,0 +1,46 @@
+{
+  "id": 459,
+  "name": "Crystal Prism",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    14
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/9F6AC9290ED1EAE7630AC50C0BAD22A207CD7105/2433108.png",
+  "wikiTitle": "Crystal Prism",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/b/be/Prismaticite_Node.jpg/25px-Prismaticite_Node.jpg",
+    "width": 25,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/b/be/Prismaticite_Node.jpg",
+    "width": 492,
+    "height": 984
+  },
+  "recipe": {
+    "rating": 500,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Recipe: Crystal Prism",
+    "id": 14461,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Prismaticite Crystal"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Tyrian Defense Seal"
+      }
+    ]
+  }
+}

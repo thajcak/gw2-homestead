@@ -1,0 +1,47 @@
+{
+  "id": 7,
+  "name": "Red Cushion",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    2
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/0E512D174309BF7933FC691DE30E49A023AAAC12/1227622.png",
+  "wikiTitle": "Red Cushion (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/e/e2/Red_Cushion.jpg/50px-Red_Cushion.jpg",
+    "width": 50,
+    "height": 34
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/e/e2/Red_Cushion.jpg",
+    "width": 846,
+    "height": 576
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Red Cushion",
+    "sheet": "Homestead Recipe Book: Cushions",
+    "id": 14756,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 22,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Bolt of Cotton"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Pouch of Red Pigment"
+      }
+    ]
+  }
+}

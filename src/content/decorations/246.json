@@ -1,0 +1,47 @@
+{
+  "id": 246,
+  "name": "Vale Guardian Pieces",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    12
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/22EE02AD28E02007007D7C804E64D3929127F82D/1341312.png",
+  "wikiTitle": "Vale Guardian Pieces (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/3/33/Vale_Guardian_Pieces.jpg/50px-Vale_Guardian_Pieces.jpg",
+    "width": 50,
+    "height": 40
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/3/33/Vale_Guardian_Pieces.jpg",
+    "width": 1158,
+    "height": 926
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Vale Guardian Pieces",
+    "sheet": "Recipe: Vale Guardian Pieces",
+    "id": 14294,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Ley Line Crystals"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Vale Guardian Fragment"
+      }
+    ]
+  }
+}

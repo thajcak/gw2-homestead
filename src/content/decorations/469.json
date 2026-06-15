@@ -1,0 +1,48 @@
+{
+  "id": 469,
+  "name": "Academic Light",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    5,
+    18
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/04F0FE510593A337E5B8321196321A4D052FFC13/3122186.png",
+  "wikiTitle": "Academic Light (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/0/01/Academic_Light.jpg/50px-Academic_Light.jpg",
+    "width": 50,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/0/01/Academic_Light.jpg",
+    "width": 1153,
+    "height": 1153
+  },
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Academic Light",
+    "sheet": "Homestead Recipe Book: Amnytas, Volume 1",
+    "id": 14305,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 27,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Charged Lodestone"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Pouch of Stardust"
+      }
+    ]
+  }
+}

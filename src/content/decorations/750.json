@@ -1,0 +1,42 @@
+{
+  "id": 750,
+  "name": "Campfire",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    5
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/B1AD0310030C0FE1AB9D19E498047440596543D6/1227521.png",
+  "wikiTitle": "Campfire (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/8/84/Campfire_%28decoration%29.jpg/50px-Campfire_%28decoration%29.jpg",
+    "width": 50,
+    "height": 38
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/8/84/Campfire_%28decoration%29.jpg",
+    "width": 479,
+    "height": 360
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Campfire",
+    "sheet": "Homestead Recipe Book: Lights",
+    "id": 14521,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 24,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Molten Fragment"
+      }
+    ]
+  }
+}

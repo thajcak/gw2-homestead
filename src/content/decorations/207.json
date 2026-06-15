@@ -1,0 +1,47 @@
+{
+  "id": 207,
+  "name": "Ascalonian Lamp",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    5
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/CBA1ADFA4D783C05A2B9ABBD53743A634A2F2A29/1223962.png",
+  "wikiTitle": "Ascalonian Lamp (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/a/aa/Ascalonian_Lamp.jpg/22px-Ascalonian_Lamp.jpg",
+    "width": 22,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/a/aa/Ascalonian_Lamp.jpg",
+    "width": 368,
+    "height": 813
+  },
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Ascalonian Lamp",
+    "sheet": "Homestead Recipe Book: Lights, Volume 2",
+    "id": 14550,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 28,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Watchwork Sprocket"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Charged Core"
+      }
+    ]
+  }
+}

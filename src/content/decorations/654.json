@@ -1,0 +1,47 @@
+{
+  "id": 654,
+  "name": "Ice Sheet",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    8
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/3ABFAA9A21BB01A63C0142D0FC6924D3512D3FCE/2412874.png",
+  "wikiTitle": "Ice Sheet (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/0/03/Ice_Sheet_Decoration.jpg/50px-Ice_Sheet_Decoration.jpg",
+    "width": 50,
+    "height": 28
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/0/03/Ice_Sheet_Decoration.jpg",
+    "width": 2311,
+    "height": 1300
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Ice Sheet",
+    "sheet": "Homestead Recipe Book: Misc. Items, Volume 1",
+    "id": 14729,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 24,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 20,
+        "item": "Eternal Ice Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Tyrian Defense Seal"
+      }
+    ]
+  }
+}

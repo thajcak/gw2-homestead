@@ -1,0 +1,42 @@
+{
+  "id": 1005,
+  "name": "Cabana Roof Long (A)",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/797F09219E0B58563EC524C2B411530576CAE735/3708889.png",
+  "wikiTitle": "Cabana Roof Long (A) (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/9/9b/Cabana_Roof_Long_%28A%29_side.jpg/50px-Cabana_Roof_Long_%28A%29_side.jpg",
+    "width": 50,
+    "height": 28
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/9/9b/Cabana_Roof_Long_%28A%29_side.jpg",
+    "width": 1749,
+    "height": 967
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Cabana Roof Long (A)",
+    "id": 15208,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 15,
+        "item": "Brick of Clay"
+      }
+    ]
+  }
+}

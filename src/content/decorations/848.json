@@ -1,0 +1,47 @@
+{
+  "id": 848,
+  "name": "Gold Ura Trophy",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    12
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/5B10ACB1A60E00580F4D31DBB3E87E114991A651/3441819.png",
+  "wikiTitle": "Gold Ura Trophy (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/c/c4/Gold_Ura_Trophy.jpg/28px-Gold_Ura_Trophy.jpg",
+    "width": 28,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/c/c4/Gold_Ura_Trophy.jpg",
+    "width": 1071,
+    "height": 1872
+  },
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Gold Ura Trophy",
+    "sheet": "Recipe: Gold Ura Trophy",
+    "id": 14993,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 130,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 100,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Ura's Token"
+      }
+    ]
+  }
+}

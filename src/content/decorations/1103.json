@@ -1,0 +1,43 @@
+{
+  "id": 1103,
+  "name": "White Mantle Turret",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/B491CD9201E2C6D90D60B8712F1573CF7BEB5F5A/3744689.png",
+  "wikiTitle": "White Mantle Turret (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/9/94/White_Mantle_Turret.jpg/28px-White_Mantle_Turret.jpg",
+    "width": 28,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/9/94/White_Mantle_Turret.jpg",
+    "width": 810,
+    "height": 1440
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "White Mantle Turret",
+    "sheet": "Recipe: White Mantle Turret",
+    "id": 15559,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Bloodstone Brick"
+      }
+    ]
+  }
+}

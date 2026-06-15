@@ -1,0 +1,47 @@
+{
+  "id": 664,
+  "name": "Guild Initiative Banner",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    10
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/D03C26E77EB06A25B05F24E0E6663EFDE5EF32C8/1225602.png",
+  "wikiTitle": "Guild Initiative Banner (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/8/88/Guild_Initiative_Banner.jpg/25px-Guild_Initiative_Banner.jpg",
+    "width": 25,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/8/88/Guild_Initiative_Banner.jpg",
+    "width": 690,
+    "height": 1380
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Guild Initiative Banner",
+    "sheet": "Homestead Recipe Book: Misc. Items, Volume 2",
+    "id": 14857,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 34,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Guild Commendation"
+      },
+      {
+        "slot": 3,
+        "quantity": 20,
+        "item": "Totem"
+      }
+    ]
+  }
+}

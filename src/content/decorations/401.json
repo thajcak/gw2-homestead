@@ -1,0 +1,47 @@
+{
+  "id": 401,
+  "name": "Gold Keep Construct Trophy",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    12
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/FE99CD0B42FD4ACC01F70F352870B7727D7321D1/1451119.png",
+  "wikiTitle": "Gold Keep Construct Trophy (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/c/c6/Keep_Construct_Chest.jpg/28px-Keep_Construct_Chest.jpg",
+    "width": 28,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/c/c6/Keep_Construct_Chest.jpg",
+    "width": 368,
+    "height": 646
+  },
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Gold Keep Construct Trophy",
+    "sheet": "Recipe: Gold Keep Construct Trophy",
+    "id": 14276,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 130,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 100,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Keep Construct Rubble (trophy)"
+      }
+    ]
+  }
+}

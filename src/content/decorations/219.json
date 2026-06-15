@@ -1,0 +1,47 @@
+{
+  "id": 219,
+  "name": "Gilded Lamp",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    5
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/65AE76F695BB0F3F38D20D083DAFAB76FD227548/1225292.png",
+  "wikiTitle": "Gilded Lamp (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/f/f6/Gilded_Lamp.jpg/24px-Gilded_Lamp.jpg",
+    "width": 24,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/f/f6/Gilded_Lamp.jpg",
+    "width": 427,
+    "height": 870
+  },
+  "recipe": {
+    "rating": 500,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Gilded Lamp",
+    "sheet": "Recipe: Gilded Lamp",
+    "id": 14210,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 27,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 25,
+        "item": "Lump of Aurillium"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Pile of Luminous Dust"
+      }
+    ]
+  }
+}

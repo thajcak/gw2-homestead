@@ -1,0 +1,47 @@
+{
+  "id": 746,
+  "name": "Keg Rack",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    3
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/F33104051CA6DB5C3DA15ED51E183CD909DD0BDE/1227583.png",
+  "wikiTitle": "Keg Rack (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/a/ae/Keg_Rack.jpg/50px-Keg_Rack.jpg",
+    "width": 50,
+    "height": 28
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/a/ae/Keg_Rack.jpg",
+    "width": 2326,
+    "height": 1308
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Keg Rack",
+    "sheet": "Homestead Recipe Book: Misc. Items, Volume 1",
+    "id": 14247,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 33,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 75,
+        "item": "Stein of Hearty Ale"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Glacial Shard"
+      }
+    ]
+  }
+}

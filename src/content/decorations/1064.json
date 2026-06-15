@@ -1,0 +1,47 @@
+{
+  "id": 1064,
+  "name": "Hanging Brazier",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    20,
+    5
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/03D45350FB599B4410D630D52B56B5AACA5F3614/3708885.png",
+  "wikiTitle": "Hanging Brazier (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/5/50/Hanging_Brazier_close-up.jpg/37px-Hanging_Brazier_close-up.jpg",
+    "width": 37,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/5/50/Hanging_Brazier_close-up.jpg",
+    "width": 724,
+    "height": 971
+  },
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Hanging Brazier",
+    "id": 15264,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Lump of Glass"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Molten Core"
+      }
+    ]
+  }
+}

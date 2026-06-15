@@ -1,0 +1,48 @@
+{
+  "id": 550,
+  "name": "Ominous Fortress Wall",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    1,
+    25
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/4A10F4B845A4B555B90728C2ADD7355B9A62B706/2212629.png",
+  "wikiTitle": "Ominous Fortress Wall (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/d/d8/Ominous_Fortress_Wall.jpg/50px-Ominous_Fortress_Wall.jpg",
+    "width": 50,
+    "height": 37
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/d/d8/Ominous_Fortress_Wall.jpg",
+    "width": 1407,
+    "height": 1055
+  },
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Ominous Fortress Wall",
+    "sheet": "Homestead Recipe Book: Halloween, Volume 5",
+    "id": 14766,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 20,
+        "item": "Rotted Titan Amber"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Bag of Mortar"
+      }
+    ]
+  }
+}

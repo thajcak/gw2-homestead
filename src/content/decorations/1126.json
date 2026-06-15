@@ -1,0 +1,42 @@
+{
+  "id": 1126,
+  "name": "Jungle Log",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/616B096C0304CAE2FCB296A0B1F27E07370BD461/3744671.png",
+  "wikiTitle": "Jungle Log (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/5/50/Jungle_Log.jpg/50px-Jungle_Log.jpg",
+    "width": 50,
+    "height": 28
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/5/50/Jungle_Log.jpg",
+    "width": 1366,
+    "height": 768
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Jungle Log",
+    "id": 15482,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Palm Lumber Core"
+      }
+    ]
+  }
+}

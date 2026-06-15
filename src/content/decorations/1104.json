@@ -1,0 +1,42 @@
+{
+  "id": 1104,
+  "name": "Jungle Plant",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/034BE6416CD4CBB7CC37DF030A784D3F28FAB11F/3744664.png",
+  "wikiTitle": "Jungle Plant (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/9/9f/Jungle_Plant.jpg/50px-Jungle_Plant.jpg",
+    "width": 50,
+    "height": 28
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/9/9f/Jungle_Plant.jpg",
+    "width": 1366,
+    "height": 768
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Jungle Plant",
+    "id": 15502,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Evergreen Lodestone"
+      }
+    ]
+  }
+}

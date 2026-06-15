@@ -1,0 +1,52 @@
+{
+  "id": 1044,
+  "name": "Jukebox",
+  "description": "Crafted with Homesteading Mastery.\n\nUnlocked at level 30 or higher.",
+  "categories": [
+    4
+  ],
+  "max_count": 250,
+  "icon": "https://render.guildwars2.com/file/7E94664D500B093EF20D983B1A9C0723CFBF7E56/3708906.png",
+  "wikiTitle": "Jukebox (Handiwork)",
+  "thumbnail": {
+    "source": "https://wiki.guildwars2.com/images/thumb/d/d5/Jukebox.jpg/44px-Jukebox.jpg",
+    "width": 44,
+    "height": 50
+  },
+  "original": {
+    "source": "https://wiki.guildwars2.com/images/d/d5/Jukebox.jpg",
+    "width": 950,
+    "height": 1080
+  },
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Jukebox",
+    "sheet": "Jukebox Order Form",
+    "id": 15382,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 3,
+        "quantity": 100,
+        "item": "Sliver of Twitching Forgemetal"
+      },
+      {
+        "slot": 4,
+        "quantity": 100,
+        "item": "Eyes of Kormir"
+      }
+    ]
+  }
+}
