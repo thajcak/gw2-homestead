@@ -13,7 +13,7 @@ The backend of the site is a GitHub action that runs hourly to pull all decorati
 Decoration icons live in `src/assets/decorations/` and are optimized at build time with Astro's `<Image>` component. Preview images stay in `public/decorations/` and are loaded on demand when a decoration is expanded. Wiki URLs are kept only as `remoteSource` metadata for CI changelog diffs.
 
 ## Frontend
-Built with [Astro](https://astro.build) and Tailwind CSS. The catalog is a single static page with client-side search, category filtering, expandable decoration details, and a changelog panel. Decoration data is loaded at build time from content collections; interactivity is handled with vanilla TypeScript.
+Built with [Astro](https://astro.build) and vanilla CSS. The catalog is a single static page with client-side search, category filtering, expandable decoration details, and a changelog panel. Decoration data is loaded at build time from content collections; interactivity is handled with vanilla TypeScript.
 
 Deep links use the `?open={id}` query parameter to automatically expand a specific decoration.
 
@@ -28,6 +28,7 @@ Other commands:
 
 - `npm run build` — production build to `dist/`
 - `npm run preview` — preview the production build locally
+- `npm run generate-catalog` — build `public/catalog/` JSON, icons, and changelog artifacts
 - `npm run localize-images` — download remote decoration icons into `src/assets/decorations/` and preview images into `public/decorations/`
 
 ---

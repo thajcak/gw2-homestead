@@ -5,9 +5,10 @@ import homesteadIcon from '../assets/homestead.png';
 
 interface Props {
   title?: string;
+  preloadCatalogIndex?: string;
 }
 
-const { title = 'GW2 Homestead Catalog' } = Astro.props;
+const { title = 'GW2 Homestead Catalog', preloadCatalogIndex } = Astro.props;
 ---
 
 <!doctype html>
@@ -18,6 +19,7 @@ const { title = 'GW2 Homestead Catalog' } = Astro.props;
     <meta name="description" content="Guild Wars 2 Homestead decoration catalog" />
     <link rel="icon" type="image/png" href={homesteadIcon.src} />
     <link rel="manifest" href={assetUrl('manifest.json')} />
+    {preloadCatalogIndex ? <link rel="preload" href={preloadCatalogIndex} as="fetch" crossorigin /> : null}
     <title>{title}</title>
   </head>
   <body>

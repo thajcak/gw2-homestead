@@ -1,53 +1,32 @@
----
-import type { ChangeLogDay } from '../types';
-
-interface Props {
-  days: ChangeLogDay[];
-}
-
-const { days } = Astro.props;
-
-const entryTypeOrder = [
-  'New Item',
-  'Item Update',
-  'Item Removed',
-  'Image Update',
-  'Recipe Added',
-  'Recipe Updated',
-] as const;
-
-const chipEntryTypes = new Set(['New Item', 'Image Update', 'Recipe Added', 'Recipe Updated']);
----
-
-<div id="changelog-panel" class="fixed inset-0 z-[200] is-closed">
+<div id="changelog-panel" class="changelog-panel is-closed">
   <button
     id="changelog-backdrop"
-    class="absolute inset-0 bg-black/50"
+    class="changelog-panel__backdrop"
     aria-label="Close recent changes panel"
     type="button"
   ></button>
 
   <aside
-    class="absolute right-0 top-0 h-full bg-white shadow-2xl z-[210] border-l border-gray-200 w-[min(90vw,500px)]"
+    class="changelog-panel__drawer"
     role="dialog"
     aria-modal="true"
     aria-label="Recent Changes"
   >
-    <div class="border-b border-gray-200">
-      <div class="flex items-center justify-between px-4 py-3">
+    <div class="changelog-panel__header">
+      <div class="changelog-panel__title-row">
         <button
           id="changelog-title"
           type="button"
-          class="text-lg font-semibold text-gray-900 cursor-pointer"
+          class="changelog-panel__title"
           aria-label="Scroll changelog to top"
         >
           Recent Changes
         </button>
-        <div class="flex items-center gap-2">
+        <div class="changelog-panel__actions">
           <button
             id="changelog-scroll-top"
             type="button"
-            class="text-xs px-2 py-1 border border-gray-200 rounded text-gray-600 hover:bg-gray-50"
+            class="changelog-panel__action"
             aria-label="Scroll to top"
           >
             To Top
@@ -55,118 +34,62 @@ const chipEntryTypes = new Set(['New Item', 'Image Update', 'Recipe Added', 'Rec
           <button
             id="close-changelog"
             type="button"
-            class="text-gray-500 hover:text-gray-800 text-xl leading-none"
+            class="changelog-panel__close"
             aria-label="Close panel"
           >
             ×
           </button>
         </div>
       </div>
-      <div class="px-4 pb-3 flex flex-wrap gap-1.5">
-        {
-          entryTypeOrder.map((entryType) => (
-            <button
-              type="button"
-              data-changelog-type-toggle={entryType}
-              class="text-xs px-2 py-1 rounded border bg-gray-900 text-white border-gray-900"
-              aria-pressed="true"
-            >
-              {entryType}
-            </button>
-          ))
-        }
+      <div class="changelog-panel__filters">
+        <button type="button" data-changelog-type-toggle="New Item" class="changelog-filter" aria-pressed="true">
+          New Item
+        </button>
+        <button
+          type="button"
+          data-changelog-type-toggle="Item Update"
+          class="changelog-filter"
+          aria-pressed="true"
+        >
+          Item Update
+        </button>
+        <button
+          type="button"
+          data-changelog-type-toggle="Item Removed"
+          class="changelog-filter"
+          aria-pressed="true"
+        >
+          Item Removed
+        </button>
+        <button
+          type="button"
+          data-changelog-type-toggle="Image Update"
+          class="changelog-filter"
+          aria-pressed="true"
+        >
+          Image Update
+        </button>
+        <button
+          type="button"
+          data-changelog-type-toggle="Recipe Added"
+          class="changelog-filter"
+          aria-pressed="true"
+        >
+          Recipe Added
+        </button>
+        <button
+          type="button"
+          data-changelog-type-toggle="Recipe Updated"
+          class="changelog-filter"
+          aria-pressed="true"
+        >
+          Recipe Updated
+        </button>
       </div>
     </div>
 
-    <div id="changelog-scroll" class="h-[calc(100%-97px)] overflow-y-auto px-4 py-3">
-      {
-        days.length === 0 ? (
-          <p class="text-sm text-gray-500">No recent changes yet.</p>
-        ) : (
-          days.map((dayGroup) => (
-            <section class="changelog-day-section mb-5" data-day={dayGroup.day}>
-              <h3 class="text-sm font-semibold text-gray-900 mb-2">{dayGroup.day}</h3>
-              {
-                entryTypeOrder.map((entryType) => {
-                  const entriesForType = dayGroup.entries.filter((entry) => entry.type === entryType);
-                  if (entriesForType.length === 0) {
-                    return null;
-                  }
-
-                  return (
-                    <div class="mb-3">
-                      <h4 class="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-1.5">
-                        {entryType}
-                      </h4>
-                      {
-                        chipEntryTypes.has(entryType) ? (
-                          <ul class="flex flex-wrap gap-1.5">
-                            {
-                              entriesForType.map((entry, index) => (
-                                <li>
-                                  <button
-                                    type="button"
-                                    class="changelog-entry inline-flex text-left text-sm text-gray-700 border border-gray-200 rounded px-2 py-1 hover:bg-gray-50"
-                                    data-entry-type={entry.type}
-                                    data-changelog-entry={entry.id}
-                                    data-changelog-name={entry.name}
-                                  >
-                                    {entry.name}
-                                  </button>
-                                </li>
-                              ))
-                            }
-                          </ul>
-                        ) : (
-                          <ul class="space-y-1.5">
-                            {
-                              entriesForType.map((entry, index) => (
-                                <li>
-                                  <button
-                                    type="button"
-                                    class="changelog-entry w-full text-left text-sm text-gray-700 border border-gray-100 rounded px-2 py-1.5 hover:bg-gray-50"
-                                    data-entry-type={entry.type}
-                                    data-changelog-entry={entry.id}
-                                    data-changelog-name={entry.name}
-                                  >
-                                    <div>{entry.name}</div>
-                                    {
-                                      entry.type === 'Item Update' && entry.changes && entry.changes.length > 0 && (
-                                        <ul class="mt-1 space-y-0.5 text-xs text-gray-500">
-                                          {
-                                            entry.changes.slice(0, 3).map((change, changeIndex) => (
-                                              <li>
-                                                {
-                                                  change.detail
-                                                    ? change.detail
-                                                    : `${change.field}: ${JSON.stringify(change.before)} -> ${JSON.stringify(change.after)}`
-                                                }
-                                              </li>
-                                            ))
-                                          }
-                                          {
-                                            entry.changes.length > 3 && (
-                                              <li>+{entry.changes.length - 3} more</li>
-                                            )
-                                          }
-                                        </ul>
-                                      )
-                                    }
-                                  </button>
-                                </li>
-                              ))
-                            }
-                          </ul>
-                        )
-                      }
-                    </div>
-                  );
-                })
-              }
-            </section>
-          ))
-        )
-      }
+    <div id="changelog-scroll" class="changelog-panel__scroll">
+      <p class="changelog-panel__empty">Loading recent changes…</p>
     </div>
   </aside>
 </div>

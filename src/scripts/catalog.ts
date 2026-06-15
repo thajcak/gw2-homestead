@@ -7,13 +7,6 @@ export interface SearchIndexEntry {
   categories: number[];
 }
 
-export interface CatalogData {
-  searchIndex: SearchIndexEntry[];
-  decorations: Record<string, Decoration>;
-  categories: Category[];
-  changelogDays: ChangeLogDay[];
-}
-
 const ENTRY_TYPE_ORDER = [
   'New Item',
   'Item Update',
@@ -23,13 +16,21 @@ const ENTRY_TYPE_ORDER = [
   'Recipe Updated',
 ] as const;
 
+const CHIP_ENTRY_TYPES = new Set(['New Item', 'Image Update', 'Recipe Added', 'Recipe Updated']);
+
 const ANIMATION_MS = 200;
+const MAX_ICON_LOADS = 6;
+
+function catalogUrl(baseUrl: string, path: string): string {
+  const normalizedBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+  return `${normalizedBase}${path.replace(/^\//, '')}`;
+}
 
 function resolveAsset(path: string | undefined, base: string): string {
   const placeholder =
     (typeof window !== 'undefined' &&
       (window as Window & { __catalogPlaceholderPreview?: string }).__catalogPlaceholderPreview) ||
-    `${base.replace(/\/?$/, '/')}images/placeholder.png`;
+    catalogUrl(base, 'images/placeholder.png');
 
   if (!path) {
     return placeholder;
@@ -37,8 +38,7 @@ function resolveAsset(path: string | undefined, base: string): string {
   if (path.startsWith('http://') || path.startsWith('https://')) {
     return path;
   }
-  const normalizedBase = base.endsWith('/') ? base : `${base}/`;
-  return `${normalizedBase}${path.replace(/^\//, '')}`;
+  return catalogUrl(base, path);
 }
 
 function escapeHtml(value: string): string {
@@ -104,38 +104,37 @@ function renderExpandedDecoration(
   const categoryTags = decoration.categories
     .map((catId) => {
       const name = categoryMap.get(catId);
-      return name
-        ? `<span class="px-2 py-0.5 bg-gray-700 rounded-full text-xs text-gray-300">${escapeHtml(name)}</span>`
-        : '';
+      return name ? `<span class="expanded-tag">${escapeHtml(name)}</span>` : '';
     })
     .join('');
 
   const wikiLink = decoration.wikiTitle
-    ? `<a href="https://wiki.guildwars2.com/index.php?search=${encodeURIComponent(decoration.wikiTitle)}" class="text-blue-400 hover:text-blue-300 transition-colors text-sm mt-2 inline-block" target="_blank" rel="noopener noreferrer">View on Wiki →</a>`
+    ? `<a href="https://wiki.guildwars2.com/index.php?search=${encodeURIComponent(decoration.wikiTitle)}" class="expanded-wiki-link" target="_blank" rel="noopener noreferrer">View on Wiki →</a>`
     : '';
 
-  let recipeHtml = '<p class="text-xs text-gray-500">No recipe data in catalog for this decoration.</p>';
+  let recipeHtml =
+    '<p class="expanded-recipe-empty">No recipe data in catalog for this decoration.</p>';
   if (decoration.recipe) {
     const ratingRow =
       decoration.recipe.rating != null
-        ? `<dt class="text-gray-500">Rating</dt><dd>${decoration.recipe.rating}</dd>`
+        ? `<dt>Rating</dt><dd>${decoration.recipe.rating}</dd>`
         : '';
     const sheetRow = decoration.recipe.sheet
-      ? `<dt class="text-gray-500">Source</dt><dd class="break-words">${escapeHtml(decoration.recipe.sheet)}</dd>`
+      ? `<dt>Source</dt><dd class="expanded-recipe-break">${escapeHtml(decoration.recipe.sheet)}</dd>`
       : '';
     const ingredients =
       decoration.recipe.ingredients.length > 0
-        ? `<ul class="text-xs space-y-0.5 w-full">${decoration.recipe.ingredients
+        ? `<ul class="expanded-recipe-list">${decoration.recipe.ingredients
             .map(
               (ing) =>
-                `<li class="break-words">${ing.quantity != null ? `${ing.quantity}× ` : ''}${escapeHtml(ing.item)}</li>`
+                `<li class="expanded-recipe-break">${ing.quantity != null ? `${ing.quantity}× ` : ''}${escapeHtml(ing.item)}</li>`
             )
             .join('')}</ul>`
         : '';
 
-    recipeHtml = `<div class="text-sm text-gray-300 w-full space-y-2">
-      <div class="text-gray-400 text-xs font-semibold uppercase tracking-wide">Recipe</div>
-      <dl class="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-xs w-full">${ratingRow}${sheetRow}</dl>
+    recipeHtml = `<div class="expanded-recipe">
+      <div class="expanded-recipe__title">Recipe</div>
+      <dl class="expanded-recipe__meta">${ratingRow}${sheetRow}</dl>
       ${ingredients}
     </div>`;
   }
@@ -143,26 +142,78 @@ function renderExpandedDecoration(
   return `<div class="expanded-decoration is-collapsed" data-expanded-for="${decoration.id}" style="grid-row: auto;">
     <div class="decoration-indicator" style="margin-left: ${indicatorLeftPosition}"></div>
     <div class="expanded-decoration-gradient">
-      <div class="h-full min-h-0 flex flex-col container mx-auto px-6 expanded-decoration__body">
+      <div class="expanded-decoration__body">
         <div class="expanded-decoration__layout">
           <div class="expanded-decoration__media">
             ${imageFrameContent}
           </div>
           <div class="expanded-decoration__details">
-            <div class="w-full mb-3">
-              <h2 class="text-xl font-bold break-words">${escapeHtml(decoration.name)}</h2>
+            <div class="expanded-heading">
+              <h2 class="expanded-title">${escapeHtml(decoration.name)}</h2>
               ${wikiLink}
             </div>
-            <div class="flex flex-wrap gap-1.5 justify-start w-full">${categoryTags}</div>
-            <div class="w-full border-t border-gray-700/60 pt-3 mt-3">${recipeHtml}</div>
+            <div class="expanded-tags">${categoryTags}</div>
+            <div class="expanded-recipe-section">${recipeHtml}</div>
           </div>
         </div>
       </div>
     </div>
-  </div>`;
+    </div>`;
 }
 
-export function initCatalog(data: CatalogData, baseUrl: string = '/'): void {
+function renderChangelogHtml(days: ChangeLogDay[]): string {
+  if (days.length === 0) {
+    return '<p class="changelog-panel__empty">No recent changes yet.</p>';
+  }
+
+  return days
+    .map((dayGroup) => {
+      const sections = ENTRY_TYPE_ORDER.map((entryType) => {
+        const entriesForType = dayGroup.entries.filter((entry) => entry.type === entryType);
+        if (entriesForType.length === 0) {
+          return '';
+        }
+
+        const entriesHtml = CHIP_ENTRY_TYPES.has(entryType)
+          ? `<ul class="changelog-chip-list">${entriesForType
+              .map(
+                (entry) =>
+                  `<li><button type="button" class="changelog-entry changelog-entry--chip" data-entry-type="${escapeHtml(entry.type)}" data-changelog-entry="${entry.id}" data-changelog-name="${escapeHtml(entry.name)}">${escapeHtml(entry.name)}</button></li>`
+              )
+              .join('')}</ul>`
+          : `<ul class="changelog-entry-list">${entriesForType
+              .map((entry) => {
+                const changesHtml =
+                  entry.type === 'Item Update' && entry.changes && entry.changes.length > 0
+                    ? `<ul class="changelog-entry__changes">${entry.changes
+                        .slice(0, 3)
+                        .map((change) =>
+                          `<li>${escapeHtml(
+                            change.detail
+                              ? change.detail
+                              : `${change.field}: ${JSON.stringify(change.before)} -> ${JSON.stringify(change.after)}`
+                          )}</li>`
+                        )
+                        .join('')}${
+                        entry.changes.length > 3
+                          ? `<li>+${entry.changes.length - 3} more</li>`
+                          : ''
+                      }</ul>`
+                    : '';
+
+                return `<li><button type="button" class="changelog-entry" data-entry-type="${escapeHtml(entry.type)}" data-changelog-entry="${entry.id}" data-changelog-name="${escapeHtml(entry.name)}"><div>${escapeHtml(entry.name)}</div>${changesHtml}</button></li>`;
+              })
+              .join('')}</ul>`;
+
+        return `<div class="changelog-type-section"><h4 class="changelog-type-section__title">${entryType}</h4>${entriesHtml}</div>`;
+      }).join('');
+
+      return `<section class="changelog-day-section" data-day="${escapeHtml(dayGroup.day)}"><h3 class="changelog-day-section__title">${escapeHtml(dayGroup.day)}</h3>${sections}</section>`;
+    })
+    .join('');
+}
+
+export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   const searchInput = document.getElementById('search-input') as HTMLInputElement | null;
   const clearSearchButton = document.getElementById('clear-search') as HTMLButtonElement | null;
   const categorySelect = document.getElementById('category-select') as HTMLSelectElement | null;
@@ -188,6 +239,58 @@ export function initCatalog(data: CatalogData, baseUrl: string = '/'): void {
 
   const basePath = baseUrl.replace(/\/$/, '');
   const catalogIndexPath = basePath ? `${basePath}/` : '/';
+  const catalogBase = catalogUrl(baseUrl, 'catalog');
+
+  const [searchIndex, categories] = await Promise.all([
+    fetch(catalogUrl(baseUrl, 'catalog/search-index.json')).then(
+      (response) => response.json() as Promise<SearchIndexEntry[]>
+    ),
+    fetch(catalogUrl(baseUrl, 'catalog/categories.json')).then(
+      (response) => response.json() as Promise<Category[]>
+    ),
+  ]);
+
+  const categoryMap = getCategoryMap(categories);
+  const searchIndexById = new Map(searchIndex.map((entry) => [entry.id, entry]));
+  const decorationCache = new Map<number, Decoration>();
+  const knownDecorationIds = new Set<number>();
+
+  let searchQuery = '';
+  let selectedCategory = 'all';
+  let expandedItemId: number | null = null;
+  let itemsPerRow = 0;
+  let pendingOpenAfterFilterResetId: number | null = null;
+  let filterVisibilityPrompt: { id: number; name: string } | null = null;
+  const visibleChangelogTypes = new Set<string>(ENTRY_TYPE_ORDER);
+  let changelogScrollTop = Number(sessionStorage.getItem('changelogScrollTop') ?? '0');
+  let gridItems: HTMLElement[] = [];
+  let changelogLoaded = false;
+  let changelogLoading: Promise<void> | null = null;
+
+  async function loadDecoration(id: number): Promise<Decoration | undefined> {
+    if (decorationCache.has(id)) {
+      return decorationCache.get(id);
+    }
+
+    const response = await fetch(`${catalogBase}/decorations/${id}.json`);
+    if (!response.ok) {
+      return undefined;
+    }
+
+    const decoration = (await response.json()) as Decoration;
+    decorationCache.set(id, decoration);
+    knownDecorationIds.add(id);
+    return decoration;
+  }
+
+  async function decorationExists(id: number): Promise<boolean> {
+    if (knownDecorationIds.has(id) || searchIndexById.has(id)) {
+      return true;
+    }
+
+    const decoration = await loadDecoration(id);
+    return decoration != null;
+  }
 
   function normalizeCatalogPathname(pathname: string): string {
     if (basePath && pathname === basePath) {
@@ -200,23 +303,6 @@ export function initCatalog(data: CatalogData, baseUrl: string = '/'): void {
     url.pathname = normalizeCatalogPathname(url.pathname);
     window.history.replaceState({}, '', url);
   }
-
-  const categoryMap = getCategoryMap(data.categories);
-  const decorationById = new Map(
-    Object.entries(data.decorations).map(([id, decoration]) => [Number(id), decoration])
-  );
-  const searchIndexById = new Map(data.searchIndex.map((entry) => [entry.id, entry]));
-
-  let searchQuery = '';
-  let selectedCategory = 'all';
-  let expandedItemId: number | null = null;
-  let itemsPerRow = 0;
-  let pendingOpenAfterFilterResetId: number | null = null;
-  let filterVisibilityPrompt: { id: number; name: string } | null = null;
-  const visibleChangelogTypes = new Set<string>(ENTRY_TYPE_ORDER);
-  let changelogScrollTop = Number(sessionStorage.getItem('changelogScrollTop') ?? '0');
-
-  const gridItems = Array.from(grid.querySelectorAll<HTMLElement>('.catalog-item'));
 
   function calculateItemsPerRow(): void {
     const gridWidth = grid!.offsetWidth;
@@ -231,7 +317,7 @@ export function initCatalog(data: CatalogData, baseUrl: string = '/'): void {
 
   function getFilteredIds(): Set<number> {
     const ids = new Set<number>();
-    for (const entry of data.searchIndex) {
+    for (const entry of searchIndex) {
       if (matchesFilters(entry, searchQuery, selectedCategory)) {
         ids.add(entry.id);
       }
@@ -240,7 +326,7 @@ export function initCatalog(data: CatalogData, baseUrl: string = '/'): void {
   }
 
   function getFilteredCount(categoryId?: number): number {
-    return data.searchIndex.filter((entry) => {
+    return searchIndex.filter((entry) => {
       if (searchQuery) {
         const query = searchQuery.toLowerCase();
         const nameMatch = entry.name.toLowerCase().includes(query);
@@ -282,7 +368,7 @@ export function initCatalog(data: CatalogData, baseUrl: string = '/'): void {
     });
 
     if (emptyState) {
-      emptyState.classList.toggle('hidden', visibleCount > 0);
+      emptyState.classList.toggle('is-hidden', visibleCount > 0);
     }
 
     updateCategoryCounts();
@@ -294,7 +380,7 @@ export function initCatalog(data: CatalogData, baseUrl: string = '/'): void {
     if (pendingOpenAfterFilterResetId != null && filteredIds.has(pendingOpenAfterFilterResetId)) {
       const targetId = pendingOpenAfterFilterResetId;
       pendingOpenAfterFilterResetId = null;
-      openDecorationById(targetId);
+      void openDecorationById(targetId);
     }
   }
 
@@ -337,8 +423,8 @@ export function initCatalog(data: CatalogData, baseUrl: string = '/'): void {
     syncCatalogUrl(url);
   }
 
-  function insertExpandedPanel(decorationId: number, animate: boolean): void {
-    const decoration = decorationById.get(decorationId);
+  async function insertExpandedPanel(decorationId: number, animate: boolean): Promise<void> {
+    const decoration = await loadDecoration(decorationId);
     if (!decoration) {
       return;
     }
@@ -387,7 +473,7 @@ export function initCatalog(data: CatalogData, baseUrl: string = '/'): void {
     updateDeepLink(decorationId);
   }
 
-  function openDecorationById(id: number, options: { animate?: boolean } = {}): void {
+  async function openDecorationById(id: number, options: { animate?: boolean } = {}): Promise<void> {
     const animate = options.animate ?? true;
     const visibleItems = getVisibleGridItems();
     const newIndex = visibleItems.findIndex((item) => Number(item.dataset.id) === id);
@@ -413,12 +499,14 @@ export function initCatalog(data: CatalogData, baseUrl: string = '/'): void {
       const panel = grid!.querySelector<HTMLElement>('.expanded-decoration');
       if (panel) {
         panel.classList.add('is-collapsed');
-        setTimeout(() => insertExpandedPanel(id, true), ANIMATION_MS);
+        setTimeout(() => {
+          void insertExpandedPanel(id, true);
+        }, ANIMATION_MS);
         return;
       }
     }
 
-    insertExpandedPanel(id, expandedItemId != null && isSameRow ? false : animate);
+    await insertExpandedPanel(id, expandedItemId != null && isSameRow ? false : animate);
   }
 
   function clearFilters(): void {
@@ -427,7 +515,7 @@ export function initCatalog(data: CatalogData, baseUrl: string = '/'): void {
     searchInput!.value = '';
     categorySelect!.value = 'all';
     if (clearSearchButton) {
-      clearSearchButton.classList.add('hidden');
+      clearSearchButton.classList.add('is-hidden');
     }
     applyFilters();
   }
@@ -454,16 +542,16 @@ export function initCatalog(data: CatalogData, baseUrl: string = '/'): void {
     filterPrompt?.classList.add('is-hidden');
   }
 
-  function handleChangelogEntryClick(id: number, name: string): void {
+  async function handleChangelogEntryClick(id: number, name: string): Promise<void> {
     const filteredIds = getFilteredIds();
     closeChangelog();
 
     if (filteredIds.has(id)) {
-      openDecorationById(id);
+      await openDecorationById(id);
       return;
     }
 
-    if (decorationById.has(id)) {
+    if (await decorationExists(id)) {
       showFilterPrompt(id, name);
     }
   }
@@ -482,9 +570,35 @@ export function initCatalog(data: CatalogData, baseUrl: string = '/'): void {
 
   function openChangelog(): void {
     changelogPanel?.classList.remove('is-closed');
+    void ensureChangelogLoaded();
     if (changelogScrollContainer) {
       changelogScrollContainer.scrollTop = changelogScrollTop;
     }
+  }
+
+  async function ensureChangelogLoaded(): Promise<void> {
+    if (changelogLoaded) {
+      return;
+    }
+    if (changelogLoading) {
+      await changelogLoading;
+      return;
+    }
+
+    changelogLoading = (async () => {
+      const response = await fetch(`${catalogBase}/changelog.json`);
+      if (!response.ok || !changelogScrollContainer) {
+        return;
+      }
+
+      const days = (await response.json()) as ChangeLogDay[];
+      changelogScrollContainer.innerHTML = renderChangelogHtml(days);
+      changelogLoaded = true;
+      updateChangelogVisibility();
+    })();
+
+    await changelogLoading;
+    changelogLoading = null;
   }
 
   function closeChangelog(): void {
@@ -499,10 +613,103 @@ export function initCatalog(data: CatalogData, baseUrl: string = '/'): void {
     changelogScrollContainer?.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
+  function buildGrid(): void {
+    grid!.replaceChildren();
+
+    gridItems = searchIndex.map((entry) => {
+      const item = document.createElement('button');
+      item.type = 'button';
+      item.className = 'catalog-item';
+      item.dataset.id = String(entry.id);
+      item.dataset.categories = entry.categories.join(',');
+      item.dataset.searchText = `${entry.name} ${entry.description ?? ''}`.toLowerCase();
+      item.setAttribute('aria-label', entry.name);
+      item.innerHTML = '<div class="catalog-icon" aria-hidden="true"></div>';
+      item.addEventListener('click', () => {
+        void openDecorationById(entry.id);
+      });
+      grid!.appendChild(item);
+      return item;
+    });
+  }
+
+  let activeIconLoads = 0;
+  const iconLoadQueue: HTMLElement[] = [];
+
+  function iconUrl(id: number): string {
+    return `${catalogBase}/icons/${id}.png`;
+  }
+
+  function loadIconForItem(item: HTMLElement): void {
+    const iconRoot = item.querySelector('.catalog-icon');
+    if (!iconRoot || iconRoot.querySelector('img') || iconRoot.classList.contains('catalog-icon--missing')) {
+      return;
+    }
+
+    const id = Number(item.dataset.id);
+    const entry = searchIndexById.get(id);
+    const img = document.createElement('img');
+    img.className = 'catalog-icon__img';
+    img.alt = entry?.name ?? '';
+    img.decoding = 'async';
+    img.onload = () => {
+      iconRoot.classList.add('is-loaded');
+      activeIconLoads = Math.max(0, activeIconLoads - 1);
+      pumpIconQueue();
+    };
+    img.onerror = () => {
+      iconRoot.classList.add('catalog-icon--missing');
+      iconRoot.textContent = '?';
+      activeIconLoads = Math.max(0, activeIconLoads - 1);
+      pumpIconQueue();
+    };
+    img.src = iconUrl(id);
+    iconRoot.appendChild(img);
+  }
+
+  function pumpIconQueue(): void {
+    while (activeIconLoads < MAX_ICON_LOADS && iconLoadQueue.length > 0) {
+      const item = iconLoadQueue.shift();
+      if (!item || item.classList.contains('is-hidden')) {
+        continue;
+      }
+      activeIconLoads += 1;
+      loadIconForItem(item);
+    }
+  }
+
+  function queueIconLoad(item: HTMLElement): void {
+    const iconRoot = item.querySelector('.catalog-icon');
+    if (!iconRoot || iconRoot.querySelector('img') || iconRoot.classList.contains('catalog-icon--missing')) {
+      return;
+    }
+    if (!iconLoadQueue.includes(item)) {
+      iconLoadQueue.push(item);
+    }
+    pumpIconQueue();
+  }
+
+  const iconObserver = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) {
+          continue;
+        }
+        queueIconLoad(entry.target as HTMLElement);
+        iconObserver.unobserve(entry.target);
+      }
+    },
+    { rootMargin: '240px 0px' }
+  );
+
+  function observeGridIcons(): void {
+    gridItems.forEach((item) => iconObserver.observe(item));
+  }
+
   searchInput.addEventListener('input', () => {
     searchQuery = searchInput.value;
     if (clearSearchButton) {
-      clearSearchButton.classList.toggle('hidden', searchQuery.length === 0);
+      clearSearchButton.classList.toggle('is-hidden', searchQuery.length === 0);
     }
     applyFilters();
   });
@@ -510,7 +717,7 @@ export function initCatalog(data: CatalogData, baseUrl: string = '/'): void {
   clearSearchButton?.addEventListener('click', () => {
     searchQuery = '';
     searchInput.value = '';
-    clearSearchButton.classList.add('hidden');
+    clearSearchButton.classList.add('is-hidden');
     applyFilters();
   });
 
@@ -531,25 +738,24 @@ export function initCatalog(data: CatalogData, baseUrl: string = '/'): void {
       const entryType = button.dataset.changelogTypeToggle ?? '';
       if (visibleChangelogTypes.has(entryType)) {
         visibleChangelogTypes.delete(entryType);
-        button.classList.remove('bg-gray-900', 'text-white', 'border-gray-900');
-        button.classList.add('bg-white', 'text-gray-600', 'border-gray-300');
         button.setAttribute('aria-pressed', 'false');
       } else {
         visibleChangelogTypes.add(entryType);
-        button.classList.add('bg-gray-900', 'text-white', 'border-gray-900');
-        button.classList.remove('bg-white', 'text-gray-600', 'border-gray-300');
         button.setAttribute('aria-pressed', 'true');
       }
       updateChangelogVisibility();
     });
   });
 
-  document.querySelectorAll<HTMLButtonElement>('[data-changelog-entry]').forEach((button) => {
-    button.addEventListener('click', () => {
-      const id = Number(button.dataset.changelogEntry);
-      const name = button.dataset.changelogName ?? '';
-      handleChangelogEntryClick(id, name);
-    });
+  changelogScrollContainer?.addEventListener('click', (event) => {
+    const target = (event.target as HTMLElement | null)?.closest<HTMLButtonElement>('[data-changelog-entry]');
+    if (!target) {
+      return;
+    }
+
+    const id = Number(target.dataset.changelogEntry);
+    const name = target.dataset.changelogName ?? '';
+    void handleChangelogEntryClick(id, name);
   });
 
   filterPromptNo?.addEventListener('click', hideFilterPrompt);
@@ -564,13 +770,6 @@ export function initCatalog(data: CatalogData, baseUrl: string = '/'): void {
     applyFilters();
   });
 
-  gridItems.forEach((item) => {
-    item.addEventListener('click', () => {
-      const id = Number(item.dataset.id);
-      openDecorationById(id);
-    });
-  });
-
   let resizeTimer: ReturnType<typeof setTimeout> | null = null;
   window.addEventListener('resize', () => {
     calculateItemsPerRow();
@@ -583,28 +782,35 @@ export function initCatalog(data: CatalogData, baseUrl: string = '/'): void {
     resizeTimer = setTimeout(() => {
       resizeTimer = null;
       if (expandedItemId != null) {
-        insertExpandedPanel(expandedItemId, false);
+        void insertExpandedPanel(expandedItemId, false);
       }
     }, 150);
   });
 
+  buildGrid();
   calculateItemsPerRow();
   applyFilters();
+  observeGridIcons();
   updateChangelogVisibility();
-
   syncCatalogUrl(new URL(window.location.href));
 
   const openParam = new URLSearchParams(window.location.search).get('open');
   if (openParam) {
     const openId = Number(openParam);
-    if (!Number.isNaN(openId) && decorationById.has(openId)) {
+    if (!Number.isNaN(openId)) {
       const entry = searchIndexById.get(openId);
       if (entry && !matchesFilters(entry, searchQuery, selectedCategory)) {
         clearFilters();
         pendingOpenAfterFilterResetId = openId;
         applyFilters();
-      } else {
-        requestAnimationFrame(() => openDecorationById(openId));
+      } else if (entry) {
+        requestAnimationFrame(() => {
+          void openDecorationById(openId);
+        });
+      } else if (await decorationExists(openId)) {
+        clearFilters();
+        pendingOpenAfterFilterResetId = openId;
+        applyFilters();
       }
     }
   }
