@@ -1,4 +1,4 @@
-import type { Category, ChangeLogDay, ChangeLogEntry, Decoration } from '../types';
+import type { ChangeLogDay, ChangeLogEntry, Decoration } from '../types';
 
 interface HistoryEntry {
   day: string;
@@ -17,42 +17,25 @@ function historyToEntry(id: number, history: HistoryEntry): ChangeLogEntry & { d
   };
 }
 
-export function buildChangelogDays(
-  decorations: Decoration[],
-  categories: Category[]
-): ChangeLogDay[] {
+/** Changelog entries for when a decoration was first added to the catalog. */
+export function buildChangelogDays(decorations: Decoration[]): ChangeLogDay[] {
   const byDay = new Map<string, ChangeLogEntry[]>();
 
-  const addEntries = (id: number, history: HistoryEntry[] | undefined) => {
-    for (const item of history ?? []) {
+  for (const decoration of decorations) {
+    for (const item of decoration.history ?? []) {
+      if (item.type !== 'New Item') {
+        continue;
+      }
       const dayEntries = byDay.get(item.day) ?? [];
-      dayEntries.push(historyToEntry(id, item));
+      dayEntries.push(historyToEntry(decoration.id, item));
       byDay.set(item.day, dayEntries);
     }
-  };
-
-  for (const decoration of decorations) {
-    addEntries(decoration.id, decoration.history);
-  }
-
-  for (const category of categories) {
-    addEntries(category.id, category.history);
   }
 
   return Array.from(byDay.entries())
     .map(([day, entries]) => ({
       day,
-      entries: entries.sort((a, b) => {
-        const typeOrder = (type: string) =>
-          [
-            'New Item',
-            'Item Updated',
-            'Item Removed',
-            'Image Updated',
-            'Recipe Updated',
-          ].indexOf(type);
-        return typeOrder(a.type) - typeOrder(b.type) || a.name.localeCompare(b.name);
-      }),
+      entries: entries.sort((a, b) => a.name.localeCompare(b.name)),
     }))
     .sort((a, b) => b.day.localeCompare(a.day));
 }

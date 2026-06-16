@@ -7,14 +7,6 @@ export interface SearchIndexEntry {
   categories: number[];
 }
 
-const ENTRY_TYPE_ORDER = [
-  'New Item',
-  'Item Updated',
-  'Item Removed',
-  'Image Updated',
-  'Recipe Updated',
-] as const;
-
 const ANIMATION_MS = 200;
 const MAX_ICON_LOADS = 6;
 
@@ -232,7 +224,6 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   let itemsPerRow = 0;
   let pendingOpenAfterFilterResetId: number | null = null;
   let filterVisibilityPrompt: { id: number; name: string } | null = null;
-  const visibleChangelogTypes = new Set<string>(ENTRY_TYPE_ORDER);
   let changelogScrollTop = Number(sessionStorage.getItem('changelogScrollTop') ?? '0');
   let gridItems: HTMLElement[] = [];
   let changelogLoaded = false;
@@ -528,18 +519,6 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     }
   }
 
-  function updateChangelogVisibility(): void {
-    document.querySelectorAll<HTMLElement>('.changelog-entry').forEach((entry) => {
-      const type = entry.dataset.entryType ?? '';
-      entry.classList.toggle('is-hidden', !visibleChangelogTypes.has(type));
-    });
-
-    document.querySelectorAll<HTMLElement>('.changelog-day-section').forEach((section) => {
-      const visibleEntries = section.querySelectorAll('.changelog-entry:not(.is-hidden)');
-      section.classList.toggle('is-hidden', visibleEntries.length === 0);
-    });
-  }
-
   function openChangelog(): void {
     changelogPanel?.classList.remove('is-closed');
     void ensureChangelogLoaded();
@@ -565,7 +544,6 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
 
       changelogScrollContainer.innerHTML = await response.text();
       changelogLoaded = true;
-      updateChangelogVisibility();
     })();
 
     await changelogLoading;
@@ -708,20 +686,6 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   changelogScrollTopButton?.addEventListener('click', scrollChangelogToTop);
   changelogTitleButton?.addEventListener('click', scrollChangelogToTop);
 
-  document.querySelectorAll<HTMLButtonElement>('[data-changelog-type-toggle]').forEach((button) => {
-    button.addEventListener('click', () => {
-      const entryType = button.dataset.changelogTypeToggle ?? '';
-      if (visibleChangelogTypes.has(entryType)) {
-        visibleChangelogTypes.delete(entryType);
-        button.setAttribute('aria-pressed', 'false');
-      } else {
-        visibleChangelogTypes.add(entryType);
-        button.setAttribute('aria-pressed', 'true');
-      }
-      updateChangelogVisibility();
-    });
-  });
-
   changelogScrollContainer?.addEventListener('click', (event) => {
     const target = (event.target as HTMLElement | null)?.closest<HTMLButtonElement>('[data-changelog-entry]');
     if (!target) {
@@ -766,7 +730,6 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   calculateItemsPerRow();
   applyFilters();
   observeGridIcons();
-  updateChangelogVisibility();
   syncCatalogUrl(new URL(window.location.href));
 
   const openParam = new URLSearchParams(window.location.search).get('open');

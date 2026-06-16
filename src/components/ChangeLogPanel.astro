@@ -2,7 +2,7 @@
   <button
     id="changelog-backdrop"
     class="changelog-panel__backdrop"
-    aria-label="Close recent changes panel"
+    aria-label="Close recently added panel"
     type="button"
   ></button>
 
@@ -10,7 +10,7 @@
     class="changelog-panel__drawer"
     role="dialog"
     aria-modal="true"
-    aria-label="Recent Changes"
+    aria-label="Recently Added"
   >
     <div class="changelog-panel__header">
       <div class="changelog-panel__title-row">
@@ -18,9 +18,9 @@
           id="changelog-title"
           type="button"
           class="changelog-panel__title"
-          aria-label="Scroll changelog to top"
+          aria-label="Scroll additions list to top"
         >
-          Recent Changes
+          Recently Added
         </button>
         <div class="changelog-panel__actions">
           <button
@@ -41,47 +41,10 @@
           </button>
         </div>
       </div>
-      <div class="changelog-panel__filters">
-        <button type="button" data-changelog-type-toggle="New Item" class="changelog-filter" aria-pressed="true">
-          New Item
-        </button>
-        <button
-          type="button"
-          data-changelog-type-toggle="Item Updated"
-          class="changelog-filter"
-          aria-pressed="true"
-        >
-          Item Updated
-        </button>
-        <button
-          type="button"
-          data-changelog-type-toggle="Item Removed"
-          class="changelog-filter"
-          aria-pressed="true"
-        >
-          Item Removed
-        </button>
-        <button
-          type="button"
-          data-changelog-type-toggle="Image Updated"
-          class="changelog-filter"
-          aria-pressed="true"
-        >
-          Image Updated
-        </button>
-        <button
-          type="button"
-          data-changelog-type-toggle="Recipe Updated"
-          class="changelog-filter"
-          aria-pressed="true"
-        >
-          Recipe Updated
-        </button>
-      </div>
     </div>
 
     <div id="changelog-scroll" class="changelog-panel__scroll">
-      <p class="changelog-panel__empty">Loading recent changes…</p>
+      <p class="changelog-panel__empty">Open to see recently added decorations.</p>
     </div>
   </aside>
 </div>

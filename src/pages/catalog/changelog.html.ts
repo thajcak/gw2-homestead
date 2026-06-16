@@ -9,16 +9,10 @@ let cachedHtml: string | null = null;
 
 export const GET: APIRoute = async () => {
   if (!cachedHtml) {
-    const [decorationEntries, categoryEntries] = await Promise.all([
-      getCollection('decorations'),
-      getCollection('categories'),
-    ]);
+    const decorationEntries = await getCollection('decorations');
 
     cachedHtml = renderChangelogHtml(
-      buildChangelogDays(
-        decorationEntries.map((entry) => entry.data),
-        categoryEntries.map((entry) => entry.data)
-      )
+      buildChangelogDays(decorationEntries.map((entry) => entry.data))
     );
   }
 
