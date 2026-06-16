@@ -6,6 +6,21 @@ const repoRoot = join(fileURLToPath(new URL('.', import.meta.url)), '..');
 const decorationsDir = join(repoRoot, 'src/content/decorations');
 const categoriesDir = join(repoRoot, 'src/content/categories');
 
+const HISTORY_TYPE_RENAMES = {
+  'Item Update': 'Item Updated',
+  'Image Update': 'Image Updated',
+  'Recipe Added': 'Recipe Updated',
+};
+
+function migrateHistoryEntry(entry) {
+  const nextType = HISTORY_TYPE_RENAMES[entry.type];
+  if (!nextType) {
+    return false;
+  }
+  entry.type = nextType;
+  return true;
+}
+
 function migrateFile(filePath) {
   const item = JSON.parse(readFileSync(filePath, 'utf8'));
   let changed = false;
@@ -16,8 +31,7 @@ function migrateFile(filePath) {
   }
 
   for (const entry of item.history ?? []) {
-    if (entry.type === 'Item Update') {
-      entry.type = 'Item Updated';
+    if (migrateHistoryEntry(entry)) {
       changed = true;
     }
   }
@@ -43,5 +57,5 @@ const decorationUpdates = migrateDirectory(decorationsDir);
 const categoryUpdates = migrateDirectory(categoriesDir);
 
 console.log(
-  `Migrated ${decorationUpdates} decoration files and ${categoryUpdates} category files (removed max_count, renamed Item Update).`
+  `Migrated ${decorationUpdates} decoration files and ${categoryUpdates} category files.`
 );

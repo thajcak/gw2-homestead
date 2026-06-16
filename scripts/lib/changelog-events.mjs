@@ -59,7 +59,7 @@ function decorationImageUpdateEvent(oldItem, newItem, remoteOriginalSource) {
 
   return {
     id: newItem.id,
-    type: 'Image Update',
+    type: 'Image Updated',
     name: newItem.name,
   };
 }
@@ -68,23 +68,19 @@ function decorationRecipeEvent(oldItem, newItem) {
   const oldRecipe = oldItem.recipe ?? null;
   const newRecipe = newItem.recipe ?? null;
 
-  if (!recipeEmpty(oldRecipe) && JSON.stringify(oldRecipe) !== JSON.stringify(newRecipe)) {
-    return {
-      id: newItem.id,
-      type: 'Recipe Updated',
-      name: newItem.name,
-    };
+  if (recipeEmpty(oldRecipe) && recipeEmpty(newRecipe)) {
+    return null;
   }
 
-  if (recipeEmpty(oldRecipe) && !recipeEmpty(newRecipe)) {
-    return {
-      id: newItem.id,
-      type: 'Recipe Added',
-      name: newItem.name,
-    };
+  if (JSON.stringify(oldRecipe) === JSON.stringify(newRecipe)) {
+    return null;
   }
 
-  return null;
+  return {
+    id: newItem.id,
+    type: 'Recipe Updated',
+    name: newItem.name,
+  };
 }
 
 function categoryItemUpdatedEvent(oldItem, newItem) {
