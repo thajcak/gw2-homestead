@@ -282,7 +282,7 @@ img {
   max-height: 70vh;
   min-height: min-content;
   margin-block: 0.5rem;
-  overflow: hidden;
+  overflow: visible;
   color: #ffffff;
   transition: opacity 0.2s ease-out;
 }
@@ -364,14 +364,16 @@ img {
 
 .decoration-indicator {
   position: absolute;
-  top: -0.75rem;
+  top: -12px;
   left: 50%;
+  z-index: 1;
   width: 0;
   height: 0;
   border-left: 12px solid transparent;
   border-right: 12px solid transparent;
   border-bottom: 12px solid black;
   transform: translateX(-50%);
+  pointer-events: none;
 }
 
 .expanded-heading {

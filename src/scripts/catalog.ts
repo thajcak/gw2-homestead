@@ -97,7 +97,7 @@ function renderExpandedDecoration(
   decorationIndex: number,
   baseUrl: string
 ): string {
-  const indicatorLeftPosition = `calc(${(decorationIndex % itemsPerRow) * (74 + 16)}px - ${(itemsPerRow * (74 + 16) - 16) / 2}px + 37px)`;
+  const indicatorLeft = `calc(50% + ${(decorationIndex % itemsPerRow) * (74 + 16)}px - ${(itemsPerRow * (74 + 16) - 16) / 2}px + 37px)`;
   const hasOriginal = Boolean(decoration.original?.source);
   const imageSource = hasOriginal ? resolveAsset(decoration.original?.source, baseUrl) : '';
   const imageFrameContent = hasOriginal
@@ -153,7 +153,7 @@ function renderExpandedDecoration(
   }
 
   return `<div class="expanded-decoration is-collapsed" data-expanded-for="${decoration.id}" style="grid-row: auto;">
-    <div class="decoration-indicator" style="margin-left: ${indicatorLeftPosition}"></div>
+    <div class="decoration-indicator" style="left: ${indicatorLeft}"></div>
     <div class="expanded-decoration-gradient">
       <div class="expanded-decoration__body">
         <div class="expanded-decoration__layout">
