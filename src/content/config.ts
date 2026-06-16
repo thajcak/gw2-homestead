@@ -32,7 +32,6 @@ const decorationRecipeSchema = z.object({
 const changeLogEntryTypeSchema = z.enum([
   'New Item',
   'Item Update',
-  'Item Removed',
   'Image Update',
   'Recipe Added',
   'Recipe Updated',

@@ -55,7 +55,6 @@ export interface Category {
 export type ChangeLogEntryType =
   | 'New Item'
   | 'Item Update'
-  | 'Item Removed'
   | 'Image Update'
   | 'Recipe Added'
   | 'Recipe Updated';

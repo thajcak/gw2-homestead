@@ -25,6 +25,9 @@ export function buildChangelogDays(
 
   const addEntries = (id: number, history: HistoryEntry[] | undefined) => {
     for (const item of history ?? []) {
+      if (item.type === 'Item Removed') {
+        continue;
+      }
       const dayEntries = byDay.get(item.day) ?? [];
       dayEntries.push(historyToEntry(id, item));
       byDay.set(item.day, dayEntries);
@@ -47,7 +50,6 @@ export function buildChangelogDays(
           [
             'New Item',
             'Item Update',
-            'Item Removed',
             'Image Update',
             'Recipe Added',
             'Recipe Updated',
