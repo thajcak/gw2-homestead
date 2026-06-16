@@ -219,9 +219,6 @@ img {
   border: 0;
   border-radius: var(--radius-lg);
   background: transparent;
-  content-visibility: auto;
-  contain-intrinsic-size: 74px 74px;
-  contain: layout style;
 }
 
 .catalog-item:hover {

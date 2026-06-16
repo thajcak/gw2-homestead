@@ -8,7 +8,9 @@ export interface SearchIndexEntry {
 }
 
 const ANIMATION_MS = 200;
-const MAX_ICON_LOADS = 6;
+const MAX_ICON_LOADS = 3;
+const SCROLL_SETTLE_MS = 150;
+const ICON_ROOT_MARGIN = '80px 0px';
 
 function catalogUrl(baseUrl: string, path: string): string {
   const normalizedBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
@@ -589,6 +591,9 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
 
   let activeIconLoads = 0;
   const iconLoadQueue = new Set<HTMLElement>();
+  const iconsInView = new Set<HTMLElement>();
+  let isScrolling = false;
+  let scrollSettleTimer: ReturnType<typeof setTimeout> | null = null;
 
   function canLoadIcon(item: HTMLElement): boolean {
     const iconRoot = item.querySelector('.catalog-icon');
@@ -619,6 +624,8 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     img.className = 'catalog-icon__img';
     img.alt = entry?.name ?? '';
     img.decoding = 'async';
+    img.loading = 'lazy';
+    img.fetchPriority = 'low';
     img.onload = () => {
       iconRoot.classList.add('is-loaded');
       activeIconLoads = Math.max(0, activeIconLoads - 1);
@@ -635,6 +642,10 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   }
 
   function pumpIconQueue(): void {
+    if (isScrolling) {
+      return;
+    }
+
     let deferred = 0;
     const maxDeferred = iconLoadQueue.size;
 
@@ -645,8 +656,7 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
       }
       iconLoadQueue.delete(item);
 
-      if (item.classList.contains('is-hidden')) {
-        iconLoadQueue.add(item);
+      if (item.classList.contains('is-hidden') || !iconsInView.has(item)) {
         deferred += 1;
         if (deferred >= maxDeferred) {
           break;
@@ -665,25 +675,55 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     }
   }
 
+  function syncIconLoadQueue(): void {
+    iconLoadQueue.clear();
+    for (const item of iconsInView) {
+      if (!item.classList.contains('is-hidden') && canLoadIcon(item)) {
+        iconLoadQueue.add(item);
+      }
+    }
+    pumpIconQueue();
+  }
+
+  function scheduleIconLoadsAfterScroll(): void {
+    if (scrollSettleTimer != null) {
+      clearTimeout(scrollSettleTimer);
+    }
+    isScrolling = true;
+    scrollSettleTimer = setTimeout(() => {
+      scrollSettleTimer = null;
+      isScrolling = false;
+      syncIconLoadQueue();
+    }, SCROLL_SETTLE_MS);
+  }
+
   function queueIconLoad(item: HTMLElement): void {
     if (!canLoadIcon(item)) {
       return;
     }
-    iconLoadQueue.add(item);
-    pumpIconQueue();
+    if (!isScrolling) {
+      iconLoadQueue.add(item);
+      pumpIconQueue();
+    }
   }
 
   const iconObserver = new IntersectionObserver(
     (entries) => {
       for (const entry of entries) {
-        if (!entry.isIntersecting) {
-          continue;
+        const item = entry.target as HTMLElement;
+        if (entry.isIntersecting) {
+          iconsInView.add(item);
+        } else {
+          iconsInView.delete(item);
+          iconLoadQueue.delete(item);
         }
-        queueIconLoad(entry.target as HTMLElement);
-        iconObserver.unobserve(entry.target);
+      }
+
+      if (!isScrolling) {
+        syncIconLoadQueue();
       }
     },
-    { rootMargin: '240px 0px' }
+    { rootMargin: ICON_ROOT_MARGIN }
   );
 
   function observeGridIcons(): void {
@@ -741,6 +781,14 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   });
 
   let resizeTimer: ReturnType<typeof setTimeout> | null = null;
+  window.addEventListener(
+    'scroll',
+    () => {
+      scheduleIconLoadsAfterScroll();
+    },
+    { passive: true }
+  );
+
   window.addEventListener('resize', () => {
     calculateItemsPerRow();
     if (expandedItemId == null) {
@@ -761,6 +809,7 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   calculateItemsPerRow();
   applyFilters();
   observeGridIcons();
+  syncIconLoadQueue();
   syncCatalogUrl(new URL(window.location.href));
 
   const openParam = new URLSearchParams(window.location.search).get('open');
