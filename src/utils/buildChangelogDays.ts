@@ -46,9 +46,9 @@ export function buildChangelogDays(
         const typeOrder = (type: string) =>
           [
             'New Item',
-            'Item Update',
-            'Image Update',
-            'Recipe Added',
+            'Item Updated',
+            'Item Removed',
+            'Image Updated',
             'Recipe Updated',
           ].indexOf(type);
         return typeOrder(a.type) - typeOrder(b.type) || a.name.localeCompare(b.name);

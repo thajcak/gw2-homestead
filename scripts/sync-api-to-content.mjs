@@ -101,8 +101,6 @@ function main() {
   const decorationEvents = generateDecorationEvents({
     existingDecorations,
     apiDecorations,
-    existingCategories,
-    apiCategories,
     remoteOriginalSource,
   });
   const categoryEvents = generateCategoryEvents({

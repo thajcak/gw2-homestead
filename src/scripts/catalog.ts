@@ -9,9 +9,9 @@ export interface SearchIndexEntry {
 
 const ENTRY_TYPE_ORDER = [
   'New Item',
-  'Item Update',
-  'Image Update',
-  'Recipe Added',
+  'Item Updated',
+  'Item Removed',
+  'Image Updated',
   'Recipe Updated',
 ] as const;
 

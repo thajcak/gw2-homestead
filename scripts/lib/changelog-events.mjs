@@ -2,22 +2,7 @@ function recipeEmpty(recipe) {
   return recipe == null || (typeof recipe === 'object' && Object.keys(recipe).length === 0);
 }
 
-function buildCategoryNameMap(existingCategories, apiCategories) {
-  const names = new Map();
-  for (const category of existingCategories.values()) {
-    names.set(category.id, category.name);
-  }
-  for (const category of apiCategories) {
-    names.set(category.id, category.name);
-  }
-  return names;
-}
-
-function categoryLabel(categoryNames, categoryId) {
-  return categoryNames.get(categoryId) ?? `Category ${categoryId}`;
-}
-
-function decorationItemUpdateEvent(oldItem, newItem, categoryNames) {
+function decorationItemUpdatedEvent(oldItem, newItem) {
   const oldDescription = String(oldItem.description ?? '');
   const newDescription = String(newItem.description ?? '');
   const changes = [];
@@ -27,14 +12,6 @@ function decorationItemUpdateEvent(oldItem, newItem, categoryNames) {
       field: 'name',
       before: oldItem.name ?? null,
       after: newItem.name ?? null,
-    });
-  }
-
-  if ((oldItem.max_count ?? null) !== (newItem.max_count ?? null)) {
-    changes.push({
-      field: 'max_count',
-      before: oldItem.max_count ?? null,
-      after: newItem.max_count ?? null,
     });
   }
 
@@ -60,34 +37,13 @@ function decorationItemUpdateEvent(oldItem, newItem, categoryNames) {
     });
   }
 
-  const oldCategories = oldItem.categories ?? [];
-  const newCategories = newItem.categories ?? [];
-
-  for (const categoryId of newCategories.filter((id) => !oldCategories.includes(id))) {
-    changes.push({
-      field: 'categories',
-      detail: `${categoryLabel(categoryNames, categoryId)} was added`,
-      before: null,
-      after: categoryId,
-    });
-  }
-
-  for (const categoryId of oldCategories.filter((id) => !newCategories.includes(id))) {
-    changes.push({
-      field: 'categories',
-      detail: `${categoryLabel(categoryNames, categoryId)} was removed`,
-      before: categoryId,
-      after: null,
-    });
-  }
-
   if (changes.length === 0) {
     return null;
   }
 
   return {
     id: newItem.id,
-    type: 'Item Update',
+    type: 'Item Updated',
     name: newItem.name,
     changes,
   };
@@ -131,14 +87,14 @@ function decorationRecipeEvent(oldItem, newItem) {
   return null;
 }
 
-function categoryItemUpdateEvent(oldItem, newItem) {
+function categoryItemUpdatedEvent(oldItem, newItem) {
   if ((oldItem.name ?? null) === (newItem.name ?? null)) {
     return null;
   }
 
   return {
     id: newItem.id,
-    type: 'Item Update',
+    type: 'Item Updated',
     name: newItem.name,
     changes: [
       {
@@ -153,14 +109,11 @@ function categoryItemUpdateEvent(oldItem, newItem) {
 export function generateDecorationEvents({
   existingDecorations,
   apiDecorations,
-  existingCategories,
-  apiCategories,
   remoteOriginalSource,
 }) {
   const events = [];
   const existingIds = new Set(existingDecorations.keys());
   const apiIds = new Set(apiDecorations.map((item) => item.id));
-  const categoryNames = buildCategoryNameMap(existingCategories, apiCategories);
 
   for (const apiItem of apiDecorations) {
     if (!existingIds.has(apiItem.id)) {
@@ -173,7 +126,7 @@ export function generateDecorationEvents({
     }
 
     const oldItem = existingDecorations.get(apiItem.id);
-    const updateEvent = decorationItemUpdateEvent(oldItem, apiItem, categoryNames);
+    const updateEvent = decorationItemUpdatedEvent(oldItem, apiItem);
     if (updateEvent) {
       events.push(updateEvent);
     }
@@ -218,7 +171,7 @@ export function generateCategoryEvents({ existingCategories, apiCategories }) {
     }
 
     const oldItem = existingCategories.get(apiItem.id);
-    const updateEvent = categoryItemUpdateEvent(oldItem, apiItem);
+    const updateEvent = categoryItemUpdatedEvent(oldItem, apiItem);
     if (updateEvent) {
       events.push(updateEvent);
     }

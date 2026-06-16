@@ -31,9 +31,9 @@ const decorationRecipeSchema = z.object({
 
 const changeLogEntryTypeSchema = z.enum([
   'New Item',
-  'Item Update',
-  'Image Update',
-  'Recipe Added',
+  'Item Updated',
+  'Item Removed',
+  'Image Updated',
   'Recipe Updated',
 ]);
 
@@ -56,7 +56,6 @@ const decorationSchema = z.object({
   name: z.string(),
   description: z.string(),
   categories: z.array(z.number()),
-  max_count: z.number(),
   icon: z.string(),
   wikiTitle: z.string().optional(),
   recipe: decorationRecipeSchema.nullable().optional(),

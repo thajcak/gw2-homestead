@@ -118,7 +118,6 @@ export function mergeDecorationUpdate(existing, apiItem) {
     name: apiItem.name,
     description: apiItem.description,
     categories: apiItem.categories,
-    max_count: apiItem.max_count,
     icon: isLocalAssetPath(existing?.icon) ? existing.icon : apiItem.icon,
     history: existing?.history ?? [],
   };
