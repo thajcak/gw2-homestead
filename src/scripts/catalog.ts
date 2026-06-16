@@ -11,6 +11,38 @@ const ANIMATION_MS = 200;
 const MAX_ICON_LOADS = 3;
 const SCROLL_SETTLE_MS = 150;
 const ICON_ROOT_MARGIN = '80px 0px';
+const SCROLL_HEADER_OFFSET = 94;
+
+type PanelScrollBehavior = ScrollBehavior | 'instant';
+
+function waitForNextFrame(count = 1): Promise<void> {
+  return new Promise((resolve) => {
+    const step = (remaining: number) => {
+      if (remaining <= 0) {
+        resolve();
+        return;
+      }
+      requestAnimationFrame(() => step(remaining - 1));
+    };
+    step(count);
+  });
+}
+
+function isItemNearViewport(item: HTMLElement): boolean {
+  const rect = item.getBoundingClientRect();
+  const margin = window.innerHeight * 0.75;
+  return rect.top < window.innerHeight + margin && rect.bottom > -margin;
+}
+
+function resolveScrollBehavior(
+  item: HTMLElement,
+  preferred?: PanelScrollBehavior
+): PanelScrollBehavior {
+  if (preferred) {
+    return preferred;
+  }
+  return isItemNearViewport(item) ? 'smooth' : 'auto';
+}
 
 function catalogUrl(baseUrl: string, path: string): string {
   const normalizedBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
@@ -90,21 +122,26 @@ function renderExpandedDecoration(
   itemsPerRow: number,
   decorationIndex: number,
   baseUrl: string,
-  previewUrls: Record<string, string>
+  previewUrls: Record<string, string>,
+  deferPreviewLoad = false
 ): string {
   const indicatorLeft = `calc(50% + ${(decorationIndex % itemsPerRow) * (74 + 16)}px - ${(itemsPerRow * (74 + 16) - 16) / 2}px + 37px)`;
   const optimizedPreview = previewUrls[String(decoration.id)];
   const imageSource = optimizedPreview ?? '';
   const hasOriginal = Boolean(imageSource);
+  const previewSrcAttr = deferPreviewLoad
+    ? `data-preview-src="${escapeHtml(imageSource)}"`
+    : `src="${escapeHtml(imageSource)}"`;
   const imageFrameContent = hasOriginal
     ? `<div class="expanded-preview">
         <div class="expanded-preview__skeleton" aria-hidden="true"></div>
         <img
           class="expanded-preview__img"
-          src="${escapeHtml(imageSource)}"
+          ${previewSrcAttr}
           alt="${escapeHtml(decoration.name)}"
           loading="lazy"
           decoding="async"
+          fetchpriority="low"
           onload="this.closest('.expanded-preview')?.classList.add('is-loaded')"
         />
       </div>`
@@ -231,6 +268,7 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   let activeExpandToken = 0;
   let panelRemovalToken = 0;
   let rowChangeTimer: ReturnType<typeof setTimeout> | null = null;
+  let suppressIconLoads = false;
 
   async function loadDecoration(id: number): Promise<Decoration | undefined> {
     if (decorationCache.has(id)) {
@@ -349,7 +387,7 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     if (pendingOpenAfterFilterResetId != null && filteredIds.has(pendingOpenAfterFilterResetId)) {
       const targetId = pendingOpenAfterFilterResetId;
       pendingOpenAfterFilterResetId = null;
-      void openDecorationById(targetId);
+      void openDecorationFromDeepLink(targetId);
     }
   }
 
@@ -360,14 +398,29 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     }
   }
 
-  function scrollToItem(item: HTMLElement): void {
-    const headerHeight = 64;
-    const offset = 30;
+  function scrollToItem(item: HTMLElement, behavior: PanelScrollBehavior = 'smooth'): void {
     const itemTop = item.getBoundingClientRect().top + window.scrollY;
     window.scrollTo({
-      top: itemTop - headerHeight - offset,
-      behavior: 'smooth',
+      top: itemTop - SCROLL_HEADER_OFFSET,
+      behavior: behavior === 'instant' ? 'auto' : behavior,
     });
+  }
+
+  function loadDeferredPreview(panel: HTMLElement, delayMs = 0): void {
+    const startLoad = () => {
+      const img = panel.querySelector<HTMLImageElement>('img[data-preview-src]');
+      if (!img?.dataset.previewSrc) {
+        return;
+      }
+      img.src = img.dataset.previewSrc;
+      img.removeAttribute('data-preview-src');
+    };
+
+    if (delayMs > 0) {
+      setTimeout(startLoad, delayMs);
+      return;
+    }
+    startLoad();
   }
 
   function collapseExpanded(): void {
@@ -405,7 +458,8 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   async function insertExpandedPanel(
     decorationId: number,
     animate: boolean,
-    token: number
+    token: number,
+    options: { scroll?: PanelScrollBehavior; deferPreview?: boolean } = {}
   ): Promise<void> {
     const decoration = await loadDecoration(decorationId);
     if (token !== activeExpandToken || !decoration) {
@@ -439,7 +493,8 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
       itemsPerRow,
       decorationIndex,
       baseUrl,
-      previewUrls
+      previewUrls,
+      options.deferPreview ?? false
     );
     const panel = wrapper.firstElementChild as HTMLElement;
     if (!panel) {
@@ -450,6 +505,7 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
 
     const targetHeight = Math.max(window.innerHeight * 0.7, 320);
     panel.style.height = `${targetHeight}px`;
+    const scrollBehavior = resolveScrollBehavior(clickedItem, options.scroll);
 
     if (animate) {
       panel.classList.add('is-collapsed');
@@ -459,18 +515,25 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
           return;
         }
         panel.classList.remove('is-collapsed');
-        setTimeout(() => scrollToItem(clickedItem), 50);
+        setTimeout(() => scrollToItem(clickedItem, scrollBehavior), 50);
       });
     } else {
       panel.classList.remove('is-collapsed');
-      scrollToItem(clickedItem);
+      scrollToItem(clickedItem, scrollBehavior);
+    }
+
+    if (options.deferPreview) {
+      loadDeferredPreview(panel, SCROLL_SETTLE_MS);
     }
 
     expandedItemId = decorationId;
     updateDeepLink(decorationId);
   }
 
-  async function openDecorationById(id: number, options: { animate?: boolean } = {}): Promise<void> {
+  async function openDecorationById(
+    id: number,
+    options: { animate?: boolean; scroll?: PanelScrollBehavior; deferPreview?: boolean } = {}
+  ): Promise<void> {
     const animate = options.animate ?? true;
     const visibleItems = getVisibleGridItems();
     const newIndex = visibleItems.findIndex((item) => Number(item.dataset.id) === id);
@@ -504,7 +567,10 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
         panel.classList.add('is-collapsed');
         rowChangeTimer = setTimeout(() => {
           rowChangeTimer = null;
-          void insertExpandedPanel(id, true, token);
+          void insertExpandedPanel(id, true, token, {
+            scroll: options.scroll,
+            deferPreview: options.deferPreview,
+          });
         }, ANIMATION_MS);
         expandedItemId = null;
         updateDeepLink(null);
@@ -512,7 +578,38 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
       }
     }
 
-    await insertExpandedPanel(id, expandedItemId != null && isSameRow ? false : animate, token);
+    await insertExpandedPanel(
+      id,
+      expandedItemId != null && isSameRow ? false : animate,
+      token,
+      {
+        scroll: options.scroll,
+        deferPreview: options.deferPreview,
+      }
+    );
+  }
+
+  async function openDecorationFromDeepLink(id: number): Promise<void> {
+    suppressIconLoads = true;
+    isScrolling = true;
+
+    try {
+      const visibleItems = getVisibleGridItems();
+      const item = visibleItems.find((el) => Number(el.dataset.id) === id);
+      if (item && !isItemNearViewport(item)) {
+        scrollToItem(item, 'auto');
+        await waitForNextFrame(2);
+      }
+
+      await openDecorationById(id, {
+        animate: false,
+        scroll: 'auto',
+        deferPreview: true,
+      });
+    } finally {
+      suppressIconLoads = false;
+      scheduleIconLoadsAfterScroll();
+    }
   }
 
   function clearFilters(): void {
@@ -678,7 +775,7 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   }
 
   function pumpIconQueue(): void {
-    if (isScrolling) {
+    if (isScrolling || suppressIconLoads) {
       return;
     }
 
@@ -737,7 +834,7 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     if (!canLoadIcon(item)) {
       return;
     }
-    if (!isScrolling) {
+    if (!isScrolling && !suppressIconLoads) {
       iconLoadQueue.add(item);
       pumpIconQueue();
     }
@@ -755,7 +852,7 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
         }
       }
 
-      if (!isScrolling) {
+      if (!isScrolling && !suppressIconLoads) {
         syncIconLoadQueue();
       }
     },
@@ -848,27 +945,38 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   calculateItemsPerRow();
   applyFilters();
   observeGridIcons();
-  syncIconLoadQueue();
-  syncCatalogUrl(new URL(window.location.href));
 
   const openParam = new URLSearchParams(window.location.search).get('open');
-  if (openParam) {
-    const openId = Number(openParam);
-    if (!Number.isNaN(openId)) {
-      const entry = searchIndexById.get(openId);
-      if (entry && !matchesFilters(entry, searchQuery, selectedCategory)) {
-        clearFilters();
-        pendingOpenAfterFilterResetId = openId;
-        applyFilters();
-      } else if (entry) {
-        requestAnimationFrame(() => {
-          void openDecorationById(openId);
-        });
-      } else if (await decorationExists(openId)) {
-        clearFilters();
-        pendingOpenAfterFilterResetId = openId;
-        applyFilters();
-      }
+  const pendingDeepLinkId =
+    openParam && !Number.isNaN(Number(openParam)) ? Number(openParam) : null;
+
+  if (pendingDeepLinkId != null) {
+    suppressIconLoads = true;
+    isScrolling = true;
+  } else {
+    syncIconLoadQueue();
+  }
+
+  syncCatalogUrl(new URL(window.location.href));
+
+  if (pendingDeepLinkId != null) {
+    const entry = searchIndexById.get(pendingDeepLinkId);
+    if (entry && !matchesFilters(entry, searchQuery, selectedCategory)) {
+      clearFilters();
+      pendingOpenAfterFilterResetId = pendingDeepLinkId;
+      applyFilters();
+    } else if (entry) {
+      requestAnimationFrame(() => {
+        void openDecorationFromDeepLink(pendingDeepLinkId);
+      });
+    } else if (await decorationExists(pendingDeepLinkId)) {
+      clearFilters();
+      pendingOpenAfterFilterResetId = pendingDeepLinkId;
+      applyFilters();
+    } else {
+      suppressIconLoads = false;
+      isScrolling = false;
+      syncIconLoadQueue();
     }
   }
 }
