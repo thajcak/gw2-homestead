@@ -61,6 +61,7 @@ const decorationSchema = z.object({
   recipe: decorationRecipeSchema.nullable().optional(),
   original: imageSchema.optional(),
   history: z.array(historyEntrySchema).default([]),
+  removed: z.boolean().optional(),
 });
 
 const categorySchema = z.object({

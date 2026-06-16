@@ -92,9 +92,7 @@ function renderExpandedDecoration(
 ): string {
   const indicatorLeft = `calc(50% + ${(decorationIndex % itemsPerRow) * (74 + 16)}px - ${(itemsPerRow * (74 + 16) - 16) / 2}px + 37px)`;
   const optimizedPreview = previewUrls[String(decoration.id)];
-  const imageSource =
-    optimizedPreview ??
-    (decoration.original?.source ? resolveAsset(decoration.original.source, baseUrl) : '');
+  const imageSource = optimizedPreview ?? '';
   const hasOriginal = Boolean(imageSource);
   const imageFrameContent = hasOriginal
     ? `<div class="expanded-preview">
@@ -323,9 +321,13 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     gridItems.forEach((item) => {
       const id = Number(item.dataset.id);
       const visible = filteredIds.has(id);
+      const wasHidden = item.classList.contains('is-hidden');
       item.classList.toggle('is-hidden', !visible);
       if (visible) {
         visibleCount += 1;
+        if (wasHidden) {
+          queueIconLoad(item);
+        }
       }
     });
 
@@ -621,11 +623,25 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   }
 
   function pumpIconQueue(): void {
+    let deferred = 0;
+    const maxDeferred = iconLoadQueue.length;
+
     while (activeIconLoads < MAX_ICON_LOADS && iconLoadQueue.length > 0) {
       const item = iconLoadQueue.shift();
-      if (!item || item.classList.contains('is-hidden')) {
+      if (!item) {
+        break;
+      }
+
+      if (item.classList.contains('is-hidden')) {
+        iconLoadQueue.push(item);
+        deferred += 1;
+        if (deferred >= maxDeferred) {
+          break;
+        }
         continue;
       }
+
+      deferred = 0;
       activeIconLoads += 1;
       loadIconForItem(item);
     }
