@@ -105,11 +105,6 @@ async function localizeDecoration(decoration, options = {}) {
     };
   }
 
-  if (decoration.thumbnail) {
-    delete decoration.thumbnail;
-    changed = true;
-  }
-
   return { decoration, changed };
 }
 

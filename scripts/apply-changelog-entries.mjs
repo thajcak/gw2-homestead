@@ -36,10 +36,6 @@ function applyEntriesToArray(items, entries, day) {
   const byId = new Map(items.map((item) => [item.id, item]));
 
   for (const entry of entries) {
-    if (entry.type === 'Item Removed') {
-      continue;
-    }
-
     if (!byId.has(entry.id)) {
       continue;
     }

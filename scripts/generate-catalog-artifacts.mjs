@@ -23,7 +23,6 @@ export async function generateCatalogArtifacts() {
     categories.push({
       id: category.id,
       name: category.name,
-      removed: category.removed ?? false,
     });
   }
 
@@ -45,14 +44,12 @@ export async function generateCatalogArtifacts() {
       `${JSON.stringify(catalogDecoration)}\n`
     );
 
-    if (!decoration.removed) {
-      searchIndex.push({
-        id: decoration.id,
-        name: decoration.name,
-        description: decoration.description,
-        categories: decoration.categories,
-      });
-    }
+    searchIndex.push({
+      id: decoration.id,
+      name: decoration.name,
+      description: decoration.description,
+      categories: decoration.categories,
+    });
   }
 
   searchIndex.sort((a, b) => a.name.localeCompare(b.name));

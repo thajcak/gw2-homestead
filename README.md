@@ -30,7 +30,3 @@ Other commands:
 - `npm run preview` — preview the production build locally
 - `npm run generate-catalog` — build `public/catalog/` search index and decoration JSON artifacts
 - `npm run localize-images` — download remote decoration icons into `src/assets/decorations/` and preview images into `public/decorations/`
-
----
-
-*The original non-React version of this project was built utilizing ChatGPT to test the abilities of prompt engineering. The goal was to treat ChatGPT like a junior developer by giving it specific tasks with targeted guidance. The work was then reviewed, tested, and modified in a process similar to a code review. Additional enhancements and changes were made by me to produce the final build.*

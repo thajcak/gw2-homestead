@@ -60,17 +60,14 @@ const decorationSchema = z.object({
   icon: z.string(),
   wikiTitle: z.string().optional(),
   recipe: decorationRecipeSchema.nullable().optional(),
-  thumbnail: imageSchema.optional(),
   original: imageSchema.optional(),
   history: z.array(historyEntrySchema).default([]),
-  removed: z.boolean().optional(),
 });
 
 const categorySchema = z.object({
   id: z.number(),
   name: z.string(),
   history: z.array(historyEntrySchema).default([]),
-  removed: z.boolean().optional(),
 });
 
 const decorations = defineCollection({

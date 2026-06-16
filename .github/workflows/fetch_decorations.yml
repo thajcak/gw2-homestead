@@ -282,11 +282,10 @@ jobs:
 
             echo "Processing decoration: $name (ID: $id)"
 
-            # Check if 'thumbnail' and 'original' fields are present and not null
-            hasThumbnail=$(echo "$decoration" | jq '.thumbnail != null')
+            # Check if preview image data is already present
             hasOriginal=$(echo "$decoration" | jq '.original != null')
 
-            if [ "$hasThumbnail" = "true" ] && [ "$hasOriginal" = "true" ]; then
+            if [ "$hasOriginal" = "true" ]; then
               echo "Decoration $name already has image data. Skipping image fetch."
               decoration=$(apply_wiki_recipe_if_needed "$decoration")
               echo "$decoration" >> decorations_updated.json
@@ -296,7 +295,7 @@ jobs:
             # Generate API URL
             encodedName=$(printf %s "$name" | jq -sRr @uri)
             titles="${encodedName}%20(Handiwork)|${encodedName}%20Decoration|${encodedName}"
-            apiUrl="https://wiki.guildwars2.com/api.php?action=query&titles=${titles}&prop=pageimages&piprop=original|thumbnail&format=json&origin=*"
+            apiUrl="https://wiki.guildwars2.com/api.php?action=query&titles=${titles}&prop=pageimages&piprop=original&format=json&origin=*"
 
             echo "API URL: $apiUrl"
 
@@ -353,9 +352,8 @@ jobs:
             hasOriginal=$(echo "$imageInfo" | jq '.original != null')
             if [[ "$imageInfo" != "null" && "$hasOriginal" = "true" ]]; then
               # Add the image URLs and dimensions to the decoration object
-              thumbnail=$(echo "$imageInfo" | jq '.thumbnail')
               original=$(echo "$imageInfo" | jq '.original')
-              decoration=$(echo "$decoration" | jq --argjson thumbnail "$thumbnail" --argjson original "$original" '. + {thumbnail: $thumbnail, original: $original}')
+              decoration=$(echo "$decoration" | jq --argjson original "$original" '. + {original: $original}')
             elif [[ "$imageInfo" != "null" ]]; then
               # Fallback to RDF data
               fullFilename=""
@@ -407,7 +405,7 @@ jobs:
                 # Replace "-3A" with ":"
                 filenameTitle=$(echo "$truncatedFilename" | tr -d '\r\n' | sed 's/[[:space:]]*$//' | sed 's/-3A/:/g' | jq -sRr @uri)
                 echo "Filename title: '$filenameTitle'"
-                fallbackApiUrl="https://wiki.guildwars2.com/api.php?action=query&titles=${filenameTitle}&prop=pageimages&piprop=original|thumbnail&format=json&origin=*"
+                fallbackApiUrl="https://wiki.guildwars2.com/api.php?action=query&titles=${filenameTitle}&prop=pageimages&piprop=original&format=json&origin=*"
 
                 echo "Fetching image using filename from: $fallbackApiUrl"
 
@@ -442,9 +440,8 @@ jobs:
                 done
 
                 if [[ "$fallbackImageInfo" != "null" ]]; then
-                  thumbnail=$(echo "$fallbackImageInfo" | jq '.thumbnail')
                   original=$(echo "$fallbackImageInfo" | jq '.original')
-                  decoration=$(echo "$decoration" | jq --argjson thumbnail "$thumbnail" --argjson original "$original" '. + {thumbnail: $thumbnail, original: $original}')
+                  decoration=$(echo "$decoration" | jq --argjson original "$original" '. + {original: $original}')
                 else
                   echo "No original image found using filename for decoration $name"
                 fi
@@ -618,7 +615,7 @@ jobs:
             echo '[]' > new_entries.json
           fi
 
-          node scripts/apply-changelog-entries.mjs "$utc_day" new_entries.json decorations_work.json categories_work.json src/content/decorations src/content/categories
+          node scripts/apply-changelog-entries.mjs "$utc_day" new_entries.json decorations_work.json categories_work.json
 
           rm -f changelog_entries.jsonl new_entries.json old_decorations.json old_decoration_categories.json
 

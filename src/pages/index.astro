@@ -16,7 +16,7 @@ const categories = categoryEntries
 
 <BaseLayout preloadCatalogIndex={assetUrl('catalog/search-index.json')}>
   <div class="site">
-    <Header categories={categories.filter((category) => !category.removed)} />
+    <Header categories={categories} />
 
     <main class="main">
       <IconGrid />
