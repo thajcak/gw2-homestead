@@ -248,9 +248,7 @@ img {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: linear-gradient(100deg, #e5e7eb 20%, #f9fafb 45%, #e5e7eb 60%);
-  background-size: 200% 100%;
-  animation: image-skeleton-shimmer 1.25s ease-in-out infinite;
+  background: #e5e7eb;
 }
 
 .catalog-icon.is-loaded::before {
@@ -301,20 +299,12 @@ img {
   height: 100%;
   max-height: 100%;
   overflow: visible;
-  background: transparent;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(to bottom, black, rgb(31, 41, 55) 2%, rgb(31, 41, 55) 98%, black);
 }
 
 .expanded-decoration-gradient::before {
-  content: '';
-  position: absolute;
-  z-index: 0;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 100vw;
-  margin-left: -50vw;
-  background: linear-gradient(to bottom, black, rgb(31, 41, 55) 2%, rgb(31, 41, 55) 98%, black);
-  pointer-events: none;
+  content: none;
 }
 
 .expanded-decoration__body {
@@ -512,14 +502,7 @@ img {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: linear-gradient(
-    100deg,
-    rgb(55 65 81 / 0.55) 20%,
-    rgb(75 85 99 / 0.85) 45%,
-    rgb(55 65 81 / 0.55) 60%
-  );
-  background-size: 200% 100%;
-  animation: image-skeleton-shimmer 1.25s ease-in-out infinite;
+  background: rgb(55 65 81 / 0.55);
 }
 
 .expanded-preview.is-loaded .expanded-preview__skeleton {

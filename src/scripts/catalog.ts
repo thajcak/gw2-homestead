@@ -101,7 +101,7 @@ function renderExpandedDecoration(
           class="expanded-preview__img"
           src="${escapeHtml(imageSource)}"
           alt="${escapeHtml(decoration.name)}"
-          loading="eager"
+          loading="lazy"
           decoding="async"
           onload="this.closest('.expanded-preview')?.classList.add('is-loaded')"
         />
@@ -226,6 +226,7 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   let gridItems: HTMLElement[] = [];
   let changelogLoaded = false;
   let changelogLoading: Promise<void> | null = null;
+  let expandRequestId = 0;
 
   async function loadDecoration(id: number): Promise<Decoration | undefined> {
     if (decorationCache.has(id)) {
@@ -366,6 +367,7 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   }
 
   function collapseExpanded(): void {
+    expandRequestId += 1;
     const panel = grid!.querySelector<HTMLElement>('.expanded-decoration');
     if (panel) {
       panel.classList.add('is-collapsed');
@@ -388,8 +390,9 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   }
 
   async function insertExpandedPanel(decorationId: number, animate: boolean): Promise<void> {
+    const requestId = ++expandRequestId;
     const decoration = await loadDecoration(decorationId);
-    if (!decoration) {
+    if (requestId !== expandRequestId || !decoration) {
       return;
     }
 
@@ -585,7 +588,14 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   }
 
   let activeIconLoads = 0;
-  const iconLoadQueue: HTMLElement[] = [];
+  const iconLoadQueue = new Set<HTMLElement>();
+
+  function canLoadIcon(item: HTMLElement): boolean {
+    const iconRoot = item.querySelector('.catalog-icon');
+    return Boolean(
+      iconRoot && !iconRoot.querySelector('img') && !iconRoot.classList.contains('catalog-icon--missing')
+    );
+  }
 
   function iconUrl(id: number): string {
     const optimized = iconManifest[String(id)];
@@ -598,6 +608,8 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   function loadIconForItem(item: HTMLElement): void {
     const iconRoot = item.querySelector('.catalog-icon');
     if (!iconRoot || iconRoot.querySelector('img') || iconRoot.classList.contains('catalog-icon--missing')) {
+      activeIconLoads = Math.max(0, activeIconLoads - 1);
+      pumpIconQueue();
       return;
     }
 
@@ -624,20 +636,26 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
 
   function pumpIconQueue(): void {
     let deferred = 0;
-    const maxDeferred = iconLoadQueue.length;
+    const maxDeferred = iconLoadQueue.size;
 
-    while (activeIconLoads < MAX_ICON_LOADS && iconLoadQueue.length > 0) {
-      const item = iconLoadQueue.shift();
+    while (activeIconLoads < MAX_ICON_LOADS && iconLoadQueue.size > 0) {
+      const item = iconLoadQueue.values().next().value as HTMLElement | undefined;
       if (!item) {
         break;
       }
+      iconLoadQueue.delete(item);
 
       if (item.classList.contains('is-hidden')) {
-        iconLoadQueue.push(item);
+        iconLoadQueue.add(item);
         deferred += 1;
         if (deferred >= maxDeferred) {
           break;
         }
+        continue;
+      }
+
+      if (!canLoadIcon(item)) {
+        deferred = 0;
         continue;
       }
 
@@ -648,13 +666,10 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   }
 
   function queueIconLoad(item: HTMLElement): void {
-    const iconRoot = item.querySelector('.catalog-icon');
-    if (!iconRoot || iconRoot.querySelector('img') || iconRoot.classList.contains('catalog-icon--missing')) {
+    if (!canLoadIcon(item)) {
       return;
     }
-    if (!iconLoadQueue.includes(item)) {
-      iconLoadQueue.push(item);
-    }
+    iconLoadQueue.add(item);
     pumpIconQueue();
   }
 
