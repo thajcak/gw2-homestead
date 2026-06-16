@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# @deprecated Use sync-api-to-content.mjs for hourly CI updates.
 set -euo pipefail
 
 ARRAY_FILE="${1:?array json file required}"
