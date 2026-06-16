@@ -24,6 +24,22 @@ function catalogUrl(baseUrl: string, path: string): string {
   return `${normalizedBase}${path.replace(/^\//, '')}`;
 }
 
+function resolvePublishedUrl(url: string, baseUrl: string): string {
+  if (url.startsWith('http://') || url.startsWith('https://')) {
+    return url;
+  }
+
+  const basePath = baseUrl.replace(/\/$/, '');
+  if (url.startsWith('/')) {
+    if (basePath && (url === basePath || url.startsWith(`${basePath}/`))) {
+      return url;
+    }
+    return basePath ? `${basePath}${url}` : url;
+  }
+
+  return catalogUrl(baseUrl, url);
+}
+
 function resolveAsset(path: string | undefined, base: string): string {
   const placeholder =
     (typeof window !== 'undefined' &&
@@ -589,13 +605,7 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     if (!optimized) {
       return resolveAsset(undefined, baseUrl);
     }
-    if (optimized.startsWith('http://') || optimized.startsWith('https://')) {
-      return optimized;
-    }
-    if (optimized.startsWith('/')) {
-      return basePath ? `${basePath}${optimized}` : optimized;
-    }
-    return catalogUrl(baseUrl, optimized);
+    return resolvePublishedUrl(optimized, baseUrl);
   }
 
   function loadIconForItem(item: HTMLElement): void {
