@@ -228,7 +228,9 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   let gridItems: HTMLElement[] = [];
   let changelogLoaded = false;
   let changelogLoading: Promise<void> | null = null;
-  let expandRequestId = 0;
+  let activeExpandToken = 0;
+  let panelRemovalToken = 0;
+  let rowChangeTimer: ReturnType<typeof setTimeout> | null = null;
 
   async function loadDecoration(id: number): Promise<Decoration | undefined> {
     if (decorationCache.has(id)) {
@@ -369,11 +371,20 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   }
 
   function collapseExpanded(): void {
-    expandRequestId += 1;
+    activeExpandToken += 1;
+    if (rowChangeTimer != null) {
+      clearTimeout(rowChangeTimer);
+      rowChangeTimer = null;
+    }
+
+    const removalToken = ++panelRemovalToken;
     const panel = grid!.querySelector<HTMLElement>('.expanded-decoration');
     if (panel) {
       panel.classList.add('is-collapsed');
       setTimeout(() => {
+        if (removalToken !== panelRemovalToken) {
+          return;
+        }
         removeExpandedPanel();
       }, ANIMATION_MS);
     }
@@ -391,10 +402,13 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     syncCatalogUrl(url);
   }
 
-  async function insertExpandedPanel(decorationId: number, animate: boolean): Promise<void> {
-    const requestId = ++expandRequestId;
+  async function insertExpandedPanel(
+    decorationId: number,
+    animate: boolean,
+    token: number
+  ): Promise<void> {
     const decoration = await loadDecoration(decorationId);
-    if (requestId !== expandRequestId || !decoration) {
+    if (token !== activeExpandToken || !decoration) {
       return;
     }
 
@@ -411,7 +425,12 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     const lastInRowIndex = Math.min((currentRow + 1) * itemsPerRow - 1, visibleItems.length - 1);
     const insertAfter = visibleItems[lastInRowIndex];
 
+    panelRemovalToken += 1;
     removeExpandedPanel();
+
+    if (token !== activeExpandToken) {
+      return;
+    }
 
     const wrapper = document.createElement('div');
     wrapper.innerHTML = renderExpandedDecoration(
@@ -423,6 +442,10 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
       previewUrls
     );
     const panel = wrapper.firstElementChild as HTMLElement;
+    if (!panel) {
+      return;
+    }
+
     insertAfter.insertAdjacentElement('afterend', panel);
 
     const targetHeight = Math.max(window.innerHeight * 0.7, 320);
@@ -431,6 +454,10 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     if (animate) {
       panel.classList.add('is-collapsed');
       requestAnimationFrame(() => {
+        if (token !== activeExpandToken) {
+          panel.remove();
+          return;
+        }
         panel.classList.remove('is-collapsed');
         setTimeout(() => scrollToItem(clickedItem), 50);
       });
@@ -456,6 +483,12 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
       return;
     }
 
+    const token = ++activeExpandToken;
+    if (rowChangeTimer != null) {
+      clearTimeout(rowChangeTimer);
+      rowChangeTimer = null;
+    }
+
     const currentIndex =
       expandedItemId != null
         ? visibleItems.findIndex((item) => Number(item.dataset.id) === expandedItemId)
@@ -469,14 +502,17 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
       const panel = grid!.querySelector<HTMLElement>('.expanded-decoration');
       if (panel) {
         panel.classList.add('is-collapsed');
-        setTimeout(() => {
-          void insertExpandedPanel(id, true);
+        rowChangeTimer = setTimeout(() => {
+          rowChangeTimer = null;
+          void insertExpandedPanel(id, true, token);
         }, ANIMATION_MS);
+        expandedItemId = null;
+        updateDeepLink(null);
         return;
       }
     }
 
-    await insertExpandedPanel(id, expandedItemId != null && isSameRow ? false : animate);
+    await insertExpandedPanel(id, expandedItemId != null && isSameRow ? false : animate, token);
   }
 
   function clearFilters(): void {
@@ -799,9 +835,12 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     }
     resizeTimer = setTimeout(() => {
       resizeTimer = null;
-      if (expandedItemId != null) {
-        void insertExpandedPanel(expandedItemId, false);
+      if (expandedItemId == null) {
+        return;
       }
+      const id = expandedItemId;
+      const token = activeExpandToken;
+      void insertExpandedPanel(id, false, token);
     }, 150);
   });
 
