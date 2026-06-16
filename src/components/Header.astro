@@ -9,67 +9,49 @@ interface Props {
 const { categories } = Astro.props;
 ---
 
-<header class="bg-white shadow-sm sticky top-0 z-50">
-  <div class="container mx-auto px-4 py-4">
-    <div class="flex items-center justify-between">
-      <div class="flex-1"></div>
+<header class="header">
+  <div class="container header__inner">
+    <div class="header__spacer" aria-hidden="true"></div>
 
-      <div class="flex items-center justify-center gap-8">
-        <select
-          id="category-select"
-          class="w-[200px] h-8 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"
-        >
-          <option value="all">All Categories</option>
-          {categories.map((category) => (
-            <option
-              value={category.id}
-              data-category-count
-              data-category-name={category.name}
-            >
+    <div class="header__controls">
+      <select id="category-select" class="header__select">
+        <option value="all">All Categories</option>
+        {
+          categories.map((category) => (
+            <option value={category.id} data-category-count data-category-name={category.name}>
               {category.name}
             </option>
-          ))}
-        </select>
+          ))
+        }
+      </select>
 
-        <div class="flex items-center gap-4">
-          <button id="home-reset" type="button" aria-label="Reset filters and scroll to top">
-            <img
-              src={homesteadIcon.src}
-              alt="Homestead"
-              width={32}
-              height={32}
-              class="w-8 h-8 cursor-pointer hover:opacity-80 transition-opacity"
-            />
-          </button>
-          <button
-            id="open-changelog"
-            type="button"
-            class="border-0 bg-transparent p-0 text-3xl font-bold leading-none text-red-600 shadow-none outline-none ring-0 hover:opacity-90 focus:outline-none"
-            aria-label="View updates"
-          >
-            ?
-          </button>
-        </div>
-
-        <div class="relative w-[200px]">
-          <input
-            id="search-input"
-            type="text"
-            placeholder="Search decorations..."
-            class="w-full h-8 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"
-          />
-          <button
-            id="clear-search"
-            type="button"
-            class="hidden absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
-            aria-label="Clear search"
-          >
-            ×
-          </button>
-        </div>
+      <div class="header__actions">
+        <button id="home-reset" type="button" class="header__home" aria-label="Reset filters and scroll to top">
+          <img src={homesteadIcon.src} alt="Homestead" width="32" height="32" />
+        </button>
+        <button id="open-changelog" type="button" class="header__changelog" aria-label="View updates">
+          ?
+        </button>
       </div>
 
-      <div class="flex-1"></div>
+      <div class="header__search-wrap">
+        <input
+          id="search-input"
+          type="text"
+          class="header__search"
+          placeholder="Search decorations..."
+        />
+        <button
+          id="clear-search"
+          type="button"
+          class="header__clear-search is-hidden"
+          aria-label="Clear search"
+        >
+          ×
+        </button>
+      </div>
     </div>
+
+    <div class="header__spacer" aria-hidden="true"></div>
   </div>
 </header>

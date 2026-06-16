@@ -17,9 +17,6 @@ shopt -s nullglob
 for file in "$TARGET_DIR"/*.json; do
   id="$(basename "$file" .json)"
   if ! echo "$new_ids" | jq -e --argjson id "$id" 'index($id) != null' >/dev/null; then
-    if jq -e '.removed == true' "$file" >/dev/null 2>&1; then
-      continue
-    fi
     rm "$file"
   fi
 done

@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
+import { generateCatalogArtifacts } from './scripts/generate-catalog-artifacts.mjs';
 
 const base = '/gw2-homestead';
 
@@ -27,11 +27,25 @@ function baseQueryRedirectPlugin(siteBase) {
   };
 }
 
+function catalogArtifactsIntegration() {
+  return {
+    name: 'catalog-artifacts',
+    hooks: {
+      'astro:server:start': async () => {
+        await generateCatalogArtifacts();
+      },
+      'astro:build:start': async () => {
+        await generateCatalogArtifacts();
+      },
+    },
+  };
+}
+
 export default defineConfig({
   site: 'https://sleepypixel.monster',
   base,
   output: 'static',
-  integrations: [tailwind()],
+  integrations: [catalogArtifactsIntegration()],
   vite: {
     plugins: [baseQueryRedirectPlugin(base)],
   },

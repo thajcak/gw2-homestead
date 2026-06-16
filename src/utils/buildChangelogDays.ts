@@ -47,7 +47,6 @@ export function buildChangelogDays(
           [
             'New Item',
             'Item Update',
-            'Item Removed',
             'Image Update',
             'Recipe Added',
             'Recipe Updated',

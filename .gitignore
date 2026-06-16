@@ -5,13 +5,10 @@
 /.pnp
 .pnp.js
 
-# testing
-/coverage
-
 # production
-/build
 /dist
 .astro
+/public/catalog
 
 # misc
 .DS_Store
