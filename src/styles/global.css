@@ -203,8 +203,9 @@ img {
 }
 
 .catalog-grid {
+  --catalog-grid-gap: 1rem;
   display: grid;
-  gap: 1rem;
+  gap: var(--catalog-grid-gap);
   grid-template-columns: repeat(auto-fill, 74px);
   justify-content: center;
   grid-auto-rows: max-content;
@@ -368,7 +369,8 @@ img {
 
 .decoration-indicator {
   --notch-half-width: 18.5px;
-  --notch-height: 18px;
+  --notch-tip-gap: 0.5rem;
+  --notch-height: calc(var(--catalog-grid-gap) - var(--notch-tip-gap));
   position: absolute;
   top: 0;
   left: 50%;
