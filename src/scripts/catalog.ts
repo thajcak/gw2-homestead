@@ -153,8 +153,8 @@ function renderExpandedDecoration(
   }
 
   return `<div class="expanded-decoration is-collapsed" data-expanded-for="${decoration.id}" style="grid-row: auto;">
-    <div class="decoration-indicator" style="left: ${indicatorLeft}"></div>
     <div class="expanded-decoration-gradient">
+      <div class="decoration-indicator" style="left: ${indicatorLeft}"></div>
       <div class="expanded-decoration__body">
         <div class="expanded-decoration__layout">
           <div class="expanded-decoration__media">
