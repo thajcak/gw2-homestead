@@ -67,7 +67,7 @@ async function fileHash(path) {
 }
 
 async function localizeDecoration(decoration, options = {}) {
-  const { publicRoot = publicDir, assetsRoot = assetsDir, force = false } = options;
+  const { assetsRoot = assetsDir, force = false } = options;
   const id = decoration.id;
   let changed = false;
 
@@ -85,11 +85,12 @@ async function localizeDecoration(decoration, options = {}) {
     decoration.icon = iconRelative;
   }
 
-  if (decoration.original?.source && isRemoteUrl(decoration.original.source)) {
-    const remotePreview = decoration.original.source;
+  const previewSource = decoration.original?.source;
+  if (previewSource && isRemoteUrl(previewSource)) {
+    const remotePreview = previewSource;
     const previewExt = extensionFromUrl(remotePreview);
     const previewRelative = `decorations/${id}/preview.${previewExt}`;
-    const previewAbsolute = join(publicRoot, previewRelative);
+    const previewAbsolute = join(assetsRoot, previewRelative);
     const existingHash = await fileHash(previewAbsolute);
 
     if (force || existingHash == null) {
@@ -103,6 +104,18 @@ async function localizeDecoration(decoration, options = {}) {
       source: previewRelative,
       remoteSource: remotePreview,
     };
+  } else if (previewSource && !isRemoteUrl(previewSource)) {
+    const previewAbsolute = join(assetsRoot, previewSource);
+    const legacyPublicAbsolute = join(publicDir, previewSource);
+    const existingHash = await fileHash(previewAbsolute);
+    const legacyHash = await fileHash(legacyPublicAbsolute);
+
+    if (existingHash == null && legacyHash != null) {
+      await mkdir(dirname(previewAbsolute), { recursive: true });
+      const { rename } = await import('node:fs/promises');
+      await rename(legacyPublicAbsolute, previewAbsolute);
+      changed = true;
+    }
   }
 
   return { decoration, changed };

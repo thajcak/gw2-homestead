@@ -95,11 +95,15 @@ function renderExpandedDecoration(
   categoryMap: Map<number, string>,
   itemsPerRow: number,
   decorationIndex: number,
-  baseUrl: string
+  baseUrl: string,
+  previewUrls: Record<string, string>
 ): string {
   const indicatorLeft = `calc(50% + ${(decorationIndex % itemsPerRow) * (74 + 16)}px - ${(itemsPerRow * (74 + 16) - 16) / 2}px + 37px)`;
-  const hasOriginal = Boolean(decoration.original?.source);
-  const imageSource = hasOriginal ? resolveAsset(decoration.original?.source, baseUrl) : '';
+  const optimizedPreview = previewUrls[String(decoration.id)];
+  const imageSource =
+    optimizedPreview ??
+    (decoration.original?.source ? resolveAsset(decoration.original.source, baseUrl) : '');
+  const hasOriginal = Boolean(imageSource);
   const imageFrameContent = hasOriginal
     ? `<div class="expanded-preview">
         <div class="expanded-preview__skeleton" aria-hidden="true"></div>
@@ -202,7 +206,7 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   const catalogIndexPath = basePath ? `${basePath}/` : '/';
   const catalogBase = catalogUrl(baseUrl, 'catalog');
 
-  const [searchIndex, categories, iconManifest] = await Promise.all([
+  const [searchIndex, categories, iconManifest, previewUrls] = await Promise.all([
     fetch(catalogUrl(baseUrl, 'catalog/search-index.json')).then(
       (response) => response.json() as Promise<SearchIndexEntry[]>
     ),
@@ -210,6 +214,9 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
       (response) => response.json() as Promise<Category[]>
     ),
     fetch(catalogUrl(baseUrl, 'catalog/icon-manifest.json')).then(
+      (response) => response.json() as Promise<Record<string, string>>
+    ),
+    fetch(catalogUrl(baseUrl, 'catalog/preview-manifest.json')).then(
       (response) => response.json() as Promise<Record<string, string>>
     ),
   ]);
@@ -414,7 +421,8 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
       categoryMap,
       itemsPerRow,
       decorationIndex,
-      baseUrl
+      baseUrl,
+      previewUrls
     );
     const panel = wrapper.firstElementChild as HTMLElement;
     insertAfter.insertAdjacentElement('afterend', panel);
