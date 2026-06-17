@@ -86,7 +86,7 @@ async function localizeDecoration(decoration, options = {}) {
   }
 
   const previewSource = decoration.original?.source;
-  if (previewSource && isRemoteUrl(previewSource)) {
+  if (previewSource && decoration.original != null && isRemoteUrl(previewSource)) {
     const remotePreview = previewSource;
     const previewExt = extensionFromUrl(remotePreview);
     const previewRelative = `decorations/${id}/preview.${previewExt}`;

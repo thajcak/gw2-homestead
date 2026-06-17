@@ -131,7 +131,9 @@ export function mergeDecorationUpdate(existing, apiItem) {
     merged.recipe = apiItem.recipe ?? existing?.recipe ?? null;
   }
 
-  if (apiItem.original) {
+  if (Object.hasOwn(apiItem, 'original') && apiItem.original === null) {
+    // Wiki confirmed there is no preview image for this decoration.
+  } else if (apiItem.original) {
     merged.original = structuredClone(apiItem.original);
   } else if (existing?.original) {
     merged.original = structuredClone(existing.original);

@@ -119,14 +119,23 @@ export async function tryFetchJson(url, maxAttempts = 5, sleepMs = 2000) {
   }
 }
 
+export function listValidWikiPages(pages) {
+  return Object.entries(pages ?? {})
+    .filter(([pageId, page]) => !pageId.startsWith('-') && !page.missing && !page.invalid)
+    .map(([, page]) => page);
+}
+
 export function selectWikiPage(pages) {
+  const valid = listValidWikiPages(pages);
+  if (valid.length === 0) {
+    return null;
+  }
+
+  const withImage = valid.filter((page) => page.original?.source);
+  const candidates = withImage.length > 0 ? withImage : valid;
+
   let fallback = null;
-
-  for (const [pageId, page] of Object.entries(pages ?? {})) {
-    if (pageId.startsWith('-') || page.missing || page.invalid) {
-      continue;
-    }
-
+  for (const page of candidates) {
     const title = page.title ?? '';
     if (title.includes('Handiwork')) {
       return page;
@@ -139,6 +148,46 @@ export function selectWikiPage(pages) {
   }
 
   return fallback;
+}
+
+function findWikiPreviewPage(pages) {
+  const withImage = listValidWikiPages(pages).filter((page) => page.original?.source);
+  if (withImage.length === 0) {
+    return null;
+  }
+
+  const pagesById = Object.fromEntries(withImage.map((page, index) => [String(index), page]));
+  return selectWikiPage(pagesById);
+}
+
+async function resolveWikiImageMetadata(decoration) {
+  const titles = [
+    ...new Set([
+      ...(decoration.wikiTitle ? [decoration.wikiTitle] : []),
+      ...buildWikiTitleVariants(decoration.name),
+    ]),
+  ];
+
+  const pages = await queryWikiPages(titles);
+  const previewPage = findWikiPreviewPage(pages);
+  if (previewPage) {
+    return {
+      status: 'has-preview',
+      wikiTitle: previewPage.title,
+      original: previewPage.original,
+    };
+  }
+
+  const page = selectWikiPage(pages);
+  if (!page) {
+    return { status: 'no-page' };
+  }
+
+  return {
+    status: 'no-preview',
+    wikiTitle: page.title,
+    original: null,
+  };
 }
 
 export async function queryWikiPages(titles) {
@@ -189,83 +238,6 @@ export function wikitextToRecipeJson(wikitext) {
   }
 }
 
-export async function fetchRdfAppearanceUrl(pageTitle) {
-  const rdfTitle = pageTitle.replace(/ /g, '_');
-  const url = `https://wiki.guildwars2.com/index.php?title=Special:ExportRDF/${encodeURIComponent(rdfTitle)}`;
-
-  try {
-    const response = await fetch(url, {
-      signal: AbortSignal.timeout(45000),
-      headers: { 'User-Agent': WIKI_USER_AGENT },
-    });
-
-    if (!response.ok) {
-      return null;
-    }
-
-    const rdfData = await response.text();
-    const xmlstarlet = spawnSync(
-      'xmlstarlet',
-      [
-        'sel',
-        '-N',
-        'rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#',
-        '-N',
-        'property1=http://wiki-en.guildwars2.com/wiki/Special:URIResolver/Property-3A',
-        '-N',
-        'property2=http://wiki.guildwars2.com/wiki/Special:URIResolver/Property-3A',
-        '-t',
-        '-v',
-        '//property1:Has_appearance/@rdf:resource',
-        '-o',
-        ' ',
-        '-v',
-        '//property2:Has_appearance/@rdf:resource',
-      ],
-      { input: rdfData, encoding: 'utf8' }
-    );
-
-    if (xmlstarlet.status !== 0) {
-      return null;
-    }
-
-    const tempFilename = xmlstarlet.stdout.trim();
-    if (!tempFilename) {
-      return null;
-    }
-
-    const truncatedFilename = tempFilename.split('/').pop() ?? '';
-    const filenameTitle = encodeURIComponent(truncatedFilename.replace(/-3A/g, ':'));
-    const imageData = await queryWikiPages([decodeURIComponent(filenameTitle)]);
-    const page = selectWikiPage(imageData);
-    return page?.original ?? null;
-  } catch (error) {
-    console.warn(`RDF appearance lookup failed for ${pageTitle}: ${error.message}`);
-    return null;
-  }
-}
-
-async function resolveWikiPage(decoration) {
-  if (decoration.wikiTitle) {
-    const pages = await queryWikiPages([decoration.wikiTitle]);
-    const page = selectWikiPage(pages);
-    if (page) {
-      return page;
-    }
-  }
-
-  const pages = await queryWikiPages(buildWikiTitleVariants(decoration.name));
-  return selectWikiPage(pages);
-}
-
-async function resolveWikiOriginal(page) {
-  if (page.original) {
-    return page.original;
-  }
-
-  return fetchRdfAppearanceUrl(page.title);
-}
-
 export async function applyWikiRecipeIfNeeded(decoration) {
   if (!decoration.wikiTitle || decoration.recipe != null) {
     return decoration;
@@ -291,25 +263,24 @@ export async function enrichDecorationFromWiki(decoration) {
   try {
     console.log(`Processing decoration: ${lookupName} (ID: ${displayId})`);
 
-    const page = await resolveWikiPage(decoration);
-    if (!page) {
+    const metadata = await resolveWikiImageMetadata(decoration);
+    if (metadata.status === 'no-page') {
       console.warn(`No valid wiki page found for decoration ${lookupName} (ID: ${displayId})`);
       return applyWikiRecipeIfNeeded(decoration);
     }
 
-    const wikiOriginal = await resolveWikiOriginal(page);
-    let next = { ...decoration, wikiTitle: page.title };
+    let next = { ...decoration, wikiTitle: metadata.wikiTitle };
 
-    if (wikiOriginal?.source) {
+    if (metadata.status === 'has-preview' && metadata.original?.source) {
       const currentRemote = remoteOriginalSource(decoration);
-      const nextRemote = wikiOriginal.source;
+      const nextRemote = metadata.original.source;
 
       if (!currentRemote) {
         next = {
           ...next,
           original: {
-            width: wikiOriginal.width,
-            height: wikiOriginal.height,
+            width: metadata.original.width,
+            height: metadata.original.height,
             source: nextRemote,
           },
         };
@@ -318,14 +289,15 @@ export async function enrichDecorationFromWiki(decoration) {
         next = {
           ...next,
           original: {
-            width: wikiOriginal.width,
-            height: wikiOriginal.height,
+            width: metadata.original.width,
+            height: metadata.original.height,
             source: nextRemote,
           },
         };
       }
     } else {
-      console.warn(`No image information found for decoration ${lookupName} (ID: ${displayId})`);
+      console.warn(`No wiki preview available for decoration ${lookupName} (ID: ${displayId})`);
+      next.original = null;
     }
 
     return applyWikiRecipeIfNeeded(next);
