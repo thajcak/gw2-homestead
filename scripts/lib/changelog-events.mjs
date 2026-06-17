@@ -1,3 +1,5 @@
+import { sanitizeDisplayName } from './sanitize-text.mjs';
+
 function recipeEmpty(recipe) {
   return recipe == null || (typeof recipe === 'object' && Object.keys(recipe).length === 0);
 }
@@ -7,7 +9,7 @@ function decorationItemUpdatedEvent(oldItem, newItem) {
   const newDescription = String(newItem.description ?? '');
   const changes = [];
 
-  if ((oldItem.name ?? null) !== (newItem.name ?? null)) {
+  if (sanitizeDisplayName(oldItem.name ?? '') !== sanitizeDisplayName(newItem.name ?? '')) {
     changes.push({
       field: 'name',
       before: oldItem.name ?? null,
@@ -44,7 +46,7 @@ function decorationItemUpdatedEvent(oldItem, newItem) {
   return {
     id: newItem.id,
     type: 'Item Updated',
-    name: newItem.name,
+    name: sanitizeDisplayName(newItem.name),
     changes,
   };
 }
@@ -60,7 +62,7 @@ function decorationImageUpdateEvent(oldItem, newItem, remoteOriginalSource) {
   return {
     id: newItem.id,
     type: 'Image Updated',
-    name: newItem.name,
+    name: sanitizeDisplayName(newItem.name),
   };
 }
 
@@ -79,19 +81,19 @@ function decorationRecipeEvent(oldItem, newItem) {
   return {
     id: newItem.id,
     type: 'Recipe Updated',
-    name: newItem.name,
+    name: sanitizeDisplayName(newItem.name),
   };
 }
 
 function categoryItemUpdatedEvent(oldItem, newItem) {
-  if ((oldItem.name ?? null) === (newItem.name ?? null)) {
+  if (sanitizeDisplayName(oldItem.name ?? '') === sanitizeDisplayName(newItem.name ?? '')) {
     return null;
   }
 
   return {
     id: newItem.id,
     type: 'Item Updated',
-    name: newItem.name,
+    name: sanitizeDisplayName(newItem.name),
     changes: [
       {
         field: 'name',
@@ -116,7 +118,7 @@ export function generateDecorationEvents({
       events.push({
         id: apiItem.id,
         type: 'New Item',
-        name: apiItem.name,
+        name: sanitizeDisplayName(apiItem.name),
       });
       continue;
     }
@@ -143,7 +145,7 @@ export function generateDecorationEvents({
       events.push({
         id,
         type: 'Item Removed',
-        name: oldItem.name,
+        name: sanitizeDisplayName(oldItem.name),
       });
     }
   }
@@ -161,7 +163,7 @@ export function generateCategoryEvents({ existingCategories, apiCategories }) {
       events.push({
         id: apiItem.id,
         type: 'New Item',
-        name: apiItem.name,
+        name: sanitizeDisplayName(apiItem.name),
       });
       continue;
     }
@@ -178,7 +180,7 @@ export function generateCategoryEvents({ existingCategories, apiCategories }) {
       events.push({
         id,
         type: 'Item Removed',
-        name: oldItem.name,
+        name: sanitizeDisplayName(oldItem.name),
       });
     }
   }
