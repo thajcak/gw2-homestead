@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { isAbsolute, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { enrichDecorationFromWiki } from './lib/wiki-api.mjs';
+import { enrichDecorationFromWiki, waitForWikiRequestSlot } from './lib/wiki-api.mjs';
 
 function parseArgs(argv) {
   const options = {
@@ -54,8 +54,21 @@ async function main() {
   }
 
   const enrichedById = new Map();
+  let failures = 0;
+
   for (const decoration of selected) {
-    enrichedById.set(decoration.id, await enrichDecorationFromWiki(decoration));
+    await waitForWikiRequestSlot();
+    try {
+      enrichedById.set(decoration.id, await enrichDecorationFromWiki(decoration));
+    } catch (error) {
+      failures += 1;
+      console.warn(`Failed to enrich decoration ${decoration.id}: ${error.message}`);
+      enrichedById.set(decoration.id, decoration);
+    }
+  }
+
+  if (failures > 0) {
+    console.warn(`Wiki enrichment completed with ${failures} failure(s).`);
   }
 
   const nextDecorations = decorations.map(
