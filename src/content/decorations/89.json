@@ -6,33 +6,6 @@
     12
   ],
   "icon": "decorations/89/icon.png",
-  "wikiTitle": "Xera's Ribbon Scrap (Handiwork)",
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Xera's Ribbon Scrap",
-    "sheet": "Recipe: Xera's Ribbon Scrap",
-    "id": 14274,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 30,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 70,
-        "item": "Gossamer Scrap"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Ribbon Scrap"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -182,5 +155,32 @@
       "type": "New Item",
       "name": "Xera's Ribbon Scrap"
     }
-  ]
+  ],
+  "wikiTitle": "Xera's Ribbon Scrap (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Xera's Ribbon Scrap",
+    "sheet": "Recipe: Xera's Ribbon Scrap",
+    "id": 14274,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 70,
+        "item": "Gossamer Scrap"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Ribbon Scrap"
+      }
+    ]
+  }
 }

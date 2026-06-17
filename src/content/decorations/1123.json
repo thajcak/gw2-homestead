@@ -7,29 +7,6 @@
     20
   ],
   "icon": "decorations/1123/icon.png",
-  "wikiTitle": "Deimos Statue (Handiwork)",
-  "original": {
-    "width": 1152,
-    "height": 1440,
-    "source": "decorations/1123/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/6/63/Deimos_Statue.jpg"
-  },
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Deimos Statue",
-    "sheet": "Recipe: Deimos Statue",
-    "id": 15530,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 20,
-        "item": "Refined Homestead Metal"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -281,5 +258,28 @@
       "type": "New Item",
       "name": "Deimos Statue"
     }
-  ]
+  ],
+  "wikiTitle": "Deimos Statue (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Deimos Statue",
+    "sheet": "Recipe: Deimos Statue",
+    "id": 15530,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 20,
+        "item": "Refined Homestead Metal"
+      }
+    ]
+  },
+  "original": {
+    "width": 1152,
+    "height": 1440,
+    "source": "decorations/1123/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/6/63/Deimos_Statue.jpg"
+  }
 }

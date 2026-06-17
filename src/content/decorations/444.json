@@ -6,39 +6,6 @@
     12
   ],
   "icon": "decorations/444/icon.png",
-  "wikiTitle": "Gold Cardinal Adina Trophy (Handiwork)",
-  "original": {
-    "width": 344,
-    "height": 893,
-    "source": "decorations/444/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/a/a8/Gold_Cardinal_Adina_Trophy.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Gold Cardinal Adina Trophy",
-    "sheet": "Recipe: Gold Cardinal Adina Trophy",
-    "id": 14838,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 130,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 100,
-        "item": "Magnetite Shard"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "Cardinal Adina's Token (trophy)"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -313,5 +280,32 @@
       "type": "New Item",
       "name": "Gold Cardinal Adina Trophy"
     }
-  ]
+  ],
+  "wikiTitle": "Gold Cardinal Adina Trophy (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Gold Cardinal Adina Trophy",
+    "sheet": "Recipe: Gold Cardinal Adina Trophy",
+    "id": 14838,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 130,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 100,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Cardinal Adina's Token (trophy)"
+      }
+    ]
+  }
 }

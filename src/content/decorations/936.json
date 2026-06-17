@@ -7,38 +7,6 @@
     3
   ],
   "icon": "decorations/936/icon.png",
-  "wikiTitle": "Kodan Book: Glittering Gold",
-  "original": {
-    "width": 981,
-    "height": 1307,
-    "source": "decorations/936/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/c/c2/Kodan_Book-_Glittering_Gold.jpg"
-  },
-  "recipe": {
-    "rating": 500,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "sheet": "Homestead Recipe Book: Books",
-    "id": 15134,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 30,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 2,
-        "item": "Cured Hardened Leather Square"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Tub of Wood Glue"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-10",
@@ -288,5 +256,37 @@
       "type": "New Item",
       "name": "Kodan Book: Glittering Gold"
     }
-  ]
+  ],
+  "wikiTitle": "Kodan Book: Glittering Gold",
+  "recipe": {
+    "rating": 500,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Homestead Recipe Book: Books",
+    "id": 15134,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Cured Hardened Leather Square"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Tub of Wood Glue"
+      }
+    ]
+  },
+  "original": {
+    "width": 981,
+    "height": 1307,
+    "source": "decorations/936/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/c/c2/Kodan_Book-_Glittering_Gold.jpg"
+  }
 }

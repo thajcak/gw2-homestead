@@ -6,33 +6,6 @@
     27
   ],
   "icon": "decorations/1081/icon.png",
-  "wikiTitle": "Gingerbread Roof",
-  "original": {
-    "width": 1319,
-    "height": 966,
-    "source": "decorations/1081/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/5/58/Gingerbread_Roof.jpg"
-  },
-  "recipe": {
-    "rating": 0,
-    "type": "Homestead Decoration",
-    "source": "Recipe sheet",
-    "disciplines": "Handiworker",
-    "sheet": "Black Lion Gingerbread Roof Recipe",
-    "id": 15430,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 5,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Refined Homestead Wood"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -289,5 +262,32 @@
       "type": "New Item",
       "name": "Gingerbread Roof"
     }
-  ]
+  ],
+  "wikiTitle": "Gingerbread Roof",
+  "recipe": {
+    "rating": 0,
+    "type": "Homestead Decoration",
+    "source": "Recipe sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Black Lion Gingerbread Roof Recipe",
+    "id": 15430,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Refined Homestead Wood"
+      }
+    ]
+  },
+  "original": {
+    "width": 1319,
+    "height": 966,
+    "source": "decorations/1081/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/5/58/Gingerbread_Roof.jpg"
+  }
 }

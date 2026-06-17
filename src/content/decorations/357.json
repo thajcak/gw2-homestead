@@ -7,39 +7,6 @@
     15
   ],
   "icon": "decorations/357/icon.png",
-  "wikiTitle": "Potted Lady Palm (Handiwork)",
-  "original": {
-    "width": 1140,
-    "height": 916,
-    "source": "decorations/357/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/4/45/Potted_Lady_Palm.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Potted Lady Palm",
-    "sheet": "Homestead Recipe Book: Trees",
-    "id": 14661,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 26,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 2,
-        "item": "Evergreen Fragment"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "Bone Shard"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -313,5 +280,38 @@
       "type": "New Item",
       "name": "Potted Lady Palm"
     }
-  ]
+  ],
+  "wikiTitle": "Potted Lady Palm (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Potted Lady Palm",
+    "sheet": "Homestead Recipe Book: Trees",
+    "id": 14661,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Evergreen Fragment"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Bone Shard"
+      }
+    ]
+  },
+  "original": {
+    "width": 1140,
+    "height": 916,
+    "source": "decorations/357/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/4/45/Potted_Lady_Palm.jpg"
+  }
 }

@@ -7,12 +7,43 @@
     21
   ],
   "icon": "decorations/1166/icon.png",
-  "wikiTitle": "Golden Horse Statue (Handiwork)",
   "history": [
+    {
+      "day": "2026-06-17",
+      "type": "Recipe Updated",
+      "name": "Golden Horse Statue"
+    },
     {
       "day": "2026-02-03",
       "type": "New Item",
       "name": "Golden Horse Statue"
     }
-  ]
+  ],
+  "wikiTitle": "Golden Horse Statue (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Golden Horse Statue",
+    "sheet": "Homestead Recipe Book: Lunar New Year Celestials; Recipe: Golden Horse Statue",
+    "id": 15592,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 50,
+        "item": "Pouch of Red Pigment"
+      },
+      {
+        "slot": 3,
+        "quantity": 12,
+        "item": "Steel Ingot"
+      }
+    ]
+  }
 }

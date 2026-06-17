@@ -7,39 +7,6 @@
     26
   ],
   "icon": "decorations/218/icon.png",
-  "wikiTitle": "Snow Maker (Handiwork)",
-  "original": {
-    "width": 699,
-    "height": 960,
-    "source": "decorations/218/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/5/50/Snow_Maker.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Snow Maker",
-    "sheet": "Homestead Recipe Book: Wintersday, Volume 1",
-    "id": 14479,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 25,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 30,
-        "item": "Snowflake"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "Pouch of White Pigment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -400,5 +367,38 @@
       "type": "New Item",
       "name": "Snow Maker"
     }
-  ]
+  ],
+  "wikiTitle": "Snow Maker (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Snow Maker",
+    "sheet": "Homestead Recipe Book: Wintersday, Volume 1",
+    "id": 14479,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 30,
+        "item": "Snowflake"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Pouch of White Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 699,
+    "height": 960,
+    "source": "decorations/218/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/5/50/Snow_Maker.jpg"
+  }
 }

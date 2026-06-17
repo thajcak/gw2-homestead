@@ -7,38 +7,6 @@
     9
   ],
   "icon": "decorations/253/icon.png",
-  "wikiTitle": "Petite Statue of Joko the Immortal (Handiwork)",
-  "original": {
-    "width": 385,
-    "height": 948,
-    "source": "decorations/253/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/f/f4/Petite_Statue_of_Joko_the_Immortal.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "name": "Petite Statue of Joko the Immortal",
-    "id": 14368,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 26,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 20,
-        "item": "Congealed Putrescence"
-      },
-      {
-        "slot": 3,
-        "quantity": 7,
-        "item": "Trade Contract"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -313,5 +281,37 @@
       "type": "New Item",
       "name": "Petite Statue of Joko the Immortal"
     }
-  ]
+  ],
+  "wikiTitle": "Petite Statue of Joko the Immortal (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Petite Statue of Joko the Immortal",
+    "id": 14368,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 20,
+        "item": "Congealed Putrescence"
+      },
+      {
+        "slot": 3,
+        "quantity": 7,
+        "item": "Trade Contract"
+      }
+    ]
+  },
+  "original": {
+    "width": 385,
+    "height": 948,
+    "source": "decorations/253/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/f/f4/Petite_Statue_of_Joko_the_Immortal.jpg"
+  }
 }

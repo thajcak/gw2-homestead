@@ -7,12 +7,43 @@
     20
   ],
   "icon": "decorations/1198/icon.png",
-  "wikiTitle": "Seer Storage Cauldron (Handiwork)",
   "history": [
+    {
+      "day": "2026-06-17",
+      "type": "Recipe Updated",
+      "name": "Seer Storage Cauldron"
+    },
     {
       "day": "2026-05-12",
       "type": "New Item",
       "name": "Seer Storage Cauldron"
     }
-  ]
+  ],
+  "wikiTitle": "Seer Storage Cauldron (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Seer Storage Cauldron",
+    "sheet": "Homestead Recipe Book: Seer Catalogue Volume 1",
+    "id": 15666,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 45,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 25,
+        "item": "Gold Ingot"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Shadowstone Fragment"
+      }
+    ]
+  }
 }

@@ -7,37 +7,6 @@
     4
   ],
   "icon": "decorations/881/icon.png",
-  "wikiTitle": "Wizard Rug",
-  "original": {
-    "width": 2004,
-    "height": 1072,
-    "source": "decorations/881/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/5/58/Wizard_Rug.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Automatic",
-    "disciplines": "Handiworker",
-    "id": 15041,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 35,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 3,
-        "item": "Bolt of Silk"
-      },
-      {
-        "slot": 3,
-        "quantity": 8,
-        "item": "Pinch of Stardust"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-15",
@@ -322,5 +291,36 @@
       "type": "New Item",
       "name": "Wizard Rug"
     }
-  ]
+  ],
+  "wikiTitle": "Wizard Rug",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Automatic",
+    "disciplines": "Handiworker",
+    "id": 15041,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Bolt of Silk"
+      },
+      {
+        "slot": 3,
+        "quantity": 8,
+        "item": "Pinch of Stardust"
+      }
+    ]
+  },
+  "original": {
+    "width": 2004,
+    "height": 1072,
+    "source": "decorations/881/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/5/58/Wizard_Rug.jpg"
+  }
 }

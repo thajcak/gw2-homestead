@@ -7,34 +7,6 @@
     20
   ],
   "icon": "decorations/1155/icon.png",
-  "wikiTitle": "Mythwright Gambit Pillar (Handiwork)",
-  "original": {
-    "width": 2160,
-    "height": 1440,
-    "source": "decorations/1155/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/e/e1/Mythwright_Gambit_Pillar.jpg"
-  },
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Mythwright Gambit Pillar",
-    "sheet": "Recipe: Mythwright Gambit Pillar",
-    "id": 15473,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 5,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 7,
-        "item": "Gold Ore"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -281,5 +253,33 @@
       "type": "New Item",
       "name": "Mythwright Gambit Pillar"
     }
-  ]
+  ],
+  "wikiTitle": "Mythwright Gambit Pillar (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Mythwright Gambit Pillar",
+    "sheet": "Recipe: Mythwright Gambit Pillar",
+    "id": 15473,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 7,
+        "item": "Gold Ore"
+      }
+    ]
+  },
+  "original": {
+    "width": 2160,
+    "height": 1440,
+    "source": "decorations/1155/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/e/e1/Mythwright_Gambit_Pillar.jpg"
+  }
 }

@@ -7,12 +7,43 @@
     21
   ],
   "icon": "decorations/1133/icon.png",
-  "wikiTitle": "Horse Statue (Handiwork)",
   "history": [
+    {
+      "day": "2026-06-17",
+      "type": "Recipe Updated",
+      "name": "Horse Statue"
+    },
     {
       "day": "2026-02-03",
       "type": "New Item",
       "name": "Horse Statue"
     }
-  ]
+  ],
+  "wikiTitle": "Horse Statue (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Horse Statue",
+    "sheet": "Homestead Recipe Book: Lunar New Year Celestials; Recipe: Horse Statue",
+    "id": 15511,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 20,
+        "item": "Pouch of Red Pigment"
+      },
+      {
+        "slot": 3,
+        "quantity": 4,
+        "item": "Steel Ingot"
+      }
+    ]
+  }
 }

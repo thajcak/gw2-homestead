@@ -7,37 +7,6 @@
     7
   ],
   "icon": "decorations/139/icon.png",
-  "wikiTitle": "Small Canthan Cherry Tree",
-  "original": {
-    "width": 1152,
-    "height": 1440,
-    "source": "decorations/139/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/92/Small_Canthan_Cherry_Tree.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "id": 14365,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 30,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 1,
-        "item": "Tale of Adventure"
-      },
-      {
-        "slot": 3,
-        "quantity": 10,
-        "item": "Rotted Titan Amber"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -367,5 +336,36 @@
       "type": "New Item",
       "name": "Small Canthan Cherry Tree"
     }
-  ]
+  ],
+  "wikiTitle": "Small Canthan Cherry Tree",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14365,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Tale of Adventure"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Rotted Titan Amber"
+      }
+    ]
+  },
+  "original": {
+    "width": 1152,
+    "height": 1440,
+    "source": "decorations/139/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/92/Small_Canthan_Cherry_Tree.jpg"
+  }
 }

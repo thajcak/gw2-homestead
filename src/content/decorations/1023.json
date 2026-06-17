@@ -7,33 +7,6 @@
     20
   ],
   "icon": "decorations/1023/icon.png",
-  "wikiTitle": "Tall Ship Stairs (Handiwork)",
-  "original": {
-    "width": 1152,
-    "height": 1440,
-    "source": "decorations/1023/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/7c/Tall_Ship_Stairs.jpg"
-  },
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "name": "Tall Ship Stairs",
-    "id": 15303,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 15,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Elder Wood Plank"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -275,5 +248,32 @@
       "type": "New Item",
       "name": "Tall Ship Stairs"
     }
-  ]
+  ],
+  "wikiTitle": "Tall Ship Stairs (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Tall Ship Stairs",
+    "id": 15303,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 15,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Elder Wood Plank"
+      }
+    ]
+  },
+  "original": {
+    "width": 1152,
+    "height": 1440,
+    "source": "decorations/1023/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/7c/Tall_Ship_Stairs.jpg"
+  }
 }

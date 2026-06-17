@@ -6,39 +6,6 @@
     4
   ],
   "icon": "decorations/625/icon.png",
-  "wikiTitle": "A Day in Kryta (Handiwork)",
-  "original": {
-    "width": 831,
-    "height": 965,
-    "source": "decorations/625/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/2/2e/A_Day_in_Kryta.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "A Day in Kryta",
-    "sheet": "Homestead Recipe Book: Paintings and Shelves",
-    "id": 14650,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 27,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 20,
-        "item": "Jade Shard"
-      },
-      {
-        "slot": 3,
-        "quantity": 10,
-        "item": "Pouch of Green Pigment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -373,5 +340,38 @@
       "type": "New Item",
       "name": "A Day in Kryta"
     }
-  ]
+  ],
+  "wikiTitle": "A Day in Kryta (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "A Day in Kryta",
+    "sheet": "Homestead Recipe Book: Paintings and Shelves",
+    "id": 14650,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 27,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 20,
+        "item": "Jade Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Pouch of Green Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 831,
+    "height": 965,
+    "source": "decorations/625/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/2/2e/A_Day_in_Kryta.jpg"
+  }
 }

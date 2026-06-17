@@ -7,33 +7,6 @@
     20
   ],
   "icon": "decorations/1202/icon.png",
-  "wikiTitle": "Iron Window (Handiwork)",
-  "original": {
-    "width": 1181,
-    "height": 1080,
-    "source": "decorations/1202/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/1/19/Iron_Window.jpg"
-  },
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "name": "Iron Window",
-    "id": 15656,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 10,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Iron Ingot"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -135,5 +108,32 @@
       "type": "New Item",
       "name": "Iron Window"
     }
-  ]
+  ],
+  "wikiTitle": "Iron Window (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Iron Window",
+    "id": 15656,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Iron Ingot"
+      }
+    ]
+  },
+  "original": {
+    "width": 1181,
+    "height": 1080,
+    "source": "decorations/1202/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/1/19/Iron_Window.jpg"
+  }
 }

@@ -7,33 +7,6 @@
     20
   ],
   "icon": "decorations/973/icon.png",
-  "wikiTitle": "Wall (120 x 60) (Handiwork)",
-  "original": {
-    "width": 2560,
-    "height": 1440,
-    "source": "decorations/973/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/f/fb/Wall_%28120_x_60%29.jpg"
-  },
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "name": "Wall (120 x 60)",
-    "id": 15210,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 5,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 2,
-        "item": "Elder Wood Plank"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -215,5 +188,32 @@
       "type": "New Item",
       "name": "Wall (120 x 60)"
     }
-  ]
+  ],
+  "wikiTitle": "Wall (120 x 60) (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Wall (120 x 60)",
+    "id": 15210,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Elder Wood Plank"
+      }
+    ]
+  },
+  "original": {
+    "width": 2560,
+    "height": 1440,
+    "source": "decorations/973/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/f/fb/Wall_%28120_x_60%29.jpg"
+  }
 }

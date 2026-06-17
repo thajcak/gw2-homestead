@@ -6,39 +6,6 @@
     1
   ],
   "icon": "decorations/101/icon.png",
-  "wikiTitle": "Spire of the Solid Ocean (Handiwork)",
-  "original": {
-    "width": 636,
-    "height": 1080,
-    "source": "decorations/101/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/c/cc/Spire_of_the_Solid_Ocean.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Spire of the Solid Ocean",
-    "sheet": "Homestead Recipe Book: Solid Ocean Fractal",
-    "id": 14586,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 12,
-        "item": "Fractal Relic"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Writ of Dragon's End"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -333,5 +300,38 @@
       "type": "New Item",
       "name": "Spire of the Solid Ocean"
     }
-  ]
+  ],
+  "wikiTitle": "Spire of the Solid Ocean (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Spire of the Solid Ocean",
+    "sheet": "Homestead Recipe Book: Solid Ocean Fractal",
+    "id": 14586,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 12,
+        "item": "Fractal Relic"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Writ of Dragon's End"
+      }
+    ]
+  },
+  "original": {
+    "width": 636,
+    "height": 1080,
+    "source": "decorations/101/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/c/cc/Spire_of_the_Solid_Ocean.jpg"
+  }
 }

@@ -7,39 +7,6 @@
     25
   ],
   "icon": "decorations/718/icon.png",
-  "wikiTitle": "Spooky Dining Chair (Handiwork)",
-  "original": {
-    "width": 772,
-    "height": 991,
-    "source": "decorations/718/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/d/d3/Spooky_Dining_Chair.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "sheet",
-    "disciplines": "Handiworker",
-    "name": "Spooky Dining Chair",
-    "sheet": "Homestead Recipe Book: Halloween, Volume 3",
-    "id": 14597,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 26,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 2,
-        "item": "Glob of Ectoplasm"
-      },
-      {
-        "slot": 3,
-        "quantity": 2,
-        "item": "Pile of Foul Essence"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-03",
@@ -370,5 +337,38 @@
       "type": "New Item",
       "name": "Spooky Dining Chair"
     }
-  ]
+  ],
+  "wikiTitle": "Spooky Dining Chair (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Spooky Dining Chair",
+    "sheet": "Homestead Recipe Book: Halloween, Volume 3",
+    "id": 14597,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Glob of Ectoplasm"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Pile of Foul Essence"
+      }
+    ]
+  },
+  "original": {
+    "width": 772,
+    "height": 991,
+    "source": "decorations/718/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/d/d3/Spooky_Dining_Chair.jpg"
+  }
 }

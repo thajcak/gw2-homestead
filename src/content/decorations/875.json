@@ -6,33 +6,6 @@
     27
   ],
   "icon": "decorations/875/icon.png",
-  "wikiTitle": "Twisted Imaginarium Choya Statue",
-  "original": {
-    "width": 1408,
-    "height": 1407,
-    "source": "decorations/875/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/5/58/Twisted_Imaginarium_Choya_Statue.jpg"
-  },
-  "recipe": {
-    "rating": 0,
-    "type": "Homestead Decoration",
-    "source": "Recipe sheet",
-    "disciplines": "Handiworker",
-    "sheet": "Black Lion Twisted Imaginarium Choya Statue Recipe",
-    "id": 15023,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 10,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Refined Homestead Wood"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -289,5 +262,32 @@
       "type": "New Item",
       "name": "Twisted Imaginarium Choya Statue"
     }
-  ]
+  ],
+  "wikiTitle": "Twisted Imaginarium Choya Statue",
+  "recipe": {
+    "rating": 0,
+    "type": "Homestead Decoration",
+    "source": "Recipe sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Black Lion Twisted Imaginarium Choya Statue Recipe",
+    "id": 15023,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Refined Homestead Wood"
+      }
+    ]
+  },
+  "original": {
+    "width": 1408,
+    "height": 1407,
+    "source": "decorations/875/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/5/58/Twisted_Imaginarium_Choya_Statue.jpg"
+  }
 }

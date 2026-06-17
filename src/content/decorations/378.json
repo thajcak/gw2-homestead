@@ -6,39 +6,6 @@
     11
   ],
   "icon": "decorations/378/icon.png",
-  "wikiTitle": "Superior Catapult Siege (Handiwork)",
-  "original": {
-    "width": 1870,
-    "height": 1910,
-    "source": "decorations/378/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/4/43/Superior_Catapult_Siege.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Superior Catapult Siege",
-    "sheet": "Homestead Recipe Book: World vs. World, Volume 2",
-    "id": 14513,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 33,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 8,
-        "item": "WvW Skirmish Claim Ticket"
-      },
-      {
-        "slot": 3,
-        "quantity": 35,
-        "item": "Wool Scrap"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -282,5 +249,38 @@
       "type": "New Item",
       "name": "Superior Catapult Siege"
     }
-  ]
+  ],
+  "wikiTitle": "Superior Catapult Siege (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Superior Catapult Siege",
+    "sheet": "Homestead Recipe Book: World vs. World, Volume 2",
+    "id": 14513,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 33,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "WvW Skirmish Claim Ticket"
+      },
+      {
+        "slot": 3,
+        "quantity": 35,
+        "item": "Wool Scrap"
+      }
+    ]
+  },
+  "original": {
+    "width": 1870,
+    "height": 1910,
+    "source": "decorations/378/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/4/43/Superior_Catapult_Siege.jpg"
+  }
 }

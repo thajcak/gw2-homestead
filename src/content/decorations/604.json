@@ -6,39 +6,6 @@
     22
   ],
   "icon": "decorations/604/icon.png",
-  "wikiTitle": "Super Giant Cloud (Handiwork)",
-  "original": {
-    "width": 746,
-    "height": 594,
-    "source": "decorations/604/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/d/db/Super_Giant_Cloud.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Super Giant Cloud",
-    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 7",
-    "id": 14443,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 8,
-        "item": "Bauble"
-      },
-      {
-        "slot": 3,
-        "quantity": 4,
-        "item": "Pouch of White Pigment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-10",
@@ -299,5 +266,38 @@
       "type": "New Item",
       "name": "Super Giant Cloud"
     }
-  ]
+  ],
+  "wikiTitle": "Super Giant Cloud (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Super Giant Cloud",
+    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 7",
+    "id": 14443,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "Bauble"
+      },
+      {
+        "slot": 3,
+        "quantity": 4,
+        "item": "Pouch of White Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 746,
+    "height": 594,
+    "source": "decorations/604/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/d/db/Super_Giant_Cloud.jpg"
+  }
 }

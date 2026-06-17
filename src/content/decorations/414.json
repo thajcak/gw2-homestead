@@ -7,39 +7,6 @@
     25
   ],
   "icon": "decorations/414/icon.png",
-  "wikiTitle": "Ephemeral Spider's Web Wall (Handiwork)",
-  "original": {
-    "width": 519,
-    "height": 442,
-    "source": "decorations/414/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/7b/Ephemeral_Spider%27s_Web_Wall.jpg"
-  },
-  "recipe": {
-    "rating": 150,
-    "type": "Homestead Decoration",
-    "source": "sheet",
-    "disciplines": "Handiworker",
-    "name": "Ephemeral Spider's Web Wall",
-    "sheet": "Homestead Recipe Book: Halloween, Volume 8",
-    "id": 14600,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 30,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 15,
-        "item": "Silk Scrap"
-      },
-      {
-        "slot": 3,
-        "quantity": 20,
-        "item": "Piece of Candy Corn"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -325,5 +292,38 @@
       "type": "New Item",
       "name": "Ephemeral Spider's Web Wall"
     }
-  ]
+  ],
+  "wikiTitle": "Ephemeral Spider's Web Wall (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Ephemeral Spider's Web Wall",
+    "sheet": "Homestead Recipe Book: Halloween, Volume 8",
+    "id": 14600,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 15,
+        "item": "Silk Scrap"
+      },
+      {
+        "slot": 3,
+        "quantity": 20,
+        "item": "Piece of Candy Corn"
+      }
+    ]
+  },
+  "original": {
+    "width": 519,
+    "height": 442,
+    "source": "decorations/414/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/7b/Ephemeral_Spider%27s_Web_Wall.jpg"
+  }
 }

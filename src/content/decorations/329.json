@@ -6,39 +6,6 @@
     11
   ],
   "icon": "decorations/329/icon.png",
-  "wikiTitle": "Superior Ballista Siege (Handiwork)",
-  "original": {
-    "width": 1920,
-    "height": 1440,
-    "source": "decorations/329/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/d/d0/Superior_Ballista_Siege.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Superior Ballista Siege",
-    "sheet": "Homestead Recipe Book: World vs. World, Volume 2",
-    "id": 14659,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 34,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 8,
-        "item": "WvW Skirmish Claim Ticket"
-      },
-      {
-        "slot": 3,
-        "quantity": 10,
-        "item": "Airship Part"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -352,5 +319,38 @@
       "type": "New Item",
       "name": "Superior Ballista Siege"
     }
-  ]
+  ],
+  "wikiTitle": "Superior Ballista Siege (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Superior Ballista Siege",
+    "sheet": "Homestead Recipe Book: World vs. World, Volume 2",
+    "id": 14659,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 34,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "WvW Skirmish Claim Ticket"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Airship Part"
+      }
+    ]
+  },
+  "original": {
+    "width": 1920,
+    "height": 1440,
+    "source": "decorations/329/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/d/d0/Superior_Ballista_Siege.jpg"
+  }
 }

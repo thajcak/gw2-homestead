@@ -7,34 +7,6 @@
     20
   ],
   "icon": "decorations/1167/icon.png",
-  "wikiTitle": "Stained Glass (Handiwork)",
-  "original": {
-    "width": 1440,
-    "height": 3085,
-    "source": "decorations/1167/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/8e/Stained_Glass.jpg"
-  },
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Stained Glass",
-    "sheet": "Recipe: Stained Glass",
-    "id": 15443,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 5,
-        "item": "Lump of Glass"
-      },
-      {
-        "slot": 2,
-        "quantity": 2,
-        "item": "Refined Homestead Metal"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-05",
@@ -266,5 +238,33 @@
       "type": "New Item",
       "name": "Stained Glass"
     }
-  ]
+  ],
+  "wikiTitle": "Stained Glass (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Stained Glass",
+    "sheet": "Recipe: Stained Glass",
+    "id": 15443,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Lump of Glass"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Refined Homestead Metal"
+      }
+    ]
+  },
+  "original": {
+    "width": 1440,
+    "height": 3085,
+    "source": "decorations/1167/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/8e/Stained_Glass.jpg"
+  }
 }

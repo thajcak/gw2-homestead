@@ -7,39 +7,6 @@
     26
   ],
   "icon": "decorations/389/icon.png",
-  "wikiTitle": "Large Cube of Snow (Handiwork)",
-  "original": {
-    "width": 1014,
-    "height": 927,
-    "source": "decorations/389/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/0/02/Cube_of_Snow.jpg"
-  },
-  "recipe": {
-    "rating": 150,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Large Cube of Snow",
-    "sheet": "Homestead Recipe Book: Wintersday, Volume 2",
-    "id": 14367,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 40,
-        "item": "Snowflake"
-      },
-      {
-        "slot": 3,
-        "quantity": 2,
-        "item": "Crystal Core"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -315,5 +282,38 @@
       "type": "New Item",
       "name": "Large Cube of Snow"
     }
-  ]
+  ],
+  "wikiTitle": "Large Cube of Snow (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Large Cube of Snow",
+    "sheet": "Homestead Recipe Book: Wintersday, Volume 2",
+    "id": 14367,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 40,
+        "item": "Snowflake"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Crystal Core"
+      }
+    ]
+  },
+  "original": {
+    "width": 1014,
+    "height": 927,
+    "source": "decorations/389/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/0/02/Cube_of_Snow.jpg"
+  }
 }

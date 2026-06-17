@@ -7,39 +7,6 @@
     13
   ],
   "icon": "decorations/775/icon.png",
-  "wikiTitle": "Racing Checkpoint Projector (Handiwork)",
-  "original": {
-    "width": 610,
-    "height": 683,
-    "source": "decorations/775/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/b/bf/Racing_Checkpoint_Projector.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Racing Checkpoint Projector",
-    "sheet": "Homestead Recipe Book: Dragon Bash, Volume 4",
-    "id": 14447,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 35,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 50,
-        "item": "Piece of Zhaitaffy"
-      },
-      {
-        "slot": 3,
-        "quantity": 10,
-        "item": "Charged Lodestone"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -315,5 +282,38 @@
       "type": "New Item",
       "name": "Racing Checkpoint Projector"
     }
-  ]
+  ],
+  "wikiTitle": "Racing Checkpoint Projector (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Racing Checkpoint Projector",
+    "sheet": "Homestead Recipe Book: Dragon Bash, Volume 4",
+    "id": 14447,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 50,
+        "item": "Piece of Zhaitaffy"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Charged Lodestone"
+      }
+    ]
+  },
+  "original": {
+    "width": 610,
+    "height": 683,
+    "source": "decorations/775/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/b/bf/Racing_Checkpoint_Projector.jpg"
+  }
 }

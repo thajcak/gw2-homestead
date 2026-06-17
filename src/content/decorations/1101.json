@@ -7,29 +7,6 @@
     20
   ],
   "icon": "decorations/1101/icon.png",
-  "wikiTitle": "White Mantle Statue (Handiwork)",
-  "original": {
-    "width": 720,
-    "height": 1440,
-    "source": "decorations/1101/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/99/White_Mantle_Statue.jpg"
-  },
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "White Mantle Statue",
-    "sheet": "Recipe: White Mantle Statue",
-    "id": 15486,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 20,
-        "item": "Refined Homestead Metal"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -296,5 +273,28 @@
       "type": "New Item",
       "name": "White Mantle Statue"
     }
-  ]
+  ],
+  "wikiTitle": "White Mantle Statue (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "White Mantle Statue",
+    "sheet": "Recipe: White Mantle Statue",
+    "id": 15486,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 20,
+        "item": "Refined Homestead Metal"
+      }
+    ]
+  },
+  "original": {
+    "width": 720,
+    "height": 1440,
+    "source": "decorations/1101/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/99/White_Mantle_Statue.jpg"
+  }
 }

@@ -7,12 +7,37 @@
     20
   ],
   "icon": "decorations/1099/icon.png",
-  "wikiTitle": "Wall Gable 720 x 200 (Handiwork)",
   "history": [
+    {
+      "day": "2026-06-17",
+      "type": "Recipe Updated",
+      "name": "Wall Gable 720 x 200"
+    },
     {
       "day": "2026-05-12",
       "type": "New Item",
       "name": "Wall Gable 720 x 200"
     }
-  ]
+  ],
+  "wikiTitle": "Wall Gable 720 x 200 (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Wall Gable 720 x 200",
+    "id": 15520,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 40,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 40,
+        "item": "Elder Wood Plank"
+      }
+    ]
+  }
 }

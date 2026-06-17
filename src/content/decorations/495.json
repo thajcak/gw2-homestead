@@ -6,39 +6,6 @@
     6
   ],
   "icon": "decorations/495/icon.png",
-  "wikiTitle": "Potted Bamboo Cluster (Handiwork)",
-  "original": {
-    "width": 379,
-    "height": 941,
-    "source": "decorations/495/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/74/Potted_Bamboo_Cluster.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Potted Bamboo Cluster",
-    "sheet": "Homestead Recipe Book: Plants, Volume 3",
-    "id": 14201,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 30,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 2,
-        "item": "Evergreen Shard"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Jungle Grass Seed"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -317,5 +284,38 @@
       "type": "New Item",
       "name": "Potted Bamboo Cluster"
     }
-  ]
+  ],
+  "wikiTitle": "Potted Bamboo Cluster (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Potted Bamboo Cluster",
+    "sheet": "Homestead Recipe Book: Plants, Volume 3",
+    "id": 14201,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Evergreen Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Jungle Grass Seed"
+      }
+    ]
+  },
+  "original": {
+    "width": 379,
+    "height": 941,
+    "source": "decorations/495/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/74/Potted_Bamboo_Cluster.jpg"
+  }
 }

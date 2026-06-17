@@ -7,44 +7,6 @@
     26
   ],
   "icon": "decorations/50/icon.png",
-  "wikiTitle": "Infinirarium Deck (Handiwork)",
-  "original": {
-    "width": 993,
-    "height": 965,
-    "source": "decorations/50/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/77/Infinirarium_Deck_top.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Infinirarium Deck",
-    "sheet": "Homestead Recipe Book: Wintersday, Volume 7",
-    "id": 14587,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 140,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 50,
-        "item": "Difluorite Crystal"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Case of Captured Lightning"
-      },
-      {
-        "slot": 4,
-        "quantity": 100,
-        "item": "Research Note"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -300,5 +262,43 @@
       "type": "New Item",
       "name": "Infinirarium Deck"
     }
-  ]
+  ],
+  "wikiTitle": "Infinirarium Deck (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Infinirarium Deck",
+    "sheet": "Homestead Recipe Book: Wintersday, Volume 7",
+    "id": 14587,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 140,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 50,
+        "item": "Difluorite Crystal"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Case of Captured Lightning"
+      },
+      {
+        "slot": 4,
+        "quantity": 100,
+        "item": "Research Note"
+      }
+    ]
+  },
+  "original": {
+    "width": 993,
+    "height": 965,
+    "source": "decorations/50/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/77/Infinirarium_Deck_top.jpg"
+  }
 }

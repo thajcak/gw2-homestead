@@ -6,39 +6,6 @@
     9
   ],
   "icon": "decorations/638/icon.png",
-  "wikiTitle": "Mists Minotaur Statue (Handiwork)",
-  "original": {
-    "width": 1088,
-    "height": 1023,
-    "source": "decorations/638/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/96/Mists_Minotaur_Statue.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Mists Minotaur Statue",
-    "sheet": "Homestead Recipe Book: World vs. World, Volume 2",
-    "id": 14718,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 25,
-        "item": "WvW Skirmish Claim Ticket"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Superior Rune of Strength"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -277,5 +244,38 @@
       "type": "New Item",
       "name": "Mists Minotaur Statue"
     }
-  ]
+  ],
+  "wikiTitle": "Mists Minotaur Statue (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Mists Minotaur Statue",
+    "sheet": "Homestead Recipe Book: World vs. World, Volume 2",
+    "id": 14718,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 25,
+        "item": "WvW Skirmish Claim Ticket"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Superior Rune of Strength"
+      }
+    ]
+  },
+  "original": {
+    "width": 1088,
+    "height": 1023,
+    "source": "decorations/638/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/96/Mists_Minotaur_Statue.jpg"
+  }
 }

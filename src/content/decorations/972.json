@@ -7,33 +7,6 @@
     20
   ],
   "icon": "decorations/972/icon.png",
-  "wikiTitle": "Full Wall Bracket Corner (Handiwork)",
-  "original": {
-    "width": 771,
-    "height": 1080,
-    "source": "decorations/972/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/1/16/Full_Wall_Bracket_Corner.jpg"
-  },
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "name": "Full Wall Bracket Corner",
-    "id": 15232,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 5,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 1,
-        "item": "Elder Wood Plank"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -285,5 +258,32 @@
       "type": "New Item",
       "name": "Full Wall Bracket Corner"
     }
-  ]
+  ],
+  "wikiTitle": "Full Wall Bracket Corner (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Full Wall Bracket Corner",
+    "id": 15232,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Elder Wood Plank"
+      }
+    ]
+  },
+  "original": {
+    "width": 771,
+    "height": 1080,
+    "source": "decorations/972/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/1/16/Full_Wall_Bracket_Corner.jpg"
+  }
 }

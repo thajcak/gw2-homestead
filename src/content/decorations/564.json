@@ -7,44 +7,6 @@
     23
   ],
   "icon": "decorations/564/icon.png",
-  "wikiTitle": "Jormag Hologram Generator (Handiwork)",
-  "original": {
-    "width": 831,
-    "height": 543,
-    "source": "decorations/564/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/4/48/Jormag_Hologram_Generator.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Jormag Hologram Generator",
-    "sheet": "Homestead Recipe Book: Dragon Bash, Volume 3",
-    "id": 14844,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 35,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Deldrimor Steel Ingot"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "Xunlai Electrum Ingot"
-      },
-      {
-        "slot": 4,
-        "quantity": 15,
-        "item": "Jorbreaker"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -370,5 +332,43 @@
       "type": "New Item",
       "name": "Jormag Hologram Generator"
     }
-  ]
+  ],
+  "wikiTitle": "Jormag Hologram Generator (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Jormag Hologram Generator",
+    "sheet": "Homestead Recipe Book: Dragon Bash, Volume 3",
+    "id": 14844,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Deldrimor Steel Ingot"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Xunlai Electrum Ingot"
+      },
+      {
+        "slot": 4,
+        "quantity": 15,
+        "item": "Jorbreaker"
+      }
+    ]
+  },
+  "original": {
+    "width": 831,
+    "height": 543,
+    "source": "decorations/564/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/4/48/Jormag_Hologram_Generator.jpg"
+  }
 }

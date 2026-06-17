@@ -6,39 +6,6 @@
     12
   ],
   "icon": "decorations/393/icon.png",
-  "wikiTitle": "Bronze Samarog Trophy (Handiwork)",
-  "original": {
-    "width": 690,
-    "height": 1200,
-    "source": "decorations/393/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/b/be/Bronze_Samarog_Trophy.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Bronze Samarog Trophy",
-    "sheet": "Recipe: Bronze Samarog Trophy",
-    "id": 14224,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 36,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Magnetite Shard"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Impaled Prisoner Token"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -333,5 +300,38 @@
       "type": "New Item",
       "name": "Bronze Samarog Trophy"
     }
-  ]
+  ],
+  "wikiTitle": "Bronze Samarog Trophy (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Bronze Samarog Trophy",
+    "sheet": "Recipe: Bronze Samarog Trophy",
+    "id": 14224,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 36,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Impaled Prisoner Token"
+      }
+    ]
+  },
+  "original": {
+    "width": 690,
+    "height": 1200,
+    "source": "decorations/393/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/b/be/Bronze_Samarog_Trophy.jpg"
+  }
 }

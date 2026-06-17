@@ -6,39 +6,6 @@
     1
   ],
   "icon": "decorations/271/icon.png",
-  "wikiTitle": "Kryptis Square Floor (Handiwork)",
-  "original": {
-    "width": 1309,
-    "height": 1309,
-    "source": "decorations/271/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/a/a7/Kryptis_Square_Floor_top.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Kryptis Square Floor",
-    "sheet": "Homestead Recipe Book: Inner Nayos, Volume 1",
-    "id": 14820,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 4,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 1,
-        "item": "Clot of Congealed Screams"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "Fine Rift Essence"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -373,5 +340,38 @@
       "type": "New Item",
       "name": "Kryptis Square Floor"
     }
-  ]
+  ],
+  "wikiTitle": "Kryptis Square Floor (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Kryptis Square Floor",
+    "sheet": "Homestead Recipe Book: Inner Nayos, Volume 1",
+    "id": 14820,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 4,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Clot of Congealed Screams"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Fine Rift Essence"
+      }
+    ]
+  },
+  "original": {
+    "width": 1309,
+    "height": 1309,
+    "source": "decorations/271/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/a/a7/Kryptis_Square_Floor_top.jpg"
+  }
 }

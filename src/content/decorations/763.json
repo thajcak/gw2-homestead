@@ -6,39 +6,6 @@
     9
   ],
   "icon": "decorations/763/icon.png",
-  "wikiTitle": "Significant Disciplines Research Commemorative Statue (Handiwork)",
-  "original": {
-    "width": 450,
-    "height": 770,
-    "source": "decorations/763/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/c/ce/Significant_Disciplines_Research_Commemorative_Statue.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Significant Disciplines Research Commemorative Statue",
-    "sheet": "Homestead Recipe Book: Statues",
-    "id": 14170,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 34,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 6,
-        "item": "Guild Commendation"
-      },
-      {
-        "slot": 3,
-        "quantity": 15,
-        "item": "Research Note"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -302,5 +269,38 @@
       "type": "New Item",
       "name": "Significant Disciplines Research Commemorative Statue"
     }
-  ]
+  ],
+  "wikiTitle": "Significant Disciplines Research Commemorative Statue (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Significant Disciplines Research Commemorative Statue",
+    "sheet": "Homestead Recipe Book: Statues",
+    "id": 14170,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 34,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 6,
+        "item": "Guild Commendation"
+      },
+      {
+        "slot": 3,
+        "quantity": 15,
+        "item": "Research Note"
+      }
+    ]
+  },
+  "original": {
+    "width": 450,
+    "height": 770,
+    "source": "decorations/763/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/c/ce/Significant_Disciplines_Research_Commemorative_Statue.jpg"
+  }
 }

@@ -7,33 +7,6 @@
     20
   ],
   "icon": "decorations/1011/icon.png",
-  "wikiTitle": "Curved Roof Corner (Handiwork)",
-  "original": {
-    "width": 825,
-    "height": 1080,
-    "source": "decorations/1011/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/c/c7/Curved_Roof_Corner.jpg"
-  },
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "name": "Curved Roof Corner",
-    "id": 15194,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 5,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 2,
-        "item": "Brick of Clay"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-09",
@@ -370,5 +343,32 @@
       "type": "New Item",
       "name": "Curved Roof Corner"
     }
-  ]
+  ],
+  "wikiTitle": "Curved Roof Corner (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Curved Roof Corner",
+    "id": 15194,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Brick of Clay"
+      }
+    ]
+  },
+  "original": {
+    "width": 825,
+    "height": 1080,
+    "source": "decorations/1011/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/c/c7/Curved_Roof_Corner.jpg"
+  }
 }

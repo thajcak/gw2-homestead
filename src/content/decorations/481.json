@@ -6,39 +6,6 @@
     22
   ],
   "icon": "decorations/481/icon.png",
-  "wikiTitle": "Super Tree Trunk (Handiwork)",
-  "original": {
-    "width": 1880,
-    "height": 1020,
-    "source": "decorations/481/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/a/a1/Super_Tree_Trunk.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Super Tree Trunk",
-    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 5",
-    "id": 14890,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 8,
-        "item": "Bauble"
-      },
-      {
-        "slot": 3,
-        "quantity": 4,
-        "item": "Pouch of Brown Pigment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -339,5 +306,38 @@
       "type": "New Item",
       "name": "Super Tree Trunk"
     }
-  ]
+  ],
+  "wikiTitle": "Super Tree Trunk (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Super Tree Trunk",
+    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 5",
+    "id": 14890,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "Bauble"
+      },
+      {
+        "slot": 3,
+        "quantity": 4,
+        "item": "Pouch of Brown Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 1880,
+    "height": 1020,
+    "source": "decorations/481/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/a/a1/Super_Tree_Trunk.jpg"
+  }
 }

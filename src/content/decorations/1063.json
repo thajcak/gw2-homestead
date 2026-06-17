@@ -7,33 +7,6 @@
     7
   ],
   "icon": "decorations/1063/icon.png",
-  "wikiTitle": "Tropical Bush (Handiwork)",
-  "original": {
-    "width": 2016,
-    "height": 1440,
-    "source": "decorations/1063/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/90/Tropical_Bush.jpg"
-  },
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "name": "Tropical Bush",
-    "id": 15306,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 3,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Refined Homestead Fiber"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-09",
@@ -295,5 +268,32 @@
       "type": "New Item",
       "name": "Tropical Bush"
     }
-  ]
+  ],
+  "wikiTitle": "Tropical Bush (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Tropical Bush",
+    "id": 15306,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 3,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Refined Homestead Fiber"
+      }
+    ]
+  },
+  "original": {
+    "width": 2016,
+    "height": 1440,
+    "source": "decorations/1063/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/90/Tropical_Bush.jpg"
+  }
 }

@@ -6,39 +6,6 @@
     6
   ],
   "icon": "decorations/558/icon.png",
-  "wikiTitle": "Head Topiary (Handiwork)",
-  "original": {
-    "width": 557,
-    "height": 655,
-    "source": "decorations/558/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/9b/Head_Topiary.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Head Topiary",
-    "sheet": "Homestead Recipe Book: Plants, Volume 3",
-    "id": 14468,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 33,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 2,
-        "item": "Charged Lodestone"
-      },
-      {
-        "slot": 3,
-        "quantity": 2,
-        "item": "Pristine Feather"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -347,5 +314,38 @@
       "type": "New Item",
       "name": "Head Topiary"
     }
-  ]
+  ],
+  "wikiTitle": "Head Topiary (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Head Topiary",
+    "sheet": "Homestead Recipe Book: Plants, Volume 3",
+    "id": 14468,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 33,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Charged Lodestone"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Pristine Feather"
+      }
+    ]
+  },
+  "original": {
+    "width": 557,
+    "height": 655,
+    "source": "decorations/558/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/9b/Head_Topiary.jpg"
+  }
 }

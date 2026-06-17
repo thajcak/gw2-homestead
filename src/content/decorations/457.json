@@ -6,39 +6,6 @@
     10
   ],
   "icon": "decorations/457/icon.png",
-  "wikiTitle": "Gilded Banner (Handiwork)",
-  "original": {
-    "width": 671,
-    "height": 1342,
-    "source": "decorations/457/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/e/e9/Gilded_Banner.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Gilded Banner",
-    "sheet": "Homestead Recipe Book: Banners",
-    "id": 14519,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 25,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Bolt of Gossamer"
-      },
-      {
-        "slot": 3,
-        "quantity": 2,
-        "item": "Ruby Orb"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -392,5 +359,38 @@
       "type": "New Item",
       "name": "Gilded Banner"
     }
-  ]
+  ],
+  "wikiTitle": "Gilded Banner (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Gilded Banner",
+    "sheet": "Homestead Recipe Book: Banners",
+    "id": 14519,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Bolt of Gossamer"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Ruby Orb"
+      }
+    ]
+  },
+  "original": {
+    "width": 671,
+    "height": 1342,
+    "source": "decorations/457/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/e/e9/Gilded_Banner.jpg"
+  }
 }

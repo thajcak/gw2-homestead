@@ -6,33 +6,6 @@
     27
   ],
   "icon": "decorations/827/icon.png",
-  "wikiTitle": "Meditative Long Bamboo Fence",
-  "original": {
-    "width": 3425,
-    "height": 1291,
-    "source": "decorations/827/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/d/d5/Meditative_Long_Bamboo_Fence.jpg"
-  },
-  "recipe": {
-    "rating": 0,
-    "type": "Homestead Decoration",
-    "source": "Recipe sheet",
-    "disciplines": "Handiworker",
-    "sheet": "Black Lion Meditative Long Bamboo Fence Recipe",
-    "id": 14912,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 10,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Refined Homestead Wood"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -304,5 +277,32 @@
       "type": "New Item",
       "name": "Meditative Long Bamboo Fence"
     }
-  ]
+  ],
+  "wikiTitle": "Meditative Long Bamboo Fence",
+  "recipe": {
+    "rating": 0,
+    "type": "Homestead Decoration",
+    "source": "Recipe sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Black Lion Meditative Long Bamboo Fence Recipe",
+    "id": 14912,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Refined Homestead Wood"
+      }
+    ]
+  },
+  "original": {
+    "width": 3425,
+    "height": 1291,
+    "source": "decorations/827/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/d/d5/Meditative_Long_Bamboo_Fence.jpg"
+  }
 }

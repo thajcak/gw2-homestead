@@ -6,44 +6,6 @@
     12
   ],
   "icon": "decorations/719/icon.png",
-  "wikiTitle": "Bronze Shatterer Trophy (Handiwork)",
-  "original": {
-    "width": 1013,
-    "height": 1063,
-    "source": "decorations/719/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/e/ec/Bronze_Shatterer_Trophy.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Bronze Shatterer Trophy",
-    "sheet": "Recipe: Bronze Shatterer Trophy",
-    "id": 14526,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 34,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 1,
-        "item": "Crystal Lodestone"
-      },
-      {
-        "slot": 3,
-        "quantity": 25,
-        "item": "Mistborn Mote"
-      },
-      {
-        "slot": 4,
-        "quantity": 1,
-        "item": "Shatterer Crystal Piece"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-03",
@@ -363,5 +325,43 @@
       "type": "New Item",
       "name": "Bronze Shatterer Trophy"
     }
-  ]
+  ],
+  "wikiTitle": "Bronze Shatterer Trophy (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Bronze Shatterer Trophy",
+    "sheet": "Recipe: Bronze Shatterer Trophy",
+    "id": 14526,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 34,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Crystal Lodestone"
+      },
+      {
+        "slot": 3,
+        "quantity": 25,
+        "item": "Mistborn Mote"
+      },
+      {
+        "slot": 4,
+        "quantity": 1,
+        "item": "Shatterer Crystal Piece"
+      }
+    ]
+  },
+  "original": {
+    "width": 1013,
+    "height": 1063,
+    "source": "decorations/719/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/e/ec/Bronze_Shatterer_Trophy.jpg"
+  }
 }

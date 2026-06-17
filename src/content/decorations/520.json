@@ -7,39 +7,6 @@
     1
   ],
   "icon": "decorations/520/icon.png",
-  "wikiTitle": "Awakened Bone Wall (Handiwork)",
-  "original": {
-    "width": 915,
-    "height": 965,
-    "source": "decorations/520/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/0/0a/Awakened_Bone_Wall.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Awakened Bone Wall",
-    "sheet": "Homestead Recipe Book: Awakened, Volume 1",
-    "id": 14780,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 22,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Ancient Bone"
-      },
-      {
-        "slot": 3,
-        "quantity": 15,
-        "item": "Congealed Putrescence"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -359,5 +326,38 @@
       "type": "New Item",
       "name": "Awakened Bone Wall"
     }
-  ]
+  ],
+  "wikiTitle": "Awakened Bone Wall (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Awakened Bone Wall",
+    "sheet": "Homestead Recipe Book: Awakened, Volume 1",
+    "id": 14780,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 22,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Ancient Bone"
+      },
+      {
+        "slot": 3,
+        "quantity": 15,
+        "item": "Congealed Putrescence"
+      }
+    ]
+  },
+  "original": {
+    "width": 915,
+    "height": 965,
+    "source": "decorations/520/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/0/0a/Awakened_Bone_Wall.jpg"
+  }
 }

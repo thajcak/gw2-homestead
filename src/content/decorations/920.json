@@ -6,33 +6,6 @@
     27
   ],
   "icon": "decorations/920/icon.png",
-  "wikiTitle": "Brasswork Curved Pipe",
-  "original": {
-    "width": 1367,
-    "height": 1367,
-    "source": "decorations/920/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/70/Brasswork_Curved_Pipe.jpg"
-  },
-  "recipe": {
-    "rating": 0,
-    "type": "Homestead Decoration",
-    "source": "Recipe sheet",
-    "disciplines": "Handiworker",
-    "sheet": "Black Lion Brasswork Curved Pipe Recipe",
-    "id": 15140,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 5,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Refined Homestead Fiber"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -299,5 +272,32 @@
       "type": "New Item",
       "name": "Brasswork Curved Pipe"
     }
-  ]
+  ],
+  "wikiTitle": "Brasswork Curved Pipe",
+  "recipe": {
+    "rating": 0,
+    "type": "Homestead Decoration",
+    "source": "Recipe sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Black Lion Brasswork Curved Pipe Recipe",
+    "id": 15140,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Refined Homestead Fiber"
+      }
+    ]
+  },
+  "original": {
+    "width": 1367,
+    "height": 1367,
+    "source": "decorations/920/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/70/Brasswork_Curved_Pipe.jpg"
+  }
 }

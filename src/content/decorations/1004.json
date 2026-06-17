@@ -7,28 +7,6 @@
     20
   ],
   "icon": "decorations/1004/icon.png",
-  "wikiTitle": "Tropical Bridge (Handiwork)",
-  "original": {
-    "width": 1920,
-    "height": 1080,
-    "source": "decorations/1004/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/9b/Tropical_Bridge.jpg"
-  },
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "name": "Tropical Bridge",
-    "id": 15349,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 20,
-        "item": "Refined Homestead Wood"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -280,5 +258,27 @@
       "type": "New Item",
       "name": "Tropical Bridge"
     }
-  ]
+  ],
+  "wikiTitle": "Tropical Bridge (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Tropical Bridge",
+    "id": 15349,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 20,
+        "item": "Refined Homestead Wood"
+      }
+    ]
+  },
+  "original": {
+    "width": 1920,
+    "height": 1080,
+    "source": "decorations/1004/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/9b/Tropical_Bridge.jpg"
+  }
 }

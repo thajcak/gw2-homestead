@@ -6,44 +6,6 @@
     22
   ],
   "icon": "decorations/899/icon.png",
-  "wikiTitle": "Super Pagoda Long Roof (Handiwork)",
-  "original": {
-    "width": 2310,
-    "height": 1223,
-    "source": "decorations/899/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/95/Super_Pagoda_Long_Roof_top.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Super Pagoda Long Roof",
-    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 10; Recipe: Super Pagoda Long Roof",
-    "id": 15087,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 8,
-        "item": "Bauble"
-      },
-      {
-        "slot": 3,
-        "quantity": 4,
-        "item": "Pouch of Orange Pigment"
-      },
-      {
-        "slot": 4,
-        "quantity": 4,
-        "item": "Pouch of Red Pigment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-05-26",
@@ -254,5 +216,43 @@
       "type": "New Item",
       "name": "Super Pagoda Long Roof"
     }
-  ]
+  ],
+  "wikiTitle": "Super Pagoda Long Roof (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Super Pagoda Long Roof",
+    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 10; Recipe: Super Pagoda Long Roof",
+    "id": 15087,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "Bauble"
+      },
+      {
+        "slot": 3,
+        "quantity": 4,
+        "item": "Pouch of Orange Pigment"
+      },
+      {
+        "slot": 4,
+        "quantity": 4,
+        "item": "Pouch of Red Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 2310,
+    "height": 1223,
+    "source": "decorations/899/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/95/Super_Pagoda_Long_Roof_top.jpg"
+  }
 }

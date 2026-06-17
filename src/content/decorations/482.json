@@ -6,39 +6,6 @@
     12
   ],
   "icon": "decorations/482/icon.png",
-  "wikiTitle": "Bronze Deimos Trophy (Handiwork)",
-  "original": {
-    "width": 500,
-    "height": 912,
-    "source": "decorations/482/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/77/Bronze_Deimos_Trophy.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Bronze Deimos Trophy",
-    "sheet": "Recipe: Bronze Deimos Trophy",
-    "id": 14559,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 36,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Magnetite Shard"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Fragment of Saul's Burden (trophy)"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -283,5 +250,38 @@
       "type": "New Item",
       "name": "Bronze Deimos Trophy"
     }
-  ]
+  ],
+  "wikiTitle": "Bronze Deimos Trophy (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Bronze Deimos Trophy",
+    "sheet": "Recipe: Bronze Deimos Trophy",
+    "id": 14559,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 36,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Fragment of Saul's Burden (trophy)"
+      }
+    ]
+  },
+  "original": {
+    "width": 500,
+    "height": 912,
+    "source": "decorations/482/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/77/Bronze_Deimos_Trophy.jpg"
+  }
 }

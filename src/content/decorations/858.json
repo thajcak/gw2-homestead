@@ -7,39 +7,6 @@
     26
   ],
   "icon": "decorations/858/icon.png",
-  "wikiTitle": "Jolly Bow (Handiwork)",
-  "original": {
-    "width": 1024,
-    "height": 1080,
-    "source": "decorations/858/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/3/3a/Jolly_Bow.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Jolly Bow",
-    "sheet": "Homestead Recipe Book: Wintersday, Volume 10;Recipe: Jolly Bow",
-    "id": 15010,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 10,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 30,
-        "item": "Snowflake"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "Glacial Shard"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -425,5 +392,38 @@
       "type": "New Item",
       "name": "Jolly Bow"
     }
-  ]
+  ],
+  "wikiTitle": "Jolly Bow (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Jolly Bow",
+    "sheet": "Homestead Recipe Book: Wintersday, Volume 10;Recipe: Jolly Bow",
+    "id": 15010,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 30,
+        "item": "Snowflake"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Glacial Shard"
+      }
+    ]
+  },
+  "original": {
+    "width": 1024,
+    "height": 1080,
+    "source": "decorations/858/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/3/3a/Jolly_Bow.jpg"
+  }
 }

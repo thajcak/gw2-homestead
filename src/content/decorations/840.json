@@ -6,39 +6,6 @@
     25
   ],
   "icon": "decorations/840/icon.png",
-  "wikiTitle": "Haunted Bell (Handiwork)",
-  "original": {
-    "width": 1184,
-    "height": 1080,
-    "source": "decorations/840/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/c/c6/Haunted_Bell.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "sheet",
-    "disciplines": "Handiworker",
-    "name": "Haunted Bell",
-    "sheet": "Recipe: Haunted Bell;Homestead Recipe Book: Halloween, Volume 10",
-    "id": 14910,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 25,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 1,
-        "item": "Candy Corn Cob"
-      },
-      {
-        "slot": 3,
-        "quantity": 50,
-        "item": "Ancient Wood Plank"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -264,5 +231,38 @@
       "type": "New Item",
       "name": "Haunted Bell"
     }
-  ]
+  ],
+  "wikiTitle": "Haunted Bell (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Haunted Bell",
+    "sheet": "Recipe: Haunted Bell;Homestead Recipe Book: Halloween, Volume 10",
+    "id": 14910,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Candy Corn Cob"
+      },
+      {
+        "slot": 3,
+        "quantity": 50,
+        "item": "Ancient Wood Plank"
+      }
+    ]
+  },
+  "original": {
+    "width": 1184,
+    "height": 1080,
+    "source": "decorations/840/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/c/c6/Haunted_Bell.jpg"
+  }
 }

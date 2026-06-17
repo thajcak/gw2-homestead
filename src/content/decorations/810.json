@@ -6,34 +6,6 @@
     2
   ],
   "icon": "decorations/810/icon.png",
-  "wikiTitle": "Basic Chair (Handiwork)",
-  "original": {
-    "width": 714,
-    "height": 917,
-    "source": "decorations/810/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/a/ae/Basic_Chair.jpg"
-  },
-  "recipe": {
-    "rating": 150,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Basic Chair",
-    "sheet": "Homestead Recipe Book: Basic Decorations",
-    "id": 14577,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 26,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Thin Leather Section"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -232,5 +204,33 @@
       "type": "New Item",
       "name": "Basic Chair"
     }
-  ]
+  ],
+  "wikiTitle": "Basic Chair (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Basic Chair",
+    "sheet": "Homestead Recipe Book: Basic Decorations",
+    "id": 14577,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Thin Leather Section"
+      }
+    ]
+  },
+  "original": {
+    "width": 714,
+    "height": 917,
+    "source": "decorations/810/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/a/ae/Basic_Chair.jpg"
+  }
 }

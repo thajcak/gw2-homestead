@@ -6,39 +6,6 @@
     22
   ],
   "icon": "decorations/252/icon.png",
-  "wikiTitle": "Super Cave Plateau (Handiwork)",
-  "original": {
-    "width": 1741,
-    "height": 1100,
-    "source": "decorations/252/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/3/36/Super_Cave_Plateau.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Super Cave Plateau",
-    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 8",
-    "id": 14402,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 8,
-        "item": "Bauble"
-      },
-      {
-        "slot": 3,
-        "quantity": 4,
-        "item": "Pouch of Brown Pigment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -334,5 +301,38 @@
       "type": "New Item",
       "name": "Super Cave Plateau"
     }
-  ]
+  ],
+  "wikiTitle": "Super Cave Plateau (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Super Cave Plateau",
+    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 8",
+    "id": 14402,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "Bauble"
+      },
+      {
+        "slot": 3,
+        "quantity": 4,
+        "item": "Pouch of Brown Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 1741,
+    "height": 1100,
+    "source": "decorations/252/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/3/36/Super_Cave_Plateau.jpg"
+  }
 }

@@ -7,44 +7,6 @@
     23
   ],
   "icon": "decorations/274/icon.png",
-  "wikiTitle": "Primordus Hologram Generator (Handiwork)",
-  "original": {
-    "width": 629,
-    "height": 489,
-    "source": "decorations/274/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/c/c2/Primordus_Hologram_Generator.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Primordus Hologram Generator",
-    "sheet": "Homestead Recipe Book: Dragon Bash, Volume 3",
-    "id": 14810,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 35,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Deldrimor Steel Ingot"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "Xunlai Electrum Ingot"
-      },
-      {
-        "slot": 4,
-        "quantity": 15,
-        "item": "Jorbreaker"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -370,5 +332,43 @@
       "type": "New Item",
       "name": "Primordus Hologram Generator"
     }
-  ]
+  ],
+  "wikiTitle": "Primordus Hologram Generator (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Primordus Hologram Generator",
+    "sheet": "Homestead Recipe Book: Dragon Bash, Volume 3",
+    "id": 14810,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Deldrimor Steel Ingot"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Xunlai Electrum Ingot"
+      },
+      {
+        "slot": 4,
+        "quantity": 15,
+        "item": "Jorbreaker"
+      }
+    ]
+  },
+  "original": {
+    "width": 629,
+    "height": 489,
+    "source": "decorations/274/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/c/c2/Primordus_Hologram_Generator.jpg"
+  }
 }

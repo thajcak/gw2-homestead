@@ -7,37 +7,6 @@
     3
   ],
   "icon": "decorations/315/icon.png",
-  "wikiTitle": "Kodan Heritage Chest",
-  "original": {
-    "width": 1606,
-    "height": 1080,
-    "source": "decorations/315/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/83/Kodan_Heritage_Chest.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "id": 14291,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Rotted Titan Amber"
-      },
-      {
-        "slot": 3,
-        "quantity": 12,
-        "item": "Large Fang"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -302,5 +271,36 @@
       "type": "New Item",
       "name": "Kodan Heritage Chest"
     }
-  ]
+  ],
+  "wikiTitle": "Kodan Heritage Chest",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14291,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Rotted Titan Amber"
+      },
+      {
+        "slot": 3,
+        "quantity": 12,
+        "item": "Large Fang"
+      }
+    ]
+  },
+  "original": {
+    "width": 1606,
+    "height": 1080,
+    "source": "decorations/315/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/83/Kodan_Heritage_Chest.jpg"
+  }
 }

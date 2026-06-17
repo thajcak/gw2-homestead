@@ -6,39 +6,6 @@
     12
   ],
   "icon": "decorations/200/icon.png",
-  "wikiTitle": "Bronze Conjured Amalgamate Trophy (Handiwork)",
-  "original": {
-    "width": 680,
-    "height": 886,
-    "source": "decorations/200/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/71/Bronze_Conjured_Amalgamate_Trophy.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Bronze Conjured Amalgamate Trophy",
-    "sheet": "Recipe: Bronze Conjured Amalgamate Trophy",
-    "id": 14153,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 36,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Magnetite Shard"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Conjured Amalgamate Token (trophy)"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -283,5 +250,38 @@
       "type": "New Item",
       "name": "Bronze Conjured Amalgamate Trophy"
     }
-  ]
+  ],
+  "wikiTitle": "Bronze Conjured Amalgamate Trophy (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Bronze Conjured Amalgamate Trophy",
+    "sheet": "Recipe: Bronze Conjured Amalgamate Trophy",
+    "id": 14153,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 36,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Conjured Amalgamate Token (trophy)"
+      }
+    ]
+  },
+  "original": {
+    "width": 680,
+    "height": 886,
+    "source": "decorations/200/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/71/Bronze_Conjured_Amalgamate_Trophy.jpg"
+  }
 }

@@ -6,33 +6,6 @@
     27
   ],
   "icon": "decorations/956/icon.png",
-  "wikiTitle": "Graveyard Curved Stone Path",
-  "original": {
-    "width": 620,
-    "height": 968,
-    "source": "decorations/956/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/0/04/Graveyard_Curved_Stone_Path_top.jpg"
-  },
-  "recipe": {
-    "rating": 0,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "sheet": "Graveyard Curved Stone Path Recipe",
-    "id": 15178,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 5,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Refined Homestead Wood"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-10",
@@ -293,5 +266,32 @@
       "type": "New Item",
       "name": "Graveyard Curved Stone Path"
     }
-  ]
+  ],
+  "wikiTitle": "Graveyard Curved Stone Path",
+  "recipe": {
+    "rating": 0,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Graveyard Curved Stone Path Recipe",
+    "id": 15178,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Refined Homestead Wood"
+      }
+    ]
+  },
+  "original": {
+    "width": 620,
+    "height": 968,
+    "source": "decorations/956/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/0/04/Graveyard_Curved_Stone_Path_top.jpg"
+  }
 }

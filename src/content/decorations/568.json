@@ -6,39 +6,6 @@
     22
   ],
   "icon": "decorations/568/icon.png",
-  "wikiTitle": "Super Rock Platform (Handiwork)",
-  "original": {
-    "width": 999,
-    "height": 513,
-    "source": "decorations/568/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/2/21/Super_Rock_Platform.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Super Rock Platform",
-    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 1",
-    "id": 14308,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 4,
-        "item": "Bauble"
-      },
-      {
-        "slot": 3,
-        "quantity": 2,
-        "item": "Pouch of Green Pigment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-07",
@@ -334,5 +301,38 @@
       "type": "New Item",
       "name": "Super Rock Platform"
     }
-  ]
+  ],
+  "wikiTitle": "Super Rock Platform (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Super Rock Platform",
+    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 1",
+    "id": 14308,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 4,
+        "item": "Bauble"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Pouch of Green Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 999,
+    "height": 513,
+    "source": "decorations/568/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/2/21/Super_Rock_Platform.jpg"
+  }
 }

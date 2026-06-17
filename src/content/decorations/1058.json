@@ -7,38 +7,6 @@
     7
   ],
   "icon": "decorations/1058/icon.png",
-  "wikiTitle": "Island Fern (Varied) (Handiwork)",
-  "original": {
-    "width": 810,
-    "height": 1440,
-    "source": "decorations/1058/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/b/b1/Island_Fern_%28Varied%29.jpg"
-  },
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "name": "Island Fern (Varied)",
-    "id": 15201,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 10,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 25,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 3,
-        "quantity": 3,
-        "item": "Evergreen Lodestone"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-05-27",
@@ -255,5 +223,37 @@
       "type": "New Item",
       "name": "Island Fern (Varied)"
     }
-  ]
+  ],
+  "wikiTitle": "Island Fern (Varied) (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Island Fern (Varied)",
+    "id": 15201,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 25,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Evergreen Lodestone"
+      }
+    ]
+  },
+  "original": {
+    "width": 810,
+    "height": 1440,
+    "source": "decorations/1058/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/b/b1/Island_Fern_%28Varied%29.jpg"
+  }
 }

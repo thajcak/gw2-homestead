@@ -7,43 +7,6 @@
     5
   ],
   "icon": "decorations/1035/icon.png",
-  "wikiTitle": "Canthan Lantern (Handiwork)",
-  "original": {
-    "width": 516,
-    "height": 507,
-    "source": "decorations/1035/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/1/1e/Canthan_Lantern.jpg"
-  },
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "name": "Canthan Lantern",
-    "id": 15243,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 10,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 1,
-        "item": "Lump of Glass"
-      },
-      {
-        "slot": 3,
-        "quantity": 2,
-        "item": "Molten Core"
-      },
-      {
-        "slot": 4,
-        "quantity": 1,
-        "item": "Lamp Finial"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-05-30",
@@ -255,5 +218,42 @@
       "type": "New Item",
       "name": "Canthan Lantern"
     }
-  ]
+  ],
+  "wikiTitle": "Canthan Lantern (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Canthan Lantern",
+    "id": 15243,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Lump of Glass"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Molten Core"
+      },
+      {
+        "slot": 4,
+        "quantity": 1,
+        "item": "Lamp Finial"
+      }
+    ]
+  },
+  "original": {
+    "width": 516,
+    "height": 507,
+    "source": "decorations/1035/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/1/1e/Canthan_Lantern.jpg"
+  }
 }

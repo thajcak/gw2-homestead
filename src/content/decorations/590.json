@@ -6,39 +6,6 @@
     12
   ],
   "icon": "decorations/590/icon.png",
-  "wikiTitle": "Keep Construct Rubble (Handiwork)",
-  "original": {
-    "width": 625,
-    "height": 488,
-    "source": "decorations/590/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/c/c6/Keep_Construct_Rubble.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Keep Construct Rubble",
-    "sheet": "Recipe: Keep Construct Rubble",
-    "id": 14552,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 30,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 20,
-        "item": "Amethyst Lump"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Keep Construct Rubble (trophy)"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -338,5 +305,38 @@
       "type": "New Item",
       "name": "Keep Construct Rubble"
     }
-  ]
+  ],
+  "wikiTitle": "Keep Construct Rubble (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Keep Construct Rubble",
+    "sheet": "Recipe: Keep Construct Rubble",
+    "id": 14552,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 20,
+        "item": "Amethyst Lump"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Keep Construct Rubble (trophy)"
+      }
+    ]
+  },
+  "original": {
+    "width": 625,
+    "height": 488,
+    "source": "decorations/590/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/c/c6/Keep_Construct_Rubble.jpg"
+  }
 }

@@ -6,39 +6,6 @@
     22
   ],
   "icon": "decorations/549/icon.png",
-  "wikiTitle": "Super Cave Pillar (Handiwork)",
-  "original": {
-    "width": 804,
-    "height": 1066,
-    "source": "decorations/549/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/1/14/Super_Cave_Pillar.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Super Cave Pillar",
-    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 8",
-    "id": 14469,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 8,
-        "item": "Bauble"
-      },
-      {
-        "slot": 3,
-        "quantity": 4,
-        "item": "Pouch of Brown Pigment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-09",
@@ -264,5 +231,38 @@
       "type": "New Item",
       "name": "Super Cave Pillar"
     }
-  ]
+  ],
+  "wikiTitle": "Super Cave Pillar (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Super Cave Pillar",
+    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 8",
+    "id": 14469,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "Bauble"
+      },
+      {
+        "slot": 3,
+        "quantity": 4,
+        "item": "Pouch of Brown Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 804,
+    "height": 1066,
+    "source": "decorations/549/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/1/14/Super_Cave_Pillar.jpg"
+  }
 }

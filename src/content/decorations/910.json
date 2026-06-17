@@ -7,44 +7,6 @@
     9
   ],
   "icon": "decorations/910/icon.png",
-  "wikiTitle": "Wrought Iron Dragon Body (Handiwork)",
-  "original": {
-    "width": 2242,
-    "height": 1121,
-    "source": "decorations/910/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/e/e6/Wrought_Iron_Dragon_Body.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Wrought Iron Dragon Body",
-    "sheet": "Homestead Recipe Book: Dragon Bash, Volume 6",
-    "id": 15148,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 30,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 1,
-        "item": "Glob of Ectoplasm"
-      },
-      {
-        "slot": 3,
-        "quantity": 40,
-        "item": "Iron Ingot"
-      },
-      {
-        "slot": 4,
-        "quantity": 200,
-        "item": "Piece of Zhaitaffy"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -320,5 +282,43 @@
       "type": "New Item",
       "name": "Wrought Iron Dragon Body"
     }
-  ]
+  ],
+  "wikiTitle": "Wrought Iron Dragon Body (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Wrought Iron Dragon Body",
+    "sheet": "Homestead Recipe Book: Dragon Bash, Volume 6",
+    "id": 15148,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Glob of Ectoplasm"
+      },
+      {
+        "slot": 3,
+        "quantity": 40,
+        "item": "Iron Ingot"
+      },
+      {
+        "slot": 4,
+        "quantity": 200,
+        "item": "Piece of Zhaitaffy"
+      }
+    ]
+  },
+  "original": {
+    "width": 2242,
+    "height": 1121,
+    "source": "decorations/910/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/e/e6/Wrought_Iron_Dragon_Body.jpg"
+  }
 }

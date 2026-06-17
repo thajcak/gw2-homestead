@@ -7,37 +7,6 @@
     19
   ],
   "icon": "decorations/385/icon.png",
-  "wikiTitle": "Kodan Ivory Couch",
-  "original": {
-    "width": 1401,
-    "height": 1080,
-    "source": "decorations/385/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/3/35/Kodan_Ivory_Couch.jpg"
-  },
-  "recipe": {
-    "rating": 150,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "id": 14681,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 34,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 15,
-        "item": "Cotton Scrap"
-      },
-      {
-        "slot": 3,
-        "quantity": 20,
-        "item": "Honey Flower"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -342,5 +311,36 @@
       "type": "New Item",
       "name": "Kodan Ivory Couch"
     }
-  ]
+  ],
+  "wikiTitle": "Kodan Ivory Couch",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14681,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 34,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 15,
+        "item": "Cotton Scrap"
+      },
+      {
+        "slot": 3,
+        "quantity": 20,
+        "item": "Honey Flower"
+      }
+    ]
+  },
+  "original": {
+    "width": 1401,
+    "height": 1080,
+    "source": "decorations/385/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/3/35/Kodan_Ivory_Couch.jpg"
+  }
 }

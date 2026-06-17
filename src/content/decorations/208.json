@@ -7,39 +7,6 @@
     1
   ],
   "icon": "decorations/208/icon.png",
-  "wikiTitle": "Astral Ward Staircase (Handiwork)",
-  "original": {
-    "width": 1506,
-    "height": 1440,
-    "source": "decorations/208/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/4/41/Astral_Ward_Staircase.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Astral Ward Staircase",
-    "sheet": "Homestead Recipe Book: Amnytas, Volume 1",
-    "id": 14614,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 35,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 1,
-        "item": "Pouch of Stardust"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Superior Rune of the Scholar"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -354,5 +321,38 @@
       "type": "New Item",
       "name": "Astral Ward Staircase"
     }
-  ]
+  ],
+  "wikiTitle": "Astral Ward Staircase (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Astral Ward Staircase",
+    "sheet": "Homestead Recipe Book: Amnytas, Volume 1",
+    "id": 14614,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Pouch of Stardust"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Superior Rune of the Scholar"
+      }
+    ]
+  },
+  "original": {
+    "width": 1506,
+    "height": 1440,
+    "source": "decorations/208/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/4/41/Astral_Ward_Staircase.jpg"
+  }
 }

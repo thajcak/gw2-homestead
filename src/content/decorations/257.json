@@ -6,39 +6,6 @@
     22
   ],
   "icon": "decorations/257/icon.png",
-  "wikiTitle": "Super Leaf Platform (Handiwork)",
-  "original": {
-    "width": 1801,
-    "height": 822,
-    "source": "decorations/257/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/5/53/Super_Leaf_Platform.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Super Leaf Platform",
-    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 5",
-    "id": 14841,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 8,
-        "item": "Bauble"
-      },
-      {
-        "slot": 3,
-        "quantity": 4,
-        "item": "Pouch of Green Pigment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -324,5 +291,38 @@
       "type": "New Item",
       "name": "Super Leaf Platform"
     }
-  ]
+  ],
+  "wikiTitle": "Super Leaf Platform (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Super Leaf Platform",
+    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 5",
+    "id": 14841,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "Bauble"
+      },
+      {
+        "slot": 3,
+        "quantity": 4,
+        "item": "Pouch of Green Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 1801,
+    "height": 822,
+    "source": "decorations/257/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/5/53/Super_Leaf_Platform.jpg"
+  }
 }

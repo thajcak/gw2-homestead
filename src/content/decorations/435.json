@@ -6,44 +6,6 @@
     22
   ],
   "icon": "decorations/435/icon.png",
-  "wikiTitle": "Super Cliff Face (Handiwork)",
-  "original": {
-    "width": 899,
-    "height": 1245,
-    "source": "decorations/435/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/f/fb/Super_Cliff_Face.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Super Cliff Face",
-    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 4",
-    "id": 14599,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 8,
-        "item": "Bauble"
-      },
-      {
-        "slot": 3,
-        "quantity": 2,
-        "item": "Pouch of White Pigment"
-      },
-      {
-        "slot": 4,
-        "quantity": 2,
-        "item": "Pouch of Black Pigment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -357,5 +319,43 @@
       "type": "New Item",
       "name": "Super Cliff Face"
     }
-  ]
+  ],
+  "wikiTitle": "Super Cliff Face (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Super Cliff Face",
+    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 4",
+    "id": 14599,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "Bauble"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Pouch of White Pigment"
+      },
+      {
+        "slot": 4,
+        "quantity": 2,
+        "item": "Pouch of Black Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 899,
+    "height": 1245,
+    "source": "decorations/435/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/f/fb/Super_Cliff_Face.jpg"
+  }
 }

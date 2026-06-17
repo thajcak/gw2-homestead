@@ -6,40 +6,12 @@
     22
   ],
   "icon": "decorations/624/icon.png",
-  "wikiTitle": "Super Mushroom (Handiwork)",
-  "original": {
-    "width": 203,
-    "height": 877,
-    "source": "decorations/624/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/85/Super_Mushroom.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Super Mushroom",
-    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 2",
-    "id": 14422,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 4,
-        "item": "Bauble"
-      },
-      {
-        "slot": 3,
-        "quantity": 2,
-        "item": "Pouch of Yellow Pigment"
-      }
-    ]
-  },
   "history": [
+    {
+      "day": "2026-06-17",
+      "type": "Image Updated",
+      "name": "Super Mushroom"
+    },
     {
       "day": "2026-06-11",
       "type": "Image Updated",
@@ -387,5 +359,38 @@
       "type": "New Item",
       "name": "Super Mushroom"
     }
-  ]
+  ],
+  "wikiTitle": "Super Mushroom",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Super Mushroom",
+    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 2",
+    "id": 14422,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 4,
+        "item": "Bauble"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Pouch of Yellow Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 224,
+    "height": 382,
+    "source": "decorations/624/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/6/6c/Super_Mushroom_top_view.jpg"
+  }
 }

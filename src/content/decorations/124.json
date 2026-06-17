@@ -6,39 +6,6 @@
     2
   ],
   "icon": "decorations/124/icon.png",
-  "wikiTitle": "Short Guild Banquet Table (Handiwork)",
-  "original": {
-    "width": 1518,
-    "height": 818,
-    "source": "decorations/124/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/6/69/Short_Guild_Banquet_Table.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Short Guild Banquet Table",
-    "sheet": "Homestead Recipe Book: Tables",
-    "id": 14603,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 4,
-        "item": "Chrysocola Crystal"
-      },
-      {
-        "slot": 3,
-        "quantity": 3,
-        "item": "Bolt of Gossamer"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -328,5 +295,38 @@
       "type": "New Item",
       "name": "Short Guild Banquet Table"
     }
-  ]
+  ],
+  "wikiTitle": "Short Guild Banquet Table (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Short Guild Banquet Table",
+    "sheet": "Homestead Recipe Book: Tables",
+    "id": 14603,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 4,
+        "item": "Chrysocola Crystal"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Bolt of Gossamer"
+      }
+    ]
+  },
+  "original": {
+    "width": 1518,
+    "height": 818,
+    "source": "decorations/124/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/6/69/Short_Guild_Banquet_Table.jpg"
+  }
 }

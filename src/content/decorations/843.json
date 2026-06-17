@@ -6,8 +6,12 @@
     12
   ],
   "icon": "decorations/843/icon.png",
-  "wikiTitle": "Gold Decima Trophy (Handiwork)",
   "history": [
+    {
+      "day": "2026-06-17",
+      "type": "Recipe Updated",
+      "name": "Gold Decima Trophy"
+    },
     {
       "day": "2025-10-30",
       "type": "Item Updated",
@@ -26,5 +30,32 @@
       "type": "New Item",
       "name": "Gold Decima Trophy"
     }
-  ]
+  ],
+  "wikiTitle": "Gold Decima Trophy (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Gold Decima Trophy",
+    "sheet": "Recipe: Gold Decima Trophy",
+    "id": 14939,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 130,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 100,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Decima's Token"
+      }
+    ]
+  }
 }

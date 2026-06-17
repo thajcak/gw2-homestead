@@ -6,39 +6,6 @@
     2
   ],
   "icon": "decorations/630/icon.png",
-  "wikiTitle": "Highback Chair (Handiwork)",
-  "original": {
-    "width": 474,
-    "height": 954,
-    "source": "decorations/630/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/70/Highback_Chair.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Highback Chair",
-    "sheet": "Homestead Recipe Book: Benches, Chairs, Stools",
-    "id": 14186,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 31,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Rugged Leather Section"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Vial of Linseed Oil"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -358,5 +325,38 @@
       "type": "New Item",
       "name": "Highback Chair"
     }
-  ]
+  ],
+  "wikiTitle": "Highback Chair (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Highback Chair",
+    "sheet": "Homestead Recipe Book: Benches, Chairs, Stools",
+    "id": 14186,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 31,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Rugged Leather Section"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Vial of Linseed Oil"
+      }
+    ]
+  },
+  "original": {
+    "width": 474,
+    "height": 954,
+    "source": "decorations/630/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/70/Highback_Chair.jpg"
+  }
 }

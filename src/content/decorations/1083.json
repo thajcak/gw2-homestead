@@ -7,39 +7,6 @@
     26
   ],
   "icon": "decorations/1083/icon.png",
-  "wikiTitle": "Gift Barrel (Handiwork)",
-  "original": {
-    "width": 1437,
-    "height": 1080,
-    "source": "decorations/1083/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/f/f1/Gift_Barrel.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Gift Barrel",
-    "sheet": "Recipe: Gift Barrel",
-    "id": 15420,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 5,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 30,
-        "item": "Snowflake"
-      },
-      {
-        "slot": 3,
-        "quantity": 3,
-        "item": "Bolt of Cotton"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-10",
@@ -271,5 +238,38 @@
       "type": "New Item",
       "name": "Gift Barrel"
     }
-  ]
+  ],
+  "wikiTitle": "Gift Barrel (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Gift Barrel",
+    "sheet": "Recipe: Gift Barrel",
+    "id": 15420,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 30,
+        "item": "Snowflake"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Bolt of Cotton"
+      }
+    ]
+  },
+  "original": {
+    "width": 1437,
+    "height": 1080,
+    "source": "decorations/1083/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/f/f1/Gift_Barrel.jpg"
+  }
 }

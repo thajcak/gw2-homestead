@@ -6,33 +6,6 @@
     27
   ],
   "icon": "decorations/904/icon.png",
-  "wikiTitle": "Sea Raider Roof",
-  "original": {
-    "width": 1727,
-    "height": 1385,
-    "source": "decorations/904/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/e/e3/Sea_Raider_Roof.jpg"
-  },
-  "recipe": {
-    "rating": 0,
-    "type": "Homestead Decoration",
-    "source": "Recipe sheet",
-    "disciplines": "Handiworker",
-    "sheet": "Black Lion Sea Raider Roof Recipe",
-    "id": 15109,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 5,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Refined Homestead Wood"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -269,5 +242,32 @@
       "type": "New Item",
       "name": "Sea Raider Roof"
     }
-  ]
+  ],
+  "wikiTitle": "Sea Raider Roof",
+  "recipe": {
+    "rating": 0,
+    "type": "Homestead Decoration",
+    "source": "Recipe sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Black Lion Sea Raider Roof Recipe",
+    "id": 15109,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Refined Homestead Wood"
+      }
+    ]
+  },
+  "original": {
+    "width": 1727,
+    "height": 1385,
+    "source": "decorations/904/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/e/e3/Sea_Raider_Roof.jpg"
+  }
 }

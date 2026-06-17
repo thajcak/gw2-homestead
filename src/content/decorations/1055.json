@@ -7,33 +7,6 @@
     20
   ],
   "icon": "decorations/1055/icon.png",
-  "wikiTitle": "Doorway Wall (Handiwork)",
-  "original": {
-    "width": 1155,
-    "height": 1080,
-    "source": "decorations/1055/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/0/0b/Doorway_Wall.jpg"
-  },
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "name": "Doorway Wall",
-    "id": 15251,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 10,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Elder Wood Plank"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -285,5 +258,32 @@
       "type": "New Item",
       "name": "Doorway Wall"
     }
-  ]
+  ],
+  "wikiTitle": "Doorway Wall (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Doorway Wall",
+    "id": 15251,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Elder Wood Plank"
+      }
+    ]
+  },
+  "original": {
+    "width": 1155,
+    "height": 1080,
+    "source": "decorations/1055/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/0/0b/Doorway_Wall.jpg"
+  }
 }

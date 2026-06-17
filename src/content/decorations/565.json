@@ -7,38 +7,6 @@
     5
   ],
   "icon": "decorations/565/icon.png",
-  "wikiTitle": "Kodan Lantern",
-  "original": {
-    "width": 639,
-    "height": 1050,
-    "source": "decorations/565/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/a/ad/Kodan_Lantern.jpg"
-  },
-  "recipe": {
-    "rating": 150,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "sheet": "Homestead Recipe Book: Tables",
-    "id": 14263,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 25,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 2,
-        "item": "Linen Scrap"
-      },
-      {
-        "slot": 3,
-        "quantity": 8,
-        "item": "Charged Titan Ore"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-07",
@@ -358,5 +326,37 @@
       "type": "New Item",
       "name": "Kodan Lantern"
     }
-  ]
+  ],
+  "wikiTitle": "Kodan Lantern",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "sheet": "Homestead Recipe Book: Tables",
+    "id": 14263,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Linen Scrap"
+      },
+      {
+        "slot": 3,
+        "quantity": 8,
+        "item": "Charged Titan Ore"
+      }
+    ]
+  },
+  "original": {
+    "width": 639,
+    "height": 1050,
+    "source": "decorations/565/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/a/ad/Kodan_Lantern.jpg"
+  }
 }

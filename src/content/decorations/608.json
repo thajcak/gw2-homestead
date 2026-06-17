@@ -7,39 +7,6 @@
     15
   ],
   "icon": "decorations/608/icon.png",
-  "wikiTitle": "Potted Tall Cypress (Handiwork)",
-  "original": {
-    "width": 272,
-    "height": 1065,
-    "source": "decorations/608/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/9e/Potted_Tall_Cypress.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Potted Tall Cypress",
-    "sheet": "Homestead Recipe Book: Trees",
-    "id": 14619,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 26,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 1,
-        "item": "Ascalonian Lumber Core"
-      },
-      {
-        "slot": 3,
-        "quantity": 2,
-        "item": "Evergreen Shard"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -428,5 +395,32 @@
       "type": "New Item",
       "name": "Potted Tall Cypress"
     }
-  ]
+  ],
+  "wikiTitle": "Potted Tall Cypress (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Potted Tall Cypress",
+    "sheet": "Homestead Recipe Book: Trees",
+    "id": 14619,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Ascalonian Lumber Core"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Evergreen Shard"
+      }
+    ]
+  }
 }

@@ -6,39 +6,6 @@
     10
   ],
   "icon": "decorations/96/icon.png",
-  "wikiTitle": "Norn Summit Banner (Handiwork)",
-  "original": {
-    "width": 378,
-    "height": 618,
-    "source": "decorations/96/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/b/ba/Norn_Summit_Banner.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Norn Summit Banner",
-    "sheet": "Homestead Recipe Book: Summit Banners, Volume 1",
-    "id": 14290,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 26,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Bolt of Silk"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Superior Rune of Hoelbrak"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -337,5 +304,38 @@
       "type": "New Item",
       "name": "Norn Summit Banner"
     }
-  ]
+  ],
+  "wikiTitle": "Norn Summit Banner (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Norn Summit Banner",
+    "sheet": "Homestead Recipe Book: Summit Banners, Volume 1",
+    "id": 14290,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Bolt of Silk"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Superior Rune of Hoelbrak"
+      }
+    ]
+  },
+  "original": {
+    "width": 378,
+    "height": 618,
+    "source": "decorations/96/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/b/ba/Norn_Summit_Banner.jpg"
+  }
 }

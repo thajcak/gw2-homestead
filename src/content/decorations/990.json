@@ -7,27 +7,6 @@
     20
   ],
   "icon": "decorations/990/icon.png",
-  "wikiTitle": "Trimmed Wall (960 x 240) (Handiwork)",
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "name": "Trimmed Wall (960 x 240)",
-    "id": 15327,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 15,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 6,
-        "item": "Elder Wood Plank"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-15",
@@ -179,5 +158,26 @@
       "type": "New Item",
       "name": "Trimmed Wall (960 x 240)"
     }
-  ]
+  ],
+  "wikiTitle": "Trimmed Wall (960 x 240) (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Trimmed Wall (960 x 240)",
+    "id": 15327,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 15,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 6,
+        "item": "Elder Wood Plank"
+      }
+    ]
+  }
 }

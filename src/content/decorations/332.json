@@ -6,39 +6,6 @@
     1
   ],
   "icon": "decorations/332/icon.png",
-  "wikiTitle": "Elegant Pillar (Handiwork)",
-  "original": {
-    "width": 333,
-    "height": 947,
-    "source": "decorations/332/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/8f/Elegant_Pillar.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Elegant Pillar",
-    "sheet": "Homestead Recipe Book: Arches and Pillars",
-    "id": 14430,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 25,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 20,
-        "item": "Elaborate Totem"
-      },
-      {
-        "slot": 3,
-        "quantity": 3,
-        "item": "Lapis Lump"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -387,5 +354,32 @@
       "type": "New Item",
       "name": "Elegant Pillar"
     }
-  ]
+  ],
+  "wikiTitle": "Elegant Pillar (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Elegant Pillar",
+    "sheet": "Homestead Recipe Book: Arches and Pillars",
+    "id": 14430,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 20,
+        "item": "Elaborate Totem"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Lapis Lump"
+      }
+    ]
+  }
 }

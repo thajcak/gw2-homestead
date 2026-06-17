@@ -6,39 +6,6 @@
     14
   ],
   "icon": "decorations/369/icon.png",
-  "wikiTitle": "Massive Balloon Bouquet (Handiwork)",
-  "original": {
-    "width": 514,
-    "height": 879,
-    "source": "decorations/369/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/d/df/Massive_Balloon_Bouquet.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Massive Balloon Bouquet",
-    "sheet": "Homestead Recipe Book: Balloons",
-    "id": 14436,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 22,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Pile of Incandescent Dust"
-      },
-      {
-        "slot": 3,
-        "quantity": 10,
-        "item": "Spool of Gossamer Thread"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -337,5 +304,38 @@
       "type": "New Item",
       "name": "Massive Balloon Bouquet"
     }
-  ]
+  ],
+  "wikiTitle": "Massive Balloon Bouquet (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Massive Balloon Bouquet",
+    "sheet": "Homestead Recipe Book: Balloons",
+    "id": 14436,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 22,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Pile of Incandescent Dust"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Spool of Gossamer Thread"
+      }
+    ]
+  },
+  "original": {
+    "width": 514,
+    "height": 879,
+    "source": "decorations/369/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/d/df/Massive_Balloon_Bouquet.jpg"
+  }
 }

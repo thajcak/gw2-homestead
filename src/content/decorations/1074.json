@@ -6,33 +6,6 @@
     27
   ],
   "icon": "decorations/1074/icon.png",
-  "wikiTitle": "Underwater Kelp Grove",
-  "original": {
-    "width": 319,
-    "height": 968,
-    "source": "decorations/1074/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/80/Underwater_Kelp_Grove.jpg"
-  },
-  "recipe": {
-    "rating": 0,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "sheet": "Black Lion Underwater Kelp Grove Recipe",
-    "id": 15417,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 5,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Refined Homestead Wood"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -324,5 +297,26 @@
       "type": "New Item",
       "name": "Underwater Kelp Grove"
     }
-  ]
+  ],
+  "wikiTitle": "Underwater Kelp Grove",
+  "recipe": {
+    "rating": 0,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Black Lion Underwater Kelp Grove Recipe",
+    "id": 15417,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Refined Homestead Wood"
+      }
+    ]
+  }
 }

@@ -6,44 +6,6 @@
     12
   ],
   "icon": "decorations/667/icon.png",
-  "wikiTitle": "Silver Chak Gerent Trophy (Handiwork)",
-  "original": {
-    "width": 1976,
-    "height": 2700,
-    "source": "decorations/667/preview.png",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/90/Silver_Gerent_Trophy_Render_Croped.png"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Silver Chak Gerent Trophy",
-    "sheet": "Recipe: Silver Chak Gerent Trophy",
-    "id": 14642,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 85,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 3,
-        "item": "Mordrem Lodestone"
-      },
-      {
-        "slot": 3,
-        "quantity": 50,
-        "item": "Ley Line Crystal"
-      },
-      {
-        "slot": 4,
-        "quantity": 3,
-        "item": "Chak Gerent Eye Piece"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -403,5 +365,43 @@
       "type": "New Item",
       "name": "Silver Chak Gerent Trophy"
     }
-  ]
+  ],
+  "wikiTitle": "Silver Chak Gerent Trophy (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Silver Chak Gerent Trophy",
+    "sheet": "Recipe: Silver Chak Gerent Trophy",
+    "id": 14642,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 85,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Mordrem Lodestone"
+      },
+      {
+        "slot": 3,
+        "quantity": 50,
+        "item": "Ley Line Crystal"
+      },
+      {
+        "slot": 4,
+        "quantity": 3,
+        "item": "Chak Gerent Eye Piece"
+      }
+    ]
+  },
+  "original": {
+    "width": 1976,
+    "height": 2700,
+    "source": "decorations/667/preview.png",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/90/Silver_Gerent_Trophy_Render_Croped.png"
+  }
 }

@@ -6,39 +6,6 @@
     5
   ],
   "icon": "decorations/694/icon.png",
-  "wikiTitle": "Obstacle: Red Torch (Handiwork)",
-  "original": {
-    "width": 1018,
-    "height": 1272,
-    "source": "decorations/694/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/96/Obstacle-_Red_Torch.jpg"
-  },
-  "recipe": {
-    "rating": 75,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Obstacle: Red Torch",
-    "sheet": "Homestead Recipe Book: Guild Arena",
-    "id": 14692,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 5,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Pouch of Red Pigment"
-      },
-      {
-        "slot": 3,
-        "quantity": 2,
-        "item": "Ley Line Crystal"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -303,5 +270,38 @@
       "type": "New Item",
       "name": "Obstacle: Red Torch"
     }
-  ]
+  ],
+  "wikiTitle": "Obstacle: Red Torch (Handiwork)",
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Obstacle: Red Torch",
+    "sheet": "Homestead Recipe Book: Guild Arena",
+    "id": 14692,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Pouch of Red Pigment"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Ley Line Crystal"
+      }
+    ]
+  },
+  "original": {
+    "width": 1018,
+    "height": 1272,
+    "source": "decorations/694/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/96/Obstacle-_Red_Torch.jpg"
+  }
 }

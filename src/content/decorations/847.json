@@ -6,39 +6,6 @@
     12
   ],
   "icon": "decorations/847/icon.png",
-  "wikiTitle": "Bronze Greer Trophy (Handiwork)",
-  "original": {
-    "width": 736,
-    "height": 1920,
-    "source": "decorations/847/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/8e/Bronze_Greer_Trophy.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Bronze Greer Trophy",
-    "sheet": "Recipe: Bronze Greer Trophy",
-    "id": 14992,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 36,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Magnetite Shard"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Greer's Token"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -368,5 +335,32 @@
       "type": "New Item",
       "name": "Bronze Greer Trophy"
     }
-  ]
+  ],
+  "wikiTitle": "Bronze Greer Trophy (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Bronze Greer Trophy",
+    "sheet": "Recipe: Bronze Greer Trophy",
+    "id": 14992,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 36,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Greer's Token"
+      }
+    ]
+  }
 }

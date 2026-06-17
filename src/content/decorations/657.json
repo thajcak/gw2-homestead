@@ -7,39 +7,6 @@
     21
   ],
   "icon": "decorations/657/icon.png",
-  "wikiTitle": "Dog Statue (Handiwork)",
-  "original": {
-    "width": 811,
-    "height": 960,
-    "source": "decorations/657/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/7f/Dog_Statue.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Dog Statue",
-    "sheet": "Homestead Recipe Book: Lunar New Year Celestials",
-    "id": 14150,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 35,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 50,
-        "item": "Pouch of Red Pigment"
-      },
-      {
-        "slot": 3,
-        "quantity": 20,
-        "item": "Large Bone"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -280,5 +247,38 @@
       "type": "New Item",
       "name": "Dog Statue"
     }
-  ]
+  ],
+  "wikiTitle": "Dog Statue (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Dog Statue",
+    "sheet": "Homestead Recipe Book: Lunar New Year Celestials",
+    "id": 14150,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 50,
+        "item": "Pouch of Red Pigment"
+      },
+      {
+        "slot": 3,
+        "quantity": 20,
+        "item": "Large Bone"
+      }
+    ]
+  },
+  "original": {
+    "width": 811,
+    "height": 960,
+    "source": "decorations/657/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/7f/Dog_Statue.jpg"
+  }
 }

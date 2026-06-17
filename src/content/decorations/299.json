@@ -6,39 +6,6 @@
     5
   ],
   "icon": "decorations/299/icon.png",
-  "wikiTitle": "Obstacle: Green Torch (Handiwork)",
-  "original": {
-    "width": 1062,
-    "height": 1327,
-    "source": "decorations/299/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/92/Obstacle-_Green_Torch.jpg"
-  },
-  "recipe": {
-    "rating": 75,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Obstacle: Green Torch",
-    "sheet": "Homestead Recipe Book: Guild Arena",
-    "id": 14677,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 5,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Pouch of Green Pigment"
-      },
-      {
-        "slot": 3,
-        "quantity": 2,
-        "item": "Ley Line Crystal"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -303,5 +270,38 @@
       "type": "New Item",
       "name": "Obstacle: Green Torch"
     }
-  ]
+  ],
+  "wikiTitle": "Obstacle: Green Torch (Handiwork)",
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Obstacle: Green Torch",
+    "sheet": "Homestead Recipe Book: Guild Arena",
+    "id": 14677,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Pouch of Green Pigment"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Ley Line Crystal"
+      }
+    ]
+  },
+  "original": {
+    "width": 1062,
+    "height": 1327,
+    "source": "decorations/299/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/92/Obstacle-_Green_Torch.jpg"
+  }
 }

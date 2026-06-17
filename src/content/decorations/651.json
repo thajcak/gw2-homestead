@@ -7,39 +7,6 @@
     25
   ],
   "icon": "decorations/651/icon.png",
-  "wikiTitle": "Scarecrow (Handiwork)",
-  "original": {
-    "width": 636,
-    "height": 965,
-    "source": "decorations/651/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/c/c5/Scarecrow_front.jpg"
-  },
-  "recipe": {
-    "rating": 150,
-    "type": "Homestead Decoration",
-    "source": "sheet",
-    "disciplines": "Handiworker",
-    "name": "Scarecrow",
-    "sheet": "Homestead Recipe Book: Halloween, Volume 1",
-    "id": 14516,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 27,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 24,
-        "item": "Jute Scrap"
-      },
-      {
-        "slot": 3,
-        "quantity": 24,
-        "item": "Pieces of Candy Corn"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -340,5 +307,38 @@
       "type": "New Item",
       "name": "Scarecrow"
     }
-  ]
+  ],
+  "wikiTitle": "Scarecrow (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Scarecrow",
+    "sheet": "Homestead Recipe Book: Halloween, Volume 1",
+    "id": 14516,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 27,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 24,
+        "item": "Jute Scrap"
+      },
+      {
+        "slot": 3,
+        "quantity": 24,
+        "item": "Pieces of Candy Corn"
+      }
+    ]
+  },
+  "original": {
+    "width": 636,
+    "height": 965,
+    "source": "decorations/651/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/c/c5/Scarecrow_front.jpg"
+  }
 }

@@ -7,39 +7,6 @@
     24
   ],
   "icon": "decorations/939/icon.png",
-  "wikiTitle": "Sun Aspect Crystal (Handiwork)",
-  "original": {
-    "width": 727,
-    "height": 1293,
-    "source": "decorations/939/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/f/f7/Sun_Aspect_Crystal.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Sun Aspect Crystal",
-    "sheet": "Recipe: Sun Aspect Crystal",
-    "id": 15165,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 20,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 3,
-        "item": "Charged Quartz Crystal"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "Destroyer Core"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -330,5 +297,38 @@
       "type": "New Item",
       "name": "Sun Aspect Crystal"
     }
-  ]
+  ],
+  "wikiTitle": "Sun Aspect Crystal (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Sun Aspect Crystal",
+    "sheet": "Recipe: Sun Aspect Crystal",
+    "id": 15165,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 20,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Charged Quartz Crystal"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Destroyer Core"
+      }
+    ]
+  },
+  "original": {
+    "width": 727,
+    "height": 1293,
+    "source": "decorations/939/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/f/f7/Sun_Aspect_Crystal.jpg"
+  }
 }

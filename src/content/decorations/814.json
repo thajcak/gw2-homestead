@@ -7,39 +7,6 @@
     5
   ],
   "icon": "decorations/814/icon.png",
-  "wikiTitle": "Infernal Facade (Handiwork)",
-  "original": {
-    "width": 524,
-    "height": 1064,
-    "source": "decorations/814/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/c/c4/Infernal_Facade.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Infernal Facade",
-    "sheet": "Homestead Recipe Book: Misc. Items, Volume 2",
-    "id": 14166,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 26,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 1,
-        "item": "Molten Core"
-      },
-      {
-        "slot": 3,
-        "quantity": 20,
-        "item": "Mistborn Mote"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -239,5 +206,38 @@
       "type": "New Item",
       "name": "Infernal Facade"
     }
-  ]
+  ],
+  "wikiTitle": "Infernal Facade (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Infernal Facade",
+    "sheet": "Homestead Recipe Book: Misc. Items, Volume 2",
+    "id": 14166,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Molten Core"
+      },
+      {
+        "slot": 3,
+        "quantity": 20,
+        "item": "Mistborn Mote"
+      }
+    ]
+  },
+  "original": {
+    "width": 524,
+    "height": 1064,
+    "source": "decorations/814/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/c/c4/Infernal_Facade.jpg"
+  }
 }

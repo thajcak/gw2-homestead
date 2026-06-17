@@ -7,44 +7,6 @@
     23
   ],
   "icon": "decorations/935/icon.png",
-  "wikiTitle": "Skyscale Rental Post (Handiwork)",
-  "original": {
-    "width": 1411,
-    "height": 1411,
-    "source": "decorations/935/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/f/fe/Skyscale_Rental_Post.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Skyscale Rental Post",
-    "sheet": "Homestead Recipe Book: Dragon Bash, Volume 6",
-    "id": 15136,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 35,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 20,
-        "item": "Orichalcum Ingot"
-      },
-      {
-        "slot": 3,
-        "quantity": 20,
-        "item": "Ancient Wood Plank"
-      },
-      {
-        "slot": 4,
-        "quantity": 1,
-        "item": "Jorbreaker"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-10",
@@ -290,5 +252,43 @@
       "type": "New Item",
       "name": "Skyscale Rental Post"
     }
-  ]
+  ],
+  "wikiTitle": "Skyscale Rental Post (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Skyscale Rental Post",
+    "sheet": "Homestead Recipe Book: Dragon Bash, Volume 6",
+    "id": 15136,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 20,
+        "item": "Orichalcum Ingot"
+      },
+      {
+        "slot": 3,
+        "quantity": 20,
+        "item": "Ancient Wood Plank"
+      },
+      {
+        "slot": 4,
+        "quantity": 1,
+        "item": "Jorbreaker"
+      }
+    ]
+  },
+  "original": {
+    "width": 1411,
+    "height": 1411,
+    "source": "decorations/935/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/f/fe/Skyscale_Rental_Post.jpg"
+  }
 }

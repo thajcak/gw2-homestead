@@ -7,34 +7,6 @@
     20
   ],
   "icon": "decorations/1120/icon.png",
-  "wikiTitle": "Slothasor Blue Mushroom (Handiwork)",
-  "original": {
-    "width": 919,
-    "height": 1378,
-    "source": "decorations/1120/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/d/df/Slothasor_Blue_Mushroom.jpg"
-  },
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Slothasor Blue Mushroom",
-    "sheet": "Recipe: Slothasor Blue Mushroom",
-    "id": 15570,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 5,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 1,
-        "item": "Slothasor Mushroom (trophy)"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -276,5 +248,33 @@
       "type": "New Item",
       "name": "Slothasor Blue Mushroom"
     }
-  ]
+  ],
+  "wikiTitle": "Slothasor Blue Mushroom (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Slothasor Blue Mushroom",
+    "sheet": "Recipe: Slothasor Blue Mushroom",
+    "id": 15570,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Slothasor Mushroom (trophy)"
+      }
+    ]
+  },
+  "original": {
+    "width": 919,
+    "height": 1378,
+    "source": "decorations/1120/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/d/df/Slothasor_Blue_Mushroom.jpg"
+  }
 }

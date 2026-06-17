@@ -6,39 +6,6 @@
     9
   ],
   "icon": "decorations/511/icon.png",
-  "wikiTitle": "Griffon Fountain (Handiwork)",
-  "original": {
-    "width": 905,
-    "height": 957,
-    "source": "decorations/511/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/0/02/Griffon_Fountain.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Griffon Fountain",
-    "sheet": "Homestead Recipe Book: Statues and Trophies",
-    "id": 14139,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 38,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Pristine Feather"
-      },
-      {
-        "slot": 3,
-        "quantity": 20,
-        "item": "Bag of Mortar"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -332,5 +299,38 @@
       "type": "New Item",
       "name": "Griffon Fountain"
     }
-  ]
+  ],
+  "wikiTitle": "Griffon Fountain (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Griffon Fountain",
+    "sheet": "Homestead Recipe Book: Statues and Trophies",
+    "id": 14139,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 38,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Pristine Feather"
+      },
+      {
+        "slot": 3,
+        "quantity": 20,
+        "item": "Bag of Mortar"
+      }
+    ]
+  },
+  "original": {
+    "width": 905,
+    "height": 957,
+    "source": "decorations/511/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/0/02/Griffon_Fountain.jpg"
+  }
 }

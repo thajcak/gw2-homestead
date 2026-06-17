@@ -7,39 +7,6 @@
     24
   ],
   "icon": "decorations/943/icon.png",
-  "wikiTitle": "Beach House Spiral Stairs (Handiwork)",
-  "original": {
-    "width": 1127,
-    "height": 1409,
-    "source": "decorations/943/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/f/f6/Beach_House_Spiral_Stairs.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Beach House Spiral Stairs",
-    "sheet": "Homestead Recipe Book: Four Winds, Volume 7",
-    "id": 15163,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 30,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Jute Scrap"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "Coarse Leather Section"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -340,5 +307,38 @@
       "type": "New Item",
       "name": "Beach House Spiral Stairs"
     }
-  ]
+  ],
+  "wikiTitle": "Beach House Spiral Stairs (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Beach House Spiral Stairs",
+    "sheet": "Homestead Recipe Book: Four Winds, Volume 7",
+    "id": 15163,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Jute Scrap"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Coarse Leather Section"
+      }
+    ]
+  },
+  "original": {
+    "width": 1127,
+    "height": 1409,
+    "source": "decorations/943/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/f/f6/Beach_House_Spiral_Stairs.jpg"
+  }
 }

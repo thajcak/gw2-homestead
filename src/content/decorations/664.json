@@ -6,39 +6,6 @@
     10
   ],
   "icon": "decorations/664/icon.png",
-  "wikiTitle": "Guild Initiative Banner (Handiwork)",
-  "original": {
-    "width": 690,
-    "height": 1380,
-    "source": "decorations/664/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/88/Guild_Initiative_Banner.jpg"
-  },
-  "recipe": {
-    "rating": 150,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Guild Initiative Banner",
-    "sheet": "Homestead Recipe Book: Misc. Items, Volume 2",
-    "id": 14857,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 34,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 3,
-        "item": "Guild Commendation"
-      },
-      {
-        "slot": 3,
-        "quantity": 20,
-        "item": "Totem"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -337,5 +304,38 @@
       "type": "New Item",
       "name": "Guild Initiative Banner"
     }
-  ]
+  ],
+  "wikiTitle": "Guild Initiative Banner (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Guild Initiative Banner",
+    "sheet": "Homestead Recipe Book: Misc. Items, Volume 2",
+    "id": 14857,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 34,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Guild Commendation"
+      },
+      {
+        "slot": 3,
+        "quantity": 20,
+        "item": "Totem"
+      }
+    ]
+  },
+  "original": {
+    "width": 690,
+    "height": 1380,
+    "source": "decorations/664/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/88/Guild_Initiative_Banner.jpg"
+  }
 }

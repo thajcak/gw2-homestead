@@ -6,39 +6,6 @@
     22
   ],
   "icon": "decorations/13/icon.png",
-  "wikiTitle": "Super Forest House (Handiwork)",
-  "original": {
-    "width": 957,
-    "height": 1038,
-    "source": "decorations/13/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/89/Super_Forest_House.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Super Forest House",
-    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 2",
-    "id": 14782,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 32,
-        "item": "Bauble"
-      },
-      {
-        "slot": 3,
-        "quantity": 32,
-        "item": "Pouch of Brown Pigment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -372,5 +339,38 @@
       "type": "New Item",
       "name": "Racing"
     }
-  ]
+  ],
+  "wikiTitle": "Super Forest House (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Super Forest House",
+    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 2",
+    "id": 14782,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 32,
+        "item": "Bauble"
+      },
+      {
+        "slot": 3,
+        "quantity": 32,
+        "item": "Pouch of Brown Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 957,
+    "height": 1038,
+    "source": "decorations/13/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/89/Super_Forest_House.jpg"
+  }
 }

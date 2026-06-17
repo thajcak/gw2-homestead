@@ -6,39 +6,6 @@
     12
   ],
   "icon": "decorations/729/icon.png",
-  "wikiTitle": "Tequatl Tailbone (Handiwork)",
-  "original": {
-    "width": 791,
-    "height": 542,
-    "source": "decorations/729/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/5/5d/Tequatl_Tailbone.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Tequatl Tailbone",
-    "sheet": "Recipe: Tequatl Tailbone",
-    "id": 14720,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 28,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Ancient Bone"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Pile of Putrid Essence"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-08",
@@ -282,5 +249,38 @@
       "type": "New Item",
       "name": "Tequatl Tailbone"
     }
-  ]
+  ],
+  "wikiTitle": "Tequatl Tailbone (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Tequatl Tailbone",
+    "sheet": "Recipe: Tequatl Tailbone",
+    "id": 14720,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 28,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Ancient Bone"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Pile of Putrid Essence"
+      }
+    ]
+  },
+  "original": {
+    "width": 791,
+    "height": 542,
+    "source": "decorations/729/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/5/5d/Tequatl_Tailbone.jpg"
+  }
 }

@@ -7,37 +7,6 @@
     4
   ],
   "icon": "decorations/213/icon.png",
-  "wikiTitle": "Steel Pan",
-  "original": {
-    "width": 501,
-    "height": 329,
-    "source": "decorations/213/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/5/58/Steel_Pan.jpg"
-  },
-  "recipe": {
-    "rating": 75,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "id": 14596,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 23,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Ursus Oblige"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "Jar of Vegetable Oil"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -337,5 +306,36 @@
       "type": "New Item",
       "name": "Steel Pan"
     }
-  ]
+  ],
+  "wikiTitle": "Steel Pan",
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14596,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 23,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Ursus Oblige"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Jar of Vegetable Oil"
+      }
+    ]
+  },
+  "original": {
+    "width": 501,
+    "height": 329,
+    "source": "decorations/213/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/5/58/Steel_Pan.jpg"
+  }
 }

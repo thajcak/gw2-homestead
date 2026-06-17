@@ -6,44 +6,6 @@
     12
   ],
   "icon": "decorations/112/icon.png",
-  "wikiTitle": "Bronze Triple Trouble Trophy (Handiwork)",
-  "original": {
-    "width": 1564,
-    "height": 2324,
-    "source": "decorations/112/preview.png",
-    "remoteSource": "https://wiki.guildwars2.com/images/b/b2/Bronze_TT_Trophy_Render_Croped.png"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Bronze Triple Trouble Trophy",
-    "sheet": "Recipe: Bronze Triple Trouble Trophy",
-    "id": 14755,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 34,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 1,
-        "item": "Onyx Lodestone"
-      },
-      {
-        "slot": 3,
-        "quantity": 25,
-        "item": "Glob of Ectoplasm"
-      },
-      {
-        "slot": 4,
-        "quantity": 1,
-        "item": "Triple Trouble Tooth Piece"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -413,5 +375,43 @@
       "type": "New Item",
       "name": "Bronze Triple Trouble Trophy"
     }
-  ]
+  ],
+  "wikiTitle": "Bronze Triple Trouble Trophy (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Bronze Triple Trouble Trophy",
+    "sheet": "Recipe: Bronze Triple Trouble Trophy",
+    "id": 14755,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 34,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Onyx Lodestone"
+      },
+      {
+        "slot": 3,
+        "quantity": 25,
+        "item": "Glob of Ectoplasm"
+      },
+      {
+        "slot": 4,
+        "quantity": 1,
+        "item": "Triple Trouble Tooth Piece"
+      }
+    ]
+  },
+  "original": {
+    "width": 1564,
+    "height": 2324,
+    "source": "decorations/112/preview.png",
+    "remoteSource": "https://wiki.guildwars2.com/images/b/b2/Bronze_TT_Trophy_Render_Croped.png"
+  }
 }

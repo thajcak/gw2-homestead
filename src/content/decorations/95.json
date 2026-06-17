@@ -7,39 +7,6 @@
     23
   ],
   "icon": "decorations/95/icon.png",
-  "wikiTitle": "Dragon Bash Pylon (Handiwork)",
-  "original": {
-    "width": 384,
-    "height": 1101,
-    "source": "decorations/95/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/0/04/Dragon_Bash_Pylon.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Dragon Bash Pylon",
-    "sheet": "Homestead Recipe Book: Dragon Bash, Volume 3",
-    "id": 14621,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 30,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Molten Shard"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "Petrified Wood"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -360,5 +327,32 @@
       "type": "New Item",
       "name": "Dragon Bash Pylon"
     }
-  ]
+  ],
+  "wikiTitle": "Dragon Bash Pylon (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Dragon Bash Pylon",
+    "sheet": "Homestead Recipe Book: Dragon Bash, Volume 3",
+    "id": 14621,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Molten Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Petrified Wood"
+      }
+    ]
+  }
 }

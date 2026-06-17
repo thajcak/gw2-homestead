@@ -7,42 +7,6 @@
     4
   ],
   "icon": "decorations/309/icon.png",
-  "wikiTitle": "Canthan Condiments",
-  "original": {
-    "width": 859,
-    "height": 945,
-    "source": "decorations/309/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/6/63/Canthan_Condiments.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "id": 14162,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 24,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 3,
-        "item": "Egg"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Bag of Sugar"
-      },
-      {
-        "slot": 4,
-        "quantity": 1,
-        "item": "Packet of Salt"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -327,5 +291,41 @@
       "type": "New Item",
       "name": "Canthan Condiments"
     }
-  ]
+  ],
+  "wikiTitle": "Canthan Condiments",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14162,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 24,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Egg"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Bag of Sugar"
+      },
+      {
+        "slot": 4,
+        "quantity": 1,
+        "item": "Packet of Salt"
+      }
+    ]
+  },
+  "original": {
+    "width": 859,
+    "height": 945,
+    "source": "decorations/309/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/6/63/Canthan_Condiments.jpg"
+  }
 }

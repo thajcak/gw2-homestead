@@ -7,39 +7,6 @@
     24
   ],
   "icon": "decorations/544/icon.png",
-  "wikiTitle": "Zephyr Bridge (Handiwork)",
-  "original": {
-    "width": 3440,
-    "height": 1440,
-    "source": "decorations/544/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/2/2f/Zephyr_Bridge.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Zephyr Bridge",
-    "sheet": "Homestead Recipe Book: Four Winds, Volume 1",
-    "id": 14867,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 34,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 14,
-        "item": "Lowland Pine Log"
-      },
-      {
-        "slot": 3,
-        "quantity": 2,
-        "item": "Charged Shard"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -280,5 +247,38 @@
       "type": "New Item",
       "name": "Zephyr Bridge"
     }
-  ]
+  ],
+  "wikiTitle": "Zephyr Bridge (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Zephyr Bridge",
+    "sheet": "Homestead Recipe Book: Four Winds, Volume 1",
+    "id": 14867,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 34,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 14,
+        "item": "Lowland Pine Log"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Charged Shard"
+      }
+    ]
+  },
+  "original": {
+    "width": 3440,
+    "height": 1440,
+    "source": "decorations/544/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/2/2f/Zephyr_Bridge.jpg"
+  }
 }

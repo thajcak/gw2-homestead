@@ -7,39 +7,6 @@
     15
   ],
   "icon": "decorations/611/icon.png",
-  "wikiTitle": "Potted Reaching Gold Fern (Handiwork)",
-  "original": {
-    "width": 582,
-    "height": 944,
-    "source": "decorations/611/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/c/c3/Potted_Reaching_Gold_Fern.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Potted Reaching Gold Fern",
-    "sheet": "Homestead Recipe Book: Trees, Volume 2",
-    "id": 14759,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 26,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 2,
-        "item": "Mordrem Core"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "Lump of Aurillium"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -453,5 +420,38 @@
       "type": "New Item",
       "name": "Potted Reaching Gold Fern"
     }
-  ]
+  ],
+  "wikiTitle": "Potted Reaching Gold Fern (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Potted Reaching Gold Fern",
+    "sheet": "Homestead Recipe Book: Trees, Volume 2",
+    "id": 14759,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Mordrem Core"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Lump of Aurillium"
+      }
+    ]
+  },
+  "original": {
+    "width": 582,
+    "height": 944,
+    "source": "decorations/611/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/c/c3/Potted_Reaching_Gold_Fern.jpg"
+  }
 }

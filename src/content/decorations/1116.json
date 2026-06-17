@@ -7,12 +7,37 @@
     20
   ],
   "icon": "decorations/1116/icon.png",
-  "wikiTitle": "Iron Column 16 x 240 x 16 (Handiwork)",
   "history": [
+    {
+      "day": "2026-06-17",
+      "type": "Recipe Updated",
+      "name": "Iron Column 16 x 240 x 16"
+    },
     {
       "day": "2026-05-12",
       "type": "New Item",
       "name": "Iron Column 16 x 240 x 16"
     }
-  ]
+  ],
+  "wikiTitle": "Iron Column 16 x 240 x 16 (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Iron Column 16 x 240 x 16",
+    "id": 15512,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Iron Ingot"
+      }
+    ]
+  }
 }

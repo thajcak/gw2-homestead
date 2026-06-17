@@ -7,29 +7,6 @@
     20
   ],
   "icon": "decorations/1111/icon.png",
-  "wikiTitle": "Sandcastle (Handiwork)",
-  "original": {
-    "width": 431,
-    "height": 509,
-    "source": "decorations/1111/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/c/ca/Sandcastle.jpg"
-  },
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Sandcastle",
-    "sheet": "Recipe: Sandcastle",
-    "id": 15590,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 10,
-        "item": "Pile of Coarse Sand"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -276,5 +253,28 @@
       "type": "New Item",
       "name": "Sandcastle"
     }
-  ]
+  ],
+  "wikiTitle": "Sandcastle (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Sandcastle",
+    "sheet": "Recipe: Sandcastle",
+    "id": 15590,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Pile of Coarse Sand"
+      }
+    ]
+  },
+  "original": {
+    "width": 431,
+    "height": 509,
+    "source": "decorations/1111/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/c/ca/Sandcastle.jpg"
+  }
 }

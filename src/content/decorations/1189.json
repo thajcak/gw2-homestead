@@ -6,44 +6,6 @@
     22
   ],
   "icon": "decorations/1189/icon.png",
-  "wikiTitle": "Super Rapids Pillar (Handiwork)",
-  "original": {
-    "width": 673,
-    "height": 1345,
-    "source": "decorations/1189/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/1/1d/Super_Rapids_Pillar.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Super Rapids Pillar",
-    "sheet": "Recipe: Super Rapids Pillar",
-    "id": 15616,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 8,
-        "item": "Bauble"
-      },
-      {
-        "slot": 3,
-        "quantity": 4,
-        "item": "Pouch of Yellow Pigment"
-      },
-      {
-        "slot": 4,
-        "quantity": 2,
-        "item": "Pouch of Orange Pigment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -295,5 +257,43 @@
       "type": "Recipe Updated",
       "name": "Super Rapids Pillar"
     }
-  ]
+  ],
+  "wikiTitle": "Super Rapids Pillar (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Super Rapids Pillar",
+    "sheet": "Recipe: Super Rapids Pillar",
+    "id": 15616,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "Bauble"
+      },
+      {
+        "slot": 3,
+        "quantity": 4,
+        "item": "Pouch of Yellow Pigment"
+      },
+      {
+        "slot": 4,
+        "quantity": 2,
+        "item": "Pouch of Orange Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 673,
+    "height": 1345,
+    "source": "decorations/1189/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/1/1d/Super_Rapids_Pillar.jpg"
+  }
 }

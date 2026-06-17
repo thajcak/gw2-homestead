@@ -7,39 +7,6 @@
     15
   ],
   "icon": "decorations/183/icon.png",
-  "wikiTitle": "Potted Fruiting Night Thistle (Handiwork)",
-  "original": {
-    "width": 1122,
-    "height": 1080,
-    "source": "decorations/183/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/6/6a/Potted_Fruiting_Night_Thistle.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Potted Fruiting Night Thistle",
-    "sheet": "Homestead Recipe Book: Plants, Volume 3",
-    "id": 14868,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 33,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 1,
-        "item": "Mordrem Lodestone"
-      },
-      {
-        "slot": 3,
-        "quantity": 17,
-        "item": "Leaf Fossil"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -318,5 +285,38 @@
       "type": "New Item",
       "name": "Potted Fruiting Night Thistle"
     }
-  ]
+  ],
+  "wikiTitle": "Potted Fruiting Night Thistle (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Potted Fruiting Night Thistle",
+    "sheet": "Homestead Recipe Book: Plants, Volume 3",
+    "id": 14868,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 33,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Mordrem Lodestone"
+      },
+      {
+        "slot": 3,
+        "quantity": 17,
+        "item": "Leaf Fossil"
+      }
+    ]
+  },
+  "original": {
+    "width": 1122,
+    "height": 1080,
+    "source": "decorations/183/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/6/6a/Potted_Fruiting_Night_Thistle.jpg"
+  }
 }

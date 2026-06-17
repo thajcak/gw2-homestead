@@ -6,39 +6,6 @@
     11
   ],
   "icon": "decorations/168/icon.png",
-  "wikiTitle": "Guild Shield Generator Siege (Handiwork)",
-  "original": {
-    "width": 810,
-    "height": 1440,
-    "source": "decorations/168/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/7a/Shield_Generator_Siege.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Guild Shield Generator Siege",
-    "sheet": "Homestead Recipe Book: World vs. World",
-    "id": 14584,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 33,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 6,
-        "item": "WvW Skirmish Claim Ticket"
-      },
-      {
-        "slot": 3,
-        "quantity": 4,
-        "item": "Guild Commendation"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -347,5 +314,38 @@
       "type": "New Item",
       "name": "Guild Shield Generator Siege"
     }
-  ]
+  ],
+  "wikiTitle": "Guild Shield Generator Siege (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Guild Shield Generator Siege",
+    "sheet": "Homestead Recipe Book: World vs. World",
+    "id": 14584,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 33,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 6,
+        "item": "WvW Skirmish Claim Ticket"
+      },
+      {
+        "slot": 3,
+        "quantity": 4,
+        "item": "Guild Commendation"
+      }
+    ]
+  },
+  "original": {
+    "width": 810,
+    "height": 1440,
+    "source": "decorations/168/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/7a/Shield_Generator_Siege.jpg"
+  }
 }

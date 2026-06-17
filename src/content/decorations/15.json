@@ -7,39 +7,6 @@
     1
   ],
   "icon": "decorations/15/icon.png",
-  "wikiTitle": "Academic Wall (Handiwork)",
-  "original": {
-    "width": 801,
-    "height": 1423,
-    "source": "decorations/15/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/e/ea/Academic_Wall.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Academic Wall",
-    "sheet": "Homestead Recipe Book: Skywatch Archipelago, Volume 1",
-    "id": 14258,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 28,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 15,
-        "item": "Bag of Mortar"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Onyx Lodestone"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -364,5 +331,38 @@
       "type": "New Item",
       "name": "Heart of Thorns"
     }
-  ]
+  ],
+  "wikiTitle": "Academic Wall (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Academic Wall",
+    "sheet": "Homestead Recipe Book: Skywatch Archipelago, Volume 1",
+    "id": 14258,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 28,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 15,
+        "item": "Bag of Mortar"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Onyx Lodestone"
+      }
+    ]
+  },
+  "original": {
+    "width": 801,
+    "height": 1423,
+    "source": "decorations/15/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/e/ea/Academic_Wall.jpg"
+  }
 }

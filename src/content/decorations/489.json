@@ -6,39 +6,6 @@
     6
   ],
   "icon": "decorations/489/icon.png",
-  "wikiTitle": "Bowl Topiary (Handiwork)",
-  "original": {
-    "width": 1566,
-    "height": 908,
-    "source": "decorations/489/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/84/Bowl_Topiary.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Bowl Topiary",
-    "sheet": "Homestead Recipe Book: Plants, Volume 3",
-    "id": 14130,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 34,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 2,
-        "item": "Mordrem Lodestone"
-      },
-      {
-        "slot": 3,
-        "quantity": 50,
-        "item": "Unbound Magic"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -307,5 +274,38 @@
       "type": "New Item",
       "name": "Bowl Topiary"
     }
-  ]
+  ],
+  "wikiTitle": "Bowl Topiary (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Bowl Topiary",
+    "sheet": "Homestead Recipe Book: Plants, Volume 3",
+    "id": 14130,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 34,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Mordrem Lodestone"
+      },
+      {
+        "slot": 3,
+        "quantity": 50,
+        "item": "Unbound Magic"
+      }
+    ]
+  },
+  "original": {
+    "width": 1566,
+    "height": 908,
+    "source": "decorations/489/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/84/Bowl_Topiary.jpg"
+  }
 }

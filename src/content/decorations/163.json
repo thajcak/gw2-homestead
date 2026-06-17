@@ -6,39 +6,6 @@
     9
   ],
   "icon": "decorations/163/icon.png",
-  "wikiTitle": "Dwayna Statue (Handiwork)",
-  "original": {
-    "width": 486,
-    "height": 851,
-    "source": "decorations/163/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/e/ee/Dwayna_Statue.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Dwayna Statue",
-    "sheet": "Homestead Recipe Book: Human Gods",
-    "id": 14564,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 34,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 12,
-        "item": "Beryl Orb"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Visage of Dwayna"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -357,5 +324,38 @@
       "type": "New Item",
       "name": "Dwayna Statue"
     }
-  ]
+  ],
+  "wikiTitle": "Dwayna Statue (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Dwayna Statue",
+    "sheet": "Homestead Recipe Book: Human Gods",
+    "id": 14564,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 34,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 12,
+        "item": "Beryl Orb"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Visage of Dwayna"
+      }
+    ]
+  },
+  "original": {
+    "width": 486,
+    "height": 851,
+    "source": "decorations/163/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/e/ee/Dwayna_Statue.jpg"
+  }
 }

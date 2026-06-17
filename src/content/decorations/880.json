@@ -7,37 +7,6 @@
     4
   ],
   "icon": "decorations/880/icon.png",
-  "wikiTitle": "Sturdy Outdoor Rug",
-  "original": {
-    "width": 2004,
-    "height": 1301,
-    "source": "decorations/880/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/f/fc/Sturdy_Outdoor_Rug.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Automatic",
-    "disciplines": "Handiworker",
-    "id": 15071,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 35,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 3,
-        "item": "Mithril Ingot"
-      },
-      {
-        "slot": 3,
-        "quantity": 2,
-        "item": "Curious Lowland Honeycomb"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-15",
@@ -332,5 +301,36 @@
       "type": "New Item",
       "name": "Sturdy Outdoor Rug"
     }
-  ]
+  ],
+  "wikiTitle": "Sturdy Outdoor Rug",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Automatic",
+    "disciplines": "Handiworker",
+    "id": 15071,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Mithril Ingot"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Curious Lowland Honeycomb"
+      }
+    ]
+  },
+  "original": {
+    "width": 2004,
+    "height": 1301,
+    "source": "decorations/880/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/f/fc/Sturdy_Outdoor_Rug.jpg"
+  }
 }

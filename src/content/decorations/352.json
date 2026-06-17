@@ -7,39 +7,6 @@
     21
   ],
   "icon": "decorations/352/icon.png",
-  "wikiTitle": "Red Festival Umbrella (Handiwork)",
-  "original": {
-    "width": 934,
-    "height": 960,
-    "source": "decorations/352/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/3/30/Red_Festival_Umbrella.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Red Festival Umbrella",
-    "sheet": "Homestead Recipe Book: Lunar New Year, Volume 1",
-    "id": 14104,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 24,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 6,
-        "item": "Pouch of Red Pigment"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Spool of Silk Thread"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -305,5 +272,38 @@
       "type": "New Item",
       "name": "Red Festival Umbrella"
     }
-  ]
+  ],
+  "wikiTitle": "Red Festival Umbrella (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Red Festival Umbrella",
+    "sheet": "Homestead Recipe Book: Lunar New Year, Volume 1",
+    "id": 14104,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 24,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 6,
+        "item": "Pouch of Red Pigment"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Spool of Silk Thread"
+      }
+    ]
+  },
+  "original": {
+    "width": 934,
+    "height": 960,
+    "source": "decorations/352/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/3/30/Red_Festival_Umbrella.jpg"
+  }
 }

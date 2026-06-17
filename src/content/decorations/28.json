@@ -6,44 +6,6 @@
     22
   ],
   "icon": "decorations/28/icon.png",
-  "wikiTitle": "Painting of Moto (Handiwork)",
-  "original": {
-    "width": 492,
-    "height": 574,
-    "source": "decorations/28/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/5/5d/Painting_of_Moto.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Painting of Moto",
-    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 1",
-    "id": 14763,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 4,
-        "item": "Bauble"
-      },
-      {
-        "slot": 3,
-        "quantity": 2,
-        "item": "Pouch of Red Pigment"
-      },
-      {
-        "slot": 4,
-        "quantity": 2,
-        "item": "Pouch of Blue Pigment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -292,5 +254,43 @@
       "type": "New Item",
       "name": "Painting of Moto"
     }
-  ]
+  ],
+  "wikiTitle": "Painting of Moto (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Painting of Moto",
+    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 1",
+    "id": 14763,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 4,
+        "item": "Bauble"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Pouch of Red Pigment"
+      },
+      {
+        "slot": 4,
+        "quantity": 2,
+        "item": "Pouch of Blue Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 492,
+    "height": 574,
+    "source": "decorations/28/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/5/5d/Painting_of_Moto.jpg"
+  }
 }

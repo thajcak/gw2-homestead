@@ -6,33 +6,6 @@
     27
   ],
   "icon": "decorations/834/icon.png",
-  "wikiTitle": "Meditative Favored Rock",
-  "original": {
-    "width": 1600,
-    "height": 1409,
-    "source": "decorations/834/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/89/Meditative_Favored_Rock.jpg"
-  },
-  "recipe": {
-    "rating": 0,
-    "type": "Homestead Decoration",
-    "source": "Recipe sheet",
-    "disciplines": "Handiworker",
-    "sheet": "Black Lion Meditative Favored Rock Recipe",
-    "id": 14913,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 5,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Refined Homestead Metal"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -304,5 +277,32 @@
       "type": "New Item",
       "name": "Meditative Favored Rock"
     }
-  ]
+  ],
+  "wikiTitle": "Meditative Favored Rock",
+  "recipe": {
+    "rating": 0,
+    "type": "Homestead Decoration",
+    "source": "Recipe sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Black Lion Meditative Favored Rock Recipe",
+    "id": 14913,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Refined Homestead Metal"
+      }
+    ]
+  },
+  "original": {
+    "width": 1600,
+    "height": 1409,
+    "source": "decorations/834/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/89/Meditative_Favored_Rock.jpg"
+  }
 }

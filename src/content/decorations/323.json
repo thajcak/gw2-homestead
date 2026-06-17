@@ -6,39 +6,6 @@
     11
   ],
   "icon": "decorations/323/icon.png",
-  "wikiTitle": "Charr Tank (Handiwork)",
-  "original": {
-    "width": 2016,
-    "height": 1440,
-    "source": "decorations/323/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/91/Charr_Tank_Token.jpg"
-  },
-  "recipe": {
-    "rating": 500,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Charr Tank",
-    "sheet": "Recipe: Charr Tank",
-    "id": 14282,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 95,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 100,
-        "item": "War Supply"
-      },
-      {
-        "slot": 3,
-        "quantity": 100,
-        "item": "Hatched Chili"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -357,5 +324,38 @@
       "type": "New Item",
       "name": "Charr Tank"
     }
-  ]
+  ],
+  "wikiTitle": "Charr Tank (Handiwork)",
+  "recipe": {
+    "rating": 500,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Charr Tank",
+    "sheet": "Recipe: Charr Tank",
+    "id": 14282,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 95,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 100,
+        "item": "War Supply"
+      },
+      {
+        "slot": 3,
+        "quantity": 100,
+        "item": "Hatched Chili"
+      }
+    ]
+  },
+  "original": {
+    "width": 2016,
+    "height": 1440,
+    "source": "decorations/323/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/91/Charr_Tank_Token.jpg"
+  }
 }

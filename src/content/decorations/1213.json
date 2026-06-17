@@ -7,12 +7,43 @@
     20
   ],
   "icon": "decorations/1213/icon.png",
-  "wikiTitle": "Seer Mirror Small (Handiwork)",
   "history": [
+    {
+      "day": "2026-06-17",
+      "type": "Recipe Updated",
+      "name": "Seer Mirror Small"
+    },
     {
       "day": "2026-05-12",
       "type": "New Item",
       "name": "Seer Mirror Small"
     }
-  ]
+  ],
+  "wikiTitle": "Seer Mirror Small (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Seer Mirror Small",
+    "sheet": "Homestead Recipe Book: Seer Catalogue Volume 1",
+    "id": 15646,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 20,
+        "item": "Gold Ingot"
+      },
+      {
+        "slot": 3,
+        "quantity": 15,
+        "item": "Raw Enchanting Stone"
+      }
+    ]
+  }
 }

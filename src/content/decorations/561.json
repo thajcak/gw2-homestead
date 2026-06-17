@@ -7,39 +7,6 @@
     23
   ],
   "icon": "decorations/561/icon.png",
-  "wikiTitle": "Dragon Bash Windcatcher (Handiwork)",
-  "original": {
-    "width": 1380,
-    "height": 1104,
-    "source": "decorations/561/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/a/a1/Dragon_Bash_Windcatcher.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Dragon Bash Windcatcher",
-    "sheet": "Homestead Recipe Book: Dragon Bash, Volume 3",
-    "id": 14651,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 25,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Vicious Fang"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "Piece of Zhaitaffy"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -280,5 +247,38 @@
       "type": "New Item",
       "name": "Dragon Bash Windcatcher"
     }
-  ]
+  ],
+  "wikiTitle": "Dragon Bash Windcatcher (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Dragon Bash Windcatcher",
+    "sheet": "Homestead Recipe Book: Dragon Bash, Volume 3",
+    "id": 14651,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Vicious Fang"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Piece of Zhaitaffy"
+      }
+    ]
+  },
+  "original": {
+    "width": 1380,
+    "height": 1104,
+    "source": "decorations/561/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/a/a1/Dragon_Bash_Windcatcher.jpg"
+  }
 }

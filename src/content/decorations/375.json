@@ -6,33 +6,6 @@
     27
   ],
   "icon": "decorations/375/icon.png",
-  "wikiTitle": "Wayfinder's Versatile Table Decoration",
-  "original": {
-    "width": 1206,
-    "height": 911,
-    "source": "decorations/375/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/9a/Wayfinder%27s_Versatile_Table.jpg"
-  },
-  "recipe": {
-    "rating": 0,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "sheet": "Wayfinder's Versatile Table Recipe",
-    "id": 14883,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 10,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Refined Homestead Metal"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -324,5 +297,32 @@
       "type": "New Item",
       "name": "Wayfinder's Versatile Table"
     }
-  ]
+  ],
+  "wikiTitle": "Wayfinder's Versatile Table Decoration",
+  "recipe": {
+    "rating": 0,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Wayfinder's Versatile Table Recipe",
+    "id": 14883,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Refined Homestead Metal"
+      }
+    ]
+  },
+  "original": {
+    "width": 1206,
+    "height": 911,
+    "source": "decorations/375/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/9a/Wayfinder%27s_Versatile_Table.jpg"
+  }
 }

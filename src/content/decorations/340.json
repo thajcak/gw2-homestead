@@ -7,39 +7,6 @@
     16
   ],
   "icon": "decorations/340/icon.png",
-  "wikiTitle": "Elonian Hawk Statue (Handiwork)",
-  "original": {
-    "width": 797,
-    "height": 1418,
-    "source": "decorations/340/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/85/Elonian_Hawk_Statue.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Elonian Hawk Statue",
-    "sheet": "Homestead Recipe Book: Statues",
-    "id": 14556,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 30,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 12,
-        "item": "Sunstone Lump"
-      },
-      {
-        "slot": 3,
-        "quantity": 52,
-        "item": "Trade Contract"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -359,5 +326,38 @@
       "type": "New Item",
       "name": "Elonian Hawk Statue"
     }
-  ]
+  ],
+  "wikiTitle": "Elonian Hawk Statue (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Elonian Hawk Statue",
+    "sheet": "Homestead Recipe Book: Statues",
+    "id": 14556,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 12,
+        "item": "Sunstone Lump"
+      },
+      {
+        "slot": 3,
+        "quantity": 52,
+        "item": "Trade Contract"
+      }
+    ]
+  },
+  "original": {
+    "width": 797,
+    "height": 1418,
+    "source": "decorations/340/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/85/Elonian_Hawk_Statue.jpg"
+  }
 }

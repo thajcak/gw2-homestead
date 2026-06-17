@@ -7,39 +7,6 @@
     21
   ],
   "icon": "decorations/12/icon.png",
-  "wikiTitle": "Lounging Tiger Statue (Handiwork)",
-  "original": {
-    "width": 1603,
-    "height": 765,
-    "source": "decorations/12/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/8d/Lounging_Tiger_Statue.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Lounging Tiger Statue",
-    "sheet": "Homestead Recipe Book: Lunar New Year Celestials",
-    "id": 14108,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 35,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 50,
-        "item": "Pouch of Red Pigment"
-      },
-      {
-        "slot": 3,
-        "quantity": 10,
-        "item": "Pouch of Orange Pigment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -355,5 +322,38 @@
       "type": "New Item",
       "name": "Trophies"
     }
-  ]
+  ],
+  "wikiTitle": "Lounging Tiger Statue (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Lounging Tiger Statue",
+    "sheet": "Homestead Recipe Book: Lunar New Year Celestials",
+    "id": 14108,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 50,
+        "item": "Pouch of Red Pigment"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Pouch of Orange Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 1603,
+    "height": 765,
+    "source": "decorations/12/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/8d/Lounging_Tiger_Statue.jpg"
+  }
 }

@@ -6,39 +6,6 @@
     22
   ],
   "icon": "decorations/425/icon.png",
-  "wikiTitle": "Super Pointing Hand (Handiwork)",
-  "original": {
-    "width": 476,
-    "height": 386,
-    "source": "decorations/425/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/4/40/Super_Pointing_Hand.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Super Pointing Hand",
-    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 6",
-    "id": 14384,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 8,
-        "item": "Bauble"
-      },
-      {
-        "slot": 3,
-        "quantity": 4,
-        "item": "Pouch of White Pigment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -319,5 +286,38 @@
       "type": "New Item",
       "name": "Super Pointing Hand"
     }
-  ]
+  ],
+  "wikiTitle": "Super Pointing Hand (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Super Pointing Hand",
+    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 6",
+    "id": 14384,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "Bauble"
+      },
+      {
+        "slot": 3,
+        "quantity": 4,
+        "item": "Pouch of White Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 476,
+    "height": 386,
+    "source": "decorations/425/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/4/40/Super_Pointing_Hand.jpg"
+  }
 }

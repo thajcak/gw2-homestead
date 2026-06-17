@@ -6,39 +6,6 @@
     9
   ],
   "icon": "decorations/769/icon.png",
-  "wikiTitle": "Illuminated Fountain (Handiwork)",
-  "original": {
-    "width": 1431,
-    "height": 953,
-    "source": "decorations/769/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/2/2d/Illuminated_Fountain.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Illuminated Fountain",
-    "sheet": "Homestead Recipe Book: Paintings, Walls, Fountains",
-    "id": 14512,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 35,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 14,
-        "item": "Piece of Mother-of-Pearl"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Glacial Core"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -297,5 +264,38 @@
       "type": "New Item",
       "name": "Illuminated Fountain"
     }
-  ]
+  ],
+  "wikiTitle": "Illuminated Fountain (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Illuminated Fountain",
+    "sheet": "Homestead Recipe Book: Paintings, Walls, Fountains",
+    "id": 14512,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 14,
+        "item": "Piece of Mother-of-Pearl"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Glacial Core"
+      }
+    ]
+  },
+  "original": {
+    "width": 1431,
+    "height": 953,
+    "source": "decorations/769/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/2/2d/Illuminated_Fountain.jpg"
+  }
 }

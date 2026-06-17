@@ -6,39 +6,6 @@
     2
   ],
   "icon": "decorations/422/icon.png",
-  "wikiTitle": "Plush Sofa (Handiwork)",
-  "original": {
-    "width": 1038,
-    "height": 944,
-    "source": "decorations/422/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/0/07/Plush_Sofa.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Plush Sofa",
-    "sheet": "Homestead Recipe Book: Tables and Chairs",
-    "id": 14608,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 35,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Bolt of Silk"
-      },
-      {
-        "slot": 3,
-        "quantity": 3,
-        "item": "Vial of Linseed Oil"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -318,5 +285,38 @@
       "type": "New Item",
       "name": "Plush Sofa"
     }
-  ]
+  ],
+  "wikiTitle": "Plush Sofa (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Plush Sofa",
+    "sheet": "Homestead Recipe Book: Tables and Chairs",
+    "id": 14608,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Bolt of Silk"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Vial of Linseed Oil"
+      }
+    ]
+  },
+  "original": {
+    "width": 1038,
+    "height": 944,
+    "source": "decorations/422/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/0/07/Plush_Sofa.jpg"
+  }
 }

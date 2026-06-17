@@ -6,39 +6,6 @@
     6
   ],
   "icon": "decorations/341/icon.png",
-  "wikiTitle": "Block Topiary (Handiwork)",
-  "original": {
-    "width": 1299,
-    "height": 869,
-    "source": "decorations/341/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/b/b4/Block_Topiary.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Block Topiary",
-    "sheet": "Homestead Recipe Book: Plants, Volume 2",
-    "id": 14189,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 34,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 2,
-        "item": "Onyx Lodestone"
-      },
-      {
-        "slot": 3,
-        "quantity": 50,
-        "item": "Volatile Magic"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -357,5 +324,38 @@
       "type": "New Item",
       "name": "Block Topiary"
     }
-  ]
+  ],
+  "wikiTitle": "Block Topiary (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Block Topiary",
+    "sheet": "Homestead Recipe Book: Plants, Volume 2",
+    "id": 14189,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 34,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Onyx Lodestone"
+      },
+      {
+        "slot": 3,
+        "quantity": 50,
+        "item": "Volatile Magic"
+      }
+    ]
+  },
+  "original": {
+    "width": 1299,
+    "height": 869,
+    "source": "decorations/341/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/b/b4/Block_Topiary.jpg"
+  }
 }

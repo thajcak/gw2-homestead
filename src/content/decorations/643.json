@@ -7,39 +7,6 @@
     25
   ],
   "icon": "decorations/643/icon.png",
-  "wikiTitle": "Shattered Stairway (Handiwork)",
-  "original": {
-    "width": 976,
-    "height": 954,
-    "source": "decorations/643/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/3/36/Shattered_Stairway.jpg"
-  },
-  "recipe": {
-    "rating": 150,
-    "type": "Homestead Decoration",
-    "source": "sheet",
-    "disciplines": "Handiworker",
-    "name": "Shattered Stairway",
-    "sheet": "Homestead Recipe Book: Halloween, Volume 7",
-    "id": 14347,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 33,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 25,
-        "item": "Piece of Candy Corn"
-      },
-      {
-        "slot": 3,
-        "quantity": 10,
-        "item": "Venom Sac"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-05-31",
@@ -325,5 +292,38 @@
       "type": "New Item",
       "name": "Shattered Stairway"
     }
-  ]
+  ],
+  "wikiTitle": "Shattered Stairway (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Shattered Stairway",
+    "sheet": "Homestead Recipe Book: Halloween, Volume 7",
+    "id": 14347,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 33,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 25,
+        "item": "Piece of Candy Corn"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Venom Sac"
+      }
+    ]
+  },
+  "original": {
+    "width": 976,
+    "height": 954,
+    "source": "decorations/643/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/3/36/Shattered_Stairway.jpg"
+  }
 }

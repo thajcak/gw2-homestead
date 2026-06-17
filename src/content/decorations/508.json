@@ -6,39 +6,6 @@
     1
   ],
   "icon": "decorations/508/icon.png",
-  "wikiTitle": "Kryptis Goo Plane (Handiwork)",
-  "original": {
-    "width": 1466,
-    "height": 1322,
-    "source": "decorations/508/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/c/cf/Kryptis_Goo_Plane.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Kryptis Goo Plane",
-    "sheet": "Homestead Recipe Book: Inner Nayos, Volume 1",
-    "id": 14391,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 4,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 1,
-        "item": "Clot of Congealed Screams"
-      },
-      {
-        "slot": 3,
-        "quantity": 3,
-        "item": "Rare Rift Essence"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -333,5 +300,38 @@
       "type": "New Item",
       "name": "Kryptis Goo Plane"
     }
-  ]
+  ],
+  "wikiTitle": "Kryptis Goo Plane (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Kryptis Goo Plane",
+    "sheet": "Homestead Recipe Book: Inner Nayos, Volume 1",
+    "id": 14391,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 4,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Clot of Congealed Screams"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Rare Rift Essence"
+      }
+    ]
+  },
+  "original": {
+    "width": 1466,
+    "height": 1322,
+    "source": "decorations/508/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/c/cf/Kryptis_Goo_Plane.jpg"
+  }
 }

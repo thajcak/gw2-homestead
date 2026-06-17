@@ -6,39 +6,6 @@
     14
   ],
   "icon": "decorations/510/icon.png",
-  "wikiTitle": "Lit Wagon (Handiwork)",
-  "original": {
-    "width": 2125,
-    "height": 1260,
-    "source": "decorations/510/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/76/Lit_Wagon.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Lit Wagon",
-    "sheet": "Homestead Recipe Book: Misc. Items, Volume 1",
-    "id": 14579,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 2,
-        "item": "Charged Core"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Tub of Wood Glue"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -352,5 +319,38 @@
       "type": "New Item",
       "name": "Lit Wagon"
     }
-  ]
+  ],
+  "wikiTitle": "Lit Wagon (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Lit Wagon",
+    "sheet": "Homestead Recipe Book: Misc. Items, Volume 1",
+    "id": 14579,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Charged Core"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Tub of Wood Glue"
+      }
+    ]
+  },
+  "original": {
+    "width": 2125,
+    "height": 1260,
+    "source": "decorations/510/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/76/Lit_Wagon.jpg"
+  }
 }

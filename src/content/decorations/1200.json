@@ -7,12 +7,43 @@
     20
   ],
   "icon": "decorations/1200/icon.png",
-  "wikiTitle": "Seer Doorway (Handiwork)",
   "history": [
+    {
+      "day": "2026-06-17",
+      "type": "Recipe Updated",
+      "name": "Seer Doorway"
+    },
     {
       "day": "2026-05-12",
       "type": "New Item",
       "name": "Seer Doorway"
     }
-  ]
+  ],
+  "wikiTitle": "Seer Doorway (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Seer Doorway",
+    "sheet": "Homestead Recipe Book: Seer Catalogue Volume 1",
+    "id": 15647,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Pile of Shimmering Dust"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Brick of Clay"
+      }
+    ]
+  }
 }

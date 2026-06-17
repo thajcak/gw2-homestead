@@ -7,39 +7,6 @@
     8
   ],
   "icon": "decorations/291/icon.png",
-  "wikiTitle": "Snow Pile (Handiwork)",
-  "original": {
-    "width": 1566,
-    "height": 822,
-    "source": "decorations/291/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/7d/Snow_Pile.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Snow Pile",
-    "sheet": "Homestead Recipe Book: Basic Decorations",
-    "id": 14326,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 22,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Snowflake"
-      },
-      {
-        "slot": 3,
-        "quantity": 3,
-        "item": "Glacial Fragment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -306,5 +273,38 @@
       "type": "New Item",
       "name": "Snow Pile"
     }
-  ]
+  ],
+  "wikiTitle": "Snow Pile (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Snow Pile",
+    "sheet": "Homestead Recipe Book: Basic Decorations",
+    "id": 14326,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 22,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Snowflake"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Glacial Fragment"
+      }
+    ]
+  },
+  "original": {
+    "width": 1566,
+    "height": 822,
+    "source": "decorations/291/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/7d/Snow_Pile.jpg"
+  }
 }

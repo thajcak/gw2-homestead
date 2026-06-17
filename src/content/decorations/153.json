@@ -7,39 +7,6 @@
     15
   ],
   "icon": "decorations/153/icon.png",
-  "wikiTitle": "Potted Broad Paddlefrond (Handiwork)",
-  "original": {
-    "width": 1287,
-    "height": 950,
-    "source": "decorations/153/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/b/b1/Potted_Broad_Paddlefrond.jpg"
-  },
-  "recipe": {
-    "rating": 150,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Potted Broad Paddlefrond",
-    "sheet": "Homestead Recipe Book: Trees",
-    "id": 14629,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 25,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 1,
-        "item": "Palm Lumber Core"
-      },
-      {
-        "slot": 3,
-        "quantity": 2,
-        "item": "Vial of Thin Blood"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -323,5 +290,38 @@
       "type": "New Item",
       "name": "Potted Broad Paddlefrond"
     }
-  ]
+  ],
+  "wikiTitle": "Potted Broad Paddlefrond (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Potted Broad Paddlefrond",
+    "sheet": "Homestead Recipe Book: Trees",
+    "id": 14629,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Palm Lumber Core"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Vial of Thin Blood"
+      }
+    ]
+  },
+  "original": {
+    "width": 1287,
+    "height": 950,
+    "source": "decorations/153/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/b/b1/Potted_Broad_Paddlefrond.jpg"
+  }
 }

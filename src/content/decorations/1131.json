@@ -7,34 +7,6 @@
     20
   ],
   "icon": "decorations/1131/icon.png",
-  "wikiTitle": "Decima Shard (Handiwork)",
-  "original": {
-    "width": 973,
-    "height": 507,
-    "source": "decorations/1131/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/6/6d/Decima_Shard.jpg"
-  },
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Decima Shard",
-    "sheet": "Recipe: Decima Shard",
-    "id": 15533,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 5,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Charged Core"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -296,5 +268,33 @@
       "type": "New Item",
       "name": "Decima Shard"
     }
-  ]
+  ],
+  "wikiTitle": "Decima Shard (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Decima Shard",
+    "sheet": "Recipe: Decima Shard",
+    "id": 15533,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Charged Core"
+      }
+    ]
+  },
+  "original": {
+    "width": 973,
+    "height": 507,
+    "source": "decorations/1131/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/6/6d/Decima_Shard.jpg"
+  }
 }

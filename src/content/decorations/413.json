@@ -6,39 +6,6 @@
     12
   ],
   "icon": "decorations/413/icon.png",
-  "wikiTitle": "Cardinal Sabir's Token (Handiwork)",
-  "original": {
-    "width": 632,
-    "height": 551,
-    "source": "decorations/413/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/8b/Cardinal_Sabir%27s_Token.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Cardinal Sabir's Token",
-    "sheet": "Recipe: Cardinal Sabir's Token",
-    "id": 14117,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 30,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 200,
-        "item": "Volatile Magic"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Cardinal Sabir's Token (trophy)"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -287,5 +254,38 @@
       "type": "New Item",
       "name": "Cardinal Sabir's Token"
     }
-  ]
+  ],
+  "wikiTitle": "Cardinal Sabir's Token (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Cardinal Sabir's Token",
+    "sheet": "Recipe: Cardinal Sabir's Token",
+    "id": 14117,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 200,
+        "item": "Volatile Magic"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Cardinal Sabir's Token (trophy)"
+      }
+    ]
+  },
+  "original": {
+    "width": 632,
+    "height": 551,
+    "source": "decorations/413/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/8b/Cardinal_Sabir%27s_Token.jpg"
+  }
 }

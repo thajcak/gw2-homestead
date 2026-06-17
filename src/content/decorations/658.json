@@ -7,39 +7,6 @@
     11
   ],
   "icon": "decorations/658/icon.png",
-  "wikiTitle": "Dragon Bash Firework Launcher (Handiwork)",
-  "original": {
-    "width": 1021,
-    "height": 1440,
-    "source": "decorations/658/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/d/d7/Dragon_Bash_Firework_Launcher.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Dragon Bash Firework Launcher",
-    "sheet": "Homestead Recipe Book: Dragon Bash, Volume 3",
-    "id": 14392,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 25,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 50,
-        "item": "Volatile Magic"
-      },
-      {
-        "slot": 3,
-        "quantity": 10,
-        "item": "Piece of Zhaitaffy"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -295,5 +262,38 @@
       "type": "New Item",
       "name": "Dragon Bash Firework Launcher"
     }
-  ]
+  ],
+  "wikiTitle": "Dragon Bash Firework Launcher (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Dragon Bash Firework Launcher",
+    "sheet": "Homestead Recipe Book: Dragon Bash, Volume 3",
+    "id": 14392,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 50,
+        "item": "Volatile Magic"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Piece of Zhaitaffy"
+      }
+    ]
+  },
+  "original": {
+    "width": 1021,
+    "height": 1440,
+    "source": "decorations/658/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/d/d7/Dragon_Bash_Firework_Launcher.jpg"
+  }
 }

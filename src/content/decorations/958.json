@@ -6,33 +6,6 @@
     27
   ],
   "icon": "decorations/958/icon.png",
-  "wikiTitle": "Graveyard Column",
-  "original": {
-    "width": 878,
-    "height": 968,
-    "source": "decorations/958/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/f/fd/Graveyard_Column_close-up.jpg"
-  },
-  "recipe": {
-    "rating": 0,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "sheet": "Graveyard Column Recipe",
-    "id": 15182,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 5,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Refined Homestead Wood"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-05-26",
@@ -303,5 +276,32 @@
       "type": "New Item",
       "name": "Graveyard Column"
     }
-  ]
+  ],
+  "wikiTitle": "Graveyard Column",
+  "recipe": {
+    "rating": 0,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Graveyard Column Recipe",
+    "id": 15182,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Refined Homestead Wood"
+      }
+    ]
+  },
+  "original": {
+    "width": 878,
+    "height": 968,
+    "source": "decorations/958/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/f/fd/Graveyard_Column_close-up.jpg"
+  }
 }

@@ -6,39 +6,6 @@
     12
   ],
   "icon": "decorations/128/icon.png",
-  "wikiTitle": "Impaled Prisoner (Handiwork)",
-  "original": {
-    "width": 869,
-    "height": 772,
-    "source": "decorations/128/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/f/f5/Impaled_Prisoner.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Impaled Prisoner",
-    "sheet": "Recipe: Impaled Prisoner",
-    "id": 14474,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 30,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 7,
-        "item": "Vial of Powerful Blood"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Impaled Prisoner Token"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -393,5 +360,38 @@
       "type": "New Item",
       "name": "Impaled Prisoner"
     }
-  ]
+  ],
+  "wikiTitle": "Impaled Prisoner (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Impaled Prisoner",
+    "sheet": "Recipe: Impaled Prisoner",
+    "id": 14474,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 7,
+        "item": "Vial of Powerful Blood"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Impaled Prisoner Token"
+      }
+    ]
+  },
+  "original": {
+    "width": 869,
+    "height": 772,
+    "source": "decorations/128/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/f/f5/Impaled_Prisoner.jpg"
+  }
 }

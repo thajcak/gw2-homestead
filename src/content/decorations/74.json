@@ -6,34 +6,6 @@
     10
   ],
   "icon": "decorations/74/icon.png",
-  "wikiTitle": "Broken Mast Pole (Handiwork)",
-  "original": {
-    "width": 543,
-    "height": 1080,
-    "source": "decorations/74/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/0/00/Broken_Mast_Pole.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Broken Mast Pole",
-    "sheet": "Homestead Recipe Book: Banners",
-    "id": 14321,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 22,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Gold Doubloon"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -332,5 +304,33 @@
       "type": "New Item",
       "name": "Broken Mast Pole"
     }
-  ]
+  ],
+  "wikiTitle": "Broken Mast Pole (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Broken Mast Pole",
+    "sheet": "Homestead Recipe Book: Banners",
+    "id": 14321,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 22,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Gold Doubloon"
+      }
+    ]
+  },
+  "original": {
+    "width": 543,
+    "height": 1080,
+    "source": "decorations/74/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/0/00/Broken_Mast_Pole.jpg"
+  }
 }

@@ -7,44 +7,6 @@
     24
   ],
   "icon": "decorations/941/icon.png",
-  "wikiTitle": "Skimmer Rental Post (Handiwork)",
-  "original": {
-    "width": 1415,
-    "height": 1415,
-    "source": "decorations/941/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/79/Skimmer_Rental_Post.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Skimmer Rental Post",
-    "sheet": "Homestead Recipe Book: Four Winds, Volume 7",
-    "id": 15170,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 35,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Orichalcum Ingot"
-      },
-      {
-        "slot": 3,
-        "quantity": 10,
-        "item": "Ancient Wood Plank"
-      },
-      {
-        "slot": 4,
-        "quantity": 10,
-        "item": "Cured Hardened Leather Square"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -340,5 +302,43 @@
       "type": "New Item",
       "name": "Skimmer Rental Post"
     }
-  ]
+  ],
+  "wikiTitle": "Skimmer Rental Post (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Skimmer Rental Post",
+    "sheet": "Homestead Recipe Book: Four Winds, Volume 7",
+    "id": 15170,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Orichalcum Ingot"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Ancient Wood Plank"
+      },
+      {
+        "slot": 4,
+        "quantity": 10,
+        "item": "Cured Hardened Leather Square"
+      }
+    ]
+  },
+  "original": {
+    "width": 1415,
+    "height": 1415,
+    "source": "decorations/941/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/79/Skimmer_Rental_Post.jpg"
+  }
 }

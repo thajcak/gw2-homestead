@@ -6,39 +6,6 @@
     9
   ],
   "icon": "decorations/209/icon.png",
-  "wikiTitle": "Statue of Joko the Fearsome (Handiwork)",
-  "original": {
-    "width": 684,
-    "height": 965,
-    "source": "decorations/209/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/1/13/Statue_of_Joko_the_Fearsome.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Statue of Joko the Fearsome",
-    "sheet": "Homestead Recipe: Statue of Joko the Fearsome",
-    "id": 14585,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 34,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 40,
-        "item": "Congealed Putrescence"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "Elegy Mosaic"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -318,5 +285,38 @@
       "type": "New Item",
       "name": "Statue of Joko the Fearsome"
     }
-  ]
+  ],
+  "wikiTitle": "Statue of Joko the Fearsome (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Statue of Joko the Fearsome",
+    "sheet": "Homestead Recipe: Statue of Joko the Fearsome",
+    "id": 14585,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 34,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 40,
+        "item": "Congealed Putrescence"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Elegy Mosaic"
+      }
+    ]
+  },
+  "original": {
+    "width": 684,
+    "height": 965,
+    "source": "decorations/209/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/1/13/Statue_of_Joko_the_Fearsome.jpg"
+  }
 }

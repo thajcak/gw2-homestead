@@ -7,39 +7,6 @@
     26
   ],
   "icon": "decorations/1078/icon.png",
-  "wikiTitle": "Light-Blue Wintersday Gift (Handiwork)",
-  "original": {
-    "width": 1185,
-    "height": 1080,
-    "source": "decorations/1078/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/78/Light-Blue_Wintersday_Gift.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Light-Blue Wintersday Gift",
-    "sheet": "Recipe: Light-Blue Wintersday Gift",
-    "id": 15424,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 5,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 30,
-        "item": "Snowflake"
-      },
-      {
-        "slot": 3,
-        "quantity": 3,
-        "item": "Bolt of Cotton"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -296,5 +263,38 @@
       "type": "New Item",
       "name": "Light-Blue Wintersday Gift"
     }
-  ]
+  ],
+  "wikiTitle": "Light-Blue Wintersday Gift (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Light-Blue Wintersday Gift",
+    "sheet": "Recipe: Light-Blue Wintersday Gift",
+    "id": 15424,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 30,
+        "item": "Snowflake"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Bolt of Cotton"
+      }
+    ]
+  },
+  "original": {
+    "width": 1185,
+    "height": 1080,
+    "source": "decorations/1078/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/78/Light-Blue_Wintersday_Gift.jpg"
+  }
 }

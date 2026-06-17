@@ -6,8 +6,12 @@
     12
   ],
   "icon": "decorations/853/icon.png",
-  "wikiTitle": "Gold Greer Trophy (Handiwork)",
   "history": [
+    {
+      "day": "2026-06-17",
+      "type": "Recipe Updated",
+      "name": "Gold Greer Trophy"
+    },
     {
       "day": "2025-10-30",
       "type": "Item Updated",
@@ -26,5 +30,32 @@
       "type": "New Item",
       "name": "Gold Greer Trophy"
     }
-  ]
+  ],
+  "wikiTitle": "Gold Greer Trophy (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Gold Greer Trophy",
+    "sheet": "Recipe: Gold Greer Trophy",
+    "id": 14961,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 130,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 100,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Greer's Token"
+      }
+    ]
+  }
 }

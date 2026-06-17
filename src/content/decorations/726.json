@@ -7,37 +7,6 @@
     6
   ],
   "icon": "decorations/726/icon.png",
-  "wikiTitle": "Large Elonian Planter",
-  "original": {
-    "width": 849,
-    "height": 1420,
-    "source": "decorations/726/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/e/e5/Large_Elonian_Planter.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "id": 14257,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 28,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Lowland Pine Log"
-      },
-      {
-        "slot": 3,
-        "quantity": 20,
-        "item": "Volatile Magic"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -277,5 +246,36 @@
       "type": "New Item",
       "name": "Large Elonian Planter"
     }
-  ]
+  ],
+  "wikiTitle": "Large Elonian Planter",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14257,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 28,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Lowland Pine Log"
+      },
+      {
+        "slot": 3,
+        "quantity": 20,
+        "item": "Volatile Magic"
+      }
+    ]
+  },
+  "original": {
+    "width": 849,
+    "height": 1420,
+    "source": "decorations/726/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/e/e5/Large_Elonian_Planter.jpg"
+  }
 }

@@ -6,39 +6,6 @@
     11
   ],
   "icon": "decorations/133/icon.png",
-  "wikiTitle": "Obstacle: Chill Turret (Handiwork)",
-  "original": {
-    "width": 1008,
-    "height": 1345,
-    "source": "decorations/133/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/7c/Obstacle-_Chill_Turret.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Obstacle: Chill Turret",
-    "sheet": "Homestead Recipe Book: Guild Arena",
-    "id": 14657,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 26,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 2,
-        "item": "Glacial Shard"
-      },
-      {
-        "slot": 3,
-        "quantity": 6,
-        "item": "Airship Part"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -348,5 +315,38 @@
       "type": "New Item",
       "name": "Obstacle: Chill Turret"
     }
-  ]
+  ],
+  "wikiTitle": "Obstacle: Chill Turret (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Obstacle: Chill Turret",
+    "sheet": "Homestead Recipe Book: Guild Arena",
+    "id": 14657,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Glacial Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 6,
+        "item": "Airship Part"
+      }
+    ]
+  },
+  "original": {
+    "width": 1008,
+    "height": 1345,
+    "source": "decorations/133/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/7c/Obstacle-_Chill_Turret.jpg"
+  }
 }

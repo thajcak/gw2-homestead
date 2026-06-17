@@ -7,12 +7,42 @@
     20
   ],
   "icon": "decorations/1201/icon.png",
-  "wikiTitle": "Jungle Log Arched (Handiwork)",
   "history": [
+    {
+      "day": "2026-06-17",
+      "type": "Recipe Updated",
+      "name": "Jungle Log Arched"
+    },
     {
       "day": "2026-05-12",
       "type": "New Item",
       "name": "Jungle Log Arched"
     }
-  ]
+  ],
+  "wikiTitle": "Jungle Log Arched (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Jungle Log Arched",
+    "id": 15679,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 20,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 25,
+        "item": "Elder Wood Plank"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Evergreen Lodestone"
+      }
+    ]
+  }
 }

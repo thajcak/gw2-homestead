@@ -7,39 +7,6 @@
     26
   ],
   "icon": "decorations/374/icon.png",
-  "wikiTitle": "Blue Wintersday Gift (Handiwork)",
-  "original": {
-    "width": 1425,
-    "height": 912,
-    "source": "decorations/374/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/d/d2/Blue_Wintersday_Gift.jpg"
-  },
-  "recipe": {
-    "rating": 0,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Blue Wintersday Gift",
-    "sheet": "Homestead Recipe Book: Wintersday, Volume 3",
-    "id": 14387,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 26,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Gossamer Scrap"
-      },
-      {
-        "slot": 3,
-        "quantity": 6,
-        "item": "Pouch of Blue Pigment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -375,5 +342,38 @@
       "type": "New Item",
       "name": "Blue Wintersday Gift"
     }
-  ]
+  ],
+  "wikiTitle": "Blue Wintersday Gift (Handiwork)",
+  "recipe": {
+    "rating": 0,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Blue Wintersday Gift",
+    "sheet": "Homestead Recipe Book: Wintersday, Volume 3",
+    "id": 14387,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Gossamer Scrap"
+      },
+      {
+        "slot": 3,
+        "quantity": 6,
+        "item": "Pouch of Blue Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 1425,
+    "height": 912,
+    "source": "decorations/374/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/d/d2/Blue_Wintersday_Gift.jpg"
+  }
 }

@@ -6,39 +6,6 @@
     10
   ],
   "icon": "decorations/61/icon.png",
-  "wikiTitle": "Blue Pirate Flag (Handiwork)",
-  "original": {
-    "width": 614,
-    "height": 1228,
-    "source": "decorations/61/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/6/6d/Blue_Pirate_Flag.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Blue Pirate Flag",
-    "sheet": "Homestead Recipe Book: Banners",
-    "id": 14370,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 25,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 6,
-        "item": "Bolt of Linen"
-      },
-      {
-        "slot": 3,
-        "quantity": 6,
-        "item": "Pouch of Blue Pigment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -262,5 +229,38 @@
       "type": "New Item",
       "name": "Blue Pirate Flag"
     }
-  ]
+  ],
+  "wikiTitle": "Blue Pirate Flag (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Blue Pirate Flag",
+    "sheet": "Homestead Recipe Book: Banners",
+    "id": 14370,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 6,
+        "item": "Bolt of Linen"
+      },
+      {
+        "slot": 3,
+        "quantity": 6,
+        "item": "Pouch of Blue Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 614,
+    "height": 1228,
+    "source": "decorations/61/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/6/6d/Blue_Pirate_Flag.jpg"
+  }
 }

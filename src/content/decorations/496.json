@@ -6,39 +6,6 @@
     22
   ],
   "icon": "decorations/496/icon.png",
-  "wikiTitle": "Super Happy Cloud (Handiwork)",
-  "original": {
-    "width": 440,
-    "height": 339,
-    "source": "decorations/496/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/e/e7/Super_Happy_Cloud.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Super Happy Cloud",
-    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 3",
-    "id": 14169,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 8,
-        "item": "Bauble"
-      },
-      {
-        "slot": 3,
-        "quantity": 2,
-        "item": "Pouch of Yellow Pigment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -317,5 +284,38 @@
       "type": "New Item",
       "name": "Super Happy Cloud"
     }
-  ]
+  ],
+  "wikiTitle": "Super Happy Cloud (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Super Happy Cloud",
+    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 3",
+    "id": 14169,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "Bauble"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Pouch of Yellow Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 440,
+    "height": 339,
+    "source": "decorations/496/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/e/e7/Super_Happy_Cloud.jpg"
+  }
 }

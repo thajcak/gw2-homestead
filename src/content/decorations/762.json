@@ -6,39 +6,6 @@
     22
   ],
   "icon": "decorations/762/icon.png",
-  "wikiTitle": "Super Ice Wall (Handiwork)",
-  "original": {
-    "width": 792,
-    "height": 960,
-    "source": "decorations/762/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/b/bc/Super_Ice_Wall.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Super Ice Wall",
-    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 4",
-    "id": 14797,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 8,
-        "item": "Bauble"
-      },
-      {
-        "slot": 3,
-        "quantity": 4,
-        "item": "Pouch of Blue Pigment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -349,5 +316,38 @@
       "type": "New Item",
       "name": "Super Ice Wall"
     }
-  ]
+  ],
+  "wikiTitle": "Super Ice Wall (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Super Ice Wall",
+    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 4",
+    "id": 14797,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "Bauble"
+      },
+      {
+        "slot": 3,
+        "quantity": 4,
+        "item": "Pouch of Blue Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 792,
+    "height": 960,
+    "source": "decorations/762/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/b/bc/Super_Ice_Wall.jpg"
+  }
 }

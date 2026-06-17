@@ -6,39 +6,6 @@
     10
   ],
   "icon": "decorations/538/icon.png",
-  "wikiTitle": "Asuran Summit Banner (Handiwork)",
-  "original": {
-    "width": 371,
-    "height": 695,
-    "source": "decorations/538/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/4/47/Asuran_Summit_Banner.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Asuran Summit Banner",
-    "sheet": "Homestead Recipe Book: Summit Banners, Volume 1",
-    "id": 14289,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 26,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Bolt of Silk"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Superior Rune of Rata Sum"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-08",
@@ -312,5 +279,38 @@
       "type": "New Item",
       "name": "Asuran Summit Banner"
     }
-  ]
+  ],
+  "wikiTitle": "Asuran Summit Banner (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Asuran Summit Banner",
+    "sheet": "Homestead Recipe Book: Summit Banners, Volume 1",
+    "id": 14289,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Bolt of Silk"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Superior Rune of Rata Sum"
+      }
+    ]
+  },
+  "original": {
+    "width": 371,
+    "height": 695,
+    "source": "decorations/538/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/4/47/Asuran_Summit_Banner.jpg"
+  }
 }

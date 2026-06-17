@@ -6,44 +6,6 @@
     22
   ],
   "icon": "decorations/1181/icon.png",
-  "wikiTitle": "Super Rapids Plateau (Handiwork)",
-  "original": {
-    "width": 1036,
-    "height": 1381,
-    "source": "decorations/1181/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/c/cd/Super_Rapids_Plateau.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Super Rapids Plateau",
-    "sheet": "Recipe: Super Rapids Plateau",
-    "id": 15622,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 8,
-        "item": "Bauble"
-      },
-      {
-        "slot": 3,
-        "quantity": 4,
-        "item": "Pouch of Yellow Pigment"
-      },
-      {
-        "slot": 4,
-        "quantity": 2,
-        "item": "Pouch of Orange Pigment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-05-24",
@@ -200,5 +162,43 @@
       "type": "Recipe Updated",
       "name": "Super Rapids Plateau"
     }
-  ]
+  ],
+  "wikiTitle": "Super Rapids Plateau (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Super Rapids Plateau",
+    "sheet": "Recipe: Super Rapids Plateau",
+    "id": 15622,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "Bauble"
+      },
+      {
+        "slot": 3,
+        "quantity": 4,
+        "item": "Pouch of Yellow Pigment"
+      },
+      {
+        "slot": 4,
+        "quantity": 2,
+        "item": "Pouch of Orange Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 1036,
+    "height": 1381,
+    "source": "decorations/1181/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/c/cd/Super_Rapids_Plateau.jpg"
+  }
 }

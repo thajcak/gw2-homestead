@@ -7,39 +7,6 @@
     23
   ],
   "icon": "decorations/270/icon.png",
-  "wikiTitle": "Holographic Track Downward Left Curve (Handiwork)",
-  "original": {
-    "width": 1154,
-    "height": 336,
-    "source": "decorations/270/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/e/e1/Holographic_Track_Downward_Left_Curve.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Holographic Track Downward Left Curve",
-    "sheet": "Homestead Recipe Book: Dragon Bash, Volume 4",
-    "id": 14214,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 30,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Piece of Zhaitaffy"
-      },
-      {
-        "slot": 3,
-        "quantity": 50,
-        "item": "Research Note"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -335,5 +302,32 @@
       "type": "New Item",
       "name": "Holographic Track Downward Left Curve"
     }
-  ]
+  ],
+  "wikiTitle": "Holographic Track Downward Left Curve (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Holographic Track Downward Left Curve",
+    "sheet": "Homestead Recipe Book: Dragon Bash, Volume 4",
+    "id": 14214,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Piece of Zhaitaffy"
+      },
+      {
+        "slot": 3,
+        "quantity": 50,
+        "item": "Research Note"
+      }
+    ]
+  }
 }

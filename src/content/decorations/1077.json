@@ -7,39 +7,6 @@
     26
   ],
   "icon": "decorations/1077/icon.png",
-  "wikiTitle": "Gift Levitator (Handiwork)",
-  "original": {
-    "width": 760,
-    "height": 1080,
-    "source": "decorations/1077/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/1/15/Gift_Levitator.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Gift Levitator",
-    "sheet": "Recipe: Gift Levitator",
-    "id": 15435,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 5,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 30,
-        "item": "Snowflake"
-      },
-      {
-        "slot": 3,
-        "quantity": 3,
-        "item": "Bolt of Cotton"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -286,5 +253,38 @@
       "type": "New Item",
       "name": "Gift Levitator"
     }
-  ]
+  ],
+  "wikiTitle": "Gift Levitator (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Gift Levitator",
+    "sheet": "Recipe: Gift Levitator",
+    "id": 15435,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 30,
+        "item": "Snowflake"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Bolt of Cotton"
+      }
+    ]
+  },
+  "original": {
+    "width": 760,
+    "height": 1080,
+    "source": "decorations/1077/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/1/15/Gift_Levitator.jpg"
+  }
 }

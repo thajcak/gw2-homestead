@@ -7,39 +7,6 @@
     24
   ],
   "icon": "decorations/362/icon.png",
-  "wikiTitle": "Zephyr Support (Handiwork)",
-  "original": {
-    "width": 1238,
-    "height": 3440,
-    "source": "decorations/362/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/8e/Zephyr_Support.jpg"
-  },
-  "recipe": {
-    "rating": 75,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Zephyr Support",
-    "sheet": "Homestead Recipe Book: Four Winds, Volume 3",
-    "id": 14207,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 22,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Jute Scrap"
-      },
-      {
-        "slot": 3,
-        "quantity": 10,
-        "item": "Ursus Oblige"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -420,5 +387,32 @@
       "type": "New Item",
       "name": "Zephyr Support"
     }
-  ]
+  ],
+  "wikiTitle": "Zephyr Support (Handiwork)",
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Zephyr Support",
+    "sheet": "Homestead Recipe Book: Four Winds, Volume 3",
+    "id": 14207,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 22,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Jute Scrap"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Ursus Oblige"
+      }
+    ]
+  }
 }

@@ -7,39 +7,6 @@
     26
   ],
   "icon": "decorations/155/icon.png",
-  "wikiTitle": "Ice Castle: Wall (Handiwork)",
-  "original": {
-    "width": 813,
-    "height": 960,
-    "source": "decorations/155/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/3/32/Ice_Castle-_Wall.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Ice Castle: Wall",
-    "sheet": "Homestead Recipe Book: Wintersday, Volume 4",
-    "id": 14103,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 30,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 30,
-        "item": "Snowflake"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Superior Rune of Snowfall"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -340,5 +307,38 @@
       "type": "New Item",
       "name": "Ice Castle: Wall"
     }
-  ]
+  ],
+  "wikiTitle": "Ice Castle: Wall (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Ice Castle: Wall",
+    "sheet": "Homestead Recipe Book: Wintersday, Volume 4",
+    "id": 14103,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 30,
+        "item": "Snowflake"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Superior Rune of Snowfall"
+      }
+    ]
+  },
+  "original": {
+    "width": 813,
+    "height": 960,
+    "source": "decorations/155/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/3/32/Ice_Castle-_Wall.jpg"
+  }
 }

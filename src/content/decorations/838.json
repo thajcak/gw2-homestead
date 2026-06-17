@@ -6,39 +6,6 @@
     25
   ],
   "icon": "decorations/838/icon.png",
-  "wikiTitle": "Gargoyle (Handiwork)",
-  "original": {
-    "width": 706,
-    "height": 1080,
-    "source": "decorations/838/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/c/ce/Gargoyle_%28decoration%29.jpg"
-  },
-  "recipe": {
-    "rating": 150,
-    "type": "Homestead Decoration",
-    "source": "sheet",
-    "disciplines": "Handiworker",
-    "name": "Gargoyle",
-    "sheet": "Recipe: Gargoyle;Homestead Recipe Book: Halloween, Volume 10",
-    "id": 14928,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 30,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Mithril Ore"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Onyx Core"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -299,5 +266,38 @@
       "type": "New Item",
       "name": "Gargoyle"
     }
-  ]
+  ],
+  "wikiTitle": "Gargoyle (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Gargoyle",
+    "sheet": "Recipe: Gargoyle;Homestead Recipe Book: Halloween, Volume 10",
+    "id": 14928,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Mithril Ore"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Onyx Core"
+      }
+    ]
+  },
+  "original": {
+    "width": 706,
+    "height": 1080,
+    "source": "decorations/838/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/c/ce/Gargoyle_%28decoration%29.jpg"
+  }
 }

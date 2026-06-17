@@ -7,33 +7,6 @@
     20
   ],
   "icon": "decorations/987/icon.png",
-  "wikiTitle": "Full Wall Bracket (960) (Handiwork)",
-  "original": {
-    "width": 1920,
-    "height": 824,
-    "source": "decorations/987/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/b/bd/Full_Wall_Bracket_%28960%29.jpg"
-  },
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "name": "Full Wall Bracket (960)",
-    "id": 15375,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 20,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 6,
-        "item": "Elder Wood Plank"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -265,5 +238,32 @@
       "type": "New Item",
       "name": "Full Wall Bracket (960)"
     }
-  ]
+  ],
+  "wikiTitle": "Full Wall Bracket (960) (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Full Wall Bracket (960)",
+    "id": 15375,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 20,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 6,
+        "item": "Elder Wood Plank"
+      }
+    ]
+  },
+  "original": {
+    "width": 1920,
+    "height": 824,
+    "source": "decorations/987/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/b/bd/Full_Wall_Bracket_%28960%29.jpg"
+  }
 }

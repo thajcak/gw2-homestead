@@ -6,39 +6,6 @@
     5
   ],
   "icon": "decorations/37/icon.png",
-  "wikiTitle": "Obstacle: White Torch (Handiwork)",
-  "original": {
-    "width": 1152,
-    "height": 1440,
-    "source": "decorations/37/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/c/cf/Obstacle-_White_Torch.jpg"
-  },
-  "recipe": {
-    "rating": 75,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Obstacle: White Torch",
-    "sheet": "Homestead Recipe Book: Guild Arena",
-    "id": 14800,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 5,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Pouch of White Pigment"
-      },
-      {
-        "slot": 3,
-        "quantity": 2,
-        "item": "Ley Line Crystal"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -278,5 +245,38 @@
       "type": "New Item",
       "name": "Obstacle: White Torch"
     }
-  ]
+  ],
+  "wikiTitle": "Obstacle: White Torch (Handiwork)",
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Obstacle: White Torch",
+    "sheet": "Homestead Recipe Book: Guild Arena",
+    "id": 14800,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Pouch of White Pigment"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Ley Line Crystal"
+      }
+    ]
+  },
+  "original": {
+    "width": 1152,
+    "height": 1440,
+    "source": "decorations/37/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/c/cf/Obstacle-_White_Torch.jpg"
+  }
 }

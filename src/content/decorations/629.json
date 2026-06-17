@@ -6,44 +6,6 @@
     12
   ],
   "icon": "decorations/629/icon.png",
-  "wikiTitle": "Gold Tequatl Trophy (Handiwork)",
-  "original": {
-    "width": 639,
-    "height": 1062,
-    "source": "decorations/629/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/f/fb/Dragon_Chest_%28Tequatl_the_Sunless%29.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Gold Tequatl Trophy",
-    "sheet": "Recipe: Gold Tequatl Trophy",
-    "id": 14225,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 115,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Pile of Putrid Essence"
-      },
-      {
-        "slot": 3,
-        "quantity": 100,
-        "item": "Globs of Ectoplasm"
-      },
-      {
-        "slot": 4,
-        "quantity": 5,
-        "item": "Tequatl Tail Piece"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -328,5 +290,43 @@
       "type": "New Item",
       "name": "Gold Tequatl Trophy"
     }
-  ]
+  ],
+  "wikiTitle": "Gold Tequatl Trophy (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Gold Tequatl Trophy",
+    "sheet": "Recipe: Gold Tequatl Trophy",
+    "id": 14225,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 115,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Pile of Putrid Essence"
+      },
+      {
+        "slot": 3,
+        "quantity": 100,
+        "item": "Globs of Ectoplasm"
+      },
+      {
+        "slot": 4,
+        "quantity": 5,
+        "item": "Tequatl Tail Piece"
+      }
+    ]
+  },
+  "original": {
+    "width": 639,
+    "height": 1062,
+    "source": "decorations/629/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/f/fb/Dragon_Chest_%28Tequatl_the_Sunless%29.jpg"
+  }
 }

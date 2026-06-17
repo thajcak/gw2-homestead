@@ -7,39 +7,6 @@
     14
   ],
   "icon": "decorations/288/icon.png",
-  "wikiTitle": "Elonian Tent (Handiwork)",
-  "original": {
-    "width": 820,
-    "height": 1229,
-    "source": "decorations/288/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/9d/Elonian_Tent.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Elonian Tent",
-    "sheet": "Homestead Recipe Book: Misc. Items, Volume 1",
-    "id": 14863,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 30,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 3,
-        "item": "Bolt of Linen"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "Ley-Infused Sand"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -274,5 +241,38 @@
       "type": "New Item",
       "name": "Elonian Tent"
     }
-  ]
+  ],
+  "wikiTitle": "Elonian Tent (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Elonian Tent",
+    "sheet": "Homestead Recipe Book: Misc. Items, Volume 1",
+    "id": 14863,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Bolt of Linen"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Ley-Infused Sand"
+      }
+    ]
+  },
+  "original": {
+    "width": 820,
+    "height": 1229,
+    "source": "decorations/288/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/9d/Elonian_Tent.jpg"
+  }
 }

@@ -6,39 +6,6 @@
     6
   ],
   "icon": "decorations/591/icon.png",
-  "wikiTitle": "Lattice Planter with Loosestrife (Handiwork)",
-  "original": {
-    "width": 730,
-    "height": 962,
-    "source": "decorations/591/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/6/6f/Lattice_Planter_with_Loosestrife.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Lattice Planter with Loosestrife",
-    "sheet": "Homestead Recipe Book: Plants, Volume 2",
-    "id": 14146,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 2,
-        "item": "Onyx Shard"
-      },
-      {
-        "slot": 3,
-        "quantity": 10,
-        "item": "Pouch of Yellow Pigment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -342,5 +309,38 @@
       "type": "New Item",
       "name": "Lattice Planter with Loosestrife"
     }
-  ]
+  ],
+  "wikiTitle": "Lattice Planter with Loosestrife (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Lattice Planter with Loosestrife",
+    "sheet": "Homestead Recipe Book: Plants, Volume 2",
+    "id": 14146,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Onyx Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Pouch of Yellow Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 730,
+    "height": 962,
+    "source": "decorations/591/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/6/6f/Lattice_Planter_with_Loosestrife.jpg"
+  }
 }

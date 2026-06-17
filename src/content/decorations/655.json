@@ -7,39 +7,6 @@
     25
   ],
   "icon": "decorations/655/icon.png",
-  "wikiTitle": "Unchained Platform (Handiwork)",
-  "original": {
-    "width": 1145,
-    "height": 1080,
-    "source": "decorations/655/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/5/52/Unchained_Platform.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "sheet",
-    "disciplines": "Handiworker",
-    "name": "Unchained Platform",
-    "sheet": "Homestead Recipe Book: Halloween, Volume 7",
-    "id": 14267,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 30,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 16,
-        "item": "Sliver of Twitching Forgemetal"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Onyx Core"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -285,5 +252,38 @@
       "type": "New Item",
       "name": "Unchained Platform"
     }
-  ]
+  ],
+  "wikiTitle": "Unchained Platform (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Unchained Platform",
+    "sheet": "Homestead Recipe Book: Halloween, Volume 7",
+    "id": 14267,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 16,
+        "item": "Sliver of Twitching Forgemetal"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Onyx Core"
+      }
+    ]
+  },
+  "original": {
+    "width": 1145,
+    "height": 1080,
+    "source": "decorations/655/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/5/52/Unchained_Platform.jpg"
+  }
 }

@@ -7,33 +7,6 @@
     20
   ],
   "icon": "decorations/1104/icon.png",
-  "wikiTitle": "Jungle Plant (Handiwork)",
-  "original": {
-    "width": 1366,
-    "height": 768,
-    "source": "decorations/1104/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/9f/Jungle_Plant.jpg"
-  },
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "name": "Jungle Plant",
-    "id": 15502,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 5,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 1,
-        "item": "Evergreen Lodestone"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -295,5 +268,32 @@
       "type": "New Item",
       "name": "Jungle Plant"
     }
-  ]
+  ],
+  "wikiTitle": "Jungle Plant (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Jungle Plant",
+    "id": 15502,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Evergreen Lodestone"
+      }
+    ]
+  },
+  "original": {
+    "width": 1366,
+    "height": 768,
+    "source": "decorations/1104/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/9f/Jungle_Plant.jpg"
+  }
 }

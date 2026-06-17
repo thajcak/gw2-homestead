@@ -7,39 +7,6 @@
     24
   ],
   "icon": "decorations/582/icon.png",
-  "wikiTitle": "Netted Crates (Handiwork)",
-  "original": {
-    "width": 720,
-    "height": 1440,
-    "source": "decorations/582/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/b/b1/Netted_Crates.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Netted Crates",
-    "sheet": "Homestead Recipe Book: Four Winds, Volume 5",
-    "id": 14583,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 28,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 16,
-        "item": "Jute Scrap"
-      },
-      {
-        "slot": 3,
-        "quantity": 15,
-        "item": "Ursus Oblige"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-02",
@@ -270,5 +237,38 @@
       "type": "New Item",
       "name": "Netted Crates"
     }
-  ]
+  ],
+  "wikiTitle": "Netted Crates (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Netted Crates",
+    "sheet": "Homestead Recipe Book: Four Winds, Volume 5",
+    "id": 14583,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 28,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 16,
+        "item": "Jute Scrap"
+      },
+      {
+        "slot": 3,
+        "quantity": 15,
+        "item": "Ursus Oblige"
+      }
+    ]
+  },
+  "original": {
+    "width": 720,
+    "height": 1440,
+    "source": "decorations/582/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/b/b1/Netted_Crates.jpg"
+  }
 }

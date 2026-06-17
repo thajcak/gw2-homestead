@@ -6,39 +6,6 @@
     1
   ],
   "icon": "decorations/363/icon.png",
-  "wikiTitle": "Gold Wall (Handiwork)",
-  "original": {
-    "width": 603,
-    "height": 965,
-    "source": "decorations/363/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/d/db/Gold_Wall.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Gold Wall",
-    "sheet": "Homestead Recipe Book: Auric Basin, Volume 1",
-    "id": 14227,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 35,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 100,
-        "item": "Auric Sliver"
-      },
-      {
-        "slot": 3,
-        "quantity": 100,
-        "item": "Lump of Aurillium"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -402,5 +369,38 @@
       "type": "New Item",
       "name": "Gold Wall"
     }
-  ]
+  ],
+  "wikiTitle": "Gold Wall (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Gold Wall",
+    "sheet": "Homestead Recipe Book: Auric Basin, Volume 1",
+    "id": 14227,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 100,
+        "item": "Auric Sliver"
+      },
+      {
+        "slot": 3,
+        "quantity": 100,
+        "item": "Lump of Aurillium"
+      }
+    ]
+  },
+  "original": {
+    "width": 603,
+    "height": 965,
+    "source": "decorations/363/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/d/db/Gold_Wall.jpg"
+  }
 }

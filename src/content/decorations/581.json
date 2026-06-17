@@ -7,39 +7,6 @@
     25
   ],
   "icon": "decorations/581/icon.png",
-  "wikiTitle": "Eternal Flame (Handiwork)",
-  "original": {
-    "width": 742,
-    "height": 1318,
-    "source": "decorations/581/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/a/af/Eternal_Flame_%28decoration%29.jpg"
-  },
-  "recipe": {
-    "rating": 150,
-    "type": "Homestead Decoration",
-    "source": "sheet",
-    "disciplines": "Handiworker",
-    "name": "Eternal Flame",
-    "sheet": "Homestead Recipe Book: Halloween, Volume 2",
-    "id": 14128,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 2,
-        "item": "Molten Lodestone"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Essence of Light"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-02",
@@ -255,5 +222,38 @@
       "type": "New Item",
       "name": "Eternal Flame"
     }
-  ]
+  ],
+  "wikiTitle": "Eternal Flame (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Eternal Flame",
+    "sheet": "Homestead Recipe Book: Halloween, Volume 2",
+    "id": 14128,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Molten Lodestone"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Essence of Light"
+      }
+    ]
+  },
+  "original": {
+    "width": 742,
+    "height": 1318,
+    "source": "decorations/581/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/a/af/Eternal_Flame_%28decoration%29.jpg"
+  }
 }

@@ -6,33 +6,6 @@
     27
   ],
   "icon": "decorations/1067/icon.png",
-  "wikiTitle": "Underwater Tranquil Fish",
-  "original": {
-    "width": 1299,
-    "height": 789,
-    "source": "decorations/1067/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/f/f6/Underwater_Tranquil_Fish.jpg"
-  },
-  "recipe": {
-    "rating": 0,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "sheet": "Black Lion Underwater Tranquil Fish Recipe",
-    "id": 15411,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 10,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Refined Homestead Wood"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -284,5 +257,32 @@
       "type": "New Item",
       "name": "Underwater Tranquil Fish"
     }
-  ]
+  ],
+  "wikiTitle": "Underwater Tranquil Fish",
+  "recipe": {
+    "rating": 0,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Black Lion Underwater Tranquil Fish Recipe",
+    "id": 15411,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Refined Homestead Wood"
+      }
+    ]
+  },
+  "original": {
+    "width": 1299,
+    "height": 789,
+    "source": "decorations/1067/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/f/f6/Underwater_Tranquil_Fish.jpg"
+  }
 }

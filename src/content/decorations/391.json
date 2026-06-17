@@ -6,39 +6,6 @@
     12
   ],
   "icon": "decorations/391/icon.png",
-  "wikiTitle": "Bronze Ether Djinn Trophy (Handiwork)",
-  "original": {
-    "width": 347,
-    "height": 824,
-    "source": "decorations/391/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/0/07/Bronze_Ether_Djinn_Trophy.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Bronze Ether Djinn Trophy",
-    "sheet": "Recipe: Bronze Ether Djinn Trophy",
-    "id": 14885,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 36,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Magnetite Shard"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Ether Djinn's Token (trophy)"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -303,5 +270,38 @@
       "type": "New Item",
       "name": "Bronze Ether Djinn Trophy"
     }
-  ]
+  ],
+  "wikiTitle": "Bronze Ether Djinn Trophy (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Bronze Ether Djinn Trophy",
+    "sheet": "Recipe: Bronze Ether Djinn Trophy",
+    "id": 14885,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 36,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Ether Djinn's Token (trophy)"
+      }
+    ]
+  },
+  "original": {
+    "width": 347,
+    "height": 824,
+    "source": "decorations/391/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/0/07/Bronze_Ether_Djinn_Trophy.jpg"
+  }
 }

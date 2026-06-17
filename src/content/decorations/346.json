@@ -7,39 +7,6 @@
     1
   ],
   "icon": "decorations/346/icon.png",
-  "wikiTitle": "Weathered Elonian Obelisk (Handiwork)",
-  "original": {
-    "width": 651,
-    "height": 956,
-    "source": "decorations/346/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/4/44/Weathered_Elonian_Obelisk_details.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Weathered Elonian Obelisk",
-    "sheet": "Homestead Recipe Book: Arches and Pillars",
-    "id": 14335,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 30,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 25,
-        "item": "Trade Contract"
-      },
-      {
-        "slot": 3,
-        "quantity": 25,
-        "item": "Ley-Infused Sand"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -369,5 +336,38 @@
       "type": "New Item",
       "name": "Weathered Elonian Obelisk"
     }
-  ]
+  ],
+  "wikiTitle": "Weathered Elonian Obelisk (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Weathered Elonian Obelisk",
+    "sheet": "Homestead Recipe Book: Arches and Pillars",
+    "id": 14335,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 25,
+        "item": "Trade Contract"
+      },
+      {
+        "slot": 3,
+        "quantity": 25,
+        "item": "Ley-Infused Sand"
+      }
+    ]
+  },
+  "original": {
+    "width": 651,
+    "height": 956,
+    "source": "decorations/346/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/4/44/Weathered_Elonian_Obelisk_details.jpg"
+  }
 }

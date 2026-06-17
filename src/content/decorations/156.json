@@ -7,39 +7,6 @@
     25
   ],
   "icon": "decorations/156/icon.png",
-  "wikiTitle": "Primordial Leviathan Rib Cage: Curved (Handiwork)",
-  "original": {
-    "width": 2160,
-    "height": 1440,
-    "source": "decorations/156/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/d/d7/Primordial_Leviathan_Rib_Cage-_Curved.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "sheet",
-    "disciplines": "Handiworker",
-    "name": "Primordial Leviathan Rib Cage: Curved",
-    "sheet": "Homestead Recipe Book: Halloween, Volume 4",
-    "id": 14700,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 30,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 20,
-        "item": "Large Bone"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Pile of Putrid Essence"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -345,5 +312,38 @@
       "type": "New Item",
       "name": "Primordial Leviathan Rib Cage: Curved"
     }
-  ]
+  ],
+  "wikiTitle": "Primordial Leviathan Rib Cage: Curved (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Primordial Leviathan Rib Cage: Curved",
+    "sheet": "Homestead Recipe Book: Halloween, Volume 4",
+    "id": 14700,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 20,
+        "item": "Large Bone"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Pile of Putrid Essence"
+      }
+    ]
+  },
+  "original": {
+    "width": 2160,
+    "height": 1440,
+    "source": "decorations/156/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/d/d7/Primordial_Leviathan_Rib_Cage-_Curved.jpg"
+  }
 }

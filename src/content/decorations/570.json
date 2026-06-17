@@ -7,37 +7,6 @@
     1
   ],
   "icon": "decorations/570/icon.png",
-  "wikiTitle": "Kodan Cottage Wall (Pillar)",
-  "original": {
-    "width": 540,
-    "height": 1034,
-    "source": "decorations/570/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/3/3c/Kodan_Cottage_Wall_%28Pillar%29.jpg"
-  },
-  "recipe": {
-    "rating": 150,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "id": 14836,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 2,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 2,
-        "item": "Fang"
-      },
-      {
-        "slot": 3,
-        "quantity": 4,
-        "item": "Lowland Pine Log"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-07",
@@ -327,5 +296,36 @@
       "type": "New Item",
       "name": "Kodan Cottage Wall (Pillar)"
     }
-  ]
+  ],
+  "wikiTitle": "Kodan Cottage Wall (Pillar)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14836,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 2,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Fang"
+      },
+      {
+        "slot": 3,
+        "quantity": 4,
+        "item": "Lowland Pine Log"
+      }
+    ]
+  },
+  "original": {
+    "width": 540,
+    "height": 1034,
+    "source": "decorations/570/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/3/3c/Kodan_Cottage_Wall_%28Pillar%29.jpg"
+  }
 }

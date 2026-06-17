@@ -6,39 +6,6 @@
     12
   ],
   "icon": "decorations/637/icon.png",
-  "wikiTitle": "Slothasor Mushroom (Handiwork)",
-  "original": {
-    "width": 964,
-    "height": 1204,
-    "source": "decorations/637/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/8c/Slothasor_Mushroom.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Slothasor Mushroom",
-    "sheet": "Recipe: Slothasor Mushroom",
-    "id": 14298,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 30,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Mordrem Lodestone"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Slothasor Mushroom (trophy)"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -298,5 +265,38 @@
       "type": "New Item",
       "name": "Slothasor Mushroom"
     }
-  ]
+  ],
+  "wikiTitle": "Slothasor Mushroom (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Slothasor Mushroom",
+    "sheet": "Recipe: Slothasor Mushroom",
+    "id": 14298,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Mordrem Lodestone"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Slothasor Mushroom (trophy)"
+      }
+    ]
+  },
+  "original": {
+    "width": 964,
+    "height": 1204,
+    "source": "decorations/637/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/8c/Slothasor_Mushroom.jpg"
+  }
 }

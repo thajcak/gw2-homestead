@@ -7,34 +7,6 @@
     20
   ],
   "icon": "decorations/1140/icon.png",
-  "wikiTitle": "Qadim Pylon (Handiwork)",
-  "original": {
-    "width": 640,
-    "height": 1280,
-    "source": "decorations/1140/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/4/4a/Qadim_Pylon.jpg"
-  },
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Qadim Pylon",
-    "sheet": "Recipe: Qadim Pylon",
-    "id": 15507,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 5,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Molten Core"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -316,5 +288,33 @@
       "type": "New Item",
       "name": "Qadim Pylon"
     }
-  ]
+  ],
+  "wikiTitle": "Qadim Pylon (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Qadim Pylon",
+    "sheet": "Recipe: Qadim Pylon",
+    "id": 15507,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Molten Core"
+      }
+    ]
+  },
+  "original": {
+    "width": 640,
+    "height": 1280,
+    "source": "decorations/1140/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/4/4a/Qadim_Pylon.jpg"
+  }
 }

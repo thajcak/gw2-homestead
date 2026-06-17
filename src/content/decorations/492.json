@@ -6,39 +6,6 @@
     12
   ],
   "icon": "decorations/492/icon.png",
-  "wikiTitle": "Bronze Vale Guardian Trophy (Handiwork)",
-  "original": {
-    "width": 535,
-    "height": 1049,
-    "source": "decorations/492/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/5/5c/Bronze_Vale_Guardian_Trophy.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Bronze Vale Guardian Trophy",
-    "sheet": "Recipe: Bronze Vale Guardian Trophy",
-    "id": 14539,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 36,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Magnetite Shard"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Vale Guardian Fragment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -298,5 +265,38 @@
       "type": "New Item",
       "name": "Bronze Vale Guardian Trophy"
     }
-  ]
+  ],
+  "wikiTitle": "Bronze Vale Guardian Trophy (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Bronze Vale Guardian Trophy",
+    "sheet": "Recipe: Bronze Vale Guardian Trophy",
+    "id": 14539,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 36,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Vale Guardian Fragment"
+      }
+    ]
+  },
+  "original": {
+    "width": 535,
+    "height": 1049,
+    "source": "decorations/492/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/5/5c/Bronze_Vale_Guardian_Trophy.jpg"
+  }
 }

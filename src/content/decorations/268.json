@@ -6,39 +6,6 @@
     11
   ],
   "icon": "decorations/268/icon.png",
-  "wikiTitle": "Superior Golem Siege (Handiwork)",
-  "original": {
-    "width": 1327,
-    "height": 1440,
-    "source": "decorations/268/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/7c/Superior_Golem_Siege.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Superior Golem Siege",
-    "sheet": "Homestead Recipe Book: World vs. World, Volume 2",
-    "id": 14106,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 38,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "WvW Skirmish Claim Ticket"
-      },
-      {
-        "slot": 3,
-        "quantity": 8,
-        "item": "Charged Quartz Crystal"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -322,5 +289,38 @@
       "type": "New Item",
       "name": "Superior Golem Siege"
     }
-  ]
+  ],
+  "wikiTitle": "Superior Golem Siege (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Superior Golem Siege",
+    "sheet": "Homestead Recipe Book: World vs. World, Volume 2",
+    "id": 14106,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 38,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "WvW Skirmish Claim Ticket"
+      },
+      {
+        "slot": 3,
+        "quantity": 8,
+        "item": "Charged Quartz Crystal"
+      }
+    ]
+  },
+  "original": {
+    "width": 1327,
+    "height": 1440,
+    "source": "decorations/268/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/7c/Superior_Golem_Siege.jpg"
+  }
 }

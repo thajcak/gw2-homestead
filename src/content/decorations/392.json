@@ -6,39 +6,6 @@
     10
   ],
   "icon": "decorations/392/icon.png",
-  "wikiTitle": "Summit Flag (Handiwork)",
-  "original": {
-    "width": 421,
-    "height": 1077,
-    "source": "decorations/392/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/4/49/Summit_Flag.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Summit Flag",
-    "sheet": "Homestead Recipe Book: Summit Flags, Volume 1",
-    "id": 14730,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 28,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Bolt of Gossamer"
-      },
-      {
-        "slot": 3,
-        "quantity": 50,
-        "item": "Bandit Crest"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -317,5 +284,32 @@
       "type": "New Item",
       "name": "Summit Flag"
     }
-  ]
+  ],
+  "wikiTitle": "Summit Flag (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Summit Flag",
+    "sheet": "Homestead Recipe Book: Summit Flags, Volume 1",
+    "id": 14730,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 28,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Bolt of Gossamer"
+      },
+      {
+        "slot": 3,
+        "quantity": 50,
+        "item": "Bandit Crest"
+      }
+    ]
+  }
 }

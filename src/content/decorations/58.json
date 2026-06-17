@@ -6,39 +6,6 @@
     5
   ],
   "icon": "decorations/58/icon.png",
-  "wikiTitle": "Red Lantern (Handiwork)",
-  "original": {
-    "width": 1152,
-    "height": 1440,
-    "source": "decorations/58/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/2/2a/Red_Lantern_%28decoration%29.jpg"
-  },
-  "recipe": {
-    "rating": 150,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Red Lantern",
-    "sheet": "Homestead Recipe Book: Lunar New Year, Volume 1",
-    "id": 14217,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 24,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 1,
-        "item": "Molten Fragment"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Masterwork Essence of Luck"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -303,5 +270,38 @@
       "type": "New Item",
       "name": "Red Lantern"
     }
-  ]
+  ],
+  "wikiTitle": "Red Lantern (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Red Lantern",
+    "sheet": "Homestead Recipe Book: Lunar New Year, Volume 1",
+    "id": 14217,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 24,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Molten Fragment"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Masterwork Essence of Luck"
+      }
+    ]
+  },
+  "original": {
+    "width": 1152,
+    "height": 1440,
+    "source": "decorations/58/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/2/2a/Red_Lantern_%28decoration%29.jpg"
+  }
 }

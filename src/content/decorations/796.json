@@ -7,39 +7,6 @@
     15
   ],
   "icon": "decorations/796/icon.png",
-  "wikiTitle": "Potted Petticoat Palm (Handiwork)",
-  "original": {
-    "width": 924,
-    "height": 929,
-    "source": "decorations/796/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/70/Potted_Petticoat_Palm_top.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Potted Petticoat Palm",
-    "sheet": "Homestead Recipe Book: Trees",
-    "id": 14843,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 25,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 1,
-        "item": "Palm Lumber Core"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Evergreen Shard"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-05",
@@ -293,5 +260,38 @@
       "type": "New Item",
       "name": "Potted Petticoat Palm"
     }
-  ]
+  ],
+  "wikiTitle": "Potted Petticoat Palm (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Potted Petticoat Palm",
+    "sheet": "Homestead Recipe Book: Trees",
+    "id": 14843,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Palm Lumber Core"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Evergreen Shard"
+      }
+    ]
+  },
+  "original": {
+    "width": 924,
+    "height": 929,
+    "source": "decorations/796/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/70/Potted_Petticoat_Palm_top.jpg"
+  }
 }

@@ -6,33 +6,6 @@
     27
   ],
   "icon": "decorations/909/icon.png",
-  "wikiTitle": "Sea Raider Wall",
-  "original": {
-    "width": 1176,
-    "height": 1176,
-    "source": "decorations/909/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/3/36/Sea_Raider_Wall.jpg"
-  },
-  "recipe": {
-    "rating": 0,
-    "type": "Homestead Decoration",
-    "source": "Recipe sheet",
-    "disciplines": "Handiworker",
-    "sheet": "Black Lion Sea Raider Wall Recipe",
-    "id": 15106,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 5,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Refined Homestead Wood"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -289,5 +262,32 @@
       "type": "New Item",
       "name": "Sea Raider Wall"
     }
-  ]
+  ],
+  "wikiTitle": "Sea Raider Wall",
+  "recipe": {
+    "rating": 0,
+    "type": "Homestead Decoration",
+    "source": "Recipe sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Black Lion Sea Raider Wall Recipe",
+    "id": 15106,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Refined Homestead Wood"
+      }
+    ]
+  },
+  "original": {
+    "width": 1176,
+    "height": 1176,
+    "source": "decorations/909/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/3/36/Sea_Raider_Wall.jpg"
+  }
 }

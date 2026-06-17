@@ -6,12 +6,37 @@
     27
   ],
   "icon": "decorations/1188/icon.png",
-  "wikiTitle": "Black Lion Drum Set",
   "history": [
+    {
+      "day": "2026-06-17",
+      "type": "Recipe Updated",
+      "name": "Black Lion Drum Set"
+    },
     {
       "day": "2026-04-14",
       "type": "New Item",
       "name": "Black Lion Drum Set"
     }
-  ]
+  ],
+  "wikiTitle": "Black Lion Drum Set",
+  "recipe": {
+    "rating": 0,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Black Lion Drum Set Recipe",
+    "id": 15618,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Refined Homestead Wood"
+      }
+    ]
+  }
 }

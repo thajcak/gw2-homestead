@@ -7,39 +7,6 @@
     4
   ],
   "icon": "decorations/632/icon.png",
-  "wikiTitle": "Triumphant Dragon Bash Poster (Handiwork)",
-  "original": {
-    "width": 1109,
-    "height": 1387,
-    "source": "decorations/632/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/f/f6/Triumphant_Dragon_Bash_Poster.jpg"
-  },
-  "recipe": {
-    "rating": 150,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Triumphant Dragon Bash Poster",
-    "sheet": "Homestead Recipe Book: Dragon Bash, Volume 2",
-    "id": 14123,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 25,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Linen Scrap"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "Pouch of Red Pigment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -385,5 +352,38 @@
       "type": "New Item",
       "name": "Triumphant Dragon Bash Poster"
     }
-  ]
+  ],
+  "wikiTitle": "Triumphant Dragon Bash Poster (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Triumphant Dragon Bash Poster",
+    "sheet": "Homestead Recipe Book: Dragon Bash, Volume 2",
+    "id": 14123,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Linen Scrap"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Pouch of Red Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 1109,
+    "height": 1387,
+    "source": "decorations/632/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/f/f6/Triumphant_Dragon_Bash_Poster.jpg"
+  }
 }

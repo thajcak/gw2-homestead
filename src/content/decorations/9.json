@@ -6,39 +6,6 @@
     14
   ],
   "icon": "decorations/9/icon.png",
-  "wikiTitle": "Male Norn Holo-Dancer (Handiwork)",
-  "original": {
-    "width": 346,
-    "height": 634,
-    "source": "decorations/9/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/6/6e/Male_Norn_Holo-Dancer.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Male Norn Holo-Dancer",
-    "sheet": "Homestead Recipe Book: Fractal Goods",
-    "id": 14630,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 4,
-        "item": "Pile of Luminous Dust"
-      },
-      {
-        "slot": 3,
-        "quantity": 10,
-        "item": "Stabilizing Matrix"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -353,5 +320,38 @@
       "type": "New Item",
       "name": "Sculptures"
     }
-  ]
+  ],
+  "wikiTitle": "Male Norn Holo-Dancer (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Male Norn Holo-Dancer",
+    "sheet": "Homestead Recipe Book: Fractal Goods",
+    "id": 14630,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 4,
+        "item": "Pile of Luminous Dust"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Stabilizing Matrix"
+      }
+    ]
+  },
+  "original": {
+    "width": 346,
+    "height": 634,
+    "source": "decorations/9/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/6/6e/Male_Norn_Holo-Dancer.jpg"
+  }
 }

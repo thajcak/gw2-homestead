@@ -6,39 +6,6 @@
     4
   ],
   "icon": "decorations/708/icon.png",
-  "wikiTitle": "The Heart of the Priory (Handiwork)",
-  "original": {
-    "width": 696,
-    "height": 965,
-    "source": "decorations/708/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/f/fe/The_Heart_of_the_Priory_front.jpg"
-  },
-  "recipe": {
-    "rating": 150,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "The Heart of the Priory",
-    "sheet": "Homestead Recipe Book: Paintings and Shelves",
-    "id": 14888,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 27,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 20,
-        "item": "Jade Shard"
-      },
-      {
-        "slot": 3,
-        "quantity": 10,
-        "item": "Pouch of Red Pigment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -328,5 +295,38 @@
       "type": "New Item",
       "name": "The Heart of the Priory"
     }
-  ]
+  ],
+  "wikiTitle": "The Heart of the Priory (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "The Heart of the Priory",
+    "sheet": "Homestead Recipe Book: Paintings and Shelves",
+    "id": 14888,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 27,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 20,
+        "item": "Jade Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Pouch of Red Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 696,
+    "height": 965,
+    "source": "decorations/708/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/f/fe/The_Heart_of_the_Priory_front.jpg"
+  }
 }

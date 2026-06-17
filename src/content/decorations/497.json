@@ -6,39 +6,6 @@
     7
   ],
   "icon": "decorations/497/icon.png",
-  "wikiTitle": "Grenth's Palm (Handiwork)",
-  "original": {
-    "width": 1484,
-    "height": 1397,
-    "source": "decorations/497/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/e/ec/Grenth%27s_Palm.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Grenth's Palm",
-    "sheet": "Homestead Recipe Book: Trees",
-    "id": 14509,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 27,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Pile of Vile Essence"
-      },
-      {
-        "slot": 3,
-        "quantity": 100,
-        "item": "Volatile Magic"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -308,5 +275,38 @@
       "type": "New Item",
       "name": "Grenth's Palm"
     }
-  ]
+  ],
+  "wikiTitle": "Grenth's Palm (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Grenth's Palm",
+    "sheet": "Homestead Recipe Book: Trees",
+    "id": 14509,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 27,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Pile of Vile Essence"
+      },
+      {
+        "slot": 3,
+        "quantity": 100,
+        "item": "Volatile Magic"
+      }
+    ]
+  },
+  "original": {
+    "width": 1484,
+    "height": 1397,
+    "source": "decorations/497/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/e/ec/Grenth%27s_Palm.jpg"
+  }
 }

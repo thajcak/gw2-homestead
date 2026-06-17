@@ -6,34 +6,6 @@
     2
   ],
   "icon": "decorations/325/icon.png",
-  "wikiTitle": "Basic Table (Handiwork)",
-  "original": {
-    "width": 1455,
-    "height": 966,
-    "source": "decorations/325/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/2/29/Basic_Table.jpg"
-  },
-  "recipe": {
-    "rating": 150,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Basic Table",
-    "sheet": "Homestead Recipe Book: Basic Decorations",
-    "id": 14770,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 28,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 1,
-        "item": "Tub of Wood Glue"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -343,5 +315,33 @@
       "type": "New Item",
       "name": "Basic Table"
     }
-  ]
+  ],
+  "wikiTitle": "Basic Table (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Basic Table",
+    "sheet": "Homestead Recipe Book: Basic Decorations",
+    "id": 14770,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 28,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Tub of Wood Glue"
+      }
+    ]
+  },
+  "original": {
+    "width": 1455,
+    "height": 966,
+    "source": "decorations/325/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/2/29/Basic_Table.jpg"
+  }
 }

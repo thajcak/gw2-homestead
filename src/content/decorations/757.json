@@ -6,39 +6,6 @@
     12
   ],
   "icon": "decorations/757/icon.png",
-  "wikiTitle": "Bronze Desmina Trophy (Handiwork)",
-  "original": {
-    "width": 454,
-    "height": 914,
-    "source": "decorations/757/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/d/d6/Bronze_Desmina_Trophy.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Bronze Desmina Trophy",
-    "sheet": "Recipe: Bronze Desmina Trophy",
-    "id": 14432,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 36,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Magnetite Shard"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Desmina's Token (trophy)"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -318,5 +285,38 @@
       "type": "New Item",
       "name": "Bronze Desmina Trophy"
     }
-  ]
+  ],
+  "wikiTitle": "Bronze Desmina Trophy (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Bronze Desmina Trophy",
+    "sheet": "Recipe: Bronze Desmina Trophy",
+    "id": 14432,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 36,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Desmina's Token (trophy)"
+      }
+    ]
+  },
+  "original": {
+    "width": 454,
+    "height": 914,
+    "source": "decorations/757/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/d/d6/Bronze_Desmina_Trophy.jpg"
+  }
 }

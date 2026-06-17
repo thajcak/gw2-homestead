@@ -7,39 +7,6 @@
     26
   ],
   "icon": "decorations/398/icon.png",
-  "wikiTitle": "Embellished Wintersday Star (Handiwork)",
-  "original": {
-    "width": 759,
-    "height": 873,
-    "source": "decorations/398/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/e/e5/Embellished_Wintersday_Star.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Embellished Wintersday Star",
-    "sheet": "Homestead Recipe Book: Wintersday, Volume 6",
-    "id": 14879,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 27,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 27,
-        "item": "Unbound Magic"
-      },
-      {
-        "slot": 3,
-        "quantity": 27,
-        "item": "Pinch of Stardust"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -370,5 +337,38 @@
       "type": "New Item",
       "name": "Embellished Wintersday Star"
     }
-  ]
+  ],
+  "wikiTitle": "Embellished Wintersday Star (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Embellished Wintersday Star",
+    "sheet": "Homestead Recipe Book: Wintersday, Volume 6",
+    "id": 14879,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 27,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 27,
+        "item": "Unbound Magic"
+      },
+      {
+        "slot": 3,
+        "quantity": 27,
+        "item": "Pinch of Stardust"
+      }
+    ]
+  },
+  "original": {
+    "width": 759,
+    "height": 873,
+    "source": "decorations/398/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/e/e5/Embellished_Wintersday_Star.jpg"
+  }
 }

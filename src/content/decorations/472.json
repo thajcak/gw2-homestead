@@ -7,39 +7,6 @@
     25
   ],
   "icon": "decorations/472/icon.png",
-  "wikiTitle": "Visage of Madness (Handiwork)",
-  "original": {
-    "width": 639,
-    "height": 950,
-    "source": "decorations/472/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/77/Visage_of_Madness.jpg"
-  },
-  "recipe": {
-    "rating": 150,
-    "type": "Homestead Decoration",
-    "source": "sheet",
-    "disciplines": "Handiworker",
-    "name": "Visage of Madness",
-    "sheet": "Homestead Recipe Book: Halloween, Volume 5",
-    "id": 14534,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 25,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 12,
-        "item": "Rotted Titan Amber"
-      },
-      {
-        "slot": 3,
-        "quantity": 10,
-        "item": "Glob of Ectoplasm"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -355,5 +322,38 @@
       "type": "New Item",
       "name": "Visage of Madness"
     }
-  ]
+  ],
+  "wikiTitle": "Visage of Madness (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Visage of Madness",
+    "sheet": "Homestead Recipe Book: Halloween, Volume 5",
+    "id": 14534,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 12,
+        "item": "Rotted Titan Amber"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Glob of Ectoplasm"
+      }
+    ]
+  },
+  "original": {
+    "width": 639,
+    "height": 950,
+    "source": "decorations/472/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/77/Visage_of_Madness.jpg"
+  }
 }

@@ -7,39 +7,6 @@
     21
   ],
   "icon": "decorations/98/icon.png",
-  "wikiTitle": "Boar Statue (Handiwork)",
-  "original": {
-    "width": 758,
-    "height": 960,
-    "source": "decorations/98/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/2/2f/Boar_Statue.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Boar Statue",
-    "sheet": "Homestead Recipe Book: Lunar New Year Celestials",
-    "id": 14772,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 35,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 50,
-        "item": "Pouch of Red Pigment"
-      },
-      {
-        "slot": 3,
-        "quantity": 2,
-        "item": "Writ of Echovald Wilds"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -355,5 +322,38 @@
       "type": "New Item",
       "name": "Boar Statue"
     }
-  ]
+  ],
+  "wikiTitle": "Boar Statue (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Boar Statue",
+    "sheet": "Homestead Recipe Book: Lunar New Year Celestials",
+    "id": 14772,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 50,
+        "item": "Pouch of Red Pigment"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Writ of Echovald Wilds"
+      }
+    ]
+  },
+  "original": {
+    "width": 758,
+    "height": 960,
+    "source": "decorations/98/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/2/2f/Boar_Statue.jpg"
+  }
 }

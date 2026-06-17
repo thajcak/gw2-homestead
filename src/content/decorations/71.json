@@ -7,39 +7,6 @@
     25
   ],
   "icon": "decorations/71/icon.png",
-  "wikiTitle": "Pot of Chrysanthemums (Handiwork)",
-  "original": {
-    "width": 879,
-    "height": 908,
-    "source": "decorations/71/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/4/4e/Pot_of_Chrysanthemums_top.jpg"
-  },
-  "recipe": {
-    "rating": 150,
-    "type": "Homestead Decoration",
-    "source": "sheet",
-    "disciplines": "Handiworker",
-    "name": "Pot of Chrysanthemums",
-    "sheet": "Homestead Recipe Book: Halloween, Volume 4",
-    "id": 14833,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 23,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Pouch of White Pigment"
-      },
-      {
-        "slot": 3,
-        "quantity": 2,
-        "item": "Evergreen Fragment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -330,5 +297,38 @@
       "type": "New Item",
       "name": "Pot of Chrysanthemums"
     }
-  ]
+  ],
+  "wikiTitle": "Pot of Chrysanthemums (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Pot of Chrysanthemums",
+    "sheet": "Homestead Recipe Book: Halloween, Volume 4",
+    "id": 14833,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 23,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Pouch of White Pigment"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Evergreen Fragment"
+      }
+    ]
+  },
+  "original": {
+    "width": 879,
+    "height": 908,
+    "source": "decorations/71/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/4/4e/Pot_of_Chrysanthemums_top.jpg"
+  }
 }

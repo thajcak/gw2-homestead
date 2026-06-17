@@ -7,39 +7,6 @@
     26
   ],
   "icon": "decorations/771/icon.png",
-  "wikiTitle": "Large Wedge of Snow (Handiwork)",
-  "original": {
-    "width": 1014,
-    "height": 939,
-    "source": "decorations/771/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/80/Wedge_of_Snow.jpg"
-  },
-  "recipe": {
-    "rating": 150,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Large Wedge of Snow",
-    "sheet": "Homestead Recipe Book: Wintersday, Volume 2",
-    "id": 14446,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 33,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 33,
-        "item": "Snowflake"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Crystal Core"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -320,5 +287,38 @@
       "type": "New Item",
       "name": "Large Wedge of Snow"
     }
-  ]
+  ],
+  "wikiTitle": "Large Wedge of Snow (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Large Wedge of Snow",
+    "sheet": "Homestead Recipe Book: Wintersday, Volume 2",
+    "id": 14446,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 33,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 33,
+        "item": "Snowflake"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Crystal Core"
+      }
+    ]
+  },
+  "original": {
+    "width": 1014,
+    "height": 939,
+    "source": "decorations/771/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/80/Wedge_of_Snow.jpg"
+  }
 }

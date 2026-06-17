@@ -7,27 +7,6 @@
     20
   ],
   "icon": "decorations/1046/icon.png",
-  "wikiTitle": "Windowed Wall (960 x 240) (Handiwork)",
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "name": "Windowed Wall (960 x 240)",
-    "id": 15331,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 15,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 6,
-        "item": "Elder Wood Plank"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -184,5 +163,26 @@
       "type": "New Item",
       "name": "Windowed Wall (960 x 240)"
     }
-  ]
+  ],
+  "wikiTitle": "Windowed Wall (960 x 240) (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Windowed Wall (960 x 240)",
+    "id": 15331,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 15,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 6,
+        "item": "Elder Wood Plank"
+      }
+    ]
+  }
 }

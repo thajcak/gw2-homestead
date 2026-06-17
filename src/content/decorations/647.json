@@ -7,39 +7,6 @@
     1
   ],
   "icon": "decorations/647/icon.png",
-  "wikiTitle": "Elonian Lattice (Handiwork)",
-  "original": {
-    "width": 2048,
-    "height": 1440,
-    "source": "decorations/647/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/9d/Elonian_Lattice.jpg"
-  },
-  "recipe": {
-    "rating": 150,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Elonian Lattice",
-    "sheet": "Homestead Recipe Book: Elonian Architecture",
-    "id": 14220,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 3,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Trade Contract"
-      },
-      {
-        "slot": 3,
-        "quantity": 2,
-        "item": "Inscribed Shard"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-07",
@@ -329,5 +296,38 @@
       "type": "New Item",
       "name": "Elonian Lattice"
     }
-  ]
+  ],
+  "wikiTitle": "Elonian Lattice (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Elonian Lattice",
+    "sheet": "Homestead Recipe Book: Elonian Architecture",
+    "id": 14220,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 3,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Trade Contract"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Inscribed Shard"
+      }
+    ]
+  },
+  "original": {
+    "width": 2048,
+    "height": 1440,
+    "source": "decorations/647/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/9d/Elonian_Lattice.jpg"
+  }
 }

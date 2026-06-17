@@ -7,39 +7,6 @@
     4
   ],
   "icon": "decorations/297/icon.png",
-  "wikiTitle": "Zephyr Waterpot (Handiwork)",
-  "original": {
-    "width": 720,
-    "height": 1440,
-    "source": "decorations/297/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/c/c7/Zephyr_Water_Pot.jpg"
-  },
-  "recipe": {
-    "rating": 75,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Zephyr Waterpot",
-    "sheet": "Homestead Recipe Book: Four Winds, Volume 2",
-    "id": 14423,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 25,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 8,
-        "item": "Mursaat Obsidian Chunk"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "Jug of Water"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -345,5 +312,38 @@
       "type": "New Item",
       "name": "Zephyr Waterpot"
     }
-  ]
+  ],
+  "wikiTitle": "Zephyr Waterpot (Handiwork)",
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Zephyr Waterpot",
+    "sheet": "Homestead Recipe Book: Four Winds, Volume 2",
+    "id": 14423,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "Mursaat Obsidian Chunk"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Jug of Water"
+      }
+    ]
+  },
+  "original": {
+    "width": 720,
+    "height": 1440,
+    "source": "decorations/297/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/c/c7/Zephyr_Water_Pot.jpg"
+  }
 }

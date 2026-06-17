@@ -7,38 +7,6 @@
     7
   ],
   "icon": "decorations/669/icon.png",
-  "wikiTitle": "Large Canthan Cherry Tree",
-  "original": {
-    "width": 1337,
-    "height": 1411,
-    "source": "decorations/669/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/f/f5/Large_Canthan_Cherry_Tree.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "automatic; recipe sheet",
-    "disciplines": "Handiworker",
-    "sheet": "Homestead Recipe Book: Dragon's End, Volume 1",
-    "id": 14738,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 35,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 15,
-        "item": "Titan Heatstone"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Lamplighter's Badge"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-10",
@@ -373,5 +341,37 @@
       "type": "New Item",
       "name": "Large Canthan Cherry Tree"
     }
-  ]
+  ],
+  "wikiTitle": "Large Canthan Cherry Tree",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "automatic; recipe sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Homestead Recipe Book: Dragon's End, Volume 1",
+    "id": 14738,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 15,
+        "item": "Titan Heatstone"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Lamplighter's Badge"
+      }
+    ]
+  },
+  "original": {
+    "width": 1337,
+    "height": 1411,
+    "source": "decorations/669/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/f/f5/Large_Canthan_Cherry_Tree.jpg"
+  }
 }

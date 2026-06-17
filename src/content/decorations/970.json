@@ -7,33 +7,6 @@
     20
   ],
   "icon": "decorations/970/icon.png",
-  "wikiTitle": "Simple Window (Handiwork)",
-  "original": {
-    "width": 810,
-    "height": 1440,
-    "source": "decorations/970/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/71/Simple_Window.jpg"
-  },
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "name": "Simple Window",
-    "id": 15289,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 5,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 1,
-        "item": "Lump of Glass"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -305,5 +278,32 @@
       "type": "New Item",
       "name": "Simple Window"
     }
-  ]
+  ],
+  "wikiTitle": "Simple Window (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Simple Window",
+    "id": 15289,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Lump of Glass"
+      }
+    ]
+  },
+  "original": {
+    "width": 810,
+    "height": 1440,
+    "source": "decorations/970/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/71/Simple_Window.jpg"
+  }
 }

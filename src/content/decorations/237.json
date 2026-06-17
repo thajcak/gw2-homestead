@@ -6,39 +6,6 @@
     3
   ],
   "icon": "decorations/237/icon.png",
-  "wikiTitle": "Simple Shelf (Handiwork)",
-  "original": {
-    "width": 960,
-    "height": 1440,
-    "source": "decorations/237/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/4/41/Simple_Shelf.jpg"
-  },
-  "recipe": {
-    "rating": 150,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Simple Shelf",
-    "sheet": "Homestead Recipe Book: Paintings and Shelves",
-    "id": 14881,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 28,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Jute Scrap"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Pile of Coarse Sand"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -343,5 +310,38 @@
       "type": "New Item",
       "name": "Simple Shelf"
     }
-  ]
+  ],
+  "wikiTitle": "Simple Shelf (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Simple Shelf",
+    "sheet": "Homestead Recipe Book: Paintings and Shelves",
+    "id": 14881,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 28,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Jute Scrap"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Pile of Coarse Sand"
+      }
+    ]
+  },
+  "original": {
+    "width": 960,
+    "height": 1440,
+    "source": "decorations/237/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/4/41/Simple_Shelf.jpg"
+  }
 }

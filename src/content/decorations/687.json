@@ -6,34 +6,6 @@
     10
   ],
   "icon": "decorations/687/icon.png",
-  "wikiTitle": "Demolished Mast Pole (Handiwork)",
-  "original": {
-    "width": 291,
-    "height": 965,
-    "source": "decorations/687/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/2/2e/Demolished_Mast_Pole.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Demolished Mast Pole",
-    "sheet": "Homestead Recipe Book: Banners",
-    "id": 14445,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 22,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Gold Doubloon"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -342,5 +314,27 @@
       "type": "New Item",
       "name": "Demolished Mast Pole"
     }
-  ]
+  ],
+  "wikiTitle": "Demolished Mast Pole (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Demolished Mast Pole",
+    "sheet": "Homestead Recipe Book: Banners",
+    "id": 14445,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 22,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Gold Doubloon"
+      }
+    ]
+  }
 }

@@ -7,39 +7,6 @@
     23
   ],
   "icon": "decorations/189/icon.png",
-  "wikiTitle": "Red Dragon Target (Handiwork)",
-  "original": {
-    "width": 1038,
-    "height": 1298,
-    "source": "decorations/189/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/76/Red_Dragon_Target.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Red Dragon Target",
-    "sheet": "Homestead Recipe Book: Dragon Bash, Volume 1",
-    "id": 14360,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 25,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 15,
-        "item": "Piece of Zhaitaffy"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "Pouch of Red Pigment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -325,5 +292,38 @@
       "type": "New Item",
       "name": "Red Dragon Target"
     }
-  ]
+  ],
+  "wikiTitle": "Red Dragon Target (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Red Dragon Target",
+    "sheet": "Homestead Recipe Book: Dragon Bash, Volume 1",
+    "id": 14360,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 15,
+        "item": "Piece of Zhaitaffy"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Pouch of Red Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 1038,
+    "height": 1298,
+    "source": "decorations/189/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/76/Red_Dragon_Target.jpg"
+  }
 }

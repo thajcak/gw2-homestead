@@ -6,39 +6,6 @@
     12
   ],
   "icon": "decorations/88/icon.png",
-  "wikiTitle": "Bronze White Mantle Abomination Trophy (Handiwork)",
-  "original": {
-    "width": 561,
-    "height": 865,
-    "source": "decorations/88/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/6/60/Bronze_White_Mantle_Abomination_Trophy.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Bronze White Mantle Abomination Trophy",
-    "sheet": "Recipe: Bronze White Mantle Abomination Trophy",
-    "id": 14471,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 36,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Magnetite Shard"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "White Mantle Abomination Crystal (trophy)"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -313,5 +280,38 @@
       "type": "New Item",
       "name": "Bronze White Mantle Abomination Trophy"
     }
-  ]
+  ],
+  "wikiTitle": "Bronze White Mantle Abomination Trophy (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Bronze White Mantle Abomination Trophy",
+    "sheet": "Recipe: Bronze White Mantle Abomination Trophy",
+    "id": 14471,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 36,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "White Mantle Abomination Crystal (trophy)"
+      }
+    ]
+  },
+  "original": {
+    "width": 561,
+    "height": 865,
+    "source": "decorations/88/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/6/60/Bronze_White_Mantle_Abomination_Trophy.jpg"
+  }
 }

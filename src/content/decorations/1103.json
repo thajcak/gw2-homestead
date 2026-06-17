@@ -7,34 +7,6 @@
     20
   ],
   "icon": "decorations/1103/icon.png",
-  "wikiTitle": "White Mantle Turret (Handiwork)",
-  "original": {
-    "width": 810,
-    "height": 1440,
-    "source": "decorations/1103/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/94/White_Mantle_Turret.jpg"
-  },
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "White Mantle Turret",
-    "sheet": "Recipe: White Mantle Turret",
-    "id": 15559,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 10,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Bloodstone Brick"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -316,5 +288,33 @@
       "type": "New Item",
       "name": "White Mantle Turret"
     }
-  ]
+  ],
+  "wikiTitle": "White Mantle Turret (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "White Mantle Turret",
+    "sheet": "Recipe: White Mantle Turret",
+    "id": 15559,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Bloodstone Brick"
+      }
+    ]
+  },
+  "original": {
+    "width": 810,
+    "height": 1440,
+    "source": "decorations/1103/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/94/White_Mantle_Turret.jpg"
+  }
 }

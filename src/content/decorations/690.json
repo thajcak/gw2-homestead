@@ -7,39 +7,6 @@
     1
   ],
   "icon": "decorations/690/icon.png",
-  "wikiTitle": "Square Academic Column (Handiwork)",
-  "original": {
-    "width": 720,
-    "height": 1440,
-    "source": "decorations/690/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/d/d0/Square_Academic_Column.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Square Academic Column",
-    "sheet": "Homestead Recipe Book: Skywatch Archipelago, Volume 1",
-    "id": 14740,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 26,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Bag of Mortar"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Onyx Lodestone"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -349,5 +316,38 @@
       "type": "New Item",
       "name": "Square Academic Column"
     }
-  ]
+  ],
+  "wikiTitle": "Square Academic Column (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Square Academic Column",
+    "sheet": "Homestead Recipe Book: Skywatch Archipelago, Volume 1",
+    "id": 14740,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Bag of Mortar"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Onyx Lodestone"
+      }
+    ]
+  },
+  "original": {
+    "width": 720,
+    "height": 1440,
+    "source": "decorations/690/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/d/d0/Square_Academic_Column.jpg"
+  }
 }

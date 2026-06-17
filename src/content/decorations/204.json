@@ -6,39 +6,6 @@
     22
   ],
   "icon": "decorations/204/icon.png",
-  "wikiTitle": "Super Mushroom Platform (Handiwork)",
-  "original": {
-    "width": 1000,
-    "height": 769,
-    "source": "decorations/204/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/89/Super_Mushroom_Platform.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Super Mushroom Platform",
-    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 5",
-    "id": 14701,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 8,
-        "item": "Bauble"
-      },
-      {
-        "slot": 3,
-        "quantity": 4,
-        "item": "Pouch of Brown Pigment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -329,5 +296,38 @@
       "type": "New Item",
       "name": "Super Mushroom Platform"
     }
-  ]
+  ],
+  "wikiTitle": "Super Mushroom Platform (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Super Mushroom Platform",
+    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 5",
+    "id": 14701,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "Bauble"
+      },
+      {
+        "slot": 3,
+        "quantity": 4,
+        "item": "Pouch of Brown Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 1000,
+    "height": 769,
+    "source": "decorations/204/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/89/Super_Mushroom_Platform.jpg"
+  }
 }

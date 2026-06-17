@@ -6,44 +6,6 @@
     12
   ],
   "icon": "decorations/577/icon.png",
-  "wikiTitle": "Bronze Chak Gerent Trophy (Handiwork)",
-  "original": {
-    "width": 2036,
-    "height": 2700,
-    "source": "decorations/577/preview.png",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/9a/Bronze_Gerent_Trophy_Render_Croped.png"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Bronze Chak Gerent Trophy",
-    "sheet": "Recipe: Bronze Chak Gerent Trophy",
-    "id": 14437,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 34,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 1,
-        "item": "Mordrem Lodestone"
-      },
-      {
-        "slot": 3,
-        "quantity": 25,
-        "item": "Ley Line Crystal"
-      },
-      {
-        "slot": 4,
-        "quantity": 1,
-        "item": "Chak Gerent Eye Piece"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -308,5 +270,43 @@
       "type": "New Item",
       "name": "Bronze Chak Gerent Trophy"
     }
-  ]
+  ],
+  "wikiTitle": "Bronze Chak Gerent Trophy (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Bronze Chak Gerent Trophy",
+    "sheet": "Recipe: Bronze Chak Gerent Trophy",
+    "id": 14437,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 34,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Mordrem Lodestone"
+      },
+      {
+        "slot": 3,
+        "quantity": 25,
+        "item": "Ley Line Crystal"
+      },
+      {
+        "slot": 4,
+        "quantity": 1,
+        "item": "Chak Gerent Eye Piece"
+      }
+    ]
+  },
+  "original": {
+    "width": 2036,
+    "height": 2700,
+    "source": "decorations/577/preview.png",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/9a/Bronze_Gerent_Trophy_Render_Croped.png"
+  }
 }

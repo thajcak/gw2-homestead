@@ -6,39 +6,6 @@
     12
   ],
   "icon": "decorations/514/icon.png",
-  "wikiTitle": "Gold River of Souls Trophy (Handiwork)",
-  "original": {
-    "width": 1050,
-    "height": 870,
-    "source": "decorations/514/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/7b/Gold_River_of_Souls_Trophy.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Gold River of Souls Trophy",
-    "sheet": "Recipe: Gold River of Souls Trophy",
-    "id": 14666,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 130,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 100,
-        "item": "Magnetite Shard"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "River of Souls Token (trophy)"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -343,5 +310,38 @@
       "type": "New Item",
       "name": "Gold River of Souls Trophy"
     }
-  ]
+  ],
+  "wikiTitle": "Gold River of Souls Trophy (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Gold River of Souls Trophy",
+    "sheet": "Recipe: Gold River of Souls Trophy",
+    "id": 14666,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 130,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 100,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "River of Souls Token (trophy)"
+      }
+    ]
+  },
+  "original": {
+    "width": 1050,
+    "height": 870,
+    "source": "decorations/514/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/7b/Gold_River_of_Souls_Trophy.jpg"
+  }
 }

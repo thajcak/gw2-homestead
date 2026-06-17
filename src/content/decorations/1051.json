@@ -7,8 +7,12 @@
     20
   ],
   "icon": "decorations/1051/icon.png",
-  "wikiTitle": "Wooden Beam (16 x 480 x 16) (Handiwork)",
   "history": [
+    {
+      "day": "2026-06-17",
+      "type": "Recipe Updated",
+      "name": "Wooden Beam (16 x 480 x 16)"
+    },
     {
       "day": "2026-06-14",
       "type": "Recipe Updated",
@@ -24,5 +28,21 @@
       "type": "New Item",
       "name": "Wooden Beam (16 x 480 x 16)"
     }
-  ]
+  ],
+  "wikiTitle": "Wooden Beam (16 x 480 x 16) (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Wooden Beam (16 x 480 x 16)",
+    "id": 15319,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 16,
+        "item": "Refined Homestead Wood"
+      }
+    ]
+  }
 }

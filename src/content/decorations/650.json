@@ -6,39 +6,6 @@
     1
   ],
   "icon": "decorations/650/icon.png",
-  "wikiTitle": "Large Crystal Block of the Solid Ocean (Handiwork)",
-  "original": {
-    "width": 1900,
-    "height": 1266,
-    "source": "decorations/650/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/0/05/Large_Crystal_Block_of_the_Solid_Ocean.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Large Crystal Block of the Solid Ocean",
-    "sheet": "Homestead Recipe Book: Solid Ocean Fractal",
-    "id": 14159,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 34,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 12,
-        "item": "Fractal Relic"
-      },
-      {
-        "slot": 3,
-        "quantity": 2,
-        "item": "Writ of Dragon's End"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -358,5 +325,38 @@
       "type": "New Item",
       "name": "Large Crystal Block of the Solid Ocean"
     }
-  ]
+  ],
+  "wikiTitle": "Large Crystal Block of the Solid Ocean (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Large Crystal Block of the Solid Ocean",
+    "sheet": "Homestead Recipe Book: Solid Ocean Fractal",
+    "id": 14159,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 34,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 12,
+        "item": "Fractal Relic"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Writ of Dragon's End"
+      }
+    ]
+  },
+  "original": {
+    "width": 1900,
+    "height": 1266,
+    "source": "decorations/650/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/0/05/Large_Crystal_Block_of_the_Solid_Ocean.jpg"
+  }
 }

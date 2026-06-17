@@ -7,39 +7,6 @@
     15
   ],
   "icon": "decorations/765/icon.png",
-  "wikiTitle": "Potted Blue Moa Fern (Handiwork)",
-  "original": {
-    "width": 651,
-    "height": 965,
-    "source": "decorations/765/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/5/53/Potted_Blue_Moa_Fern_close-up.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Potted Blue Moa Fern",
-    "sheet": "Homestead Recipe Book: Trees, Volume 2",
-    "id": 14546,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 26,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 1,
-        "item": "Evergreen Core"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "Karka Shell"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -323,5 +290,38 @@
       "type": "New Item",
       "name": "Potted Blue Moa Fern"
     }
-  ]
+  ],
+  "wikiTitle": "Potted Blue Moa Fern (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Potted Blue Moa Fern",
+    "sheet": "Homestead Recipe Book: Trees, Volume 2",
+    "id": 14546,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Evergreen Core"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Karka Shell"
+      }
+    ]
+  },
+  "original": {
+    "width": 651,
+    "height": 965,
+    "source": "decorations/765/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/5/53/Potted_Blue_Moa_Fern_close-up.jpg"
+  }
 }

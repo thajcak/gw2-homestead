@@ -7,39 +7,6 @@
     23
   ],
   "icon": "decorations/776/icon.png",
-  "wikiTitle": "Holographic Track Long Straightaway (Handiwork)",
-  "original": {
-    "width": 1777,
-    "height": 290,
-    "source": "decorations/776/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/6/6b/Holographic_Track_Long_Straightaway.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Holographic Track Long Straightaway",
-    "sheet": "Homestead Recipe Book: Dragon Bash, Volume 4",
-    "id": 14673,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 35,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 15,
-        "item": "Piece of Zhaitaffy"
-      },
-      {
-        "slot": 3,
-        "quantity": 55,
-        "item": "Research Note"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -325,5 +292,32 @@
       "type": "New Item",
       "name": "Holographic Track Long Straightaway"
     }
-  ]
+  ],
+  "wikiTitle": "Holographic Track Long Straightaway (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Holographic Track Long Straightaway",
+    "sheet": "Homestead Recipe Book: Dragon Bash, Volume 4",
+    "id": 14673,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 15,
+        "item": "Piece of Zhaitaffy"
+      },
+      {
+        "slot": 3,
+        "quantity": 55,
+        "item": "Research Note"
+      }
+    ]
+  }
 }

@@ -6,39 +6,6 @@
     23
   ],
   "icon": "decorations/1222/icon.png",
-  "wikiTitle": "Leopard Totem (Handiwork)",
-  "original": {
-    "width": 805,
-    "height": 1078,
-    "source": "decorations/1222/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/b/b0/Leopard_Totem.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Leopard Totem",
-    "sheet": "Recipe: Leopard Totem",
-    "id": 15699,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 30,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Molten Core"
-      },
-      {
-        "slot": 3,
-        "quantity": 10,
-        "item": "Piece of Zhaitaffy"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -85,5 +52,38 @@
       "type": "New Item",
       "name": "Leopard Totem"
     }
-  ]
+  ],
+  "wikiTitle": "Leopard Totem (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Leopard Totem",
+    "sheet": "Recipe: Leopard Totem",
+    "id": 15699,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Molten Core"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Piece of Zhaitaffy"
+      }
+    ]
+  },
+  "original": {
+    "width": 805,
+    "height": 1078,
+    "source": "decorations/1222/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/b/b0/Leopard_Totem.jpg"
+  }
 }

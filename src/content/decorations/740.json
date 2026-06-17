@@ -7,37 +7,6 @@
     4
   ],
   "icon": "decorations/740/icon.png",
-  "wikiTitle": "Kodan Woven Divider",
-  "original": {
-    "width": 1920,
-    "height": 1080,
-    "source": "decorations/740/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/75/Kodan_Woven_Divider.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "id": 14491,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 27,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 18,
-        "item": "Linen Scrap"
-      },
-      {
-        "slot": 3,
-        "quantity": 8,
-        "item": "Honey Flower"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-05",
@@ -397,5 +366,36 @@
       "type": "New Item",
       "name": "Kodan Woven Divider"
     }
-  ]
+  ],
+  "wikiTitle": "Kodan Woven Divider",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14491,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 27,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 18,
+        "item": "Linen Scrap"
+      },
+      {
+        "slot": 3,
+        "quantity": 8,
+        "item": "Honey Flower"
+      }
+    ]
+  },
+  "original": {
+    "width": 1920,
+    "height": 1080,
+    "source": "decorations/740/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/75/Kodan_Woven_Divider.jpg"
+  }
 }

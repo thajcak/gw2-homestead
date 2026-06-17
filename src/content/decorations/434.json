@@ -7,39 +7,6 @@
     25
   ],
   "icon": "decorations/434/icon.png",
-  "wikiTitle": "Raptor Rental Post (Handiwork)",
-  "original": {
-    "width": 1304,
-    "height": 1304,
-    "source": "decorations/434/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/f/f7/Raptor_Rental_Post.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "sheet",
-    "disciplines": "Handiworker",
-    "name": "Raptor Rental Post",
-    "sheet": "Homestead Recipe Book: Halloween, Volume 9",
-    "id": 14254,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 34,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 1,
-        "item": "Candy Corn Cob"
-      },
-      {
-        "slot": 3,
-        "quantity": 50,
-        "item": "Eye of Kormir"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -340,5 +307,38 @@
       "type": "New Item",
       "name": "Raptor Rental Post"
     }
-  ]
+  ],
+  "wikiTitle": "Raptor Rental Post (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Raptor Rental Post",
+    "sheet": "Homestead Recipe Book: Halloween, Volume 9",
+    "id": 14254,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 34,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Candy Corn Cob"
+      },
+      {
+        "slot": 3,
+        "quantity": 50,
+        "item": "Eye of Kormir"
+      }
+    ]
+  },
+  "original": {
+    "width": 1304,
+    "height": 1304,
+    "source": "decorations/434/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/f/f7/Raptor_Rental_Post.jpg"
+  }
 }

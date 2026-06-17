@@ -6,39 +6,6 @@
     6
   ],
   "icon": "decorations/368/icon.png",
-  "wikiTitle": "Hedge (Handiwork)",
-  "original": {
-    "width": 633,
-    "height": 944,
-    "source": "decorations/368/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/4/4c/Hedge.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Hedge",
-    "sheet": "Homestead Recipe Book: Hedge Mazes",
-    "id": 14620,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 3,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 2,
-        "item": "Evergreen Shard"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Bolt of Cotton"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -327,5 +294,38 @@
       "type": "New Item",
       "name": "Hedge"
     }
-  ]
+  ],
+  "wikiTitle": "Hedge (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Hedge",
+    "sheet": "Homestead Recipe Book: Hedge Mazes",
+    "id": 14620,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 3,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Evergreen Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Bolt of Cotton"
+      }
+    ]
+  },
+  "original": {
+    "width": 633,
+    "height": 944,
+    "source": "decorations/368/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/4/4c/Hedge.jpg"
+  }
 }

@@ -6,44 +6,6 @@
     22
   ],
   "icon": "decorations/1185/icon.png",
-  "wikiTitle": "Plush Ess (Handiwork)",
-  "original": {
-    "width": 1080,
-    "height": 1440,
-    "source": "decorations/1185/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/d/dc/Plush_Ess_%28decoration%29.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Plush Ess",
-    "sheet": "Recipe: Plush Ess",
-    "id": 15615,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 8,
-        "item": "Bauble"
-      },
-      {
-        "slot": 3,
-        "quantity": 4,
-        "item": "Pouch of Green Pigment"
-      },
-      {
-        "slot": 4,
-        "quantity": 2,
-        "item": "Pouch of Purple Pigment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-09",
@@ -235,5 +197,43 @@
       "type": "Recipe Updated",
       "name": "Plush Ess"
     }
-  ]
+  ],
+  "wikiTitle": "Plush Ess (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Plush Ess",
+    "sheet": "Recipe: Plush Ess",
+    "id": 15615,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "Bauble"
+      },
+      {
+        "slot": 3,
+        "quantity": 4,
+        "item": "Pouch of Green Pigment"
+      },
+      {
+        "slot": 4,
+        "quantity": 2,
+        "item": "Pouch of Purple Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 1080,
+    "height": 1440,
+    "source": "decorations/1185/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/d/dc/Plush_Ess_%28decoration%29.jpg"
+  }
 }

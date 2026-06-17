@@ -7,33 +7,6 @@
     20
   ],
   "icon": "decorations/1042/icon.png",
-  "wikiTitle": "Ship Stairs (Handiwork)",
-  "original": {
-    "width": 990,
-    "height": 1091,
-    "source": "decorations/1042/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/5/5f/Ship_Stairs.jpg"
-  },
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "name": "Ship Stairs",
-    "id": 15235,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 10,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 3,
-        "item": "Elder Wood Plank"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-05-31",
@@ -280,5 +253,32 @@
       "type": "New Item",
       "name": "Ship Stairs"
     }
-  ]
+  ],
+  "wikiTitle": "Ship Stairs (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Ship Stairs",
+    "id": 15235,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Elder Wood Plank"
+      }
+    ]
+  },
+  "original": {
+    "width": 990,
+    "height": 1091,
+    "source": "decorations/1042/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/5/5f/Ship_Stairs.jpg"
+  }
 }

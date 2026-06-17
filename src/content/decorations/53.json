@@ -6,44 +6,6 @@
     12
   ],
   "icon": "decorations/53/icon.png",
-  "wikiTitle": "Silver Triple Trouble Trophy (Handiwork)",
-  "original": {
-    "width": 1656,
-    "height": 2470,
-    "source": "decorations/53/preview.png",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/81/Silver_TT_Trophy_Render_Croped.png"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Silver Triple Trouble Trophy",
-    "sheet": "Recipe: Silver Triple Trouble Trophy",
-    "id": 14540,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 85,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 3,
-        "item": "Onyx Lodestone"
-      },
-      {
-        "slot": 3,
-        "quantity": 50,
-        "item": "Glob of Ectoplasm"
-      },
-      {
-        "slot": 4,
-        "quantity": 3,
-        "item": "Triple Trouble Tooth Piece"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -283,5 +245,43 @@
       "type": "New Item",
       "name": "Silver Triple Trouble Trophy"
     }
-  ]
+  ],
+  "wikiTitle": "Silver Triple Trouble Trophy (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Silver Triple Trouble Trophy",
+    "sheet": "Recipe: Silver Triple Trouble Trophy",
+    "id": 14540,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 85,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Onyx Lodestone"
+      },
+      {
+        "slot": 3,
+        "quantity": 50,
+        "item": "Glob of Ectoplasm"
+      },
+      {
+        "slot": 4,
+        "quantity": 3,
+        "item": "Triple Trouble Tooth Piece"
+      }
+    ]
+  },
+  "original": {
+    "width": 1656,
+    "height": 2470,
+    "source": "decorations/53/preview.png",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/81/Silver_TT_Trophy_Render_Croped.png"
+  }
 }

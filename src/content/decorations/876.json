@@ -7,37 +7,6 @@
     4
   ],
   "icon": "decorations/876/icon.png",
-  "wikiTitle": "Fancy Small Rug",
-  "original": {
-    "width": 2040,
-    "height": 1064,
-    "source": "decorations/876/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/6/6a/Fancy_Small_Rug.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Automatic",
-    "disciplines": "Handiworker",
-    "id": 15057,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 35,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 3,
-        "item": "Bolt of Wool"
-      },
-      {
-        "slot": 3,
-        "quantity": 2,
-        "item": "Unidentified Dye"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -287,5 +256,36 @@
       "type": "New Item",
       "name": "Fancy Small Rug"
     }
-  ]
+  ],
+  "wikiTitle": "Fancy Small Rug",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Automatic",
+    "disciplines": "Handiworker",
+    "id": 15057,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Bolt of Wool"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Unidentified Dye"
+      }
+    ]
+  },
+  "original": {
+    "width": 2040,
+    "height": 1064,
+    "source": "decorations/876/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/6/6a/Fancy_Small_Rug.jpg"
+  }
 }

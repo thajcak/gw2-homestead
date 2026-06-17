@@ -7,38 +7,6 @@
     20
   ],
   "icon": "decorations/1052/icon.png",
-  "wikiTitle": "Galleon Door (Handiwork)",
-  "original": {
-    "width": 988,
-    "height": 1080,
-    "source": "decorations/1052/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/c/c1/Galleon_Door.jpg"
-  },
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "name": "Galleon Door",
-    "id": 15206,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 10,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 2,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 3,
-        "quantity": 2,
-        "item": "Lump of Glass"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -355,5 +323,37 @@
       "type": "New Item",
       "name": "Galleon Door"
     }
-  ]
+  ],
+  "wikiTitle": "Galleon Door (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Galleon Door",
+    "id": 15206,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Lump of Glass"
+      }
+    ]
+  },
+  "original": {
+    "width": 988,
+    "height": 1080,
+    "source": "decorations/1052/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/c/c1/Galleon_Door.jpg"
+  }
 }

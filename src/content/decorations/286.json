@@ -6,39 +6,6 @@
     9
   ],
   "icon": "decorations/286/icon.png",
-  "wikiTitle": "Ornate Armor Stand (Handiwork)",
-  "original": {
-    "width": 586,
-    "height": 1080,
-    "source": "decorations/286/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/5/5d/Ornate_Armor_Stand.jpg"
-  },
-  "recipe": {
-    "rating": 500,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Ornate Armor Stand",
-    "sheet": "Recipe: Ornate Armor Stand",
-    "id": 14412,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 35,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 15,
-        "item": "Armored Scale"
-      },
-      {
-        "slot": 3,
-        "quantity": 10,
-        "item": "Dragonite Ore"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -272,5 +239,38 @@
       "type": "New Item",
       "name": "Ornate Armor Stand"
     }
-  ]
+  ],
+  "wikiTitle": "Ornate Armor Stand (Handiwork)",
+  "recipe": {
+    "rating": 500,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Ornate Armor Stand",
+    "sheet": "Recipe: Ornate Armor Stand",
+    "id": 14412,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 15,
+        "item": "Armored Scale"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Dragonite Ore"
+      }
+    ]
+  },
+  "original": {
+    "width": 586,
+    "height": 1080,
+    "source": "decorations/286/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/5/5d/Ornate_Armor_Stand.jpg"
+  }
 }

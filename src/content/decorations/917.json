@@ -6,33 +6,6 @@
     27
   ],
   "icon": "decorations/917/icon.png",
-  "wikiTitle": "Brasswork Pipe Cap",
-  "original": {
-    "width": 1301,
-    "height": 743,
-    "source": "decorations/917/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/9e/Brasswork_Pipe_Cap.jpg"
-  },
-  "recipe": {
-    "rating": 0,
-    "type": "Homestead Decoration",
-    "source": "Recipe sheet",
-    "disciplines": "Handiworker",
-    "sheet": "Black Lion Brasswork Pipe Cap Recipe",
-    "id": 15158,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 5,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Refined Homestead Fiber"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-05-24",
@@ -259,5 +232,32 @@
       "type": "New Item",
       "name": "Brasswork Pipe Cap"
     }
-  ]
+  ],
+  "wikiTitle": "Brasswork Pipe Cap",
+  "recipe": {
+    "rating": 0,
+    "type": "Homestead Decoration",
+    "source": "Recipe sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Black Lion Brasswork Pipe Cap Recipe",
+    "id": 15158,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Refined Homestead Fiber"
+      }
+    ]
+  },
+  "original": {
+    "width": 1301,
+    "height": 743,
+    "source": "decorations/917/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/9e/Brasswork_Pipe_Cap.jpg"
+  }
 }

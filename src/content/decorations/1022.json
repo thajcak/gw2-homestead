@@ -7,33 +7,6 @@
     7
   ],
   "icon": "decorations/1022/icon.png",
-  "wikiTitle": "Island Tree (Short) (Handiwork)",
-  "original": {
-    "width": 2016,
-    "height": 1440,
-    "source": "decorations/1022/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/e/ea/Island_Tree_%28Short%29_top.jpg"
-  },
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "name": "Island Tree (Short)",
-    "id": 15198,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 3,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Refined Homestead Fiber"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -295,5 +268,32 @@
       "type": "New Item",
       "name": "Island Tree (Short)"
     }
-  ]
+  ],
+  "wikiTitle": "Island Tree (Short) (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Island Tree (Short)",
+    "id": 15198,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 3,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Refined Homestead Fiber"
+      }
+    ]
+  },
+  "original": {
+    "width": 2016,
+    "height": 1440,
+    "source": "decorations/1022/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/e/ea/Island_Tree_%28Short%29_top.jpg"
+  }
 }

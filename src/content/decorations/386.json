@@ -6,39 +6,6 @@
     12
   ],
   "icon": "decorations/386/icon.png",
-  "wikiTitle": "Cardinal Adina's Token (Handiwork)",
-  "original": {
-    "width": 474,
-    "height": 471,
-    "source": "decorations/386/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/2/2f/Cardinal_Adina%27s_Token.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Cardinal Adina's Token",
-    "sheet": "Recipe: Cardinal Adina's Token",
-    "id": 14241,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 30,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 200,
-        "item": "Volatile Magic"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Cardinal Adina's Token (trophy)"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -352,5 +319,38 @@
       "type": "New Item",
       "name": "Cardinal Adina's Token"
     }
-  ]
+  ],
+  "wikiTitle": "Cardinal Adina's Token (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Cardinal Adina's Token",
+    "sheet": "Recipe: Cardinal Adina's Token",
+    "id": 14241,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 200,
+        "item": "Volatile Magic"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Cardinal Adina's Token (trophy)"
+      }
+    ]
+  },
+  "original": {
+    "width": 474,
+    "height": 471,
+    "source": "decorations/386/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/2/2f/Cardinal_Adina%27s_Token.jpg"
+  }
 }

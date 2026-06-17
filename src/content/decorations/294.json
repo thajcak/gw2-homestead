@@ -6,39 +6,6 @@
     12
   ],
   "icon": "decorations/294/icon.png",
-  "wikiTitle": "Gold Conjured Amalgamate Trophy (Handiwork)",
-  "original": {
-    "width": 400,
-    "height": 423,
-    "source": "decorations/294/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/6/68/Gold_Conjured_Amalgamate_Trophy.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Gold Conjured Amalgamate Trophy",
-    "sheet": "Recipe: Gold Conjured Amalgamate Trophy",
-    "id": 14876,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 130,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 100,
-        "item": "Magnetite Shard"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "Conjured Amalgamate Token (trophy)"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -368,5 +335,38 @@
       "type": "New Item",
       "name": "Gold Conjured Amalgamate Trophy"
     }
-  ]
+  ],
+  "wikiTitle": "Gold Conjured Amalgamate Trophy (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Gold Conjured Amalgamate Trophy",
+    "sheet": "Recipe: Gold Conjured Amalgamate Trophy",
+    "id": 14876,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 130,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 100,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Conjured Amalgamate Token (trophy)"
+      }
+    ]
+  },
+  "original": {
+    "width": 400,
+    "height": 423,
+    "source": "decorations/294/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/6/68/Gold_Conjured_Amalgamate_Trophy.jpg"
+  }
 }

@@ -6,39 +6,6 @@
     1
   ],
   "icon": "decorations/266/icon.png",
-  "wikiTitle": "Kryptis Platform (Handiwork)",
-  "original": {
-    "width": 1452,
-    "height": 1440,
-    "source": "decorations/266/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/95/Kryptis_Platform_top.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Kryptis Platform",
-    "sheet": "Homestead Recipe Book: Inner Nayos, Volume 1",
-    "id": 14280,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 50,
-        "item": "Fine Rift Essence"
-      },
-      {
-        "slot": 3,
-        "quantity": 25,
-        "item": "Calcified Gasp"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -303,5 +270,38 @@
       "type": "New Item",
       "name": "Kryptis Platform"
     }
-  ]
+  ],
+  "wikiTitle": "Kryptis Platform (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Kryptis Platform",
+    "sheet": "Homestead Recipe Book: Inner Nayos, Volume 1",
+    "id": 14280,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 50,
+        "item": "Fine Rift Essence"
+      },
+      {
+        "slot": 3,
+        "quantity": 25,
+        "item": "Calcified Gasp"
+      }
+    ]
+  },
+  "original": {
+    "width": 1452,
+    "height": 1440,
+    "source": "decorations/266/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/95/Kryptis_Platform_top.jpg"
+  }
 }

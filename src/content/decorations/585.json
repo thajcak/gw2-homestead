@@ -6,39 +6,6 @@
     5
   ],
   "icon": "decorations/585/icon.png",
-  "wikiTitle": "Pillar Candle (Handiwork)",
-  "original": {
-    "width": 116,
-    "height": 161,
-    "source": "decorations/585/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/d/d1/Pillar_Candle.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Pillar Candle",
-    "sheet": "Homestead Recipe Book: Pillars",
-    "id": 14328,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 4,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 3,
-        "item": "Bone Shard"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Molten Sliver"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -347,5 +314,38 @@
       "type": "New Item",
       "name": "Pillar Candle"
     }
-  ]
+  ],
+  "wikiTitle": "Pillar Candle (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Pillar Candle",
+    "sheet": "Homestead Recipe Book: Pillars",
+    "id": 14328,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 4,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Bone Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Molten Sliver"
+      }
+    ]
+  },
+  "original": {
+    "width": 116,
+    "height": 161,
+    "source": "decorations/585/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/d/d1/Pillar_Candle.jpg"
+  }
 }

@@ -6,39 +6,6 @@
     6
   ],
   "icon": "decorations/722/icon.png",
-  "wikiTitle": "Rectangular Planter (Handiwork)",
-  "original": {
-    "width": 657,
-    "height": 950,
-    "source": "decorations/722/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/76/Rectangular_Planter.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Rectangular Planter",
-    "sheet": "Homestead Recipe Book: Plants, Volume 2",
-    "id": 14440,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 28,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 2,
-        "item": "Evergreen Shard"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Bag of Mortar"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -332,5 +299,38 @@
       "type": "New Item",
       "name": "Rectangular Planter"
     }
-  ]
+  ],
+  "wikiTitle": "Rectangular Planter (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Rectangular Planter",
+    "sheet": "Homestead Recipe Book: Plants, Volume 2",
+    "id": 14440,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 28,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Evergreen Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Bag of Mortar"
+      }
+    ]
+  },
+  "original": {
+    "width": 657,
+    "height": 950,
+    "source": "decorations/722/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/76/Rectangular_Planter.jpg"
+  }
 }

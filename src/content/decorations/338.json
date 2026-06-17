@@ -7,39 +7,6 @@
     24
   ],
   "icon": "decorations/338/icon.png",
-  "wikiTitle": "Zephyr Scaffolding (Handiwork)",
-  "original": {
-    "width": 1760,
-    "height": 1440,
-    "source": "decorations/338/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/5/52/Zephyr_Scaffolding.jpg"
-  },
-  "recipe": {
-    "rating": 150,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Zephyr Scaffolding",
-    "sheet": "Homestead Recipe Book: Four Winds, Volume 3",
-    "id": 14796,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 28,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 20,
-        "item": "Jute Scrap"
-      },
-      {
-        "slot": 3,
-        "quantity": 12,
-        "item": "Ursus Oblige"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -375,5 +342,38 @@
       "type": "New Item",
       "name": "Zephyr Scaffolding"
     }
-  ]
+  ],
+  "wikiTitle": "Zephyr Scaffolding (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Zephyr Scaffolding",
+    "sheet": "Homestead Recipe Book: Four Winds, Volume 3",
+    "id": 14796,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 28,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 20,
+        "item": "Jute Scrap"
+      },
+      {
+        "slot": 3,
+        "quantity": 12,
+        "item": "Ursus Oblige"
+      }
+    ]
+  },
+  "original": {
+    "width": 1760,
+    "height": 1440,
+    "source": "decorations/338/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/5/52/Zephyr_Scaffolding.jpg"
+  }
 }

@@ -7,42 +7,6 @@
     9
   ],
   "icon": "decorations/720/icon.png",
-  "wikiTitle": "Weapon Display Case",
-  "original": {
-    "width": 1360,
-    "height": 818,
-    "source": "decorations/720/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/d/d0/Weapon_Display_Case.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "id": 14561,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 99,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 49,
-        "item": "Charged Titan Ore"
-      },
-      {
-        "slot": 3,
-        "quantity": 3,
-        "item": "Destroyer Lodestone"
-      },
-      {
-        "slot": 4,
-        "quantity": 79,
-        "item": "Rare Rift Essence"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-08",
@@ -387,5 +351,41 @@
       "type": "New Item",
       "name": "Weapon Display Case"
     }
-  ]
+  ],
+  "wikiTitle": "Weapon Display Case",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14561,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 99,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 49,
+        "item": "Charged Titan Ore"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Destroyer Lodestone"
+      },
+      {
+        "slot": 4,
+        "quantity": 79,
+        "item": "Rare Rift Essence"
+      }
+    ]
+  },
+  "original": {
+    "width": 1360,
+    "height": 818,
+    "source": "decorations/720/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/d/d0/Weapon_Display_Case.jpg"
+  }
 }

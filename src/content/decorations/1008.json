@@ -7,33 +7,6 @@
     20
   ],
   "icon": "decorations/1008/icon.png",
-  "wikiTitle": "Cabana Wall (960) (Handiwork)",
-  "original": {
-    "width": 1513,
-    "height": 970,
-    "source": "decorations/1008/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/f/f5/Cabana_Wall_%28960%29.jpg"
-  },
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "name": "Cabana Wall (960)",
-    "id": 15295,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 15,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 8,
-        "item": "Elder Wood Plank"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-09",
@@ -350,5 +323,32 @@
       "type": "New Item",
       "name": "Cabana Wall (960)"
     }
-  ]
+  ],
+  "wikiTitle": "Cabana Wall (960) (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Cabana Wall (960)",
+    "id": 15295,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 15,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "Elder Wood Plank"
+      }
+    ]
+  },
+  "original": {
+    "width": 1513,
+    "height": 970,
+    "source": "decorations/1008/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/f/f5/Cabana_Wall_%28960%29.jpg"
+  }
 }

@@ -6,38 +6,6 @@
     9
   ],
   "icon": "decorations/86/icon.png",
-  "wikiTitle": "Leaping Lion Fountain",
-  "original": {
-    "width": 1778,
-    "height": 1334,
-    "source": "decorations/86/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/d/d0/Lion_Fountain_Token.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "sheet": "Homestead Recipe Book: Lion Statues, Volume 1",
-    "id": 14164,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 90,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 1,
-        "item": "Lion Fountain Token"
-      },
-      {
-        "slot": 3,
-        "quantity": 1000,
-        "item": "Karma"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -286,5 +254,37 @@
       "type": "New Item",
       "name": "Leaping Lion Fountain"
     }
-  ]
+  ],
+  "wikiTitle": "Leaping Lion Fountain",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Homestead Recipe Book: Lion Statues, Volume 1",
+    "id": 14164,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 90,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Lion Fountain Token"
+      },
+      {
+        "slot": 3,
+        "quantity": 1000,
+        "item": "Karma"
+      }
+    ]
+  },
+  "original": {
+    "width": 1778,
+    "height": 1334,
+    "source": "decorations/86/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/d/d0/Lion_Fountain_Token.jpg"
+  }
 }

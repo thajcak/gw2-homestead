@@ -7,39 +7,6 @@
     23
   ],
   "icon": "decorations/462/icon.png",
-  "wikiTitle": "Holographic Track Downward Ramp (Handiwork)",
-  "original": {
-    "width": 714,
-    "height": 499,
-    "source": "decorations/462/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/0/09/Holographic_Track_Downward_Ramp.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Holographic Track Downward Ramp",
-    "sheet": "Homestead Recipe Book: Dragon Bash, Volume 4",
-    "id": 14154,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 30,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 15,
-        "item": "Piece of Zhaitaffy"
-      },
-      {
-        "slot": 3,
-        "quantity": 50,
-        "item": "Research Note"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-15",
@@ -390,5 +357,38 @@
       "type": "New Item",
       "name": "Holographic Track Downward Ramp"
     }
-  ]
+  ],
+  "wikiTitle": "Holographic Track Downward Ramp (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Holographic Track Downward Ramp",
+    "sheet": "Homestead Recipe Book: Dragon Bash, Volume 4",
+    "id": 14154,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 15,
+        "item": "Piece of Zhaitaffy"
+      },
+      {
+        "slot": 3,
+        "quantity": 50,
+        "item": "Research Note"
+      }
+    ]
+  },
+  "original": {
+    "width": 714,
+    "height": 499,
+    "source": "decorations/462/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/0/09/Holographic_Track_Downward_Ramp.jpg"
+  }
 }

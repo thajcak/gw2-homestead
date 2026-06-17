@@ -6,44 +6,6 @@
     22
   ],
   "icon": "decorations/898/icon.png",
-  "wikiTitle": "Super Pagoda Arch (Handiwork)",
-  "original": {
-    "width": 1180,
-    "height": 1330,
-    "source": "decorations/898/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/e/e7/Super_Pagoda_Arch.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Super Pagoda Arch",
-    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 10; Recipe: Super Pagoda Arch",
-    "id": 15096,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 8,
-        "item": "Bauble"
-      },
-      {
-        "slot": 3,
-        "quantity": 4,
-        "item": "Pouch of Orange Pigment"
-      },
-      {
-        "slot": 4,
-        "quantity": 2,
-        "item": "Pouch of Brown Pigment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-05-26",
@@ -234,5 +196,43 @@
       "type": "New Item",
       "name": "Super Pagoda Arch"
     }
-  ]
+  ],
+  "wikiTitle": "Super Pagoda Arch (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Super Pagoda Arch",
+    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 10; Recipe: Super Pagoda Arch",
+    "id": 15096,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "Bauble"
+      },
+      {
+        "slot": 3,
+        "quantity": 4,
+        "item": "Pouch of Orange Pigment"
+      },
+      {
+        "slot": 4,
+        "quantity": 2,
+        "item": "Pouch of Brown Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 1180,
+    "height": 1330,
+    "source": "decorations/898/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/e/e7/Super_Pagoda_Arch.jpg"
+  }
 }

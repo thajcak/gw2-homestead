@@ -7,39 +7,6 @@
     25
   ],
   "icon": "decorations/144/icon.png",
-  "wikiTitle": "Skewed Stairway (Right) (Handiwork)",
-  "original": {
-    "width": 783,
-    "height": 920,
-    "source": "decorations/144/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/2/2c/Skewed_Stairway_%28Right%29.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "sheet",
-    "disciplines": "Handiworker",
-    "name": "Skewed Stairway (Right)",
-    "sheet": "Homestead Recipe Book: Halloween, Volume 7",
-    "id": 14097,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 30,
-        "item": "Piece of Candy Corn"
-      },
-      {
-        "slot": 3,
-        "quantity": 8,
-        "item": "Venom Sac"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -325,5 +292,38 @@
       "type": "New Item",
       "name": "Skewed Stairway (Right)"
     }
-  ]
+  ],
+  "wikiTitle": "Skewed Stairway (Right) (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Skewed Stairway (Right)",
+    "sheet": "Homestead Recipe Book: Halloween, Volume 7",
+    "id": 14097,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 30,
+        "item": "Piece of Candy Corn"
+      },
+      {
+        "slot": 3,
+        "quantity": 8,
+        "item": "Venom Sac"
+      }
+    ]
+  },
+  "original": {
+    "width": 783,
+    "height": 920,
+    "source": "decorations/144/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/2/2c/Skewed_Stairway_%28Right%29.jpg"
+  }
 }

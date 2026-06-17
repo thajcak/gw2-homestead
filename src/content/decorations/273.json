@@ -6,44 +6,6 @@
     12
   ],
   "icon": "decorations/273/icon.png",
-  "wikiTitle": "Silver Mordremoth Trophy (Handiwork)",
-  "original": {
-    "width": 549,
-    "height": 774,
-    "source": "decorations/273/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/0/0c/Silver_Mordremoth_Trophy.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Silver Mordremoth Trophy",
-    "sheet": "Recipe: Silver Mordremoth Trophy",
-    "id": 14566,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 85,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 50,
-        "item": "Barbed Thorn"
-      },
-      {
-        "slot": 3,
-        "quantity": 3,
-        "item": "Mordremoth Mandible Piece"
-      },
-      {
-        "slot": 4,
-        "quantity": 3,
-        "item": "Mordrem Lodestone"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -343,5 +305,43 @@
       "type": "New Item",
       "name": "Silver Mordremoth Trophy"
     }
-  ]
+  ],
+  "wikiTitle": "Silver Mordremoth Trophy (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Silver Mordremoth Trophy",
+    "sheet": "Recipe: Silver Mordremoth Trophy",
+    "id": 14566,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 85,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 50,
+        "item": "Barbed Thorn"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Mordremoth Mandible Piece"
+      },
+      {
+        "slot": 4,
+        "quantity": 3,
+        "item": "Mordrem Lodestone"
+      }
+    ]
+  },
+  "original": {
+    "width": 549,
+    "height": 774,
+    "source": "decorations/273/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/0/0c/Silver_Mordremoth_Trophy.jpg"
+  }
 }

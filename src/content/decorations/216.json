@@ -6,39 +6,6 @@
     12
   ],
   "icon": "decorations/216/icon.png",
-  "wikiTitle": "White Mantle Abomination Crystal (Handiwork)",
-  "original": {
-    "width": 883,
-    "height": 1236,
-    "source": "decorations/216/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/b/bf/White_Mantle_Abomination_Crystal.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "White Mantle Abomination Crystal",
-    "sheet": "Recipe: White Mantle Abomination Crystal",
-    "id": 14137,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 30,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 25,
-        "item": "Piles of Bloodstone Dust"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "White Mantle Abomination Crystal (trophy)"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -362,5 +329,38 @@
       "type": "New Item",
       "name": "White Mantle Abomination Crystal"
     }
-  ]
+  ],
+  "wikiTitle": "White Mantle Abomination Crystal (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "White Mantle Abomination Crystal",
+    "sheet": "Recipe: White Mantle Abomination Crystal",
+    "id": 14137,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 25,
+        "item": "Piles of Bloodstone Dust"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "White Mantle Abomination Crystal (trophy)"
+      }
+    ]
+  },
+  "original": {
+    "width": 883,
+    "height": 1236,
+    "source": "decorations/216/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/b/bf/White_Mantle_Abomination_Crystal.jpg"
+  }
 }

@@ -6,33 +6,6 @@
     12
   ],
   "icon": "decorations/318/icon.png",
-  "wikiTitle": "Gold Xera Trophy (Handiwork)",
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Gold Xera Trophy",
-    "sheet": "Recipe: Gold Xera Trophy",
-    "id": 14598,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 130,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 100,
-        "item": "Magnetite Shard"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "Ribbon Scrap"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -212,5 +185,32 @@
       "type": "New Item",
       "name": "Gold Xera Trophy"
     }
-  ]
+  ],
+  "wikiTitle": "Gold Xera Trophy (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Gold Xera Trophy",
+    "sheet": "Recipe: Gold Xera Trophy",
+    "id": 14598,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 130,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 100,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Ribbon Scrap"
+      }
+    ]
+  }
 }

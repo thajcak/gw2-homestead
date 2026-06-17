@@ -7,39 +7,6 @@
     26
   ],
   "icon": "decorations/681/icon.png",
-  "wikiTitle": "Gingerbread-Man Ice Sculpture (Handiwork)",
-  "original": {
-    "width": 907,
-    "height": 1281,
-    "source": "decorations/681/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/e/ed/Gingerbread-Man_Ice_Sculpture.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Gingerbread-Man Ice Sculpture",
-    "sheet": "Homestead Recipe Book: Wintersday, Volume 3",
-    "id": 14520,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 33,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 20,
-        "item": "Snowflake"
-      },
-      {
-        "slot": 3,
-        "quantity": 100,
-        "item": "Bag of Sugar"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-10",
@@ -265,5 +232,38 @@
       "type": "New Item",
       "name": "Gingerbread-Man Ice Sculpture"
     }
-  ]
+  ],
+  "wikiTitle": "Gingerbread-Man Ice Sculpture (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Gingerbread-Man Ice Sculpture",
+    "sheet": "Homestead Recipe Book: Wintersday, Volume 3",
+    "id": 14520,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 33,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 20,
+        "item": "Snowflake"
+      },
+      {
+        "slot": 3,
+        "quantity": 100,
+        "item": "Bag of Sugar"
+      }
+    ]
+  },
+  "original": {
+    "width": 907,
+    "height": 1281,
+    "source": "decorations/681/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/e/ed/Gingerbread-Man_Ice_Sculpture.jpg"
+  }
 }

@@ -6,39 +6,6 @@
     11
   ],
   "icon": "decorations/55/icon.png",
-  "wikiTitle": "Arrow Cart Siege (Handiwork)",
-  "original": {
-    "width": 1880,
-    "height": 1730,
-    "source": "decorations/55/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/7e/Arrow_Cart.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Arrow Cart Siege",
-    "sheet": "Homestead Recipe Book: World vs. World",
-    "id": 14816,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 33,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 4,
-        "item": "WvW Skirmish Claim Ticket"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Charged Core"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -257,5 +224,38 @@
       "type": "New Item",
       "name": "Arrow Cart Siege"
     }
-  ]
+  ],
+  "wikiTitle": "Arrow Cart Siege (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Arrow Cart Siege",
+    "sheet": "Homestead Recipe Book: World vs. World",
+    "id": 14816,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 33,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 4,
+        "item": "WvW Skirmish Claim Ticket"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Charged Core"
+      }
+    ]
+  },
+  "original": {
+    "width": 1880,
+    "height": 1730,
+    "source": "decorations/55/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/7e/Arrow_Cart.jpg"
+  }
 }

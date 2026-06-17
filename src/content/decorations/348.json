@@ -6,39 +6,6 @@
     14
   ],
   "icon": "decorations/348/icon.png",
-  "wikiTitle": "Large Male Norn Holo-Dancer (Handiwork)",
-  "original": {
-    "width": 729,
-    "height": 1080,
-    "source": "decorations/348/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/5/59/Large_Male_Norn_Holo-Dancer.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Large Male Norn Holo-Dancer",
-    "sheet": "Homestead Recipe Book: Fractals of the Mists, Volume 2",
-    "id": 14320,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 38,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Pile of Luminous Dust"
-      },
-      {
-        "slot": 3,
-        "quantity": 12,
-        "item": "Stabilizing Matrix"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -348,5 +315,38 @@
       "type": "New Item",
       "name": "Large Male Norn Holo-Dancer"
     }
-  ]
+  ],
+  "wikiTitle": "Large Male Norn Holo-Dancer (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Large Male Norn Holo-Dancer",
+    "sheet": "Homestead Recipe Book: Fractals of the Mists, Volume 2",
+    "id": 14320,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 38,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Pile of Luminous Dust"
+      },
+      {
+        "slot": 3,
+        "quantity": 12,
+        "item": "Stabilizing Matrix"
+      }
+    ]
+  },
+  "original": {
+    "width": 729,
+    "height": 1080,
+    "source": "decorations/348/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/5/59/Large_Male_Norn_Holo-Dancer.jpg"
+  }
 }

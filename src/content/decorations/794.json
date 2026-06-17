@@ -6,44 +6,6 @@
     12
   ],
   "icon": "decorations/794/icon.png",
-  "wikiTitle": "Silver Shatterer Trophy (Handiwork)",
-  "original": {
-    "width": 642,
-    "height": 930,
-    "source": "decorations/794/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/8b/Silver_Shatterer_Trophy.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Silver Shatterer Trophy",
-    "sheet": "Recipe: Silver Shatterer Trophy",
-    "id": 14538,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 85,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 3,
-        "item": "Crystal Lodestone"
-      },
-      {
-        "slot": 3,
-        "quantity": 50,
-        "item": "Mistborn Mote"
-      },
-      {
-        "slot": 4,
-        "quantity": 3,
-        "item": "Shatterer Crystal Piece"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -298,5 +260,43 @@
       "type": "New Item",
       "name": "Silver Shatterer Trophy"
     }
-  ]
+  ],
+  "wikiTitle": "Silver Shatterer Trophy (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Silver Shatterer Trophy",
+    "sheet": "Recipe: Silver Shatterer Trophy",
+    "id": 14538,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 85,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Crystal Lodestone"
+      },
+      {
+        "slot": 3,
+        "quantity": 50,
+        "item": "Mistborn Mote"
+      },
+      {
+        "slot": 4,
+        "quantity": 3,
+        "item": "Shatterer Crystal Piece"
+      }
+    ]
+  },
+  "original": {
+    "width": 642,
+    "height": 930,
+    "source": "decorations/794/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/8b/Silver_Shatterer_Trophy.jpg"
+  }
 }

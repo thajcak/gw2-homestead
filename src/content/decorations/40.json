@@ -7,39 +7,6 @@
     25
   ],
   "icon": "decorations/40/icon.png",
-  "wikiTitle": "Seance Candle (Handiwork)",
-  "original": {
-    "width": 509,
-    "height": 602,
-    "source": "decorations/40/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/6/6c/Seance_Candle.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "sheet",
-    "disciplines": "Handiworker",
-    "name": "Seance Candle",
-    "sheet": "Homestead Recipe Book: Halloween, Volume 1",
-    "id": 14416,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 26,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 15,
-        "item": "Bone"
-      },
-      {
-        "slot": 3,
-        "quantity": 20,
-        "item": "Pieces of Candy Corn"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -310,5 +277,38 @@
       "type": "New Item",
       "name": "Seance Candle"
     }
-  ]
+  ],
+  "wikiTitle": "Seance Candle (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Seance Candle",
+    "sheet": "Homestead Recipe Book: Halloween, Volume 1",
+    "id": 14416,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 15,
+        "item": "Bone"
+      },
+      {
+        "slot": 3,
+        "quantity": 20,
+        "item": "Pieces of Candy Corn"
+      }
+    ]
+  },
+  "original": {
+    "width": 509,
+    "height": 602,
+    "source": "decorations/40/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/6/6c/Seance_Candle.jpg"
+  }
 }

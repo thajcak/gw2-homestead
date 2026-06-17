@@ -6,39 +6,6 @@
     9
   ],
   "icon": "decorations/173/icon.png",
-  "wikiTitle": "Mists Drake Statue (Handiwork)",
-  "original": {
-    "width": 1693,
-    "height": 955,
-    "source": "decorations/173/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/f/fc/Mists_Drake_Statue.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Mists Drake Statue",
-    "sheet": "Homestead Recipe Book: World vs. World",
-    "id": 14329,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 25,
-        "item": "WvW Skirmish Claim Ticket"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Superior Rune of the Krait"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -327,5 +294,38 @@
       "type": "New Item",
       "name": "Mists Drake Statue"
     }
-  ]
+  ],
+  "wikiTitle": "Mists Drake Statue (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Mists Drake Statue",
+    "sheet": "Homestead Recipe Book: World vs. World",
+    "id": 14329,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 25,
+        "item": "WvW Skirmish Claim Ticket"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Superior Rune of the Krait"
+      }
+    ]
+  },
+  "original": {
+    "width": 1693,
+    "height": 955,
+    "source": "decorations/173/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/f/fc/Mists_Drake_Statue.jpg"
+  }
 }

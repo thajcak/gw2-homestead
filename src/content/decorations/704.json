@@ -7,39 +7,6 @@
     1
   ],
   "icon": "decorations/704/icon.png",
-  "wikiTitle": "Forged Fire Wall (Handiwork)",
-  "original": {
-    "width": 2338,
-    "height": 1320,
-    "source": "decorations/704/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/2/22/Forged_Fire_Wall.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Forged Fire Wall",
-    "sheet": "Homestead Recipe Book: Paintings, Walls, Fountains",
-    "id": 14373,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 30,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 25,
-        "item": "Quartz Crystal"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "Sliver of Twitching Forgemetal"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -399,5 +366,38 @@
       "type": "New Item",
       "name": "Forged Fire Wall"
     }
-  ]
+  ],
+  "wikiTitle": "Forged Fire Wall (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Forged Fire Wall",
+    "sheet": "Homestead Recipe Book: Paintings, Walls, Fountains",
+    "id": 14373,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 25,
+        "item": "Quartz Crystal"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Sliver of Twitching Forgemetal"
+      }
+    ]
+  },
+  "original": {
+    "width": 2338,
+    "height": 1320,
+    "source": "decorations/704/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/2/22/Forged_Fire_Wall.jpg"
+  }
 }

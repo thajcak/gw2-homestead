@@ -7,33 +7,6 @@
     20
   ],
   "icon": "decorations/1135/icon.png",
-  "wikiTitle": "Roof 720 x 200 x 480 (Handiwork)",
-  "original": {
-    "width": 1366,
-    "height": 768,
-    "source": "decorations/1135/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/a/ab/Roof_720_x_200_x_480.jpg"
-  },
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "name": "Roof 720 x 200 x 480",
-    "id": 15545,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 20,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Refined Homestead Metal"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -335,5 +308,32 @@
       "type": "New Item",
       "name": "Roof 720 x 200 x 480"
     }
-  ]
+  ],
+  "wikiTitle": "Roof 720 x 200 x 480 (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Roof 720 x 200 x 480",
+    "id": 15545,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 20,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Refined Homestead Metal"
+      }
+    ]
+  },
+  "original": {
+    "width": 1366,
+    "height": 768,
+    "source": "decorations/1135/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/a/ab/Roof_720_x_200_x_480.jpg"
+  }
 }

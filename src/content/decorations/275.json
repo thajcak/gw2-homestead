@@ -7,37 +7,6 @@
     4
   ],
   "icon": "decorations/275/icon.png",
-  "wikiTitle": "Red Bowl",
-  "original": {
-    "width": 960,
-    "height": 953,
-    "source": "decorations/275/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/6/69/Red_Bowl_top.jpg"
-  },
-  "recipe": {
-    "rating": 150,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "id": 14676,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 22,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Pouch of Red Pigment"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "Lowland Pine Log"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -382,5 +351,36 @@
       "type": "New Item",
       "name": "Red Bowl"
     }
-  ]
+  ],
+  "wikiTitle": "Red Bowl",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14676,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 22,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Pouch of Red Pigment"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Lowland Pine Log"
+      }
+    ]
+  },
+  "original": {
+    "width": 960,
+    "height": 953,
+    "source": "decorations/275/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/6/69/Red_Bowl_top.jpg"
+  }
 }

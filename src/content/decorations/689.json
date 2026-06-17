@@ -6,39 +6,6 @@
     14
   ],
   "icon": "decorations/689/icon.png",
-  "wikiTitle": "Large Festival Tent (Handiwork)",
-  "original": {
-    "width": 786,
-    "height": 938,
-    "source": "decorations/689/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/0/05/Large_Festival_Tent.jpg"
-  },
-  "recipe": {
-    "rating": 150,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Large Festival Tent",
-    "sheet": "Homestead Recipe Book: Misc. Items, Volume 1",
-    "id": 14557,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 36,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 8,
-        "item": "Bolt of Silk"
-      },
-      {
-        "slot": 3,
-        "quantity": 4,
-        "item": "Thick Leather Section"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -342,5 +309,38 @@
       "type": "New Item",
       "name": "Large Festival Tent"
     }
-  ]
+  ],
+  "wikiTitle": "Large Festival Tent (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Large Festival Tent",
+    "sheet": "Homestead Recipe Book: Misc. Items, Volume 1",
+    "id": 14557,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 36,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "Bolt of Silk"
+      },
+      {
+        "slot": 3,
+        "quantity": 4,
+        "item": "Thick Leather Section"
+      }
+    ]
+  },
+  "original": {
+    "width": 786,
+    "height": 938,
+    "source": "decorations/689/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/0/05/Large_Festival_Tent.jpg"
+  }
 }

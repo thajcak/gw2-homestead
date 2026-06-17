@@ -6,39 +6,6 @@
     12
   ],
   "icon": "decorations/370/icon.png",
-  "wikiTitle": "Gold Siege the Stronghold Trophy (Handiwork)",
-  "original": {
-    "width": 266,
-    "height": 740,
-    "source": "decorations/370/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/a/a1/Gold_Siege_the_Stronghold_Trophy_Front.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Gold Siege the Stronghold Trophy",
-    "sheet": "Recipe: Gold Siege the Stronghold Trophy",
-    "id": 14337,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 130,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 100,
-        "item": "Magnetite Shard"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "Turret Fragment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -368,5 +335,32 @@
       "type": "New Item",
       "name": "Gold Siege the Stronghold Trophy"
     }
-  ]
+  ],
+  "wikiTitle": "Gold Siege the Stronghold Trophy (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Gold Siege the Stronghold Trophy",
+    "sheet": "Recipe: Gold Siege the Stronghold Trophy",
+    "id": 14337,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 130,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 100,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Turret Fragment"
+      }
+    ]
+  }
 }

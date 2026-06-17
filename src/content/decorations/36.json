@@ -7,39 +7,6 @@
     15
   ],
   "icon": "decorations/36/icon.png",
-  "wikiTitle": "Potted Gold Fern (Handiwork)",
-  "original": {
-    "width": 1008,
-    "height": 947,
-    "source": "decorations/36/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/e/ed/Potted_Gold_Fern.jpg"
-  },
-  "recipe": {
-    "rating": 150,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Potted Gold Fern",
-    "sheet": "Homestead Recipe Book: Trees",
-    "id": 14572,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 26,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 2,
-        "item": "Mordrem Fragment"
-      },
-      {
-        "slot": 3,
-        "quantity": 2,
-        "item": "Pouch of Yellow Pigment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -288,5 +255,38 @@
       "type": "New Item",
       "name": "Potted Gold Fern"
     }
-  ]
+  ],
+  "wikiTitle": "Potted Gold Fern (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Potted Gold Fern",
+    "sheet": "Homestead Recipe Book: Trees",
+    "id": 14572,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Mordrem Fragment"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Pouch of Yellow Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 1008,
+    "height": 947,
+    "source": "decorations/36/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/e/ed/Potted_Gold_Fern.jpg"
+  }
 }

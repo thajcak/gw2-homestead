@@ -6,39 +6,6 @@
     22
   ],
   "icon": "decorations/741/icon.png",
-  "wikiTitle": "Super Pagoda Column (Handiwork)",
-  "original": {
-    "width": 653,
-    "height": 1440,
-    "source": "decorations/741/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/5/59/Super_Pagoda_Column.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Super Pagoda Column",
-    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 1",
-    "id": 14678,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 4,
-        "item": "Bauble"
-      },
-      {
-        "slot": 3,
-        "quantity": 2,
-        "item": "Pouch of Orange Pigment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-05",
@@ -417,5 +384,38 @@
       "type": "New Item",
       "name": "Super Pagoda Column"
     }
-  ]
+  ],
+  "wikiTitle": "Super Pagoda Column (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Super Pagoda Column",
+    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 1",
+    "id": 14678,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 4,
+        "item": "Bauble"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Pouch of Orange Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 653,
+    "height": 1440,
+    "source": "decorations/741/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/5/59/Super_Pagoda_Column.jpg"
+  }
 }

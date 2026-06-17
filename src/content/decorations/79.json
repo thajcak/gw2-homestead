@@ -7,39 +7,6 @@
     1
   ],
   "icon": "decorations/79/icon.png",
-  "wikiTitle": "Weathered Elonian Column (Handiwork)",
-  "original": {
-    "width": 720,
-    "height": 1440,
-    "source": "decorations/79/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/5/51/Weathered_Elonian_Column.jpg"
-  },
-  "recipe": {
-    "rating": 75,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Weathered Elonian Column",
-    "sheet": "Homestead Recipe Book: Elonian Architecture",
-    "id": 14112,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 22,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Trade Contract"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "Ley-Infused Sand"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -374,5 +341,38 @@
       "type": "New Item",
       "name": "Weathered Elonian Column"
     }
-  ]
+  ],
+  "wikiTitle": "Weathered Elonian Column (Handiwork)",
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Weathered Elonian Column",
+    "sheet": "Homestead Recipe Book: Elonian Architecture",
+    "id": 14112,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 22,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Trade Contract"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Ley-Infused Sand"
+      }
+    ]
+  },
+  "original": {
+    "width": 720,
+    "height": 1440,
+    "source": "decorations/79/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/5/51/Weathered_Elonian_Column.jpg"
+  }
 }

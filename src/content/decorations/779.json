@@ -6,39 +6,6 @@
     10
   ],
   "icon": "decorations/779/icon.png",
-  "wikiTitle": "Human Summit Banner (Handiwork)",
-  "original": {
-    "width": 408,
-    "height": 974,
-    "source": "decorations/779/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/2/2b/Human_Summit_Banner.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Human Summit Banner",
-    "sheet": "Homestead Recipe Book: Summit Banners, Volume 1",
-    "id": 14815,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 26,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Bolt of Silk"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Superior Rune of Divinity"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -282,5 +249,38 @@
       "type": "New Item",
       "name": "Human Summit Banner"
     }
-  ]
+  ],
+  "wikiTitle": "Human Summit Banner (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Human Summit Banner",
+    "sheet": "Homestead Recipe Book: Summit Banners, Volume 1",
+    "id": 14815,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Bolt of Silk"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Superior Rune of Divinity"
+      }
+    ]
+  },
+  "original": {
+    "width": 408,
+    "height": 974,
+    "source": "decorations/779/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/2/2b/Human_Summit_Banner.jpg"
+  }
 }

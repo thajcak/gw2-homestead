@@ -6,39 +6,6 @@
     12
   ],
   "icon": "decorations/502/icon.png",
-  "wikiTitle": "Fragment of Saul's Burden (Handiwork)",
-  "original": {
-    "width": 1713,
-    "height": 1370,
-    "source": "decorations/502/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/b/b2/Fragment_of_Saul%27s_Burden.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Fragment of Saul's Burden",
-    "sheet": "Recipe: Fragment of Saul's Burden",
-    "id": 14356,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 30,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 8,
-        "item": "Elaborate Totem"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Fragment of Saul's Burden (trophy)"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -338,5 +305,38 @@
       "type": "New Item",
       "name": "Fragment of Saul's Burden"
     }
-  ]
+  ],
+  "wikiTitle": "Fragment of Saul's Burden (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Fragment of Saul's Burden",
+    "sheet": "Recipe: Fragment of Saul's Burden",
+    "id": 14356,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "Elaborate Totem"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Fragment of Saul's Burden (trophy)"
+      }
+    ]
+  },
+  "original": {
+    "width": 1713,
+    "height": 1370,
+    "source": "decorations/502/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/b/b2/Fragment_of_Saul%27s_Burden.jpg"
+  }
 }

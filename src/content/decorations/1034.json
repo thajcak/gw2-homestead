@@ -7,38 +7,6 @@
     4
   ],
   "icon": "decorations/1034/icon.png",
-  "wikiTitle": "Changing Tent (Handiwork)",
-  "original": {
-    "width": 847,
-    "height": 968,
-    "source": "decorations/1034/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/b/b8/Changing_Tent_%28decoration%29.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "name": "Changing Tent",
-    "id": 15383,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 30,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Cured Thick Leather Square"
-      },
-      {
-        "slot": 3,
-        "quantity": 10,
-        "item": "Bolt of Silk"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-05",
@@ -275,5 +243,37 @@
       "type": "New Item",
       "name": "Changing Tent"
     }
-  ]
+  ],
+  "wikiTitle": "Changing Tent (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Changing Tent",
+    "id": 15383,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Cured Thick Leather Square"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Bolt of Silk"
+      }
+    ]
+  },
+  "original": {
+    "width": 847,
+    "height": 968,
+    "source": "decorations/1034/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/b/b8/Changing_Tent_%28decoration%29.jpg"
+  }
 }

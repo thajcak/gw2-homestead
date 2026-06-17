@@ -7,37 +7,6 @@
     3
   ],
   "icon": "decorations/306/icon.png",
-  "wikiTitle": "Kodan Vanity",
-  "original": {
-    "width": 1110,
-    "height": 1080,
-    "source": "decorations/306/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/4/4a/Kodan_Vanity.jpg"
-  },
-  "recipe": {
-    "rating": 75,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "id": 14713,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 27,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 12,
-        "item": "Cured Rugged Leather Square"
-      },
-      {
-        "slot": 3,
-        "quantity": 8,
-        "item": "Lowland Pine Log"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -337,5 +306,36 @@
       "type": "New Item",
       "name": "Kodan Vanity"
     }
-  ]
+  ],
+  "wikiTitle": "Kodan Vanity",
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14713,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 27,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 12,
+        "item": "Cured Rugged Leather Square"
+      },
+      {
+        "slot": 3,
+        "quantity": 8,
+        "item": "Lowland Pine Log"
+      }
+    ]
+  },
+  "original": {
+    "width": 1110,
+    "height": 1080,
+    "source": "decorations/306/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/4/4a/Kodan_Vanity.jpg"
+  }
 }

@@ -6,39 +6,6 @@
     12
   ],
   "icon": "decorations/92/icon.png",
-  "wikiTitle": "Silver Sabetha Trophy (Handiwork)",
-  "original": {
-    "width": 526,
-    "height": 1001,
-    "source": "decorations/92/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/9e/Silver_Sabetha_Trophy.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Silver Sabetha Trophy",
-    "sheet": "Recipe: Silver Sabetha Trophy",
-    "id": 14454,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 90,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 40,
-        "item": "Magnetite Shard"
-      },
-      {
-        "slot": 3,
-        "quantity": 3,
-        "item": "Sabetha Flamethrower Fragment Piece"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -323,5 +290,38 @@
       "type": "New Item",
       "name": "Silver Sabetha Trophy"
     }
-  ]
+  ],
+  "wikiTitle": "Silver Sabetha Trophy (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Silver Sabetha Trophy",
+    "sheet": "Recipe: Silver Sabetha Trophy",
+    "id": 14454,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 90,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 40,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Sabetha Flamethrower Fragment Piece"
+      }
+    ]
+  },
+  "original": {
+    "width": 526,
+    "height": 1001,
+    "source": "decorations/92/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/9e/Silver_Sabetha_Trophy.jpg"
+  }
 }

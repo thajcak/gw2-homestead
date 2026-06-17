@@ -6,44 +6,6 @@
     22
   ],
   "icon": "decorations/607/icon.png",
-  "wikiTitle": "Super Tall Cliff Face (Handiwork)",
-  "original": {
-    "width": 2024,
-    "height": 1346,
-    "source": "decorations/607/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/d/d9/Super_Cliff_Face_comparison.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Super Tall Cliff Face",
-    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 4",
-    "id": 14127,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 16,
-        "item": "Bauble"
-      },
-      {
-        "slot": 3,
-        "quantity": 2,
-        "item": "Pouch of White Pigment"
-      },
-      {
-        "slot": 4,
-        "quantity": 2,
-        "item": "Pouch of Black Pigment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -369,5 +331,43 @@
       "type": "New Item",
       "name": "Super Tall Cliff Face"
     }
-  ]
+  ],
+  "wikiTitle": "Super Tall Cliff Face (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Super Tall Cliff Face",
+    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 4",
+    "id": 14127,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 16,
+        "item": "Bauble"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Pouch of White Pigment"
+      },
+      {
+        "slot": 4,
+        "quantity": 2,
+        "item": "Pouch of Black Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 2024,
+    "height": 1346,
+    "source": "decorations/607/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/d/d9/Super_Cliff_Face_comparison.jpg"
+  }
 }

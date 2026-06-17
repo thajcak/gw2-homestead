@@ -6,33 +6,6 @@
     27
   ],
   "icon": "decorations/905/icon.png",
-  "wikiTitle": "Sea Raider Roof Corner",
-  "original": {
-    "width": 2267,
-    "height": 1272,
-    "source": "decorations/905/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/2/29/Sea_Raider_Roof_Corner.jpg"
-  },
-  "recipe": {
-    "rating": 0,
-    "type": "Homestead Decoration",
-    "source": "Recipe sheet",
-    "disciplines": "Handiworker",
-    "sheet": "Black Lion Sea Raider Roof Corner Recipe",
-    "id": 15105,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 5,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Refined Homestead Wood"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -289,5 +262,32 @@
       "type": "New Item",
       "name": "Sea Raider Roof Corner"
     }
-  ]
+  ],
+  "wikiTitle": "Sea Raider Roof Corner",
+  "recipe": {
+    "rating": 0,
+    "type": "Homestead Decoration",
+    "source": "Recipe sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Black Lion Sea Raider Roof Corner Recipe",
+    "id": 15105,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Refined Homestead Wood"
+      }
+    ]
+  },
+  "original": {
+    "width": 2267,
+    "height": 1272,
+    "source": "decorations/905/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/2/29/Sea_Raider_Roof_Corner.jpg"
+  }
 }

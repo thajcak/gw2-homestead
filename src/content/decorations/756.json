@@ -7,39 +7,6 @@
     9
   ],
   "icon": "decorations/756/icon.png",
-  "wikiTitle": "Miniature Majestic Joko (for Personal Worship) (Handiwork)",
-  "original": {
-    "width": 756,
-    "height": 965,
-    "source": "decorations/756/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/a/ae/Miniature_Majestic_Joko_%28for_Personal_Worship%29_front.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Miniature Majestic Joko (for Personal Worship)",
-    "sheet": "Homestead Recipe Book: Statues and Trophies",
-    "id": 14894,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 25,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Lump of Mistonium"
-      },
-      {
-        "slot": 3,
-        "quantity": 20,
-        "item": "Congealed Putrescence"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -319,5 +286,38 @@
       "type": "New Item",
       "name": "Miniature Majestic Joko (for Personal Worship)"
     }
-  ]
+  ],
+  "wikiTitle": "Miniature Majestic Joko (for Personal Worship) (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Miniature Majestic Joko (for Personal Worship)",
+    "sheet": "Homestead Recipe Book: Statues and Trophies",
+    "id": 14894,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Lump of Mistonium"
+      },
+      {
+        "slot": 3,
+        "quantity": 20,
+        "item": "Congealed Putrescence"
+      }
+    ]
+  },
+  "original": {
+    "width": 756,
+    "height": 965,
+    "source": "decorations/756/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/a/ae/Miniature_Majestic_Joko_%28for_Personal_Worship%29_front.jpg"
+  }
 }

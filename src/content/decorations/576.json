@@ -7,39 +7,6 @@
     26
   ],
   "icon": "decorations/576/icon.png",
-  "wikiTitle": "Peppermint Platform (Handiwork)",
-  "original": {
-    "width": 1689,
-    "height": 810,
-    "source": "decorations/576/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/8e/Peppermint_Platform_Screen.jpeg"
-  },
-  "recipe": {
-    "rating": 75,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Peppermint Platform",
-    "sheet": "Homestead Recipe Book: Wintersday, Volume 5",
-    "id": 14787,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 30,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 7,
-        "item": "Pile of Crystalline Dust"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "Candy Cane"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -330,5 +297,38 @@
       "type": "New Item",
       "name": "Peppermint Platform"
     }
-  ]
+  ],
+  "wikiTitle": "Peppermint Platform (Handiwork)",
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Peppermint Platform",
+    "sheet": "Homestead Recipe Book: Wintersday, Volume 5",
+    "id": 14787,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 7,
+        "item": "Pile of Crystalline Dust"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Candy Cane"
+      }
+    ]
+  },
+  "original": {
+    "width": 1689,
+    "height": 810,
+    "source": "decorations/576/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/8e/Peppermint_Platform_Screen.jpeg"
+  }
 }

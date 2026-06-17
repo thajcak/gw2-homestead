@@ -6,39 +6,6 @@
     7
   ],
   "icon": "decorations/766/icon.png",
-  "wikiTitle": "Palm Tree (Handiwork)",
-  "original": {
-    "width": 960,
-    "height": 1440,
-    "source": "decorations/766/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/1/10/Palm_Tree.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Palm Tree",
-    "sheet": "Homestead Recipe Book: Trees, Volume 2",
-    "id": 14388,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 35,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 1,
-        "item": "Palm Lumber Core"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "Petrified Wood"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -327,5 +294,38 @@
       "type": "New Item",
       "name": "Palm Tree"
     }
-  ]
+  ],
+  "wikiTitle": "Palm Tree (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Palm Tree",
+    "sheet": "Homestead Recipe Book: Trees, Volume 2",
+    "id": 14388,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Palm Lumber Core"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Petrified Wood"
+      }
+    ]
+  },
+  "original": {
+    "width": 960,
+    "height": 1440,
+    "source": "decorations/766/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/1/10/Palm_Tree.jpg"
+  }
 }

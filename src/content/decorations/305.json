@@ -6,34 +6,6 @@
     1
   ],
   "icon": "decorations/305/icon.png",
-  "wikiTitle": "Obstacle: Wall (Handiwork)",
-  "original": {
-    "width": 1306,
-    "height": 1190,
-    "source": "decorations/305/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/5/53/Obstacle-_Wall_%28top%29.jpg"
-  },
-  "recipe": {
-    "rating": 75,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Obstacle: Wall",
-    "sheet": "Homestead Recipe Book: Guild Arena",
-    "id": 14680,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 3,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 4,
-        "item": "Copper Ore"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -353,5 +325,33 @@
       "type": "New Item",
       "name": "Obstacle: Wall"
     }
-  ]
+  ],
+  "wikiTitle": "Obstacle: Wall (Handiwork)",
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Obstacle: Wall",
+    "sheet": "Homestead Recipe Book: Guild Arena",
+    "id": 14680,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 3,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 4,
+        "item": "Copper Ore"
+      }
+    ]
+  },
+  "original": {
+    "width": 1306,
+    "height": 1190,
+    "source": "decorations/305/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/5/53/Obstacle-_Wall_%28top%29.jpg"
+  }
 }

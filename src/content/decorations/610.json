@@ -7,38 +7,6 @@
     19
   ],
   "icon": "decorations/610/icon.png",
-  "wikiTitle": "Kodan Woodsy Armchair",
-  "original": {
-    "width": 985,
-    "height": 1080,
-    "source": "decorations/610/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/e/e3/Kodan_Woodsy_Armchair.jpg"
-  },
-  "recipe": {
-    "rating": 75,
-    "type": "Homestead Decoration",
-    "source": "automatic; recipe sheet",
-    "disciplines": "Handiworker",
-    "sheet": "Homestead Recipe Book: Benches, Chairs, Stools",
-    "id": 14655,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 12,
-        "item": "Cotton Scrap"
-      },
-      {
-        "slot": 3,
-        "quantity": 15,
-        "item": "Honey Flower"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -433,5 +401,37 @@
       "type": "New Item",
       "name": "Kodan Woodsy Armchair"
     }
-  ]
+  ],
+  "wikiTitle": "Kodan Woodsy Armchair",
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "automatic; recipe sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Homestead Recipe Book: Benches, Chairs, Stools",
+    "id": 14655,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 12,
+        "item": "Cotton Scrap"
+      },
+      {
+        "slot": 3,
+        "quantity": 15,
+        "item": "Honey Flower"
+      }
+    ]
+  },
+  "original": {
+    "width": 985,
+    "height": 1080,
+    "source": "decorations/610/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/e/e3/Kodan_Woodsy_Armchair.jpg"
+  }
 }

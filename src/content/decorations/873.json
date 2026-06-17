@@ -6,33 +6,6 @@
     27
   ],
   "icon": "decorations/873/icon.png",
-  "wikiTitle": "Twisted Imaginarium Cabinet",
-  "original": {
-    "width": 850,
-    "height": 1360,
-    "source": "decorations/873/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/d/dc/Twisted_Imaginarium_Cabinet.jpg"
-  },
-  "recipe": {
-    "rating": 0,
-    "type": "Homestead Decoration",
-    "source": "Recipe sheet",
-    "disciplines": "Handiworker",
-    "sheet": "Black Lion Twisted Imaginarium Cabinet Recipe",
-    "id": 15022,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 5,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Refined Homestead Wood"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -314,5 +287,32 @@
       "type": "New Item",
       "name": "Twisted Imaginarium Cabinet"
     }
-  ]
+  ],
+  "wikiTitle": "Twisted Imaginarium Cabinet",
+  "recipe": {
+    "rating": 0,
+    "type": "Homestead Decoration",
+    "source": "Recipe sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Black Lion Twisted Imaginarium Cabinet Recipe",
+    "id": 15022,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Refined Homestead Wood"
+      }
+    ]
+  },
+  "original": {
+    "width": 850,
+    "height": 1360,
+    "source": "decorations/873/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/d/dc/Twisted_Imaginarium_Cabinet.jpg"
+  }
 }

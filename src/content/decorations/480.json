@@ -7,39 +7,6 @@
     26
   ],
   "icon": "decorations/480/icon.png",
-  "wikiTitle": "Peppermint Arrow (Handiwork)",
-  "original": {
-    "width": 1059,
-    "height": 936,
-    "source": "decorations/480/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/3/31/Peppermint_Arrow.jpg"
-  },
-  "recipe": {
-    "rating": 75,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Peppermint Arrow",
-    "sheet": "Homestead Recipe Book: Wintersday, Volume 5",
-    "id": 14395,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 24,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 3,
-        "item": "Pile of Crystalline Dust"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Candy Cane"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -320,5 +287,38 @@
       "type": "New Item",
       "name": "Peppermint Arrow"
     }
-  ]
+  ],
+  "wikiTitle": "Peppermint Arrow (Handiwork)",
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Peppermint Arrow",
+    "sheet": "Homestead Recipe Book: Wintersday, Volume 5",
+    "id": 14395,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 24,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Pile of Crystalline Dust"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Candy Cane"
+      }
+    ]
+  },
+  "original": {
+    "width": 1059,
+    "height": 936,
+    "source": "decorations/480/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/3/31/Peppermint_Arrow.jpg"
+  }
 }

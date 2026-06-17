@@ -7,39 +7,6 @@
     24
   ],
   "icon": "decorations/461/icon.png",
-  "wikiTitle": "Zephyr Window Pane (Handiwork)",
-  "original": {
-    "width": 810,
-    "height": 1440,
-    "source": "decorations/461/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/e/e0/Zephyr_Window_Pane.jpg"
-  },
-  "recipe": {
-    "rating": 150,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Zephyr Window Pane",
-    "sheet": "Homestead Recipe Book: Four Winds, Volume 1",
-    "id": 14124,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 24,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 8,
-        "item": "Gossamer Scrap"
-      },
-      {
-        "slot": 3,
-        "quantity": 8,
-        "item": "Mursaat Obsidian Chunk"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-15",
@@ -395,5 +362,38 @@
       "type": "New Item",
       "name": "Zephyr Window Pane"
     }
-  ]
+  ],
+  "wikiTitle": "Zephyr Window Pane (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Zephyr Window Pane",
+    "sheet": "Homestead Recipe Book: Four Winds, Volume 1",
+    "id": 14124,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 24,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "Gossamer Scrap"
+      },
+      {
+        "slot": 3,
+        "quantity": 8,
+        "item": "Mursaat Obsidian Chunk"
+      }
+    ]
+  },
+  "original": {
+    "width": 810,
+    "height": 1440,
+    "source": "decorations/461/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/e/e0/Zephyr_Window_Pane.jpg"
+  }
 }

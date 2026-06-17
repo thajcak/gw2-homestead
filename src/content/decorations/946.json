@@ -7,39 +7,6 @@
     24
   ],
   "icon": "decorations/946/icon.png",
-  "wikiTitle": "Krytan Garden Column (Handiwork)",
-  "original": {
-    "width": 700,
-    "height": 1400,
-    "source": "decorations/946/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/8b/Krytan_Garden_Column.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Krytan Garden Column",
-    "sheet": "Homestead Recipe Book: Four Winds, Volume 7",
-    "id": 15161,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 20,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Charged Titan Ore"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "Onyx Fragment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-05-31",
@@ -300,5 +267,38 @@
       "type": "New Item",
       "name": "Krytan Garden Column"
     }
-  ]
+  ],
+  "wikiTitle": "Krytan Garden Column (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Krytan Garden Column",
+    "sheet": "Homestead Recipe Book: Four Winds, Volume 7",
+    "id": 15161,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 20,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Charged Titan Ore"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Onyx Fragment"
+      }
+    ]
+  },
+  "original": {
+    "width": 700,
+    "height": 1400,
+    "source": "decorations/946/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/8b/Krytan_Garden_Column.jpg"
+  }
 }

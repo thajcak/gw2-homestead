@@ -6,39 +6,6 @@
     22
   ],
   "icon": "decorations/81/icon.png",
-  "wikiTitle": "Super Lily Pad (Handiwork)",
-  "original": {
-    "width": 2138,
-    "height": 1440,
-    "source": "decorations/81/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/83/Super_Lily_Pad.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Super Lily Pad",
-    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 5",
-    "id": 14533,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 32,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 8,
-        "item": "Bauble"
-      },
-      {
-        "slot": 3,
-        "quantity": 4,
-        "item": "Pouch of Green Pigment"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -369,5 +336,38 @@
       "type": "New Item",
       "name": "Super Lily Pad"
     }
-  ]
+  ],
+  "wikiTitle": "Super Lily Pad (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Super Lily Pad",
+    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 5",
+    "id": 14533,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "Bauble"
+      },
+      {
+        "slot": 3,
+        "quantity": 4,
+        "item": "Pouch of Green Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 2138,
+    "height": 1440,
+    "source": "decorations/81/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/83/Super_Lily_Pad.jpg"
+  }
 }

@@ -7,39 +7,6 @@
     1
   ],
   "icon": "decorations/929/icon.png",
-  "wikiTitle": "Raven Hall (Handiwork)",
-  "original": {
-    "width": 1873,
-    "height": 1338,
-    "source": "decorations/929/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/2/21/Raven_Hall.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Raven Hall",
-    "sheet": "Homestead Recipe Book: Dragon Bash, Volume 7; Recipe: Raven Hall",
-    "id": 15119,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 35,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Crystal Core"
-      },
-      {
-        "slot": 3,
-        "quantity": 20,
-        "item": "Piece of Zhaitaffy"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-13",
@@ -365,5 +332,38 @@
       "type": "New Item",
       "name": "Raven Hall"
     }
-  ]
+  ],
+  "wikiTitle": "Raven Hall (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Raven Hall",
+    "sheet": "Homestead Recipe Book: Dragon Bash, Volume 7; Recipe: Raven Hall",
+    "id": 15119,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Crystal Core"
+      },
+      {
+        "slot": 3,
+        "quantity": 20,
+        "item": "Piece of Zhaitaffy"
+      }
+    ]
+  },
+  "original": {
+    "width": 1873,
+    "height": 1338,
+    "source": "decorations/929/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/2/21/Raven_Hall.jpg"
+  }
 }

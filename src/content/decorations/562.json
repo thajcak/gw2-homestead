@@ -7,39 +7,6 @@
     17
   ],
   "icon": "decorations/562/icon.png",
-  "wikiTitle": "Kaineng City Umbrella",
-  "original": {
-    "width": 913,
-    "height": 861,
-    "source": "decorations/562/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/97/Kaineng_City_Umbrella.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "automatic; recipe sheet",
-    "disciplines": "Handiworker",
-    "name": "Kaineng City Umbrella",
-    "sheet": "Homestead Recipe: Kaineng City Umbrella",
-    "id": 14334,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 27,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 8,
-        "item": "Writ of New Kaineng City"
-      },
-      {
-        "slot": 3,
-        "quantity": 10,
-        "item": "Silk Scrap"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -294,5 +261,38 @@
       "type": "New Item",
       "name": "Kaineng City Umbrella"
     }
-  ]
+  ],
+  "wikiTitle": "Kaineng City Umbrella",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "automatic; recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Kaineng City Umbrella",
+    "sheet": "Homestead Recipe: Kaineng City Umbrella",
+    "id": 14334,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 27,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "Writ of New Kaineng City"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Silk Scrap"
+      }
+    ]
+  },
+  "original": {
+    "width": 913,
+    "height": 861,
+    "source": "decorations/562/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/97/Kaineng_City_Umbrella.jpg"
+  }
 }

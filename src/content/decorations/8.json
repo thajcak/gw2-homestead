@@ -7,39 +7,6 @@
     9
   ],
   "icon": "decorations/8/icon.png",
-  "wikiTitle": "Statue of Joko the Powerful (Handiwork)",
-  "original": {
-    "width": 648,
-    "height": 965,
-    "source": "decorations/8/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/3/39/Statue_of_Joko_the_Powerful.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Statue of Joko the Powerful",
-    "sheet": "Homestead Recipe: Statue of Joko the Powerful",
-    "id": 14795,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 34,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 40,
-        "item": "Congealed Putrescence"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "Elegy Mosaic"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -379,5 +346,38 @@
       "type": "New Item",
       "name": "Natural Features"
     }
-  ]
+  ],
+  "wikiTitle": "Statue of Joko the Powerful (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Statue of Joko the Powerful",
+    "sheet": "Homestead Recipe: Statue of Joko the Powerful",
+    "id": 14795,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 34,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 40,
+        "item": "Congealed Putrescence"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Elegy Mosaic"
+      }
+    ]
+  },
+  "original": {
+    "width": 648,
+    "height": 965,
+    "source": "decorations/8/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/3/39/Statue_of_Joko_the_Powerful.jpg"
+  }
 }

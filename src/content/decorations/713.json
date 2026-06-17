@@ -6,39 +6,6 @@
     9
   ],
   "icon": "decorations/713/icon.png",
-  "wikiTitle": "Lion Statue (Handiwork)",
-  "original": {
-    "width": 663,
-    "height": 948,
-    "source": "decorations/713/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/0/01/Lion_Statue.jpg"
-  },
-  "recipe": {
-    "rating": 225,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Lion Statue",
-    "sheet": "Homestead Recipe Book: Statues",
-    "id": 14690,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 29,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 20,
-        "item": "Sharp Claw"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Bag of Mortar"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -312,5 +279,38 @@
       "type": "New Item",
       "name": "Lion Statue"
     }
-  ]
+  ],
+  "wikiTitle": "Lion Statue (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Lion Statue",
+    "sheet": "Homestead Recipe Book: Statues",
+    "id": 14690,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 29,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 20,
+        "item": "Sharp Claw"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Bag of Mortar"
+      }
+    ]
+  },
+  "original": {
+    "width": 663,
+    "height": 948,
+    "source": "decorations/713/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/0/01/Lion_Statue.jpg"
+  }
 }

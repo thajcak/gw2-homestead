@@ -6,39 +6,6 @@
     2
   ],
   "icon": "decorations/167/icon.png",
-  "wikiTitle": "Guild Chair (Handiwork)",
-  "original": {
-    "width": 564,
-    "height": 948,
-    "source": "decorations/167/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/b/be/Guild_Chair.jpg"
-  },
-  "recipe": {
-    "rating": 150,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Guild Chair",
-    "sheet": "Homestead Recipe Book: Benches, Chairs, Stools",
-    "id": 14645,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 27,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 8,
-        "item": "Engraved Totem"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Vial of Linseed Oil"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -328,5 +295,38 @@
       "type": "New Item",
       "name": "Guild Chair"
     }
-  ]
+  ],
+  "wikiTitle": "Guild Chair (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Guild Chair",
+    "sheet": "Homestead Recipe Book: Benches, Chairs, Stools",
+    "id": 14645,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 27,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "Engraved Totem"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Vial of Linseed Oil"
+      }
+    ]
+  },
+  "original": {
+    "width": 564,
+    "height": 948,
+    "source": "decorations/167/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/b/be/Guild_Chair.jpg"
+  }
 }

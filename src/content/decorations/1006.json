@@ -7,27 +7,6 @@
     20
   ],
   "icon": "decorations/1006/icon.png",
-  "wikiTitle": "Wall (960 x 240) (Handiwork)",
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "name": "Wall (960 x 240)",
-    "id": 15402,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 15,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Elder Wood Plank"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-05-28",
@@ -179,5 +158,26 @@
       "type": "New Item",
       "name": "Wall (960 x 240)"
     }
-  ]
+  ],
+  "wikiTitle": "Wall (960 x 240) (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Wall (960 x 240)",
+    "id": 15402,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 15,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Elder Wood Plank"
+      }
+    ]
+  }
 }

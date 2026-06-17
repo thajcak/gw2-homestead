@@ -6,39 +6,6 @@
     12
   ],
   "icon": "decorations/258/icon.png",
-  "wikiTitle": "River of Souls Token (Handiwork)",
-  "original": {
-    "width": 1103,
-    "height": 815,
-    "source": "decorations/258/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/8b/River_of_Souls_Token_view.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "River of Souls Token",
-    "sheet": "Recipe: River of Souls Token",
-    "id": 14301,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 30,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 50,
-        "item": "Orrian Pearl"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "River of Souls Token (trophy)"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -327,5 +294,38 @@
       "type": "New Item",
       "name": "River of Souls Token"
     }
-  ]
+  ],
+  "wikiTitle": "River of Souls Token (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "River of Souls Token",
+    "sheet": "Recipe: River of Souls Token",
+    "id": 14301,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 50,
+        "item": "Orrian Pearl"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "River of Souls Token (trophy)"
+      }
+    ]
+  },
+  "original": {
+    "width": 1103,
+    "height": 815,
+    "source": "decorations/258/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/8b/River_of_Souls_Token_view.jpg"
+  }
 }

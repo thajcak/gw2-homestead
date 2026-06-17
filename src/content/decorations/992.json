@@ -7,33 +7,6 @@
     20
   ],
   "icon": "decorations/992/icon.png",
-  "wikiTitle": "Wall Bracket Half (480) (Handiwork)",
-  "original": {
-    "width": 1354,
-    "height": 581,
-    "source": "decorations/992/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/94/Wall_Bracket_Half_%28480%29.jpg"
-  },
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "name": "Wall Bracket Half (480)",
-    "id": 15286,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 5,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 2,
-        "item": "Elder Wood Plank"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-15",
@@ -345,5 +318,32 @@
       "type": "New Item",
       "name": "Wall Bracket Half (480)"
     }
-  ]
+  ],
+  "wikiTitle": "Wall Bracket Half (480) (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Wall Bracket Half (480)",
+    "id": 15286,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Elder Wood Plank"
+      }
+    ]
+  },
+  "original": {
+    "width": 1354,
+    "height": 581,
+    "source": "decorations/992/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/94/Wall_Bracket_Half_%28480%29.jpg"
+  }
 }

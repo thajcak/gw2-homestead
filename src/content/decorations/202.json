@@ -7,37 +7,6 @@
     3
   ],
   "icon": "decorations/202/icon.png",
-  "wikiTitle": "Kodan Decorative Wardrobe",
-  "original": {
-    "width": 918,
-    "height": 1224,
-    "source": "decorations/202/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/9f/Kodan_Decorative_Wardrobe.jpg"
-  },
-  "recipe": {
-    "rating": 75,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "id": 14541,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 30,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Lowland Pine Log"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Tub of Wood Glue"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -292,5 +261,36 @@
       "type": "New Item",
       "name": "Kodan Decorative Wardrobe"
     }
-  ]
+  ],
+  "wikiTitle": "Kodan Decorative Wardrobe",
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14541,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Lowland Pine Log"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Tub of Wood Glue"
+      }
+    ]
+  },
+  "original": {
+    "width": 918,
+    "height": 1224,
+    "source": "decorations/202/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/9f/Kodan_Decorative_Wardrobe.jpg"
+  }
 }

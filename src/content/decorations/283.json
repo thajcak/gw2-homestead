@@ -6,8 +6,17 @@
     9
   ],
   "icon": "decorations/283/icon.png",
-  "wikiTitle": "Branded Devourer Monument (Handiwork)",
   "history": [
+    {
+      "day": "2026-06-17",
+      "type": "Image Updated",
+      "name": "Branded Devourer Monument"
+    },
+    {
+      "day": "2026-06-17",
+      "type": "Recipe Updated",
+      "name": "Branded Devourer Monument"
+    },
     {
       "day": "2025-10-30",
       "type": "Item Updated",
@@ -35,5 +44,37 @@
       "type": "New Item",
       "name": "Branded Devourer Monument"
     }
-  ]
+  ],
+  "wikiTitle": "Branded Devourer Monument",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Homestead Recipe Book: Statues and Trophies",
+    "id": 14352,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 120,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 40,
+        "item": "Prismaticite Crystal"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Crystal Lodestone"
+      }
+    ]
+  },
+  "original": {
+    "width": 1054,
+    "height": 808,
+    "source": "decorations/283/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/f/fc/Branded_Devourer_Monument_Token.jpg"
+  }
 }

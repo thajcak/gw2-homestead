@@ -6,38 +6,6 @@
     13
   ],
   "icon": "decorations/672/icon.png",
-  "wikiTitle": "Racetrack Downward Right Curve (Handiwork)",
-  "original": {
-    "width": 1658,
-    "height": 1326,
-    "source": "decorations/672/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/7d/Racetrack_Downward_Right_Curve_top.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe sheet",
-    "disciplines": "Handiworker",
-    "sheet": "Homestead Recipe Book: Roller Beetle Racetracks",
-    "id": 14831,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 30,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Charged Titan Ore"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "Racing Medallion"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-01",
@@ -357,5 +325,37 @@
       "type": "New Item",
       "name": "Racetrack Downward Right Curve"
     }
-  ]
+  ],
+  "wikiTitle": "Racetrack Downward Right Curve (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Homestead Recipe Book: Roller Beetle Racetracks",
+    "id": 14831,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Charged Titan Ore"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Racing Medallion"
+      }
+    ]
+  },
+  "original": {
+    "width": 1658,
+    "height": 1326,
+    "source": "decorations/672/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/7d/Racetrack_Downward_Right_Curve_top.jpg"
+  }
 }

@@ -6,39 +6,6 @@
     10
   ],
   "icon": "decorations/403/icon.png",
-  "wikiTitle": "Summit Banner (Handiwork)",
-  "original": {
-    "width": 370,
-    "height": 1064,
-    "source": "decorations/403/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/2/27/Summit_Banner.jpg"
-  },
-  "recipe": {
-    "rating": 400,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Summit Banner",
-    "sheet": "Homestead Recipe Book: Summit Banners, Volume 1",
-    "id": 14323,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 26,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Bolt of Silk"
-      },
-      {
-        "slot": 3,
-        "quantity": 30,
-        "item": "Bandit Crest"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -447,5 +414,32 @@
       "type": "New Item",
       "name": "Summit Banner"
     }
-  ]
+  ],
+  "wikiTitle": "Summit Banner (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Summit Banner",
+    "sheet": "Homestead Recipe Book: Summit Banners, Volume 1",
+    "id": 14323,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Bolt of Silk"
+      },
+      {
+        "slot": 3,
+        "quantity": 30,
+        "item": "Bandit Crest"
+      }
+    ]
+  }
 }

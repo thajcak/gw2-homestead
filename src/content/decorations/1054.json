@@ -7,38 +7,6 @@
     20
   ],
   "icon": "decorations/1054/icon.png",
-  "wikiTitle": "Galleon Hull Entryway (Handiwork)",
-  "original": {
-    "width": 1567,
-    "height": 971,
-    "source": "decorations/1054/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/2/25/Galleon_Hull_Entryway.jpg"
-  },
-  "recipe": {
-    "rating": 1,
-    "type": "Homestead Decoration",
-    "source": "automatic",
-    "disciplines": "Handiworker",
-    "name": "Galleon Hull Entryway",
-    "id": 15247,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 200,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 80,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 3,
-        "quantity": 4,
-        "item": "Lump of Glass"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -315,5 +283,37 @@
       "type": "New Item",
       "name": "Galleon Hull Entryway"
     }
-  ]
+  ],
+  "wikiTitle": "Galleon Hull Entryway (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Galleon Hull Entryway",
+    "id": 15247,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 200,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 80,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 3,
+        "quantity": 4,
+        "item": "Lump of Glass"
+      }
+    ]
+  },
+  "original": {
+    "width": 1567,
+    "height": 971,
+    "source": "decorations/1054/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/2/25/Galleon_Hull_Entryway.jpg"
+  }
 }

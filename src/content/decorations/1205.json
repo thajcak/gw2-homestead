@@ -7,12 +7,43 @@
     20
   ],
   "icon": "decorations/1205/icon.png",
-  "wikiTitle": "Seer Floor (Handiwork)",
   "history": [
+    {
+      "day": "2026-06-17",
+      "type": "Recipe Updated",
+      "name": "Seer Floor"
+    },
     {
       "day": "2026-05-12",
       "type": "New Item",
       "name": "Seer Floor"
     }
-  ]
+  ],
+  "wikiTitle": "Seer Floor (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Seer Floor",
+    "sheet": "Homestead Recipe Book: Seer Catalogue Volume 1",
+    "id": 15683,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 15,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Pile of Shimmering Dust"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Brick of Clay"
+      }
+    ]
+  }
 }

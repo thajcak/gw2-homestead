@@ -7,39 +7,6 @@
     1
   ],
   "icon": "decorations/377/icon.png",
-  "wikiTitle": "Broken Sandstone Pillar (Handiwork)",
-  "original": {
-    "width": 414,
-    "height": 954,
-    "source": "decorations/377/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/e/e1/Broken_Sandstone_Pillar.jpg"
-  },
-  "recipe": {
-    "rating": 150,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Broken Sandstone Pillar",
-    "sheet": "Homestead Recipe Book: Pillars",
-    "id": 14536,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 4,
-        "item": "Refined Homestead Metal"
-      },
-      {
-        "slot": 2,
-        "quantity": 10,
-        "item": "Pile of Coarse Sand"
-      },
-      {
-        "slot": 3,
-        "quantity": 1,
-        "item": "Bag of Mortar"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-11",
@@ -293,5 +260,38 @@
       "type": "New Item",
       "name": "Broken Sandstone Pillar"
     }
-  ]
+  ],
+  "wikiTitle": "Broken Sandstone Pillar (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Broken Sandstone Pillar",
+    "sheet": "Homestead Recipe Book: Pillars",
+    "id": 14536,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 4,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Pile of Coarse Sand"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Bag of Mortar"
+      }
+    ]
+  },
+  "original": {
+    "width": 414,
+    "height": 954,
+    "source": "decorations/377/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/e/e1/Broken_Sandstone_Pillar.jpg"
+  }
 }

@@ -7,39 +7,6 @@
     24
   ],
   "icon": "decorations/699/icon.png",
-  "wikiTitle": "Zephyr Sail (Handiwork)",
-  "original": {
-    "width": 1152,
-    "height": 1440,
-    "source": "decorations/699/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/c/c6/Zephyr_Sail.jpg"
-  },
-  "recipe": {
-    "rating": 300,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Zephyr Sail",
-    "sheet": "Homestead Recipe Book: Four Winds, Volume 1",
-    "id": 14543,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 28,
-        "item": "Refined Homestead Fiber"
-      },
-      {
-        "slot": 2,
-        "quantity": 12,
-        "item": "Lowland Pine Log"
-      },
-      {
-        "slot": 3,
-        "quantity": 12,
-        "item": "Smooth Scale"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-14",
@@ -370,5 +337,38 @@
       "type": "New Item",
       "name": "Zephyr Sail"
     }
-  ]
+  ],
+  "wikiTitle": "Zephyr Sail (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Zephyr Sail",
+    "sheet": "Homestead Recipe Book: Four Winds, Volume 1",
+    "id": 14543,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 28,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 12,
+        "item": "Lowland Pine Log"
+      },
+      {
+        "slot": 3,
+        "quantity": 12,
+        "item": "Smooth Scale"
+      }
+    ]
+  },
+  "original": {
+    "width": 1152,
+    "height": 1440,
+    "source": "decorations/699/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/c/c6/Zephyr_Sail.jpg"
+  }
 }

@@ -6,39 +6,6 @@
     2
   ],
   "icon": "decorations/308/icon.png",
-  "wikiTitle": "Square Cabinet (Handiwork)",
-  "original": {
-    "width": 1081,
-    "height": 925,
-    "source": "decorations/308/preview.jpg",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/95/Square_Cabinet.jpg"
-  },
-  "recipe": {
-    "rating": 150,
-    "type": "Homestead Decoration",
-    "source": "Recipe Sheet",
-    "disciplines": "Handiworker",
-    "name": "Square Cabinet",
-    "sheet": "Homestead Recipe Book: Tables",
-    "id": 14739,
-    "ingredients": [
-      {
-        "slot": 1,
-        "quantity": 28,
-        "item": "Refined Homestead Wood"
-      },
-      {
-        "slot": 2,
-        "quantity": 5,
-        "item": "Intricate Totem"
-      },
-      {
-        "slot": 3,
-        "quantity": 5,
-        "item": "Lump of Aurillium"
-      }
-    ]
-  },
   "history": [
     {
       "day": "2026-06-12",
@@ -333,5 +300,38 @@
       "type": "New Item",
       "name": "Square Cabinet"
     }
-  ]
+  ],
+  "wikiTitle": "Square Cabinet (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Square Cabinet",
+    "sheet": "Homestead Recipe Book: Tables",
+    "id": 14739,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 28,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Intricate Totem"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Lump of Aurillium"
+      }
+    ]
+  },
+  "original": {
+    "width": 1081,
+    "height": 925,
+    "source": "decorations/308/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/95/Square_Cabinet.jpg"
+  }
 }
