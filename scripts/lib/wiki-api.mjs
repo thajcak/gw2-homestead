@@ -1,6 +1,7 @@
 import { spawnSync } from 'node:child_process';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { remoteOriginalSource } from './content-store.mjs';
 import { sanitizeDisplayName } from './sanitize-text.mjs';
 
 const WIKI_API = 'https://wiki.guildwars2.com/api.php';
@@ -29,6 +30,47 @@ const RECIPE_JQ = `split("\\n") | map(select(length > 0) | split("\\t"))
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+export function normalizeWikiImageUrl(url) {
+  if (!url) {
+    return '';
+  }
+
+  try {
+    const parsed = new URL(url);
+    return decodeURIComponent(parsed.pathname).toLowerCase();
+  } catch {
+    return url.toLowerCase();
+  }
+}
+
+function wikiImageUrlsMatch(left, right) {
+  if (!left || !right) {
+    return false;
+  }
+  return normalizeWikiImageUrl(left) === normalizeWikiImageUrl(right);
+}
+
+async function resolveWikiPage(decoration) {
+  if (decoration.wikiTitle) {
+    const pages = await queryWikiPages([decoration.wikiTitle]);
+    const page = selectWikiPage(pages);
+    if (page) {
+      return page;
+    }
+  }
+
+  const pages = await queryWikiPages(buildWikiTitleVariants(decoration.name));
+  return selectWikiPage(pages);
+}
+
+async function resolveWikiOriginal(page) {
+  if (page.original) {
+    return page.original;
+  }
+
+  return fetchRdfAppearanceUrl(page.title);
 }
 
 export function wikiLookupName(apiName) {
@@ -215,32 +257,43 @@ export async function enrichDecorationFromWiki(decoration) {
   const lookupName = wikiLookupName(decoration.name);
   const displayId = decoration.id;
 
-  if (decoration.original != null) {
-    console.log(`Decoration ${lookupName} (ID: ${displayId}) already has image data. Skipping image fetch.`);
+  console.log(`Processing decoration: ${lookupName} (ID: ${displayId})`);
+
+  const page = await resolveWikiPage(decoration);
+  if (!page) {
+    console.warn(`No valid wiki page found for decoration ${lookupName} (ID: ${displayId})`);
     return applyWikiRecipeIfNeeded(decoration);
   }
 
-  console.log(`Processing decoration: ${lookupName} (ID: ${displayId})`);
-
-  const pages = await queryWikiPages(buildWikiTitleVariants(decoration.name));
-  const page = selectWikiPage(pages);
-
-  if (!page) {
-    console.warn(`No valid wiki page found for decoration ${lookupName} (ID: ${displayId})`);
-    return decoration;
-  }
-
+  const wikiOriginal = await resolveWikiOriginal(page);
   let next = { ...decoration, wikiTitle: page.title };
 
-  if (page.original) {
-    next = { ...next, original: page.original };
-  } else {
-    const original = await fetchRdfAppearanceUrl(page.title);
-    if (original) {
-      next = { ...next, original };
-    } else {
-      console.warn(`No image information found for decoration ${lookupName} (ID: ${displayId})`);
+  if (wikiOriginal?.source) {
+    const currentRemote = remoteOriginalSource(decoration);
+    const nextRemote = wikiOriginal.source;
+
+    if (!currentRemote) {
+      next = {
+        ...next,
+        original: {
+          width: wikiOriginal.width,
+          height: wikiOriginal.height,
+          source: nextRemote,
+        },
+      };
+    } else if (!wikiImageUrlsMatch(currentRemote, nextRemote)) {
+      console.log(`Wiki image changed for ${lookupName} (ID: ${displayId})`);
+      next = {
+        ...next,
+        original: {
+          width: wikiOriginal.width,
+          height: wikiOriginal.height,
+          source: nextRemote,
+        },
+      };
     }
+  } else {
+    console.warn(`No image information found for decoration ${lookupName} (ID: ${displayId})`);
   }
 
   return applyWikiRecipeIfNeeded(next);

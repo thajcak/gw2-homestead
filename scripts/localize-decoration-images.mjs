@@ -92,8 +92,10 @@ async function localizeDecoration(decoration, options = {}) {
     const previewRelative = `decorations/${id}/preview.${previewExt}`;
     const previewAbsolute = join(assetsRoot, previewRelative);
     const existingHash = await fileHash(previewAbsolute);
+    const storedRemote = decoration.original?.remoteSource;
+    const remoteChanged = Boolean(storedRemote && storedRemote !== remotePreview);
 
-    if (force || existingHash == null) {
+    if (force || existingHash == null || remoteChanged) {
       await downloadImage(remotePreview, previewAbsolute);
       changed = true;
     }
