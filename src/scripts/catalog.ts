@@ -1,4 +1,5 @@
 import type { Category, Decoration } from '../types';
+import { sanitizeDisplayName, sanitizeText } from '../utils/sanitizeText';
 
 export interface SearchIndexEntry {
   id: number;
@@ -125,6 +126,7 @@ function renderExpandedDecoration(
   previewUrls: Record<string, string>,
   deferPreviewLoad = false
 ): string {
+  const displayName = sanitizeDisplayName(decoration.name);
   const indicatorLeft = `calc(50% + ${(decorationIndex % itemsPerRow) * (74 + 16)}px - ${(itemsPerRow * (74 + 16) - 16) / 2}px + 37px)`;
   const optimizedPreview = previewUrls[String(decoration.id)];
   const imageSource = optimizedPreview ?? '';
@@ -138,7 +140,7 @@ function renderExpandedDecoration(
         <img
           class="expanded-preview__img"
           ${previewSrcAttr}
-          alt="${escapeHtml(decoration.name)}"
+          alt="${escapeHtml(displayName)}"
           loading="lazy"
           decoding="async"
           fetchpriority="low"
@@ -195,7 +197,7 @@ function renderExpandedDecoration(
           </div>
           <div class="expanded-decoration__details">
             <div class="expanded-heading">
-              <h2 class="expanded-title">${escapeHtml(decoration.name)}</h2>
+              <h2 class="expanded-title">${escapeHtml(displayName)}</h2>
               ${wikiLink}
             </div>
             <div class="expanded-tags">${categoryTags}</div>
@@ -706,13 +708,14 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     grid!.replaceChildren();
 
     gridItems = searchIndex.map((entry) => {
+      const displayName = sanitizeDisplayName(entry.name);
       const item = document.createElement('button');
       item.type = 'button';
       item.className = 'catalog-item';
       item.dataset.id = String(entry.id);
       item.dataset.categories = entry.categories.join(',');
-      item.dataset.searchText = `${entry.name} ${entry.description ?? ''}`.toLowerCase();
-      item.setAttribute('aria-label', entry.name);
+      item.dataset.searchText = `${displayName} ${sanitizeText(entry.description ?? '')}`.toLowerCase();
+      item.setAttribute('aria-label', displayName);
       item.innerHTML = '<div class="catalog-icon" aria-hidden="true"></div>';
       item.addEventListener('click', () => {
         void openDecorationById(entry.id);
@@ -755,7 +758,7 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     const entry = searchIndexById.get(id);
     const img = document.createElement('img');
     img.className = 'catalog-icon__img';
-    img.alt = entry?.name ?? '';
+    img.alt = sanitizeDisplayName(entry?.name ?? '');
     img.decoding = 'async';
     img.loading = 'lazy';
     img.fetchPriority = 'low';

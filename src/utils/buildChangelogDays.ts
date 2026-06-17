@@ -1,4 +1,5 @@
 import type { ChangeLogDay, ChangeLogEntry, Decoration } from '../types';
+import { sanitizeDisplayName } from './sanitizeText';
 
 interface HistoryEntry {
   day: string;
@@ -12,7 +13,7 @@ function historyToEntry(id: number, history: HistoryEntry): ChangeLogEntry & { d
     id,
     day: history.day,
     type: history.type,
-    name: history.name,
+    name: sanitizeDisplayName(history.name),
     ...(history.changes?.length ? { changes: history.changes } : {}),
   };
 }

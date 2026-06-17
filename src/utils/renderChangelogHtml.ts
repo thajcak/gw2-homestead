@@ -1,4 +1,5 @@
 import type { ChangeLogDay } from '../types';
+import { sanitizeDisplayName } from './sanitizeText';
 
 function escapeHtml(value: string): string {
   return value
@@ -17,8 +18,10 @@ export function renderChangelogHtml(days: ChangeLogDay[]): string {
     .map((dayGroup) => {
       const entries = dayGroup.entries
         .map(
-          (entry) =>
-            `<li><button type="button" class="changelog-entry changelog-entry--chip" data-changelog-entry="${entry.id}" data-changelog-name="${escapeHtml(entry.name)}">${escapeHtml(entry.name)}</button></li>`
+          (entry) => {
+            const displayName = sanitizeDisplayName(entry.name);
+            return `<li><button type="button" class="changelog-entry changelog-entry--chip" data-changelog-entry="${entry.id}" data-changelog-name="${escapeHtml(displayName)}">${escapeHtml(displayName)}</button></li>`;
+          }
         )
         .join('');
 

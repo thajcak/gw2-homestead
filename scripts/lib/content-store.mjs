@@ -1,5 +1,6 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { sanitizeDisplayName, sanitizeText } from './sanitize-text.mjs';
 
 export function listContentIds(contentDir) {
   if (!existsSync(contentDir)) {
@@ -47,7 +48,7 @@ export function eventToHistoryEntry(event, day) {
   return {
     day,
     type: event.type,
-    name: event.name,
+    name: sanitizeDisplayName(event.name),
     ...(event.changes?.length ? { changes: event.changes } : {}),
   };
 }
@@ -115,8 +116,8 @@ export function mergeEnrichmentFromExisting(apiItem, existing) {
 export function mergeDecorationUpdate(existing, apiItem) {
   const merged = {
     id: apiItem.id,
-    name: apiItem.name,
-    description: apiItem.description,
+    name: sanitizeDisplayName(apiItem.name),
+    description: apiItem.description != null ? sanitizeText(apiItem.description) : apiItem.description,
     categories: apiItem.categories,
     icon: isLocalAssetPath(existing?.icon) ? existing.icon : apiItem.icon,
     history: existing?.history ?? [],
@@ -142,7 +143,7 @@ export function mergeDecorationUpdate(existing, apiItem) {
 export function mergeCategoryUpdate(existing, apiItem) {
   return {
     id: apiItem.id,
-    name: apiItem.name,
+    name: sanitizeDisplayName(apiItem.name),
     history: existing?.history ?? [],
   };
 }

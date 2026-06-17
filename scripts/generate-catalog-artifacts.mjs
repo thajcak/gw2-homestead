@@ -1,6 +1,7 @@
 import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { sanitizeDisplayName, sanitizeText } from './lib/sanitize-text.mjs';
 
 const rootDir = join(fileURLToPath(new URL('.', import.meta.url)), '..');
 const decorationsContentDir = join(rootDir, 'src/content/decorations');
@@ -22,7 +23,7 @@ export async function generateCatalogArtifacts() {
     const category = JSON.parse(await readFile(join(categoriesContentDir, filename), 'utf8'));
     categories.push({
       id: category.id,
-      name: category.name,
+      name: sanitizeDisplayName(category.name),
     });
   }
 
@@ -38,6 +39,10 @@ export async function generateCatalogArtifacts() {
 
     const decoration = JSON.parse(await readFile(join(decorationsContentDir, filename), 'utf8'));
     const { history: _history, ...catalogDecoration } = decoration;
+    catalogDecoration.name = sanitizeDisplayName(catalogDecoration.name);
+    if (catalogDecoration.description != null) {
+      catalogDecoration.description = sanitizeText(catalogDecoration.description);
+    }
 
     await writeFile(
       join(catalogDir, 'decorations', `${decoration.id}.json`),
@@ -46,8 +51,8 @@ export async function generateCatalogArtifacts() {
 
     searchIndex.push({
       id: decoration.id,
-      name: decoration.name,
-      description: decoration.description,
+      name: catalogDecoration.name,
+      description: catalogDecoration.description,
       categories: decoration.categories,
     });
   }
