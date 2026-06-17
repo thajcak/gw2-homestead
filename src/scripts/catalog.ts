@@ -269,7 +269,6 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   let changelogLoading: Promise<void> | null = null;
   let activeExpandToken = 0;
   let panelRemovalToken = 0;
-  let rowChangeTimer: ReturnType<typeof setTimeout> | null = null;
   let suppressIconLoads = false;
 
   async function loadDecoration(id: number): Promise<Decoration | undefined> {
@@ -427,10 +426,6 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
 
   function collapseExpanded(): void {
     activeExpandToken += 1;
-    if (rowChangeTimer != null) {
-      clearTimeout(rowChangeTimer);
-      rowChangeTimer = null;
-    }
 
     const removalToken = ++panelRemovalToken;
     const panel = grid!.querySelector<HTMLElement>('.expanded-decoration');
@@ -549,10 +544,6 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     }
 
     const token = ++activeExpandToken;
-    if (rowChangeTimer != null) {
-      clearTimeout(rowChangeTimer);
-      rowChangeTimer = null;
-    }
 
     const currentIndex =
       expandedItemId != null
@@ -562,23 +553,6 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
       itemsPerRow > 0 &&
       currentIndex >= 0 &&
       Math.floor(newIndex / itemsPerRow) === Math.floor(currentIndex / itemsPerRow);
-
-    if (expandedItemId != null && !isSameRow) {
-      const panel = grid!.querySelector<HTMLElement>('.expanded-decoration');
-      if (panel) {
-        panel.classList.add('is-collapsed');
-        rowChangeTimer = setTimeout(() => {
-          rowChangeTimer = null;
-          void insertExpandedPanel(id, true, token, {
-            scroll: options.scroll,
-            deferPreview: options.deferPreview,
-          });
-        }, ANIMATION_MS);
-        expandedItemId = null;
-        updateDeepLink(null);
-        return;
-      }
-    }
 
     await insertExpandedPanel(
       id,
