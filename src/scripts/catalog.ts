@@ -1,4 +1,5 @@
 import type { Category, Decoration } from '../types';
+import type { OptimizedImage } from '../types/optimizedImage';
 import { sanitizeDisplayName, sanitizeText } from '../utils/sanitizeText';
 
 export interface SearchIndexEntry {
@@ -117,37 +118,61 @@ function matchesFilters(
   return true;
 }
 
+function renderPreviewImage(
+  preview: OptimizedImage | undefined,
+  alt: string,
+  deferLoad: boolean
+): string {
+  if (!preview?.src) {
+    return `<div class="expanded-preview is-missing" role="status">Image not found</div>`;
+  }
+
+  const attrs = [
+    'class="expanded-preview__img"',
+    `alt="${escapeHtml(alt)}"`,
+    `width="${preview.width}"`,
+    `height="${preview.height}"`,
+    'decoding="async"',
+    'onload="this.closest(\'.expanded-preview\')?.classList.add(\'is-loaded\')"',
+  ];
+
+  if (deferLoad) {
+    attrs.push(`data-preview-src="${escapeHtml(preview.src)}"`);
+    if (preview.srcSet) {
+      attrs.push(`data-preview-srcset="${escapeHtml(preview.srcSet)}"`);
+    }
+    if (preview.sizes) {
+      attrs.push(`data-preview-sizes="${escapeHtml(preview.sizes)}"`);
+    }
+  } else {
+    attrs.push(`src="${escapeHtml(preview.src)}"`);
+    if (preview.srcSet) {
+      attrs.push(`srcset="${escapeHtml(preview.srcSet)}"`);
+    }
+    if (preview.sizes) {
+      attrs.push(`sizes="${escapeHtml(preview.sizes)}"`);
+    }
+    attrs.push('loading="eager"', 'fetchpriority="high"');
+  }
+
+  return `<div class="expanded-preview">
+        <div class="expanded-preview__skeleton" aria-hidden="true"></div>
+        <img ${attrs.join(' ')} />
+      </div>`;
+}
+
 function renderExpandedDecoration(
   decoration: Decoration,
   categoryMap: Map<number, string>,
   itemsPerRow: number,
   decorationIndex: number,
-  baseUrl: string,
-  previewUrls: Record<string, string>,
+  previewUrls: Record<string, OptimizedImage>,
   deferPreviewLoad = false
 ): string {
   const displayName = sanitizeDisplayName(decoration.name);
   const indicatorLeft = `calc(50% + ${(decorationIndex % itemsPerRow) * (74 + 16)}px - ${(itemsPerRow * (74 + 16) - 16) / 2}px + 37px)`;
-  const optimizedPreview = previewUrls[String(decoration.id)];
-  const imageSource = optimizedPreview ?? '';
-  const hasOriginal = Boolean(imageSource);
-  const previewSrcAttr = deferPreviewLoad
-    ? `data-preview-src="${escapeHtml(imageSource)}"`
-    : `src="${escapeHtml(imageSource)}"`;
-  const imageFrameContent = hasOriginal
-    ? `<div class="expanded-preview">
-        <div class="expanded-preview__skeleton" aria-hidden="true"></div>
-        <img
-          class="expanded-preview__img"
-          ${previewSrcAttr}
-          alt="${escapeHtml(displayName)}"
-          loading="lazy"
-          decoding="async"
-          fetchpriority="low"
-          onload="this.closest('.expanded-preview')?.classList.add('is-loaded')"
-        />
-      </div>`
-    : `<div class="expanded-preview is-missing" role="status">Image not found</div>`;
+  const preview = previewUrls[String(decoration.id)];
+  const imageFrameContent = renderPreviewImage(preview, displayName, deferPreviewLoad);
 
   const categoryTags = decoration.categories
     .map((catId) => {
@@ -248,7 +273,7 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
       (response) => response.json() as Promise<Record<string, string>>
     ),
     fetch(catalogUrl(baseUrl, 'catalog/preview-manifest.json')).then(
-      (response) => response.json() as Promise<Record<string, string>>
+      (response) => response.json() as Promise<Record<string, OptimizedImage>>
     ),
   ]);
 
@@ -413,7 +438,21 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
       if (!img?.dataset.previewSrc) {
         return;
       }
+
+      img.loading = 'eager';
+      img.fetchPriority = 'high';
       img.src = img.dataset.previewSrc;
+
+      if (img.dataset.previewSrcset) {
+        img.srcset = img.dataset.previewSrcset;
+        img.removeAttribute('data-preview-srcset');
+      }
+
+      if (img.dataset.previewSizes) {
+        img.sizes = img.dataset.previewSizes;
+        img.removeAttribute('data-preview-sizes');
+      }
+
       img.removeAttribute('data-preview-src');
     };
 
@@ -456,13 +495,13 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     decorationId: number,
     animate: boolean,
     token: number,
-    options: { scroll?: PanelScrollBehavior; deferPreview?: boolean } = {}
+    options: {
+      scroll?: PanelScrollBehavior;
+      deferPreview?: boolean;
+      decorationPromise?: Promise<Decoration | undefined>;
+      preScroll?: boolean;
+    } = {}
   ): Promise<void> {
-    const decoration = await loadDecoration(decorationId);
-    if (token !== activeExpandToken || !decoration) {
-      return;
-    }
-
     const visibleItems = getVisibleGridItems();
     const decorationIndex = visibleItems.findIndex(
       (item) => Number(item.dataset.id) === decorationId
@@ -475,6 +514,16 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     const currentRow = Math.floor(decorationIndex / itemsPerRow);
     const lastInRowIndex = Math.min((currentRow + 1) * itemsPerRow - 1, visibleItems.length - 1);
     const insertAfter = visibleItems[lastInRowIndex];
+    const scrollBehavior = resolveScrollBehavior(clickedItem, options.scroll);
+
+    if (options.preScroll) {
+      scrollToItem(clickedItem, scrollBehavior);
+    }
+
+    const decoration = await (options.decorationPromise ?? loadDecoration(decorationId));
+    if (token !== activeExpandToken || !decoration) {
+      return;
+    }
 
     panelRemovalToken += 1;
     removeExpandedPanel();
@@ -489,7 +538,6 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
       categoryMap,
       itemsPerRow,
       decorationIndex,
-      baseUrl,
       previewUrls,
       options.deferPreview ?? false
     );
@@ -502,7 +550,6 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
 
     const targetHeight = Math.max(window.innerHeight * 0.7, 320);
     panel.style.height = `${targetHeight}px`;
-    const scrollBehavior = resolveScrollBehavior(clickedItem, options.scroll);
 
     if (animate) {
       panel.classList.add('is-collapsed');
@@ -512,11 +559,15 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
           return;
         }
         panel.classList.remove('is-collapsed');
-        setTimeout(() => scrollToItem(clickedItem, scrollBehavior), 50);
+        if (!options.preScroll) {
+          setTimeout(() => scrollToItem(clickedItem, scrollBehavior), 50);
+        }
       });
     } else {
       panel.classList.remove('is-collapsed');
-      scrollToItem(clickedItem, scrollBehavior);
+      if (!options.preScroll) {
+        scrollToItem(clickedItem, scrollBehavior);
+      }
     }
 
     if (options.deferPreview) {
@@ -544,25 +595,37 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     }
 
     const token = ++activeExpandToken;
+    const decorationPromise = loadDecoration(id);
+    const isPanelSwap = expandedItemId != null;
 
-    const currentIndex =
-      expandedItemId != null
-        ? visibleItems.findIndex((item) => Number(item.dataset.id) === expandedItemId)
-        : -1;
-    const isSameRow =
-      itemsPerRow > 0 &&
-      currentIndex >= 0 &&
-      Math.floor(newIndex / itemsPerRow) === Math.floor(currentIndex / itemsPerRow);
+    suppressIconLoads = true;
+    isScrolling = true;
 
-    await insertExpandedPanel(
-      id,
-      expandedItemId != null && isSameRow ? false : animate,
-      token,
-      {
-        scroll: options.scroll,
-        deferPreview: options.deferPreview,
-      }
-    );
+    try {
+      const currentIndex =
+        expandedItemId != null
+          ? visibleItems.findIndex((item) => Number(item.dataset.id) === expandedItemId)
+          : -1;
+      const isSameRow =
+        itemsPerRow > 0 &&
+        currentIndex >= 0 &&
+        Math.floor(newIndex / itemsPerRow) === Math.floor(currentIndex / itemsPerRow);
+
+      await insertExpandedPanel(
+        id,
+        isPanelSwap ? false : animate,
+        token,
+        {
+          scroll: isPanelSwap ? 'auto' : options.scroll,
+          deferPreview: options.deferPreview,
+          decorationPromise,
+          preScroll: isPanelSwap && !isSameRow,
+        }
+      );
+    } finally {
+      suppressIconLoads = false;
+      scheduleIconLoadsAfterScroll();
+    }
   }
 
   async function openDecorationFromDeepLink(id: number): Promise<void> {

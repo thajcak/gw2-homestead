@@ -1,9 +1,10 @@
 import type { APIRoute } from 'astro';
+import type { OptimizedImage } from '../../types/optimizedImage';
 import { buildPreviewUrls } from '../../utils/buildPreviewUrls';
 
 export const prerender = true;
 
-let cachedManifest: Record<string, string> | null = null;
+let cachedManifest: Record<string, OptimizedImage> | null = null;
 
 export const GET: APIRoute = async () => {
   if (!cachedManifest) {
