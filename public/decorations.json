@@ -10086,6 +10086,31 @@
       "source": "https://wiki.guildwars2.com/images/b/bd/Kodan_Table_Setting_top.jpg",
       "width": 1377,
       "height": 866
+    },
+    "recipe": {
+      "rating": 150,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "sheet": "Homestead Recipe Book: Tables",
+      "id": 14355,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 25,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 4,
+          "item": "Linen Scrap"
+        },
+        {
+          "slot": 3,
+          "quantity": 5,
+          "item": "Lowland Pine Log"
+        }
+      ]
     }
   },
   {
@@ -10097,7 +10122,42 @@
       19
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/23C70F7AE9B1EE270F94E173E34205306096F10B/3374992.png"
+    "icon": "https://render.guildwars2.com/file/23C70F7AE9B1EE270F94E173E34205306096F10B/3374992.png",
+    "wikiTitle": "Kodan Fancy Bed",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/7/75/Kodan_Fancy_Bed.jpg/50px-Kodan_Fancy_Bed.jpg",
+      "width": 50,
+      "height": 45
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/7/75/Kodan_Fancy_Bed.jpg",
+      "width": 1198,
+      "height": 1080
+    },
+    "recipe": {
+      "rating": 1,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "id": 14366,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 28,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 18,
+          "item": "Wool Scrap"
+        },
+        {
+          "slot": 3,
+          "quantity": 15,
+          "item": "Honey Flower"
+        }
+      ]
+    }
   },
   {
     "id": 226,
@@ -10107,7 +10167,44 @@
       2
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/F4EAAF51FEB94FEA65A51B39D7513364A9990C11/1227618.png"
+    "icon": "https://render.guildwars2.com/file/F4EAAF51FEB94FEA65A51B39D7513364A9990C11/1227618.png",
+    "wikiTitle": "Red Throw Pillow (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/2/2f/Red_Throw_Pillow.jpg/50px-Red_Throw_Pillow.jpg",
+      "width": 50,
+      "height": 33
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/2/2f/Red_Throw_Pillow.jpg",
+      "width": 825,
+      "height": 542
+    },
+    "recipe": {
+      "rating": 150,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Red Throw Pillow",
+      "sheet": "Homestead Recipe Book: Cushions",
+      "id": 14448,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 24,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 5,
+          "item": "Bolt of Linen"
+        },
+        {
+          "slot": 3,
+          "quantity": 5,
+          "item": "Pouch of Red Pigment"
+        }
+      ]
+    }
   },
   {
     "id": 227,
@@ -10117,7 +10214,44 @@
       2
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/2AA21D5765353604CEB339E5DD986C3BE52D2463/1227600.png"
+    "icon": "https://render.guildwars2.com/file/2AA21D5765353604CEB339E5DD986C3BE52D2463/1227600.png",
+    "wikiTitle": "Plush Armchair (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/9/9b/Plush_Armchair.jpg/27px-Plush_Armchair.jpg",
+      "width": 27,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/9/9b/Plush_Armchair.jpg",
+      "width": 534,
+      "height": 965
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Plush Armchair",
+      "sheet": "Homestead Recipe Book: Benches, Chairs, Stools",
+      "id": 14478,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 33,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 8,
+          "item": "Bolt of Silk"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Vial of Linseed Oil"
+        }
+      ]
+    }
   },
   {
     "id": 228,
@@ -10127,7 +10261,18 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/405472159D3EA01A18E1C32D0404060635AD60F8/1313332.png"
+    "icon": "https://render.guildwars2.com/file/405472159D3EA01A18E1C32D0404060635AD60F8/1313332.png",
+    "wikiTitle": "Season 3: Platinum Guild Challenger Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/a/ab/Season_1-_Platinum_Guild_Challenger_Trophy.jpg/50px-Season_1-_Platinum_Guild_Challenger_Trophy.jpg",
+      "width": 50,
+      "height": 49
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/a/ab/Season_1-_Platinum_Guild_Challenger_Trophy.jpg",
+      "width": 1500,
+      "height": 1459
+    }
   },
   {
     "id": 229,
@@ -10138,7 +10283,44 @@
       23
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/B40243A8E4F506FD743103476AF6904A34FF633F/3072466.png"
+    "icon": "https://render.guildwars2.com/file/B40243A8E4F506FD743103476AF6904A34FF633F/3072466.png",
+    "wikiTitle": "Holographic Track Curved Ramp (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/9/9d/Holographic_Track_Curved_Ramp.jpg/50px-Holographic_Track_Curved_Ramp.jpg",
+      "width": 50,
+      "height": 24
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/9/9d/Holographic_Track_Curved_Ramp.jpg",
+      "width": 657,
+      "height": 321
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Holographic Track Curved Ramp",
+      "sheet": "Homestead Recipe Book: Dragon Bash, Volume 5",
+      "id": 14860,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 30,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 20,
+          "item": "Piece of Zhaitaffy"
+        },
+        {
+          "slot": 3,
+          "quantity": 50,
+          "item": "Research Note"
+        }
+      ]
+    }
   },
   {
     "id": 230,
@@ -20862,7 +21044,43 @@
     ],
     "max_count": 250,
     "icon": "https://render.guildwars2.com/file/311E100D557495EBAEFD5C3849E55F30ECFE0FD9/1225305.png",
-    "wikiTitle": "Sylvari Summit Banner (Handiwork)"
+    "wikiTitle": "Sylvari Summit Banner (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/e/e4/Sylvari_Summit_Banner.jpg/20px-Sylvari_Summit_Banner.jpg",
+      "width": 20,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/e/e4/Sylvari_Summit_Banner.jpg",
+      "width": 400,
+      "height": 1006
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Sylvari Summit Banner",
+      "sheet": "Homestead Recipe Book: Summit Banners, Volume 1",
+      "id": 14158,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 26,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 5,
+          "item": "Bolt of Silk"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Superior Rune of the Grove"
+        }
+      ]
+    }
   },
   {
     "id": 471,
@@ -20872,7 +21090,44 @@
       4
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/F9B213913F0A43F59E109406EB3AD6AEB1DF96F1/1634123.png"
+    "icon": "https://render.guildwars2.com/file/F9B213913F0A43F59E109406EB3AD6AEB1DF96F1/1634123.png",
+    "wikiTitle": "Plush Rug (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/c/ca/Plush_Rug_top_view.jpg/43px-Plush_Rug_top_view.jpg",
+      "width": 43,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/c/ca/Plush_Rug_top_view.jpg",
+      "width": 825,
+      "height": 959
+    },
+    "recipe": {
+      "rating": 150,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Plush Rug",
+      "sheet": "Homestead Recipe Book: Rugs",
+      "id": 14386,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 26,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 20,
+          "item": "Jade Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 5,
+          "item": "Gossamer Scrap"
+        }
+      ]
+    }
   },
   {
     "id": 472,
@@ -20883,7 +21138,44 @@
       25
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/D6502F1432DB10714EBF0C5CE4DE6C043D0E652C/2212627.png"
+    "icon": "https://render.guildwars2.com/file/D6502F1432DB10714EBF0C5CE4DE6C043D0E652C/2212627.png",
+    "wikiTitle": "Visage of Madness (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/7/77/Visage_of_Madness.jpg/33px-Visage_of_Madness.jpg",
+      "width": 33,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/7/77/Visage_of_Madness.jpg",
+      "width": 639,
+      "height": 950
+    },
+    "recipe": {
+      "rating": 150,
+      "type": "Homestead Decoration",
+      "source": "sheet",
+      "disciplines": "Handiworker",
+      "name": "Visage of Madness",
+      "sheet": "Homestead Recipe Book: Halloween, Volume 5",
+      "id": 14534,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 25,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 12,
+          "item": "Rotted Titan Amber"
+        },
+        {
+          "slot": 3,
+          "quantity": 10,
+          "item": "Glob of Ectoplasm"
+        }
+      ]
+    }
   },
   {
     "id": 473,
@@ -24535,7 +24827,43 @@
     ],
     "max_count": 250,
     "icon": "https://render.guildwars2.com/file/67916BFC42091F7E6EE01C93C831A099F4ED0560/2236527.png",
-    "wikiTitle": "Candy Cane Beam (Handiwork)"
+    "wikiTitle": "Candy Cane Beam (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/4/4e/Candy_Cane_Beam.jpg/50px-Candy_Cane_Beam.jpg",
+      "width": 50,
+      "height": 13
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/4/4e/Candy_Cane_Beam.jpg",
+      "width": 1761,
+      "height": 444
+    },
+    "recipe": {
+      "rating": 75,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Candy Cane Beam",
+      "sheet": "Homestead Recipe Book: Wintersday, Volume 5",
+      "id": 14472,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 23,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 3,
+          "item": "Pile of Crystalline Dust"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Candy Cane"
+        }
+      ]
+    }
   },
   {
     "id": 554,
@@ -24545,7 +24873,44 @@
       4
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/E44FE09FDCCE4FDD7DA601F517487766D2BF4F94/2039211.png"
+    "icon": "https://render.guildwars2.com/file/E44FE09FDCCE4FDD7DA601F517487766D2BF4F94/2039211.png",
+    "wikiTitle": "Rug (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/6/63/Rug.jpg/37px-Rug.jpg",
+      "width": 37,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/6/63/Rug.jpg",
+      "width": 989,
+      "height": 1335
+    },
+    "recipe": {
+      "rating": 150,
+      "type": "Homestead Decoration",
+      "source": "automatic; sheet",
+      "disciplines": "Handiworker",
+      "name": "Rug",
+      "sheet": "Homestead Recipe Book: Rugs",
+      "id": 14394,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 25,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 10,
+          "item": "Lump of Mistonium"
+        },
+        {
+          "slot": 3,
+          "quantity": 10,
+          "item": "Trade Contract"
+        }
+      ]
+    }
   },
   {
     "id": 555,
@@ -24556,7 +24921,44 @@
       26
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/0C18B95BCC5B0F01A43D0A6EE5ACEBB790ACFB5C/1914823.png"
+    "icon": "https://render.guildwars2.com/file/0C18B95BCC5B0F01A43D0A6EE5ACEBB790ACFB5C/1914823.png",
+    "wikiTitle": "Tray of Eggnog (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/a/ad/Tray_of_Eggnog.jpg/50px-Tray_of_Eggnog.jpg",
+      "width": 50,
+      "height": 41
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/a/ad/Tray_of_Eggnog.jpg",
+      "width": 848,
+      "height": 693
+    },
+    "recipe": {
+      "rating": 75,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Tray of Eggnog",
+      "sheet": "Homestead Recipe Book: Wintersday, Volume 3",
+      "id": 14632,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 4,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 4,
+          "item": "Mug of Eggnog"
+        },
+        {
+          "slot": 3,
+          "quantity": 4,
+          "item": "Candy Cane"
+        }
+      ]
+    }
   },
   {
     "id": 556,
