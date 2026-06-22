@@ -5342,7 +5342,38 @@
     ],
     "max_count": 250,
     "icon": "https://render.guildwars2.com/file/9FB3E5F7459252B13335051873039506216150DC/1224097.png",
-    "wikiTitle": "Worn Pillar (Handiwork)"
+    "wikiTitle": "Worn Pillar (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/f/fb/Worn_Pillar.jpg/15px-Worn_Pillar.jpg",
+      "width": 15,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/f/fb/Worn_Pillar.jpg",
+      "width": 286,
+      "height": 951
+    },
+    "recipe": {
+      "rating": 150,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Worn Pillar",
+      "sheet": "Homestead Recipe Book: Pillars",
+      "id": 14113,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 25,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 2,
+          "item": "Onyx Fragment"
+        }
+      ]
+    }
   },
   {
     "id": 120,
@@ -5353,7 +5384,49 @@
       26
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/080D0D6694717DDC710EB7F86D94699F3C35340D/1614396.png"
+    "icon": "https://render.guildwars2.com/file/080D0D6694717DDC710EB7F86D94699F3C35340D/1614396.png",
+    "wikiTitle": "Snowman Ice Sculpture (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/1/1b/Snowman_Ice_Sculpture.jpg/48px-Snowman_Ice_Sculpture.jpg",
+      "width": 48,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/1/1b/Snowman_Ice_Sculpture.jpg",
+      "width": 1384,
+      "height": 1456
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Snowman Ice Sculpture",
+      "sheet": "Homestead Recipe Book: Wintersday, Volume 2",
+      "id": 14735,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 35,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 30,
+          "item": "Snowflake"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Glacial Lodestone"
+        },
+        {
+          "slot": 4,
+          "quantity": 2,
+          "item": "Lump of Coal"
+        }
+      ]
+    }
   },
   {
     "id": 121,
@@ -5363,7 +5436,18 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/E02B120D3B6B3DD311A32DE616A12DDDE93B9DE4/1313331.png"
+    "icon": "https://render.guildwars2.com/file/E02B120D3B6B3DD311A32DE616A12DDDE93B9DE4/1313331.png",
+    "wikiTitle": "Season 1: Gold Guild Challenger Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/2/2e/Season_1-_Gold_Guild_Challenger_Trophy.jpg/50px-Season_1-_Gold_Guild_Challenger_Trophy.jpg",
+      "width": 50,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/2/2e/Season_1-_Gold_Guild_Challenger_Trophy.jpg",
+      "width": 768,
+      "height": 768
+    }
   },
   {
     "id": 122,
