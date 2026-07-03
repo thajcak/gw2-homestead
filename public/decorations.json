@@ -6555,7 +6555,47 @@
       14
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/38A43678B1A6A845A1D615265201B358AFD54E37/3592745.png"
+    "icon": "https://render.guildwars2.com/file/38A43678B1A6A845A1D615265201B358AFD54E37/3592745.png",
+    "wikiTitle": "Kodan Outdoor Bath",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/0/05/Kodan_Outdoor_Bath.jpg/50px-Kodan_Outdoor_Bath.jpg",
+      "width": 50,
+      "height": 42
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/0/05/Kodan_Outdoor_Bath.jpg",
+      "width": 1517,
+      "height": 1273
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Automatic",
+      "disciplines": "Handiworker",
+      "id": 14711,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 38,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 2,
+          "item": "Molten Lodestone"
+        },
+        {
+          "slot": 3,
+          "quantity": 2,
+          "item": "Glacial Lodestone"
+        },
+        {
+          "slot": 4,
+          "quantity": 40,
+          "item": "Titan Heatstone"
+        }
+      ]
+    }
   },
   {
     "id": 147,
@@ -6566,7 +6606,44 @@
       25
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/D10B1AE9C1E52BC77AD207796450642A66B1B34E/2212626.png"
+    "icon": "https://render.guildwars2.com/file/D10B1AE9C1E52BC77AD207796450642A66B1B34E/2212626.png",
+    "wikiTitle": "Ominous Fortress Wall: Corrupted (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/7/7d/Ominous_Fortress_Wall-_Corrupted.jpg/50px-Ominous_Fortress_Wall-_Corrupted.jpg",
+      "width": 50,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/7/7d/Ominous_Fortress_Wall-_Corrupted.jpg",
+      "width": 1325,
+      "height": 1325
+    },
+    "recipe": {
+      "rating": 150,
+      "type": "Homestead Decoration",
+      "source": "sheet",
+      "disciplines": "Handiworker",
+      "name": "Ominous Fortress Wall: Corrupted",
+      "sheet": "Homestead Recipe Book: Halloween, Volume 5",
+      "id": 14686,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 27,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 16,
+          "item": "Rotted Titan Amber"
+        },
+        {
+          "slot": 3,
+          "quantity": 3,
+          "item": "Pile of Filthy Essence"
+        }
+      ]
+    }
   },
   {
     "id": 148,
@@ -27411,6 +27488,32 @@
       "source": "https://wiki.guildwars2.com/images/c/c3/Potted_Reaching_Gold_Fern.jpg",
       "width": 582,
       "height": 944
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Potted Reaching Gold Fern",
+      "sheet": "Homestead Recipe Book: Trees, Volume 2",
+      "id": 14759,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 26,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 2,
+          "item": "Mordrem Core"
+        },
+        {
+          "slot": 3,
+          "quantity": 5,
+          "item": "Lump of Aurillium"
+        }
+      ]
     }
   },
   {
@@ -27421,7 +27524,44 @@
       7
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/7B67A5C2B580E61147B224320E3A679F57C1B2ED/1224805.png"
+    "icon": "https://render.guildwars2.com/file/7B67A5C2B580E61147B224320E3A679F57C1B2ED/1224805.png",
+    "wikiTitle": "Crooked Thorny Mushroom (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/f/f1/Crooked_Thorny_Mushroom.jpg/33px-Crooked_Thorny_Mushroom.jpg",
+      "width": 33,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/f/f1/Crooked_Thorny_Mushroom.jpg",
+      "width": 928,
+      "height": 1393
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Crooked Thorny Mushroom",
+      "sheet": "Homestead Recipe Book: Plants, Volume 2",
+      "id": 14268,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 4,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 10,
+          "item": "Barbed Thorn"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Giant Mushroom Spore"
+        }
+      ]
+    }
   },
   {
     "id": 613,
@@ -27432,7 +27572,42 @@
       19
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/D99E1005482D0042E7A40FF4366E9129DD422B98/3375012.png"
+    "icon": "https://render.guildwars2.com/file/D99E1005482D0042E7A40FF4366E9129DD422B98/3375012.png",
+    "wikiTitle": "Kodan Woodsy Dining Table",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/0/06/Kodan_Woodsy_Dining_Table_top.jpg/50px-Kodan_Woodsy_Dining_Table_top.jpg",
+      "width": 50,
+      "height": 25
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/0/06/Kodan_Woodsy_Dining_Table_top.jpg",
+      "width": 2407,
+      "height": 1203
+    },
+    "recipe": {
+      "rating": 1,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "id": 14174,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 32,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 7,
+          "item": "Intricate Totem"
+        },
+        {
+          "slot": 3,
+          "quantity": 10,
+          "item": "Lowland Pine Log"
+        }
+      ]
+    }
   },
   {
     "id": 614,
@@ -27442,7 +27617,44 @@
       6
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/07DF3B10EB535091BA6870A402A60B3D9159E4BF/1224819.png"
+    "icon": "https://render.guildwars2.com/file/07DF3B10EB535091BA6870A402A60B3D9159E4BF/1224819.png",
+    "wikiTitle": "Lattice Planter with Red Petunias (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/a/a5/Lattice_Planter_with_Red_Petunias.jpg/35px-Lattice_Planter_with_Red_Petunias.jpg",
+      "width": 35,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/a/a5/Lattice_Planter_with_Red_Petunias.jpg",
+      "width": 1064,
+      "height": 1520
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Lattice Planter with Red Petunias",
+      "sheet": "Homestead Recipe Book: Plants, Volume 2",
+      "id": 14362,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 32,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 2,
+          "item": "Onyx Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 10,
+          "item": "Pouch of Red Pigment"
+        }
+      ]
+    }
   },
   {
     "id": 615,
@@ -27453,7 +27665,44 @@
       16
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/444403E5737964FDECCC749258204D0FF65D1567/1769618.png"
+    "icon": "https://render.guildwars2.com/file/444403E5737964FDECCC749258204D0FF65D1567/1769618.png",
+    "wikiTitle": "Elonian Gong (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/e/e4/Elonian_Gong.jpg/50px-Elonian_Gong.jpg",
+      "width": 50,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/e/e4/Elonian_Gong.jpg",
+      "width": 1366,
+      "height": 1379
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Elonian Gong",
+      "sheet": "Homestead Recipe Book: Awakened, Volume 1",
+      "id": 14880,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 33,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 50,
+          "item": "Trade Contract"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Emerald Orb"
+        }
+      ]
+    }
   },
   {
     "id": 616,
@@ -38389,6 +38638,32 @@
       "source": "https://wiki.guildwars2.com/images/d/d6/Scarred_Ice_Monolith_front.jpg",
       "width": 666,
       "height": 947
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Scarred Ice Monolith",
+      "sheet": "Homestead Recipe Book: Wintersday, Volume 9",
+      "id": 15006,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 26,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 30,
+          "item": "Snowflake"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Corrupted Lodestone"
+        }
+      ]
     }
   },
   {
@@ -38401,7 +38676,44 @@
       4
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/43C233CE05C244DEAC109408F0D1F535D2E42000/3567647.png"
+    "icon": "https://render.guildwars2.com/file/43C233CE05C244DEAC109408F0D1F535D2E42000/3567647.png",
+    "wikiTitle": "Mr. Quiggles (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/3/3f/Mr._Quiggles.jpg/50px-Mr._Quiggles.jpg",
+      "width": 50,
+      "height": 45
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/3/3f/Mr._Quiggles.jpg",
+      "width": 1610,
+      "height": 1440
+    },
+    "recipe": {
+      "rating": 75,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Mr. Quiggles",
+      "sheet": "Mr. Quiggles Crafting Recipe",
+      "id": 15001,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 10,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 30,
+          "item": "Lowland Pine Log"
+        },
+        {
+          "slot": 3,
+          "quantity": 10,
+          "item": "Honey Flower"
+        }
+      ]
+    }
   },
   {
     "id": 862,
@@ -38412,7 +38724,44 @@
       26
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/6D037CC9685EA147DD3A5D209D7E68DF557B7E9C/3215304.png"
+    "icon": "https://render.guildwars2.com/file/6D037CC9685EA147DD3A5D209D7E68DF557B7E9C/3215304.png",
+    "wikiTitle": "Scarred Ice Spike (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/d/de/Scarred_Ice_Spike.jpg/20px-Scarred_Ice_Spike.jpg",
+      "width": 20,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/d/de/Scarred_Ice_Spike.jpg",
+      "width": 434,
+      "height": 1080
+    },
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Scarred Ice Spike",
+      "sheet": "Homestead Recipe Book: Wintersday, Volume 9",
+      "id": 15007,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 34,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 30,
+          "item": "Snowflake"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Corrupted Lodestone"
+        }
+      ]
+    }
   },
   {
     "id": 863,
