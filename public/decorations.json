@@ -18022,7 +18022,18 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/E02B120D3B6B3DD311A32DE616A12DDDE93B9DE4/1313331.png"
+    "icon": "https://render.guildwars2.com/file/E02B120D3B6B3DD311A32DE616A12DDDE93B9DE4/1313331.png",
+    "wikiTitle": "Season 5: Gold Guild Challenger Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/2/2e/Season_1-_Gold_Guild_Challenger_Trophy.jpg/50px-Season_1-_Gold_Guild_Challenger_Trophy.jpg",
+      "width": 50,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/2/2e/Season_1-_Gold_Guild_Challenger_Trophy.jpg",
+      "width": 768,
+      "height": 768
+    }
   },
   {
     "id": 400,
@@ -18032,7 +18043,44 @@
       9
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/6BCC68C006A8CE6ADD67B3235400B2CD0F790807/1225339.png"
+    "icon": "https://render.guildwars2.com/file/6BCC68C006A8CE6ADD67B3235400B2CD0F790807/1225339.png",
+    "wikiTitle": "Kormir Statue (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/c/cf/Kormir_Statue.jpg/29px-Kormir_Statue.jpg",
+      "width": 29,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/c/cf/Kormir_Statue.jpg",
+      "width": 577,
+      "height": 992
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Kormir Statue",
+      "sheet": "Homestead Recipe Book: Human Gods",
+      "id": 14899,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 34,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 12,
+          "item": "Sapphire Orb"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Visage of Kormir"
+        }
+      ]
+    }
   },
   {
     "id": 401,
@@ -18042,7 +18090,44 @@
       12
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/FE99CD0B42FD4ACC01F70F352870B7727D7321D1/1451119.png"
+    "icon": "https://render.guildwars2.com/file/FE99CD0B42FD4ACC01F70F352870B7727D7321D1/1451119.png",
+    "wikiTitle": "Gold Keep Construct Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/8/89/Gold_Keep_Construct_Trophy_detail.jpg/36px-Gold_Keep_Construct_Trophy_detail.jpg",
+      "width": 36,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/8/89/Gold_Keep_Construct_Trophy_detail.jpg",
+      "width": 697,
+      "height": 972
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Gold Keep Construct Trophy",
+      "sheet": "Recipe: Gold Keep Construct Trophy",
+      "id": 14276,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 130,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 100,
+          "item": "Magnetite Shard"
+        },
+        {
+          "slot": 3,
+          "quantity": 5,
+          "item": "Keep Construct Rubble (trophy)"
+        }
+      ]
+    }
   },
   {
     "id": 402,
@@ -18053,7 +18138,18 @@
       7
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/3D533AF8593B511D9795F1E152AD7ADEB7796F55/3374958.png"
+    "icon": "https://render.guildwars2.com/file/3D533AF8593B511D9795F1E152AD7ADEB7796F55/3374958.png",
+    "wikiTitle": "Janthir Grass (Large)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/4/48/Janthir_Grass_%28Large%29.jpg/50px-Janthir_Grass_%28Large%29.jpg",
+      "width": 50,
+      "height": 21
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/4/48/Janthir_Grass_%28Large%29.jpg",
+      "width": 3440,
+      "height": 1440
+    }
   },
   {
     "id": 403,
@@ -30666,32 +30762,6 @@
       "source": "https://wiki.guildwars2.com/images/b/be/Cuboid_of_Snow.jpg",
       "width": 1272,
       "height": 927
-    },
-    "recipe": {
-      "rating": 150,
-      "type": "Homestead Decoration",
-      "source": "recipe sheet",
-      "disciplines": "Handiworker",
-      "name": "Cuboid of Snow",
-      "sheet": "Homestead Recipe Book: Wintersday, Volume 2",
-      "id": 14342,
-      "ingredients": [
-        {
-          "slot": 1,
-          "quantity": 30,
-          "item": "Refined Homestead Fiber"
-        },
-        {
-          "slot": 2,
-          "quantity": 35,
-          "item": "Snowflake"
-        },
-        {
-          "slot": 3,
-          "quantity": 1,
-          "item": "Crystal Core"
-        }
-      ]
     }
   },
   {
@@ -30702,44 +30772,7 @@
       14
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/0E17FE1022F736B4C17B7525F5105757A522B6BE/1227554.png",
-    "wikiTitle": "Fancy Wagon (Handiwork)",
-    "thumbnail": {
-      "source": "https://wiki.guildwars2.com/images/thumb/0/0f/Fancy_Wagon.jpg/50px-Fancy_Wagon.jpg",
-      "width": 50,
-      "height": 31
-    },
-    "original": {
-      "source": "https://wiki.guildwars2.com/images/0/0f/Fancy_Wagon.jpg",
-      "width": 2320,
-      "height": 1416
-    },
-    "recipe": {
-      "rating": 300,
-      "type": "Homestead Decoration",
-      "source": "Recipe Sheet",
-      "disciplines": "Handiworker",
-      "name": "Fancy Wagon",
-      "sheet": "Homestead Recipe Book: Misc. Items, Volume 3",
-      "id": 14742,
-      "ingredients": [
-        {
-          "slot": 1,
-          "quantity": 34,
-          "item": "Refined Homestead Wood"
-        },
-        {
-          "slot": 2,
-          "quantity": 2,
-          "item": "Charged Core"
-        },
-        {
-          "slot": 3,
-          "quantity": 3,
-          "item": "Bolt of Gossamer"
-        }
-      ]
-    }
+    "icon": "https://render.guildwars2.com/file/0E17FE1022F736B4C17B7525F5105757A522B6BE/1227554.png"
   },
   {
     "id": 685,
@@ -30749,44 +30782,7 @@
       14
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/03012102B64BD27944B8FD255A13B47D0D06546A/1226127.png",
-    "wikiTitle": "Orange Balloon (Handiwork)",
-    "thumbnail": {
-      "source": "https://wiki.guildwars2.com/images/thumb/c/c9/Orange_Balloon.jpg/25px-Orange_Balloon.jpg",
-      "width": 25,
-      "height": 50
-    },
-    "original": {
-      "source": "https://wiki.guildwars2.com/images/c/c9/Orange_Balloon.jpg",
-      "width": 422,
-      "height": 846
-    },
-    "recipe": {
-      "rating": 150,
-      "type": "Homestead Decoration",
-      "source": "Recipe Sheet",
-      "disciplines": "Handiworker",
-      "name": "Orange Balloon",
-      "sheet": "Homestead Recipe Book: Balloons",
-      "id": 14309,
-      "ingredients": [
-        {
-          "slot": 1,
-          "quantity": 2,
-          "item": "Refined Homestead Fiber"
-        },
-        {
-          "slot": 2,
-          "quantity": 3,
-          "item": "Pouch of Orange Pigment"
-        },
-        {
-          "slot": 3,
-          "quantity": 1,
-          "item": "Spool of Linen Thread"
-        }
-      ]
-    }
+    "icon": "https://render.guildwars2.com/file/03012102B64BD27944B8FD255A13B47D0D06546A/1226127.png"
   },
   {
     "id": 686,
@@ -43952,7 +43948,27 @@
     ],
     "max_count": 250,
     "icon": "https://render.guildwars2.com/file/475D08AE102D512F97A16707F1C927AD563E2F24/3708929.png",
-    "wikiTitle": "Trimmed Wall (960 x 240) (Handiwork)"
+    "wikiTitle": "Trimmed Wall (960 x 240) (Handiwork)",
+    "recipe": {
+      "rating": 1,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "name": "Trimmed Wall (960 x 240)",
+      "id": 15327,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 15,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 6,
+          "item": "Elder Wood Plank"
+        }
+      ]
+    }
   },
   {
     "id": 992,
@@ -43963,7 +43979,38 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/A90C0059B42BB5A9F92E240D23A7F37CB3236D7C/3708913.png"
+    "icon": "https://render.guildwars2.com/file/A90C0059B42BB5A9F92E240D23A7F37CB3236D7C/3708913.png",
+    "wikiTitle": "Wall Bracket Half (480) (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/9/94/Wall_Bracket_Half_%28480%29.jpg/50px-Wall_Bracket_Half_%28480%29.jpg",
+      "width": 50,
+      "height": 40
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/9/94/Wall_Bracket_Half_%28480%29.jpg",
+      "width": 1213,
+      "height": 973
+    },
+    "recipe": {
+      "rating": 1,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "name": "Wall Bracket Half (480)",
+      "id": 15286,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 5,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 2,
+          "item": "Elder Wood Plank"
+        }
+      ]
+    }
   },
   {
     "id": 993,
@@ -43974,7 +44021,38 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/49D7A2B30DEAFBD5D809F4FC0829DF01B404E767/3708862.png"
+    "icon": "https://render.guildwars2.com/file/49D7A2B30DEAFBD5D809F4FC0829DF01B404E767/3708862.png",
+    "wikiTitle": "Wooden Beam Corner (30 x 120 x 30) (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/3/32/Wooden_Beam_%2816_x_120_x_16%29_top.jpg/50px-Wooden_Beam_%2816_x_120_x_16%29_top.jpg",
+      "width": 50,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/3/32/Wooden_Beam_%2816_x_120_x_16%29_top.jpg",
+      "width": 465,
+      "height": 465
+    },
+    "recipe": {
+      "rating": 1,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "name": "Wooden Beam Corner (30 x 120 x 30)",
+      "id": 15335,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 10,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 3,
+          "item": "Elder Wood Plank"
+        }
+      ]
+    }
   },
   {
     "id": 994,
