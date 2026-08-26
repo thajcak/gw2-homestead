@@ -1434,6 +1434,32 @@
       "source": "https://wiki.guildwars2.com/images/e/e6/Djinn_Teleportation_Device_Exit.jpg",
       "width": 583,
       "height": 681
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Teleporter Exit",
+      "sheet": "Recipe: Teleporter Exit",
+      "id": 14300,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 95,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 120,
+          "item": "Volatile Magic"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Brilliant Djinn Doubloon"
+        }
+      ]
     }
   },
   {
@@ -1445,7 +1471,42 @@
       1
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/EBBA1865F40A0E6EFBCACA609271191E6E9CDDCF/3375022.png"
+    "icon": "https://render.guildwars2.com/file/EBBA1865F40A0E6EFBCACA609271191E6E9CDDCF/3375022.png",
+    "wikiTitle": "Kodan Cottage Wall",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/6/66/Kodan_Cottage_Wall.jpg/50px-Kodan_Cottage_Wall.jpg",
+      "width": 50,
+      "height": 21
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/6/66/Kodan_Cottage_Wall.jpg",
+      "width": 1920,
+      "height": 807
+    },
+    "recipe": {
+      "rating": 150,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "id": 14762,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 3,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 4,
+          "item": "Claw"
+        },
+        {
+          "slot": 3,
+          "quantity": 5,
+          "item": "Lowland Pine Log"
+        }
+      ]
+    }
   },
   {
     "id": 36,
@@ -26122,7 +26183,33 @@
     ],
     "max_count": 250,
     "icon": "https://render.guildwars2.com/file/1AFC6AE991BECCDD2F4C0F13F16C152B90465D39/2075486.png",
-    "wikiTitle": "Ice Castle: Roof (Handiwork)"
+    "wikiTitle": "Ice Castle: Roof (Handiwork)",
+    "recipe": {
+      "rating": 225,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Ice Castle: Roof",
+      "sheet": "Homestead Recipe Book: Wintersday, Volume 4",
+      "id": 14358,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 25,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 40,
+          "item": "Snowflake"
+        },
+        {
+          "slot": 3,
+          "quantity": 1,
+          "item": "Superior Rune of Snowfall"
+        }
+      ]
+    }
   },
   {
     "id": 584,
@@ -33731,6 +33818,31 @@
       "source": "https://wiki.guildwars2.com/images/7/73/Racetrack_Downward_Left_Curve_top.jpg",
       "width": 1658,
       "height": 1326
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe sheet",
+      "disciplines": "Handiworker",
+      "sheet": "Homestead Recipe Book: Roller Beetle Racetracks",
+      "id": 14709,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 30,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 10,
+          "item": "Charged Titan Ore"
+        },
+        {
+          "slot": 3,
+          "quantity": 5,
+          "item": "Racing Medallion"
+        }
+      ]
     }
   },
   {
@@ -48547,7 +48659,38 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/616B096C0304CAE2FCB296A0B1F27E07370BD461/3744671.png"
+    "icon": "https://render.guildwars2.com/file/616B096C0304CAE2FCB296A0B1F27E07370BD461/3744671.png",
+    "wikiTitle": "Jungle Log (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/5/50/Jungle_Log.jpg/50px-Jungle_Log.jpg",
+      "width": 50,
+      "height": 44
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/5/50/Jungle_Log.jpg",
+      "width": 1099,
+      "height": 973
+    },
+    "recipe": {
+      "rating": 1,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "name": "Jungle Log",
+      "id": 15482,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 5,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 1,
+          "item": "Palm Lumber Core"
+        }
+      ]
+    }
   },
   {
     "id": 1127,
@@ -48558,7 +48701,39 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/D1EB6EAF5393EBD729EC521AEEB8C8EABDB47C7F/3744690.png"
+    "icon": "https://render.guildwars2.com/file/D1EB6EAF5393EBD729EC521AEEB8C8EABDB47C7F/3744690.png",
+    "wikiTitle": "Vale Guardian Pylon (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/2/2f/Vale_Guardian_Pylon.jpg/25px-Vale_Guardian_Pylon.jpg",
+      "width": 25,
+      "height": 50
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/2/2f/Vale_Guardian_Pylon.jpg",
+      "width": 705,
+      "height": 1410
+    },
+    "recipe": {
+      "rating": 1,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Vale Guardian Pylon",
+      "sheet": "Recipe: Vale Guardian Pylon",
+      "id": 15519,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 5,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 10,
+          "item": "Bolt of Cotton"
+        }
+      ]
+    }
   },
   {
     "id": 1130,
@@ -48569,7 +48744,49 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/C2A07FD6DF03273FAC0A076F066FCCEEF10BBC2A/3744666.png"
+    "icon": "https://render.guildwars2.com/file/C2A07FD6DF03273FAC0A076F066FCCEEF10BBC2A/3744666.png",
+    "wikiTitle": "Fancy Desert Sofa (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/c/ce/Fancy_Desert_Sofa.jpg/50px-Fancy_Desert_Sofa.jpg",
+      "width": 50,
+      "height": 28
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/c/ce/Fancy_Desert_Sofa.jpg",
+      "width": 2560,
+      "height": 1440
+    },
+    "recipe": {
+      "rating": 1,
+      "type": "Homestead Decoration",
+      "source": "recipe sheet",
+      "disciplines": "Handiworker",
+      "name": "Fancy Desert Sofa",
+      "sheet": "Recipe: Fancy Desert Sofa",
+      "id": 15492,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 10,
+          "item": "Refined Homestead Wood"
+        },
+        {
+          "slot": 2,
+          "quantity": 3,
+          "item": "Bolt of Cotton"
+        },
+        {
+          "slot": 3,
+          "quantity": 3,
+          "item": "Bolt of Silk"
+        },
+        {
+          "slot": 4,
+          "quantity": 5,
+          "item": "Refined Homestead Fiber"
+        }
+      ]
+    }
   },
   {
     "id": 1131,
@@ -51352,38 +51569,7 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/DD55BA7C9C74B70A6DED5A037B94E91EE19AA522/3744660.png",
-    "wikiTitle": "Iron Wall 120 x 240 (Handiwork)",
-    "thumbnail": {
-      "source": "https://wiki.guildwars2.com/images/thumb/3/33/Iron_Wall_120_x_240_front.jpg/27px-Iron_Wall_120_x_240_front.jpg",
-      "width": 27,
-      "height": 50
-    },
-    "original": {
-      "source": "https://wiki.guildwars2.com/images/3/33/Iron_Wall_120_x_240_front.jpg",
-      "width": 531,
-      "height": 971
-    },
-    "recipe": {
-      "rating": 1,
-      "type": "Homestead Decoration",
-      "source": "automatic",
-      "disciplines": "Handiworker",
-      "name": "Iron Wall 120 x 240",
-      "id": 15674,
-      "ingredients": [
-        {
-          "slot": 1,
-          "quantity": 10,
-          "item": "Refined Homestead Metal"
-        },
-        {
-          "slot": 2,
-          "quantity": 10,
-          "item": "Iron Ingot"
-        }
-      ]
-    }
+    "icon": "https://render.guildwars2.com/file/DD55BA7C9C74B70A6DED5A037B94E91EE19AA522/3744660.png"
   },
   {
     "id": 1215,
@@ -51394,38 +51580,7 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/012D56DE5640F0B6F25D9D1D2902CDB7F83F7709/3770087.png",
-    "wikiTitle": "Iron Door (Handiwork)",
-    "thumbnail": {
-      "source": "https://wiki.guildwars2.com/images/thumb/7/7c/Iron_Door_open.jpg/36px-Iron_Door_open.jpg",
-      "width": 36,
-      "height": 50
-    },
-    "original": {
-      "source": "https://wiki.guildwars2.com/images/7/7c/Iron_Door_open.jpg",
-      "width": 1080,
-      "height": 1500
-    },
-    "recipe": {
-      "rating": 1,
-      "type": "Homestead Decoration",
-      "source": "automatic",
-      "disciplines": "Handiworker",
-      "name": "Iron Door",
-      "id": 15645,
-      "ingredients": [
-        {
-          "slot": 1,
-          "quantity": 10,
-          "item": "Refined Homestead Metal"
-        },
-        {
-          "slot": 2,
-          "quantity": 10,
-          "item": "Iron Ingot"
-        }
-      ]
-    }
+    "icon": "https://render.guildwars2.com/file/012D56DE5640F0B6F25D9D1D2902CDB7F83F7709/3770087.png"
   },
   {
     "id": 1216,
@@ -51436,49 +51591,7 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/6DC27D27C1D2B32413B96DBACF6A5F0452DF9617/3770097.png",
-    "wikiTitle": "Seer Bed (Handiwork)",
-    "thumbnail": {
-      "source": "https://wiki.guildwars2.com/images/thumb/2/2e/Seer_Bed.jpg/50px-Seer_Bed.jpg",
-      "width": 50,
-      "height": 40
-    },
-    "original": {
-      "source": "https://wiki.guildwars2.com/images/2/2e/Seer_Bed.jpg",
-      "width": 1800,
-      "height": 1440
-    },
-    "recipe": {
-      "rating": 1,
-      "type": "Homestead Decoration",
-      "source": "recipe sheet",
-      "disciplines": "Handiworker",
-      "name": "Seer Bed",
-      "sheet": "Homestead Recipe Book: Seer Catalogue Volume 1",
-      "id": 15685,
-      "ingredients": [
-        {
-          "slot": 1,
-          "quantity": 20,
-          "item": "Refined Homestead Metal"
-        },
-        {
-          "slot": 2,
-          "quantity": 20,
-          "item": "Bolt of Silk"
-        },
-        {
-          "slot": 3,
-          "quantity": 20,
-          "item": "Gold Ingot"
-        },
-        {
-          "slot": 4,
-          "quantity": 10,
-          "item": "Raw Enchanting Stone"
-        }
-      ]
-    }
+    "icon": "https://render.guildwars2.com/file/6DC27D27C1D2B32413B96DBACF6A5F0452DF9617/3770097.png"
   },
   {
     "id": 1217,
@@ -51489,38 +51602,7 @@
       20
     ],
     "max_count": 250,
-    "icon": "https://render.guildwars2.com/file/523560154357EA14ED9AF7F9A3EB4E323B5F75E0/3770089.png",
-    "wikiTitle": "Iron Floor 960 x 840 (Handiwork)",
-    "thumbnail": {
-      "source": "https://wiki.guildwars2.com/images/thumb/c/cf/Iron_Floor_960_x_840_top.jpg/50px-Iron_Floor_960_x_840_top.jpg",
-      "width": 50,
-      "height": 43
-    },
-    "original": {
-      "source": "https://wiki.guildwars2.com/images/c/cf/Iron_Floor_960_x_840_top.jpg",
-      "width": 1129,
-      "height": 973
-    },
-    "recipe": {
-      "rating": 1,
-      "type": "Homestead Decoration",
-      "source": "automatic",
-      "disciplines": "Handiworker",
-      "name": "Iron Floor 960 x 840",
-      "id": 15638,
-      "ingredients": [
-        {
-          "slot": 1,
-          "quantity": 20,
-          "item": "Refined Homestead Metal"
-        },
-        {
-          "slot": 2,
-          "quantity": 30,
-          "item": "Iron Ingot"
-        }
-      ]
-    }
+    "icon": "https://render.guildwars2.com/file/523560154357EA14ED9AF7F9A3EB4E323B5F75E0/3770089.png"
   },
   {
     "id": 1218,
