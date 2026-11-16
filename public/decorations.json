@@ -582,16 +582,6 @@
     "max_count": 250,
     "icon": "https://render.guildwars2.com/file/C94B9E635B80035FB6BF02E40E4A5707C427DA59/1202573.png",
     "wikiTitle": "Obstacle: Knockback Turret (Handiwork)",
-    "thumbnail": {
-      "source": "https://wiki.guildwars2.com/images/thumb/a/ae/Obstacle-_Knockback_Turret.jpg/50px-Obstacle-_Knockback_Turret.jpg",
-      "width": 50,
-      "height": 67
-    },
-    "original": {
-      "source": "https://wiki.guildwars2.com/images/a/ae/Obstacle-_Knockback_Turret.jpg",
-      "width": 993,
-      "height": 1325
-    },
     "recipe": {
       "rating": 225,
       "type": "Homestead Decoration",
@@ -12082,7 +12072,43 @@
     ],
     "max_count": 250,
     "icon": "https://render.guildwars2.com/file/4362AAAE2063C6D394AB0B05D1029844D7932628/2694573.png",
-    "wikiTitle": "Holographic Track Downward Left Curve (Handiwork)"
+    "wikiTitle": "Holographic Track Downward Left Curve (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/e/e1/Holographic_Track_Downward_Left_Curve.jpg/50px-Holographic_Track_Downward_Left_Curve.jpg",
+      "width": 50,
+      "height": 15
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/e/e1/Holographic_Track_Downward_Left_Curve.jpg",
+      "width": 1154,
+      "height": 336
+    },
+    "recipe": {
+      "rating": 400,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Holographic Track Downward Left Curve",
+      "sheet": "Homestead Recipe Book: Dragon Bash, Volume 4",
+      "id": 14214,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 30,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 10,
+          "item": "Piece of Zhaitaffy"
+        },
+        {
+          "slot": 3,
+          "quantity": 50,
+          "item": "Research Note"
+        }
+      ]
+    }
   },
   {
     "id": 271,
@@ -12188,7 +12214,48 @@
     ],
     "max_count": 250,
     "icon": "https://render.guildwars2.com/file/1901E4DFCA63B23CB877E77DA2E5AA02EAC51A6C/1341276.png",
-    "wikiTitle": "Silver Mordremoth Trophy (Handiwork)"
+    "wikiTitle": "Silver Mordremoth Trophy (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/0/0c/Silver_Mordremoth_Trophy.jpg/50px-Silver_Mordremoth_Trophy.jpg",
+      "width": 50,
+      "height": 70
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/0/0c/Silver_Mordremoth_Trophy.jpg",
+      "width": 549,
+      "height": 774
+    },
+    "recipe": {
+      "rating": 300,
+      "type": "Homestead Decoration",
+      "source": "Recipe Sheet",
+      "disciplines": "Handiworker",
+      "name": "Silver Mordremoth Trophy",
+      "sheet": "Recipe: Silver Mordremoth Trophy",
+      "id": 14566,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 85,
+          "item": "Refined Homestead Fiber"
+        },
+        {
+          "slot": 2,
+          "quantity": 50,
+          "item": "Barbed Thorn"
+        },
+        {
+          "slot": 3,
+          "quantity": 3,
+          "item": "Mordremoth Mandible Piece"
+        },
+        {
+          "slot": 4,
+          "quantity": 3,
+          "item": "Mordrem Lodestone"
+        }
+      ]
+    }
   },
   {
     "id": 274,
@@ -16090,43 +16157,7 @@
     ],
     "max_count": 250,
     "icon": "https://render.guildwars2.com/file/52A507FA150A4CFAA2024895714DB01932F9E229/2323852.png",
-    "wikiTitle": "Zephyr Support (Handiwork)",
-    "thumbnail": {
-      "source": "https://wiki.guildwars2.com/images/thumb/8/8e/Zephyr_Support.jpg/50px-Zephyr_Support.jpg",
-      "width": 50,
-      "height": 139
-    },
-    "original": {
-      "source": "https://wiki.guildwars2.com/images/8/8e/Zephyr_Support.jpg",
-      "width": 1238,
-      "height": 3440
-    },
-    "recipe": {
-      "rating": 75,
-      "type": "Homestead Decoration",
-      "source": "Recipe Sheet",
-      "disciplines": "Handiworker",
-      "name": "Zephyr Support",
-      "sheet": "Homestead Recipe Book: Four Winds, Volume 3",
-      "id": 14207,
-      "ingredients": [
-        {
-          "slot": 1,
-          "quantity": 22,
-          "item": "Refined Homestead Wood"
-        },
-        {
-          "slot": 2,
-          "quantity": 10,
-          "item": "Jute Scrap"
-        },
-        {
-          "slot": 3,
-          "quantity": 10,
-          "item": "Ursus Oblige"
-        }
-      ]
-    }
+    "wikiTitle": "Zephyr Support (Handiwork)"
   },
   {
     "id": 363,
@@ -19854,14 +19885,14 @@
     "icon": "https://render.guildwars2.com/file/C1CC03FF0494A44DC95DBB5039BC9A933D74431A/1225671.png",
     "wikiTitle": "Basic Fountain (Handiwork)",
     "thumbnail": {
-      "source": "https://wiki.guildwars2.com/images/thumb/8/88/Basic_Fountain.jpg/50px-Basic_Fountain.jpg",
+      "source": "https://wiki.guildwars2.com/images/thumb/a/af/Basic_Fountain_pillar.jpg/50px-Basic_Fountain_pillar.jpg",
       "width": 50,
-      "height": 41
+      "height": 68
     },
     "original": {
-      "source": "https://wiki.guildwars2.com/images/8/88/Basic_Fountain.jpg",
-      "width": 1126,
-      "height": 917
+      "source": "https://wiki.guildwars2.com/images/a/af/Basic_Fountain_pillar.jpg",
+      "width": 694,
+      "height": 947
     },
     "recipe": {
       "rating": 225,
@@ -22235,14 +22266,14 @@
     "icon": "https://render.guildwars2.com/file/6B352CA05CA798D2BB1FB9C9DB26FA5E80711937/1227512.png",
     "wikiTitle": "Broken Ascalonian Pillar (Handiwork)",
     "thumbnail": {
-      "source": "https://wiki.guildwars2.com/images/thumb/4/46/Broken_Ascalonian_Pillar.jpg/50px-Broken_Ascalonian_Pillar.jpg",
+      "source": "https://wiki.guildwars2.com/images/thumb/2/2a/Ascalonian_Pillar_reference.jpg/50px-Ascalonian_Pillar_reference.jpg",
       "width": 50,
-      "height": 67
+      "height": 100
     },
     "original": {
-      "source": "https://wiki.guildwars2.com/images/4/46/Broken_Ascalonian_Pillar.jpg",
-      "width": 1049,
-      "height": 1399
+      "source": "https://wiki.guildwars2.com/images/2/2a/Ascalonian_Pillar_reference.jpg",
+      "width": 720,
+      "height": 1440
     },
     "recipe": {
       "rating": 225,
@@ -28524,14 +28555,14 @@
     "icon": "https://render.guildwars2.com/file/FF027FFD44E60056A252A3BCBAD30AD260AE64C7/2498615.png",
     "wikiTitle": "Shattered Stairway (Handiwork)",
     "thumbnail": {
-      "source": "https://wiki.guildwars2.com/images/thumb/3/36/Shattered_Stairway.jpg/50px-Shattered_Stairway.jpg",
+      "source": "https://wiki.guildwars2.com/images/thumb/6/65/Shattered_Stairway_front.jpg/50px-Shattered_Stairway_front.jpg",
       "width": 50,
-      "height": 49
+      "height": 79
     },
     "original": {
-      "source": "https://wiki.guildwars2.com/images/3/36/Shattered_Stairway.jpg",
-      "width": 976,
-      "height": 954
+      "source": "https://wiki.guildwars2.com/images/6/65/Shattered_Stairway_front.jpg",
+      "width": 602,
+      "height": 956
     },
     "recipe": {
       "rating": 150,
@@ -45279,12 +45310,12 @@
     "icon": "https://render.guildwars2.com/file/50F7E0553FBB6590DDC4BB293FF265C634B90E09/3708895.png",
     "wikiTitle": "Island Shrub (Handiwork)",
     "thumbnail": {
-      "source": "https://wiki.guildwars2.com/images/thumb/a/a6/Island_Shrub.jpg/50px-Island_Shrub.jpg",
+      "source": "https://wiki.guildwars2.com/images/thumb/b/b7/Island_Shrub_side.jpg/50px-Island_Shrub_side.jpg",
       "width": 50,
       "height": 89
     },
     "original": {
-      "source": "https://wiki.guildwars2.com/images/a/a6/Island_Shrub.jpg",
+      "source": "https://wiki.guildwars2.com/images/b/b7/Island_Shrub_side.jpg",
       "width": 810,
       "height": 1440
     },
@@ -45704,12 +45735,12 @@
     "icon": "https://render.guildwars2.com/file/1A971A5C15636904C03551F3B750AA07EDB6E015/3708920.png",
     "wikiTitle": "Wall (120 x 120) (Handiwork)",
     "thumbnail": {
-      "source": "https://wiki.guildwars2.com/images/thumb/c/c8/Wall_%28120_x_120%29.jpg/50px-Wall_%28120_x_120%29.jpg",
+      "source": "https://wiki.guildwars2.com/images/thumb/0/00/Wall_%28120_x_120%29_back.jpg/50px-Wall_%28120_x_120%29_back.jpg",
       "width": 50,
       "height": 50
     },
     "original": {
-      "source": "https://wiki.guildwars2.com/images/c/c8/Wall_%28120_x_120%29.jpg",
+      "source": "https://wiki.guildwars2.com/images/0/00/Wall_%28120_x_120%29_back.jpg",
       "width": 1440,
       "height": 1440
     },
@@ -50966,7 +50997,37 @@
     ],
     "max_count": 250,
     "icon": "https://render.guildwars2.com/file/F3416146BE693415E3DDEF76FEDAE8AB1F0FA7F3/3744662.png",
-    "wikiTitle": "Iron Wall 60 x 240 (Handiwork)"
+    "wikiTitle": "Iron Wall 60 x 240 (Handiwork)",
+    "thumbnail": {
+      "source": "https://wiki.guildwars2.com/images/thumb/c/c3/Iron_Wall_60_x_240.jpg/50px-Iron_Wall_60_x_240.jpg",
+      "width": 50,
+      "height": 185
+    },
+    "original": {
+      "source": "https://wiki.guildwars2.com/images/c/c3/Iron_Wall_60_x_240.jpg",
+      "width": 263,
+      "height": 971
+    },
+    "recipe": {
+      "rating": 1,
+      "type": "Homestead Decoration",
+      "source": "automatic",
+      "disciplines": "Handiworker",
+      "name": "Iron Wall 60 x 240",
+      "id": 15662,
+      "ingredients": [
+        {
+          "slot": 1,
+          "quantity": 10,
+          "item": "Refined Homestead Metal"
+        },
+        {
+          "slot": 2,
+          "quantity": 5,
+          "item": "Iron Ingot"
+        }
+      ]
+    }
   },
   {
     "id": 1204,
