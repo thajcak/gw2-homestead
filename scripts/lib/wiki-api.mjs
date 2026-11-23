@@ -150,85 +150,45 @@ export function selectWikiPage(pages) {
   return fallback;
 }
 
-function findWikiPreviewPage(pages, preferredSource = null) {
-  const withImage = listValidWikiPages(pages).filter((page) => page.original?.source);
-  if (withImage.length === 0) {
-    return null;
-  }
-
-  // If one of the candidate pages already shows the image we store, stay on it.
-  if (preferredSource) {
-    const matching = withImage.find((page) => wikiImageUrlsMatch(page.original.source, preferredSource));
-    if (matching) {
-      return matching;
-    }
-  }
-
-  const pagesById = Object.fromEntries(withImage.map((page, index) => [String(index), page]));
-  return selectWikiPage(pagesById);
-}
-
-function describePage(page, source) {
-  if (page.original?.source) {
-    return { status: 'has-preview', source, wikiTitle: page.title, original: page.original };
-  }
-  return { status: 'no-preview', source, wikiTitle: page.title, original: null };
+function pickPage(pageList) {
+  return selectWikiPage(Object.fromEntries(pageList.map((page, index) => [String(index), page])));
 }
 
 /**
- * Look up a decoration's wiki image.
- *
- * Once a wikiTitle is stored, only that page is asked (following redirects), so different
- * title variants can no longer swap the image back and forth between runs. The variant
- * search runs only when no title is stored yet or the stored page no longer exists.
- *
- * status: 'has-preview' | 'no-preview' | 'no-page' | 'unknown' (request failed)
- * source: 'pinned' | 'search'
+ * Ask the wiki about the stored wikiTitle and every title variant in one request (redirects
+ * followed). Returns null when the request failed, else { pages, storedPage }: the valid pages,
+ * and the page the stored wikiTitle resolves to (null if it no longer exists).
  */
-async function resolveWikiImageMetadata(decoration) {
-  if (decoration.wikiTitle) {
-    const pinnedPages = await queryWikiPages([decoration.wikiTitle], { redirects: true });
-    if (pinnedPages == null) {
-      return { status: 'unknown' };
-    }
-
-    const [pinnedPage] = listValidWikiPages(pinnedPages);
-    if (pinnedPage) {
-      return describePage(pinnedPage, 'pinned');
-    }
-
-    console.warn(`Stored wiki page "${decoration.wikiTitle}" is missing; searching title variants.`);
-  }
-
-  const titles = [...new Set(buildWikiTitleVariants(decoration.name))];
-  const pages = await queryWikiPages(titles);
-  if (pages == null) {
-    return { status: 'unknown' };
-  }
-
-  const previewPage = findWikiPreviewPage(pages, remoteOriginalSource(decoration));
-  if (previewPage) {
-    return describePage(previewPage, 'search');
-  }
-
-  const page = selectWikiPage(pages);
-  if (!page) {
-    return { status: 'no-page' };
-  }
-
-  return describePage(page, 'search');
-}
-
-/** Returns the query's pages object, or null when the request itself failed. */
-export async function queryWikiPages(titles, { redirects = false } = {}) {
+export async function lookupWikiPages(decoration) {
+  const titles = [
+    ...new Set([
+      ...(decoration.wikiTitle ? [decoration.wikiTitle] : []),
+      ...buildWikiTitleVariants(decoration.name),
+    ]),
+  ];
   const titlesParam = titles.map((title) => encodeURIComponent(title)).join('|');
-  const redirectParam = redirects ? '&redirects=1' : '';
-  const url = `${WIKI_API}?action=query&titles=${titlesParam}${redirectParam}&prop=pageimages&piprop=original&format=json&origin=*`;
+  const url = `${WIKI_API}?action=query&titles=${titlesParam}&redirects=1&prop=pageimages&piprop=original&format=json&origin=*`;
   const data = await tryFetchJson(url, 5, 2000);
   if (!data?.query) {
     return null;
   }
-  return data.query.pages ?? {};
+
+  const aliases = new Map();
+  for (const { from, to } of [...(data.query.normalized ?? []), ...(data.query.redirects ?? [])]) {
+    aliases.set(from, to);
+  }
+  const resolveTitle = (title) => {
+    let current = title;
+    for (let hops = 0; hops < 5 && aliases.has(current); hops += 1) {
+      current = aliases.get(current);
+    }
+    return current;
+  };
+
+  const pages = listValidWikiPages(data.query.pages);
+  const storedTitle = decoration.wikiTitle ? resolveTitle(decoration.wikiTitle) : null;
+  const storedPage = storedTitle ? (pages.find((page) => page.title === storedTitle) ?? null) : null;
+  return { pages, storedPage };
 }
 
 export async function fetchWikiWikitext(title) {
@@ -296,61 +256,83 @@ function withoutMissingMarker(decoration) {
 }
 
 /**
- * Apply one wiki lookup to a decoration.
+ * Apply one wiki lookup (from lookupWikiPages) to a decoration.
  *
- * - A stored image is only replaced when the pinned page itself reports a different file;
- *   an answer from the title-variant search can add a first image but never swap one.
- * - "No image" never drops a stored preview right away. It starts previewMissingSince, and
- *   the image is only removed once the wiki has said so for PREVIEW_MISSING_GRACE_DAYS.
+ * The stored wikiTitle is often the "(Handiwork)" recipe page while the image comes from
+ * another title variant, so images are tracked across all queried pages:
+ * - Keep the stored image while ANY queried page still shows it. This is what stops the
+ *   run-to-run flipping between variant pages.
+ * - Replace it only when no page shows it any more AND the stored page has an image of its
+ *   own. A variant page's image never replaces a stored one: a bare title can be an unrelated
+ *   article (e.g. "Firecracker" is the consumable, not the decoration). Variants only supply a
+ *   first image.
+ * - When no page has an image at all, keep the stored one and stamp previewMissingSince.
+ *   pageimages often omits images that still exist, so the image is only removed once that has
+ *   held for PREVIEW_MISSING_GRACE_DAYS and the stored file itself is gone from the wiki
+ *   (lookup.storedImageGone, checked by enrichDecorationFromWiki).
+ * - The stored wikiTitle is kept while its page exists (recipes and the wiki link use it).
  */
-export function applyWikiImageMetadata(decoration, metadata, today = utcToday()) {
+export function applyWikiImageMetadata(decoration, lookup, today = utcToday()) {
   const label = `${wikiLookupName(decoration.name)} (ID: ${decoration.id})`;
 
-  if (metadata.status === 'unknown' || metadata.status === 'no-page') {
+  if (!lookup || lookup.pages.length === 0) {
     return decoration;
   }
 
-  let next = { ...decoration, wikiTitle: metadata.wikiTitle };
+  const { pages, storedPage } = lookup;
+  const withImage = pages.filter((page) => page.original?.source);
+  const titlePage = storedPage ?? pickPage(withImage.length > 0 ? withImage : pages);
+  let next = { ...decoration, wikiTitle: titlePage.title };
 
-  if (metadata.status === 'has-preview' && metadata.original?.source) {
-    next = withoutMissingMarker(next);
-    const currentRemote = remoteOriginalSource(decoration);
-    const nextRemote = metadata.original.source;
-    const replacement = {
-      width: metadata.original.width,
-      height: metadata.original.height,
-      source: nextRemote,
-    };
+  if (withImage.length === 0) {
+    const missingSince = decoration.previewMissingSince ?? today;
+    next.previewMissingSince = missingSince;
 
-    if (!currentRemote) {
-      next.original = replacement;
-    } else if (!wikiImageUrlsMatch(currentRemote, nextRemote)) {
-      if (metadata.source === 'pinned') {
-        console.log(`Wiki image changed on "${metadata.wikiTitle}" for ${label}`);
-        next.original = replacement;
-      } else {
-        console.log(
-          `Wiki search found a different image for ${label}; keeping the stored one until "${metadata.wikiTitle}" confirms it.`
-        );
-      }
+    if (decoration.original && previewRemovalConfirmed(next, today) && lookup.storedImageGone) {
+      console.warn(`Wiki has had no preview for ${label} since ${missingSince} and the file is gone; removing stored image.`);
+      next.original = null;
+    } else if (decoration.original) {
+      console.warn(`No wiki preview reported for ${label} (since ${missingSince}); keeping stored image.`);
+    } else {
+      console.warn(`No wiki preview available for ${label}`);
     }
-
     return next;
   }
 
-  const missingSince = decoration.previewMissingSince ?? today;
-  next.previewMissingSince = missingSince;
-
-  if (decoration.original && previewRemovalConfirmed(next, today)) {
-    console.warn(`Wiki has had no preview for ${label} since ${missingSince}; removing stored image.`);
-    next.original = null;
-  } else if (decoration.original) {
-    console.warn(`No wiki preview reported for ${label} (since ${missingSince}); keeping stored image.`);
-  } else {
-    console.warn(`No wiki preview available for ${label}`);
+  next = withoutMissingMarker(next);
+  const currentRemote = remoteOriginalSource(decoration);
+  if (currentRemote && withImage.some((page) => wikiImageUrlsMatch(page.original.source, currentRemote))) {
+    return next;
   }
 
+  const imagePage = storedPage?.original?.source ? storedPage : currentRemote ? null : pickPage(withImage);
+  if (!imagePage) {
+    console.warn(`Stored image for ${label} is no longer on its wiki page, which has none; keeping it.`);
+    return next;
+  }
+  if (currentRemote) {
+    console.log(`Wiki image changed for ${label}: now from "${imagePage.title}"`);
+  }
+  next.original = {
+    width: imagePage.original.width,
+    height: imagePage.original.height,
+    source: imagePage.original.source,
+  };
   return next;
+}
+
+/** True only when the wiki answers 404/410 for the file; any other outcome counts as present. */
+async function wikiFileIsGone(url) {
+  try {
+    const response = await fetch(url, {
+      method: 'HEAD',
+      signal: AbortSignal.timeout(20000),
+      headers: { 'User-Agent': WIKI_USER_AGENT },
+    });
+    return response.status === 404 || response.status === 410;
+  } catch {
+    return false;
+  }
 }
 
 export async function enrichDecorationFromWiki(decoration) {
@@ -360,15 +342,27 @@ export async function enrichDecorationFromWiki(decoration) {
   try {
     console.log(`Processing decoration: ${lookupName} (ID: ${displayId})`);
 
-    const metadata = await resolveWikiImageMetadata(decoration);
-    if (metadata.status === 'no-page') {
-      console.warn(`No valid wiki page found for decoration ${lookupName} (ID: ${displayId})`);
-    } else if (metadata.status === 'unknown') {
+    const lookup = await lookupWikiPages(decoration);
+    if (!lookup) {
       console.warn(`Wiki lookup failed for decoration ${lookupName} (ID: ${displayId}); keeping stored data.`);
       return decoration;
     }
+    if (lookup.pages.length === 0) {
+      console.warn(`No valid wiki page found for decoration ${lookupName} (ID: ${displayId})`);
+    }
 
-    return applyWikiRecipeIfNeeded(applyWikiImageMetadata(decoration, metadata));
+    // Before a stored image may be dropped, confirm the file itself is gone from the wiki.
+    const noImages = lookup.pages.every((page) => !page.original?.source);
+    const storedRemote = remoteOriginalSource(decoration);
+    if (
+      noImages &&
+      storedRemote &&
+      previewRemovalConfirmed({ previewMissingSince: decoration.previewMissingSince ?? utcToday() })
+    ) {
+      lookup.storedImageGone = await wikiFileIsGone(storedRemote);
+    }
+
+    return applyWikiRecipeIfNeeded(applyWikiImageMetadata(decoration, lookup));
   } catch (error) {
     console.warn(`Wiki enrichment failed for ${lookupName} (ID: ${displayId}): ${error.message}`);
     return decoration;
