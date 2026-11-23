@@ -2,12 +2,14 @@
  * Wiki enrichment (titles, preview images, recipes) for the decorations in a work file.
  *
  * Every run checks every decoration, so a wiki change shows up on the next hourly run. Lookups
- * are batched 50 page titles per request (see lib/wiki-api.mjs), which keeps a full pass to
- * well under 100 requests. --ids limits the lookup to those IDs.
+ * are batched 50 page titles per request (see lib/wiki-api.mjs), with the infobox fetched in the
+ * same request, which keeps a full pass to about 100 requests (96 for 1,219 decorations in Nov
+ * 2026, up from 79 before infobox images were read). --ids limits the lookup to those IDs.
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { isAbsolute, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { remoteOriginalSource } from './lib/content-store.mjs';
 import { enrichDecorationsFromWiki, wikiRequestCount } from './lib/wiki-api.mjs';
 
 function parseArgs(argv) {
@@ -78,6 +80,7 @@ async function main() {
             name: enriched.name,
             wikiTitle: enriched.wikiTitle ?? null,
             hasOriginal: enriched.original != null,
+            preview: remoteOriginalSource(enriched),
             hasRecipe: enriched.recipe != null,
           },
           null,

@@ -2,6 +2,7 @@ import { getCollection } from 'astro:content';
 import type { Category, Decoration } from '../types';
 import type { OptimizedImage } from '../types/optimizedImage';
 import { assetUrl } from '../utils/assetUrl';
+import { buildThumbnail, optimizeView } from '../utils/buildGalleryImages';
 import { buildPreviewUrls } from '../utils/buildPreviewUrls';
 import { meaningfulDescription, sanitizeDisplayName } from '../utils/sanitizeText';
 import type { SpriteRef } from '../utils/sprite';
@@ -17,6 +18,14 @@ export interface SearchIndexEntry {
   sprite?: SpriteRef;
 }
 
+/** One image in the detail panel's gallery strip. */
+export interface GalleryImage {
+  image: OptimizedImage;
+  thumb: OptimizedImage;
+  /** The wiki's caption ("Side view"); absent for the preview and for uncaptioned views. */
+  caption?: string;
+}
+
 /** catalog/decorations/{id}.json: what the detail panel needs, fetched when it opens. */
 export interface PublishedDecoration {
   id: number;
@@ -27,6 +36,11 @@ export interface PublishedDecoration {
   recipe?: Decoration['recipe'];
   /** Optimized preview image; absent when the decoration has no preview. */
   preview?: OptimizedImage;
+  /**
+   * The preview first, then the wiki gallery's other views. Present only when there is at least
+   * one downloaded view besides the preview.
+   */
+  gallery?: GalleryImage[];
   /** Day the decoration left the game. Its JSON stays so old deep links can say so. */
   removed?: string;
 }
@@ -83,8 +97,36 @@ export async function buildSearchIndex(): Promise<SearchIndexEntry[]> {
   });
 }
 
+/**
+ * The gallery strip for a decoration: its preview, then each downloaded view. Undefined when
+ * there's nothing to switch between (no preview, or no downloaded view).
+ */
+async function buildGallery(
+  decoration: Decoration,
+  preview: OptimizedImage | undefined
+): Promise<GalleryImage[] | undefined> {
+  const previewSource = decoration.original?.source;
+  if (!preview || !previewSource || !decoration.views?.length) {
+    return undefined;
+  }
+
+  const views = await Promise.all(
+    decoration.views.map(async (view) => {
+      const [image, thumb] = await Promise.all([optimizeView(view.source), buildThumbnail(view.source)]);
+      return image && thumb ? { image, thumb, ...(view.caption ? { caption: view.caption } : {}) } : null;
+    })
+  );
+  const downloaded = views.filter((view): view is GalleryImage => view != null);
+  const previewThumb = await buildThumbnail(previewSource);
+  if (downloaded.length === 0 || !previewThumb) {
+    return undefined;
+  }
+  return [{ image: preview, thumb: previewThumb }, ...downloaded];
+}
+
 export async function buildPublishedDecoration(decoration: Decoration): Promise<PublishedDecoration> {
   const preview = (await loadPreviews())[String(decoration.id)];
+  const gallery = await buildGallery(decoration, preview);
   return {
     id: decoration.id,
     name: sanitizeDisplayName(decoration.name),
@@ -93,6 +135,7 @@ export async function buildPublishedDecoration(decoration: Decoration): Promise<
     ...(decoration.wikiTitle ? { wikiTitle: decoration.wikiTitle } : {}),
     ...(decoration.recipe != null ? { recipe: decoration.recipe } : {}),
     ...(preview ? { preview } : {}),
+    ...(gallery ? { gallery } : {}),
     ...(decoration.removed ? { removed: decoration.removed } : {}),
   };
 }

@@ -58,17 +58,22 @@ export function isLocalAssetPath(value) {
   return typeof value === 'string' && !isRemoteUrl(value);
 }
 
-export function remoteOriginalSource(item) {
-  if (!item?.original) {
+/** The wiki URL of a stored image ({ source, remoteSource }), or null for a local-only one. */
+export function remoteImageSource(image) {
+  if (!image) {
     return null;
   }
-  if (item.original.remoteSource) {
-    return item.original.remoteSource;
+  if (image.remoteSource) {
+    return image.remoteSource;
   }
-  if (isRemoteUrl(item.original.source)) {
-    return item.original.source;
+  if (isRemoteUrl(image.source)) {
+    return image.source;
   }
   return null;
+}
+
+export function remoteOriginalSource(item) {
+  return remoteImageSource(item?.original);
 }
 
 /** Copy wiki/image/recipe fields from an existing content entry onto API payload. */
@@ -89,6 +94,10 @@ export function mergeEnrichmentFromExisting(apiItem, existing) {
 
   if (existing.original && !merged.original) {
     merged.original = existing.original;
+  }
+
+  if (existing.views && !merged.views) {
+    merged.views = existing.views;
   }
 
   if (isLocalAssetPath(existing.icon)) {
@@ -152,6 +161,15 @@ export function mergeDecorationUpdate(existing, apiItem) {
     merged.original = structuredClone(apiItem.original);
   } else if (existing?.original) {
     merged.original = structuredClone(existing.original);
+  }
+
+  // Gallery views besides the preview; null from enrichment means the gallery has none.
+  if (Object.hasOwn(apiItem, 'views') && apiItem.views === null) {
+    // No views.
+  } else if (apiItem.views?.length) {
+    merged.views = structuredClone(apiItem.views);
+  } else if (existing?.views?.length) {
+    merged.views = structuredClone(existing.views);
   }
 
   // The enriched payload is the source of truth here: merge-existing-enrichment copies the
