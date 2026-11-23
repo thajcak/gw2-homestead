@@ -29,29 +29,6 @@ const decorationRecipeSchema = z.object({
   ingredients: z.array(decorationRecipeIngredientSchema),
 });
 
-const changeLogEntryTypeSchema = z.enum([
-  'New Item',
-  'Item Updated',
-  'Item Removed',
-  'Image Added',
-  'Image Updated',
-  'Recipe Updated',
-]);
-
-const changeLogFieldChangeSchema = z.object({
-  field: z.string(),
-  detail: z.string().optional(),
-  before: z.unknown(),
-  after: z.unknown(),
-});
-
-const historyEntrySchema = z.object({
-  day: z.string(),
-  type: changeLogEntryTypeSchema,
-  name: z.string(),
-  changes: z.array(changeLogFieldChangeSchema).optional(),
-});
-
 const decorationSchema = z.object({
   id: z.number(),
   name: z.string(),
@@ -61,8 +38,10 @@ const decorationSchema = z.object({
   wikiTitle: z.string().optional(),
   recipe: decorationRecipeSchema.nullable().optional(),
   original: imageSchema.optional(),
-  history: z.array(historyEntrySchema).default([]),
-  removed: z.boolean().optional(),
+  /** Day the decoration first appeared. What happened since is in src/data/changes/. */
+  added: z.string().optional(),
+  /** Day a removal was confirmed (the API stopped listing it on two runs in a row). */
+  removed: z.string().optional(),
   /** Day the GW2 API first stopped listing this item; it is removed if the next run agrees. */
   missingSince: z.string().optional(),
   /** Day the pinned wiki page first reported no preview image. */
@@ -72,8 +51,8 @@ const decorationSchema = z.object({
 const categorySchema = z.object({
   id: z.number(),
   name: z.string(),
-  history: z.array(historyEntrySchema).default([]),
-  removed: z.boolean().optional(),
+  added: z.string().optional(),
+  removed: z.string().optional(),
   missingSince: z.string().optional(),
 });
 

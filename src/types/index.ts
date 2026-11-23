@@ -3,35 +3,13 @@ import type { CollectionEntry } from 'astro:content';
 export type Decoration = CollectionEntry<'decorations'>['data'];
 export type Category = CollectionEntry<'categories'>['data'];
 
-export type ChangeLogEntryType =
-  | 'New Item'
-  | 'Item Updated'
-  | 'Item Removed'
-  | 'Image Added'
-  | 'Image Updated'
-  | 'Recipe Updated';
-
-export interface ChangeLogFieldChange {
-  field: string;
-  detail?: string;
-  before: unknown;
-  after: unknown;
-}
-
-export interface ChangeLogHistoryEntry {
-  day: string;
-  type: ChangeLogEntryType;
-  name: string;
-  changes?: ChangeLogFieldChange[];
-}
-
+/** One decoration in the Recently Added panel. */
 export interface ChangeLogEntry {
   id: number;
-  type: ChangeLogEntryType;
   name: string;
-  changes?: ChangeLogFieldChange[];
 }
 
+/** The decorations first added on one day. */
 export interface ChangeLogDay {
   day: string;
   entries: ChangeLogEntry[];

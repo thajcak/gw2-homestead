@@ -1,20 +1,22 @@
+/**
+ * Write the enriched API data into the content files and log what changed.
+ *
+ * Item files hold current state: a new item gets `added: <day>`, a confirmed removal gets
+ * `removed: <day>`. Every real change (new, updated with before/after, removed, returned) is
+ * appended to the month's change log in src/data/changes/.
+ */
 import { readFileSync } from 'node:fs';
 import { isAbsolute, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { appendChanges } from './lib/change-log.mjs';
+import { changeEntry, diffCategory, diffDecoration } from './lib/changelog-events.mjs';
 import {
-  applyEventsToItem,
   listContentIds,
   loadContentMap,
   mergeCategoryUpdate,
   mergeDecorationUpdate,
-  remoteOriginalSource,
   writeContentFile,
 } from './lib/content-store.mjs';
-import {
-  generateCategoryEvents,
-  generateDecorationEvents,
-  groupEventsById,
-} from './lib/changelog-events.mjs';
 
 function resolveRepoPath(repoRoot, targetPath) {
   return isAbsolute(targetPath) ? targetPath : join(repoRoot, targetPath);
@@ -24,130 +26,99 @@ function readApiArray(arrayFile) {
   return JSON.parse(readFileSync(arrayFile, 'utf8'));
 }
 
-function syncCollection({
-  apiItems,
-  existingItems,
-  contentDir,
-  events,
-  day,
-  mergeUpdate,
-  markRemoved,
-}) {
-  const eventsById = groupEventsById(events);
+function syncCollection({ collection, apiItems, existingItems, contentDir, day, mergeUpdate, diff }) {
+  const changes = [];
   const apiIds = new Set(apiItems.map((item) => item.id));
-  let created = 0;
-  let updated = 0;
-  let removed = 0;
-  let missing = 0;
+  const counts = { created: 0, updated: 0, returned: 0, removed: 0, missing: 0 };
 
   for (const apiItem of apiItems) {
     const existing = existingItems.get(apiItem.id);
-    const itemEvents = eventsById.get(apiItem.id) ?? [];
     const nextItem = mergeUpdate(existing, apiItem);
-    applyEventsToItem(nextItem, itemEvents, day);
-    writeContentFile(contentDir, nextItem);
 
     if (!existing) {
-      created += 1;
+      nextItem.added = day;
+      changes.push(changeEntry({ day, collection, item: nextItem, type: 'New Item' }));
+      counts.created += 1;
     } else {
-      updated += 1;
+      if (existing.removed) {
+        changes.push(changeEntry({ day, collection, item: nextItem, type: 'Item Returned' }));
+        counts.returned += 1;
+      }
+      const fieldChanges = diff(existing, nextItem);
+      if (fieldChanges.length > 0) {
+        changes.push(changeEntry({ day, collection, item: nextItem, type: 'Item Updated', changes: fieldChanges }));
+        counts.updated += 1;
+      }
     }
+
+    writeContentFile(contentDir, nextItem);
   }
 
   for (const id of listContentIds(contentDir)) {
-    if (apiIds.has(id)) {
-      continue;
-    }
-
-    const existing = existingItems.get(id) ?? null;
-    if (!existing || existing.removed) {
+    const existing = existingItems.get(id);
+    if (apiIds.has(id) || !existing || existing.removed) {
       continue;
     }
 
     if (!existing.missingSince) {
       // First run without this item: remember it, but don't remove it yet.
       writeContentFile(contentDir, { ...existing, missingSince: day });
-      missing += 1;
+      counts.missing += 1;
       continue;
     }
 
-    const itemEvents = eventsById.get(id) ?? [];
-    const nextItem = markRemoved(existing);
-    applyEventsToItem(nextItem, itemEvents, day);
-    writeContentFile(contentDir, nextItem);
-    removed += 1;
+    const { missingSince: _missingSince, ...rest } = existing;
+    const removedItem = { ...rest, removed: day };
+    writeContentFile(contentDir, removedItem);
+    changes.push(changeEntry({ day, collection, item: removedItem, type: 'Item Removed' }));
+    counts.removed += 1;
   }
 
-  return { created, updated, removed, missing };
+  return { changes, counts };
 }
 
-function markRemoved(item) {
-  const { missingSince: _missingSince, ...rest } = item;
-  return { ...rest, removed: true };
+function summary(label, { counts }) {
+  return `${label}: ${counts.created} new, ${counts.updated} updated, ${counts.returned} returned, ${counts.removed} removed, ${counts.missing} newly missing`;
 }
 
 function main() {
-  const day = process.argv[2];
-  const decorationsApiFile = process.argv[3];
-  const categoriesApiFile = process.argv[4];
-  const decorationsDir = process.argv[5];
-  const categoriesDir = process.argv[6];
+  const [day, decorationsApiFile, categoriesApiFile, decorationsDir, categoriesDir, changesDir = 'src/data/changes'] =
+    process.argv.slice(2);
 
-  if (!day || !decorationsApiFile || !categoriesApiFile || !decorationsDir || !categoriesDir) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(day ?? '') || !decorationsApiFile || !categoriesApiFile || !decorationsDir || !categoriesDir) {
     console.error(
-      'Usage: node scripts/sync-api-to-content.mjs <utc-day> <decorations-api.json> <categories-api.json> <decorations-dir> <categories-dir>'
+      'Usage: node scripts/sync-api-to-content.mjs <utc-day> <decorations-api.json> <categories-api.json> <decorations-dir> <categories-dir> [changes-dir]'
     );
     process.exit(1);
   }
 
   const repoRoot = join(fileURLToPath(new URL('.', import.meta.url)), '..');
-  const decorationsApiPath = resolveRepoPath(repoRoot, decorationsApiFile);
-  const categoriesApiPath = resolveRepoPath(repoRoot, categoriesApiFile);
   const decorationsContentDir = resolveRepoPath(repoRoot, decorationsDir);
   const categoriesContentDir = resolveRepoPath(repoRoot, categoriesDir);
 
-  const apiDecorations = readApiArray(decorationsApiPath);
-  const apiCategories = readApiArray(categoriesApiPath);
-  const existingDecorations = loadContentMap(decorationsContentDir);
-  const existingCategories = loadContentMap(categoriesContentDir);
-
-  const decorationEvents = generateDecorationEvents({
-    existingDecorations,
-    apiDecorations,
-    remoteOriginalSource,
-  });
-  const categoryEvents = generateCategoryEvents({
-    existingCategories,
-    apiCategories,
-  });
-
-  const decorationResult = syncCollection({
-    apiItems: apiDecorations,
-    existingItems: existingDecorations,
+  const decorations = syncCollection({
+    collection: 'decorations',
+    apiItems: readApiArray(resolveRepoPath(repoRoot, decorationsApiFile)),
+    existingItems: loadContentMap(decorationsContentDir),
     contentDir: decorationsContentDir,
-    events: decorationEvents,
     day,
     mergeUpdate: mergeDecorationUpdate,
-    markRemoved,
+    diff: diffDecoration,
   });
 
-  const categoryResult = syncCollection({
-    apiItems: apiCategories,
-    existingItems: existingCategories,
+  const categories = syncCollection({
+    collection: 'categories',
+    apiItems: readApiArray(resolveRepoPath(repoRoot, categoriesApiFile)),
+    existingItems: loadContentMap(categoriesContentDir),
     contentDir: categoriesContentDir,
-    events: categoryEvents,
     day,
     mergeUpdate: mergeCategoryUpdate,
-    markRemoved,
+    diff: diffCategory,
   });
 
-  console.log(
-    [
-      `Synced ${day}:`,
-      `${decorationEvents.length} decoration events (${decorationResult.created} created, ${decorationResult.updated} updated, ${decorationResult.removed} removed, ${decorationResult.missing} newly missing)`,
-      `${categoryEvents.length} category events (${categoryResult.created} created, ${categoryResult.updated} updated, ${categoryResult.removed} removed, ${categoryResult.missing} newly missing)`,
-    ].join(' ')
-  );
+  const logged = appendChanges(resolveRepoPath(repoRoot, changesDir), [...categories.changes, ...decorations.changes]);
+
+  console.log(`Synced ${day}. ${summary('Decorations', decorations)}. ${summary('Categories', categories)}. ${logged} change(s) logged.`);
 }
 
 main();

@@ -1,208 +1,115 @@
-import { sanitizeDisplayName } from './sanitize-text.mjs';
+/**
+ * Diffs between a stored item and the item a sync is about to write. Each change records the
+ * field with its before and after values, so the change log says exactly what happened.
+ */
+import { remoteOriginalSource } from './content-store.mjs';
+import { sanitizeDisplayName, sanitizeText } from './sanitize-text.mjs';
 
-function recipeEmpty(recipe) {
+function isEmptyRecipe(recipe) {
   return recipe == null || (typeof recipe === 'object' && Object.keys(recipe).length === 0);
 }
 
-function decorationItemUpdatedEvent(oldItem, newItem) {
-  const oldDescription = String(oldItem.description ?? '');
-  const newDescription = String(newItem.description ?? '');
+/** JSON with sorted object keys, so key order never counts as a change. */
+function canonical(value) {
+  if (Array.isArray(value)) {
+    return `[${value.map(canonical).join(',')}]`;
+  }
+  if (value && typeof value === 'object') {
+    return `{${Object.keys(value)
+      .sort()
+      .filter((key) => value[key] !== undefined)
+      .map((key) => `${JSON.stringify(key)}:${canonical(value[key])}`)
+      .join(',')}}`;
+  }
+  return JSON.stringify(value ?? null);
+}
+
+function sameValue(a, b) {
+  return canonical(a) === canonical(b);
+}
+
+function ingredientLines(recipe) {
+  return [...(recipe?.ingredients ?? [])]
+    .sort((a, b) => a.slot - b.slot)
+    .map((ingredient) => `${ingredient.quantity ?? '?'} ${ingredient.item}`);
+}
+
+function recipeChanges(before, after) {
+  if (isEmptyRecipe(before) && isEmptyRecipe(after)) {
+    return [];
+  }
+  if (isEmptyRecipe(before)) {
+    return [{ field: 'recipe', before: null, after }];
+  }
+  if (isEmptyRecipe(after)) {
+    return [{ field: 'recipe', before, after: null }];
+  }
+
   const changes = [];
-
-  if (sanitizeDisplayName(oldItem.name ?? '') !== sanitizeDisplayName(newItem.name ?? '')) {
-    changes.push({
-      field: 'name',
-      before: oldItem.name ?? null,
-      after: newItem.name ?? null,
-    });
+  const keys = new Set([...Object.keys(before), ...Object.keys(after)]);
+  keys.delete('ingredients');
+  for (const key of [...keys].sort()) {
+    if (!sameValue(before[key], after[key])) {
+      changes.push({ field: `recipe.${key}`, before: before[key] ?? null, after: after[key] ?? null });
+    }
   }
 
-  if (oldDescription.length === 0 && newDescription.length > 0) {
-    changes.push({
-      field: 'description',
-      detail: 'Added Description',
-      before: '',
-      after: newDescription,
-    });
-  } else if (oldDescription.length > 0 && newDescription.length === 0) {
-    changes.push({
-      field: 'description',
-      detail: 'Removed Description',
-      before: oldDescription,
-      after: '',
-    });
-  } else if (oldDescription !== newDescription) {
-    changes.push({
-      field: 'description',
-      before: oldDescription,
-      after: newDescription,
-    });
+  const beforeIngredients = ingredientLines(before);
+  const afterIngredients = ingredientLines(after);
+  if (!sameValue(beforeIngredients, afterIngredients)) {
+    changes.push({ field: 'recipe.ingredients', before: beforeIngredients, after: afterIngredients });
   }
 
-  if (changes.length === 0) {
-    return null;
+  return changes;
+}
+
+function sortedIds(ids) {
+  return [...(ids ?? [])].sort((a, b) => a - b);
+}
+
+function textChange(field, before, after, clean) {
+  const cleanBefore = clean(before ?? '');
+  const cleanAfter = clean(after ?? '');
+  return cleanBefore === cleanAfter ? [] : [{ field, before: cleanBefore, after: cleanAfter }];
+}
+
+/** Field changes between a stored decoration and the one about to replace it. */
+export function diffDecoration(before, after) {
+  const changes = [
+    ...textChange('name', before.name, after.name, sanitizeDisplayName),
+    ...textChange('description', before.description, after.description, sanitizeText),
+  ];
+
+  const beforeCategories = sortedIds(before.categories);
+  const afterCategories = sortedIds(after.categories);
+  if (!sameValue(beforeCategories, afterCategories)) {
+    changes.push({ field: 'categories', before: beforeCategories, after: afterCategories });
   }
 
+  changes.push(...recipeChanges(before.recipe ?? null, after.recipe ?? null));
+
+  // Wiki enrichment only swaps the stored image when the pinned page's own file changes, and
+  // only drops it after the page has reported no image for several days (see wiki-api.mjs).
+  const beforeImage = remoteOriginalSource(before);
+  const afterImage = remoteOriginalSource(after);
+  if (beforeImage !== afterImage && !(afterImage == null && after.original)) {
+    changes.push({ field: 'image', before: beforeImage, after: afterImage });
+  }
+
+  return changes;
+}
+
+export function diffCategory(before, after) {
+  return textChange('name', before.name, after.name, sanitizeDisplayName);
+}
+
+export function changeEntry({ day, collection, item, type, changes }) {
   return {
-    id: newItem.id,
-    type: 'Item Updated',
-    name: sanitizeDisplayName(newItem.name),
-    changes,
+    day,
+    collection,
+    id: item.id,
+    type,
+    name: sanitizeDisplayName(item.name),
+    ...(changes?.length ? { changes } : {}),
   };
-}
-
-function decorationImageUpdateEvent(oldItem, newItem, remoteOriginalSource) {
-  const newRemote = remoteOriginalSource(newItem);
-  const oldRemote = remoteOriginalSource(oldItem);
-
-  if (newRemote == null || oldRemote === newRemote) {
-    return null;
-  }
-
-  return {
-    id: newItem.id,
-    type: oldRemote == null ? 'Image Added' : 'Image Updated',
-    name: sanitizeDisplayName(newItem.name),
-  };
-}
-
-function decorationRecipeEvent(oldItem, newItem) {
-  const oldRecipe = oldItem.recipe ?? null;
-  const newRecipe = newItem.recipe ?? null;
-
-  if (recipeEmpty(oldRecipe) && recipeEmpty(newRecipe)) {
-    return null;
-  }
-
-  if (JSON.stringify(oldRecipe) === JSON.stringify(newRecipe)) {
-    return null;
-  }
-
-  return {
-    id: newItem.id,
-    type: 'Recipe Updated',
-    name: sanitizeDisplayName(newItem.name),
-  };
-}
-
-/**
- * An item missing from the API is only removed on the second run in a row that misses it.
- * The first miss just stamps missingSince (see sync-api-to-content.mjs), so a single partial
- * API response can't mark hundreds of decorations as removed.
- */
-export function isConfirmedRemoval(oldItem, presentInApi) {
-  return !presentInApi && !oldItem.removed && Boolean(oldItem.missingSince);
-}
-
-function categoryItemUpdatedEvent(oldItem, newItem) {
-  if (sanitizeDisplayName(oldItem.name ?? '') === sanitizeDisplayName(newItem.name ?? '')) {
-    return null;
-  }
-
-  return {
-    id: newItem.id,
-    type: 'Item Updated',
-    name: sanitizeDisplayName(newItem.name),
-    changes: [
-      {
-        field: 'name',
-        before: oldItem.name ?? null,
-        after: newItem.name ?? null,
-      },
-    ],
-  };
-}
-
-export function generateDecorationEvents({
-  existingDecorations,
-  apiDecorations,
-  remoteOriginalSource,
-}) {
-  const events = [];
-  const existingIds = new Set(existingDecorations.keys());
-  const apiIds = new Set(apiDecorations.map((item) => item.id));
-
-  for (const apiItem of apiDecorations) {
-    if (!existingIds.has(apiItem.id)) {
-      events.push({
-        id: apiItem.id,
-        type: 'New Item',
-        name: sanitizeDisplayName(apiItem.name),
-      });
-      continue;
-    }
-
-    const oldItem = existingDecorations.get(apiItem.id);
-    const updateEvent = decorationItemUpdatedEvent(oldItem, apiItem);
-    if (updateEvent) {
-      events.push(updateEvent);
-    }
-
-    const imageEvent = decorationImageUpdateEvent(oldItem, apiItem, remoteOriginalSource);
-    if (imageEvent) {
-      events.push(imageEvent);
-    }
-
-    const recipeEvent = decorationRecipeEvent(oldItem, apiItem);
-    if (recipeEvent) {
-      events.push(recipeEvent);
-    }
-  }
-
-  for (const [id, oldItem] of existingDecorations) {
-    if (isConfirmedRemoval(oldItem, apiIds.has(id))) {
-      events.push({
-        id,
-        type: 'Item Removed',
-        name: sanitizeDisplayName(oldItem.name),
-      });
-    }
-  }
-
-  return events;
-}
-
-export function generateCategoryEvents({ existingCategories, apiCategories }) {
-  const events = [];
-  const existingIds = new Set(existingCategories.keys());
-  const apiIds = new Set(apiCategories.map((item) => item.id));
-
-  for (const apiItem of apiCategories) {
-    if (!existingIds.has(apiItem.id)) {
-      events.push({
-        id: apiItem.id,
-        type: 'New Item',
-        name: sanitizeDisplayName(apiItem.name),
-      });
-      continue;
-    }
-
-    const oldItem = existingCategories.get(apiItem.id);
-    const updateEvent = categoryItemUpdatedEvent(oldItem, apiItem);
-    if (updateEvent) {
-      events.push(updateEvent);
-    }
-  }
-
-  for (const [id, oldItem] of existingCategories) {
-    if (isConfirmedRemoval(oldItem, apiIds.has(id))) {
-      events.push({
-        id,
-        type: 'Item Removed',
-        name: sanitizeDisplayName(oldItem.name),
-      });
-    }
-  }
-
-  return events;
-}
-
-export function groupEventsById(events) {
-  const grouped = new Map();
-  for (const event of events) {
-    const bucket = grouped.get(event.id) ?? [];
-    bucket.push(event);
-    grouped.set(event.id, bucket);
-  }
-  return grouped;
 }

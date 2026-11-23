@@ -31,35 +31,6 @@ export function writeContentFile(contentDir, item) {
   writeFileSync(join(contentDir, `${item.id}.json`), `${JSON.stringify(item, null, 2)}\n`);
 }
 
-export function historyKey(entry) {
-  return `${entry.day}|${entry.type}|${entry.name}|${JSON.stringify(entry.changes ?? null)}`;
-}
-
-export function appendHistory(item, entry) {
-  item.history = item.history ?? [];
-  const key = historyKey(entry);
-  if (!item.history.some((existing) => historyKey(existing) === key)) {
-    item.history.push(entry);
-    item.history.sort((a, b) => b.day.localeCompare(a.day));
-  }
-}
-
-export function eventToHistoryEntry(event, day) {
-  return {
-    day,
-    type: event.type,
-    name: sanitizeDisplayName(event.name),
-    ...(event.changes?.length ? { changes: event.changes } : {}),
-  };
-}
-
-export function applyEventsToItem(item, events, day) {
-  for (const event of events) {
-    appendHistory(item, eventToHistoryEntry(event, day));
-  }
-  return item;
-}
-
 /** Days a pinned wiki page must keep reporting "no image" before we drop a stored preview. */
 export const PREVIEW_MISSING_GRACE_DAYS = 3;
 
@@ -135,7 +106,15 @@ export function mergeEnrichmentFromExisting(apiItem, existing) {
   return merged;
 }
 
-/** Build the next on-disk decoration from API data while preserving history and local assets. */
+/**
+ * The day an item first appeared. An item listed by the API again is no longer removed, so
+ * `removed` and `missingSince` are not carried over (the sync logs "Item Returned").
+ */
+function itemDates(existing) {
+  return existing?.added ? { added: existing.added } : {};
+}
+
+/** Build the next on-disk decoration from API data, keeping its added day and local assets. */
 export function mergeDecorationUpdate(existing, apiItem) {
   const merged = {
     id: apiItem.id,
@@ -143,7 +122,7 @@ export function mergeDecorationUpdate(existing, apiItem) {
     description: apiItem.description != null ? sanitizeText(apiItem.description) : apiItem.description,
     categories: apiItem.categories,
     icon: isLocalAssetPath(existing?.icon) ? existing.icon : apiItem.icon,
-    history: existing?.history ?? [],
+    ...itemDates(existing),
   };
 
   if (apiItem.wikiTitle ?? existing?.wikiTitle) {
@@ -175,6 +154,6 @@ export function mergeCategoryUpdate(existing, apiItem) {
   return {
     id: apiItem.id,
     name: sanitizeDisplayName(apiItem.name),
-    history: existing?.history ?? [],
+    ...itemDates(existing),
   };
 }
