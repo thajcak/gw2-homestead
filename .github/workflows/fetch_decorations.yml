@@ -2,7 +2,9 @@ name: Update and Fetch Decorations and Categories
 
 on:
   schedule:
-    - cron: '0 * * * *' # Runs every hour
+    # Hourly, off the top of the hour: GitHub delays or drops many runs scheduled at minute 0
+    # (main fired only every 5-7 hours on '0 * * * *').
+    - cron: '23 * * * *'
   workflow_dispatch: # Allows for manual trigger of the workflow
     inputs:
       allow_large_drop:
@@ -10,7 +12,7 @@ on:
         type: boolean
         default: false
       ids:
-        description: 'Wiki lookups: empty = new decorations + this run''s 1/24 rotation; "all" = every decoration; or comma-separated IDs'
+        description: 'Only query the wiki for these decoration IDs (comma-separated); empty = all'
         type: string
         default: ''
 

@@ -6,9 +6,9 @@
 #                                   if: conditions). Runs no steps; only clones the actions used.
 #   scripts/act.sh fetch [ids]      Full run of the fetch workflow against the real GW2 API and
 #                                   wiki. Wiki lookups are limited to [ids] (default: a 7-item
-#                                   sample; "rotation" for what a scheduled run checks, "all" for
-#                                   every decoration). The commit happens inside the container
-#                                   only; the Push step and the deploy call are skipped.
+#                                   sample; pass "all" for every decoration, as scheduled runs
+#                                   do). The commit happens inside the container only; the Push
+#                                   step and the deploy call are skipped.
 #   scripts/act.sh deploy           Full build job of the deploy workflow; Pages upload and the
 #                                   deploy job are skipped.
 #   scripts/act.sh all [ids]        check, then fetch, then deploy.
@@ -72,7 +72,7 @@ check() {
 # file is given, so the inputs have to live in the payload itself.
 fetch_event() {
   local ids=$1 file
-  [[ $ids =~ ^([0-9,]*|all)$ ]] || { echo "ids must be comma-separated numbers, \"all\" or \"rotation\": $ids" >&2; exit 1; }
+  [[ $ids =~ ^[0-9,]*$ ]] || { echo "ids must be comma-separated numbers: $ids" >&2; exit 1; }
   file=$(mktemp -t act-fetch-event)
   printf '{"act": true, "inputs": {"ids": "%s", "allow_large_drop": false}}\n' "$ids" >"$file"
   echo "$file"
@@ -80,9 +80,9 @@ fetch_event() {
 
 fetch() {
   local ids=${1:-$DEFAULT_IDS} event
-  [[ $ids == rotation ]] && ids=''
+  [[ $ids == all ]] && ids=''
   event=$(fetch_event "$ids")
-  step "fetch workflow (wiki ids: ${ids:-new + rotation slice})"
+  step "fetch workflow (wiki ids: ${ids:-all})"
   act workflow_dispatch -W "$FETCH_WF" -e "$event"
   rm -f "$event"
 }

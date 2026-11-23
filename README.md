@@ -29,14 +29,14 @@ Other commands:
 - `npm run build` — production build to `dist/`
 - `npm run preview` — preview the production build locally
 - `npm run localize-images` — download remote decoration icons and preview images into `src/assets/decorations/`
-- `npm run fetch-decorations` — run the full sync the hourly workflow runs (GW2 API, wiki, content files, images). Wiki lookups cover new decorations plus a rotating 1/24 of the rest each run; `-- --ids 1,2` limits them to those IDs and `-- --ids all` checks every decoration
+- `npm run fetch-decorations` — run the full sync the hourly workflow runs (GW2 API, wiki, content files, images). Every run checks every decoration on the wiki, batched 50 page titles per request; `-- --ids 1,2` limits wiki lookups to those IDs
 
 ### Testing GitHub Actions locally
 
 The workflows can be run locally with [act](https://github.com/nektos/act) (`brew install act`, Docker required). act copies the working tree into a container, so uncommitted changes are tested and nothing comes back to your checkout. Under act the fetch workflow commits inside the container but skips `git push`, and the deploy workflow builds but skips the Pages upload and deploy job.
 
 - `npm run act:check` — dry-run every trigger (schedule, dispatch, push, and the fetch workflow's `workflow_call` into deploy) and check which jobs would run
-- `npm run act:fetch` — run the fetch workflow end to end against the real GW2 API and wiki; wiki lookups are limited to a 7-item sample (`scripts/act.sh fetch 1,2,3`, `scripts/act.sh fetch rotation` or `scripts/act.sh fetch all` to change that)
+- `npm run act:fetch` — run the fetch workflow end to end against the real GW2 API and wiki; wiki lookups are limited to a 7-item sample (`scripts/act.sh fetch 1,2,3` or `scripts/act.sh fetch all` to change that)
 - `npm run act:deploy` — run the deploy workflow's build job
 - `npm run act:all` — all of the above
 

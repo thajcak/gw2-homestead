@@ -34,12 +34,24 @@ function sleep(ms) {
 
 /** MediaWiki caps a query at 50 titles for normal (non-bot) clients. */
 export const WIKI_TITLES_PER_REQUEST = 50;
+/**
+ * The wiki's web server answers a plain 403 to URLs longer than about 2,100 characters (2,083
+ * passed, 2,132 failed when measured in Nov 2026), so batches are also capped by URL length,
+ * with room left for a continuation parameter.
+ */
+export const WIKI_MAX_URL_LENGTH = 1900;
 /** Minimum gap between wiki requests. */
 export const WIKI_REQUEST_DELAY_MS = 150;
 /** API error code that means "slow down and try again". */
 const THROTTLE_CODE = 'ratelimited';
 
 let lastWikiRequestAt = 0;
+let requestCount = 0;
+
+/** Wiki requests sent so far by this process, retries included. */
+export function wikiRequestCount() {
+  return requestCount;
+}
 
 async function waitForWikiRequestSlot() {
   const waitMs = lastWikiRequestAt + WIKI_REQUEST_DELAY_MS - Date.now();
@@ -47,6 +59,7 @@ async function waitForWikiRequestSlot() {
     await sleep(waitMs);
   }
   lastWikiRequestAt = Date.now();
+  requestCount += 1;
 }
 
 /** Build an api.php URL. */
@@ -197,22 +210,32 @@ function pickPage(pageList) {
   return selectWikiPage(Object.fromEntries(pageList.map((page, index) => [String(index), page])));
 }
 
-/** Split items into groups whose combined unique titles fit in one wiki request. */
-function chunkByTitleCount(items, titlesOf, limit = WIKI_TITLES_PER_REQUEST) {
+function queryUrl(titles, params) {
+  return wikiApiUrl({ action: 'query', titles: titles.join('|'), ...params });
+}
+
+/**
+ * Split items into groups whose combined unique titles fit in one wiki request: at most
+ * WIKI_TITLES_PER_REQUEST titles and a URL no longer than WIKI_MAX_URL_LENGTH.
+ */
+function chunkTitles(items, titlesOf, params) {
   const chunks = [];
   let current = [];
   let titles = new Set();
 
   for (const item of items) {
     const itemTitles = titlesOf(item);
-    const added = itemTitles.filter((title) => !titles.has(title)).length;
-    if (current.length > 0 && titles.size + added > limit) {
+    const merged = new Set([...titles, ...itemTitles]);
+    const fits =
+      merged.size <= WIKI_TITLES_PER_REQUEST && queryUrl([...merged], params).length <= WIKI_MAX_URL_LENGTH;
+    if (current.length > 0 && !fits) {
       chunks.push({ items: current, titles: [...titles] });
       current = [];
-      titles = new Set();
+      titles = new Set(itemTitles);
+    } else {
+      titles = merged;
     }
     current.push(item);
-    itemTitles.forEach((title) => titles.add(title));
   }
   if (current.length > 0) {
     chunks.push({ items: current, titles: [...titles] });
@@ -232,7 +255,7 @@ async function queryWikiTitles(titles, params) {
   let continueParams = {};
 
   for (let round = 0; round < 20; round += 1) {
-    const url = wikiApiUrl({ action: 'query', titles: titles.join('|'), ...params, ...continueParams });
+    const url = queryUrl(titles, { ...params, ...continueParams });
     const data = await tryFetchJson(url, 5, 2000);
     if (!data?.query) {
       return null;
@@ -264,6 +287,9 @@ async function queryWikiTitles(titles, params) {
   return null;
 }
 
+const LOOKUP_PARAMS = { redirects: '1', prop: 'pageimages', piprop: 'original', pilimit: 'max' };
+const WIKITEXT_PARAMS = { prop: 'revisions', rvprop: 'content', rvslots: 'main' };
+
 function lookupTitles(decoration) {
   return [
     ...new Set([
@@ -282,13 +308,8 @@ function lookupTitles(decoration) {
 export async function lookupWikiPagesBatch(decorations) {
   const lookups = new Map();
 
-  for (const chunk of chunkByTitleCount(decorations, lookupTitles)) {
-    const result = await queryWikiTitles(chunk.titles, {
-      redirects: '1',
-      prop: 'pageimages',
-      piprop: 'original',
-      pilimit: 'max',
-    });
+  for (const chunk of chunkTitles(decorations, lookupTitles, LOOKUP_PARAMS)) {
+    const result = await queryWikiTitles(chunk.titles, LOOKUP_PARAMS);
 
     for (const decoration of chunk.items) {
       if (!result) {
@@ -314,12 +335,8 @@ export async function fetchWikiWikitextBatch(titles) {
   const wikitextByTitle = new Map();
   const unique = [...new Set(titles)];
 
-  for (const chunk of chunkByTitleCount(unique, (title) => [title])) {
-    const result = await queryWikiTitles(chunk.titles, {
-      prop: 'revisions',
-      rvprop: 'content',
-      rvslots: 'main',
-    });
+  for (const chunk of chunkTitles(unique, (title) => [title], WIKITEXT_PARAMS)) {
+    const result = await queryWikiTitles(chunk.titles, WIKITEXT_PARAMS);
     const byTitle = new Map(
       Object.values(result?.pages ?? {})
         .filter((page) => !page.missing && !page.invalid)

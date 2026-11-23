@@ -1,30 +1,19 @@
 /**
  * Wiki enrichment (titles, preview images, recipes) for the decorations in a work file.
  *
- * By default only part of the catalog is checked each run, so the scheduled sync stays light on
- * the wiki:
- * - new decorations (no wikiTitle yet) are always looked up;
- * - the rest are re-checked on a rotation: each run takes the decorations whose
- *   id % WIKI_ROTATION_SLOTS equals the run's slot, so every decoration is re-checked once per
- *   WIKI_ROTATION_SLOTS runs.
- * The slot comes from --rotation-slot, else GITHUB_RUN_NUMBER (counts every run, so skipped
- * schedule ticks don't skip slots), else the current UTC hour count.
- *
- * --ids limits the lookup to those IDs; --all checks every decoration.
+ * Every run checks every decoration, so a wiki change shows up on the next hourly run. Lookups
+ * are batched 50 page titles per request (see lib/wiki-api.mjs), which keeps a full pass to
+ * well under 100 requests. --ids limits the lookup to those IDs.
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { isAbsolute, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { enrichDecorationsFromWiki } from './lib/wiki-api.mjs';
-
-export const WIKI_ROTATION_SLOTS = 24;
+import { enrichDecorationsFromWiki, wikiRequestCount } from './lib/wiki-api.mjs';
 
 function parseArgs(argv) {
   const options = {
     arrayFile: null,
     ids: null,
-    all: false,
-    rotationSlot: null,
     dryRun: false,
   };
 
@@ -38,11 +27,6 @@ function parseArgs(argv) {
           .filter((value) => Number.isFinite(value))
       );
       index += 1;
-    } else if (arg === '--all') {
-      options.all = true;
-    } else if (arg === '--rotation-slot') {
-      options.rotationSlot = Number.parseInt(argv[index + 1], 10);
-      index += 1;
     } else if (arg === '--dry-run') {
       options.dryRun = true;
     } else if (!arg.startsWith('-')) {
@@ -53,41 +37,11 @@ function parseArgs(argv) {
   return options;
 }
 
-function currentRotationSlot(explicit) {
-  const runNumber = Number.parseInt(process.env.GITHUB_RUN_NUMBER ?? '', 10);
-  const counter = Number.isFinite(explicit)
-    ? explicit
-    : Number.isFinite(runNumber)
-      ? runNumber
-      : Math.floor(Date.now() / 3_600_000);
-  return ((counter % WIKI_ROTATION_SLOTS) + WIKI_ROTATION_SLOTS) % WIKI_ROTATION_SLOTS;
-}
-
-function selectDecorations(decorations, options) {
-  if (options.ids) {
-    return { selected: decorations.filter((decoration) => options.ids.has(decoration.id)), summary: 'requested IDs' };
-  }
-  if (options.all) {
-    return { selected: decorations, summary: 'all decorations' };
-  }
-
-  const slot = currentRotationSlot(options.rotationSlot);
-  const isNew = (decoration) => !decoration.wikiTitle;
-  const selected = decorations.filter(
-    (decoration) => isNew(decoration) || decoration.id % WIKI_ROTATION_SLOTS === slot
-  );
-  const newCount = selected.filter(isNew).length;
-  return {
-    selected,
-    summary: `${newCount} new + ${selected.length - newCount} from rotation slot ${slot}/${WIKI_ROTATION_SLOTS}`,
-  };
-}
-
 async function main() {
   const options = parseArgs(process.argv.slice(2));
   if (!options.arrayFile) {
     console.error(
-      'Usage: node scripts/fetch-wiki-enrichment.mjs <decorations-array.json> [--ids 884,885 | --all | --rotation-slot N] [--dry-run]'
+      'Usage: node scripts/fetch-wiki-enrichment.mjs <decorations-array.json> [--ids 884,885] [--dry-run]'
     );
     process.exit(1);
   }
@@ -97,19 +51,19 @@ async function main() {
     ? options.arrayFile
     : join(repoRoot, options.arrayFile);
   const decorations = JSON.parse(readFileSync(arrayPath, 'utf8'));
-  const { selected, summary } = selectDecorations(decorations, options);
+  const selected = options.ids
+    ? decorations.filter((decoration) => options.ids.has(decoration.id))
+    : decorations;
 
   if (selected.length === 0) {
-    if (options.ids) {
-      console.error('No decorations matched the requested filter.');
-      process.exit(1);
-    }
-    console.log('No decorations to check on the wiki this run.');
-    return;
+    console.error('No decorations matched the requested filter.');
+    process.exit(1);
   }
 
-  console.log(`Checking ${selected.length} decoration(s) on the wiki (${summary}).`);
+  console.log(`Checking ${selected.length} decoration(s) on the wiki.`);
+  const startedAt = Date.now();
   const enrichedById = await enrichDecorationsFromWiki(selected);
+  console.log(`Wiki: ${wikiRequestCount()} request(s) in ${((Date.now() - startedAt) / 1000).toFixed(1)} s.`);
   const nextDecorations = decorations.map(
     (decoration) => enrichedById.get(decoration.id) ?? decoration
   );
