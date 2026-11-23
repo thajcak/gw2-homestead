@@ -22,3 +22,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# local, not part of the project
+/build
+.idea/
+.env.development
+.claude/
