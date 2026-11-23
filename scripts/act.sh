@@ -6,8 +6,9 @@
 #                                   if: conditions). Runs no steps; only clones the actions used.
 #   scripts/act.sh fetch [ids]      Full run of the fetch workflow against the real GW2 API and
 #                                   wiki. Wiki lookups are limited to [ids] (default: a 7-item
-#                                   sample; pass "all" for every decoration). The commit happens
-#                                   inside the container only; the Push step is skipped.
+#                                   sample; "rotation" for what a scheduled run checks, "all" for
+#                                   every decoration). The commit happens inside the container
+#                                   only; the Push step and the deploy call are skipped.
 #   scripts/act.sh deploy           Full build job of the deploy workflow; Pages upload and the
 #                                   deploy job are skipped.
 #   scripts/act.sh all [ids]        check, then fetch, then deploy.
@@ -63,8 +64,7 @@ check() {
   dry "fetch on workflow_dispatch" 1 workflow_dispatch -W "$FETCH_WF" -e "$(fetch_event "$DEFAULT_IDS")" || failed=1
   # deploy job is skipped under act ("act": true in the payload), so only build runs.
   dry "deploy on push to main" 1 push -W "$DEPLOY_WF" -e "$EVENTS/push-main.json" || failed=1
-  dry "deploy after a successful fetch" 1 workflow_run -W "$DEPLOY_WF" -e "$EVENTS/workflow-run-success.json" || failed=1
-  dry "deploy after a failed fetch" 0 workflow_run -W "$DEPLOY_WF" -e "$EVENTS/workflow-run-failure.json" || failed=1
+  dry "deploy called by fetch" 1 workflow_call -W "$DEPLOY_WF" -e "$EVENTS/workflow-call.json" || failed=1
   return $failed
 }
 
@@ -72,7 +72,7 @@ check() {
 # file is given, so the inputs have to live in the payload itself.
 fetch_event() {
   local ids=$1 file
-  [[ $ids =~ ^[0-9,]*$ ]] || { echo "ids must be comma-separated numbers: $ids" >&2; exit 1; }
+  [[ $ids =~ ^([0-9,]*|all)$ ]] || { echo "ids must be comma-separated numbers, \"all\" or \"rotation\": $ids" >&2; exit 1; }
   file=$(mktemp -t act-fetch-event)
   printf '{"act": true, "inputs": {"ids": "%s", "allow_large_drop": false}}\n' "$ids" >"$file"
   echo "$file"
@@ -80,9 +80,9 @@ fetch_event() {
 
 fetch() {
   local ids=${1:-$DEFAULT_IDS} event
-  [[ $ids == all ]] && ids=''
+  [[ $ids == rotation ]] && ids=''
   event=$(fetch_event "$ids")
-  step "fetch workflow (wiki ids: ${ids:-all})"
+  step "fetch workflow (wiki ids: ${ids:-new + rotation slice})"
   act workflow_dispatch -W "$FETCH_WF" -e "$event"
   rm -f "$event"
 }

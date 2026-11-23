@@ -156,8 +156,12 @@ async function main() {
   console.log('Merging existing enrichment from content files...');
   run('node', ['scripts/merge-existing-enrichment.mjs', decorationsPath, 'src/content/decorations']);
 
+  // Default: new decorations plus this run's rotation slice (see fetch-wiki-enrichment.mjs);
+  // --ids all checks every decoration.
   const wikiArgs = [decorationsPath];
-  if (options.ids) {
+  if (options.ids === 'all') {
+    wikiArgs.push('--all');
+  } else if (options.ids) {
     wikiArgs.push('--ids', options.ids);
   }
   if (options.dryRun) {

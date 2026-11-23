@@ -32,12 +32,48 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-function isThrottleError(error, status) {
-  if (status === 403 || status === 429) {
-    return true;
+/** MediaWiki caps a query at 50 titles for normal (non-bot) clients. */
+export const WIKI_TITLES_PER_REQUEST = 50;
+/** Minimum gap between wiki requests. */
+export const WIKI_REQUEST_DELAY_MS = 150;
+/** Ask the wiki to refuse our requests while its database replicas lag by more than this. */
+const WIKI_MAXLAG_SECONDS = 5;
+/** API error codes that mean "slow down and try again". */
+const THROTTLE_CODES = new Set(['maxlag', 'ratelimited']);
+
+let lastWikiRequestAt = 0;
+
+async function waitForWikiRequestSlot() {
+  const waitMs = lastWikiRequestAt + WIKI_REQUEST_DELAY_MS - Date.now();
+  if (waitMs > 0) {
+    await sleep(waitMs);
   }
-  const message = String(error?.message ?? '');
-  return /rate limit|ratelimit|too many requests|maxlag|http 403|http 429/i.test(message);
+  lastWikiRequestAt = Date.now();
+}
+
+/** Build an api.php URL. Every request carries maxlag so the wiki can shed our load when busy. */
+export function wikiApiUrl(params) {
+  const search = new URLSearchParams({
+    format: 'json',
+    formatversion: '1',
+    origin: '*',
+    maxlag: String(WIKI_MAXLAG_SECONDS),
+    ...params,
+  });
+  return `${WIKI_API}?${search}`;
+}
+
+class WikiThrottleError extends Error {
+  constructor(message, retryAfterMs) {
+    super(message);
+    this.throttled = true;
+    this.retryAfterMs = retryAfterMs;
+  }
+}
+
+function retryAfterMs(response) {
+  const seconds = Number.parseInt(response.headers.get('retry-after') ?? '', 10);
+  return Number.isFinite(seconds) && seconds > 0 ? seconds * 1000 : null;
 }
 
 export function normalizeWikiImageUrl(url) {
@@ -77,6 +113,7 @@ export async function fetchJsonWithRetries(url, maxAttempts = 5, sleepMs = 2000)
     let status;
 
     try {
+      await waitForWikiRequestSlot();
       const response = await fetch(url, {
         signal: AbortSignal.timeout(45000),
         headers: { 'User-Agent': WIKI_USER_AGENT },
@@ -84,22 +121,31 @@ export async function fetchJsonWithRetries(url, maxAttempts = 5, sleepMs = 2000)
       status = response.status;
       const text = await response.text();
 
+      if (status === 403 || status === 429 || status === 503) {
+        throw new WikiThrottleError(`HTTP ${status}`, retryAfterMs(response));
+      }
       if (!response.ok) {
-        throw new Error(`HTTP ${response.status}`);
+        throw new Error(`HTTP ${status}`);
       }
 
-      if (/ratelimit|rate limit|too many requests|maxlag/i.test(text)) {
-        throw new Error('rate limited');
+      const data = JSON.parse(text);
+      // maxlag and rate-limit refusals come back as HTTP 200 with an API error code.
+      if (THROTTLE_CODES.has(data?.error?.code)) {
+        throw new WikiThrottleError(`wiki asked us to wait (${data.error.code})`, retryAfterMs(response));
+      }
+      if (data?.error) {
+        throw new Error(`wiki API error ${data.error.code}: ${data.error.info ?? ''}`);
       }
 
-      return JSON.parse(text);
+      return data;
     } catch (error) {
       lastError = error;
       lastStatus = status ?? lastStatus;
       if (attempt < maxAttempts) {
-        const throttled = isThrottleError(error, status);
-        const waitMs = throttled ? sleepMs * attempt * 2 : sleepMs;
-        console.warn(`Wiki fetch attempt ${attempt}/${maxAttempts} failed: ${error.message}`);
+        const waitMs = error.throttled
+          ? Math.max(error.retryAfterMs ?? 0, sleepMs * attempt * 2)
+          : sleepMs;
+        console.warn(`Wiki fetch attempt ${attempt}/${maxAttempts} failed: ${error.message}; retrying in ${waitMs} ms.`);
         await sleep(waitMs);
       }
     }
@@ -154,54 +200,140 @@ function pickPage(pageList) {
   return selectWikiPage(Object.fromEntries(pageList.map((page, index) => [String(index), page])));
 }
 
+/** Split items into groups whose combined unique titles fit in one wiki request. */
+function chunkByTitleCount(items, titlesOf, limit = WIKI_TITLES_PER_REQUEST) {
+  const chunks = [];
+  let current = [];
+  let titles = new Set();
+
+  for (const item of items) {
+    const itemTitles = titlesOf(item);
+    const added = itemTitles.filter((title) => !titles.has(title)).length;
+    if (current.length > 0 && titles.size + added > limit) {
+      chunks.push({ items: current, titles: [...titles] });
+      current = [];
+      titles = new Set();
+    }
+    current.push(item);
+    itemTitles.forEach((title) => titles.add(title));
+  }
+  if (current.length > 0) {
+    chunks.push({ items: current, titles: [...titles] });
+  }
+  return chunks;
+}
+
 /**
- * Ask the wiki about the stored wikiTitle and every title variant in one request (redirects
- * followed). Returns null when the request failed, else { pages, storedPage }: the valid pages,
- * and the page the stored wikiTitle resolves to (null if it no longer exists).
+ * Run one action=query for up to 50 titles, following `continue` until complete. Returns null
+ * if any request failed, else { pages, resolveTitle }: the query's pages object (in the wiki's
+ * order, page properties merged across continuations) and a function mapping a requested title
+ * through normalization and redirects to the page title it ends up at.
  */
-export async function lookupWikiPages(decoration) {
-  const titles = [
+async function queryWikiTitles(titles, params) {
+  const pages = {};
+  const aliases = new Map();
+  let continueParams = {};
+
+  for (let round = 0; round < 20; round += 1) {
+    const url = wikiApiUrl({ action: 'query', titles: titles.join('|'), ...params, ...continueParams });
+    const data = await tryFetchJson(url, 5, 2000);
+    if (!data?.query) {
+      return null;
+    }
+
+    for (const { from, to } of [...(data.query.normalized ?? []), ...(data.query.redirects ?? [])]) {
+      aliases.set(from, to);
+    }
+    for (const [pageId, page] of Object.entries(data.query.pages ?? {})) {
+      const previous = pages[pageId] ?? {};
+      pages[pageId] = { ...previous, ...page, ...(previous.revisions && !page.revisions ? { revisions: previous.revisions } : {}) };
+    }
+
+    if (!data.continue) {
+      const resolveTitle = (title) => {
+        let current = title;
+        for (let hops = 0; hops < 5 && aliases.has(current); hops += 1) {
+          current = aliases.get(current);
+        }
+        return current;
+      };
+      return { pages, resolveTitle };
+    }
+    const { continue: _marker, ...rest } = data.continue;
+    continueParams = rest;
+  }
+
+  console.warn('Wiki query kept asking to continue; giving up on this batch.');
+  return null;
+}
+
+function lookupTitles(decoration) {
+  return [
     ...new Set([
       ...(decoration.wikiTitle ? [decoration.wikiTitle] : []),
       ...buildWikiTitleVariants(decoration.name),
     ]),
   ];
-  const titlesParam = titles.map((title) => encodeURIComponent(title)).join('|');
-  const url = `${WIKI_API}?action=query&titles=${titlesParam}&redirects=1&prop=pageimages&piprop=original&format=json&origin=*`;
-  const data = await tryFetchJson(url, 5, 2000);
-  if (!data?.query) {
-    return null;
-  }
-
-  const aliases = new Map();
-  for (const { from, to } of [...(data.query.normalized ?? []), ...(data.query.redirects ?? [])]) {
-    aliases.set(from, to);
-  }
-  const resolveTitle = (title) => {
-    let current = title;
-    for (let hops = 0; hops < 5 && aliases.has(current); hops += 1) {
-      current = aliases.get(current);
-    }
-    return current;
-  };
-
-  const pages = listValidWikiPages(data.query.pages);
-  const storedTitle = decoration.wikiTitle ? resolveTitle(decoration.wikiTitle) : null;
-  const storedPage = storedTitle ? (pages.find((page) => page.title === storedTitle) ?? null) : null;
-  return { pages, storedPage };
 }
 
-export async function fetchWikiWikitext(title) {
-  const encoded = encodeURIComponent(title);
-  const url = `${WIKI_API}?action=query&titles=${encoded}&prop=revisions&rvprop=content&rvslots=main&format=json&origin=*`;
-  const data = await tryFetchJson(url, 5, 2000);
-  const page = Object.values(data?.query?.pages ?? {})[0];
+/**
+ * Ask the wiki about each decoration's stored wikiTitle and every title variant, batching many
+ * decorations into each request (redirects followed). Returns a Map from decoration id to null
+ * (the request failed) or { pages, storedPage }: the valid pages among that decoration's titles,
+ * and the page its stored wikiTitle resolves to (null if it no longer exists).
+ */
+export async function lookupWikiPagesBatch(decorations) {
+  const lookups = new Map();
 
-  if (!page || page.missing || page.invalid) {
-    return '';
+  for (const chunk of chunkByTitleCount(decorations, lookupTitles)) {
+    const result = await queryWikiTitles(chunk.titles, {
+      redirects: '1',
+      prop: 'pageimages',
+      piprop: 'original',
+      pilimit: 'max',
+    });
+
+    for (const decoration of chunk.items) {
+      if (!result) {
+        lookups.set(decoration.id, null);
+        continue;
+      }
+      const resolved = new Set(lookupTitles(decoration).map(result.resolveTitle));
+      const pages = listValidWikiPages(result.pages).filter((page) => resolved.has(page.title));
+      const storedTitle = decoration.wikiTitle ? result.resolveTitle(decoration.wikiTitle) : null;
+      const storedPage = storedTitle ? (pages.find((page) => page.title === storedTitle) ?? null) : null;
+      lookups.set(decoration.id, { pages, storedPage });
+    }
   }
 
-  return page.revisions?.[0]?.slots?.main?.['*'] ?? '';
+  return lookups;
+}
+
+/**
+ * Fetch the current wikitext of many pages, batched. Returns a Map from each requested title
+ * to its wikitext ('' when the page is missing or the request failed).
+ */
+export async function fetchWikiWikitextBatch(titles) {
+  const wikitextByTitle = new Map();
+  const unique = [...new Set(titles)];
+
+  for (const chunk of chunkByTitleCount(unique, (title) => [title])) {
+    const result = await queryWikiTitles(chunk.titles, {
+      prop: 'revisions',
+      rvprop: 'content',
+      rvslots: 'main',
+    });
+    const byTitle = new Map(
+      Object.values(result?.pages ?? {})
+        .filter((page) => !page.missing && !page.invalid)
+        .map((page) => [page.title, page.revisions?.[0]?.slots?.main?.['*'] ?? ''])
+    );
+    for (const title of chunk.titles) {
+      wikitextByTitle.set(title, result ? (byTitle.get(result.resolveTitle(title)) ?? '') : '');
+    }
+  }
+
+  return wikitextByTitle;
 }
 
 export function wikitextToRecipeJson(wikitext) {
@@ -232,22 +364,8 @@ export function wikitextToRecipeJson(wikitext) {
   }
 }
 
-export async function applyWikiRecipeIfNeeded(decoration) {
-  if (!decoration.wikiTitle || decoration.recipe != null) {
-    return decoration;
-  }
-
-  const wikitext = await fetchWikiWikitext(decoration.wikiTitle);
-  if (!wikitext) {
-    return decoration;
-  }
-
-  const recipe = wikitextToRecipeJson(wikitext);
-  if (!recipe) {
-    return decoration;
-  }
-
-  return { ...decoration, recipe };
+function needsRecipe(decoration) {
+  return Boolean(decoration.wikiTitle) && decoration.recipe == null;
 }
 
 function withoutMissingMarker(decoration) {
@@ -256,7 +374,7 @@ function withoutMissingMarker(decoration) {
 }
 
 /**
- * Apply one wiki lookup (from lookupWikiPages) to a decoration.
+ * Apply one wiki lookup (from lookupWikiPagesBatch) to a decoration.
  *
  * The stored wikiTitle is often the "(Handiwork)" recipe page while the image comes from
  * another title variant, so images are tracked across all queried pages:
@@ -324,6 +442,7 @@ export function applyWikiImageMetadata(decoration, lookup, today = utcToday()) {
 /** True only when the wiki answers 404/410 for the file; any other outcome counts as present. */
 async function wikiFileIsGone(url) {
   try {
+    await waitForWikiRequestSlot();
     const response = await fetch(url, {
       method: 'HEAD',
       signal: AbortSignal.timeout(20000),
@@ -335,42 +454,59 @@ async function wikiFileIsGone(url) {
   }
 }
 
-export async function enrichDecorationFromWiki(decoration) {
-  const lookupName = wikiLookupName(decoration.name);
-  const displayId = decoration.id;
+/**
+ * Enrich many decorations from the wiki: batched page lookups (images, wikiTitle), then batched
+ * wikitext fetches for the ones still missing a recipe. Returns a Map from id to the enriched
+ * decoration; a decoration whose lookup failed comes back unchanged.
+ */
+export async function enrichDecorationsFromWiki(decorations) {
+  const enriched = new Map();
+  const lookups = await lookupWikiPagesBatch(decorations);
 
-  try {
-    console.log(`Processing decoration: ${lookupName} (ID: ${displayId})`);
-
-    const lookup = await lookupWikiPages(decoration);
+  for (const decoration of decorations) {
+    const label = `${wikiLookupName(decoration.name)} (ID: ${decoration.id})`;
+    const lookup = lookups.get(decoration.id);
     if (!lookup) {
-      console.warn(`Wiki lookup failed for decoration ${lookupName} (ID: ${displayId}); keeping stored data.`);
-      return decoration;
+      console.warn(`Wiki lookup failed for decoration ${label}; keeping stored data.`);
+      enriched.set(decoration.id, decoration);
+      continue;
     }
     if (lookup.pages.length === 0) {
-      console.warn(`No valid wiki page found for decoration ${lookupName} (ID: ${displayId})`);
+      console.warn(`No valid wiki page found for decoration ${label}`);
     }
 
-    // Before a stored image may be dropped, confirm the file itself is gone from the wiki.
-    const noImages = lookup.pages.every((page) => !page.original?.source);
-    const storedRemote = remoteOriginalSource(decoration);
-    if (
-      noImages &&
-      storedRemote &&
-      previewRemovalConfirmed({ previewMissingSince: decoration.previewMissingSince ?? utcToday() })
-    ) {
-      lookup.storedImageGone = await wikiFileIsGone(storedRemote);
+    try {
+      // Before a stored image may be dropped, confirm the file itself is gone from the wiki.
+      const noImages = lookup.pages.every((page) => !page.original?.source);
+      const storedRemote = remoteOriginalSource(decoration);
+      if (
+        noImages &&
+        storedRemote &&
+        previewRemovalConfirmed({ previewMissingSince: decoration.previewMissingSince ?? utcToday() })
+      ) {
+        lookup.storedImageGone = await wikiFileIsGone(storedRemote);
+      }
+      enriched.set(decoration.id, applyWikiImageMetadata(decoration, lookup));
+    } catch (error) {
+      console.warn(`Wiki enrichment failed for ${label}: ${error.message}`);
+      enriched.set(decoration.id, decoration);
     }
-
-    return applyWikiRecipeIfNeeded(applyWikiImageMetadata(decoration, lookup));
-  } catch (error) {
-    console.warn(`Wiki enrichment failed for ${lookupName} (ID: ${displayId}): ${error.message}`);
-    return decoration;
   }
-}
 
-export const WIKI_REQUEST_DELAY_MS = 150;
+  const recipeTitles = [...enriched.values()].filter(needsRecipe).map((decoration) => decoration.wikiTitle);
+  if (recipeTitles.length > 0) {
+    const wikitextByTitle = await fetchWikiWikitextBatch(recipeTitles);
+    for (const [id, decoration] of enriched) {
+      if (!needsRecipe(decoration)) {
+        continue;
+      }
+      const wikitext = wikitextByTitle.get(decoration.wikiTitle);
+      const recipe = wikitext ? wikitextToRecipeJson(wikitext) : null;
+      if (recipe) {
+        enriched.set(id, { ...decoration, recipe });
+      }
+    }
+  }
 
-export async function waitForWikiRequestSlot() {
-  await sleep(WIKI_REQUEST_DELAY_MS);
+  return enriched;
 }

@@ -1,17 +1,20 @@
 name: Deploy Astro site to GitHub Pages
 
+# The fetch workflow calls this one (workflow_call) only when it pushed a data commit, so
+# no-op fetch runs don't deploy. Pushes by GITHUB_TOKEN don't trigger `push`, so that commit
+# isn't deployed twice.
 on:
   push:
     branches:
       - main
   workflow_dispatch:
-  workflow_run:
-    workflows:
-      - Update and Fetch Decorations and Categories
-    types:
-      - completed
-    branches:
-      - main
+  workflow_call:
+    inputs:
+      ref:
+        description: 'Commit to build (the caller pushed it after this run started)'
+        type: string
+        required: false
+        default: ''
 
 concurrency:
   group: pages
@@ -25,10 +28,19 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    timeout-minutes: 30
     steps:
+      # Two steps because any `ref:` (even empty) makes act fetch from GitHub instead of
+      # copying the local working tree.
       - name: Checkout repository
+        if: ${{ !inputs.ref }}
         uses: actions/checkout@v4
+
+      - name: Checkout the commit the fetch run pushed
+        if: ${{ inputs.ref }}
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -38,6 +50,19 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      # Astro keeps optimized images in node_modules/.astro and reuses an entry while its
+      # source and transform are unchanged. Restored after npm ci, which deletes node_modules.
+      # A data change makes a new key; restore-keys start it from the latest cache, so only
+      # new or changed images are re-optimized.
+      - name: Restore Astro image cache
+        uses: actions/cache@v4
+        with:
+          path: node_modules/.astro
+          key: astro-${{ runner.os }}-${{ hashFiles('package-lock.json') }}-${{ hashFiles('src/assets/**') }}
+          restore-keys: |
+            astro-${{ runner.os }}-${{ hashFiles('package-lock.json') }}-
+            astro-${{ runner.os }}-
 
       - name: Build Astro site
         run: npm run build
@@ -64,8 +89,9 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     # Local act runs pass an event payload with "act": true (see .github/act/).
-    if: (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success') && !github.event.act
+    if: ${{ !github.event.act }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
