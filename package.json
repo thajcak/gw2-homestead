@@ -16,14 +16,11 @@
     "act:all": "scripts/act.sh all"
   },
   "dependencies": {
-    "astro": "^5.7.10",
+    "astro": "^7.4.13",
     "sharp": "^0.35.5"
   },
   "devDependencies": {
     "@types/node": "^20.19.43",
     "typescript": "^5.8.3"
-  },
-  "overrides": {
-    "sharp": "$sharp"
   }
 }
