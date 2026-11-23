@@ -103,10 +103,6 @@ export function mergeEnrichmentFromExisting(apiItem, existing) {
     merged.previewMissingSince = existing.previewMissingSince;
   }
 
-  if (existing.thumbnail && !merged.thumbnail) {
-    merged.thumbnail = existing.thumbnail;
-  }
-
   return merged;
 }
 

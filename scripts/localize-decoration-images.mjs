@@ -1,22 +1,22 @@
-import { createHash } from 'node:crypto';
+/**
+ * Download remote decoration icons and preview images into src/assets/decorations/{id}/ and
+ * point the content files at the local copies.
+ *
+ * Usage: node scripts/localize-decoration-images.mjs [content-dir]
+ *        (default: src/content/decorations)
+ */
 import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { basename, dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { previewRemovalConfirmed } from './lib/content-store.mjs';
+import { isRemoteUrl, previewRemovalConfirmed } from './lib/content-store.mjs';
 import { writePreviewImage } from './lib/preview-image.mjs';
 
 const rootDir = join(fileURLToPath(new URL('.', import.meta.url)), '..');
-const publicDir = join(rootDir, 'public');
 const assetsDir = join(rootDir, 'src/assets');
 const decorationsContentDir = join(rootDir, 'src/content/decorations');
 
-const PLACEHOLDER_URL = 'https://static.staticwars.com/quaggans/lost.jpg';
 const CONCURRENCY = 8;
 const MAX_ATTEMPTS = 4;
-
-function isRemoteUrl(value) {
-  return typeof value === 'string' && /^https?:\/\//i.test(value);
-}
 
 async function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -55,15 +55,6 @@ async function downloadImage(url, destination) {
   await writeFile(destination, buffer);
 }
 
-async function fileHash(path) {
-  try {
-    const buffer = await readFile(path);
-    return createHash('sha256').update(buffer).digest('hex');
-  } catch {
-    return null;
-  }
-}
-
 /** Delete preview.* files in a decoration's asset folder, except `keepFile`. Returns how many. */
 async function removePreviewFiles(folder, keepFile = null) {
   let entries;
@@ -83,8 +74,7 @@ async function removePreviewFiles(folder, keepFile = null) {
   return removed;
 }
 
-async function localizeDecoration(decoration, options = {}) {
-  const { assetsRoot = assetsDir, today } = options;
+async function localizeDecoration(decoration) {
   const id = decoration.id;
   let changed = false;
 
@@ -92,20 +82,20 @@ async function localizeDecoration(decoration, options = {}) {
     // A remote icon only reaches content for a new item or when the API's icon URL changed
     // (see iconFields in content-store.mjs), so the local file is missing or stale.
     const iconRelative = `decorations/${id}/icon.png`;
-    await downloadImage(decoration.icon, join(assetsRoot, iconRelative));
+    await downloadImage(decoration.icon, join(assetsDir, iconRelative));
     decoration.icon = iconRelative;
     changed = true;
   }
 
   const previewSource = decoration.original?.source;
-  const previewFolder = join(assetsRoot, 'decorations', String(id));
+  const previewFolder = join(assetsDir, 'decorations', String(id));
   if (previewSource && isRemoteUrl(previewSource)) {
     // A remote source only reaches content when wiki enrichment accepted a new or changed
     // image, so always download it: the file on disk is stale or missing by definition.
     // Stored at most 1,024 px wide as WebP: the site never serves it larger (A8).
     const remotePreview = previewSource;
     const previewRelative = `decorations/${id}/preview.webp`;
-    const previewAbsolute = join(assetsRoot, previewRelative);
+    const previewAbsolute = join(assetsDir, previewRelative);
 
     await mkdir(previewFolder, { recursive: true });
     await writePreviewImage(await fetchImage(remotePreview), previewAbsolute);
@@ -120,7 +110,7 @@ async function localizeDecoration(decoration, options = {}) {
       source: previewRelative,
       remoteSource: remotePreview,
     };
-  } else if (!decoration.original && previewRemovalConfirmed(decoration, today)) {
+  } else if (!decoration.original && previewRemovalConfirmed(decoration)) {
     // The wiki has had no preview for the whole grace period: drop the file with the metadata.
     if ((await removePreviewFiles(previewFolder)) > 0) {
       changed = true;
@@ -145,17 +135,7 @@ async function mapWithConcurrency(items, concurrency, mapper) {
   return results;
 }
 
-async function localizeArrayFile(arrayFile) {
-  const decorations = JSON.parse(await readFile(arrayFile, 'utf8'));
-  const localized = await mapWithConcurrency(decorations, CONCURRENCY, async (decoration) => {
-    const { decoration: next } = await localizeDecoration(structuredClone(decoration));
-    return next;
-  });
-  await writeFile(arrayFile, `${JSON.stringify(localized, null, 2)}\n`);
-  return localized.length;
-}
-
-async function localizeContentDirectory(contentDir = decorationsContentDir) {
+async function localizeContentDirectory(contentDir) {
   const files = (await readdir(contentDir)).filter((file) => file.endsWith('.json'));
   let updated = 0;
 
@@ -172,32 +152,9 @@ async function localizeContentDirectory(contentDir = decorationsContentDir) {
   return { total: files.length, updated };
 }
 
-async function ensurePlaceholder() {
-  const placeholderPath = join(publicDir, 'images/placeholder.png');
-  const existing = await fileHash(placeholderPath);
-  if (!existing) {
-    await downloadImage(PLACEHOLDER_URL, placeholderPath);
-  }
-}
-
 async function main() {
   const target = process.argv[2];
-
-  await ensurePlaceholder();
-
-  if (!target) {
-    const result = await localizeContentDirectory();
-    console.log(`Localized images for ${result.total} decorations (${result.updated} updated).`);
-    return;
-  }
-
-  if (target.endsWith('.json')) {
-    const count = await localizeArrayFile(join(rootDir, target));
-    console.log(`Localized images for ${count} decorations in ${target}.`);
-    return;
-  }
-
-  const result = await localizeContentDirectory(join(rootDir, target));
+  const result = await localizeContentDirectory(target ? join(rootDir, target) : decorationsContentDir);
   console.log(`Localized images for ${result.total} decorations (${result.updated} updated).`);
 }
 

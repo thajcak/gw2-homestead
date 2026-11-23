@@ -10,7 +10,7 @@
  * change is { field, before, after } (plus an optional `detail` on entries migrated from the
  * old per-item history).
  */
-import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 export const COLLECTION_ORDER = ['categories', 'decorations'];
@@ -40,16 +40,6 @@ export function writeChangeLogMonth(changesDir, month, entries) {
   mkdirSync(changesDir, { recursive: true });
   const sorted = [...entries].sort(compareChanges);
   writeFileSync(changeLogFile(changesDir, month), `${JSON.stringify(sorted, null, 2)}\n`);
-}
-
-export function listChangeLogMonths(changesDir) {
-  if (!existsSync(changesDir)) {
-    return [];
-  }
-  return readdirSync(changesDir)
-    .filter((name) => /^\d{4}-\d{2}\.json$/.test(name))
-    .map((name) => name.slice(0, 7))
-    .sort();
 }
 
 function groupByMonth(entries) {
@@ -87,13 +77,4 @@ export function appendChanges(changesDir, entries) {
     }
   }
   return added;
-}
-
-/** Rewrite the given months whole (used by one-off migrations). Returns the months written. */
-export function replaceChangeLogMonths(changesDir, entries) {
-  const byMonth = groupByMonth(entries);
-  for (const [month, monthEntries] of byMonth) {
-    writeChangeLogMonth(changesDir, month, monthEntries);
-  }
-  return [...byMonth.keys()];
 }

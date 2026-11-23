@@ -16,6 +16,3 @@ export interface ChangeLogDay {
   day: string;
   entries: ChangeLogEntry[];
 }
-
-export type DecorationRecipe = NonNullable<Decoration['recipe']>;
-export type DecorationRecipeIngredient = DecorationRecipe['ingredients'][number];

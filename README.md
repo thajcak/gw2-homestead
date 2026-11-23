@@ -8,36 +8,50 @@
 The Homestead Catalog is a static site that pulls data from the `/v2/homestead` endpoint to provide a quick way to view all Homestead decorations that are presumably available in game.
 
 ## Backend
-The backend of the site is a GitHub action that runs hourly to pull all decorations from the API and commit any changes to the repo; when it pushes a commit it calls the deploy workflow. Decoration and category data live in Astro Content Collections under `src/content/`. Each entry holds its current state plus the day it was `added` (and `removed`, once a removal is confirmed). Everything that changes is appended to a monthly change log in `src/data/changes/YYYY-MM.json`, one entry per item per day with each field's before and after values. The Recently Added panel loads an HTML fragment at `/catalog/changelog.html` on demand, which Astro builds from each decoration's `added` day.
+The backend is a GitHub Actions workflow (`fetch_decorations.yml`) that runs hourly (at :23) to pull every decoration and category from the GW2 API, enrich decorations from the [Guild Wars 2 Wiki](https://wiki.guildwars2.com) (page title, preview image, recipe), and commit any changes. When it pushes a commit it calls the deploy workflow (`deploy.yml`), which builds the site and publishes it to GitHub Pages. Pushes to `main` and manual runs also deploy.
 
-Decoration icons and preview images live in `src/assets/decorations/{id}/`. The sync stores previews at most 1,024 px wide as WebP (the site never serves them larger) and re-downloads an icon when the API's icon URL (`iconSource`) changes. At build time the icons are packed into sprite sheets under `/catalog/icons/` (about 100 icons each, in the grid's name order), and each decoration's optimized preview URLs go into its `/catalog/decorations/{id}.json`. Wiki URLs are kept only as `remoteSource` metadata for CI changelog diffs.
+Decoration and category data live in Astro Content Collections under `src/content/`. Each entry holds its current state plus the day it was `added` (and `removed`, once a removal is confirmed). Everything that changes is appended to a monthly change log in `src/data/changes/YYYY-MM.json`: one entry per item per day (`New Item`, `Item Updated`, `Item Removed` or `Item Returned`), with each changed field's before and after values.
+
+The sync guards against bad API or wiki answers:
+
+- It aborts when the API lists many fewer decorations or categories than are stored (more than 10, or 2% if that is fewer, but always allowing one), in case the API answered partially. A manual run with `allow_large_drop` checked continues anyway.
+- An item is marked removed only after two runs in a row without it (`missingSince`, then `removed`).
+- A stored preview image is dropped only after the wiki has reported no image for 3 days and the image file itself is gone (`previewMissingSince`).
+
+Decoration icons and preview images live in `src/assets/decorations/{id}/`. The sync stores previews at most 1,024 px wide as WebP (the site never serves them larger) and re-downloads an icon when the API's icon URL (`iconSource`) changes. The wiki URL of each preview is kept as `original.remoteSource`, so later runs can tell whether the wiki's image changed.
 
 Removed decorations drop out of the grid, search and Recently Added, but their JSON is still built, so an old `?open={id}` link says the item left the game.
 
 ## Frontend
-Built with [Astro](https://astro.build) and vanilla CSS. The catalog is a single static page with client-side search, category filtering, expandable decoration details, and a changelog panel. Decoration data is loaded at build time from content collections; interactivity is handled with vanilla TypeScript.
+Built with [Astro](https://astro.build), vanilla CSS and vanilla TypeScript. The catalog is a single static page; the build turns the content collections into a few files the page loads as needed:
 
-Deep links use the `?open={id}` query parameter to automatically expand a specific decoration.
+- `/catalog/search-index.json` — name, description, categories and icon position of every current decoration; drives the grid, search and category filter
+- `/catalog/icons/icons-{n}.{hash}.webp` — the icons packed into sprite sheets of about 100 each, in the grid's name order; a sheet loads when its rows near the viewport
+- `/catalog/decorations/{id}.json` — what the details panel shows (description, categories, recipe, wiki link, optimized preview image), fetched when a decoration is opened
+- `/catalog/changelog.html` — the Recently Added panel: current decorations grouped by the day they were `added`, loaded when the panel first opens
+
+Search matches every word of the query against a decoration's name, category names and description. Deep links use the `?open={id}` query parameter to open a specific decoration.
 
 ## Development
+
+Requires Node 24 (what CI uses). The sync scripts also need `jq` and `awk`, which parse wiki recipes.
 
 ```bash
 npm install
 npm run dev
 ```
 
+The site is served under its GitHub Pages base path: http://localhost:4321/gw2-homestead/
+
 Other commands:
 
 - `npm run build` — production build to `dist/`
-- `npm run preview` — preview the production build locally
-- `npm run localize-images` — download remote decoration icons and preview images into `src/assets/decorations/`
-- `npm run fetch-decorations` — run the full sync the hourly workflow runs (GW2 API, wiki, content files, images). Every run checks every decoration on the wiki, batched 50 page titles per request; `-- --ids 1,2` limits wiki lookups to those IDs
-
-One-off scripts, kept until the Astro branch is merged into `main`:
-
-- `scripts/backfill-added-from-main.mjs` — date decorations by when `main` first saw them (run right before merging)
-- `scripts/migrate-history-to-change-log.mjs` — move old per-item `history` arrays into the change log (already run)
-- `scripts/shrink-preview-images.mjs` — convert stored previews to 1,024 px WebP (already run)
+- `npm run preview` — serve the production build locally (a small wrapper around Vite's preview server, so `/gw2-homestead?open={id}` works as it does on Pages)
+- `npm run fetch-decorations` — run the full sync the hourly workflow runs (GW2 API, wiki, content files, images). Every run checks every decoration on the wiki, batched up to 50 page titles per request. Options (after `--`):
+  - `--ids 1,2` — limit wiki lookups to those IDs
+  - `--dry-run` — fetch and print the wiki results without touching content, change log or images (work files go to `.local-sync/`)
+  - `--allow-large-drop` — continue when the API lists many fewer items than are stored
+- `npm run localize-images` — download any remote icons and preview images referenced in `src/content/decorations/` into `src/assets/decorations/` (the full sync already does this)
 
 ### Testing GitHub Actions locally
 
@@ -48,4 +62,4 @@ The workflows can be run locally with [act](https://github.com/nektos/act) (`bre
 - `npm run act:deploy` — run the deploy workflow's build job
 - `npm run act:all` — all of the above
 
-To run the check automatically before pushing workflow or script changes, enable the repo's hooks once with `git config core.hooksPath .githooks`. `ACT_E2E=1 git push` runs the full end-to-end workflows instead of the dry-run.
+To run the check automatically before pushing changes under `.github/` or `scripts/`, enable the repo's hooks once with `git config core.hooksPath .githooks`. `ACT_E2E=1 git push` runs the full end-to-end workflows instead of the dry-run.

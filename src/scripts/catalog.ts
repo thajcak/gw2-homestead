@@ -3,8 +3,6 @@ import type { OptimizedImage } from '../types/optimizedImage';
 import { formatDay } from '../utils/formatDay';
 import { spriteStyle } from '../utils/sprite';
 
-export type { SearchIndexEntry };
-
 /** The details panel expands and collapses (height) over this long. */
 const PANEL_ANIMATION_MS = 280;
 const PANEL_ANIMATION_EASING = 'cubic-bezier(0.2, 0, 0, 1)';
@@ -423,10 +421,6 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     return selectedCategory === 'all' || entry.categories.includes(Number(selectedCategory));
   }
 
-  function matchesFilters(entry: SearchIndexEntry): boolean {
-    return matchesSearch(entry) && matchesCategory(entry);
-  }
-
   function filtersActive(): boolean {
     return searchTokens.length > 0 || selectedCategory !== 'all';
   }
@@ -654,7 +648,6 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     options: {
       scroll?: ScrollBehavior;
       deferPreview?: boolean;
-      decorationPromise?: Promise<Decoration | undefined>;
       preScroll?: boolean;
     } = {}
   ): Promise<void> {
@@ -674,7 +667,7 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
       scrollToItem(clickedItem, scrollBehavior);
     }
 
-    const decoration = await (options.decorationPromise ?? loadDecoration(decorationId));
+    const decoration = await loadDecoration(decorationId);
     if (token !== activeExpandToken || !decoration) {
       return;
     }
@@ -753,7 +746,6 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     await insertExpandedPanel(id, isPanelSwap ? false : (options.animate ?? true), token, {
       scroll: isPanelSwap ? 'auto' : options.scroll,
       deferPreview: options.deferPreview,
-      decorationPromise: loadDecoration(id),
       preScroll: isPanelSwap && !isSameRow,
     });
   }
@@ -787,8 +779,8 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   }
 
   /**
-   * The small prompt in the corner. 'filters': the decoration is hidden by filters, offering
-   * to clear them. 'notice': a message with a single OK button.
+   * The small prompt in the corner. With a target, the decoration is hidden by filters and
+   * the prompt offers to clear them; without one, it is a notice with a single OK button.
    */
   function showPrompt(text: string, target: { id: number; name: string } | null): void {
     if (!prompt || !promptText || !promptNo || !promptYes) {
@@ -1211,11 +1203,8 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     return;
   }
 
-  const entry = searchIndexById.get(deepLinkId);
-  if (entry && !matchesFilters(entry)) {
-    pendingOpenAfterFilterResetId = deepLinkId;
-    clearFilters();
-  } else if (entry) {
+  // No filters are active yet, so every decoration in the index is in the grid.
+  if (searchIndexById.has(deepLinkId)) {
     requestAnimationFrame(() => {
       void openDecorationFromDeepLink(deepLinkId);
     });

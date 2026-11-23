@@ -1,6 +1,6 @@
 import { sanitizeText } from '../../scripts/lib/sanitize-text.mjs';
 
-export { sanitizeDisplayName, sanitizeText, stripMarkup } from '../../scripts/lib/sanitize-text.mjs';
+export { sanitizeDisplayName, sanitizeText } from '../../scripts/lib/sanitize-text.mjs';
 
 /**
  * Lines the API repeats on most decorations. They say nothing about the item, so they are

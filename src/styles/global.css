@@ -8,15 +8,12 @@
   --color-text-soft: #6b7280;
   --color-accent: #2563eb;
   --color-accent-hover: #1d4ed8;
-  --color-danger: #dc2626;
   --color-dark: #111827;
   --color-dark-soft: #374151;
-  --color-panel: #1f2937;
   --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.05);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --radius-md: 0.375rem;
   --radius-lg: 0.5rem;
-  --container-width: 72rem;
   /* Set from the header's real height in catalog.ts; this is the fallback. */
   --header-height: 4rem;
   /* Must match SPRITE_COLUMNS in src/utils/sprite.ts. */
@@ -77,11 +74,6 @@ html {
 /* Keep the page behind the Recently Added dialog still while it is open. */
 html:has(.changelog-panel[open]) {
   overflow: hidden;
-}
-
-.container {
-  width: min(100% - 2rem, var(--container-width));
-  margin-inline: auto;
 }
 
 .site {
@@ -1027,10 +1019,6 @@ html:has(.changelog-panel[open]) {
   margin: 0;
   font-size: 0.875rem;
   color: var(--color-text);
-}
-
-.filter-prompt__name {
-  font-weight: 600;
 }
 
 .filter-prompt__actions {
