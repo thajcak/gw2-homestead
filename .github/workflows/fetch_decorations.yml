@@ -3,8 +3,7 @@ name: Update and Fetch Decorations and Categories
 on:
   schedule:
     # Hourly, off the top of the hour: GitHub delays or drops many runs scheduled at minute 0
-    # (main fired only every 5-7 hours on '0 * * * *').
-    - cron: '23 * * * *'
+    - cron: '30 * * * *'
   workflow_dispatch: # Allows for manual trigger of the workflow
     inputs:
       allow_large_drop:
