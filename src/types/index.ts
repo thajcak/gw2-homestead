@@ -7,6 +7,7 @@ export type ChangeLogEntryType =
   | 'New Item'
   | 'Item Updated'
   | 'Item Removed'
+  | 'Image Added'
   | 'Image Updated'
   | 'Recipe Updated';
 

@@ -61,7 +61,7 @@ function decorationImageUpdateEvent(oldItem, newItem, remoteOriginalSource) {
 
   return {
     id: newItem.id,
-    type: 'Image Updated',
+    type: oldRemote == null ? 'Image Added' : 'Image Updated',
     name: sanitizeDisplayName(newItem.name),
   };
 }
@@ -83,6 +83,15 @@ function decorationRecipeEvent(oldItem, newItem) {
     type: 'Recipe Updated',
     name: sanitizeDisplayName(newItem.name),
   };
+}
+
+/**
+ * An item missing from the API is only removed on the second run in a row that misses it.
+ * The first miss just stamps missingSince (see sync-api-to-content.mjs), so a single partial
+ * API response can't mark hundreds of decorations as removed.
+ */
+export function isConfirmedRemoval(oldItem, presentInApi) {
+  return !presentInApi && !oldItem.removed && Boolean(oldItem.missingSince);
 }
 
 function categoryItemUpdatedEvent(oldItem, newItem) {
@@ -141,7 +150,7 @@ export function generateDecorationEvents({
   }
 
   for (const [id, oldItem] of existingDecorations) {
-    if (!apiIds.has(id) && !oldItem.removed) {
+    if (isConfirmedRemoval(oldItem, apiIds.has(id))) {
       events.push({
         id,
         type: 'Item Removed',
@@ -176,7 +185,7 @@ export function generateCategoryEvents({ existingCategories, apiCategories }) {
   }
 
   for (const [id, oldItem] of existingCategories) {
-    if (!apiIds.has(id) && !oldItem.removed) {
+    if (isConfirmedRemoval(oldItem, apiIds.has(id))) {
       events.push({
         id,
         type: 'Item Removed',

@@ -33,6 +33,7 @@ const changeLogEntryTypeSchema = z.enum([
   'New Item',
   'Item Updated',
   'Item Removed',
+  'Image Added',
   'Image Updated',
   'Recipe Updated',
 ]);
@@ -62,12 +63,18 @@ const decorationSchema = z.object({
   original: imageSchema.optional(),
   history: z.array(historyEntrySchema).default([]),
   removed: z.boolean().optional(),
+  /** Day the GW2 API first stopped listing this item; it is removed if the next run agrees. */
+  missingSince: z.string().optional(),
+  /** Day the pinned wiki page first reported no preview image. */
+  previewMissingSince: z.string().optional(),
 });
 
 const categorySchema = z.object({
   id: z.number(),
   name: z.string(),
   history: z.array(historyEntrySchema).default([]),
+  removed: z.boolean().optional(),
+  missingSince: z.string().optional(),
 });
 
 const decorations = defineCollection({

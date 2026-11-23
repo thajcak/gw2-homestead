@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: '0 * * * *' # Runs every hour
   workflow_dispatch: # Allows for manual trigger of the workflow
+    inputs:
+      allow_large_drop:
+        description: 'Continue even if the GW2 API lists many fewer decorations than are stored'
+        type: boolean
+        default: false
 
 jobs:
   update-and-fetch-decorations:
@@ -23,76 +28,12 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Prepare content directories
-        run: |
-          set -e
-          mkdir -p src/content/decorations src/content/categories
-
-      - name: Fetch Decorations List and Details
-        run: |
-          set -e
-          # set -x
-          # Fetch the list of decoration IDs
-          curl -s https://api.guildwars2.com/v2/homestead/decorations -o decorations_list.json
-
-          # Initialize an empty array to store the results
-          echo "[]" > decorations_work.json
-
-          # Split the list into chunks of 200 IDs and fetch details
-          ids=$(jq -r '.[]' decorations_list.json)
-          chunk_size=200
-          for chunk in $(echo "$ids" | xargs -n $chunk_size | sed 's/ /,/g'); do
-            curl -s "https://api.guildwars2.com/v2/homestead/decorations?ids=$chunk" | \
-            jq -s 'add' >> temp.json
-          done
-
-          # Combine all the chunks into a single JSON array
-          jq -s 'add' temp.json > decorations_work.json
-          rm temp.json
-          rm decorations_list.json
-
-      - name: Merge existing enrichment into API payload
-        run: |
-          set -e
-          node scripts/merge-existing-enrichment.mjs decorations_work.json src/content/decorations
-
-      - name: Fetch Decoration Categories
-        run: |
-          set -e
-          # set -x
-          # Fetch the list of decoration category IDs
-          curl -s https://api.guildwars2.com/v2/homestead/decorations/categories -o decoration_categories_list.json
-
-          # Initialize an empty array to store the results
-          echo "[]" > categories_work.json
-
-          # Split the list into chunks of 200 IDs and fetch details
-          category_ids=$(jq -r '.[]' decoration_categories_list.json)
-          chunk_size=200
-          for chunk in $(echo "$category_ids" | xargs -n $chunk_size | sed 's/ /,/g'); do
-            curl -s "https://api.guildwars2.com/v2/homestead/decorations/categories?ids=$chunk" | \
-            jq -s 'add' >> temp_categories.json
-          done
-
-          # Combine all the chunks into a single JSON array
-          jq -s 'add' temp_categories.json > categories_work.json
-          rm temp_categories.json
-          rm decoration_categories_list.json
-
-      - name: Fetch Decoration Images and Update Data
-        run: node scripts/fetch-wiki-enrichment.mjs decorations_work.json
-
-      - name: Sync API data to content files
-        run: |
-          set -e
-          utc_day=$(date -u +%F)
-          node scripts/sync-api-to-content.mjs "$utc_day" decorations_work.json categories_work.json src/content/decorations src/content/categories
-          rm -f decorations_work.json categories_work.json
-
-      - name: Localize decoration images
-        run: |
-          set -e
-          node scripts/localize-decoration-images.mjs src/content/decorations
+      # Fetches the GW2 API (with retries, a full-response check and an item-count guard),
+      # merges stored enrichment, queries the wiki, syncs content files and localizes images.
+      - name: Fetch, enrich and sync decorations
+        env:
+          ALLOW_LARGE_DROP: ${{ inputs.allow_large_drop && '--allow-large-drop' || '' }}
+        run: node scripts/run-fetch-decorations.mjs $ALLOW_LARGE_DROP
 
       - name: Commit and push updated decorations and categories
         run: |

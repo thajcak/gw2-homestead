@@ -18,19 +18,33 @@ function historyToEntry(id: number, history: HistoryEntry): ChangeLogEntry & { d
   };
 }
 
-/** Changelog entries for when a decoration was first added to the catalog. */
+/** The earliest "New Item" entry, i.e. when the decoration actually first appeared. */
+function firstAddedEntry(history: HistoryEntry[] = []): HistoryEntry | null {
+  let first: HistoryEntry | null = null;
+  for (const item of history) {
+    if (item.type === 'New Item' && (!first || item.day < first.day)) {
+      first = item;
+    }
+  }
+  return first;
+}
+
+/**
+ * Changelog entries for when each decoration was first added to the catalog.
+ * A decoration appears once, on its earliest "New Item" day, even if older pipeline runs
+ * logged it as new more than once.
+ */
 export function buildChangelogDays(decorations: Decoration[]): ChangeLogDay[] {
   const byDay = new Map<string, ChangeLogEntry[]>();
 
   for (const decoration of decorations) {
-    for (const item of decoration.history ?? []) {
-      if (item.type !== 'New Item') {
-        continue;
-      }
-      const dayEntries = byDay.get(item.day) ?? [];
-      dayEntries.push(historyToEntry(decoration.id, item));
-      byDay.set(item.day, dayEntries);
+    const added = firstAddedEntry(decoration.history);
+    if (!added) {
+      continue;
     }
+    const dayEntries = byDay.get(added.day) ?? [];
+    dayEntries.push(historyToEntry(decoration.id, added));
+    byDay.set(added.day, dayEntries);
   }
 
   return Array.from(byDay.entries())

@@ -38,6 +38,7 @@ function syncCollection({
   let created = 0;
   let updated = 0;
   let removed = 0;
+  let missing = 0;
 
   for (const apiItem of apiItems) {
     const existing = existingItems.get(apiItem.id);
@@ -63,6 +64,13 @@ function syncCollection({
       continue;
     }
 
+    if (!existing.missingSince) {
+      // First run without this item: remember it, but don't remove it yet.
+      writeContentFile(contentDir, { ...existing, missingSince: day });
+      missing += 1;
+      continue;
+    }
+
     const itemEvents = eventsById.get(id) ?? [];
     const nextItem = markRemoved(existing);
     applyEventsToItem(nextItem, itemEvents, day);
@@ -70,7 +78,12 @@ function syncCollection({
     removed += 1;
   }
 
-  return { created, updated, removed };
+  return { created, updated, removed, missing };
+}
+
+function markRemoved(item) {
+  const { missingSince: _missingSince, ...rest } = item;
+  return { ...rest, removed: true };
 }
 
 function main() {
@@ -115,7 +128,7 @@ function main() {
     events: decorationEvents,
     day,
     mergeUpdate: mergeDecorationUpdate,
-    markRemoved: (item) => ({ ...item, removed: true }),
+    markRemoved,
   });
 
   const categoryResult = syncCollection({
@@ -125,14 +138,14 @@ function main() {
     events: categoryEvents,
     day,
     mergeUpdate: mergeCategoryUpdate,
-    markRemoved: (item) => ({ ...item, removed: true }),
+    markRemoved,
   });
 
   console.log(
     [
       `Synced ${day}:`,
-      `${decorationEvents.length} decoration events (${decorationResult.created} created, ${decorationResult.updated} updated, ${decorationResult.removed} removed)`,
-      `${categoryEvents.length} category events (${categoryResult.created} created, ${categoryResult.updated} updated, ${categoryResult.removed} removed)`,
+      `${decorationEvents.length} decoration events (${decorationResult.created} created, ${decorationResult.updated} updated, ${decorationResult.removed} removed, ${decorationResult.missing} newly missing)`,
+      `${categoryEvents.length} category events (${categoryResult.created} created, ${categoryResult.updated} updated, ${categoryResult.removed} removed, ${categoryResult.missing} newly missing)`,
     ].join(' ')
   );
 }

@@ -1,7 +1,8 @@
 import { createHash } from 'node:crypto';
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
-import { dirname, join } from 'node:path';
+import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { basename, dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { previewRemovalConfirmed } from './lib/content-store.mjs';
 
 const rootDir = join(fileURLToPath(new URL('.', import.meta.url)), '..');
 const publicDir = join(rootDir, 'public');
@@ -66,8 +67,27 @@ async function fileHash(path) {
   }
 }
 
+/** Delete preview.* files in a decoration's asset folder, except `keepFile`. Returns how many. */
+async function removePreviewFiles(folder, keepFile = null) {
+  let entries;
+  try {
+    entries = await readdir(folder);
+  } catch {
+    return 0;
+  }
+
+  let removed = 0;
+  for (const entry of entries) {
+    if (/^preview\./i.test(entry) && entry !== keepFile) {
+      await rm(join(folder, entry), { force: true });
+      removed += 1;
+    }
+  }
+  return removed;
+}
+
 async function localizeDecoration(decoration, options = {}) {
-  const { assetsRoot = assetsDir, force = false } = options;
+  const { assetsRoot = assetsDir, force = false, today } = options;
   const id = decoration.id;
   let changed = false;
 
@@ -86,19 +106,20 @@ async function localizeDecoration(decoration, options = {}) {
   }
 
   const previewSource = decoration.original?.source;
-  if (previewSource && decoration.original != null && isRemoteUrl(previewSource)) {
+  const previewFolder = join(assetsRoot, 'decorations', String(id));
+  if (previewSource && isRemoteUrl(previewSource)) {
+    // A remote source only reaches content when wiki enrichment accepted a new or changed
+    // image, so always download it: the file on disk is stale or missing by definition.
     const remotePreview = previewSource;
     const previewExt = extensionFromUrl(remotePreview);
     const previewRelative = `decorations/${id}/preview.${previewExt}`;
     const previewAbsolute = join(assetsRoot, previewRelative);
-    const existingHash = await fileHash(previewAbsolute);
-    const storedRemote = decoration.original?.remoteSource;
-    const remoteChanged = Boolean(storedRemote && storedRemote !== remotePreview);
 
-    if (force || existingHash == null || remoteChanged) {
-      await downloadImage(remotePreview, previewAbsolute);
-      changed = true;
-    }
+    await downloadImage(remotePreview, previewAbsolute);
+    // The extension can change with the image (jpg -> png); drop the old file so the
+    // build's preview glob can't pick it up.
+    await removePreviewFiles(previewFolder, basename(previewAbsolute));
+    changed = true;
 
     decoration.original = {
       width: decoration.original.width,
@@ -116,6 +137,11 @@ async function localizeDecoration(decoration, options = {}) {
       await mkdir(dirname(previewAbsolute), { recursive: true });
       const { rename } = await import('node:fs/promises');
       await rename(legacyPublicAbsolute, previewAbsolute);
+      changed = true;
+    }
+  } else if (!decoration.original && previewRemovalConfirmed(decoration, today)) {
+    // The wiki has had no preview for the whole grace period: drop the file with the metadata.
+    if ((await removePreviewFiles(previewFolder)) > 0) {
       changed = true;
     }
   }

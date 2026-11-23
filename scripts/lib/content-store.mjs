@@ -60,6 +60,25 @@ export function applyEventsToItem(item, events, day) {
   return item;
 }
 
+/** Days a pinned wiki page must keep reporting "no image" before we drop a stored preview. */
+export const PREVIEW_MISSING_GRACE_DAYS = 3;
+
+export function utcToday() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+export function daysBetween(fromDay, toDay) {
+  return Math.round((Date.parse(`${toDay}T00:00:00Z`) - Date.parse(`${fromDay}T00:00:00Z`)) / 86_400_000);
+}
+
+/** True once the wiki has reported no preview for long enough that the stored image should go. */
+export function previewRemovalConfirmed(item, today = utcToday()) {
+  return (
+    typeof item?.previewMissingSince === 'string' &&
+    daysBetween(item.previewMissingSince, today) >= PREVIEW_MISSING_GRACE_DAYS
+  );
+}
+
 export function isRemoteUrl(value) {
   return typeof value === 'string' && /^https?:\/\//i.test(value);
 }
@@ -105,6 +124,10 @@ export function mergeEnrichmentFromExisting(apiItem, existing) {
     merged.icon = existing.icon;
   }
 
+  if (existing.previewMissingSince && !Object.hasOwn(merged, 'previewMissingSince')) {
+    merged.previewMissingSince = existing.previewMissingSince;
+  }
+
   if (existing.thumbnail && !merged.thumbnail) {
     merged.thumbnail = existing.thumbnail;
   }
@@ -132,11 +155,17 @@ export function mergeDecorationUpdate(existing, apiItem) {
   }
 
   if (Object.hasOwn(apiItem, 'original') && apiItem.original === null) {
-    // Wiki confirmed there is no preview image for this decoration.
+    // Enrichment confirmed (over several days) that the wiki has no preview image.
   } else if (apiItem.original) {
     merged.original = structuredClone(apiItem.original);
   } else if (existing?.original) {
     merged.original = structuredClone(existing.original);
+  }
+
+  // The enriched payload is the source of truth here: merge-existing-enrichment copies the
+  // stored value in, and wiki enrichment clears it once the preview is seen again.
+  if (apiItem.previewMissingSince) {
+    merged.previewMissingSince = apiItem.previewMissingSince;
   }
 
   return merged;
