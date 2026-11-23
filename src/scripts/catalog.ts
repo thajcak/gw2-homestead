@@ -1,23 +1,32 @@
 import type { PublishedDecoration as Decoration, SearchIndexEntry } from '../build/catalogData';
-import type { Category } from '../types';
 import type { OptimizedImage } from '../types/optimizedImage';
-import { sanitizeDisplayName } from '../utils/sanitizeText';
+import { formatDay } from '../utils/formatDay';
+import { spriteStyle } from '../utils/sprite';
 
 export type { SearchIndexEntry };
 
 const ANIMATION_MS = 200;
-const MAX_ICON_LOADS = 3;
-const SCROLL_SETTLE_MS = 150;
-const ICON_ROOT_MARGIN = '80px 0px';
-const SCROLL_HEADER_OFFSET = 94;
+/** Start fetching a row's icon sheet a little before the row scrolls into view. */
+const ICON_ROOT_MARGIN = '200px 0px';
 const TOOLTIP_DELAY_MS = 300;
 /** After a tooltip hides, the next one within this window shows at once (moving along a row). */
 const TOOLTIP_WARM_MS = 400;
 const RESULTS_STATUS_DELAY_MS = 500;
+/** Delay before a deep-linked panel's preview starts loading, so the page settles first. */
+const DEFERRED_PREVIEW_DELAY_MS = 150;
+const PANEL_MIN_HEIGHT = 320;
+const PANEL_MAX_VIEWPORT_SHARE = 0.7;
+/** Height of the media area when a decoration has no preview (enlarged icon and a note). */
+const MISSING_PREVIEW_HEIGHT = 280;
+/** Matches the media column's padding-block in global.css. */
+const PANEL_MEDIA_PADDING = 32;
+/** Grid item size and gap, as in global.css. */
+const ITEM_SIZE = 74;
+const ITEM_GAP = 16;
 
 const EXPANDED_PANEL_ID = 'decoration-panel';
 
-type PanelScrollBehavior = ScrollBehavior | 'instant';
+type SortMode = 'name' | 'newest';
 
 function waitForNextFrame(count = 1): Promise<void> {
   return new Promise((resolve) => {
@@ -38,10 +47,7 @@ function isItemNearViewport(item: HTMLElement): boolean {
   return rect.top < window.innerHeight + margin && rect.bottom > -margin;
 }
 
-function resolveScrollBehavior(
-  item: HTMLElement,
-  preferred?: PanelScrollBehavior
-): PanelScrollBehavior {
+function resolveScrollBehavior(item: HTMLElement, preferred?: ScrollBehavior): ScrollBehavior {
   if (preferred) {
     return preferred;
   }
@@ -53,35 +59,12 @@ function catalogUrl(baseUrl: string, path: string): string {
   return `${normalizedBase}${path.replace(/^\//, '')}`;
 }
 
-function resolvePublishedUrl(url: string, baseUrl: string): string {
-  if (url.startsWith('http://') || url.startsWith('https://')) {
-    return url;
+async function fetchOk(url: string): Promise<Response> {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`HTTP ${response.status} for ${url}`);
   }
-
-  const basePath = baseUrl.replace(/\/$/, '');
-  if (url.startsWith('/')) {
-    if (basePath && (url === basePath || url.startsWith(`${basePath}/`))) {
-      return url;
-    }
-    return basePath ? `${basePath}${url}` : url;
-  }
-
-  return catalogUrl(baseUrl, url);
-}
-
-function resolveAsset(path: string | undefined, base: string): string {
-  const placeholder =
-    (typeof window !== 'undefined' &&
-      (window as Window & { __catalogPlaceholderPreview?: string }).__catalogPlaceholderPreview) ||
-    catalogUrl(base, 'images/placeholder.png');
-
-  if (!path) {
-    return placeholder;
-  }
-  if (path.startsWith('http://') || path.startsWith('https://')) {
-    return path;
-  }
-  return catalogUrl(base, path);
+  return response;
 }
 
 function escapeHtml(value: string): string {
@@ -92,12 +75,12 @@ function escapeHtml(value: string): string {
     .replace(/"/g, '&quot;');
 }
 
-function getCategoryMap(categories: Category[]): Map<number, string> {
-  return new Map(categories.map((category) => [category.id, category.name]));
+function wikiArticleUrl(title: string): string {
+  return `https://wiki.guildwars2.com/wiki/${encodeURIComponent(title.replace(/ /g, '_'))}`;
 }
 
 function normalizeSearchText(value: string): string {
-  return value.toLowerCase().replace(/[\u2018\u2019]/g, "'");
+  return value.toLowerCase().replace(/[‘’]/g, "'");
 }
 
 /** Split a query into words; an entry matches when every word appears somewhere in its text. */
@@ -111,13 +94,41 @@ function buildSearchHaystack(entry: SearchIndexEntry, categoryMap: Map<number, s
   return normalizeSearchText([entry.name, ...categoryNames, entry.description ?? ''].join(' '));
 }
 
-function renderPreviewImage(
-  preview: OptimizedImage | undefined,
+const RELATIVE_TIME = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
+
+/** "today", "3 days ago", "5 months ago" for a YYYY-MM-DD day. */
+function relativeDay(day: string, now = new Date()): string {
+  const todayUtc = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+  const days = Math.round((Date.parse(`${day}T00:00:00Z`) - todayUtc) / 86_400_000);
+  const ago = Math.abs(days);
+  if (ago < 7) {
+    return RELATIVE_TIME.format(days, 'day');
+  }
+  if (ago < 30) {
+    return RELATIVE_TIME.format(Math.round(days / 7), 'week');
+  }
+  if (ago < 365) {
+    return RELATIVE_TIME.format(Math.round(days / 30.44), 'month');
+  }
+  return RELATIVE_TIME.format(Math.round(days / 365.25), 'year');
+}
+
+function renderPreview(
+  decoration: Decoration,
   alt: string,
-  deferLoad: boolean
+  deferLoad: boolean,
+  iconHtml: string
 ): string {
+  const preview: OptimizedImage | undefined = decoration.preview;
   if (!preview?.src) {
-    return `<div class="expanded-preview is-missing" role="status">Image not found</div>`;
+    const wikiLink = decoration.wikiTitle
+      ? `<a href="${escapeHtml(wikiArticleUrl(decoration.wikiTitle))}" class="expanded-wiki-link" target="_blank" rel="noopener noreferrer">Check the wiki page →</a>`
+      : '';
+    return `<div class="expanded-preview is-missing">
+        ${iconHtml}
+        <p class="expanded-preview__note">No preview on the wiki yet</p>
+        ${wikiLink}
+      </div>`;
   }
 
   const attrs = [
@@ -129,22 +140,15 @@ function renderPreviewImage(
     'onload="this.closest(\'.expanded-preview\')?.classList.add(\'is-loaded\')"',
   ];
 
-  if (deferLoad) {
-    attrs.push(`data-preview-src="${escapeHtml(preview.src)}"`);
-    if (preview.srcSet) {
-      attrs.push(`data-preview-srcset="${escapeHtml(preview.srcSet)}"`);
-    }
-    if (preview.sizes) {
-      attrs.push(`data-preview-sizes="${escapeHtml(preview.sizes)}"`);
-    }
-  } else {
-    attrs.push(`src="${escapeHtml(preview.src)}"`);
-    if (preview.srcSet) {
-      attrs.push(`srcset="${escapeHtml(preview.srcSet)}"`);
-    }
-    if (preview.sizes) {
-      attrs.push(`sizes="${escapeHtml(preview.sizes)}"`);
-    }
+  const prefix = deferLoad ? 'data-preview-' : '';
+  attrs.push(`${prefix}src="${escapeHtml(preview.src)}"`);
+  if (preview.srcSet) {
+    attrs.push(`${prefix}srcset="${escapeHtml(preview.srcSet)}"`);
+  }
+  if (preview.sizes) {
+    attrs.push(`${prefix}sizes="${escapeHtml(preview.sizes)}"`);
+  }
+  if (!deferLoad) {
     attrs.push('loading="eager"', 'fetchpriority="high"');
   }
 
@@ -154,99 +158,105 @@ function renderPreviewImage(
       </div>`;
 }
 
+function renderRecipe(recipe: Decoration['recipe']): string {
+  if (!recipe) {
+    return '<p class="expanded-recipe-empty">No recipe data in catalog for this decoration.</p>';
+  }
+
+  // A rating of 0 means the item isn't crafted at a discipline, so it says nothing.
+  const ratingRow = recipe.rating ? `<dt>Rating</dt><dd>${recipe.rating}</dd>` : '';
+  const sheetRow = recipe.sheet
+    ? `<dt>Recipe sheet</dt><dd class="expanded-recipe-break">${escapeHtml(recipe.sheet)}</dd>`
+    : '';
+  const meta = ratingRow || sheetRow ? `<dl class="expanded-recipe__meta">${ratingRow}${sheetRow}</dl>` : '';
+  const ingredients =
+    recipe.ingredients.length > 0
+      ? `<ul class="expanded-recipe-list">${recipe.ingredients
+          .map(
+            (ingredient) =>
+              `<li class="expanded-recipe-break">${ingredient.quantity != null ? `${ingredient.quantity}× ` : ''}${escapeHtml(ingredient.item)}</li>`
+          )
+          .join('')}</ul>`
+      : '';
+
+  return `<div class="expanded-recipe">
+      <h3 class="expanded-recipe__title">Recipe</h3>
+      ${meta}
+      ${ingredients}
+    </div>`;
+}
+
 function renderExpandedDecoration(
   decoration: Decoration,
   categoryMap: Map<number, string>,
   itemsPerRow: number,
   decorationIndex: number,
-  deferPreviewLoad = false
+  deferPreviewLoad: boolean,
+  iconHtml: string
 ): string {
-  const displayName = sanitizeDisplayName(decoration.name);
-  const indicatorLeft = `calc(50% + ${(decorationIndex % itemsPerRow) * (74 + 16)}px - ${(itemsPerRow * (74 + 16) - 16) / 2}px + 37px)`;
-  const imageFrameContent = renderPreviewImage(decoration.preview, displayName, deferPreviewLoad);
+  const step = ITEM_SIZE + ITEM_GAP;
+  const indicatorLeft = `calc(50% + ${(decorationIndex % itemsPerRow) * step}px - ${(itemsPerRow * step - ITEM_GAP) / 2}px + ${ITEM_SIZE / 2}px)`;
 
   const categoryTags = decoration.categories
-    .map((catId) => {
-      const name = categoryMap.get(catId);
+    .map((categoryId) => {
+      const name = categoryMap.get(categoryId);
       return name ? `<span class="expanded-tag">${escapeHtml(name)}</span>` : '';
     })
     .join('');
 
   const wikiLink = decoration.wikiTitle
-    ? `<a href="https://wiki.guildwars2.com/index.php?search=${encodeURIComponent(decoration.wikiTitle)}" class="expanded-wiki-link" target="_blank" rel="noopener noreferrer">View on Wiki →</a>`
+    ? `<a href="${escapeHtml(wikiArticleUrl(decoration.wikiTitle))}" class="expanded-wiki-link" target="_blank" rel="noopener noreferrer">View on Wiki →</a>`
     : '';
-
-  let recipeHtml =
-    '<p class="expanded-recipe-empty">No recipe data in catalog for this decoration.</p>';
-  if (decoration.recipe) {
-    const ratingRow =
-      decoration.recipe.rating != null
-        ? `<dt>Rating</dt><dd>${decoration.recipe.rating}</dd>`
-        : '';
-    const sheetRow = decoration.recipe.sheet
-      ? `<dt>Source</dt><dd class="expanded-recipe-break">${escapeHtml(decoration.recipe.sheet)}</dd>`
-      : '';
-    const ingredients =
-      decoration.recipe.ingredients.length > 0
-        ? `<ul class="expanded-recipe-list">${decoration.recipe.ingredients
-            .map(
-              (ing) =>
-                `<li class="expanded-recipe-break">${ing.quantity != null ? `${ing.quantity}× ` : ''}${escapeHtml(ing.item)}</li>`
-            )
-            .join('')}</ul>`
-        : '';
-
-    recipeHtml = `<div class="expanded-recipe">
-      <div class="expanded-recipe__title">Recipe</div>
-      <dl class="expanded-recipe__meta">${ratingRow}${sheetRow}</dl>
-      ${ingredients}
-    </div>`;
-  }
 
   const description = decoration.description
     ? `<p class="expanded-description">${escapeHtml(decoration.description)}</p>`
     : '';
 
-  return `<div id="${EXPANDED_PANEL_ID}" class="expanded-decoration is-collapsed" data-expanded-for="${decoration.id}" role="region" aria-labelledby="${EXPANDED_PANEL_ID}-title" style="grid-row: auto;">
+  return `<div id="${EXPANDED_PANEL_ID}" class="expanded-decoration is-collapsed" data-expanded-for="${decoration.id}" role="region" aria-labelledby="${EXPANDED_PANEL_ID}-title">
     <div class="expanded-decoration-gradient">
       <div class="decoration-indicator" style="left: ${indicatorLeft}"></div>
       <div class="expanded-decoration__body">
         <div class="expanded-decoration__layout">
           <div class="expanded-decoration__media">
-            ${imageFrameContent}
+            ${renderPreview(decoration, decoration.name, deferPreviewLoad, iconHtml)}
           </div>
           <div class="expanded-decoration__details">
             <div class="expanded-heading">
-              <h2 id="${EXPANDED_PANEL_ID}-title" class="expanded-title">${escapeHtml(displayName)}</h2>
+              <h2 id="${EXPANDED_PANEL_ID}-title" class="expanded-title">${escapeHtml(decoration.name)}</h2>
               ${wikiLink}
             </div>
             ${description}
             <div class="expanded-tags">${categoryTags}</div>
-            <div class="expanded-recipe-section">${recipeHtml}</div>
+            <div class="expanded-recipe-section">${renderRecipe(decoration.recipe)}</div>
           </div>
         </div>
       </div>
     </div>
-    </div>`;
+  </div>`;
 }
 
 export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   const searchInput = document.getElementById('search-input') as HTMLInputElement | null;
   const clearSearchButton = document.getElementById('clear-search') as HTMLButtonElement | null;
   const categorySelect = document.getElementById('category-select') as HTMLSelectElement | null;
-  const homeResetButton = document.getElementById('home-reset') as HTMLButtonElement | null;
+  const sortSelect = document.getElementById('sort-select') as HTMLSelectElement | null;
+  const clearFiltersButton = document.getElementById('clear-filters') as HTMLButtonElement | null;
+  const homeLink = document.getElementById('home-link') as HTMLAnchorElement | null;
   const openChangelogButton = document.getElementById('open-changelog') as HTMLButtonElement | null;
   const changelogPanel = document.getElementById('changelog-panel') as HTMLDialogElement | null;
   const closeChangelogButton = document.getElementById('close-changelog');
   const changelogScrollTopButton = document.getElementById('changelog-scroll-top');
   const changelogTitleButton = document.getElementById('changelog-title');
   const changelogScrollContainer = document.getElementById('changelog-scroll');
-  const filterPrompt = document.getElementById('filter-prompt');
-  const filterPromptNo = document.getElementById('filter-prompt-no');
-  const filterPromptYes = document.getElementById('filter-prompt-yes');
-  const filterPromptName = document.getElementById('filter-prompt-name');
+  const prompt = document.getElementById('filter-prompt');
+  const promptText = document.getElementById('filter-prompt-text');
+  const promptNo = document.getElementById('filter-prompt-no') as HTMLButtonElement | null;
+  const promptYes = document.getElementById('filter-prompt-yes') as HTMLButtonElement | null;
   const grid = document.getElementById('icon-grid');
   const emptyState = document.getElementById('empty-state');
+  const loadError = document.getElementById('load-error');
+  const loadRetryButton = document.getElementById('load-retry');
+  const resultsCount = document.getElementById('results-count');
   const resultsStatus = document.getElementById('results-status');
   const tooltip = document.getElementById('catalog-tooltip');
   const header = document.querySelector<HTMLElement>('.header');
@@ -256,35 +266,59 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     return;
   }
 
+  // Grid items scroll into view below the sticky header (scroll-margin-top in global.css).
+  if (header) {
+    new ResizeObserver(() => {
+      document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);
+    }).observe(header);
+  }
+
   const basePath = baseUrl.replace(/\/$/, '');
   const catalogIndexPath = basePath ? `${basePath}/` : '/';
   const catalogBase = catalogUrl(baseUrl, 'catalog');
+  const sheetUrls = JSON.parse(grid.dataset.spriteSheets ?? '[]') as string[];
+  // Category names are already in the select; no need to fetch them.
+  const categoryMap = new Map<number, string>(
+    Array.from(categoryCountOptions, (option) => [Number(option.value), option.dataset.categoryName ?? ''])
+  );
 
-  // Icon URLs ride in the search index and preview metadata in each decoration's JSON (fetched
-  // when its panel opens), so startup needs only these two small files.
-  const [searchIndex, categories] = await Promise.all([
-    fetch(catalogUrl(baseUrl, 'catalog/search-index.json')).then(
-      (response) => response.json() as Promise<SearchIndexEntry[]>
-    ),
-    fetch(catalogUrl(baseUrl, 'catalog/categories.json')).then(
-      (response) => response.json() as Promise<Category[]>
-    ),
-  ]);
+  /** Fetch the search index, showing an error with a Retry button until it arrives. */
+  async function loadSearchIndex(): Promise<SearchIndexEntry[]> {
+    for (;;) {
+      try {
+        const response = await fetchOk(catalogUrl(baseUrl, 'catalog/search-index.json'));
+        loadError?.classList.add('is-hidden');
+        return (await response.json()) as SearchIndexEntry[];
+      } catch (error) {
+        console.error('Failed to load the catalog', error);
+        if (!loadError || !loadRetryButton) {
+          throw error;
+        }
+        loadError.classList.remove('is-hidden');
+        await new Promise<void>((resolve) => {
+          loadRetryButton.addEventListener('click', () => resolve(), { once: true });
+        });
+      }
+    }
+  }
 
-  const categoryMap = getCategoryMap(categories);
+  const searchIndex = await loadSearchIndex();
   const searchIndexById = new Map(searchIndex.map((entry) => [entry.id, entry]));
   const searchHaystacks = new Map(
     searchIndex.map((entry) => [entry.id, buildSearchHaystack(entry, categoryMap)])
   );
   const decorationCache = new Map<number, Decoration>();
-  const knownDecorationIds = new Set<number>();
 
   let searchTokens: string[] = [];
   let selectedCategory = 'all';
+  let sortMode: SortMode = 'name';
+  let filteredIds = new Set<number>();
   let expandedItemId: number | null = null;
   let itemsPerRow = 0;
   let pendingOpenAfterFilterResetId: number | null = null;
-  let filterVisibilityPrompt: { id: number; name: string } | null = null;
+  let focusAfterPendingOpen = false;
+  let promptTarget: { id: number; name: string } | null = null;
+  let promptReturnFocus: HTMLElement | null = null;
   let changelogScrollTop = Number(sessionStorage.getItem('changelogScrollTop') ?? '0');
   let gridItems: HTMLElement[] = [];
   const gridItemsById = new Map<number, HTMLElement>();
@@ -294,31 +328,21 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   let changelogLoading: Promise<void> | null = null;
   let activeExpandToken = 0;
   let panelRemovalToken = 0;
-  let suppressIconLoads = false;
 
   async function loadDecoration(id: number): Promise<Decoration | undefined> {
-    if (decorationCache.has(id)) {
-      return decorationCache.get(id);
+    const cached = decorationCache.get(id);
+    if (cached) {
+      return cached;
     }
 
-    const response = await fetch(`${catalogBase}/decorations/${id}.json`);
-    if (!response.ok) {
+    try {
+      const decoration = (await (await fetchOk(`${catalogBase}/decorations/${id}.json`)).json()) as Decoration;
+      decorationCache.set(id, decoration);
+      return decoration;
+    } catch (error) {
+      console.error(`Failed to load decoration ${id}`, error);
       return undefined;
     }
-
-    const decoration = (await response.json()) as Decoration;
-    decorationCache.set(id, decoration);
-    knownDecorationIds.add(id);
-    return decoration;
-  }
-
-  async function decorationExists(id: number): Promise<boolean> {
-    if (knownDecorationIds.has(id) || searchIndexById.has(id)) {
-      return true;
-    }
-
-    const decoration = await loadDecoration(id);
-    return decoration != null;
   }
 
   function normalizeCatalogPathname(pathname: string): string {
@@ -334,10 +358,7 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   }
 
   function calculateItemsPerRow(): void {
-    const gridWidth = grid!.offsetWidth;
-    const itemWidth = 74;
-    const gap = 16;
-    itemsPerRow = Math.max(1, Math.floor((gridWidth + gap) / (itemWidth + gap)));
+    itemsPerRow = Math.max(1, Math.floor((grid!.offsetWidth + ITEM_GAP) / (ITEM_SIZE + ITEM_GAP)));
   }
 
   function getVisibleGridItems(): HTMLElement[] {
@@ -352,28 +373,16 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     return searchTokens.every((token) => haystack.includes(token));
   }
 
+  function matchesCategory(entry: SearchIndexEntry): boolean {
+    return selectedCategory === 'all' || entry.categories.includes(Number(selectedCategory));
+  }
+
   function matchesFilters(entry: SearchIndexEntry): boolean {
-    return (
-      matchesSearch(entry) &&
-      (selectedCategory === 'all' || entry.categories.includes(Number(selectedCategory)))
-    );
+    return matchesSearch(entry) && matchesCategory(entry);
   }
 
-  function getFilteredIds(): Set<number> {
-    const ids = new Set<number>();
-    for (const entry of searchIndex) {
-      if (matchesFilters(entry)) {
-        ids.add(entry.id);
-      }
-    }
-    return ids;
-  }
-
-  function getFilteredCount(categoryId?: number): number {
-    return searchIndex.filter(
-      (entry) =>
-        matchesSearch(entry) && (categoryId === undefined || entry.categories.includes(categoryId))
-    ).length;
+  function filtersActive(): boolean {
+    return searchTokens.length > 0 || selectedCategory !== 'all';
   }
 
   /** Tell screen readers how many decorations the filters left, once typing pauses. */
@@ -393,40 +402,57 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     }, RESULTS_STATUS_DELAY_MS);
   }
 
-  function updateCategoryCounts(): void {
-    const allCount = getFilteredCount();
+  /** "All categories (n)" and each category's count, for the current search. */
+  function updateCategoryCounts(searchCount: number, categoryCounts: Map<number, number>): void {
     const allOption = categorySelect!.querySelector('option[value="all"]');
     if (allOption) {
-      allOption.textContent = `All Categories (${allCount})`;
+      allOption.textContent = `All categories (${searchCount})`;
     }
     categoryCountOptions.forEach((option) => {
-      const categoryId = Number(option.value);
-      option.textContent = `${option.dataset.categoryName} (${getFilteredCount(categoryId)})`;
+      option.textContent = `${option.dataset.categoryName} (${categoryCounts.get(Number(option.value)) ?? 0})`;
     });
   }
 
+  function updateResultsCount(visibleCount: number): void {
+    if (!resultsCount) {
+      return;
+    }
+    const total = searchIndex.length.toLocaleString();
+    resultsCount.textContent = filtersActive()
+      ? `${visibleCount.toLocaleString()} of ${total} decorations`
+      : `${total} decorations`;
+  }
+
   function applyFilters(): void {
-    const filteredIds = getFilteredIds();
-    let visibleCount = 0;
+    // One pass: the visible set, plus per-category counts for the current search.
+    const categoryCounts = new Map<number, number>();
+    let searchCount = 0;
+    filteredIds = new Set<number>();
 
-    gridItems.forEach((item) => {
-      const id = Number(item.dataset.id);
-      const visible = filteredIds.has(id);
-      const wasHidden = item.classList.contains('is-hidden');
-      item.classList.toggle('is-hidden', !visible);
-      if (visible) {
-        visibleCount += 1;
-        if (wasHidden) {
-          queueIconLoad(item);
-        }
+    for (const entry of searchIndex) {
+      if (!matchesSearch(entry)) {
+        continue;
       }
-    });
-
-    if (emptyState) {
-      emptyState.classList.toggle('is-hidden', visibleCount > 0);
+      searchCount += 1;
+      for (const categoryId of entry.categories) {
+        categoryCounts.set(categoryId, (categoryCounts.get(categoryId) ?? 0) + 1);
+      }
+      if (matchesCategory(entry)) {
+        filteredIds.add(entry.id);
+      }
     }
 
-    updateCategoryCounts();
+    for (const item of gridItems) {
+      item.classList.toggle('is-hidden', !filteredIds.has(Number(item.dataset.id)));
+    }
+
+    const visibleCount = filteredIds.size;
+    emptyState?.classList.toggle('is-hidden', visibleCount > 0);
+    updateCategoryCounts(searchCount, categoryCounts);
+    updateResultsCount(visibleCount);
+    if (clearFiltersButton) {
+      clearFiltersButton.hidden = !filtersActive();
+    }
 
     // The first pass runs at startup; only changes the visitor makes are announced.
     if (announceResults) {
@@ -440,9 +466,37 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
 
     if (pendingOpenAfterFilterResetId != null && filteredIds.has(pendingOpenAfterFilterResetId)) {
       const targetId = pendingOpenAfterFilterResetId;
+      const focusTarget = focusAfterPendingOpen;
       pendingOpenAfterFilterResetId = null;
-      void openDecorationFromDeepLink(targetId);
+      focusAfterPendingOpen = false;
+      void openDecorationFromDeepLink(targetId).then(() => {
+        if (focusTarget) {
+          gridItemsById.get(targetId)?.focus({ preventScroll: true });
+        }
+      });
     }
+  }
+
+  function sortedEntries(mode: SortMode): SearchIndexEntry[] {
+    if (mode === 'name') {
+      return searchIndex; // Built in name order.
+    }
+    // Newest first; the sort is stable, so each day stays in name order. Undated items go last.
+    return [...searchIndex].sort((a, b) => (b.added ?? '').localeCompare(a.added ?? ''));
+  }
+
+  function applySort(mode: SortMode): void {
+    if (mode === sortMode) {
+      return;
+    }
+    sortMode = mode;
+    if (expandedItemId != null) {
+      collapseExpanded();
+      panelRemovalToken += 1;
+      removeExpandedPanel();
+    }
+    gridItems = sortedEntries(mode).map((entry) => gridItemsById.get(entry.id)!);
+    grid!.append(...gridItems);
   }
 
   /** Keep aria-expanded / aria-controls on grid buttons in step with the open panel. */
@@ -460,22 +514,16 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   }
 
   function removeExpandedPanel(): void {
-    const existing = grid!.querySelector('.expanded-decoration');
-    if (existing) {
-      existing.remove();
-    }
+    grid!.querySelector('.expanded-decoration')?.remove();
   }
 
-  function scrollToItem(item: HTMLElement, behavior: PanelScrollBehavior = 'smooth'): void {
-    const itemTop = item.getBoundingClientRect().top + window.scrollY;
-    window.scrollTo({
-      top: itemTop - SCROLL_HEADER_OFFSET,
-      behavior: behavior === 'instant' ? 'auto' : behavior,
-    });
+  /** Scroll an icon to just below the sticky header (its scroll-margin-top). */
+  function scrollToItem(item: HTMLElement, behavior: ScrollBehavior = 'smooth'): void {
+    item.scrollIntoView({ block: 'start', behavior });
   }
 
-  function loadDeferredPreview(panel: HTMLElement, delayMs = 0): void {
-    const startLoad = () => {
+  function loadDeferredPreview(panel: HTMLElement, delayMs: number): void {
+    setTimeout(() => {
       const img = panel.querySelector<HTMLImageElement>('img[data-preview-src]');
       if (!img?.dataset.previewSrc) {
         return;
@@ -483,26 +531,42 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
 
       img.loading = 'eager';
       img.fetchPriority = 'high';
-      img.src = img.dataset.previewSrc;
-
-      if (img.dataset.previewSrcset) {
-        img.srcset = img.dataset.previewSrcset;
-        img.removeAttribute('data-preview-srcset');
-      }
-
       if (img.dataset.previewSizes) {
         img.sizes = img.dataset.previewSizes;
-        img.removeAttribute('data-preview-sizes');
       }
-
+      if (img.dataset.previewSrcset) {
+        img.srcset = img.dataset.previewSrcset;
+      }
+      img.src = img.dataset.previewSrc;
       img.removeAttribute('data-preview-src');
-    };
+      img.removeAttribute('data-preview-srcset');
+      img.removeAttribute('data-preview-sizes');
+    }, delayMs);
+  }
 
-    if (delayMs > 0) {
-      setTimeout(startLoad, delayMs);
-      return;
+  /**
+   * Size the panel to its content, up to 70% of the window: the preview at the media column's
+   * width (or the no-preview block), beside or above the details. Measured while the panel is
+   * still collapsed; widths and scrollHeight don't depend on its height.
+   */
+  function measurePanelHeight(panel: HTMLElement, decoration: Decoration): number {
+    const maxHeight = Math.max(Math.round(window.innerHeight * PANEL_MAX_VIEWPORT_SHARE), PANEL_MIN_HEIGHT);
+    const media = panel.querySelector<HTMLElement>('.expanded-decoration__media');
+    const details = panel.querySelector<HTMLElement>('.expanded-decoration__details');
+    if (!media || !details) {
+      return maxHeight;
     }
-    startLoad();
+
+    const preview = decoration.preview;
+    const mediaHeight = preview
+      ? Math.min(preview.height, (media.clientWidth * preview.height) / preview.width) + PANEL_MEDIA_PADDING
+      : MISSING_PREVIEW_HEIGHT;
+    const sideBySide = window.matchMedia('(min-width: 1024px)').matches;
+    const contentHeight = sideBySide
+      ? Math.max(mediaHeight, details.scrollHeight)
+      : mediaHeight + details.scrollHeight;
+
+    return Math.min(maxHeight, Math.max(PANEL_MIN_HEIGHT, Math.ceil(contentHeight)));
   }
 
   function collapseExpanded(): void {
@@ -534,21 +598,27 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     syncCatalogUrl(url);
   }
 
+  /** A decoration's icon drawn from its sprite sheet, enlarged, for the no-preview block. */
+  function largeIconHtml(id: number): string {
+    const sprite = searchIndexById.get(id)?.sprite;
+    return sprite
+      ? `<span class="expanded-preview__icon sprite-icon" style="${escapeHtml(spriteStyle(sprite, sheetUrls))}" aria-hidden="true"></span>`
+      : '';
+  }
+
   async function insertExpandedPanel(
     decorationId: number,
     animate: boolean,
     token: number,
     options: {
-      scroll?: PanelScrollBehavior;
+      scroll?: ScrollBehavior;
       deferPreview?: boolean;
       decorationPromise?: Promise<Decoration | undefined>;
       preScroll?: boolean;
     } = {}
   ): Promise<void> {
     const visibleItems = getVisibleGridItems();
-    const decorationIndex = visibleItems.findIndex(
-      (item) => Number(item.dataset.id) === decorationId
-    );
+    const decorationIndex = visibleItems.findIndex((item) => Number(item.dataset.id) === decorationId);
     if (decorationIndex === -1) {
       return;
     }
@@ -571,30 +641,24 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     panelRemovalToken += 1;
     removeExpandedPanel();
 
-    if (token !== activeExpandToken) {
-      return;
-    }
-
     const wrapper = document.createElement('div');
     wrapper.innerHTML = renderExpandedDecoration(
       decoration,
       categoryMap,
       itemsPerRow,
       decorationIndex,
-      options.deferPreview ?? false
+      options.deferPreview ?? false,
+      largeIconHtml(decorationId)
     );
-    const panel = wrapper.firstElementChild as HTMLElement;
+    const panel = wrapper.firstElementChild as HTMLElement | null;
     if (!panel) {
       return;
     }
 
     insertAfter.insertAdjacentElement('afterend', panel);
-
-    const targetHeight = Math.max(window.innerHeight * 0.7, 320);
-    panel.style.height = `${targetHeight}px`;
+    panel.style.height = `${measurePanelHeight(panel, decoration)}px`;
 
     if (animate) {
-      panel.classList.add('is-collapsed');
       requestAnimationFrame(() => {
         if (token !== activeExpandToken) {
           panel.remove();
@@ -613,7 +677,7 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     }
 
     if (options.deferPreview) {
-      loadDeferredPreview(panel, SCROLL_SETTLE_MS);
+      loadDeferredPreview(panel, DEFERRED_PREVIEW_DELAY_MS);
     }
 
     markExpandedItem(decorationId);
@@ -623,9 +687,8 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
 
   async function openDecorationById(
     id: number,
-    options: { animate?: boolean; scroll?: PanelScrollBehavior; deferPreview?: boolean } = {}
+    options: { animate?: boolean; scroll?: ScrollBehavior; deferPreview?: boolean } = {}
   ): Promise<void> {
-    const animate = options.animate ?? true;
     const visibleItems = getVisibleGridItems();
     const newIndex = visibleItems.findIndex((item) => Number(item.dataset.id) === id);
     if (newIndex === -1) {
@@ -638,60 +701,29 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     }
 
     const token = ++activeExpandToken;
-    const decorationPromise = loadDecoration(id);
     const isPanelSwap = expandedItemId != null;
+    const currentIndex = isPanelSwap
+      ? visibleItems.findIndex((item) => Number(item.dataset.id) === expandedItemId)
+      : -1;
+    const isSameRow =
+      currentIndex >= 0 && Math.floor(newIndex / itemsPerRow) === Math.floor(currentIndex / itemsPerRow);
 
-    suppressIconLoads = true;
-    isScrolling = true;
-
-    try {
-      const currentIndex =
-        expandedItemId != null
-          ? visibleItems.findIndex((item) => Number(item.dataset.id) === expandedItemId)
-          : -1;
-      const isSameRow =
-        itemsPerRow > 0 &&
-        currentIndex >= 0 &&
-        Math.floor(newIndex / itemsPerRow) === Math.floor(currentIndex / itemsPerRow);
-
-      await insertExpandedPanel(
-        id,
-        isPanelSwap ? false : animate,
-        token,
-        {
-          scroll: isPanelSwap ? 'auto' : options.scroll,
-          deferPreview: options.deferPreview,
-          decorationPromise,
-          preScroll: isPanelSwap && !isSameRow,
-        }
-      );
-    } finally {
-      suppressIconLoads = false;
-      scheduleIconLoadsAfterScroll();
-    }
+    await insertExpandedPanel(id, isPanelSwap ? false : (options.animate ?? true), token, {
+      scroll: isPanelSwap ? 'auto' : options.scroll,
+      deferPreview: options.deferPreview,
+      decorationPromise: loadDecoration(id),
+      preScroll: isPanelSwap && !isSameRow,
+    });
   }
 
   async function openDecorationFromDeepLink(id: number): Promise<void> {
-    suppressIconLoads = true;
-    isScrolling = true;
-
-    try {
-      const visibleItems = getVisibleGridItems();
-      const item = visibleItems.find((el) => Number(el.dataset.id) === id);
-      if (item && !isItemNearViewport(item)) {
-        scrollToItem(item, 'auto');
-        await waitForNextFrame(2);
-      }
-
-      await openDecorationById(id, {
-        animate: false,
-        scroll: 'auto',
-        deferPreview: true,
-      });
-    } finally {
-      suppressIconLoads = false;
-      scheduleIconLoadsAfterScroll();
+    const item = getVisibleGridItems().find((element) => Number(element.dataset.id) === id);
+    if (item && !isItemNearViewport(item)) {
+      scrollToItem(item, 'auto');
+      await waitForNextFrame(2);
     }
+
+    await openDecorationById(id, { animate: false, scroll: 'auto', deferPreview: true });
   }
 
   function clearFilters(): void {
@@ -699,36 +731,50 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     selectedCategory = 'all';
     searchInput!.value = '';
     categorySelect!.value = 'all';
-    if (clearSearchButton) {
-      clearSearchButton.classList.add('is-hidden');
-    }
+    clearSearchButton?.classList.add('is-hidden');
     applyFilters();
   }
 
   function handleHomeReset(): void {
     clearFilters();
     collapseExpanded();
-    hideFilterPrompt();
+    hidePrompt(false);
     pendingOpenAfterFilterResetId = null;
     closeChangelog();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  function showFilterPrompt(id: number, name: string): void {
-    filterVisibilityPrompt = { id, name };
-    if (filterPrompt && filterPromptName) {
-      filterPromptName.textContent = name;
-      filterPrompt.classList.remove('is-hidden');
+  /**
+   * The small prompt in the corner. 'filters': the decoration is hidden by filters, offering
+   * to clear them. 'notice': a message with a single OK button.
+   */
+  function showPrompt(text: string, target: { id: number; name: string } | null): void {
+    if (!prompt || !promptText || !promptNo || !promptYes) {
+      return;
     }
+    promptTarget = target;
+    promptText.textContent = text;
+    promptYes.hidden = target == null;
+    promptNo.textContent = target == null ? 'OK' : 'Keep filters';
+    const active = document.activeElement;
+    promptReturnFocus = active instanceof HTMLElement && active !== document.body ? active : null;
+    prompt.classList.remove('is-hidden');
+    (target == null ? promptNo : promptYes).focus();
   }
 
-  function hideFilterPrompt(): void {
-    filterVisibilityPrompt = null;
-    filterPrompt?.classList.add('is-hidden');
+  function hidePrompt(restoreFocus: boolean): void {
+    if (!prompt || prompt.classList.contains('is-hidden')) {
+      return;
+    }
+    promptTarget = null;
+    prompt.classList.add('is-hidden');
+    if (restoreFocus && promptReturnFocus?.isConnected) {
+      promptReturnFocus.focus({ preventScroll: true });
+    }
+    promptReturnFocus = null;
   }
 
   async function handleChangelogEntryClick(id: number, name: string): Promise<void> {
-    const filteredIds = getFilteredIds();
     closeChangelog();
 
     if (filteredIds.has(id)) {
@@ -738,8 +784,8 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
       return;
     }
 
-    if (await decorationExists(id)) {
-      showFilterPrompt(id, name);
+    if (searchIndexById.has(id)) {
+      showPrompt(`${name} is hidden by your search or category filter.`, { id, name });
     }
   }
 
@@ -758,26 +804,27 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   }
 
   async function ensureChangelogLoaded(): Promise<void> {
-    if (changelogLoaded) {
+    if (changelogLoaded || !changelogScrollContainer) {
       return;
     }
-    if (changelogLoading) {
-      await changelogLoading;
-      return;
-    }
-
-    changelogLoading = (async () => {
-      const response = await fetch(catalogUrl(baseUrl, 'catalog/changelog.html'));
-      if (!response.ok || !changelogScrollContainer) {
-        return;
+    changelogLoading ??= (async () => {
+      try {
+        const html = await (await fetchOk(catalogUrl(baseUrl, 'catalog/changelog.html'))).text();
+        changelogScrollContainer.innerHTML = html;
+        const now = new Date();
+        changelogScrollContainer.querySelectorAll<HTMLElement>('[data-relative-day]').forEach((element) => {
+          element.textContent = `${relativeDay(element.dataset.relativeDay ?? '', now)} · `;
+        });
+        changelogLoaded = true;
+      } catch (error) {
+        console.error('Failed to load Recently Added', error);
+        changelogScrollContainer.innerHTML =
+          '<p class="changelog-panel__empty">Couldn\'t load recently added decorations. <button type="button" class="changelog-panel__retry" data-changelog-retry>Retry</button></p>';
+      } finally {
+        changelogLoading = null;
       }
-
-      changelogScrollContainer.innerHTML = await response.text();
-      changelogLoaded = true;
     })();
-
     await changelogLoading;
-    changelogLoading = null;
   }
 
   function closeChangelog(): void {
@@ -799,168 +846,81 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   }
 
   function buildGrid(): void {
-    grid!.replaceChildren();
-
     gridItems = searchIndex.map((entry) => {
-      const displayName = sanitizeDisplayName(entry.name);
       const item = document.createElement('button');
       item.type = 'button';
       item.className = 'catalog-item';
       item.dataset.id = String(entry.id);
-      item.dataset.categories = entry.categories.join(',');
-      item.setAttribute('aria-label', displayName);
+      item.setAttribute('aria-label', entry.name);
       item.setAttribute('aria-expanded', 'false');
-      item.innerHTML = '<div class="catalog-icon" aria-hidden="true"></div>';
+      item.innerHTML = '<span class="catalog-icon sprite-icon" aria-hidden="true"></span>';
       item.addEventListener('click', () => {
         hideTooltip();
         void openDecorationById(entry.id);
       });
-      grid!.appendChild(item);
       gridItemsById.set(entry.id, item);
       return item;
     });
+    grid!.replaceChildren(...gridItems);
   }
 
-  let activeIconLoads = 0;
-  const iconLoadQueue = new Set<HTMLElement>();
-  const iconsInView = new Set<HTMLElement>();
-  let isScrolling = false;
-  let scrollSettleTimer: ReturnType<typeof setTimeout> | null = null;
+  // Icons: each one is drawn from a sprite sheet once its row nears the viewport. A sheet is
+  // fetched once and shared by its ~100 icons. Hidden items never intersect, so filtering
+  // needs no extra bookkeeping: icons load when their items show up.
+  const sheetLoads = new Map<number, Promise<void>>();
 
-  function canLoadIcon(item: HTMLElement): boolean {
-    const iconRoot = item.querySelector('.catalog-icon');
-    return Boolean(
-      iconRoot && !iconRoot.querySelector('img') && !iconRoot.classList.contains('catalog-icon--missing')
+  function loadSheet(sheet: number): Promise<void> {
+    let load = sheetLoads.get(sheet);
+    if (!load) {
+      load = new Promise<void>((resolve, reject) => {
+        const image = new Image();
+        image.onload = () => resolve();
+        image.onerror = () => reject(new Error(`Failed to load ${sheetUrls[sheet]}`));
+        image.src = sheetUrls[sheet];
+      });
+      // A failed sheet can be tried again by the next icon that needs it.
+      load.catch(() => sheetLoads.delete(sheet));
+      sheetLoads.set(sheet, load);
+    }
+    return load;
+  }
+
+  function markIconMissing(icon: HTMLElement): void {
+    icon.classList.add('catalog-icon--missing', 'is-loaded');
+    icon.textContent = '?';
+  }
+
+  function showIcon(item: HTMLElement): void {
+    const icon = item.firstElementChild as HTMLElement | null;
+    const sprite = searchIndexById.get(Number(item.dataset.id))?.sprite;
+    if (!icon) {
+      return;
+    }
+    if (!sprite) {
+      markIconMissing(icon);
+      return;
+    }
+    loadSheet(sprite[0]).then(
+      () => {
+        icon.setAttribute('style', spriteStyle(sprite, sheetUrls));
+        icon.classList.add('is-loaded');
+      },
+      () => markIconMissing(icon)
     );
-  }
-
-  function iconUrl(id: number): string {
-    const optimized = searchIndexById.get(id)?.icon;
-    if (!optimized) {
-      return resolveAsset(undefined, baseUrl);
-    }
-    return resolvePublishedUrl(optimized, baseUrl);
-  }
-
-  function loadIconForItem(item: HTMLElement): void {
-    const iconRoot = item.querySelector('.catalog-icon');
-    if (!iconRoot || iconRoot.querySelector('img') || iconRoot.classList.contains('catalog-icon--missing')) {
-      activeIconLoads = Math.max(0, activeIconLoads - 1);
-      pumpIconQueue();
-      return;
-    }
-
-    const id = Number(item.dataset.id);
-    const entry = searchIndexById.get(id);
-    const img = document.createElement('img');
-    img.className = 'catalog-icon__img';
-    img.alt = sanitizeDisplayName(entry?.name ?? '');
-    img.decoding = 'async';
-    img.loading = 'lazy';
-    img.fetchPriority = 'low';
-    img.onload = () => {
-      iconRoot.classList.add('is-loaded');
-      activeIconLoads = Math.max(0, activeIconLoads - 1);
-      pumpIconQueue();
-    };
-    img.onerror = () => {
-      iconRoot.classList.add('catalog-icon--missing');
-      iconRoot.textContent = '?';
-      activeIconLoads = Math.max(0, activeIconLoads - 1);
-      pumpIconQueue();
-    };
-    img.src = iconUrl(id);
-    iconRoot.appendChild(img);
-  }
-
-  function pumpIconQueue(): void {
-    if (isScrolling || suppressIconLoads) {
-      return;
-    }
-
-    let deferred = 0;
-    const maxDeferred = iconLoadQueue.size;
-
-    while (activeIconLoads < MAX_ICON_LOADS && iconLoadQueue.size > 0) {
-      const item = iconLoadQueue.values().next().value as HTMLElement | undefined;
-      if (!item) {
-        break;
-      }
-      iconLoadQueue.delete(item);
-
-      if (item.classList.contains('is-hidden') || !iconsInView.has(item)) {
-        deferred += 1;
-        if (deferred >= maxDeferred) {
-          break;
-        }
-        continue;
-      }
-
-      if (!canLoadIcon(item)) {
-        deferred = 0;
-        continue;
-      }
-
-      deferred = 0;
-      activeIconLoads += 1;
-      loadIconForItem(item);
-    }
-  }
-
-  function syncIconLoadQueue(): void {
-    iconLoadQueue.clear();
-    for (const item of iconsInView) {
-      if (!item.classList.contains('is-hidden') && canLoadIcon(item)) {
-        iconLoadQueue.add(item);
-      }
-    }
-    pumpIconQueue();
-  }
-
-  function scheduleIconLoadsAfterScroll(): void {
-    if (scrollSettleTimer != null) {
-      clearTimeout(scrollSettleTimer);
-    }
-    isScrolling = true;
-    scrollSettleTimer = setTimeout(() => {
-      scrollSettleTimer = null;
-      isScrolling = false;
-      syncIconLoadQueue();
-    }, SCROLL_SETTLE_MS);
-  }
-
-  function queueIconLoad(item: HTMLElement): void {
-    if (!canLoadIcon(item)) {
-      return;
-    }
-    if (!isScrolling && !suppressIconLoads) {
-      iconLoadQueue.add(item);
-      pumpIconQueue();
-    }
   }
 
   const iconObserver = new IntersectionObserver(
     (entries) => {
       for (const entry of entries) {
-        const item = entry.target as HTMLElement;
         if (entry.isIntersecting) {
-          iconsInView.add(item);
-        } else {
-          iconsInView.delete(item);
-          iconLoadQueue.delete(item);
+          const item = entry.target as HTMLElement;
+          iconObserver.unobserve(item);
+          showIcon(item);
         }
-      }
-
-      if (!isScrolling && !suppressIconLoads) {
-        syncIconLoadQueue();
       }
     },
     { rootMargin: ICON_ROOT_MARGIN }
   );
-
-  function observeGridIcons(): void {
-    gridItems.forEach((item) => iconObserver.observe(item));
-  }
 
   // Name tooltip for grid icons (U1). One shared element, positioned over whichever icon is
   // hovered or keyboard-focused. Purely visual: each button already carries an aria-label.
@@ -1073,8 +1033,8 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
       return;
     }
 
-    if (filterVisibilityPrompt) {
-      hideFilterPrompt();
+    if (prompt && !prompt.classList.contains('is-hidden')) {
+      hidePrompt(true);
       return;
     }
 
@@ -1084,7 +1044,7 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
 
     const item = gridItemsById.get(expandedItemId);
     const active = document.activeElement;
-    // Return focus to the icon unless the visitor is working in the search box or select.
+    // Return focus to the icon unless the visitor is working in the search box or a select.
     const returnFocus = !active || active === document.body || grid.contains(active);
     collapseExpanded();
     if (returnFocus && item && !item.classList.contains('is-hidden')) {
@@ -1094,9 +1054,7 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
 
   searchInput.addEventListener('input', () => {
     searchTokens = tokenizeQuery(searchInput.value);
-    if (clearSearchButton) {
-      clearSearchButton.classList.toggle('is-hidden', searchInput.value.length === 0);
-    }
+    clearSearchButton?.classList.toggle('is-hidden', searchInput.value.length === 0);
     applyFilters();
   });
 
@@ -1105,6 +1063,7 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     searchInput.value = '';
     clearSearchButton.classList.add('is-hidden');
     applyFilters();
+    searchInput.focus();
   });
 
   categorySelect.addEventListener('change', () => {
@@ -1112,7 +1071,25 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     applyFilters();
   });
 
-  homeResetButton?.addEventListener('click', handleHomeReset);
+  sortSelect?.addEventListener('change', () => {
+    applySort(sortSelect.value === 'newest' ? 'newest' : 'name');
+  });
+
+  clearFiltersButton?.addEventListener('click', () => {
+    clearFilters();
+    searchInput.focus();
+  });
+
+  // The brand is a real link to the home page (so it can open in a new tab); a plain click
+  // resets in place instead of reloading.
+  homeLink?.addEventListener('click', (event) => {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+      return;
+    }
+    event.preventDefault();
+    handleHomeReset();
+  });
+
   openChangelogButton?.addEventListener('click', openChangelog);
   closeChangelogButton?.addEventListener('click', closeChangelog);
   changelogPanel?.addEventListener('close', rememberChangelogScroll);
@@ -1136,37 +1113,31 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   changelogTitleButton?.addEventListener('click', scrollChangelogToTop);
 
   changelogScrollContainer?.addEventListener('click', (event) => {
-    const target = (event.target as HTMLElement | null)?.closest<HTMLButtonElement>('[data-changelog-entry]');
-    if (!target) {
+    const target = event.target as HTMLElement | null;
+    if (target?.closest('[data-changelog-retry]')) {
+      void ensureChangelogLoaded();
       return;
     }
 
-    const id = Number(target.dataset.changelogEntry);
-    const name = target.dataset.changelogName ?? '';
-    void handleChangelogEntryClick(id, name);
+    const entry = target?.closest<HTMLButtonElement>('[data-changelog-entry]');
+    if (entry) {
+      void handleChangelogEntryClick(Number(entry.dataset.changelogEntry), entry.dataset.changelogName ?? '');
+    }
   });
 
-  filterPromptNo?.addEventListener('click', hideFilterPrompt);
-  filterPromptYes?.addEventListener('click', () => {
-    if (!filterVisibilityPrompt) {
+  promptNo?.addEventListener('click', () => hidePrompt(true));
+  promptYes?.addEventListener('click', () => {
+    if (!promptTarget) {
       return;
     }
-    const targetId = filterVisibilityPrompt.id;
-    hideFilterPrompt();
-    clearFilters();
+    const targetId = promptTarget.id;
+    hidePrompt(false);
     pendingOpenAfterFilterResetId = targetId;
-    applyFilters();
+    focusAfterPendingOpen = true;
+    clearFilters();
   });
 
   let resizeTimer: ReturnType<typeof setTimeout> | null = null;
-  window.addEventListener(
-    'scroll',
-    () => {
-      scheduleIconLoadsAfterScroll();
-    },
-    { passive: true }
-  );
-
   window.addEventListener('resize', () => {
     calculateItemsPerRow();
     if (expandedItemId == null) {
@@ -1177,51 +1148,38 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     }
     resizeTimer = setTimeout(() => {
       resizeTimer = null;
-      if (expandedItemId == null) {
-        return;
+      if (expandedItemId != null) {
+        void insertExpandedPanel(expandedItemId, false, activeExpandToken);
       }
-      const id = expandedItemId;
-      const token = activeExpandToken;
-      void insertExpandedPanel(id, false, token);
     }, 150);
   });
 
   buildGrid();
   calculateItemsPerRow();
   applyFilters();
-  observeGridIcons();
-
-  const openParam = new URLSearchParams(window.location.search).get('open');
-  const pendingDeepLinkId =
-    openParam && !Number.isNaN(Number(openParam)) ? Number(openParam) : null;
-
-  if (pendingDeepLinkId != null) {
-    suppressIconLoads = true;
-    isScrolling = true;
-  } else {
-    syncIconLoadQueue();
-  }
-
+  gridItems.forEach((item) => iconObserver.observe(item));
   syncCatalogUrl(new URL(window.location.href));
 
-  if (pendingDeepLinkId != null) {
-    const entry = searchIndexById.get(pendingDeepLinkId);
-    if (entry && !matchesFilters(entry)) {
-      clearFilters();
-      pendingOpenAfterFilterResetId = pendingDeepLinkId;
-      applyFilters();
-    } else if (entry) {
-      requestAnimationFrame(() => {
-        void openDecorationFromDeepLink(pendingDeepLinkId);
-      });
-    } else if (await decorationExists(pendingDeepLinkId)) {
-      clearFilters();
-      pendingOpenAfterFilterResetId = pendingDeepLinkId;
-      applyFilters();
-    } else {
-      suppressIconLoads = false;
-      isScrolling = false;
-      syncIconLoadQueue();
+  const openParam = new URLSearchParams(window.location.search).get('open');
+  const deepLinkId = openParam && /^\d+$/.test(openParam) ? Number(openParam) : null;
+  if (deepLinkId == null) {
+    return;
+  }
+
+  const entry = searchIndexById.get(deepLinkId);
+  if (entry && !matchesFilters(entry)) {
+    pendingOpenAfterFilterResetId = deepLinkId;
+    clearFilters();
+  } else if (entry) {
+    requestAnimationFrame(() => {
+      void openDecorationFromDeepLink(deepLinkId);
+    });
+  } else {
+    // Not in the catalog: a decoration that left the game still has its JSON, so say so.
+    const decoration = await loadDecoration(deepLinkId);
+    updateDeepLink(null);
+    if (decoration?.removed) {
+      showPrompt(`${decoration.name} was removed from the game on ${formatDay(decoration.removed)}.`, null);
     }
   }
 }

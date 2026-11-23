@@ -1,14 +1,11 @@
-<div id="filter-prompt" class="filter-prompt is-hidden">
-  <p class="filter-prompt__text">
-    <span id="filter-prompt-name" class="filter-prompt__name"></span> is currently hidden by Search or Category
-    filters. Remove filters to make it visible?
-  </p>
+<div id="filter-prompt" class="filter-prompt is-hidden" role="dialog" aria-labelledby="filter-prompt-text">
+  <p id="filter-prompt-text" class="filter-prompt__text"></p>
   <div class="filter-prompt__actions">
     <button id="filter-prompt-no" type="button" class="filter-prompt__button filter-prompt__button--secondary">
-      No
+      Keep filters
     </button>
     <button id="filter-prompt-yes" type="button" class="filter-prompt__button filter-prompt__button--primary">
-      Yes
+      Show it
     </button>
   </div>
 </div>

@@ -16,9 +16,10 @@ on:
         required: false
         default: ''
 
+# A new run waits for the current one instead of cancelling a deploy partway through.
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 permissions:
   contents: read

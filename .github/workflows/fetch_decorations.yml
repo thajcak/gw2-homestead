@@ -36,7 +36,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # jq (used by the wiki recipe parser) is preinstalled on GitHub's runners and act's image.
       - name: Check required tools
@@ -46,6 +46,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
+
+      # sharp resizes downloaded preview images before they are committed.
+      - name: Install dependencies
+        run: npm ci
 
       # Fetches the GW2 API (with retries, a full-response check and an item-count guard),
       # merges stored enrichment, queries the wiki, syncs content files and localizes images.

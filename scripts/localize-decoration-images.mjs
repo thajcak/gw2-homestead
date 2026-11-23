@@ -3,6 +3,7 @@ import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { basename, dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { previewRemovalConfirmed } from './lib/content-store.mjs';
+import { writePreviewImage } from './lib/preview-image.mjs';
 
 const rootDir = join(fileURLToPath(new URL('.', import.meta.url)), '..');
 const publicDir = join(rootDir, 'public');
@@ -13,14 +14,6 @@ const PLACEHOLDER_URL = 'https://static.staticwars.com/quaggans/lost.jpg';
 const CONCURRENCY = 8;
 const MAX_ATTEMPTS = 4;
 
-function extensionFromUrl(url) {
-  const match = url.match(/\.(png|jpe?g|gif|webp)(?:\?|$)/i);
-  if (!match) {
-    return url.includes('render.guildwars2.com') ? 'png' : 'jpg';
-  }
-  return match[1].toLowerCase() === 'jpeg' ? 'jpg' : match[1].toLowerCase();
-}
-
 function isRemoteUrl(value) {
   return typeof value === 'string' && /^https?:\/\//i.test(value);
 }
@@ -29,9 +22,8 @@ async function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-async function downloadImage(url, destination, attempt = 1) {
-  await mkdir(dirname(destination), { recursive: true });
-
+/** Fetch an image, retrying with backoff. Returns its bytes. */
+async function fetchImage(url, attempt = 1) {
   try {
     const response = await fetch(url, {
       headers: { 'User-Agent': 'gw2-homestead-image-sync/1.0' },
@@ -47,15 +39,20 @@ async function downloadImage(url, destination, attempt = 1) {
       throw new Error('empty response');
     }
 
-    await writeFile(destination, buffer);
-    return createHash('sha256').update(buffer).digest('hex');
+    return buffer;
   } catch (error) {
     if (attempt >= MAX_ATTEMPTS) {
       throw new Error(`Failed to download ${url}: ${error.message}`);
     }
     await sleep(attempt * 1000);
-    return downloadImage(url, destination, attempt + 1);
+    return fetchImage(url, attempt + 1);
   }
+}
+
+async function downloadImage(url, destination) {
+  const buffer = await fetchImage(url);
+  await mkdir(dirname(destination), { recursive: true });
+  await writeFile(destination, buffer);
 }
 
 async function fileHash(path) {
@@ -87,22 +84,17 @@ async function removePreviewFiles(folder, keepFile = null) {
 }
 
 async function localizeDecoration(decoration, options = {}) {
-  const { assetsRoot = assetsDir, force = false, today } = options;
+  const { assetsRoot = assetsDir, today } = options;
   const id = decoration.id;
   let changed = false;
 
   if (isRemoteUrl(decoration.icon)) {
-    const remoteIcon = decoration.icon;
+    // A remote icon only reaches content for a new item or when the API's icon URL changed
+    // (see iconFields in content-store.mjs), so the local file is missing or stale.
     const iconRelative = `decorations/${id}/icon.png`;
-    const iconAbsolute = join(assetsRoot, iconRelative);
-    const existingHash = await fileHash(iconAbsolute);
-
-    if (force || existingHash == null) {
-      await downloadImage(remoteIcon, iconAbsolute);
-      changed = true;
-    }
-
+    await downloadImage(decoration.icon, join(assetsRoot, iconRelative));
     decoration.icon = iconRelative;
+    changed = true;
   }
 
   const previewSource = decoration.original?.source;
@@ -110,14 +102,15 @@ async function localizeDecoration(decoration, options = {}) {
   if (previewSource && isRemoteUrl(previewSource)) {
     // A remote source only reaches content when wiki enrichment accepted a new or changed
     // image, so always download it: the file on disk is stale or missing by definition.
+    // Stored at most 1,024 px wide as WebP: the site never serves it larger (A8).
     const remotePreview = previewSource;
-    const previewExt = extensionFromUrl(remotePreview);
-    const previewRelative = `decorations/${id}/preview.${previewExt}`;
+    const previewRelative = `decorations/${id}/preview.webp`;
     const previewAbsolute = join(assetsRoot, previewRelative);
 
-    await downloadImage(remotePreview, previewAbsolute);
-    // The extension can change with the image (jpg -> png); drop the old file so the
-    // build's preview glob can't pick it up.
+    await mkdir(previewFolder, { recursive: true });
+    await writePreviewImage(await fetchImage(remotePreview), previewAbsolute);
+    // Drop older previews (preview.jpg from before A8, or a different format) so the build's
+    // preview glob can't pick them up.
     await removePreviewFiles(previewFolder, basename(previewAbsolute));
     changed = true;
 
@@ -127,18 +120,6 @@ async function localizeDecoration(decoration, options = {}) {
       source: previewRelative,
       remoteSource: remotePreview,
     };
-  } else if (previewSource && !isRemoteUrl(previewSource)) {
-    const previewAbsolute = join(assetsRoot, previewSource);
-    const legacyPublicAbsolute = join(publicDir, previewSource);
-    const existingHash = await fileHash(previewAbsolute);
-    const legacyHash = await fileHash(legacyPublicAbsolute);
-
-    if (existingHash == null && legacyHash != null) {
-      await mkdir(dirname(previewAbsolute), { recursive: true });
-      const { rename } = await import('node:fs/promises');
-      await rename(legacyPublicAbsolute, previewAbsolute);
-      changed = true;
-    }
   } else if (!decoration.original && previewRemovalConfirmed(decoration, today)) {
     // The wiki has had no preview for the whole grace period: drop the file with the metadata.
     if ((await removePreviewFiles(previewFolder)) > 0) {
@@ -175,7 +156,6 @@ async function localizeArrayFile(arrayFile) {
 }
 
 async function localizeContentDirectory(contentDir = decorationsContentDir) {
-  const { readdir } = await import('node:fs/promises');
   const files = (await readdir(contentDir)).filter((file) => file.endsWith('.json'));
   let updated = 0;
 

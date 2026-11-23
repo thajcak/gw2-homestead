@@ -1,5 +1,12 @@
+---
+import { loadSpriteSheetUrls } from '../build/catalogData';
+
+const spriteSheets = await loadSpriteSheetUrls();
+---
+
 <div class="catalog-grid-wrap">
+  <p id="results-count" class="results-count" aria-hidden="true"></p>
   <p id="results-status" class="visually-hidden" role="status" aria-live="polite" aria-atomic="true"></p>
-  <div id="icon-grid" class="catalog-grid"></div>
+  <div id="icon-grid" class="catalog-grid" data-sprite-sheets={JSON.stringify(spriteSheets)}></div>
   <div id="catalog-tooltip" class="catalog-tooltip" aria-hidden="true" hidden></div>
 </div>

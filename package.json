@@ -17,9 +17,11 @@
   },
   "dependencies": {
     "astro": "^5.7.10",
+    "sharp": "^0.34.5",
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@types/node": "^20.19.43",
     "typescript": "^5.8.3"
   }
 }

@@ -86,6 +86,11 @@ export function diffDecoration(before, after) {
     changes.push({ field: 'categories', before: beforeCategories, after: afterCategories });
   }
 
+  // Only compared once both sides know the API's icon URL (items stored before P8 don't).
+  if (before.iconSource && after.iconSource && before.iconSource !== after.iconSource) {
+    changes.push({ field: 'icon', before: before.iconSource, after: after.iconSource });
+  }
+
   changes.push(...recipeChanges(before.recipe ?? null, after.recipe ?? null));
 
   // Wiki enrichment only swaps the stored image when the pinned page's own file changes, and

@@ -1,4 +1,5 @@
 import type { CollectionEntry } from 'astro:content';
+import type { SpriteRef } from '../utils/sprite';
 
 export type Decoration = CollectionEntry<'decorations'>['data'];
 export type Category = CollectionEntry<'categories'>['data'];
@@ -7,6 +8,7 @@ export type Category = CollectionEntry<'categories'>['data'];
 export interface ChangeLogEntry {
   id: number;
   name: string;
+  sprite?: SpriteRef;
 }
 
 /** The decorations first added on one day. */

@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 
+/** The site's path on GitHub Pages; scripts/preview-server.mjs reads it from this config. */
 const base = '/gw2-homestead';
 
 /** Dev server: rewrite `/base?query` to `/base/?query` so index.html is served. */

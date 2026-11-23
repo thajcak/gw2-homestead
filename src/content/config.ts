@@ -32,9 +32,11 @@ const decorationRecipeSchema = z.object({
 const decorationSchema = z.object({
   id: z.number(),
   name: z.string(),
-  description: z.string(),
+  description: z.string().default(''),
   categories: z.array(z.number()),
   icon: z.string(),
+  /** The GW2 API's icon URL; a change re-downloads the local icon. */
+  iconSource: z.string().optional(),
   wikiTitle: z.string().optional(),
   recipe: decorationRecipeSchema.nullable().optional(),
   original: imageSchema.optional(),

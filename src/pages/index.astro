@@ -1,26 +1,29 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import IconGrid from '../components/IconGrid.astro';
 import ChangeLogPanel from '../components/ChangeLogPanel.astro';
 import FilterPrompt from '../components/FilterPrompt.astro';
+import { buildCategories, loadDecorations } from '../build/catalogData';
 import { assetUrl } from '../utils/assetUrl';
+import { buildChangelogDays } from '../utils/buildChangelogDays';
 
-const categoryEntries = await getCollection('categories');
-
-const categories = categoryEntries
-  .map((entry) => entry.data)
-  .sort((a, b) => a.name.localeCompare(b.name));
+const [categories, decorations] = await Promise.all([buildCategories(), loadDecorations()]);
+const latestDay = buildChangelogDays(decorations)[0];
+const latestAdded = latestDay ? { day: latestDay.day, count: latestDay.entries.length } : undefined;
 ---
 
 <BaseLayout preloadCatalogIndex={assetUrl('catalog/search-index.json')}>
   <div class="site">
-    <Header categories={categories} />
+    <Header categories={categories} latestAdded={latestAdded} />
 
     <main class="main">
       <IconGrid />
       <div id="empty-state" class="empty-state is-hidden">No decorations found.</div>
+      <div id="load-error" class="empty-state is-hidden" role="alert">
+        <p>Couldn't load the catalog. Check your connection and try again.</p>
+        <button id="load-retry" type="button" class="empty-state__button">Retry</button>
+      </div>
     </main>
 
     <ChangeLogPanel />

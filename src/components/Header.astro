@@ -1,49 +1,35 @@
 ---
 import type { Category } from '../types';
 import homesteadIcon from '../assets/homestead.png';
+import { formatDay } from '../utils/formatDay';
 
 interface Props {
-  categories: Category[];
+  categories: Pick<Category, 'id' | 'name'>[];
+  /** The latest batch of additions, for the Recently added badge. */
+  latestAdded?: { day: string; count: number };
 }
 
-const { categories } = Astro.props;
+const { categories, latestAdded } = Astro.props;
 ---
 
 <header class="header">
-  <h1 class="visually-hidden">Guild Wars 2 Homestead Decorations</h1>
-  <div class="container header__inner">
-    <div class="header__spacer" aria-hidden="true"></div>
+  <div class="header__inner">
+    <h1 class="header__brand">
+      <a id="home-link" class="header__brand-link" href={import.meta.env.BASE_URL}>
+        <img src={homesteadIcon.src} alt="" width="32" height="32" />
+        <span>Homestead Decorations</span>
+      </a>
+    </h1>
 
     <div class="header__controls">
-      <label for="category-select" class="visually-hidden">Category</label>
-      <select id="category-select" class="header__select">
-        <option value="all">All Categories</option>
-        {
-          categories.map((category) => (
-            <option value={category.id} data-category-count data-category-name={category.name}>
-              {category.name}
-            </option>
-          ))
-        }
-      </select>
-
-      <div class="header__actions">
-        <button id="home-reset" type="button" class="header__home" aria-label="Reset filters and scroll to top">
-          <img src={homesteadIcon.src} alt="Homestead" width="32" height="32" />
-        </button>
-        <button id="open-changelog" type="button" class="header__changelog" aria-label="View recently added decorations">
-          ?
-        </button>
-      </div>
-
       <div class="header__search-wrap">
         <label for="search-input" class="visually-hidden">Search decorations</label>
         <input
           id="search-input"
-          type="text"
+          type="search"
           autocomplete="off"
           class="header__search"
-          placeholder="Search decorations..."
+          placeholder="Search names and categories"
         />
         <button
           id="clear-search"
@@ -54,8 +40,42 @@ const { categories } = Astro.props;
           ×
         </button>
       </div>
+
+      <label for="category-select" class="visually-hidden">Category</label>
+      <select id="category-select" class="header__select header__select--category">
+        <option value="all">All categories</option>
+        {
+          categories.map((category) => (
+            <option value={category.id} data-category-count data-category-name={category.name}>
+              {category.name}
+            </option>
+          ))
+        }
+      </select>
+
+      <label for="sort-select" class="visually-hidden">Sort</label>
+      <select id="sort-select" class="header__select header__select--sort">
+        <option value="name">Name (A–Z)</option>
+        <option value="newest">Newest first</option>
+      </select>
+
+      <button id="clear-filters" type="button" class="header__clear-filters" hidden>Clear filters</button>
     </div>
 
-    <div class="header__spacer" aria-hidden="true"></div>
+    <button id="open-changelog" type="button" class="header__changelog" aria-haspopup="dialog">
+      Recently added
+      {
+        latestAdded ? (
+          <>
+            <span class="header__badge" aria-hidden="true">
+              {latestAdded.count}
+            </span>
+            <span class="visually-hidden">
+              ({latestAdded.count} new on {formatDay(latestAdded.day)})
+            </span>
+          </>
+        ) : null
+      }
+    </button>
   </div>
 </header>

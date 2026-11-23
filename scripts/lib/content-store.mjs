@@ -92,6 +92,10 @@ export function mergeEnrichmentFromExisting(apiItem, existing) {
   }
 
   if (isLocalAssetPath(existing.icon)) {
+    // Keep the API's icon URL beside the local file, so a changed icon is noticed (P8).
+    if (isRemoteUrl(apiItem.icon)) {
+      merged.iconSource = apiItem.icon;
+    }
     merged.icon = existing.icon;
   }
 
@@ -114,14 +118,27 @@ function itemDates(existing) {
   return existing?.added ? { added: existing.added } : {};
 }
 
+/**
+ * The icon fields for the next on-disk decoration. The local file is kept until the API's icon
+ * URL changes; then `icon` goes back to the remote URL, which the image localizer downloads.
+ * Items stored before `iconSource` existed just record the current URL.
+ */
+function iconFields(existing, apiItem) {
+  const remoteIcon = apiItem.iconSource ?? (isRemoteUrl(apiItem.icon) ? apiItem.icon : existing?.iconSource);
+  const iconChanged = Boolean(existing?.iconSource && remoteIcon && existing.iconSource !== remoteIcon);
+  const icon = isLocalAssetPath(existing?.icon) && !iconChanged ? existing.icon : (remoteIcon ?? apiItem.icon);
+  return remoteIcon ? { icon, iconSource: remoteIcon } : { icon };
+}
+
 /** Build the next on-disk decoration from API data, keeping its added day and local assets. */
 export function mergeDecorationUpdate(existing, apiItem) {
   const merged = {
     id: apiItem.id,
     name: sanitizeDisplayName(apiItem.name),
-    description: apiItem.description != null ? sanitizeText(apiItem.description) : apiItem.description,
+    // The API has always sent a description, but a missing one must not break the build (F9).
+    description: sanitizeText(apiItem.description ?? ''),
     categories: apiItem.categories,
-    icon: isLocalAssetPath(existing?.icon) ? existing.icon : apiItem.icon,
+    ...iconFields(existing, apiItem),
     ...itemDates(existing),
   };
 

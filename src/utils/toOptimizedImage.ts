@@ -1,4 +1,4 @@
-import type { GetImageResult } from 'astro/assets';
+import type { GetImageResult } from 'astro';
 import type { OptimizedImage } from '../types/optimizedImage';
 
 /** Convert a getImage() result into client-serializable img attributes. */

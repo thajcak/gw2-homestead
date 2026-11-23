@@ -7,10 +7,11 @@
 import { createRequire } from 'node:module';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import astroConfig from '../astro.config.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const outDir = resolve(root, 'dist');
-const base = '/gw2-homestead';
+const { base } = astroConfig;
 const port = Number(process.env.PORT) || Number(process.argv[2]) || 4321;
 
 const astroPkg = createRequire(import.meta.url).resolve('astro/package.json');
