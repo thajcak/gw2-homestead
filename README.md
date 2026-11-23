@@ -20,7 +20,9 @@ The sync guards against bad API or wiki answers:
 
 Each decoration usually has two wiki pages: the original guild hall decoration (`Name`) and the later homestead version (`Name (Handiwork)`), which has its own recipe but shares the model. Recipes and the wiki link come from the stored `wikiTitle`, normally the Handiwork page. The preview is the first image in a `{{Decoration infobox}}` gallery whose file exists (`gallery1`, which defaults to `{page name}.jpg`, then `gallery2` to `gallery5`). The stored page's infobox is tried first, then the other pages. Images named after the decoration come before borrowed ones (some infoboxes show another decoration that shares the model), and a borrowed image never replaces one named after the decoration. The wiki's lead image (`pageimages`) is only a fallback for pages without such an infobox, because it skips very tall or wide images and sometimes leads with a close-up.
 
-Decoration icons and preview images live in `src/assets/decorations/{id}/`. The sync stores previews at most 1,024 px wide as WebP (the site never serves them larger) and re-downloads an icon when the API's icon URL (`iconSource`) changes. The wiki URL of each preview is kept as `original.remoteSource`, so later runs can tell whether the wiki's image changed.
+The gallery's other images (front, side, top, close-up, at night and so on) become the decoration's `views`, in the wiki's order and each file once across both pages, with the wiki's caption as plain text. Files the sync stored before count as existing, so after the first run it only checks new files on the wiki.
+
+Decoration icons, preview images and views live in `src/assets/decorations/{id}/`. The sync stores previews at most 1,024 px wide as WebP (the site never serves them larger) and re-downloads an icon when the API's icon URL (`iconSource`) changes. The wiki URL of each preview is kept as `original.remoteSource`, so later runs can tell whether the wiki's image changed. Views are stored the same way at a lower quality, as `view-{hash}.webp` named from their wiki URL, and files no view refers to are deleted. A run downloads at most 300 views; the rest keep their wiki URL as `source`, the site leaves them out, and later runs catch up.
 
 Removed decorations drop out of the grid, search and Recently Added, but their JSON is still built, so an old `?open={id}` link says the item left the game.
 
@@ -29,7 +31,7 @@ Built with [Astro](https://astro.build), vanilla CSS and vanilla TypeScript. The
 
 - `/catalog/search-index.json` — name, description, categories and icon position of every current decoration; drives the grid, search and category filter
 - `/catalog/icons/icons-{n}.{hash}.webp` — the icons packed into sprite sheets of about 100 each, in the grid's name order; a sheet loads when its rows near the viewport
-- `/catalog/decorations/{id}.json` — what the details panel shows (description, categories, recipe, wiki link, optimized preview image), fetched when a decoration is opened
+- `/catalog/decorations/{id}.json` — what the details panel shows (description, categories, recipe, wiki link, optimized preview image, and a `gallery` of the preview plus downloaded views with thumbnails and captions), fetched when a decoration is opened. Thumbnails switch the image; arrow keys, Home and End move along them.
 - `/catalog/changelog.html` — the Recently Added panel: current decorations grouped by the day they were `added`, loaded when the panel first opens
 
 Search matches every word of the query against a decoration's name, category names and description. Deep links use the `?open={id}` query parameter to open a specific decoration.

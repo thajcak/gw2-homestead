@@ -1,15 +1,16 @@
 /**
- * Download remote decoration icons and preview images into src/assets/decorations/{id}/ and
- * point the content files at the local copies.
+ * Download remote decoration icons, preview images and gallery views into
+ * src/assets/decorations/{id}/ and point the content files at the local copies.
  *
  * Usage: node scripts/localize-decoration-images.mjs [content-dir]
  *        (default: src/content/decorations)
  */
+import { createHash } from 'node:crypto';
 import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { basename, dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { isRemoteUrl, previewRemovalConfirmed } from './lib/content-store.mjs';
-import { writePreviewImage } from './lib/preview-image.mjs';
+import { writePreviewImage, writeViewImage } from './lib/preview-image.mjs';
 
 const rootDir = join(fileURLToPath(new URL('.', import.meta.url)), '..');
 const assetsDir = join(rootDir, 'src/assets');
@@ -17,6 +18,13 @@ const decorationsContentDir = join(rootDir, 'src/content/decorations');
 
 const CONCURRENCY = 8;
 const MAX_ATTEMPTS = 4;
+/**
+ * Gallery views downloaded per run. A view not downloaded yet keeps its wiki URL and the site
+ * leaves it out, so a large backlog (the first sync with views: about 1,700) spreads over
+ * several hourly runs instead of hitting the wiki all at once.
+ */
+const MAX_VIEW_DOWNLOADS_PER_RUN = 300;
+const VIEW_FILE_PATTERN = /^view-[0-9a-f]+\.webp$/;
 
 async function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -74,7 +82,57 @@ async function removePreviewFiles(folder, keepFile = null) {
   return removed;
 }
 
-async function localizeDecoration(decoration) {
+/** A view's file name, from its wiki URL: reordering the gallery never re-downloads a view. */
+function viewFileName(remoteUrl) {
+  return `view-${createHash('sha1').update(remoteUrl).digest('hex').slice(0, 12)}.webp`;
+}
+
+/**
+ * Download the decoration's views that still point at the wiki (up to the run's budget), then
+ * delete view files in its folder that no view refers to. A failed download only warns: the
+ * view keeps its wiki URL and is tried again next run. Returns whether anything changed.
+ */
+async function localizeViews(decoration, folder, budget) {
+  let changed = false;
+  const views = decoration.views ?? [];
+
+  for (const [index, view] of views.entries()) {
+    if (!isRemoteUrl(view.source) || budget.remaining <= 0) {
+      continue;
+    }
+    budget.remaining -= 1;
+    const relative = `decorations/${decoration.id}/${viewFileName(view.source)}`;
+    try {
+      await mkdir(folder, { recursive: true });
+      await writeViewImage(await fetchImage(view.source), join(assetsDir, relative));
+    } catch (error) {
+      console.warn(`View not downloaded for decoration ${decoration.id}: ${error.message}`);
+      continue;
+    }
+    const { source, remoteSource: _old, ...rest } = view;
+    views[index] = { ...rest, source: relative, remoteSource: source };
+    budget.downloaded += 1;
+    changed = true;
+  }
+
+  const keep = new Set(views.filter((view) => !isRemoteUrl(view.source)).map((view) => basename(view.source)));
+  let entries = [];
+  try {
+    entries = await readdir(folder);
+  } catch {
+    // No folder, nothing to delete.
+  }
+  for (const entry of entries) {
+    if (VIEW_FILE_PATTERN.test(entry) && !keep.has(entry)) {
+      await rm(join(folder, entry), { force: true });
+      changed = true;
+    }
+  }
+
+  return changed;
+}
+
+async function localizeDecoration(decoration, viewBudget) {
   const id = decoration.id;
   let changed = false;
 
@@ -117,6 +175,10 @@ async function localizeDecoration(decoration) {
     }
   }
 
+  if (await localizeViews(decoration, previewFolder, viewBudget)) {
+    changed = true;
+  }
+
   return { decoration, changed };
 }
 
@@ -138,24 +200,27 @@ async function mapWithConcurrency(items, concurrency, mapper) {
 async function localizeContentDirectory(contentDir) {
   const files = (await readdir(contentDir)).filter((file) => file.endsWith('.json'));
   let updated = 0;
+  const viewBudget = { remaining: MAX_VIEW_DOWNLOADS_PER_RUN, downloaded: 0 };
 
   await mapWithConcurrency(files, CONCURRENCY, async (file) => {
     const filePath = join(contentDir, file);
     const decoration = JSON.parse(await readFile(filePath, 'utf8'));
-    const { decoration: next, changed } = await localizeDecoration(structuredClone(decoration));
+    const { decoration: next, changed } = await localizeDecoration(structuredClone(decoration), viewBudget);
     await writeFile(filePath, `${JSON.stringify(next, null, 2)}\n`);
     if (changed) {
       updated += 1;
     }
   });
 
-  return { total: files.length, updated };
+  return { total: files.length, updated, viewsDownloaded: viewBudget.downloaded };
 }
 
 async function main() {
   const target = process.argv[2];
   const result = await localizeContentDirectory(target ? join(rootDir, target) : decorationsContentDir);
-  console.log(`Localized images for ${result.total} decorations (${result.updated} updated).`);
+  console.log(
+    `Localized images for ${result.total} decorations (${result.updated} updated, ${result.viewsDownloaded} view(s) downloaded).`
+  );
 }
 
 main().catch((error) => {

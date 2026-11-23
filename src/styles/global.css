@@ -797,6 +797,96 @@ html:has(.changelog-panel[open]) {
 }
 
 /*
+ * A decoration with more than one wiki image: the selected one fills what the caption and
+ * thumbnail strip leave of the media column. catalog.ts counts the strip and this gap
+ * (GALLERY_CHROME_GAP) when it sizes the panel.
+ */
+.expanded-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.expanded-gallery .expanded-preview {
+  flex: 1 1 auto;
+  height: auto;
+}
+
+.expanded-gallery__chrome {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+/* One line is always reserved, so switching to an uncaptioned image doesn't move the strip. */
+.expanded-gallery__caption {
+  min-height: 1.25rem;
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  color: #d1d5db;
+  text-align: center;
+}
+
+.expanded-gallery__thumbs {
+  display: flex;
+  gap: 0.5rem;
+  /* Room for the pressed thumbnail's outline. */
+  padding: 3px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.expanded-gallery__thumb {
+  flex: none;
+  height: 56px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: rgb(0 0 0 / 0.25);
+  opacity: 0.7;
+  cursor: pointer;
+  transition: opacity 0.15s ease-out;
+}
+
+/* Centered while the strip fits; once it scrolls, the first thumbnail stays reachable. */
+.expanded-gallery__thumb:first-child {
+  margin-left: auto;
+}
+
+.expanded-gallery__thumb:last-child {
+  margin-right: auto;
+}
+
+.expanded-gallery__thumb img {
+  display: block;
+  width: auto;
+  height: 100%;
+}
+
+.expanded-gallery__thumb:hover {
+  opacity: 1;
+}
+
+.expanded-gallery__thumb[aria-pressed='true'] {
+  opacity: 1;
+  outline: 2px solid #ffffff;
+  outline-offset: 1px;
+}
+
+.expanded-gallery__thumb:focus-visible {
+  opacity: 1;
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+/*
  * Below 1024px the image sits above the details. The panel then takes its content's height
  * (catalog.ts leaves its height unset) and the page scrolls, instead of two inner scroll boxes.
  */
@@ -810,6 +900,7 @@ html:has(.changelog-panel[open]) {
   .expanded-decoration__layout,
   .expanded-decoration__media,
   .expanded-decoration__details,
+  .expanded-gallery,
   .expanded-preview {
     height: auto;
     max-height: none;
@@ -1074,6 +1165,7 @@ html:has(.changelog-panel[open]) {
   .catalog-icon::before,
   .expanded-preview__skeleton,
   .expanded-preview__img,
+  .expanded-gallery__thumb,
   .catalog-tooltip {
     animation: none;
     transition: none;

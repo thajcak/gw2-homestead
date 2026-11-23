@@ -1,4 +1,4 @@
-import type { PublishedDecoration as Decoration, SearchIndexEntry } from '../build/catalogData';
+import type { PublishedDecoration as Decoration, GalleryImage, SearchIndexEntry } from '../build/catalogData';
 import type { OptimizedImage } from '../types/optimizedImage';
 import { formatDay } from '../utils/formatDay';
 import { spriteStyle } from '../utils/sprite';
@@ -20,6 +20,8 @@ const PANEL_MAX_VIEWPORT_SHARE = 0.7;
 const MISSING_PREVIEW_HEIGHT = 280;
 /** Matches the media column's padding-block in global.css. */
 const PANEL_MEDIA_PADDING = 32;
+/** Matches the gap between the image and the gallery strip in global.css. */
+const GALLERY_CHROME_GAP = 12;
 /** Grid item size and gap, as in global.css. */
 const ITEM_SIZE = 74;
 const ITEM_GAP = 16;
@@ -187,10 +189,82 @@ function renderPreview(
     attrs.push('loading="eager"', 'fetchpriority="high"');
   }
 
-  return `<div class="expanded-preview">
+  const stage = `<div class="expanded-preview">
         <div class="expanded-preview__skeleton" aria-hidden="true"></div>
         <img ${attrs.join(' ')} />
       </div>`;
+  return decoration.gallery ? renderGallery(decoration.gallery, stage) : stage;
+}
+
+/** Alt text for a gallery image: the decoration's name, plus the view's caption if it has one. */
+function galleryAlt(name: string, caption: string | undefined): string {
+  return caption ? `${name}: ${caption}` : name;
+}
+
+/** The thumbnail label read out for a gallery image. */
+function galleryThumbLabel(caption: string | undefined, index: number): string {
+  return caption ?? (index === 0 ? 'Main image' : `View ${index + 1}`);
+}
+
+/**
+ * The preview (`stage`) above the selected image's caption and a strip of thumbnails, one
+ * button per image. Choosing one swaps the stage's image (see showGalleryImage).
+ */
+function renderGallery(gallery: GalleryImage[], stage: string): string {
+  const thumbs = gallery
+    .map(({ thumb, caption }, index) => {
+      const label = galleryThumbLabel(caption, index);
+      return `<button type="button" class="expanded-gallery__thumb" data-gallery-index="${index}" aria-pressed="${index === 0}" aria-label="${escapeHtml(label)}" title="${escapeHtml(label)}">
+            <img src="${escapeHtml(thumb.src)}" width="${thumb.width}" height="${thumb.height}" alt="" loading="lazy" decoding="async" />
+          </button>`;
+    })
+    .join('');
+
+  return `<div class="expanded-gallery">
+      ${stage}
+      <div class="expanded-gallery__chrome">
+        <p class="expanded-gallery__caption" aria-live="polite">${escapeHtml(gallery[0].caption ?? '')}</p>
+        <div class="expanded-gallery__thumbs" role="group" aria-label="Views (${gallery.length})">${thumbs}</div>
+      </div>
+    </div>`;
+}
+
+/**
+ * Show gallery image `index` in the panel's stage: swap the image (showing the skeleton until
+ * it loads), its caption and alt text, and which thumbnail is pressed.
+ */
+function showGalleryImage(panel: HTMLElement, decoration: Decoration, index: number): void {
+  const entry = decoration.gallery?.[index];
+  const stage = panel.querySelector<HTMLElement>('.expanded-preview');
+  const img = stage?.querySelector<HTMLImageElement>('.expanded-preview__img');
+  if (!entry || !stage || !img) {
+    return;
+  }
+
+  const { image, caption } = entry;
+  // A deep-linked panel may not have started loading its preview yet; this replaces it.
+  img.removeAttribute('data-preview-src');
+  img.removeAttribute('data-preview-srcset');
+  img.removeAttribute('data-preview-sizes');
+  if (img.getAttribute('src') !== image.src) {
+    stage.classList.remove('is-loaded');
+    img.width = image.width;
+    img.height = image.height;
+    img.style.setProperty('--preview-w', String(image.width));
+    img.style.setProperty('--preview-h', String(image.height));
+    img.sizes = image.sizes ?? '';
+    img.srcset = image.srcSet ?? '';
+    img.src = image.src;
+  }
+  img.alt = galleryAlt(decoration.name, caption);
+
+  const captionElement = panel.querySelector<HTMLElement>('.expanded-gallery__caption');
+  if (captionElement) {
+    captionElement.textContent = caption ?? '';
+  }
+  panel.querySelectorAll<HTMLButtonElement>('.expanded-gallery__thumb').forEach((button) => {
+    button.setAttribute('aria-pressed', String(Number(button.dataset.galleryIndex) === index));
+  });
 }
 
 function renderRecipe(recipe: Decoration['recipe']): string {
@@ -586,8 +660,13 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     }
 
     const preview = decoration.preview;
+    // A gallery's caption and thumbnails sit below the image, so the image gets less room.
+    const galleryChrome = media.querySelector<HTMLElement>('.expanded-gallery__chrome');
+    const chromeHeight = galleryChrome ? galleryChrome.offsetHeight + GALLERY_CHROME_GAP : 0;
     const mediaHeight = preview
-      ? Math.min(preview.height, (media.clientWidth * preview.height) / preview.width) + PANEL_MEDIA_PADDING
+      ? Math.min(preview.height, (media.clientWidth * preview.height) / preview.width) +
+        PANEL_MEDIA_PADDING +
+        chromeHeight
       : MISSING_PREVIEW_HEIGHT;
     const contentHeight = Math.max(mediaHeight, details.scrollHeight);
     return Math.min(maxHeight, Math.max(PANEL_MIN_HEIGHT, Math.ceil(contentHeight)));
@@ -1055,6 +1134,46 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     }
   });
   grid.addEventListener('focusout', hideTooltip);
+
+  /** The open panel's decoration and its gallery buttons, if `target` is one of them. */
+  function galleryContext(target: EventTarget | null) {
+    const button = (target as HTMLElement | null)?.closest?.<HTMLButtonElement>('.expanded-gallery__thumb');
+    const panel = button?.closest<HTMLElement>('.expanded-decoration');
+    const decoration = panel ? decorationCache.get(Number(panel.dataset.expandedFor)) : undefined;
+    if (!button || !panel || !decoration?.gallery) {
+      return null;
+    }
+    return { button, panel, decoration, index: Number(button.dataset.galleryIndex) };
+  }
+
+  grid.addEventListener('click', (event) => {
+    const context = galleryContext(event.target);
+    if (context) {
+      showGalleryImage(context.panel, context.decoration, context.index);
+    }
+  });
+
+  // Left and right arrows (Home and End too) move along the thumbnails and show the image.
+  grid.addEventListener('keydown', (event) => {
+    const context = galleryContext(event.target);
+    if (!context) {
+      return;
+    }
+    const last = context.decoration.gallery!.length - 1;
+    const moves: Record<string, number> = {
+      ArrowLeft: Math.max(0, context.index - 1),
+      ArrowRight: Math.min(last, context.index + 1),
+      Home: 0,
+      End: last,
+    };
+    const next = moves[event.key];
+    if (next == null) {
+      return;
+    }
+    event.preventDefault();
+    showGalleryImage(context.panel, context.decoration, next);
+    context.panel.querySelector<HTMLButtonElement>(`.expanded-gallery__thumb[data-gallery-index="${next}"]`)?.focus();
+  });
   window.addEventListener('scroll', hideTooltip, { passive: true });
 
   document.addEventListener('keydown', (event) => {

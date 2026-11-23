@@ -42,6 +42,11 @@ const decorationSchema = z.object({
   wikiTitle: z.string().optional(),
   recipe: decorationRecipeSchema.nullable().optional(),
   original: imageSchema.optional(),
+  /**
+   * The wiki gallery's other images, in its order. `source` is a wiki URL until the sync has
+   * downloaded the view (a few hundred per run); the site only shows downloaded ones.
+   */
+  views: z.array(imageSchema.extend({ caption: z.string().optional() })).optional(),
   /** Day the decoration first appeared. What happened since is in src/data/changes/. */
   added: z.string().optional(),
   /** Day a removal was confirmed (the API stopped listing it on two runs in a row). */

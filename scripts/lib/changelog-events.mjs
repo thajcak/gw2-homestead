@@ -2,7 +2,7 @@
  * Diffs between a stored item and the item a sync is about to write. Each change records the
  * field with its before and after values, so the change log says exactly what happened.
  */
-import { remoteOriginalSource } from './content-store.mjs';
+import { remoteImageSource, remoteOriginalSource } from './content-store.mjs';
 import { sanitizeDisplayName, sanitizeText } from './sanitize-text.mjs';
 
 function isEmptyRecipe(recipe) {
@@ -99,6 +99,13 @@ export function diffDecoration(before, after) {
   const afterImage = remoteOriginalSource(after);
   if (beforeImage !== afterImage && !(afterImage == null && after.original)) {
     changes.push({ field: 'image', before: beforeImage, after: afterImage });
+  }
+
+  // Gallery views, as their wiki URLs in order; caption edits alone aren't logged.
+  const beforeViews = (before.views ?? []).map(remoteImageSource);
+  const afterViews = (after.views ?? []).map(remoteImageSource);
+  if (!sameValue(beforeViews, afterViews)) {
+    changes.push({ field: 'views', before: beforeViews, after: afterViews });
   }
 
   return changes;
