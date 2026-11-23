@@ -18,6 +18,8 @@ The sync guards against bad API or wiki answers:
 - An item is marked removed only after two runs in a row without it (`missingSince`, then `removed`).
 - A stored preview image is dropped only after the wiki has reported no image for 3 days and the image file itself is gone (`previewMissingSince`).
 
+Each decoration usually has two wiki pages: the original guild hall decoration (`Name`) and the later homestead version (`Name (Handiwork)`), which has its own recipe but shares the model. Recipes and the wiki link come from the stored `wikiTitle`, normally the Handiwork page. The preview is the first image in a `{{Decoration infobox}}` gallery whose file exists (`gallery1`, which defaults to `{page name}.jpg`, then `gallery2` to `gallery5`). The stored page's infobox is tried first, then the other pages. Images named after the decoration come before borrowed ones (some infoboxes show another decoration that shares the model), and a borrowed image never replaces one named after the decoration. The wiki's lead image (`pageimages`) is only a fallback for pages without such an infobox, because it skips very tall or wide images and sometimes leads with a close-up.
+
 Decoration icons and preview images live in `src/assets/decorations/{id}/`. The sync stores previews at most 1,024 px wide as WebP (the site never serves them larger) and re-downloads an icon when the API's icon URL (`iconSource`) changes. The wiki URL of each preview is kept as `original.remoteSource`, so later runs can tell whether the wiki's image changed.
 
 Removed decorations drop out of the grid, search and Recently Added, but their JSON is still built, so an old `?open={id}` link says the item left the game.

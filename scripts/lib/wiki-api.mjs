@@ -287,8 +287,23 @@ async function queryWikiTitles(titles, params) {
   return null;
 }
 
-const LOOKUP_PARAMS = { redirects: '1', prop: 'pageimages', piprop: 'original', pilimit: 'max' };
+/**
+ * Page lookups ask for the lead image (pageimages) and the lead section's wikitext, which holds
+ * the decoration infobox and its gallery, in the same request.
+ */
+const LOOKUP_PARAMS = {
+  redirects: '1',
+  prop: 'pageimages|revisions',
+  piprop: 'original',
+  pilimit: 'max',
+  rvprop: 'content',
+  rvslots: 'main',
+  rvsection: '0',
+};
 const WIKITEXT_PARAMS = { prop: 'revisions', rvprop: 'content', rvslots: 'main' };
+const FILE_INFO_PARAMS = { redirects: '1', prop: 'imageinfo', iiprop: 'url|size' };
+/** The infobox gallery has five slots (Template:Item infobox gallery). */
+const INFOBOX_GALLERY_SLOTS = 5;
 
 function lookupTitles(decoration) {
   return [
@@ -325,6 +340,238 @@ export async function lookupWikiPagesBatch(decorations) {
   }
 
   return lookups;
+}
+
+/**
+ * The top-level parameters of the first {{Decoration infobox}} call in `wikitext`, as a Map from
+ * lowercased name to trimmed value, or null when the page has no complete decoration infobox.
+ * Other infoboxes (an item or object page under a bare title) don't count: they describe
+ * something else.
+ */
+export function parseDecorationInfobox(wikitext) {
+  const text = (wikitext ?? '').replace(/<!--[\s\S]*?-->/g, '');
+  const start = text.search(/\{\{\s*decoration infobox\s*[|}]/i);
+  if (start < 0) {
+    return null;
+  }
+
+  const parts = [];
+  let current = '';
+  let templateDepth = 0;
+  let linkDepth = 0;
+  let closed = false;
+  for (let index = start + 2; index < text.length; ) {
+    const pair = text.slice(index, index + 2);
+    if (pair === '{{') {
+      templateDepth += 1;
+    } else if (pair === '}}' && templateDepth === 0) {
+      closed = true;
+      break;
+    } else if (pair === '}}') {
+      templateDepth -= 1;
+    } else if (pair === '[[') {
+      linkDepth += 1;
+    } else if (pair === ']]' && linkDepth > 0) {
+      linkDepth -= 1;
+    } else if (text[index] === '|' && templateDepth === 0 && linkDepth === 0) {
+      parts.push(current);
+      current = '';
+      index += 1;
+      continue;
+    }
+    const step = ['{{', '}}', '[[', ']]'].includes(pair) ? 2 : 1;
+    current += text.slice(index, index + step);
+    index += step;
+  }
+  if (!closed) {
+    return null;
+  }
+  parts.push(current);
+
+  const params = new Map();
+  for (const part of parts.slice(1)) {
+    const equals = part.indexOf('=');
+    if (equals > 0) {
+      params.set(part.slice(0, equals).trim().toLowerCase(), part.slice(equals + 1).trim());
+    }
+  }
+  return params;
+}
+
+/** A wiki file name as MediaWiki stores it: no namespace, spaces for underscores, first letter upper case. */
+export function normalizeWikiFileName(name) {
+  const clean = (name ?? '')
+    .trim()
+    .replace(/^(file|image):/i, '')
+    .replace(/_/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  return clean ? clean[0].toUpperCase() + clean.slice(1) : '';
+}
+
+/** The file name in a wiki image URL (…/images/a/ab/Some_File.jpg -> "Some File.jpg"). */
+function wikiFileNameFromUrl(url) {
+  try {
+    return normalizeWikiFileName(decodeURIComponent(new URL(url).pathname.split('/').pop()));
+  } catch {
+    return '';
+  }
+}
+
+/**
+ * The images a decoration page's infobox gallery shows, in order, as { slot, file, caption }.
+ * Slot 1 defaults to "{page title}.jpg" (with ":" as "-") when gallery1 is blank, as
+ * Template:Item infobox gallery does. A listed file may not exist; the wiki shows only those
+ * that do. Returns [] for a page without a decoration infobox.
+ */
+export function infoboxGalleryImages(page) {
+  const params = parseDecorationInfobox(page?.revisions?.[0]?.slots?.main?.['*']);
+  if (!params) {
+    return [];
+  }
+
+  const images = [];
+  for (let slot = 1; slot <= INFOBOX_GALLERY_SLOTS; slot += 1) {
+    const listed = normalizeWikiFileName(params.get(`gallery${slot}`));
+    const file = listed || (slot === 1 ? normalizeWikiFileName(`${page.title.replace(/:/g, '-')}.jpg`) : '');
+    if (file) {
+      images.push({ slot, file, caption: params.get(`gallery${slot}-text`) || null });
+    }
+  }
+  return images;
+}
+
+/**
+ * Look up many wiki files at once (redirects followed). Returns a Map from each requested name
+ * to { source, width, height }, or to null when the file does not exist; returns null if any
+ * request failed.
+ */
+export async function fetchWikiFileInfoBatch(fileNames) {
+  const info = new Map();
+  const unique = [...new Set(fileNames)];
+
+  for (const chunk of chunkTitles(unique, (name) => [`File:${name}`], FILE_INFO_PARAMS)) {
+    const result = await queryWikiTitles(chunk.titles, FILE_INFO_PARAMS);
+    if (!result) {
+      return null;
+    }
+    const byTitle = new Map(Object.values(result.pages).map((page) => [page.title, page]));
+    for (const title of chunk.titles) {
+      const imageinfo = byTitle.get(result.resolveTitle(title))?.imageinfo?.[0];
+      info.set(
+        title.slice('File:'.length),
+        imageinfo?.url ? { source: imageinfo.url, width: imageinfo.width, height: imageinfo.height } : null
+      );
+    }
+  }
+
+  return info;
+}
+
+/**
+ * True when a wiki file is named after the decoration ("Wolf Totem (decoration) active.jpg" for
+ * "Wolf Totem"). Some infoboxes borrow another decoration's image for a shared model, marked
+ * "replace with dedicated image", while the decoration's own file already exists.
+ */
+export function isOwnWikiImage(fileName, decorationName) {
+  const key = (value) => normalizeWikiFileName(value).replace(/:/g, '-').toLowerCase();
+  const name = key(wikiLookupName(decorationName));
+  return Boolean(name) && key(fileName).startsWith(name);
+}
+
+/** Pages in the order their infobox images are tried: the stored page, then as selectWikiPage prefers. */
+function infoboxPageOrder({ pages, storedPage }) {
+  const rank = (page) => {
+    if (page === storedPage) return 0;
+    if (page.title.includes('Handiwork')) return 1;
+    if (page.title.includes('Decoration')) return 2;
+    return 3;
+  };
+  return [...pages].sort((left, right) => rank(left) - rank(right));
+}
+
+/**
+ * Pick each decoration's preview from its pages' infobox galleries: the first image that exists,
+ * trying the stored page first, and images named after the decoration (isOwnWikiImage) before
+ * borrowed ones. Sets lookup.infoboxImage to { page, slot, file, caption, own, original } or null
+ * when no infobox lists an existing image. `names` maps decoration id to its API name.
+ *
+ * This is what the wiki itself shows first. pageimages can't be relied on for it: it skips
+ * images with extreme proportions (tall pillars, long tracks) and can lead with a close-up.
+ *
+ * Files are checked lazily, a candidate per decoration per request round, and a file pageimages
+ * already reported counts as existing. Returns the ids whose file check failed; their lookups
+ * are set to null so enrichment keeps their stored data rather than fall back mid-outage.
+ */
+export async function attachInfoboxImages(lookups, names) {
+  const known = new Map();
+  for (const lookup of lookups.values()) {
+    for (const page of lookup?.pages ?? []) {
+      if (page.original?.source) {
+        known.set(wikiFileNameFromUrl(page.original.source), {
+          source: page.original.source,
+          width: page.original.width,
+          height: page.original.height,
+        });
+      }
+    }
+  }
+
+  const pending = new Map();
+  for (const [id, lookup] of lookups) {
+    if (!lookup) {
+      continue;
+    }
+    const images = infoboxPageOrder(lookup).flatMap((page) =>
+      infoboxGalleryImages(page).map((image) => ({
+        ...image,
+        page: page.title,
+        own: isOwnWikiImage(image.file, names.get(id) ?? ''),
+      }))
+    );
+    const candidates = [...images.filter((image) => image.own), ...images.filter((image) => !image.own)];
+    lookup.infoboxImage = null;
+    pending.set(id, { lookup, candidates, next: 0 });
+  }
+
+  const failed = [];
+  for (let round = 0; round <= INFOBOX_GALLERY_SLOTS * 4 && pending.size > 0; round += 1) {
+    const toCheck = new Set();
+    for (const [id, state] of pending) {
+      while (state.next < state.candidates.length && known.get(state.candidates[state.next].file) === null) {
+        state.next += 1;
+      }
+      const candidate = state.candidates[state.next];
+      if (!candidate) {
+        pending.delete(id);
+      } else if (known.has(candidate.file)) {
+        state.lookup.infoboxImage = { ...candidate, original: known.get(candidate.file) };
+        pending.delete(id);
+      } else {
+        toCheck.add(candidate.file);
+      }
+    }
+    if (toCheck.size === 0) {
+      continue;
+    }
+
+    const info = await fetchWikiFileInfoBatch([...toCheck]);
+    if (!info) {
+      for (const [id, state] of pending) {
+        if (toCheck.has(state.candidates[state.next].file)) {
+          lookups.set(id, null);
+          failed.push(id);
+          pending.delete(id);
+        }
+      }
+      continue;
+    }
+    for (const [file, value] of info) {
+      known.set(file, value);
+    }
+  }
+
+  return failed;
 }
 
 /**
@@ -388,10 +635,17 @@ function withoutMissingMarker(decoration) {
 }
 
 /**
- * Apply one wiki lookup (from lookupWikiPagesBatch) to a decoration.
+ * Apply one wiki lookup (from lookupWikiPagesBatch, after attachInfoboxImages) to a decoration.
  *
- * The stored wikiTitle is often the "(Handiwork)" recipe page while the image comes from
- * another title variant, so images are tracked across all queried pages:
+ * The preview is the first existing image in an infobox gallery (lookup.infoboxImage), the one
+ * the wiki itself leads with. It replaces the stored image whenever they differ, except that a
+ * borrowed image (not named after the decoration) never replaces one that is. The order of
+ * pages tried is fixed (stored page first), so this doesn't flip between variant pages, and
+ * only decoration infoboxes count, so an unrelated article under a bare title can't supply it.
+ *
+ * Without an infobox image (no infobox, or none of its files exist), the pageimages lead image
+ * is used as before. The stored wikiTitle is often the "(Handiwork)" recipe page while that
+ * image comes from another title variant, so images are tracked across all queried pages:
  * - Keep the stored image while ANY queried page still shows it. This is what stops the
  *   run-to-run flipping between variant pages.
  * - Replace it only when no page shows it any more AND the stored page has an image of its
@@ -411,10 +665,30 @@ export function applyWikiImageMetadata(decoration, lookup, today = utcToday()) {
     return decoration;
   }
 
-  const { pages, storedPage } = lookup;
+  const { pages, storedPage, infoboxImage } = lookup;
   const withImage = pages.filter((page) => page.original?.source);
   const titlePage = storedPage ?? pickPage(withImage.length > 0 ? withImage : pages);
   let next = { ...decoration, wikiTitle: titlePage.title };
+  const currentRemote = remoteOriginalSource(decoration);
+
+  if (infoboxImage) {
+    next = withoutMissingMarker(next);
+    if (currentRemote && wikiImageUrlsMatch(infoboxImage.original.source, currentRemote)) {
+      return next;
+    }
+    if (currentRemote && !infoboxImage.own && isOwnWikiImage(wikiFileNameFromUrl(currentRemote), decoration.name)) {
+      // A borrowed image never replaces one named after the decoration.
+      return next;
+    }
+    const where = `"${infoboxImage.file}", gallery slot ${infoboxImage.slot} on "${infoboxImage.page}"`;
+    console.log(`Wiki image ${currentRemote ? 'changed' : 'found'} for ${label}: now ${where}`);
+    next.original = {
+      width: infoboxImage.original.width,
+      height: infoboxImage.original.height,
+      source: infoboxImage.original.source,
+    };
+    return next;
+  }
 
   if (withImage.length === 0) {
     const missingSince = decoration.previewMissingSince ?? today;
@@ -432,7 +706,6 @@ export function applyWikiImageMetadata(decoration, lookup, today = utcToday()) {
   }
 
   next = withoutMissingMarker(next);
-  const currentRemote = remoteOriginalSource(decoration);
   if (currentRemote && withImage.some((page) => wikiImageUrlsMatch(page.original.source, currentRemote))) {
     return next;
   }
@@ -469,13 +742,21 @@ async function wikiFileIsGone(url) {
 }
 
 /**
- * Enrich many decorations from the wiki: batched page lookups (images, wikiTitle), then batched
- * wikitext fetches for the ones still missing a recipe. Returns a Map from id to the enriched
- * decoration; a decoration whose lookup failed comes back unchanged.
+ * Enrich many decorations from the wiki: batched page lookups (images, infobox, wikiTitle),
+ * batched file checks for infobox images, then batched wikitext fetches for the ones still
+ * missing a recipe. Returns a Map from id to the enriched decoration; a decoration whose lookup
+ * failed comes back unchanged.
  */
 export async function enrichDecorationsFromWiki(decorations) {
   const enriched = new Map();
   const lookups = await lookupWikiPagesBatch(decorations);
+  const fileCheckFailures = await attachInfoboxImages(
+    lookups,
+    new Map(decorations.map((decoration) => [decoration.id, decoration.name]))
+  );
+  if (fileCheckFailures.length > 0) {
+    console.warn(`Wiki file check failed for ${fileCheckFailures.length} decoration(s); keeping their stored data.`);
+  }
 
   for (const decoration of decorations) {
     const label = `${wikiLookupName(decoration.name)} (ID: ${decoration.id})`;
@@ -491,7 +772,7 @@ export async function enrichDecorationsFromWiki(decorations) {
 
     try {
       // Before a stored image may be dropped, confirm the file itself is gone from the wiki.
-      const noImages = lookup.pages.every((page) => !page.original?.source);
+      const noImages = !lookup.infoboxImage && lookup.pages.every((page) => !page.original?.source);
       const storedRemote = remoteOriginalSource(decoration);
       if (
         noImages &&
