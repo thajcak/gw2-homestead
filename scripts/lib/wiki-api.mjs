@@ -36,10 +36,8 @@ function sleep(ms) {
 export const WIKI_TITLES_PER_REQUEST = 50;
 /** Minimum gap between wiki requests. */
 export const WIKI_REQUEST_DELAY_MS = 150;
-/** Ask the wiki to refuse our requests while its database replicas lag by more than this. */
-const WIKI_MAXLAG_SECONDS = 5;
-/** API error codes that mean "slow down and try again". */
-const THROTTLE_CODES = new Set(['maxlag', 'ratelimited']);
+/** API error code that means "slow down and try again". */
+const THROTTLE_CODE = 'ratelimited';
 
 let lastWikiRequestAt = 0;
 
@@ -51,13 +49,12 @@ async function waitForWikiRequestSlot() {
   lastWikiRequestAt = Date.now();
 }
 
-/** Build an api.php URL. Every request carries maxlag so the wiki can shed our load when busy. */
+/** Build an api.php URL. */
 export function wikiApiUrl(params) {
   const search = new URLSearchParams({
     format: 'json',
     formatversion: '1',
     origin: '*',
-    maxlag: String(WIKI_MAXLAG_SECONDS),
     ...params,
   });
   return `${WIKI_API}?${search}`;
@@ -129,8 +126,8 @@ export async function fetchJsonWithRetries(url, maxAttempts = 5, sleepMs = 2000)
       }
 
       const data = JSON.parse(text);
-      // maxlag and rate-limit refusals come back as HTTP 200 with an API error code.
-      if (THROTTLE_CODES.has(data?.error?.code)) {
+      // A rate-limit refusal can come back as HTTP 200 with an API error code.
+      if (data?.error?.code === THROTTLE_CODE) {
         throw new WikiThrottleError(`wiki asked us to wait (${data.error.code})`, retryAfterMs(response));
       }
       if (data?.error) {
