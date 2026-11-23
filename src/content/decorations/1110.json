@@ -1,0 +1,38 @@
+{
+  "id": 1110,
+  "name": "Extended Stairs (Clockwise Corner)",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "icon": "decorations/1110/icon.png",
+  "added": "2026-09-15",
+  "wikiTitle": "Extended Stairs (Clockwise Corner) (Handiwork)",
+  "recipe": {
+    "id": 15495,
+    "name": "Extended Stairs (Clockwise Corner)",
+    "disciplines": "Handiworker",
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "rating": 1,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 4,
+        "item": "Elder Wood Plank"
+      }
+    ]
+  },
+  "original": {
+    "width": 1177,
+    "height": 968,
+    "source": "decorations/1110/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/d/d5/Extended_Stairs_%28Clockwise_Corner%29.jpg"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": 1136,
+  "name": "Seer Chest (Small)",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    4,
+    20
+  ],
+  "icon": "decorations/1136/icon.png",
+  "added": "2026-09-15",
+  "wikiTitle": "Seer Chest (Small) (Handiwork)",
+  "recipe": {
+    "id": 15480,
+    "name": "Seer Chest (Small)",
+    "disciplines": "Handiworker",
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "rating": 1,
+    "sheet": "Homestead Recipe Book: Seer Catalogue Volume 2",
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 20,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Gold Ingot"
+      },
+      {
+        "slot": 3,
+        "quantity": 15,
+        "item": "Raw Enchanting Stone"
+      }
+    ]
+  },
+  "original": {
+    "width": 1155,
+    "height": 973,
+    "source": "decorations/1136/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/6/6d/Seer_Chest_%28Small%29.jpg"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "id": 1105,
+  "name": "Seer Relic (Map)",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    14,
+    20
+  ],
+  "icon": "decorations/1105/icon.png",
+  "added": "2026-09-15",
+  "wikiTitle": "Seer Relic (Map) (Handiwork)",
+  "recipe": {
+    "id": 15582,
+    "name": "Seer Relic (Map)",
+    "disciplines": "Handiworker",
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "rating": 1,
+    "sheet": "Homestead Recipe Book: Seer Catalogue Volume 2",
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Gold Ingot"
+      }
+    ]
+  },
+  "original": {
+    "width": 1237,
+    "height": 974,
+    "source": "decorations/1105/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/c/cd/Seer_Relic_%28Map%29_front.jpg"
+  }
+}

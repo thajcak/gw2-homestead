@@ -1,0 +1,42 @@
+{
+  "id": 1240,
+  "name": "Saurian Egg",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    20,
+    7
+  ],
+  "icon": "decorations/1240/icon.png",
+  "added": "2026-09-15",
+  "wikiTitle": "Saurian Egg",
+  "recipe": {
+    "id": 15735,
+    "disciplines": "Scribe",
+    "type": "Guild Decoration",
+    "source": "automatic",
+    "rating": 1,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 15,
+        "item": "Resonating Sliver"
+      },
+      {
+        "slot": 2,
+        "quantity": 50,
+        "item": "Leaf Fossil"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Egg"
+      }
+    ]
+  },
+  "original": {
+    "width": 1080,
+    "height": 1540,
+    "source": "decorations/1240/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/e/ed/Saurian_Egg.jpg"
+  }
+}

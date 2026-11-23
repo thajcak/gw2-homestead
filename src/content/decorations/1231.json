@@ -1,0 +1,44 @@
+{
+  "id": 1231,
+  "name": "Plush Kralky",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    1,
+    24
+  ],
+  "icon": "decorations/1231/icon.png",
+  "added": "2026-08-11",
+  "wikiTitle": "Plush Kralky (Handiwork)",
+  "recipe": {
+    "id": 15710,
+    "name": "Plush Kralky",
+    "disciplines": "Handiworker",
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "rating": 400,
+    "sheet": "Recipe: Plush Kralky",
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Crystal Core"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Charged Quartz Crystal"
+      }
+    ]
+  },
+  "original": {
+    "width": 645,
+    "height": 748,
+    "source": "decorations/1231/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/6/6e/Plush_Kralky_%28decoration%29_front.jpg"
+  }
+}

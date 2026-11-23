@@ -1,0 +1,43 @@
+{
+  "id": 1247,
+  "name": "Norn Tent (Narrow)",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    20,
+    4
+  ],
+  "icon": "decorations/1247/icon.png",
+  "added": "2026-09-15",
+  "wikiTitle": "Norn Tent (Narrow) (Handiwork)",
+  "recipe": {
+    "id": 15729,
+    "name": "Norn Tent (Narrow)",
+    "disciplines": "Handiworker",
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "rating": 1,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Thick Leather Section"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Bolt of Jute"
+      }
+    ]
+  },
+  "original": {
+    "width": 699,
+    "height": 974,
+    "source": "decorations/1247/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/a/a7/Norn_Tent_%28Narrow%29.jpg"
+  }
+}

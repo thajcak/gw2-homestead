@@ -1,0 +1,39 @@
+{
+  "id": 1144,
+  "name": "Seer Tablet (Astro)",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    4,
+    20
+  ],
+  "icon": "decorations/1144/icon.png",
+  "added": "2026-09-15",
+  "wikiTitle": "Seer Tablet (Astro) (Handiwork)",
+  "recipe": {
+    "id": 15472,
+    "name": "Seer Tablet (Astro)",
+    "disciplines": "Handiworker",
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "rating": 1,
+    "sheet": "Homestead Recipe Book: Seer Catalogue Volume 2",
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Onyx Core"
+      }
+    ]
+  },
+  "original": {
+    "width": 1080,
+    "height": 1860,
+    "source": "decorations/1144/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/2/2e/Seer_Tablet_%28Astro%29_front.jpg"
+  }
+}

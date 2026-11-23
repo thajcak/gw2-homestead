@@ -1,0 +1,43 @@
+{
+  "id": 1267,
+  "name": "Plush Mad King",
+  "description": "Crafted by scribes.",
+  "categories": [
+    25
+  ],
+  "icon": "decorations/1267/icon.png",
+  "added": "2026-10-13",
+  "wikiTitle": "Plush Mad King (Handiwork)",
+  "recipe": {
+    "id": 15786,
+    "name": "Plush Mad King",
+    "disciplines": "Handiworker",
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "rating": 400,
+    "sheet": "Recipe: Plush Mad King",
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Gibbering Skull"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Candy Corn Cob"
+      }
+    ]
+  },
+  "original": {
+    "width": 1091,
+    "height": 1548,
+    "source": "decorations/1267/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/0/00/Plush_Mad_King.jpg"
+  }
+}

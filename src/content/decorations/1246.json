@@ -1,0 +1,38 @@
+{
+  "id": 1246,
+  "name": "Seer Casket",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    20
+  ],
+  "icon": "decorations/1246/icon.png",
+  "added": "2026-09-15",
+  "wikiTitle": "Seer Casket (Handiwork)",
+  "recipe": {
+    "id": 15730,
+    "name": "Seer Casket",
+    "disciplines": "Handiworker",
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "rating": 1,
+    "sheet": "Homestead Recipe Book: Seer Catalogue Volume 2",
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 20,
+        "item": "Onyx Core"
+      }
+    ]
+  },
+  "original": {
+    "width": 1836,
+    "height": 598,
+    "source": "decorations/1246/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/9e/Seer_Casket_front.jpg"
+  }
+}

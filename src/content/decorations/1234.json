@@ -1,0 +1,44 @@
+{
+  "id": 1234,
+  "name": "Canthan Trader Cart",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    1,
+    24
+  ],
+  "icon": "decorations/1234/icon.png",
+  "added": "2026-08-11",
+  "wikiTitle": "Canthan Trader Cart (Handiwork)",
+  "recipe": {
+    "id": 15717,
+    "name": "Canthan Trader Cart",
+    "disciplines": "Handiworker",
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "rating": 300,
+    "sheet": "Recipe: Canthan Trader Cart",
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Bolt of Linen"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Quartz Crystal"
+      }
+    ]
+  },
+  "original": {
+    "width": 923,
+    "height": 972,
+    "source": "decorations/1234/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/e/e8/Canthan_Trader_Cart.jpg"
+  }
+}

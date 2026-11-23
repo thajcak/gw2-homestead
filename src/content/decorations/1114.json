@@ -1,0 +1,38 @@
+{
+  "id": 1114,
+  "name": "Ship Rib",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "icon": "decorations/1114/icon.png",
+  "added": "2026-09-15",
+  "wikiTitle": "Ship Rib (Handiwork)",
+  "recipe": {
+    "id": 15535,
+    "name": "Ship Rib",
+    "disciplines": "Handiworker",
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "rating": 1,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 20,
+        "item": "Elder Wood Plank"
+      }
+    ]
+  },
+  "original": {
+    "width": 1800,
+    "height": 919,
+    "source": "decorations/1114/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/d/da/Ship_Rib_back.jpg"
+  }
+}

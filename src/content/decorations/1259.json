@@ -1,0 +1,38 @@
+{
+  "id": 1259,
+  "name": "Foreboding Raven Roost",
+  "description": "Crafted by scribes.",
+  "categories": [
+    25
+  ],
+  "icon": "decorations/1259/icon.png",
+  "added": "2026-10-13",
+  "wikiTitle": "Foreboding Raven Roost (Handiwork)",
+  "recipe": {
+    "id": 15784,
+    "name": "Foreboding Raven Roost",
+    "disciplines": "Handiworker",
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "rating": 150,
+    "sheet": "Recipe: Foreboding Raven Roost",
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Tyria's Best Nougat Center"
+      },
+      {
+        "slot": 3,
+        "quantity": 50,
+        "item": "Piece of Candy Corn"
+      }
+    ]
+  },
+  "previewMissingSince": "2026-11-23"
+}

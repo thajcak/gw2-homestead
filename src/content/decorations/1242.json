@@ -1,0 +1,49 @@
+{
+  "id": 1242,
+  "name": "Arcane Eye Banner",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    4,
+    20
+  ],
+  "icon": "decorations/1242/icon.png",
+  "added": "2026-09-15",
+  "wikiTitle": "Arcane Eye Banner (Handiwork)",
+  "recipe": {
+    "id": 15732,
+    "name": "Arcane Eye Banner",
+    "disciplines": "Handiworker",
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "rating": 1,
+    "sheet": "Recipe: Arcane Eye Banner",
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Bolt of Cotton"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Pouch of Blue Pigment"
+      },
+      {
+        "slot": 4,
+        "quantity": 1,
+        "item": "Pouch of Red Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 800,
+    "height": 1080,
+    "source": "decorations/1242/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/80/Arcane_Eye_Banner.jpg"
+  }
+}

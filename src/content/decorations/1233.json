@@ -1,0 +1,44 @@
+{
+  "id": 1233,
+  "name": "Canthan Merchant Stall",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    1,
+    24
+  ],
+  "icon": "decorations/1233/icon.png",
+  "added": "2026-08-11",
+  "wikiTitle": "Canthan Merchant Stall (Handiwork)",
+  "recipe": {
+    "id": 15711,
+    "name": "Canthan Merchant Stall",
+    "disciplines": "Handiworker",
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "rating": 300,
+    "sheet": "Recipe: Canthan Merchant Stall",
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Hard Wood Plank"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Quartz Crystal"
+      }
+    ]
+  },
+  "original": {
+    "width": 712,
+    "height": 956,
+    "source": "decorations/1233/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/98/Canthan_Merchant_Stall_front.jpg"
+  }
+}

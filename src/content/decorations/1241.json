@@ -1,0 +1,33 @@
+{
+  "id": 1241,
+  "name": "Iron Column 16 x 240 x 30",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "icon": "decorations/1241/icon.png",
+  "added": "2026-09-15",
+  "wikiTitle": "Iron Column 16 x 240 x 30 (Handiwork)",
+  "recipe": {
+    "id": 15722,
+    "name": "Iron Column 16 x 240 x 30",
+    "disciplines": "Handiworker",
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "rating": 1,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Iron Ingot"
+      }
+    ]
+  },
+  "previewMissingSince": "2026-11-23"
+}

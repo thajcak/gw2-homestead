@@ -1,0 +1,44 @@
+{
+  "id": 1021,
+  "name": "Replica Castoran Mirror",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    4,
+    20
+  ],
+  "icon": "decorations/1021/icon.png",
+  "added": "2026-05-12",
+  "wikiTitle": "Replica Castoran Mirror (Handiwork)",
+  "recipe": {
+    "id": 15360,
+    "name": "Replica Castoran Mirror",
+    "disciplines": "Handiworker",
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "rating": 1,
+    "sheet": "Homestead Recipe Book: Seer Catalogue Volume 2",
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 20,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 20,
+        "item": "Gold Ingot"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Sapphire Orb"
+      }
+    ]
+  },
+  "original": {
+    "width": 477,
+    "height": 975,
+    "source": "decorations/1021/preview.jpg",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/87/Replica_Castoran_Mirror_front.jpg"
+  }
+}
