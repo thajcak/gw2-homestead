@@ -30,3 +30,15 @@ Other commands:
 - `npm run preview` — preview the production build locally
 - `npm run generate-catalog` — build `public/catalog/` search index and decoration JSON artifacts
 - `npm run localize-images` — download remote decoration icons and preview images into `src/assets/decorations/`
+- `npm run fetch-decorations` — run the full sync the hourly workflow runs (GW2 API, wiki, content files, images); `-- --ids 1,2` limits wiki lookups
+
+### Testing GitHub Actions locally
+
+The workflows can be run locally with [act](https://github.com/nektos/act) (`brew install act`, Docker required). act copies the working tree into a container, so uncommitted changes are tested and nothing comes back to your checkout. Under act the fetch workflow commits inside the container but skips `git push`, and the deploy workflow builds but skips the Pages upload and deploy job.
+
+- `npm run act:check` — dry-run every trigger (schedule, dispatch, push, `workflow_run` success and failure) and check which jobs would run
+- `npm run act:fetch` — run the fetch workflow end to end against the real GW2 API and wiki; wiki lookups are limited to a 7-item sample (`scripts/act.sh fetch 1,2,3` or `scripts/act.sh fetch all` to change that)
+- `npm run act:deploy` — run the deploy workflow's build job
+- `npm run act:all` — all of the above
+
+To run the check automatically before pushing workflow or script changes, enable the repo's hooks once with `git config core.hooksPath .githooks`. `ACT_E2E=1 git push` runs the full end-to-end workflows instead of the dry-run.

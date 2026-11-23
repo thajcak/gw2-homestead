@@ -9,6 +9,10 @@ on:
         description: 'Continue even if the GW2 API lists many fewer decorations than are stored'
         type: boolean
         default: false
+      ids:
+        description: 'Only query the wiki for these decoration IDs (comma-separated); empty = all'
+        type: string
+        default: ''
 
 jobs:
   update-and-fetch-decorations:
@@ -18,10 +22,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install required packages
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y jq xmlstarlet
+      # jq (used by the wiki recipe parser) is preinstalled on GitHub's runners and act's image.
+      - name: Check required tools
+        run: jq --version
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -33,17 +36,25 @@ jobs:
       - name: Fetch, enrich and sync decorations
         env:
           ALLOW_LARGE_DROP: ${{ inputs.allow_large_drop && '--allow-large-drop' || '' }}
-        run: node scripts/run-fetch-decorations.mjs $ALLOW_LARGE_DROP
+          WIKI_IDS: ${{ inputs.ids }}
+        run: node scripts/run-fetch-decorations.mjs $ALLOW_LARGE_DROP ${WIKI_IDS:+--ids "$WIKI_IDS"}
 
-      - name: Commit and push updated decorations and categories
+      - name: Commit updated decorations and categories
+        id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add src/content/ src/assets/decorations/ public/images/
-          # Check if there are changes to commit
           if git diff --cached --quiet; then
             echo "No changes to commit."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "Update decoration data and changelog"
-            git push
+            git show --stat --format='%h %s' HEAD | tail -n 25
+            echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
+
+      # Skipped under act (local runs), so a local end-to-end test never pushes.
+      - name: Push
+        if: steps.commit.outputs.changed == 'true' && !env.ACT
+        run: git push

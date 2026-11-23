@@ -44,18 +44,28 @@ jobs:
         env:
           ASTRO_TELEMETRY_DISABLED: '1'
 
+      # Pages steps need GitHub's OIDC token and Pages API, so they are skipped under act.
       - name: Setup Pages
+        if: ${{ !env.ACT }}
         uses: actions/configure-pages@v4
 
       - name: Upload artifact
+        if: ${{ !env.ACT }}
         uses: actions/upload-pages-artifact@v3
         with:
           path: './dist'
 
+      - name: Summarize build (act)
+        if: ${{ env.ACT }}
+        run: |
+          echo "dist: $(du -sh dist | cut -f1), $(find dist -type f | wc -l) files"
+          test -f dist/index.html
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    # Local act runs pass an event payload with "act": true (see .github/act/).
+    if: (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success') && !github.event.act
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
