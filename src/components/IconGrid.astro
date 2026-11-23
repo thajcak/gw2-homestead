@@ -5,7 +5,10 @@ const spriteSheets = await loadSpriteSheetUrls();
 ---
 
 <div class="catalog-grid-wrap">
-  <p id="results-count" class="results-count" aria-hidden="true"></p>
+  <div class="results-bar">
+    <p id="results-count" class="results-count" aria-hidden="true"></p>
+    <button id="clear-filters" type="button" class="results-bar__clear" hidden>Clear filters</button>
+  </div>
   <p id="results-status" class="visually-hidden" role="status" aria-live="polite" aria-atomic="true"></p>
   <div id="icon-grid" class="catalog-grid" data-sprite-sheets={JSON.stringify(spriteSheets)}></div>
   <div id="catalog-tooltip" class="catalog-tooltip" aria-hidden="true" hidden></div>

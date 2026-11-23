@@ -17,7 +17,7 @@ const { categories, latestAdded } = Astro.props;
     <h1 class="header__brand">
       <a id="home-link" class="header__brand-link" href={import.meta.env.BASE_URL}>
         <img src={homesteadIcon.src} alt="" width="32" height="32" />
-        <span>Homestead Decorations</span>
+        <span class="header__title">Homestead<span class="header__title-tail"> Decorations</span></span>
       </a>
     </h1>
 
@@ -52,18 +52,11 @@ const { categories, latestAdded } = Astro.props;
           ))
         }
       </select>
-
-      <label for="sort-select" class="visually-hidden">Sort</label>
-      <select id="sort-select" class="header__select header__select--sort">
-        <option value="name">Name (A–Z)</option>
-        <option value="newest">Newest first</option>
-      </select>
-
-      <button id="clear-filters" type="button" class="header__clear-filters" hidden>Clear filters</button>
     </div>
 
     <button id="open-changelog" type="button" class="header__changelog" aria-haspopup="dialog">
-      Recently added
+      <span class="header__changelog-label">Recently added</span>
+      <span class="header__changelog-short" aria-hidden="true">New</span>
       {
         latestAdded ? (
           <>

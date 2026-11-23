@@ -5,7 +5,9 @@ import { spriteStyle } from '../utils/sprite';
 
 export type { SearchIndexEntry };
 
-const ANIMATION_MS = 200;
+/** The details panel expands and collapses (height) over this long. */
+const PANEL_ANIMATION_MS = 280;
+const PANEL_ANIMATION_EASING = 'cubic-bezier(0.2, 0, 0, 1)';
 /** Start fetching a row's icon sheet a little before the row scrolls into view. */
 const ICON_ROOT_MARGIN = '200px 0px';
 const TOOLTIP_DELAY_MS = 300;
@@ -26,7 +28,45 @@ const ITEM_GAP = 16;
 
 const EXPANDED_PANEL_ID = 'decoration-panel';
 
-type SortMode = 'name' | 'newest';
+function prefersReducedMotion(): boolean {
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+/**
+ * Animate the panel's height (and bottom margin) between two sizes. The content inside is
+ * pinned at its open height, so it is revealed or covered rather than re-laid out every frame
+ * (an image loading mid-animation then only paints in place). The clip leaves room above the
+ * panel for the notch that points at the selected icon. Both are cleared when the animation
+ * ends or is cancelled.
+ */
+function animatePanelSize(
+  panel: HTMLElement,
+  from: { height: number; marginBottom: string },
+  to: { height: number; marginBottom: string }
+): Animation {
+  const content = panel.querySelector<HTMLElement>('.expanded-decoration-gradient');
+  if (content) {
+    content.style.height = `${Math.max(from.height, to.height)}px`;
+    content.style.maxHeight = 'none';
+  }
+  panel.style.clipPath = 'inset(-4rem 0 0 0)';
+  const animation = panel.animate(
+    [
+      // min-height is lifted so its min-content floor doesn't hold the panel open.
+      { height: `${from.height}px`, minHeight: '0px', marginBottom: from.marginBottom },
+      { height: `${to.height}px`, minHeight: '0px', marginBottom: to.marginBottom },
+    ],
+    { duration: PANEL_ANIMATION_MS, easing: PANEL_ANIMATION_EASING }
+  );
+  const reset = () => {
+    panel.style.removeProperty('clip-path');
+    content?.style.removeProperty('height');
+    content?.style.removeProperty('max-height');
+  };
+  animation.addEventListener('finish', reset);
+  animation.addEventListener('cancel', reset);
+  return animation;
+}
 
 function waitForNextFrame(count = 1): Promise<void> {
   return new Promise((resolve) => {
@@ -121,13 +161,9 @@ function renderPreview(
 ): string {
   const preview: OptimizedImage | undefined = decoration.preview;
   if (!preview?.src) {
-    const wikiLink = decoration.wikiTitle
-      ? `<a href="${escapeHtml(wikiArticleUrl(decoration.wikiTitle))}" class="expanded-wiki-link" target="_blank" rel="noopener noreferrer">Check the wiki page →</a>`
-      : '';
     return `<div class="expanded-preview is-missing">
         ${iconHtml}
         <p class="expanded-preview__note">No preview on the wiki yet</p>
-        ${wikiLink}
       </div>`;
   }
 
@@ -136,6 +172,7 @@ function renderPreview(
     `alt="${escapeHtml(alt)}"`,
     `width="${preview.width}"`,
     `height="${preview.height}"`,
+    `style="--preview-w: ${preview.width}; --preview-h: ${preview.height}"`,
     'decoding="async"',
     'onload="this.closest(\'.expanded-preview\')?.classList.add(\'is-loaded\')"',
   ];
@@ -239,7 +276,6 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   const searchInput = document.getElementById('search-input') as HTMLInputElement | null;
   const clearSearchButton = document.getElementById('clear-search') as HTMLButtonElement | null;
   const categorySelect = document.getElementById('category-select') as HTMLSelectElement | null;
-  const sortSelect = document.getElementById('sort-select') as HTMLSelectElement | null;
   const clearFiltersButton = document.getElementById('clear-filters') as HTMLButtonElement | null;
   const homeLink = document.getElementById('home-link') as HTMLAnchorElement | null;
   const openChangelogButton = document.getElementById('open-changelog') as HTMLButtonElement | null;
@@ -265,6 +301,15 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   if (!searchInput || !categorySelect || !grid) {
     return;
   }
+
+  // On phones the search box is narrow: shorten its placeholder to fit (same breakpoint as
+  // the phone header in global.css).
+  const fullPlaceholder = searchInput.placeholder;
+  const phoneWidth = window.matchMedia('(max-width: 600px)');
+  const syncSearchPlaceholder = () => {
+    searchInput.placeholder = phoneWidth.matches ? 'Search' : fullPlaceholder;
+  };
+  syncSearchPlaceholder();
 
   // Grid items scroll into view below the sticky header (scroll-margin-top in global.css).
   if (header) {
@@ -311,7 +356,6 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
 
   let searchTokens: string[] = [];
   let selectedCategory = 'all';
-  let sortMode: SortMode = 'name';
   let filteredIds = new Set<number>();
   let expandedItemId: number | null = null;
   let itemsPerRow = 0;
@@ -322,6 +366,8 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   let changelogScrollTop = Number(sessionStorage.getItem('changelogScrollTop') ?? '0');
   let gridItems: HTMLElement[] = [];
   const gridItemsById = new Map<number, HTMLElement>();
+  /** The latest per-category counts, to relabel the select when the window crosses phone width. */
+  let lastCounts: { searchCount: number; categoryCounts: Map<number, number> } | null = null;
   let resultsStatusTimer: ReturnType<typeof setTimeout> | null = null;
   let announceResults = false;
   let changelogLoaded = false;
@@ -402,11 +448,14 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     }, RESULTS_STATUS_DELAY_MS);
   }
 
-  /** "All categories (n)" and each category's count, for the current search. */
+  /**
+   * "All categories (n)" and each category's count, for the current search. On phones the
+   * select is narrow, so the first option reads "All (n)".
+   */
   function updateCategoryCounts(searchCount: number, categoryCounts: Map<number, number>): void {
     const allOption = categorySelect!.querySelector('option[value="all"]');
     if (allOption) {
-      allOption.textContent = `All categories (${searchCount})`;
+      allOption.textContent = `${phoneWidth.matches ? 'All' : 'All categories'} (${searchCount})`;
     }
     categoryCountOptions.forEach((option) => {
       option.textContent = `${option.dataset.categoryName} (${categoryCounts.get(Number(option.value)) ?? 0})`;
@@ -449,6 +498,7 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     const visibleCount = filteredIds.size;
     emptyState?.classList.toggle('is-hidden', visibleCount > 0);
     updateCategoryCounts(searchCount, categoryCounts);
+    lastCounts = { searchCount, categoryCounts };
     updateResultsCount(visibleCount);
     if (clearFiltersButton) {
       clearFiltersButton.hidden = !filtersActive();
@@ -475,28 +525,6 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
         }
       });
     }
-  }
-
-  function sortedEntries(mode: SortMode): SearchIndexEntry[] {
-    if (mode === 'name') {
-      return searchIndex; // Built in name order.
-    }
-    // Newest first; the sort is stable, so each day stays in name order. Undated items go last.
-    return [...searchIndex].sort((a, b) => (b.added ?? '').localeCompare(a.added ?? ''));
-  }
-
-  function applySort(mode: SortMode): void {
-    if (mode === sortMode) {
-      return;
-    }
-    sortMode = mode;
-    if (expandedItemId != null) {
-      collapseExpanded();
-      panelRemovalToken += 1;
-      removeExpandedPanel();
-    }
-    gridItems = sortedEntries(mode).map((entry) => gridItemsById.get(entry.id)!);
-    grid!.append(...gridItems);
   }
 
   /** Keep aria-expanded / aria-controls on grid buttons in step with the open panel. */
@@ -545,11 +573,17 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   }
 
   /**
-   * Size the panel to its content, up to 70% of the window: the preview at the media column's
-   * width (or the no-preview block), beside or above the details. Measured while the panel is
-   * still collapsed; widths and scrollHeight don't depend on its height.
+   * Side by side (1024px and up), the panel is sized to its content, up to 70% of the window:
+   * the preview at the media column's width (or the no-preview block) beside the details.
+   * Measured while the panel is still collapsed; widths and scrollHeight don't depend on its
+   * height. Stacked (narrower), it returns null: the panel takes its content's height and the
+   * page scrolls (see global.css).
    */
-  function measurePanelHeight(panel: HTMLElement, decoration: Decoration): number {
+  function measurePanelHeight(panel: HTMLElement, decoration: Decoration): number | null {
+    if (!window.matchMedia('(min-width: 1024px)').matches) {
+      return null;
+    }
+
     const maxHeight = Math.max(Math.round(window.innerHeight * PANEL_MAX_VIEWPORT_SHARE), PANEL_MIN_HEIGHT);
     const media = panel.querySelector<HTMLElement>('.expanded-decoration__media');
     const details = panel.querySelector<HTMLElement>('.expanded-decoration__details');
@@ -561,11 +595,7 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     const mediaHeight = preview
       ? Math.min(preview.height, (media.clientWidth * preview.height) / preview.width) + PANEL_MEDIA_PADDING
       : MISSING_PREVIEW_HEIGHT;
-    const sideBySide = window.matchMedia('(min-width: 1024px)').matches;
-    const contentHeight = sideBySide
-      ? Math.max(mediaHeight, details.scrollHeight)
-      : mediaHeight + details.scrollHeight;
-
+    const contentHeight = Math.max(mediaHeight, details.scrollHeight);
     return Math.min(maxHeight, Math.max(PANEL_MIN_HEIGHT, Math.ceil(contentHeight)));
   }
 
@@ -575,13 +605,24 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     const removalToken = ++panelRemovalToken;
     const panel = grid!.querySelector<HTMLElement>('.expanded-decoration');
     if (panel) {
-      panel.classList.add('is-collapsed');
-      setTimeout(() => {
-        if (removalToken !== panelRemovalToken) {
-          return;
+      const removeIfCurrent = () => {
+        if (removalToken === panelRemovalToken) {
+          removeExpandedPanel();
         }
-        removeExpandedPanel();
-      }, ANIMATION_MS);
+      };
+      if (prefersReducedMotion()) {
+        removeIfCurrent();
+      } else {
+        // Any running expand would fight the collapse; stop it and collapse from where it is.
+        const height = panel.getBoundingClientRect().height;
+        const { marginBottom } = getComputedStyle(panel);
+        panel.getAnimations().forEach((animation) => animation.cancel());
+        panel.classList.add('is-closing');
+        const animation = animatePanelSize(panel, { height, marginBottom }, { height: 0, marginBottom: '0px' });
+        // Hold the collapsed size until the panel is removed, so it doesn't spring back.
+        animation.effect?.updateTiming({ fill: 'forwards' });
+        animation.addEventListener('finish', removeIfCurrent);
+      }
     }
     markExpandedItem(null);
     expandedItemId = null;
@@ -656,19 +697,20 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     }
 
     insertAfter.insertAdjacentElement('afterend', panel);
-    panel.style.height = `${measurePanelHeight(panel, decoration)}px`;
+    const panelHeight = measurePanelHeight(panel, decoration);
+    if (panelHeight != null) {
+      panel.style.height = `${panelHeight}px`;
+    }
 
-    if (animate) {
-      requestAnimationFrame(() => {
-        if (token !== activeExpandToken) {
-          panel.remove();
-          return;
-        }
-        panel.classList.remove('is-collapsed');
-        if (!options.preScroll) {
-          setTimeout(() => scrollToItem(clickedItem, scrollBehavior), 50);
-        }
-      });
+    if (animate && !prefersReducedMotion()) {
+      panel.classList.remove('is-collapsed');
+      // Open size: the measured height side by side, or the content's natural height stacked.
+      const { marginBottom } = getComputedStyle(panel);
+      const height = panelHeight ?? panel.getBoundingClientRect().height;
+      animatePanelSize(panel, { height: 0, marginBottom: '0px' }, { height, marginBottom });
+      if (!options.preScroll) {
+        setTimeout(() => scrollToItem(clickedItem, scrollBehavior), 50);
+      }
     } else {
       panel.classList.remove('is-collapsed');
       if (!options.preScroll) {
@@ -1071,10 +1113,6 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     applyFilters();
   });
 
-  sortSelect?.addEventListener('change', () => {
-    applySort(sortSelect.value === 'newest' ? 'newest' : 'name');
-  });
-
   clearFiltersButton?.addEventListener('click', () => {
     clearFilters();
     searchInput.focus();
@@ -1135,6 +1173,13 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     pendingOpenAfterFilterResetId = targetId;
     focusAfterPendingOpen = true;
     clearFilters();
+  });
+
+  phoneWidth.addEventListener('change', () => {
+    syncSearchPlaceholder();
+    if (lastCounts) {
+      updateCategoryCounts(lastCounts.searchCount, lastCounts.categoryCounts);
+    }
   });
 
   let resizeTimer: ReturnType<typeof setTimeout> | null = null;

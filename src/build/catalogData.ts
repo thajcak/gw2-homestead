@@ -7,14 +7,12 @@ import { meaningfulDescription, sanitizeDisplayName } from '../utils/sanitizeTex
 import type { SpriteRef } from '../utils/sprite';
 import { buildIconSprites, type IconSprites } from './iconSprites';
 
-/** One row of catalog/search-index.json: everything the grid, search, filters and sort need. */
+/** One row of catalog/search-index.json: everything the grid, search and filters need. */
 export interface SearchIndexEntry {
   id: number;
   name: string;
   description: string;
   categories: number[];
-  /** Day the decoration first appeared (YYYY-MM-DD), for "Newest first". */
-  added?: string;
   /** Icon cell in the sprite sheets; absent when the decoration has no local icon. */
   sprite?: SpriteRef;
 }
@@ -80,7 +78,6 @@ export async function buildSearchIndex(): Promise<SearchIndexEntry[]> {
       name: sanitizeDisplayName(decoration.name),
       description: meaningfulDescription(decoration.description),
       categories: decoration.categories,
-      ...(decoration.added ? { added: decoration.added } : {}),
       ...(sprite ? { sprite } : {}),
     };
   });
