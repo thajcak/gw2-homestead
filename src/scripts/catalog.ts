@@ -1,13 +1,9 @@
-import type { Category, Decoration } from '../types';
+import type { PublishedDecoration as Decoration, SearchIndexEntry } from '../build/catalogData';
+import type { Category } from '../types';
 import type { OptimizedImage } from '../types/optimizedImage';
 import { sanitizeDisplayName, sanitizeText } from '../utils/sanitizeText';
 
-export interface SearchIndexEntry {
-  id: number;
-  name: string;
-  description: string;
-  categories: number[];
-}
+export type { SearchIndexEntry };
 
 const ANIMATION_MS = 200;
 const MAX_ICON_LOADS = 3;
@@ -166,13 +162,11 @@ function renderExpandedDecoration(
   categoryMap: Map<number, string>,
   itemsPerRow: number,
   decorationIndex: number,
-  previewUrls: Record<string, OptimizedImage>,
   deferPreviewLoad = false
 ): string {
   const displayName = sanitizeDisplayName(decoration.name);
   const indicatorLeft = `calc(50% + ${(decorationIndex % itemsPerRow) * (74 + 16)}px - ${(itemsPerRow * (74 + 16) - 16) / 2}px + 37px)`;
-  const preview = previewUrls[String(decoration.id)];
-  const imageFrameContent = renderPreviewImage(preview, displayName, deferPreviewLoad);
+  const imageFrameContent = renderPreviewImage(decoration.preview, displayName, deferPreviewLoad);
 
   const categoryTags = decoration.categories
     .map((catId) => {
@@ -262,18 +256,14 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   const catalogIndexPath = basePath ? `${basePath}/` : '/';
   const catalogBase = catalogUrl(baseUrl, 'catalog');
 
-  const [searchIndex, categories, iconManifest, previewUrls] = await Promise.all([
+  // Icon URLs ride in the search index and preview metadata in each decoration's JSON (fetched
+  // when its panel opens), so startup needs only these two small files.
+  const [searchIndex, categories] = await Promise.all([
     fetch(catalogUrl(baseUrl, 'catalog/search-index.json')).then(
       (response) => response.json() as Promise<SearchIndexEntry[]>
     ),
     fetch(catalogUrl(baseUrl, 'catalog/categories.json')).then(
       (response) => response.json() as Promise<Category[]>
-    ),
-    fetch(catalogUrl(baseUrl, 'catalog/icon-manifest.json')).then(
-      (response) => response.json() as Promise<Record<string, string>>
-    ),
-    fetch(catalogUrl(baseUrl, 'catalog/preview-manifest.json')).then(
-      (response) => response.json() as Promise<Record<string, OptimizedImage>>
     ),
   ]);
 
@@ -538,7 +528,6 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
       categoryMap,
       itemsPerRow,
       decorationIndex,
-      previewUrls,
       options.deferPreview ?? false
     );
     const panel = wrapper.firstElementChild as HTMLElement;
@@ -776,7 +765,7 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   }
 
   function iconUrl(id: number): string {
-    const optimized = iconManifest[String(id)];
+    const optimized = searchIndexById.get(id)?.icon;
     if (!optimized) {
       return resolveAsset(undefined, baseUrl);
     }

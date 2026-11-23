@@ -28,7 +28,6 @@ Other commands:
 
 - `npm run build` — production build to `dist/`
 - `npm run preview` — preview the production build locally
-- `npm run generate-catalog` — build `public/catalog/` search index and decoration JSON artifacts
 - `npm run localize-images` — download remote decoration icons and preview images into `src/assets/decorations/`
 - `npm run fetch-decorations` — run the full sync the hourly workflow runs (GW2 API, wiki, content files, images); `-- --ids 1,2` limits wiki lookups
 

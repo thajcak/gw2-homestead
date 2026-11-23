@@ -7,7 +7,6 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "node scripts/preview-server.mjs",
-    "generate-catalog": "node scripts/generate-catalog-artifacts.mjs",
     "localize-images": "node scripts/localize-decoration-images.mjs",
     "fetch-wiki": "node scripts/fetch-wiki-enrichment.mjs",
     "fetch-decorations": "node scripts/run-fetch-decorations.mjs",
