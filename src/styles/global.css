@@ -844,6 +844,7 @@ html:has(.changelog-panel[open]) {
 
 .expanded-gallery__thumb {
   flex: none;
+  width: 56px;
   height: 56px;
   padding: 0;
   overflow: hidden;
@@ -866,8 +867,9 @@ html:has(.changelog-panel[open]) {
 
 .expanded-gallery__thumb img {
   display: block;
-  width: auto;
+  width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .expanded-gallery__thumb:hover {

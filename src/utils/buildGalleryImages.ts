@@ -7,11 +7,8 @@ import { toOptimizedImage } from './toOptimizedImage';
 const VIEW_MAX_WIDTH = 1024;
 const VIEW_WIDTHS = [512, 768, VIEW_MAX_WIDTH];
 const VIEW_SIZES = '(max-width: 768px) 100vw, 66vw';
-/** Thumbnails are drawn 56px tall (global.css), so twice that for sharp screens. */
-const THUMB_HEIGHT = 112;
-/** Very tall or wide images are cropped to these widths so every thumbnail stays clickable. */
-const THUMB_MIN_WIDTH = 56;
-const THUMB_MAX_WIDTH = 224;
+/** Thumbnails are drawn 56px square (global.css), so twice that for sharp screens. */
+const THUMB_SIZE = 112;
 
 const assetModules = import.meta.glob<{ default: ImageMetadata }>(
   '../assets/decorations/*/{preview,view-*}.webp',
@@ -39,16 +36,12 @@ export async function optimizeView(source: string): Promise<OptimizedImage | nul
   return toOptimizedImage(image);
 }
 
-/** A small thumbnail of the preview or a view for the gallery strip. */
+/** A square thumbnail of the preview or a view for the gallery strip, cropped from the center. */
 export async function buildThumbnail(source: string): Promise<OptimizedImage | null> {
   const asset = assetFor(source);
   if (!asset) {
     return null;
   }
-  const width = Math.min(
-    THUMB_MAX_WIDTH,
-    Math.max(THUMB_MIN_WIDTH, Math.round((THUMB_HEIGHT * asset.width) / asset.height))
-  );
-  const image = await getImage({ src: asset, width, height: THUMB_HEIGHT, fit: 'cover', format: 'webp' });
+  const image = await getImage({ src: asset, width: THUMB_SIZE, height: THUMB_SIZE, fit: 'cover', format: 'webp' });
   return toOptimizedImage(image);
 }
