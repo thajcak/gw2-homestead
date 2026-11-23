@@ -1,0 +1,43 @@
+{
+  "id": 247,
+  "name": "Ornate Bed",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    2
+  ],
+  "icon": "decorations/247/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Ornate Bed (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Ornate Bed",
+    "sheet": "Homestead Recipe Book: Misc. Items, Volume 2",
+    "id": 14862,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Bolt of Silk"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Lump of Mistonium"
+      }
+    ]
+  },
+  "original": {
+    "width": 1371,
+    "height": 932,
+    "source": "decorations/247/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/88/Ornate_Bed.jpg"
+  }
+}

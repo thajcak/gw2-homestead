@@ -1,0 +1,43 @@
+{
+  "id": 842,
+  "name": "Silver Greer Trophy",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    12
+  ],
+  "icon": "decorations/842/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Silver Greer Trophy (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Silver Greer Trophy",
+    "sheet": "Recipe: Silver Greer Trophy",
+    "id": 14953,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 90,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 40,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Greer's Token"
+      }
+    ]
+  },
+  "original": {
+    "width": 643,
+    "height": 972,
+    "source": "decorations/842/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/b/b5/Silver_Greer_Trophy_detail.jpg"
+  }
+}

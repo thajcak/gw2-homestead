@@ -1,0 +1,33 @@
+{
+  "id": 1150,
+  "name": "Ship Bow",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "icon": "decorations/1150/icon.png",
+  "added": "2026-02-03",
+  "wikiTitle": "Ship Bow (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Ship Bow",
+    "id": 15505,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 15,
+        "item": "Refined Homestead Wood"
+      }
+    ]
+  },
+  "original": {
+    "width": 1083,
+    "height": 1440,
+    "source": "decorations/1150/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/0/04/Ship_Bow.jpg"
+  }
+}

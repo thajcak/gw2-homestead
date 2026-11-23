@@ -1,0 +1,40 @@
+{
+  "id": 1131,
+  "name": "Decima Shard",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "icon": "decorations/1131/icon.png",
+  "added": "2026-02-03",
+  "wikiTitle": "Decima Shard (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Decima Shard",
+    "sheet": "Recipe: Decima Shard",
+    "id": 15533,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Charged Core"
+      }
+    ]
+  },
+  "original": {
+    "width": 973,
+    "height": 507,
+    "source": "decorations/1131/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/6/6d/Decima_Shard.jpg"
+  },
+  "previewMissingSince": "2026-11-23"
+}

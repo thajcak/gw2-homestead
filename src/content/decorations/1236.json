@@ -1,0 +1,43 @@
+{
+  "id": 1236,
+  "name": "Bird's Nest",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    20,
+    7
+  ],
+  "icon": "decorations/1236/icon.png",
+  "added": "2026-09-15",
+  "wikiTitle": "Bird's Nest (Handiwork)",
+  "recipe": {
+    "id": 15765,
+    "name": "Bird's Nest",
+    "disciplines": "Handiworker",
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "rating": 1,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 25,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Evergreen Lodestone"
+      }
+    ]
+  },
+  "original": {
+    "width": 1099,
+    "height": 975,
+    "source": "decorations/1236/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/1/1d/Bird%27s_Nest.jpg"
+  }
+}

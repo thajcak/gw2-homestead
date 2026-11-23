@@ -1,0 +1,43 @@
+{
+  "id": 84,
+  "name": "Super Chest",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    22
+  ],
+  "icon": "decorations/84/icon.png",
+  "added": "2025-03-11",
+  "wikiTitle": "Super Chest (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Super Chest",
+    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 3",
+    "id": 14424,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 16,
+        "item": "Bauble"
+      },
+      {
+        "slot": 3,
+        "quantity": 4,
+        "item": "Gold Ingot"
+      }
+    ]
+  },
+  "original": {
+    "width": 1489,
+    "height": 849,
+    "source": "decorations/84/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/7c/Super_Chest_front.jpg"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "id": 1245,
+  "name": "Seer Tome (Open)",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    4,
+    20
+  ],
+  "icon": "decorations/1245/icon.png",
+  "added": "2026-09-15",
+  "wikiTitle": "Seer Tome (Open) (Handiwork)",
+  "recipe": {
+    "id": 15762,
+    "name": "Seer Tome (Open)",
+    "disciplines": "Handiworker",
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "rating": 1,
+    "sheet": "Homestead Recipe Book: Seer Catalogue Volume 2",
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Sheet of Premium Paper"
+      }
+    ]
+  },
+  "original": {
+    "width": 1025,
+    "height": 893,
+    "source": "decorations/1245/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/d/d0/Seer_Tome_%28Open%29.jpg"
+  }
+}

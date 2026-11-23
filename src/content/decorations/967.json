@@ -1,0 +1,38 @@
+{
+  "id": 967,
+  "name": "Burlap Sack",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    20,
+    4
+  ],
+  "icon": "decorations/967/icon.png",
+  "added": "2025-10-30",
+  "wikiTitle": "Burlap Sack (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Burlap Sack",
+    "id": 15399,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 3,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Bolt of Jute"
+      }
+    ]
+  },
+  "original": {
+    "width": 1283,
+    "height": 850,
+    "source": "decorations/967/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/85/Burlap_Sack_top.jpg"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": 157,
+  "name": "Superior Trebuchet Siege",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    11
+  ],
+  "icon": "decorations/157/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Superior Trebuchet Siege (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Superior Trebuchet Siege",
+    "sheet": "Homestead Recipe Book: World vs. World, Volume 2",
+    "id": 14694,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 37,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "WvW Skirmish Claim Ticket"
+      },
+      {
+        "slot": 3,
+        "quantity": 25,
+        "item": "Watchwork Sprocket"
+      }
+    ]
+  },
+  "original": {
+    "width": 1960,
+    "height": 2160,
+    "source": "decorations/157/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/e/ef/Superior_Trebuchet.jpg"
+  }
+}

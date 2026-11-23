@@ -1,0 +1,43 @@
+{
+  "id": 503,
+  "name": "Bronze Qadim Trophy",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    12
+  ],
+  "icon": "decorations/503/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Bronze Qadim Trophy (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Bronze Qadim Trophy",
+    "sheet": "Recipe: Bronze Qadim Trophy",
+    "id": 14484,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 36,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Qadim's Token (trophy)"
+      }
+    ]
+  },
+  "original": {
+    "width": 469,
+    "height": 968,
+    "source": "decorations/503/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/c/c3/Bronze_Qadim_Trophy_detail.jpg"
+  }
+}

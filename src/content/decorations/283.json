@@ -1,0 +1,42 @@
+{
+  "id": 283,
+  "name": "Branded Devourer Monument",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    9
+  ],
+  "icon": "decorations/283/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Branded Devourer Monument",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Homestead Recipe Book: Statues and Trophies",
+    "id": 14352,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 120,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 40,
+        "item": "Prismaticite Crystal"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Crystal Lodestone"
+      }
+    ]
+  },
+  "original": {
+    "width": 829,
+    "height": 972,
+    "source": "decorations/283/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/f/fd/Branded_Devourer_Monument_Token_front.jpg"
+  }
+}

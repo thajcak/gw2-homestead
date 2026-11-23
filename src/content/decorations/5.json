@@ -1,0 +1,45 @@
+{
+  "id": 5,
+  "name": "Seitung Bridge",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    1,
+    24,
+    17
+  ],
+  "icon": "decorations/5/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Seitung Bridge (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Seitung Bridge",
+    "sheet": "Homestead Recipe Book: Four Winds, Volume 6",
+    "id": 14734,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 34,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Writ of Seitung Province"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Elaborate Totem"
+      }
+    ]
+  },
+  "original": {
+    "width": 2880,
+    "height": 1440,
+    "source": "decorations/5/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/8c/Seitung_Bridge.jpg"
+  }
+}

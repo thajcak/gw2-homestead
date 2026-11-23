@@ -1,0 +1,48 @@
+{
+  "id": 784,
+  "name": "Corrupted Eagle Shrine",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    9
+  ],
+  "icon": "decorations/784/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Corrupted Eagle Shrine (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Corrupted Eagle Shrine",
+    "sheet": "Homestead Recipe Book: Statues and Trophies",
+    "id": 14226,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 90,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 100,
+        "item": "Eternal Ice Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Corrupted Lodestone"
+      },
+      {
+        "slot": 4,
+        "quantity": 1,
+        "item": "Glacial Lodestone"
+      }
+    ]
+  },
+  "original": {
+    "width": 749,
+    "height": 971,
+    "source": "decorations/784/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/3/33/Corrupted_Eagle_Shrine_Token_side.jpg"
+  }
+}

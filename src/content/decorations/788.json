@@ -1,0 +1,43 @@
+{
+  "id": 788,
+  "name": "Gold Samarog Trophy",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    12
+  ],
+  "icon": "decorations/788/icon.png",
+  "added": "2025-03-11",
+  "wikiTitle": "Gold Samarog Trophy (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Gold Samarog Trophy",
+    "sheet": "Recipe: Gold Samarog Trophy",
+    "id": 14110,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 130,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 100,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Impaled Prisoner Token"
+      }
+    ]
+  },
+  "original": {
+    "width": 451,
+    "height": 791,
+    "source": "decorations/788/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/4/49/Gold_Samarog_Trophy_side.jpg"
+  }
+}

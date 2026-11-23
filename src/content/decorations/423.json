@@ -1,0 +1,43 @@
+{
+  "id": 423,
+  "name": "Guild Arrow Cart Siege",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    11
+  ],
+  "icon": "decorations/423/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Guild Arrow Cart Siege (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Guild Arrow Cart Siege",
+    "sheet": "Homestead Recipe Book: World vs. World",
+    "id": 14851,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 34,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "WvW Skirmish Claim Ticket"
+      },
+      {
+        "slot": 3,
+        "quantity": 4,
+        "item": "Guild Commendation"
+      }
+    ]
+  },
+  "original": {
+    "width": 2400,
+    "height": 1930,
+    "source": "decorations/423/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/8e/Guild_Arrow_Cart.jpg"
+  }
+}

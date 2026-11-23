@@ -1,0 +1,44 @@
+{
+  "id": 10,
+  "name": "Firecracker",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    10,
+    21
+  ],
+  "icon": "decorations/10/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Firecracker (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Firecracker",
+    "sheet": "Homestead Recipe Book: Lunar New Year, Volume 1",
+    "id": 14453,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 28,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Lucky Draketail"
+      },
+      {
+        "slot": 3,
+        "quantity": 25,
+        "item": "Research Note"
+      }
+    ]
+  },
+  "original": {
+    "width": 1125,
+    "height": 1421,
+    "source": "decorations/10/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/d/de/Firecracker_%28decoration%29.jpg"
+  }
+}

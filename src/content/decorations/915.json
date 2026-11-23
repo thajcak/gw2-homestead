@@ -1,0 +1,42 @@
+{
+  "id": 915,
+  "name": "Whale Hologram",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    17,
+    4
+  ],
+  "icon": "decorations/915/icon.png",
+  "added": "2025-06-03",
+  "wikiTitle": "Whale Hologram",
+  "recipe": {
+    "rating": 500,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 15115,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 100,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 100,
+        "item": "Flawless Fish Fillet"
+      },
+      {
+        "slot": 3,
+        "quantity": 100,
+        "item": "Imperial Favor"
+      }
+    ]
+  },
+  "original": {
+    "width": 806,
+    "height": 660,
+    "source": "decorations/915/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/9d/Whale_Hologram_%28decoration%29_2.jpg"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": 384,
+  "name": "Square Firepit",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    5
+  ],
+  "icon": "decorations/384/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Square Firepit (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Square Firepit",
+    "sheet": "Homestead Recipe Book: Lights",
+    "id": 14439,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 28,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Molten Core"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Bag of Mortar"
+      }
+    ]
+  },
+  "original": {
+    "width": 938,
+    "height": 954,
+    "source": "decorations/384/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/b/b6/Square_Firepit_top.jpg"
+  }
+}

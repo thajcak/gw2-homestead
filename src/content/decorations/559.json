@@ -1,0 +1,44 @@
+{
+  "id": 559,
+  "name": "Spooky Cauldron",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    9,
+    25
+  ],
+  "icon": "decorations/559/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Spooky Cauldron (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Spooky Cauldron",
+    "sheet": "Homestead Recipe Book: Halloween, Volume 1",
+    "id": 14818,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "Glob of Ectoplasm"
+      },
+      {
+        "slot": 3,
+        "quantity": 125,
+        "item": "Pieces of Candy Corn"
+      }
+    ]
+  },
+  "original": {
+    "width": 879,
+    "height": 1080,
+    "source": "decorations/559/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/d/d9/Spooky_Cauldron_2.jpg"
+  }
+}

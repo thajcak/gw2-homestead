@@ -1,0 +1,38 @@
+{
+  "id": 1249,
+  "name": "Withered Ivy",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    20,
+    7
+  ],
+  "icon": "decorations/1249/icon.png",
+  "added": "2026-09-15",
+  "wikiTitle": "Withered Ivy (Handiwork)",
+  "recipe": {
+    "id": 15766,
+    "name": "Withered Ivy",
+    "disciplines": "Handiworker",
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "rating": 1,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 25,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Evergreen Lodestone"
+      }
+    ]
+  },
+  "previewMissingSince": "2026-11-23"
+}

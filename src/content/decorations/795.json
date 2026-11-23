@@ -1,0 +1,43 @@
+{
+  "id": 795,
+  "name": "Statue of Grenth Token",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    12
+  ],
+  "icon": "decorations/795/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Statue of Grenth Token (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Statue of Grenth Token",
+    "sheet": "Recipe: Statue of Grenth Token",
+    "id": 14646,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 100,
+        "item": "Volatile Magic"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Statue Token"
+      }
+    ]
+  },
+  "original": {
+    "width": 605,
+    "height": 676,
+    "source": "decorations/795/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/0/04/Statue_of_Grenth_Token.jpg"
+  }
+}

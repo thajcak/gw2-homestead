@@ -1,0 +1,44 @@
+{
+  "id": 323,
+  "name": "Charr Tank",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    11
+  ],
+  "icon": "decorations/323/icon.png",
+  "added": "2025-06-03",
+  "wikiTitle": "Charr Tank (Handiwork)",
+  "recipe": {
+    "rating": 500,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Charr Tank",
+    "sheet": "Recipe: Charr Tank",
+    "id": 14282,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 95,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 100,
+        "item": "War Supply"
+      },
+      {
+        "slot": 3,
+        "quantity": 100,
+        "item": "Hatched Chili"
+      }
+    ]
+  },
+  "original": {
+    "width": 2016,
+    "height": 1440,
+    "source": "decorations/323/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/91/Charr_Tank_Token.jpg"
+  },
+  "previewMissingSince": "2026-11-23"
+}

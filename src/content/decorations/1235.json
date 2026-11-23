@@ -1,0 +1,44 @@
+{
+  "id": 1235,
+  "name": "Canthan Merchant Canopy",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    1,
+    24
+  ],
+  "icon": "decorations/1235/icon.png",
+  "added": "2026-08-11",
+  "wikiTitle": "Canthan Merchant Canopy (Handiwork)",
+  "recipe": {
+    "id": 15720,
+    "name": "Canthan Merchant Canopy",
+    "disciplines": "Handiworker",
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "rating": 300,
+    "sheet": "Recipe: Canthan Merchant Canopy",
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 12,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Hard Wood Plank"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Quartz Crystal"
+      }
+    ]
+  },
+  "original": {
+    "width": 1182,
+    "height": 1080,
+    "source": "decorations/1235/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/3/3f/Canthan_Merchant_Canopy_top.jpg"
+  }
+}

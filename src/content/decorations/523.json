@@ -1,0 +1,44 @@
+{
+  "id": 523,
+  "name": "Potted Jungle Grass",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    6,
+    15
+  ],
+  "icon": "decorations/523/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Potted Jungle Grass (Handiwork)",
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Potted Jungle Grass",
+    "sheet": "Homestead Recipe Book: Plants, Volume 1",
+    "id": 14235,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Jungle Grass Seed"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Mordrem Sliver"
+      }
+    ]
+  },
+  "original": {
+    "width": 1206,
+    "height": 965,
+    "source": "decorations/523/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/8f/Potted_Jungle_Grass_top.jpg"
+  }
+}

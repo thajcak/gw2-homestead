@@ -1,0 +1,45 @@
+{
+  "id": 725,
+  "name": "Gramophone",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    4,
+    25
+  ],
+  "icon": "decorations/725/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Gramophone (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Gramophone",
+    "sheet": "Homestead Recipe Book: Halloween, Volume 1",
+    "id": 14806,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 28,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Destroyer Core"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Watchwork Sprocket"
+      }
+    ]
+  },
+  "original": {
+    "width": 763,
+    "height": 1356,
+    "source": "decorations/725/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/6/65/Gramophone.jpg"
+  },
+  "previewMissingSince": "2026-11-23"
+}

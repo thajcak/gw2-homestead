@@ -1,0 +1,44 @@
+{
+  "id": 334,
+  "name": "Astral Ward Wall",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    18,
+    1
+  ],
+  "icon": "decorations/334/icon.png",
+  "added": "2025-03-11",
+  "wikiTitle": "Astral Ward Wall (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Astral Ward Wall",
+    "sheet": "Homestead Recipe Book: Amnytas, Volume 1",
+    "id": 14788,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 29,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 24,
+        "item": "Static Charge"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Research Note"
+      }
+    ]
+  },
+  "original": {
+    "width": 1647,
+    "height": 1317,
+    "source": "decorations/334/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/f/f2/Astral_Ward_Wall.jpg"
+  }
+}

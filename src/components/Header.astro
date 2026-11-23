@@ -1,0 +1,74 @@
+---
+import type { Category } from '../types';
+import homesteadIcon from '../assets/homestead.png';
+import { formatDay } from '../utils/formatDay';
+
+interface Props {
+  categories: Pick<Category, 'id' | 'name'>[];
+  /** The latest batch of additions, for the Recently added badge. */
+  latestAdded?: { day: string; count: number };
+}
+
+const { categories, latestAdded } = Astro.props;
+---
+
+<header class="header">
+  <div class="header__inner">
+    <h1 class="header__brand">
+      <a id="home-link" class="header__brand-link" href={import.meta.env.BASE_URL}>
+        <img src={homesteadIcon.src} alt="" width="32" height="32" />
+        <span class="header__title">Homestead<span class="header__title-tail"> Decorations</span></span>
+      </a>
+    </h1>
+
+    <div class="header__controls">
+      <div class="header__search-wrap">
+        <label for="search-input" class="visually-hidden">Search decorations</label>
+        <input
+          id="search-input"
+          type="search"
+          autocomplete="off"
+          class="header__search"
+          placeholder="Search names and categories"
+        />
+        <button
+          id="clear-search"
+          type="button"
+          class="header__clear-search is-hidden"
+          aria-label="Clear search"
+        >
+          ×
+        </button>
+      </div>
+
+      <label for="category-select" class="visually-hidden">Category</label>
+      <select id="category-select" class="header__select header__select--category">
+        <option value="all">All categories</option>
+        {
+          categories.map((category) => (
+            <option value={category.id} data-category-count data-category-name={category.name}>
+              {category.name}
+            </option>
+          ))
+        }
+      </select>
+    </div>
+
+    <button id="open-changelog" type="button" class="header__changelog" aria-haspopup="dialog">
+      <span class="header__changelog-label">Recently added</span>
+      <span class="header__changelog-short" aria-hidden="true">New</span>
+      {
+        latestAdded ? (
+          <>
+            <span class="header__badge" aria-hidden="true">
+              {latestAdded.count}
+            </span>
+            <span class="visually-hidden">
+              ({latestAdded.count} new on {formatDay(latestAdded.day)})
+            </span>
+          </>
+        ) : null
+      }
+    </button>
+  </div>
+</header>

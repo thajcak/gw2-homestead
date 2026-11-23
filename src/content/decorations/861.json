@@ -1,0 +1,45 @@
+{
+  "id": 861,
+  "name": "Mr. Quiggles",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    26,
+    19,
+    4
+  ],
+  "icon": "decorations/861/icon.png",
+  "added": "2024-12-10",
+  "wikiTitle": "Mr. Quiggles (Handiwork)",
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Mr. Quiggles",
+    "sheet": "Mr. Quiggles Crafting Recipe",
+    "id": 15001,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 30,
+        "item": "Lowland Pine Log"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Honey Flower"
+      }
+    ]
+  },
+  "original": {
+    "width": 1610,
+    "height": 1440,
+    "source": "decorations/861/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/3/3f/Mr._Quiggles.jpg"
+  }
+}

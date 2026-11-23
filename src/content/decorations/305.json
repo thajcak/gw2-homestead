@@ -1,0 +1,38 @@
+{
+  "id": 305,
+  "name": "Obstacle: Wall",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    1
+  ],
+  "icon": "decorations/305/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Obstacle: Wall (Handiwork)",
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Obstacle: Wall",
+    "sheet": "Homestead Recipe Book: Guild Arena",
+    "id": 14680,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 3,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 4,
+        "item": "Copper Ore"
+      }
+    ]
+  },
+  "original": {
+    "width": 1306,
+    "height": 1190,
+    "source": "decorations/305/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/5/53/Obstacle-_Wall_%28top%29.jpg"
+  }
+}

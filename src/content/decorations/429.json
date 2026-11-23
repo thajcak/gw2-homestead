@@ -1,0 +1,43 @@
+{
+  "id": 429,
+  "name": "Keg",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    3
+  ],
+  "icon": "decorations/429/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Keg (Handiwork)",
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Keg",
+    "sheet": "Homestead Recipe Book: Misc. Items, Volume 1",
+    "id": 14707,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 25,
+        "item": "Stein of Hearty Ale"
+      },
+      {
+        "slot": 3,
+        "quantity": 25,
+        "item": "Fresh Winterberry"
+      }
+    ]
+  },
+  "original": {
+    "width": 1122,
+    "height": 929,
+    "source": "decorations/429/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/e/ef/Keg_front_view.jpg"
+  }
+}

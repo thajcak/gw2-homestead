@@ -1,0 +1,34 @@
+{
+  "id": 1111,
+  "name": "Sandcastle",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "icon": "decorations/1111/icon.png",
+  "added": "2026-02-03",
+  "wikiTitle": "Sandcastle (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Sandcastle",
+    "sheet": "Recipe: Sandcastle",
+    "id": 15590,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Pile of Coarse Sand"
+      }
+    ]
+  },
+  "original": {
+    "width": 431,
+    "height": 509,
+    "source": "decorations/1111/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/c/ca/Sandcastle.jpg"
+  }
+}

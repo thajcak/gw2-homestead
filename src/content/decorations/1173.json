@@ -1,0 +1,37 @@
+{
+  "id": 1173,
+  "name": "Verdant Door",
+  "description": "",
+  "categories": [
+    27
+  ],
+  "icon": "decorations/1173/icon.png",
+  "added": "2026-02-25",
+  "wikiTitle": "Verdant Door",
+  "recipe": {
+    "rating": 0,
+    "type": "Homestead Decoration",
+    "source": "Recipe sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Black Lion Verdant Door Recipe",
+    "id": 15600,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Refined Homestead Metal"
+      }
+    ]
+  },
+  "original": {
+    "width": 1800,
+    "height": 1440,
+    "source": "decorations/1173/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/3/36/Verdant_Door_back.jpg"
+  }
+}

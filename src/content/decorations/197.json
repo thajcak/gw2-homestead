@@ -1,0 +1,38 @@
+{
+  "id": 197,
+  "name": "Bonfire",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    5
+  ],
+  "icon": "decorations/197/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Bonfire (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Bonfire",
+    "sheet": "Homestead Recipe Book: Lights",
+    "id": 14532,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 4,
+        "item": "Molten Fragment"
+      }
+    ]
+  },
+  "original": {
+    "width": 891,
+    "height": 969,
+    "source": "decorations/197/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/c/c7/Bonfire_top.jpg"
+  }
+}

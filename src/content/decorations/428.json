@@ -1,0 +1,44 @@
+{
+  "id": 428,
+  "name": "Awakened Tar Pit",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    16,
+    14
+  ],
+  "icon": "decorations/428/icon.png",
+  "added": "2025-03-11",
+  "wikiTitle": "Awakened Tar Pit (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Awakened Tar Pit",
+    "sheet": "Homestead Recipe Book: Awakened, Volume 1",
+    "id": 14426,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 40,
+        "item": "Congealed Putrescence"
+      },
+      {
+        "slot": 3,
+        "quantity": 15,
+        "item": "Pouch of Black Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 1275,
+    "height": 926,
+    "source": "decorations/428/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/1/18/Awakened_Tar_Pit_front.jpg"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": 39,
+  "name": "Ascalonian Tree",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    7
+  ],
+  "icon": "decorations/39/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Ascalonian Tree (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Ascalonian Tree",
+    "sheet": "Homestead Recipe Book: Trees, Volume 2",
+    "id": 14571,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Ascalonian Lumber Core"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Petrified Wood"
+      }
+    ]
+  },
+  "original": {
+    "width": 1152,
+    "height": 1440,
+    "source": "decorations/39/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/92/Ascalonian_Tree.jpg"
+  }
+}

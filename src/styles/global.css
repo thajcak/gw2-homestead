@@ -1,0 +1,1081 @@
+:root {
+  --color-bg: #f3f4f6;
+  --color-surface: #ffffff;
+  --color-border: #d1d5db;
+  --color-border-light: #e5e7eb;
+  --color-text: #111827;
+  --color-text-muted: #4b5563;
+  --color-text-soft: #6b7280;
+  --color-accent: #2563eb;
+  --color-accent-hover: #1d4ed8;
+  --color-dark: #111827;
+  --color-dark-soft: #374151;
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.05);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  /* Set from the header's real height in catalog.ts; this is the fallback. */
+  --header-height: 4rem;
+  /* Must match SPRITE_COLUMNS in src/utils/sprite.ts. */
+  --sprite-columns: 10;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+/* Keep the page behind the Recently Added dialog still while it is open. */
+html:has(.changelog-panel[open]) {
+  overflow: hidden;
+}
+
+.site {
+  min-height: 100vh;
+}
+
+.main {
+  padding-inline: 1.5rem;
+}
+
+.empty-state {
+  padding-block: 2.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--color-text-soft);
+}
+
+#load-error p {
+  margin: 0 0 0.75rem;
+}
+
+.empty-state__button {
+  padding: 0.375rem 0.75rem;
+  border: 1px solid var(--color-dark);
+  border-radius: var(--radius-md);
+  background: var(--color-dark);
+  color: #ffffff;
+  font-size: 0.875rem;
+}
+
+/*
+ * An icon drawn from a sprite sheet (src/build/iconSprites.ts). The element sets its sheet as
+ * background-image plus --sprite-col / --sprite-row; --sprite-size is the drawn icon size.
+ */
+.sprite-icon {
+  --sprite-size: 64px;
+  background-repeat: no-repeat;
+  background-size: calc(var(--sprite-columns) * var(--sprite-size)) auto;
+  background-position:
+    calc(var(--sprite-col, 0) * var(--sprite-size) * -1)
+    calc(var(--sprite-row, 0) * var(--sprite-size) * -1);
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+/*
+ * One row at every width. As the window narrows, the title drops "Decorations" and then
+ * hides (the logo stays), "Recently added" becomes "New", and the search box and category
+ * select shrink; nothing wraps.
+ */
+.header__inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1.5rem;
+}
+
+.header__brand {
+  flex: none;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.header__brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.header__brand-link img {
+  flex: none;
+  width: 2rem;
+  height: 2rem;
+}
+
+.header__brand-link:hover .header__title {
+  text-decoration: underline;
+}
+
+.header__controls {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.header__select,
+.header__search {
+  height: 2.25rem;
+  padding: 0 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  font-size: 0.875rem;
+  color: var(--color-text);
+}
+
+.header__search-wrap {
+  position: relative;
+  flex: 0 1 16rem;
+  min-width: 0;
+}
+
+/* Wide enough, when there is room, for "Black Lion Decorations (123)". */
+.header__select--category {
+  flex: 0 1 17.5rem;
+  min-width: 0;
+  text-overflow: ellipsis;
+}
+
+.header__select:focus,
+.header__search:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 0;
+  border-color: var(--color-accent);
+}
+
+.header__search {
+  width: 100%;
+  padding-right: 2.5rem;
+}
+
+/* Room for the clear button only once there is text to clear. */
+.header__search:placeholder-shown {
+  padding-right: 0.75rem;
+}
+
+/* The clear button below replaces the browser's own. */
+.header__search::-webkit-search-cancel-button {
+  display: none;
+}
+
+.header__clear-search {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 100%;
+  transform: translateY(-50%);
+  border: 0;
+  background: transparent;
+  color: #9ca3af;
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+.header__clear-search:hover {
+  color: var(--color-text-muted);
+}
+
+.header__changelog {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 0.5rem;
+  height: 2.25rem;
+  padding: 0 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.header__changelog:hover {
+  background: #f9fafb;
+}
+
+.header__changelog-short {
+  display: none;
+}
+
+.header__badge {
+  min-width: 1.25rem;
+  padding: 0.0625rem 0.375rem;
+  border-radius: 9999px;
+  background: var(--color-accent);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  text-align: center;
+}
+
+@media (max-width: 1000px) {
+  .header__title-tail {
+    display: none;
+  }
+}
+
+/* The title and the long button label stay in the accessibility tree, just not on screen. */
+@media (max-width: 760px) {
+  .header__title,
+  .header__changelog-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .header__changelog-short {
+    display: inline;
+  }
+}
+
+@media (max-width: 600px) {
+  .header__inner {
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .header__controls {
+    gap: 0.5rem;
+  }
+
+  .header__search-wrap {
+    flex: 1 1 0;
+  }
+
+  .header__select--category {
+    flex: 1.2 1 0;
+  }
+
+  .header__changelog {
+    gap: 0.375rem;
+    padding: 0 0.5rem;
+  }
+
+  /* 16px keeps iOS Safari from zooming the page when a field gets focus. */
+  .header__select,
+  .header__search,
+  .header__changelog {
+    height: 2.5rem;
+  }
+
+  .header__select,
+  .header__search {
+    font-size: 1rem;
+  }
+
+  .header__select {
+    padding-inline: 0.5rem;
+  }
+}
+
+/* The result count, plus "Clear filters" while a search or category is active. */
+.results-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 1.75rem;
+  margin: 0 0 1rem;
+}
+
+.results-count {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--color-text-soft);
+}
+
+.results-bar__clear {
+  padding: 0.125rem 0.25rem;
+  border: 0;
+  background: transparent;
+  font-size: 0.875rem;
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.results-bar__clear:hover {
+  color: var(--color-accent-hover);
+}
+
+.results-bar__clear[hidden] {
+  display: none;
+}
+
+.catalog-grid-wrap {
+  padding: 2rem 1rem;
+}
+
+/* Phones: less side padding, so a 375px screen fits four icons per row instead of three. */
+@media (max-width: 600px) {
+  .main {
+    padding-inline: 0;
+  }
+
+  .catalog-grid-wrap {
+    padding: 1rem 0.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog-grid-wrap {
+    padding-inline: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog-grid-wrap {
+    padding-inline: 4rem;
+  }
+}
+
+.catalog-grid {
+  --catalog-grid-gap: 1rem;
+  display: grid;
+  gap: var(--catalog-grid-gap);
+  grid-template-columns: repeat(auto-fill, 74px);
+  justify-content: center;
+  grid-auto-rows: max-content;
+}
+
+.catalog-item {
+  position: relative;
+  width: 74px;
+  height: 74px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-lg);
+  background: transparent;
+  scroll-margin-top: calc(var(--header-height) + 1.5rem);
+}
+
+.catalog-item:hover {
+  outline: 2px solid #60a5fa;
+  outline-offset: 1px;
+}
+
+.catalog-item:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.catalog-item[aria-expanded='true'] .catalog-icon {
+  border-color: var(--color-accent);
+}
+
+.catalog-tooltip {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 60;
+  max-width: 16rem;
+  padding: 0.375rem 0.625rem;
+  border-radius: var(--radius-md);
+  background: var(--color-dark);
+  box-shadow: var(--shadow-lg);
+  color: #ffffff;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.3;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.1s ease-out;
+}
+
+.catalog-tooltip.is-visible {
+  opacity: 1;
+}
+
+.catalog-tooltip::after {
+  content: '';
+  position: absolute;
+  left: var(--tooltip-arrow-x, 50%);
+  width: 0.5rem;
+  height: 0.5rem;
+  background: inherit;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.catalog-tooltip[data-placement='top']::after {
+  bottom: -0.25rem;
+}
+
+.catalog-tooltip[data-placement='bottom']::after {
+  top: -0.25rem;
+}
+
+.catalog-icon {
+  --sprite-size: 70px; /* 74px item minus its 2px border on each side */
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 2px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  /* Only the color: the shorthand would reset the sprite's size and position. */
+  background-color: #f3f4f6;
+}
+
+.catalog-icon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: #e5e7eb;
+}
+
+.catalog-icon.is-loaded::before {
+  display: none;
+}
+
+.catalog-icon--missing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text-soft);
+  background-color: #e5e7eb;
+}
+
+.expanded-decoration {
+  grid-column: 1 / -1;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-height: 70vh;
+  min-height: min-content;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  overflow: visible;
+  color: #ffffff;
+}
+
+/* Before catalog.ts animates it open; the expand and collapse are height animations there. */
+.expanded-decoration.is-collapsed {
+  height: 0 !important;
+  min-height: 0;
+  overflow: clip;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.expanded-decoration.is-closing {
+  pointer-events: none;
+}
+
+.expanded-decoration-gradient {
+  position: relative;
+  height: 100%;
+  max-height: 100%;
+  overflow: visible;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(to bottom, black, rgb(31, 41, 55) 2%, rgb(31, 41, 55) 98%, black);
+}
+
+.expanded-decoration__body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: min(100% - 3rem, 88rem);
+  height: 100%;
+  max-height: 100%;
+  min-height: 0;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  overflow: hidden;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.expanded-decoration__layout {
+  display: grid;
+  flex: 1 1 auto;
+  grid-template-columns: 1fr;
+  gap: 0;
+  height: 100%;
+  max-height: 100%;
+  min-height: 0;
+}
+
+@media (min-width: 1024px) {
+  .expanded-decoration__layout {
+    grid-template-columns: minmax(0, 2fr) minmax(18rem, 1fr);
+  }
+}
+
+.expanded-decoration__media {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  max-height: 100%;
+  padding-block: 1rem;
+  overflow: hidden;
+}
+
+.expanded-decoration__details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  max-height: 100%;
+  padding-block: 1.25rem;
+  font-size: 0.875rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: left;
+}
+
+@media (min-width: 1024px) {
+  .expanded-decoration__details {
+    padding-left: 1.5rem;
+    border-left: 1px solid rgb(55 65 81 / 0.6);
+  }
+}
+
+.decoration-indicator {
+  --notch-half-width: 18.5px;
+  --notch-tip-gap: 0.5rem;
+  --notch-height: calc(var(--catalog-grid-gap) - var(--notch-tip-gap));
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  border-left: var(--notch-half-width) solid transparent;
+  border-right: var(--notch-half-width) solid transparent;
+  border-bottom: var(--notch-height) solid #000000;
+  transform: translate(-50%, -100%);
+  pointer-events: none;
+}
+
+.expanded-heading {
+  width: 100%;
+  margin-bottom: 0.75rem;
+}
+
+.expanded-title {
+  margin: 0;
+  font-size: 1.375rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.expanded-wiki-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #60a5fa;
+  text-decoration: none;
+}
+
+.expanded-wiki-link:hover {
+  color: #93c5fd;
+}
+
+.expanded-description {
+  margin: 0 0 1rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #d1d5db;
+  white-space: pre-line;
+}
+
+.expanded-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  width: 100%;
+}
+
+.expanded-tag {
+  padding: 0.125rem 0.625rem;
+  border-radius: 9999px;
+  background: var(--color-dark-soft);
+  font-size: 0.8125rem;
+  color: #d1d5db;
+}
+
+.expanded-recipe-section {
+  width: 100%;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgb(55 65 81 / 0.6);
+}
+
+.expanded-recipe-empty {
+  margin: 0;
+  color: #9ca3af;
+}
+
+.expanded-recipe {
+  width: 100%;
+  font-size: 0.875rem;
+  color: #d1d5db;
+}
+
+.expanded-recipe__title {
+  margin: 0 0 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #9ca3af;
+}
+
+.expanded-recipe__meta {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 0.75rem;
+  width: 100%;
+  margin: 0 0 0.75rem;
+}
+
+.expanded-recipe__meta dt {
+  margin: 0;
+  color: #9ca3af;
+}
+
+.expanded-recipe__meta dd {
+  margin: 0;
+}
+
+.expanded-recipe-list {
+  display: grid;
+  gap: 0.125rem;
+  width: 100%;
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.expanded-recipe-break {
+  overflow-wrap: anywhere;
+}
+
+.expanded-preview {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  background: rgb(31 41 55 / 0.2);
+}
+
+.expanded-preview__skeleton {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: rgb(55 65 81 / 0.55);
+}
+
+.expanded-preview.is-loaded .expanded-preview__skeleton {
+  display: none;
+}
+
+.expanded-preview__img {
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+}
+
+.expanded-preview.is-loaded .expanded-preview__img {
+  opacity: 1;
+}
+
+/* A square card that fits its icon and note, instead of filling the media column. */
+.expanded-preview.is-missing {
+  flex: none;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: auto;
+  height: auto;
+  aspect-ratio: 1;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  background: rgb(0 0 0 / 0.2);
+  text-align: center;
+}
+
+.expanded-preview__icon {
+  --sprite-size: 128px;
+  display: block;
+  width: 128px;
+  height: 128px;
+  border-radius: var(--radius-lg);
+}
+
+.expanded-preview__note {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: #d1d5db;
+}
+
+/*
+ * Below 1024px the image sits above the details. The panel then takes its content's height
+ * (catalog.ts leaves its height unset) and the page scrolls, instead of two inner scroll boxes.
+ */
+@media (max-width: 1023.98px) {
+  .expanded-decoration {
+    max-height: none;
+  }
+
+  .expanded-decoration-gradient,
+  .expanded-decoration__body,
+  .expanded-decoration__layout,
+  .expanded-decoration__media,
+  .expanded-decoration__details,
+  .expanded-preview {
+    height: auto;
+    max-height: none;
+  }
+
+  .expanded-decoration__body {
+    width: 100%;
+    padding-inline: 1rem;
+  }
+
+  .expanded-decoration__details {
+    padding-top: 0.25rem;
+    overflow: visible;
+  }
+
+  /*
+   * Sized from the preview's dimensions (set inline by catalog.ts) rather than the loaded file,
+   * so the panel's height is known before the image arrives and doesn't jump when it does.
+   */
+  .expanded-preview__img {
+    width: min(100%, calc(var(--preview-w) * 1px), calc(60vh * var(--preview-w) / var(--preview-h)));
+    height: auto;
+    aspect-ratio: var(--preview-w) / var(--preview-h);
+  }
+}
+
+.changelog-panel {
+  position: fixed;
+  inset: 0 0 0 auto;
+  width: min(90vw, 500px);
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-left: 1px solid var(--color-border-light);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-lg);
+  color: var(--color-text);
+}
+
+.changelog-panel[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.changelog-panel::backdrop {
+  background: rgb(0 0 0 / 0.5);
+}
+
+.changelog-panel__header {
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.changelog-panel__title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+}
+
+.changelog-panel__heading {
+  margin: 0;
+  font-size: inherit;
+}
+
+.changelog-panel__title {
+  border: 0;
+  background: transparent;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.changelog-panel__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.changelog-panel__action,
+.changelog-panel__close {
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.changelog-panel__action {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.changelog-panel__action:hover {
+  background: #f9fafb;
+}
+
+.changelog-panel__close {
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  border-color: transparent;
+  background: transparent;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--color-text-soft);
+}
+
+.changelog-panel__close:hover {
+  color: var(--color-text);
+}
+
+.changelog-panel__scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0.75rem 1rem;
+}
+
+.changelog-panel__empty {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--color-text-soft);
+}
+
+.changelog-panel__retry {
+  margin-left: 0.25rem;
+  padding: 0.125rem 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.changelog-day-section {
+  margin-bottom: 1.25rem;
+}
+
+.changelog-day-section__title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin: 0 0 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.changelog-day-section__meta {
+  font-weight: 400;
+  color: var(--color-text-soft);
+}
+
+.changelog-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.changelog-entry {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.5rem 0.25rem 0.25rem;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  text-align: left;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.changelog-entry:hover {
+  background: #f9fafb;
+  color: var(--color-text);
+}
+
+.changelog-entry__icon {
+  --sprite-size: 24px;
+  flex: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 0.25rem;
+}
+
+.changelog-entry__icon--missing {
+  background: #e5e7eb;
+}
+
+.filter-prompt {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 220;
+  width: min(90vw, 420px);
+  padding: 1rem;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-lg);
+}
+
+.filter-prompt__text {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--color-text);
+}
+
+.filter-prompt__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.filter-prompt__button {
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+}
+
+.filter-prompt__button--secondary {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.filter-prompt__button--secondary:hover {
+  background: #f9fafb;
+}
+
+.filter-prompt__button--primary {
+  border: 1px solid var(--color-dark);
+  background: var(--color-dark);
+  color: #ffffff;
+}
+
+.filter-prompt__button--primary:hover {
+  background: #000000;
+}
+
+/* Touch screens: controls at least ~44px tall, the usual minimum for a fingertip. */
+@media (pointer: coarse) {
+  .changelog-panel__action,
+  .filter-prompt__button {
+    min-height: 2.75rem;
+  }
+
+  .changelog-entry {
+    min-height: 2.5rem;
+  }
+
+  .header__clear-search {
+    width: 2.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .expanded-decoration,
+  .catalog-icon::before,
+  .expanded-preview__skeleton,
+  .expanded-preview__img,
+  .catalog-tooltip {
+    animation: none;
+    transition: none;
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": 844,
+  "name": "Silver Decima Trophy",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    12
+  ],
+  "icon": "decorations/844/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Silver Decima Trophy (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Silver Decima Trophy",
+    "sheet": "Recipe: Silver Decima Trophy",
+    "id": 14952,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 90,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 40,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Decima's Token"
+      }
+    ]
+  },
+  "original": {
+    "width": 403,
+    "height": 973,
+    "source": "decorations/844/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/e/e6/Silver_Decima_Trophy_front.jpg"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": 540,
+  "name": "Griffon Statue",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    9
+  ],
+  "icon": "decorations/540/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Griffon Statue (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Griffon Statue",
+    "sheet": "Homestead Recipe Book: Statues",
+    "id": 14510,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "Topaz Lump"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Large Claw"
+      }
+    ]
+  },
+  "original": {
+    "width": 960,
+    "height": 1440,
+    "source": "decorations/540/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/b/b1/Griffon_Statue.jpg"
+  },
+  "previewMissingSince": "2026-11-23"
+}

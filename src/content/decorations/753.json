@@ -1,0 +1,43 @@
+{
+  "id": 753,
+  "name": "Obstacle: Strike Turret",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    11
+  ],
+  "icon": "decorations/753/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Obstacle: Strike Turret (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Obstacle: Strike Turret",
+    "sheet": "Homestead Recipe Book: Guild Arena",
+    "id": 14398,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Watchwork Sprocket"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Airship Part"
+      }
+    ]
+  },
+  "original": {
+    "width": 992,
+    "height": 1323,
+    "source": "decorations/753/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/b/b0/Obstacle-_Strike_Turret.jpg"
+  }
+}

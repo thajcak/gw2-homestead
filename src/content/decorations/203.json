@@ -1,0 +1,38 @@
+{
+  "id": 203,
+  "name": "Shatterer Crystal",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    12
+  ],
+  "icon": "decorations/203/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Shatterer Crystal (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Shatterer Crystal",
+    "sheet": "Recipe: Shatterer Crystal",
+    "id": 14215,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 27,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Crystal Lodestone"
+      }
+    ]
+  },
+  "original": {
+    "width": 1920,
+    "height": 1002,
+    "source": "decorations/203/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/8b/Shatterer_Crystal.jpg"
+  }
+}

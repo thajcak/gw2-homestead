@@ -1,0 +1,48 @@
+{
+  "id": 1035,
+  "name": "Canthan Lantern",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    17,
+    5
+  ],
+  "icon": "decorations/1035/icon.png",
+  "added": "2025-10-30",
+  "wikiTitle": "Canthan Lantern (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Canthan Lantern",
+    "id": 15243,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Lump of Glass"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Molten Core"
+      },
+      {
+        "slot": 4,
+        "quantity": 1,
+        "item": "Lamp Finial"
+      }
+    ]
+  },
+  "original": {
+    "width": 516,
+    "height": 507,
+    "source": "decorations/1035/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/1/1e/Canthan_Lantern.jpg"
+  }
+}

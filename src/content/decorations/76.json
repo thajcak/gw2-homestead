@@ -1,0 +1,43 @@
+{
+  "id": 76,
+  "name": "Tyrian Globe",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    4
+  ],
+  "icon": "decorations/76/icon.png",
+  "added": "2025-03-11",
+  "wikiTitle": "Tyrian Globe (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Tyrian Globe",
+    "sheet": "Homestead Recipe Book: Kryta, Volume 1",
+    "id": 14647,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 34,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 40,
+        "item": "Piece of Mother-of-Pearl"
+      },
+      {
+        "slot": 3,
+        "quantity": 3000,
+        "item": "Karma"
+      }
+    ]
+  },
+  "original": {
+    "width": 886,
+    "height": 1106,
+    "source": "decorations/76/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/89/Tyrian_Globe_front.jpg"
+  }
+}

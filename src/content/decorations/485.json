@@ -1,0 +1,44 @@
+{
+  "id": 485,
+  "name": "Demon Statue",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    9,
+    25
+  ],
+  "icon": "decorations/485/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Demon Statue (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Demon Statue",
+    "sheet": "Homestead Recipe Book: Halloween, Volume 2",
+    "id": 14592,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 11,
+        "item": "Rotted Titan Amber"
+      },
+      {
+        "slot": 3,
+        "quantity": 8,
+        "item": "Vial of Potent Blood"
+      }
+    ]
+  },
+  "original": {
+    "width": 641,
+    "height": 957,
+    "source": "decorations/485/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/c/c6/Demon_Statue.jpg"
+  }
+}

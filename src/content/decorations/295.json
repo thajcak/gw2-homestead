@@ -1,0 +1,44 @@
+{
+  "id": 295,
+  "name": "Ram Statue",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    9,
+    21
+  ],
+  "icon": "decorations/295/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Ram Statue (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Ram Statue",
+    "sheet": "Homestead Recipe Book: Lunar New Year Celestials",
+    "id": 14601,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 50,
+        "item": "Pouch of Red Pigment"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Rotted Titan Amber"
+      }
+    ]
+  },
+  "original": {
+    "width": 1021,
+    "height": 960,
+    "source": "decorations/295/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/d/d9/Ram_Statue.jpg"
+  }
+}

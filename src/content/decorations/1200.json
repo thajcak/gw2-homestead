@@ -1,0 +1,44 @@
+{
+  "id": 1200,
+  "name": "Seer Doorway",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "icon": "decorations/1200/icon.png",
+  "added": "2026-05-12",
+  "wikiTitle": "Seer Doorway (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Seer Doorway",
+    "sheet": "Homestead Recipe Book: Seer Catalogue Volume 1",
+    "id": 15647,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Pile of Shimmering Dust"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Brick of Clay"
+      }
+    ]
+  },
+  "original": {
+    "width": 1440,
+    "height": 1440,
+    "source": "decorations/1200/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/84/Seer_Doorway_front.jpg"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": 618,
+  "name": "Pew",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    2
+  ],
+  "icon": "decorations/618/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Pew (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Pew",
+    "sheet": "Homestead Recipe Book: Tables and Chairs",
+    "id": 14822,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 30,
+        "item": "Geode"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Linen Scrap"
+      }
+    ]
+  },
+  "original": {
+    "width": 1220,
+    "height": 1080,
+    "source": "decorations/618/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/88/Pew.jpg"
+  },
+  "previewMissingSince": "2026-11-23"
+}

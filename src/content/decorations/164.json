@@ -1,0 +1,45 @@
+{
+  "id": 164,
+  "name": "Elonian Teapot",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    16,
+    4
+  ],
+  "icon": "decorations/164/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Elonian Teapot (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Elonian Teapot",
+    "sheet": "Homestead Recipe Book: Misc. Items, Volume 1",
+    "id": 14438,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 24,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Opal Orb"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Powdered Rose Quartz"
+      }
+    ]
+  },
+  "original": {
+    "width": 951,
+    "height": 1330,
+    "source": "decorations/164/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/0/0b/Elonian_Teapot.jpg"
+  },
+  "previewMissingSince": "2026-11-23"
+}

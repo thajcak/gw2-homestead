@@ -1,0 +1,39 @@
+{
+  "id": 738,
+  "name": "Giant Candy Cane",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    10,
+    26
+  ],
+  "icon": "decorations/738/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Giant Candy Cane (Handiwork)",
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Giant Candy Cane",
+    "sheet": "Homestead Recipe Book: Wintersday, Volume 5",
+    "id": 14231,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Pile of Crystalline Dust"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Candy Cane"
+      }
+    ]
+  },
+  "previewMissingSince": "2026-11-23"
+}

@@ -1,0 +1,43 @@
+{
+  "id": 450,
+  "name": "Weathered Elonian Arch",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    1
+  ],
+  "icon": "decorations/450/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Weathered Elonian Arch (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Weathered Elonian Arch",
+    "sheet": "Homestead Recipe Book: Elonian Architecture",
+    "id": 14503,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Trade Contract"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Ley-Infused Sand"
+      }
+    ]
+  },
+  "original": {
+    "width": 813,
+    "height": 937,
+    "source": "decorations/450/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/6/6e/Weathered_Elonian_Arch_front_view.jpg"
+  }
+}

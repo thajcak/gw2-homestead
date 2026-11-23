@@ -1,0 +1,44 @@
+{
+  "id": 15,
+  "name": "Academic Wall",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    18,
+    1
+  ],
+  "icon": "decorations/15/icon.png",
+  "added": "2025-03-11",
+  "wikiTitle": "Academic Wall (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Academic Wall",
+    "sheet": "Homestead Recipe Book: Skywatch Archipelago, Volume 1",
+    "id": 14258,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 28,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 15,
+        "item": "Bag of Mortar"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Onyx Lodestone"
+      }
+    ]
+  },
+  "original": {
+    "width": 801,
+    "height": 1423,
+    "source": "decorations/15/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/e/ea/Academic_Wall.jpg"
+  }
+}

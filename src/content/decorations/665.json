@@ -1,0 +1,44 @@
+{
+  "id": 665,
+  "name": "Mausoleum",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    1,
+    25
+  ],
+  "icon": "decorations/665/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Mausoleum (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Mausoleum",
+    "sheet": "Homestead Recipe Book: Halloween, Volume 2",
+    "id": 14131,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 34,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 12,
+        "item": "Rotted Titan Amber"
+      },
+      {
+        "slot": 3,
+        "quantity": 7,
+        "item": "Ancient Bone"
+      }
+    ]
+  },
+  "original": {
+    "width": 591,
+    "height": 965,
+    "source": "decorations/665/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/0/03/Mausoleum_front.jpg"
+  }
+}

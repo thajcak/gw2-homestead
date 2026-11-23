@@ -1,0 +1,48 @@
+{
+  "id": 75,
+  "name": "Deluxe Wyvern Trophy",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    12
+  ],
+  "icon": "decorations/75/icon.png",
+  "added": "2025-03-11",
+  "wikiTitle": "Deluxe Wyvern Trophy (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Deluxe Wyvern Trophy",
+    "sheet": "Homestead Recipe Book: Dragon's Stand, Volume 1",
+    "id": 14942,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 48,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Mordrem Lodestone"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Evergreen Lodestone"
+      },
+      {
+        "slot": 4,
+        "quantity": 3,
+        "item": "Molten Lodestone"
+      }
+    ]
+  },
+  "original": {
+    "width": 912,
+    "height": 1368,
+    "source": "decorations/75/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/5/51/Deluxe_Wyvern_Trophy.jpg"
+  }
+}

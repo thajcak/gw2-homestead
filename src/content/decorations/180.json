@@ -1,0 +1,43 @@
+{
+  "id": 180,
+  "name": "Silver Qadim Trophy",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    12
+  ],
+  "icon": "decorations/180/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Silver Qadim Trophy (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Silver Qadim Trophy",
+    "sheet": "Recipe: Silver Qadim Trophy",
+    "id": 14483,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 90,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 40,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Qadim's Token (trophy)"
+      }
+    ]
+  },
+  "original": {
+    "width": 475,
+    "height": 970,
+    "source": "decorations/180/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/8f/Silver_Qadim_Trophy_detail.jpg"
+  }
+}

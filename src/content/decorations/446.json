@@ -1,0 +1,44 @@
+{
+  "id": 446,
+  "name": "Green Pirate Flag",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    10
+  ],
+  "icon": "decorations/446/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Green Pirate Flag (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Green Pirate Flag",
+    "sheet": "Homestead Recipe Book: Banners",
+    "id": 14379,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 6,
+        "item": "Bolt of Linen"
+      },
+      {
+        "slot": 3,
+        "quantity": 6,
+        "item": "Pouch of Green Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 640,
+    "height": 1280,
+    "source": "decorations/446/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/e/e1/Green_Pirate_Flag.jpg"
+  },
+  "previewMissingSince": "2026-11-23"
+}

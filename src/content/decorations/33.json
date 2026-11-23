@@ -1,0 +1,43 @@
+{
+  "id": 33,
+  "name": "Teleporter Exit",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    14
+  ],
+  "icon": "decorations/33/icon.png",
+  "added": "2025-03-11",
+  "wikiTitle": "Teleporter Exit (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Teleporter Exit",
+    "sheet": "Recipe: Teleporter Exit",
+    "id": 14300,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 95,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 120,
+        "item": "Volatile Magic"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Brilliant Djinn Doubloon"
+      }
+    ]
+  },
+  "original": {
+    "width": 561,
+    "height": 707,
+    "source": "decorations/33/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/6/6f/Djinn_Teleportation_Device_Inactive.jpg"
+  }
+}

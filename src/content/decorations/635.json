@@ -1,0 +1,45 @@
+{
+  "id": 635,
+  "name": "Elonian Cairn Stones",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    16,
+    14
+  ],
+  "icon": "decorations/635/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Elonian Cairn Stones (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Elonian Cairn Stones",
+    "sheet": "Homestead Recipe Book: Misc. Items, Volume 1",
+    "id": 14229,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 20,
+        "item": "Ley-Infused Sand"
+      },
+      {
+        "slot": 3,
+        "quantity": 30,
+        "item": "Volatile Magic"
+      }
+    ]
+  },
+  "original": {
+    "width": 1127,
+    "height": 1287,
+    "source": "decorations/635/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/a/a8/Elonian_Cairn_Stones.jpg"
+  },
+  "previewMissingSince": "2026-11-23"
+}

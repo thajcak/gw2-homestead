@@ -1,0 +1,43 @@
+{
+  "id": 296,
+  "name": "Worn Arch",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    1
+  ],
+  "icon": "decorations/296/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Worn Arch (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Worn Arch",
+    "sheet": "Homestead Recipe Book: Misc. Items, Volume 2",
+    "id": 14466,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Onyx Fragment"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Bag of Mortar"
+      }
+    ]
+  },
+  "original": {
+    "width": 562,
+    "height": 943,
+    "source": "decorations/296/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/1/19/Worn_Arch_front_view.jpg"
+  }
+}

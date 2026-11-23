@@ -1,0 +1,44 @@
+{
+  "id": 141,
+  "name": "Elaborate Sandstone Pillar",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    16,
+    1
+  ],
+  "icon": "decorations/141/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Elaborate Sandstone Pillar (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Elaborate Sandstone Pillar",
+    "sheet": "Homestead Recipe Book: Arches and Pillars",
+    "id": 14470,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Onyx Core"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Ley-Infused Sand"
+      }
+    ]
+  },
+  "original": {
+    "width": 1532,
+    "height": 1532,
+    "source": "decorations/141/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/c/c9/Elaborate_Sandstone_Pillar_2.jpg"
+  }
+}

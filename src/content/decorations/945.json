@@ -1,0 +1,44 @@
+{
+  "id": 945,
+  "name": "Elonian Bazaar Shade",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    1,
+    24
+  ],
+  "icon": "decorations/945/icon.png",
+  "added": "2025-07-15",
+  "wikiTitle": "Elonian Bazaar Shade (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Elonian Bazaar Shade",
+    "sheet": "Homestead Recipe Book: Four Winds, Volume 7",
+    "id": 15167,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Rotted Titan Amber"
+      },
+      {
+        "slot": 3,
+        "quantity": 50,
+        "item": "Jute Scrap"
+      }
+    ]
+  },
+  "original": {
+    "width": 1152,
+    "height": 1440,
+    "source": "decorations/945/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/6/63/Elonian_Bazaar_Shade.jpg"
+  }
+}

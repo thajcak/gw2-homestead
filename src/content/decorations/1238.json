@@ -1,0 +1,39 @@
+{
+  "id": 1238,
+  "name": "Seer Oculus",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    4,
+    20
+  ],
+  "icon": "decorations/1238/icon.png",
+  "added": "2026-09-15",
+  "wikiTitle": "Seer Oculus (Handiwork)",
+  "recipe": {
+    "id": 15724,
+    "name": "Seer Oculus",
+    "disciplines": "Handiworker",
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "rating": 1,
+    "sheet": "Homestead Recipe Book: Seer Catalogue Volume 2",
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Gold Ingot"
+      }
+    ]
+  },
+  "original": {
+    "width": 669,
+    "height": 974,
+    "source": "decorations/1238/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/0/07/Seer_Oculus_front.jpg"
+  }
+}

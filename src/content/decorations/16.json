@@ -1,0 +1,44 @@
+{
+  "id": 16,
+  "name": "Golden Rabbit Statue",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    9,
+    21
+  ],
+  "icon": "decorations/16/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Golden Rabbit Statue (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Golden Rabbit Statue",
+    "sheet": "Homestead Recipe Book: Lunar New Year Celestials",
+    "id": 14156,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 50,
+        "item": "Pouch of Red Pigment"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Moonstone Orb"
+      }
+    ]
+  },
+  "original": {
+    "width": 682,
+    "height": 960,
+    "source": "decorations/16/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/5/55/Golden_Rabbit_Statue.jpg"
+  }
+}

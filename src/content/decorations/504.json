@@ -1,0 +1,43 @@
+{
+  "id": 504,
+  "name": "Broken Ascalonian Pillar",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    1
+  ],
+  "icon": "decorations/504/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Broken Ascalonian Pillar (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Broken Ascalonian Pillar",
+    "sheet": "Homestead Recipe Book: Pillars",
+    "id": 14206,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 27,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Destroyer Fragment"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Bag of Mortar"
+      }
+    ]
+  },
+  "original": {
+    "width": 720,
+    "height": 1440,
+    "source": "decorations/504/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/2/2a/Ascalonian_Pillar_reference.jpg"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "id": 1167,
+  "name": "Stained Glass",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "icon": "decorations/1167/icon.png",
+  "added": "2026-02-03",
+  "wikiTitle": "Stained Glass (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Stained Glass",
+    "sheet": "Recipe: Stained Glass",
+    "id": 15443,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Lump of Glass"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Refined Homestead Metal"
+      }
+    ]
+  },
+  "original": {
+    "width": 1440,
+    "height": 3085,
+    "source": "decorations/1167/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/8e/Stained_Glass.jpg"
+  }
+}

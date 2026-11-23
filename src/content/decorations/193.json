@@ -1,0 +1,44 @@
+{
+  "id": 193,
+  "name": "Frost Legion Machine",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    14
+  ],
+  "icon": "decorations/193/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Frost Legion Machine (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Frost Legion Machine",
+    "sheet": "Homestead Recipe Book: Misc. Items, Volume 1",
+    "id": 14465,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 110,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "Corrupted Lodestone"
+      },
+      {
+        "slot": 3,
+        "quantity": 500,
+        "item": "War Supply"
+      }
+    ]
+  },
+  "original": {
+    "width": 812,
+    "height": 1080,
+    "source": "decorations/193/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/5/5e/Frost_Legion_Machine_Token.jpg"
+  },
+  "previewMissingSince": "2026-11-23"
+}

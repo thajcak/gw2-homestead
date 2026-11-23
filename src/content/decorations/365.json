@@ -1,0 +1,43 @@
+{
+  "id": 365,
+  "name": "Bronze Dhuum Trophy",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    12
+  ],
+  "icon": "decorations/365/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Bronze Dhuum Trophy (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Bronze Dhuum Trophy",
+    "sheet": "Recipe: Bronze Dhuum Trophy",
+    "id": 14518,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 36,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Dhuum's Token (trophy)"
+      }
+    ]
+  },
+  "original": {
+    "width": 657,
+    "height": 968,
+    "source": "decorations/365/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/3/3d/Bronze_Dhuum_Trophy_detail.jpg"
+  }
+}

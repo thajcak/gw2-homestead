@@ -1,0 +1,44 @@
+{
+  "id": 326,
+  "name": "Guild Bench",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    2
+  ],
+  "icon": "decorations/326/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Guild Bench (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Guild Bench",
+    "sheet": "Homestead Recipe Book: Benches, Chairs, Stools",
+    "id": 14593,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 6,
+        "item": "Linen Scrap"
+      },
+      {
+        "slot": 3,
+        "quantity": 2,
+        "item": "Smooth Scale"
+      }
+    ]
+  },
+  "original": {
+    "width": 1847,
+    "height": 920,
+    "source": "decorations/326/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/4/4b/Guild_Bench.jpg"
+  },
+  "previewMissingSince": "2026-11-23"
+}

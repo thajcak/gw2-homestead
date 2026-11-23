@@ -1,0 +1,34 @@
+{
+  "id": 1101,
+  "name": "White Mantle Statue",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "icon": "decorations/1101/icon.png",
+  "added": "2026-02-03",
+  "wikiTitle": "White Mantle Statue (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "White Mantle Statue",
+    "sheet": "Recipe: White Mantle Statue",
+    "id": 15486,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 20,
+        "item": "Refined Homestead Metal"
+      }
+    ]
+  },
+  "original": {
+    "width": 720,
+    "height": 1440,
+    "source": "decorations/1101/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/99/White_Mantle_Statue.jpg"
+  }
+}

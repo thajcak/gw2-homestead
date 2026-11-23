@@ -1,0 +1,33 @@
+{
+  "id": 119,
+  "name": "Worn Pillar",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    1
+  ],
+  "icon": "decorations/119/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Worn Pillar (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Worn Pillar",
+    "sheet": "Homestead Recipe Book: Pillars",
+    "id": 14113,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Onyx Fragment"
+      }
+    ]
+  },
+  "previewMissingSince": "2026-11-23"
+}

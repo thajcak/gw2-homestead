@@ -1,0 +1,43 @@
+{
+  "id": 830,
+  "name": "Antique Bell",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    25
+  ],
+  "icon": "decorations/830/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Antique Bell (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Antique Bell",
+    "sheet": "Recipe: Antique Bell;Homestead Recipe Book: Halloween, Volume 10",
+    "id": 14916,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 50,
+        "item": "Piece of Candy Corn"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Elder Wood Log"
+      }
+    ]
+  },
+  "original": {
+    "width": 1023,
+    "height": 1080,
+    "source": "decorations/830/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/f/f1/Antique_Bell.jpg"
+  }
+}

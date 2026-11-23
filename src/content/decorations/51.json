@@ -1,0 +1,43 @@
+{
+  "id": 51,
+  "name": "Charr Summit Banner",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    10
+  ],
+  "icon": "decorations/51/icon.png",
+  "added": "2025-03-11",
+  "wikiTitle": "Charr Summit Banner (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Charr Summit Banner",
+    "sheet": "Homestead Recipe Book: Summit Banners, Volume 1",
+    "id": 14141,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Bolt of Silk"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Superior Rune of the Citadel"
+      }
+    ]
+  },
+  "original": {
+    "width": 1657,
+    "height": 609,
+    "source": "decorations/51/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/99/Charr_Summit_Banner_detail.jpg"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": 944,
+  "name": "Lightning Aspect Crystal",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    1,
+    24
+  ],
+  "icon": "decorations/944/icon.png",
+  "added": "2025-07-15",
+  "wikiTitle": "Lightning Aspect Crystal (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Lightning Aspect Crystal",
+    "sheet": "Recipe: Lightning Aspect Crystal",
+    "id": 15171,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 20,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Charged Quartz Crystal"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Crystal Core"
+      }
+    ]
+  },
+  "original": {
+    "width": 703,
+    "height": 1249,
+    "source": "decorations/944/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/70/Lightning_Aspect_Crystal.jpg"
+  }
+}

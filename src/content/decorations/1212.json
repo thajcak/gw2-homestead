@@ -1,0 +1,44 @@
+{
+  "id": 1212,
+  "name": "Seer Lamp",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "icon": "decorations/1212/icon.png",
+  "added": "2026-05-12",
+  "wikiTitle": "Seer Lamp (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Seer Lamp",
+    "sheet": "Homestead Recipe Book: Seer Catalogue Volume 1",
+    "id": 15660,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Gold Ingot"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Charged Shard"
+      }
+    ]
+  },
+  "original": {
+    "width": 811,
+    "height": 973,
+    "source": "decorations/1212/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/1/19/Seer_Lamp.jpg"
+  }
+}

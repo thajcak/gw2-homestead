@@ -1,0 +1,38 @@
+{
+  "id": 970,
+  "name": "Simple Window",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "icon": "decorations/970/icon.png",
+  "added": "2025-10-30",
+  "wikiTitle": "Simple Window (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Simple Window",
+    "id": 15289,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Lump of Glass"
+      }
+    ]
+  },
+  "original": {
+    "width": 810,
+    "height": 1440,
+    "source": "decorations/970/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/73/Simple_Window_back.jpg"
+  }
+}

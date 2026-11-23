@@ -1,0 +1,44 @@
+{
+  "id": 1213,
+  "name": "Seer Mirror Small",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "icon": "decorations/1213/icon.png",
+  "added": "2026-05-12",
+  "wikiTitle": "Seer Mirror Small (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Seer Mirror Small",
+    "sheet": "Homestead Recipe Book: Seer Catalogue Volume 1",
+    "id": 15646,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 20,
+        "item": "Gold Ingot"
+      },
+      {
+        "slot": 3,
+        "quantity": 15,
+        "item": "Raw Enchanting Stone"
+      }
+    ]
+  },
+  "original": {
+    "width": 1080,
+    "height": 1440,
+    "source": "decorations/1213/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/d/dc/Seer_Mirror_Small_back.jpg"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": 953,
+  "name": "Ominous Fortress Buttress",
+  "description": "Crafted by scribes.",
+  "categories": [
+    25
+  ],
+  "icon": "decorations/953/icon.png",
+  "added": "2025-10-07",
+  "wikiTitle": "Ominous Fortress Buttress (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Ominous Fortress Buttress",
+    "sheet": "Recipe: Ominous Fortress Buttress",
+    "id": 15177,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Rotted Titan Amber"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Bag of Mortar"
+      }
+    ]
+  },
+  "original": {
+    "width": 836,
+    "height": 1080,
+    "source": "decorations/953/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/98/Ominous_Fortress_Buttress.jpg"
+  },
+  "previewMissingSince": "2026-11-23"
+}

@@ -1,0 +1,43 @@
+{
+  "id": 850,
+  "name": "Bronze Ura Trophy",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    12
+  ],
+  "icon": "decorations/850/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Bronze Ura Trophy (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Bronze Ura Trophy",
+    "sheet": "Recipe: Bronze Ura Trophy",
+    "id": 14976,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 36,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Ura's Token"
+      }
+    ]
+  },
+  "original": {
+    "width": 435,
+    "height": 970,
+    "source": "decorations/850/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/0/0b/Bronze_Ura_Trophy_front.jpg"
+  }
+}

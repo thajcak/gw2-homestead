@@ -1,0 +1,48 @@
+{
+  "id": 1248,
+  "name": "Seer Terminal",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    20
+  ],
+  "icon": "decorations/1248/icon.png",
+  "added": "2026-09-15",
+  "wikiTitle": "Seer Terminal (Handiwork)",
+  "recipe": {
+    "id": 15734,
+    "name": "Seer Terminal",
+    "disciplines": "Handiworker",
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "rating": 1,
+    "sheet": "Homestead Recipe Book: Seer Catalogue Volume 2",
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 20,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Gold Ingot"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Sapphire Orb"
+      },
+      {
+        "slot": 4,
+        "quantity": 25,
+        "item": "Raw Enchanting Stone"
+      }
+    ]
+  },
+  "original": {
+    "width": 707,
+    "height": 974,
+    "source": "decorations/1248/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/6/64/Seer_Terminal.jpg"
+  }
+}

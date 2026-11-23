@@ -1,0 +1,43 @@
+{
+  "id": 179,
+  "name": "Obstacle: Lava Floor",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    11
+  ],
+  "icon": "decorations/179/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Obstacle: Lava Floor (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Obstacle: Lava Floor",
+    "sheet": "Homestead Recipe Book: Guild Arena",
+    "id": 14369,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Molten Fragment"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Lump of Aurillium"
+      }
+    ]
+  },
+  "original": {
+    "width": 1838,
+    "height": 1226,
+    "source": "decorations/179/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/d/da/Obstacle-_Lava_Floor.jpg"
+  }
+}

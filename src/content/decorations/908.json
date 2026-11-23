@@ -1,0 +1,37 @@
+{
+  "id": 908,
+  "name": "Sea Raider Doorway",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    27
+  ],
+  "icon": "decorations/908/icon.png",
+  "added": "2025-05-12",
+  "wikiTitle": "Sea Raider Doorway",
+  "recipe": {
+    "rating": 0,
+    "type": "Homestead Decoration",
+    "source": "Recipe sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Black Lion Sea Raider Doorway Recipe",
+    "id": 15107,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Refined Homestead Wood"
+      }
+    ]
+  },
+  "original": {
+    "width": 1440,
+    "height": 1440,
+    "source": "decorations/908/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/91/Sea_Raider_Doorway_front.jpg"
+  }
+}

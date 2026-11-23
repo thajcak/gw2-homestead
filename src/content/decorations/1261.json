@@ -1,0 +1,38 @@
+{
+  "id": 1261,
+  "name": "Seer Chain",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "icon": "decorations/1261/icon.png",
+  "added": "2026-10-13",
+  "wikiTitle": "Seer Chain (Handiwork)",
+  "recipe": {
+    "id": 15780,
+    "name": "Seer Chain",
+    "disciplines": "Handiworker",
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "rating": 1,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 45,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 25,
+        "item": "Gold Ingot"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Shadowstone Fragment"
+      }
+    ]
+  },
+  "previewMissingSince": "2026-11-23"
+}

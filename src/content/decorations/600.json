@@ -1,0 +1,44 @@
+{
+  "id": 600,
+  "name": "Potted Junglerice",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    6,
+    15
+  ],
+  "icon": "decorations/600/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Potted Junglerice (Handiwork)",
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Potted Junglerice",
+    "sheet": "Homestead Recipe Book: Plants, Volume 1",
+    "id": 14239,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 24,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Jungle Grass Seed"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Mordrem Fragment"
+      }
+    ]
+  },
+  "original": {
+    "width": 1017,
+    "height": 965,
+    "source": "decorations/600/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/c/c3/Potted_Junglerice.jpg"
+  }
+}

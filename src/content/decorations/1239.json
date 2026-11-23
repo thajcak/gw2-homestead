@@ -1,0 +1,43 @@
+{
+  "id": 1239,
+  "name": "Norn Tent (Wide)",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    20,
+    4
+  ],
+  "icon": "decorations/1239/icon.png",
+  "added": "2026-09-15",
+  "wikiTitle": "Norn Tent (Wide) (Handiwork)",
+  "recipe": {
+    "id": 15748,
+    "name": "Norn Tent (Wide)",
+    "disciplines": "Handiworker",
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "rating": 1,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 60,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 20,
+        "item": "Thick Leather Section"
+      },
+      {
+        "slot": 3,
+        "quantity": 20,
+        "item": "Bolt of Jute"
+      }
+    ]
+  },
+  "original": {
+    "width": 1058,
+    "height": 956,
+    "source": "decorations/1239/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/2/20/Norn_Tent_%28Wide%29_front.jpg"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": 1132,
+  "name": "Dhuum's Torch",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "icon": "decorations/1132/icon.png",
+  "added": "2026-02-03",
+  "wikiTitle": "Dhuum's Torch (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Dhuum's Torch",
+    "sheet": "Recipe: Dhuum's Torch",
+    "id": 15585,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Pile of Incandescent Dust"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Pile of Vile Essence"
+      }
+    ]
+  },
+  "original": {
+    "width": 993,
+    "height": 1324,
+    "source": "decorations/1132/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/f/f4/Dhuum%27s_Torch.jpg"
+  }
+}

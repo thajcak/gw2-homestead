@@ -1,0 +1,43 @@
+{
+  "id": 1250,
+  "name": "Jungle Tree Branch (Broken)",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    20,
+    7
+  ],
+  "icon": "decorations/1250/icon.png",
+  "added": "2026-09-15",
+  "wikiTitle": "Jungle Tree Branch (Broken) (Handiwork)",
+  "recipe": {
+    "id": 15758,
+    "name": "Jungle Tree Branch (Broken)",
+    "disciplines": "Handiworker",
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "rating": 1,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Elder Wood Plank"
+      }
+    ]
+  },
+  "original": {
+    "width": 826,
+    "height": 870,
+    "source": "decorations/1250/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/2/2e/Jungle_Tree_Branch_%28Broken%29_side.jpg"
+  }
+}

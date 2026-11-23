@@ -1,0 +1,44 @@
+{
+  "id": 272,
+  "name": "Hanging Tree",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    7,
+    25
+  ],
+  "icon": "decorations/272/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Hanging Tree (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Hanging Tree",
+    "sheet": "Homestead Recipe Book: Halloween, Volume 2",
+    "id": 14134,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 33,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 4,
+        "item": "Glob of Ectoplasm"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Krytan Lumber Core"
+      }
+    ]
+  },
+  "original": {
+    "width": 1542,
+    "height": 1440,
+    "source": "decorations/272/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/2/21/Hanging_Tree.jpg"
+  }
+}

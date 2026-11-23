@@ -1,0 +1,45 @@
+{
+  "id": 409,
+  "name": "Refined Streetlamp",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    16,
+    5
+  ],
+  "icon": "decorations/409/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Refined Streetlamp (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Refined Streetlamp",
+    "sheet": "Homestead Recipe Book: Lights, Volume 2",
+    "id": 14744,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Molten Core"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Trade Contract"
+      }
+    ]
+  },
+  "original": {
+    "width": 1137,
+    "height": 1001,
+    "source": "decorations/409/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/0/0a/Refined_Street_Lamp_%28detail%29.jpg"
+  },
+  "previewMissingSince": "2026-11-23"
+}

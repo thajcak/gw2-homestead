@@ -1,0 +1,43 @@
+{
+  "id": 408,
+  "name": "Mists Dolyak Statue",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    9
+  ],
+  "icon": "decorations/408/icon.png",
+  "added": "2025-03-11",
+  "wikiTitle": "Mists Dolyak Statue (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Mists Dolyak Statue",
+    "sheet": "Homestead Recipe Book: Misc. Items, Volume 4",
+    "id": 14748,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 25,
+        "item": "WvW Skirmish Claim Ticket"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Superior Rune of the Dolyak"
+      }
+    ]
+  },
+  "original": {
+    "width": 835,
+    "height": 973,
+    "source": "decorations/408/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/b/b4/Mists_Dolyak_Statue_side.jpg"
+  }
+}

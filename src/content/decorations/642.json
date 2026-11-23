@@ -1,0 +1,43 @@
+{
+  "id": 642,
+  "name": "Gold Dhuum Trophy",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    12
+  ],
+  "icon": "decorations/642/icon.png",
+  "added": "2025-03-11",
+  "wikiTitle": "Gold Dhuum Trophy (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Gold Dhuum Trophy",
+    "sheet": "Recipe: Gold Dhuum Trophy",
+    "id": 14501,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 130,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 100,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Dhuum's Token (trophy)"
+      }
+    ]
+  },
+  "original": {
+    "width": 661,
+    "height": 972,
+    "source": "decorations/642/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/89/Gold_Dhuum_Trophy_detail.jpg"
+  }
+}

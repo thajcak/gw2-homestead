@@ -1,0 +1,45 @@
+{
+  "id": 679,
+  "name": "Potted Shrub",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    6,
+    15
+  ],
+  "icon": "decorations/679/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Potted Shrub (Handiwork)",
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Potted Shrub",
+    "sheet": "Homestead Recipe Book: Plants, Volume 1",
+    "id": 14253,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Evergreen Sliver"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Pile of Coarse Sand"
+      }
+    ]
+  },
+  "original": {
+    "width": 524,
+    "height": 724,
+    "source": "decorations/679/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/9b/Basic_Shrub.jpg"
+  },
+  "previewMissingSince": "2026-11-23"
+}

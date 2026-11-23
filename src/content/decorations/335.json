@@ -1,0 +1,43 @@
+{
+  "id": 335,
+  "name": "Mists Griffon Statue",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    9
+  ],
+  "icon": "decorations/335/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Mists Griffon Statue (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Mists Griffon Statue",
+    "sheet": "Homestead Recipe Book: World vs. World, Volume 2",
+    "id": 14147,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 25,
+        "item": "WvW Skirmish Claim Ticket"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Superior Rune of the Eagle"
+      }
+    ]
+  },
+  "original": {
+    "width": 583,
+    "height": 959,
+    "source": "decorations/335/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/a/aa/Mists_Griffon_Statue.jpg"
+  }
+}

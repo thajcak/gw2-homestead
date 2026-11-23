@@ -1,0 +1,38 @@
+{
+  "id": 244,
+  "name": "Obstacle: Wide Wall",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    1
+  ],
+  "icon": "decorations/244/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Obstacle: Wide Wall (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Obstacle: Wide Wall",
+    "sheet": "Homestead Recipe Book: Guild Arena",
+    "id": 14336,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 4,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Iron Ingot"
+      }
+    ]
+  },
+  "original": {
+    "width": 1440,
+    "height": 1440,
+    "source": "decorations/244/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/4/43/Obstacle-_Wide_Wall.jpg"
+  }
+}

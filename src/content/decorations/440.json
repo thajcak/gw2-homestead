@@ -1,0 +1,43 @@
+{
+  "id": 440,
+  "name": "Guild Barstool",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    2
+  ],
+  "icon": "decorations/440/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Guild Barstool (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Guild Barstool",
+    "sheet": "Homestead Recipe Book: Benches, Chairs, Stools",
+    "id": 14725,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 28,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 7,
+        "item": "Cured Rugged Leather Square"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Tub of Wood Glue"
+      }
+    ]
+  },
+  "original": {
+    "width": 753,
+    "height": 740,
+    "source": "decorations/440/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/2/2c/Guild_Barstool_top.jpg"
+  }
+}

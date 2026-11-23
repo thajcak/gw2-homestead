@@ -1,0 +1,44 @@
+{
+  "id": 868,
+  "name": "Golden Dragon Statue",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    21,
+    9
+  ],
+  "icon": "decorations/868/icon.png",
+  "added": "2025-01-28",
+  "wikiTitle": "Golden Dragon Statue (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Golden Dragon Statue",
+    "sheet": "Homestead Recipe Book: Lunar New Year Celestials",
+    "id": 15013,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 50,
+        "item": "Pouch of Red Pigment"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Destroyer Lodestone"
+      }
+    ]
+  },
+  "original": {
+    "width": 844,
+    "height": 960,
+    "source": "decorations/868/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/b/b0/Golden_Dragon_Statue_front_view.jpg"
+  }
+}

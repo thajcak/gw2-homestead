@@ -1,0 +1,43 @@
+{
+  "id": 526,
+  "name": "Guild Bar",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    2
+  ],
+  "icon": "decorations/526/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Guild Bar (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Guild Bar",
+    "sheet": "Homestead Recipe Book: Tables and Chairs",
+    "id": 14383,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 34,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Beryl Crystal"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Vial of Linseed Oil"
+      }
+    ]
+  },
+  "original": {
+    "width": 996,
+    "height": 888,
+    "source": "decorations/526/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/f/f6/Guild_Bar_side.jpg"
+  }
+}

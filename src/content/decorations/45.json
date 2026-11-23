@@ -1,0 +1,43 @@
+{
+  "id": 45,
+  "name": "Raven Spirit Statue",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    9
+  ],
+  "icon": "decorations/45/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Raven Spirit Statue (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Raven Spirit Statue",
+    "sheet": "Homestead Recipe Book: Statues",
+    "id": 14428,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 34,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 25,
+        "item": "Eternal Ice Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Vicious Claw"
+      }
+    ]
+  },
+  "original": {
+    "width": 1085,
+    "height": 1356,
+    "source": "decorations/45/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/2/2e/Raven_Statue_%28decoration%29.jpg"
+  }
+}

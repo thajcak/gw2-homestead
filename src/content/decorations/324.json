@@ -1,0 +1,43 @@
+{
+  "id": 324,
+  "name": "Balthazar Statue",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    9
+  ],
+  "icon": "decorations/324/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Balthazar Statue (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Balthazar Statue",
+    "sheet": "Homestead Recipe Book: Human Gods",
+    "id": 14683,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 34,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 12,
+        "item": "Ruby Orb"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Visage of Balthazar"
+      }
+    ]
+  },
+  "original": {
+    "width": 425,
+    "height": 730,
+    "source": "decorations/324/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/a/ab/Balthazar_Statue.jpg"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": 512,
+  "name": "Kryptis Wall",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    1
+  ],
+  "icon": "decorations/512/icon.png",
+  "added": "2025-03-11",
+  "wikiTitle": "Kryptis Wall (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Kryptis Wall",
+    "sheet": "Homestead Recipe Book: Inner Nayos, Volume 1",
+    "id": 14886,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 35,
+        "item": "Hardened Leather Section"
+      },
+      {
+        "slot": 3,
+        "quantity": 20,
+        "item": "Masterwork Rift Essence"
+      }
+    ]
+  },
+  "original": {
+    "width": 1576,
+    "height": 1296,
+    "source": "decorations/512/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/c/c9/Kryptis_Wall.jpg"
+  }
+}

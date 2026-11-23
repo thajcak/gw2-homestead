@@ -1,0 +1,38 @@
+{
+  "id": 989,
+  "name": "Galleon Hull (Middle)",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "icon": "decorations/989/icon.png",
+  "added": "2025-10-30",
+  "wikiTitle": "Galleon Hull (Middle) (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Galleon Hull (Middle)",
+    "id": 15309,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 100,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 40,
+        "item": "Refined Homestead Metal"
+      }
+    ]
+  },
+  "original": {
+    "width": 1280,
+    "height": 960,
+    "source": "decorations/989/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/e/e1/Galleon_Hull_%28Middle%29_front.jpg"
+  }
+}

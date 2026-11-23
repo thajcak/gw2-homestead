@@ -1,0 +1,43 @@
+{
+  "id": 893,
+  "name": "Super Grand Gate",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    22
+  ],
+  "icon": "decorations/893/icon.png",
+  "added": "2025-05-12",
+  "wikiTitle": "Super Grand Gate (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Super Grand Gate",
+    "sheet": "Homestead Recipe Book: Super Adventure Box, Volume 9",
+    "id": 15092,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 16,
+        "item": "Bauble"
+      },
+      {
+        "slot": 3,
+        "quantity": 16,
+        "item": "Pouch of Yellow Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 1001,
+    "height": 970,
+    "source": "decorations/893/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/78/Super_Grand_Gate_front.jpg"
+  }
+}

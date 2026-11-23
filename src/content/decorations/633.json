@@ -1,0 +1,43 @@
+{
+  "id": 633,
+  "name": "Hedge Planter",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    6
+  ],
+  "icon": "decorations/633/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Hedge Planter (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Hedge Planter",
+    "sheet": "Homestead Recipe Book: Hedge Mazes",
+    "id": 14529,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 3,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Bag of Mortar"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Karka Shell"
+      }
+    ]
+  },
+  "original": {
+    "width": 939,
+    "height": 965,
+    "source": "decorations/633/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/2/26/Hedge_Planter_side.jpg"
+  }
+}

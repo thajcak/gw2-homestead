@@ -1,0 +1,43 @@
+{
+  "id": 1054,
+  "name": "Galleon Hull Entryway",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "icon": "decorations/1054/icon.png",
+  "added": "2025-10-30",
+  "wikiTitle": "Galleon Hull Entryway (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Galleon Hull Entryway",
+    "id": 15247,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 200,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 80,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 3,
+        "quantity": 4,
+        "item": "Lump of Glass"
+      }
+    ]
+  },
+  "original": {
+    "width": 799,
+    "height": 956,
+    "source": "decorations/1054/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/6/68/Galleon_Hull_Entryway_side.jpg"
+  }
+}

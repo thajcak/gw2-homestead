@@ -1,0 +1,43 @@
+{
+  "id": 321,
+  "name": "Catapult Siege",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    11
+  ],
+  "icon": "decorations/321/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Catapult Siege (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Catapult Siege",
+    "sheet": "Homestead Recipe Book: World vs. World",
+    "id": 14793,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 31,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 4,
+        "item": "WvW Skirmish Claim Ticket"
+      },
+      {
+        "slot": 3,
+        "quantity": 20,
+        "item": "Wool Scrap"
+      }
+    ]
+  },
+  "original": {
+    "width": 1490,
+    "height": 1790,
+    "source": "decorations/321/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/2/25/Catapult.jpg"
+  }
+}

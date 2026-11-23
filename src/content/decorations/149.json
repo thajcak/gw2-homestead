@@ -1,0 +1,44 @@
+{
+  "id": 149,
+  "name": "Signal Lantern",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    16,
+    5
+  ],
+  "icon": "decorations/149/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Signal Lantern (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Signal Lantern",
+    "sheet": "Homestead Recipe Book: Lights",
+    "id": 14230,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 31,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 15,
+        "item": "Sliver of Twitching Forgemetal"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Sunstone Lump"
+      }
+    ]
+  },
+  "original": {
+    "width": 672,
+    "height": 955,
+    "source": "decorations/149/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/6/62/Signal_Lantern_pillar_close-up.jpg"
+  }
+}

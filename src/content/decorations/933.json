@@ -1,0 +1,44 @@
+{
+  "id": 933,
+  "name": "Norn Stair",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    23,
+    1
+  ],
+  "icon": "decorations/933/icon.png",
+  "added": "2025-06-03",
+  "wikiTitle": "Norn Stair (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Norn Stair",
+    "sheet": "Homestead Recipe Book: Dragon Bash, Volume 7; Recipe: Norn Stair",
+    "id": 15113,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Ancient Wood Plank"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Piece of Zhaitaffy"
+      }
+    ]
+  },
+  "original": {
+    "width": 1727,
+    "height": 1295,
+    "source": "decorations/933/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/9b/Norn_Stair.jpg"
+  }
+}

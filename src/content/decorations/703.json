@@ -1,0 +1,44 @@
+{
+  "id": 703,
+  "name": "Master Brewer's Keg",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    3,
+    12
+  ],
+  "icon": "decorations/703/icon.png",
+  "added": "2025-03-11",
+  "wikiTitle": "Master Brewer's Keg (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Master Brewer's Keg",
+    "sheet": "Homestead Recipe Book: Misc. Items, Volume 4",
+    "id": 14403,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 105,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 50,
+        "item": "Stein of Golden Ale"
+      },
+      {
+        "slot": 3,
+        "quantity": 1000,
+        "item": "Karma"
+      }
+    ]
+  },
+  "original": {
+    "width": 1027,
+    "height": 1369,
+    "source": "decorations/703/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/77/Master_Brewer%27s_Keg.jpg"
+  }
+}

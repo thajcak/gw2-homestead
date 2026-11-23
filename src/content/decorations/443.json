@@ -1,0 +1,43 @@
+{
+  "id": 443,
+  "name": "Lyssa Statue",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    9
+  ],
+  "icon": "decorations/443/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Lyssa Statue (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Lyssa Statue",
+    "sheet": "Homestead Recipe Book: Human Gods",
+    "id": 14777,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 34,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 12,
+        "item": "Opal Orb"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Visage of Lyssa"
+      }
+    ]
+  },
+  "original": {
+    "width": 536,
+    "height": 865,
+    "source": "decorations/443/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/a/ac/Lyssa_Statue.jpg"
+  }
+}

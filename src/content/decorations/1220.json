@@ -1,0 +1,43 @@
+{
+  "id": 1220,
+  "name": "Raven Totem",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    23
+  ],
+  "icon": "decorations/1220/icon.png",
+  "added": "2026-06-02",
+  "wikiTitle": "Raven Totem (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Raven Totem",
+    "sheet": "Recipe: Raven Totem",
+    "id": 15697,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Molten Core"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Piece of Zhaitaffy"
+      }
+    ]
+  },
+  "original": {
+    "width": 1014,
+    "height": 1077,
+    "source": "decorations/1220/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/a/ab/Raven_Totem_%28decoration%29_active.jpg"
+  }
+}

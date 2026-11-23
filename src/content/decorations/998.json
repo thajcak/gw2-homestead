@@ -1,0 +1,38 @@
+{
+  "id": 998,
+  "name": "Burlap Sack Pile",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    20,
+    4
+  ],
+  "icon": "decorations/998/icon.png",
+  "added": "2025-10-30",
+  "wikiTitle": "Burlap Sack Pile (Handiwork)",
+  "recipe": {
+    "id": 15292,
+    "name": "Burlap Sack Pile",
+    "disciplines": "Handiworker",
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "rating": 1,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 15,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 15,
+        "item": "Bolt of Jute"
+      }
+    ]
+  },
+  "original": {
+    "width": 1177,
+    "height": 969,
+    "source": "decorations/998/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/72/Burlap_Sack_Pile_top.jpg"
+  }
+}

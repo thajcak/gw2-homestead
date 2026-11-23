@@ -1,0 +1,43 @@
+{
+  "id": 1201,
+  "name": "Jungle Log Arched",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "icon": "decorations/1201/icon.png",
+  "added": "2026-05-12",
+  "wikiTitle": "Jungle Log Arched (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Jungle Log Arched",
+    "id": 15679,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 20,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 25,
+        "item": "Elder Wood Plank"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Evergreen Lodestone"
+      }
+    ]
+  },
+  "original": {
+    "width": 1080,
+    "height": 1920,
+    "source": "decorations/1201/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/3/32/Jungle_Log_Arched_side_1.jpg"
+  }
+}

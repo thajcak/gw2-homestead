@@ -1,0 +1,44 @@
+{
+  "id": 242,
+  "name": "Mordremoth Mandible",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    12
+  ],
+  "icon": "decorations/242/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Mordremoth Mandible (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Mordremoth Mandible",
+    "sheet": "Recipe: Mordremoth Mandible",
+    "id": 14101,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 50,
+        "item": "Vicious Fang"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Mordrem Sliver"
+      }
+    ]
+  },
+  "original": {
+    "width": 1260,
+    "height": 1260,
+    "source": "decorations/242/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/a/a1/Mordremoth_Mandible.jpg"
+  },
+  "previewMissingSince": "2026-11-23"
+}

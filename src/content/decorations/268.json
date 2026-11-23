@@ -1,0 +1,43 @@
+{
+  "id": 268,
+  "name": "Superior Golem Siege",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    11
+  ],
+  "icon": "decorations/268/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Superior Golem Siege (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Superior Golem Siege",
+    "sheet": "Homestead Recipe Book: World vs. World, Volume 2",
+    "id": 14106,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 38,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "WvW Skirmish Claim Ticket"
+      },
+      {
+        "slot": 3,
+        "quantity": 8,
+        "item": "Charged Quartz Crystal"
+      }
+    ]
+  },
+  "original": {
+    "width": 1327,
+    "height": 1440,
+    "source": "decorations/268/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/7c/Superior_Golem_Siege.jpg"
+  }
+}

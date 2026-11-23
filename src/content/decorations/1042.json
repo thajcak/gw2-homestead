@@ -1,0 +1,38 @@
+{
+  "id": 1042,
+  "name": "Ship Stairs",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "icon": "decorations/1042/icon.png",
+  "added": "2025-10-30",
+  "wikiTitle": "Ship Stairs (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Ship Stairs",
+    "id": 15235,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Elder Wood Plank"
+      }
+    ]
+  },
+  "original": {
+    "width": 990,
+    "height": 1091,
+    "source": "decorations/1042/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/5/5f/Ship_Stairs.jpg"
+  }
+}

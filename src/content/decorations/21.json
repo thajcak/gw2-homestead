@@ -1,0 +1,42 @@
+{
+  "id": 21,
+  "name": "Kodan Hero Statue",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    9,
+    19
+  ],
+  "icon": "decorations/21/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Kodan Hero Statue",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14314,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Rotted Titan Amber"
+      },
+      {
+        "slot": 3,
+        "quantity": 16,
+        "item": "Large Claw"
+      }
+    ]
+  },
+  "original": {
+    "width": 454,
+    "height": 1080,
+    "source": "decorations/21/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/1/1a/Kodan_Hero_Statue_back.jpg"
+  }
+}

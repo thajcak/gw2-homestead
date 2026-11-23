@@ -1,0 +1,43 @@
+{
+  "id": 80,
+  "name": "Silver Keep Construct Trophy",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    12
+  ],
+  "icon": "decorations/80/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Silver Keep Construct Trophy (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Silver Keep Construct Trophy",
+    "sheet": "Recipe: Silver Keep Construct Trophy",
+    "id": 14346,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 90,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 40,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Keep Construct Rubble (trophy)"
+      }
+    ]
+  },
+  "original": {
+    "width": 697,
+    "height": 968,
+    "source": "decorations/80/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/6/61/Silver_Keep_Construct_Trophy_detail.jpg"
+  }
+}

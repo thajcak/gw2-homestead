@@ -1,0 +1,38 @@
+{
+  "id": 1215,
+  "name": "Iron Door",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "icon": "decorations/1215/icon.png",
+  "added": "2026-05-12",
+  "wikiTitle": "Iron Door (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Iron Door",
+    "id": 15645,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Iron Ingot"
+      }
+    ]
+  },
+  "original": {
+    "width": 1080,
+    "height": 1500,
+    "source": "decorations/1215/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/7c/Iron_Door_open.jpg"
+  }
+}

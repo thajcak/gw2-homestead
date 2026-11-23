@@ -1,0 +1,38 @@
+{
+  "id": 1027,
+  "name": "Roped Fence",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "icon": "decorations/1027/icon.png",
+  "added": "2025-10-30",
+  "wikiTitle": "Roped Fence (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Roped Fence",
+    "id": 15326,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Flax Fiber"
+      }
+    ]
+  },
+  "previewMissingSince": "2026-11-23"
+}

@@ -1,0 +1,43 @@
+{
+  "id": 731,
+  "name": "White Flag",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    10
+  ],
+  "icon": "decorations/731/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "White Flag (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "White Flag",
+    "sheet": "Homestead Recipe Book: Banners",
+    "id": 14240,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 24,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Bolt of Cotton"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Pouch of White Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 891,
+    "height": 1337,
+    "source": "decorations/731/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/c/cd/White_Flag.jpg"
+  }
+}

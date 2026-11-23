@@ -1,0 +1,39 @@
+<dialog id="changelog-panel" class="changelog-panel" aria-labelledby="changelog-title">
+  <div class="changelog-panel__header">
+    <div class="changelog-panel__title-row">
+      <h2 class="changelog-panel__heading">
+        <button
+          id="changelog-title"
+          type="button"
+          class="changelog-panel__title"
+          title="Scroll to top"
+        >
+          Recently Added
+        </button>
+      </h2>
+      <div class="changelog-panel__actions">
+        <button
+          id="changelog-scroll-top"
+          type="button"
+          class="changelog-panel__action"
+          aria-label="Scroll to top"
+        >
+          To Top
+        </button>
+        <button
+          id="close-changelog"
+          type="button"
+          class="changelog-panel__close"
+          aria-label="Close panel"
+          autofocus
+        >
+          ×
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="changelog-scroll" class="changelog-panel__scroll">
+    <p class="changelog-panel__empty">Open to see recently added decorations.</p>
+  </div>
+</dialog>

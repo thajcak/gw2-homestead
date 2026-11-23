@@ -1,0 +1,44 @@
+{
+  "id": 1133,
+  "name": "Horse Statue",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    9,
+    21
+  ],
+  "icon": "decorations/1133/icon.png",
+  "added": "2026-02-03",
+  "wikiTitle": "Horse Statue (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Horse Statue",
+    "sheet": "Homestead Recipe Book: Lunar New Year Celestials; Recipe: Horse Statue",
+    "id": 15511,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 20,
+        "item": "Pouch of Red Pigment"
+      },
+      {
+        "slot": 3,
+        "quantity": 4,
+        "item": "Steel Ingot"
+      }
+    ]
+  },
+  "original": {
+    "width": 817,
+    "height": 971,
+    "source": "decorations/1133/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/a/a2/Horse_Statue_front.jpg"
+  }
+}

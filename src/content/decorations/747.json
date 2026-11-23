@@ -1,0 +1,44 @@
+{
+  "id": 747,
+  "name": "Forged Pylon",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    16,
+    14
+  ],
+  "icon": "decorations/747/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Forged Pylon (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Forged Pylon",
+    "sheet": "Homestead Recipe Book: Statues and Trophies",
+    "id": 14689,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 30,
+        "item": "Sliver of Twitching Forgemetal"
+      },
+      {
+        "slot": 3,
+        "quantity": 50,
+        "item": "Volatile Magic"
+      }
+    ]
+  },
+  "original": {
+    "width": 960,
+    "height": 1920,
+    "source": "decorations/747/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/a/a0/Forged_Pylon_side.jpg"
+  }
+}

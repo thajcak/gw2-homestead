@@ -1,0 +1,43 @@
+{
+  "id": 404,
+  "name": "Small Elonian Planter",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    16,
+    6
+  ],
+  "icon": "decorations/404/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Small Elonian Planter",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14869,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 28,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Lowland Pine Log"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Volatile Magic"
+      }
+    ]
+  },
+  "original": {
+    "width": 678,
+    "height": 1376,
+    "source": "decorations/404/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/79/Small_Elonian_Planter.jpg"
+  },
+  "previewMissingSince": "2026-11-23"
+}

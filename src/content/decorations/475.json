@@ -1,0 +1,44 @@
+{
+  "id": 475,
+  "name": "Forged Brazier",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    16,
+    5
+  ],
+  "icon": "decorations/475/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Forged Brazier (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Forged Brazier",
+    "sheet": "Homestead Recipe Book: Lights, Volume 2",
+    "id": 14745,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 25,
+        "item": "Sliver of Twitching Forgemetal"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Molten Core"
+      }
+    ]
+  },
+  "original": {
+    "width": 1033,
+    "height": 973,
+    "source": "decorations/475/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/0/0c/Forged_Brazier_top.jpg"
+  }
+}

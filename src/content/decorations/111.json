@@ -1,0 +1,43 @@
+{
+  "id": 111,
+  "name": "Loaded Wagon",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    14
+  ],
+  "icon": "decorations/111/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Loaded Wagon (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Loaded Wagon",
+    "sheet": "Homestead Recipe Book: Misc. Items, Volume 1",
+    "id": 14100,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 25,
+        "item": "Stein of Hearty Ale"
+      },
+      {
+        "slot": 3,
+        "quantity": 25,
+        "item": "Fresh Winterberry"
+      }
+    ]
+  },
+  "original": {
+    "width": 2125,
+    "height": 1089,
+    "source": "decorations/111/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/9/9a/Loaded_Wagon.jpg"
+  }
+}

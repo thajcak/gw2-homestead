@@ -1,0 +1,43 @@
+{
+  "id": 463,
+  "name": "Large Bamboo Clump",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    17,
+    7
+  ],
+  "icon": "decorations/463/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Large Bamboo Clump",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14449,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Evergreen Core"
+      },
+      {
+        "slot": 3,
+        "quantity": 100,
+        "item": "Ursus Oblige"
+      }
+    ]
+  },
+  "original": {
+    "width": 700,
+    "height": 1400,
+    "source": "decorations/463/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/83/Large_Bamboo_Clump.jpg"
+  },
+  "previewMissingSince": "2026-11-23"
+}

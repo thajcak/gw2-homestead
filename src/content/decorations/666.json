@@ -1,0 +1,43 @@
+{
+  "id": 666,
+  "name": "Blue Cushion",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    2
+  ],
+  "icon": "decorations/666/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Blue Cushion (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Blue Cushion",
+    "sheet": "Homestead Recipe Book: Cushions",
+    "id": 14148,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 22,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Bolt of Cotton"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Pouch of Blue Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 1002,
+    "height": 942,
+    "source": "decorations/666/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/e/ee/Blue_Cushion_top.jpg"
+  }
+}

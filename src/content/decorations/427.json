@@ -1,0 +1,43 @@
+{
+  "id": 427,
+  "name": "Guild Stool",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    2
+  ],
+  "icon": "decorations/427/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Guild Stool (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Guild Stool",
+    "sheet": "Homestead Recipe Book: Benches, Chairs, Stools",
+    "id": 14877,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 25,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Cured Rugged Leather Square"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Tub of Wood Glue"
+      }
+    ]
+  },
+  "original": {
+    "width": 771,
+    "height": 764,
+    "source": "decorations/427/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/0/09/Guild_Stool_top.jpg"
+  }
+}

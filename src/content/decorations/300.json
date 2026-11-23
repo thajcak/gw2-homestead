@@ -1,0 +1,42 @@
+{
+  "id": 300,
+  "name": "Kodan Cottage Wall (Small)",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    19,
+    1
+  ],
+  "icon": "decorations/300/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Kodan Cottage Wall (Small)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14687,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 4,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 4,
+        "item": "Fang"
+      },
+      {
+        "slot": 3,
+        "quantity": 6,
+        "item": "Lowland Pine Log"
+      }
+    ]
+  },
+  "original": {
+    "width": 874,
+    "height": 1080,
+    "source": "decorations/300/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/e/ef/Kodan_Cottage_Wall_%28Small%29_side.jpg"
+  }
+}

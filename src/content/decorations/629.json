@@ -1,0 +1,49 @@
+{
+  "id": 629,
+  "name": "Gold Tequatl Trophy",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    12
+  ],
+  "icon": "decorations/629/icon.png",
+  "added": "2025-03-11",
+  "wikiTitle": "Gold Tequatl Trophy (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Gold Tequatl Trophy",
+    "sheet": "Recipe: Gold Tequatl Trophy",
+    "id": 14225,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 115,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Pile of Putrid Essence"
+      },
+      {
+        "slot": 3,
+        "quantity": 100,
+        "item": "Globs of Ectoplasm"
+      },
+      {
+        "slot": 4,
+        "quantity": 5,
+        "item": "Tequatl Tail Piece"
+      }
+    ]
+  },
+  "original": {
+    "width": 639,
+    "height": 1062,
+    "source": "decorations/629/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/f/fb/Dragon_Chest_%28Tequatl_the_Sunless%29.jpg"
+  },
+  "previewMissingSince": "2026-11-23"
+}

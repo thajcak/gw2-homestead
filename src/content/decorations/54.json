@@ -1,0 +1,44 @@
+{
+  "id": 54,
+  "name": "Ox Statue",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    9,
+    21
+  ],
+  "icon": "decorations/54/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Ox Statue (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Ox Statue",
+    "sheet": "Homestead Recipe Book: Lunar New Year Celestials",
+    "id": 14749,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 50,
+        "item": "Pouch of Red Pigment"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Onyx Lodestone"
+      }
+    ]
+  },
+  "original": {
+    "width": 1099,
+    "height": 960,
+    "source": "decorations/54/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/a/a2/Ox_Statue_front_view.jpg"
+  }
+}

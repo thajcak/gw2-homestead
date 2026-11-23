@@ -1,0 +1,28 @@
+---
+import '../styles/global.css';
+import { assetUrl } from '../utils/assetUrl';
+import homesteadIcon from '../assets/homestead.png';
+
+interface Props {
+  title?: string;
+  preloadCatalogIndex?: string;
+}
+
+const { title = 'GW2 Homestead Catalog', preloadCatalogIndex } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Guild Wars 2 Homestead decoration catalog" />
+    <link rel="icon" type="image/png" href={homesteadIcon.src} />
+    <link rel="manifest" href={assetUrl('manifest.json')} />
+    {preloadCatalogIndex ? <link rel="preload" href={preloadCatalogIndex} as="fetch" crossorigin /> : null}
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

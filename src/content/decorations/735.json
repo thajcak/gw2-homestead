@@ -1,0 +1,43 @@
+{
+  "id": 735,
+  "name": "Gold Firepit",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    5
+  ],
+  "icon": "decorations/735/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Gold Firepit (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Gold Firepit",
+    "sheet": "Homestead Recipe Book: Lights, Volume 2",
+    "id": 14281,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Molten Core"
+      },
+      {
+        "slot": 3,
+        "quantity": 20,
+        "item": "Pile of Radiant Dust"
+      }
+    ]
+  },
+  "original": {
+    "width": 882,
+    "height": 927,
+    "source": "decorations/735/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/a/af/Gold_Firepit_top.jpg"
+  }
+}

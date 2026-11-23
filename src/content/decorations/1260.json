@@ -1,0 +1,38 @@
+{
+  "id": 1260,
+  "name": "Foreboding Raven Tree",
+  "description": "Crafted by scribes.",
+  "categories": [
+    25
+  ],
+  "icon": "decorations/1260/icon.png",
+  "added": "2026-10-13",
+  "wikiTitle": "Foreboding Raven Tree (Handiwork)",
+  "recipe": {
+    "id": 15787,
+    "name": "Foreboding Raven Tree",
+    "disciplines": "Handiworker",
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "rating": 225,
+    "sheet": "Recipe: Foreboding Raven Tree",
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 20,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Tyria's Best Nougat Center"
+      },
+      {
+        "slot": 3,
+        "quantity": 50,
+        "item": "Piece of Candy Corn"
+      }
+    ]
+  },
+  "previewMissingSince": "2026-11-23"
+}

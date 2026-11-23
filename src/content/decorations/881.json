@@ -1,0 +1,43 @@
+{
+  "id": 881,
+  "name": "Wizard Rug",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    18,
+    4
+  ],
+  "icon": "decorations/881/icon.png",
+  "added": "2025-03-11",
+  "wikiTitle": "Wizard Rug",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Automatic",
+    "disciplines": "Handiworker",
+    "id": 15041,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 35,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 3,
+        "item": "Bolt of Silk"
+      },
+      {
+        "slot": 3,
+        "quantity": 8,
+        "item": "Pinch of Stardust"
+      }
+    ]
+  },
+  "original": {
+    "width": 2004,
+    "height": 1072,
+    "source": "decorations/881/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/5/58/Wizard_Rug.jpg"
+  },
+  "previewMissingSince": "2026-11-23"
+}

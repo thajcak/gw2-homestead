@@ -1,0 +1,43 @@
+{
+  "id": 125,
+  "name": "Traditional Kodan Bed",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    2,
+    19
+  ],
+  "icon": "decorations/125/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Traditional Kodan Bed",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "id": 14238,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 20,
+        "item": "Wool Scrap"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Honey Flower"
+      }
+    ]
+  },
+  "original": {
+    "width": 1198,
+    "height": 1080,
+    "source": "decorations/125/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/6/6f/Traditional_Kodan_Bed.jpg"
+  },
+  "previewMissingSince": "2026-11-23"
+}

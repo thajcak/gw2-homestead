@@ -1,0 +1,44 @@
+{
+  "id": 160,
+  "name": "Glacier Overhang",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    8,
+    26
+  ],
+  "icon": "decorations/160/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Glacier Overhang (Handiwork)",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Glacier Overhang",
+    "sheet": "Homestead Recipe Book: Wintersday, Volume 8",
+    "id": 14808,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 38,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Snow Diamond"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Glacial Lodestone"
+      }
+    ]
+  },
+  "original": {
+    "width": 1077,
+    "height": 933,
+    "source": "decorations/160/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/a/a1/Glacier_Overhang_front.jpg"
+  }
+}

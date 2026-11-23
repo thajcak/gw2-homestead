@@ -1,0 +1,43 @@
+{
+  "id": 96,
+  "name": "Norn Summit Banner",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    10
+  ],
+  "icon": "decorations/96/icon.png",
+  "added": "2025-03-11",
+  "wikiTitle": "Norn Summit Banner (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Norn Summit Banner",
+    "sheet": "Homestead Recipe Book: Summit Banners, Volume 1",
+    "id": 14290,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 26,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Bolt of Silk"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Superior Rune of Hoelbrak"
+      }
+    ]
+  },
+  "original": {
+    "width": 1769,
+    "height": 727,
+    "source": "decorations/96/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/f/fc/Norn_Summit_Banner_detail.jpg"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": 134,
+  "name": "WvW Mortar Siege",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    11
+  ],
+  "icon": "decorations/134/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "WvW Mortar Siege (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "WvW Mortar Siege",
+    "sheet": "Homestead Recipe Book: World vs. World",
+    "id": 14219,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 30,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 4,
+        "item": "WvW Skirmish Claim Ticket"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Destroyer Shard"
+      }
+    ]
+  },
+  "original": {
+    "width": 1250,
+    "height": 1440,
+    "source": "decorations/134/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/85/Mortar_Siege.jpg"
+  }
+}

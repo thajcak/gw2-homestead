@@ -1,0 +1,38 @@
+{
+  "id": 1202,
+  "name": "Iron Window",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "icon": "decorations/1202/icon.png",
+  "added": "2026-05-12",
+  "wikiTitle": "Iron Window (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "automatic",
+    "disciplines": "Handiworker",
+    "name": "Iron Window",
+    "id": 15656,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Iron Ingot"
+      }
+    ]
+  },
+  "original": {
+    "width": 1181,
+    "height": 1080,
+    "source": "decorations/1202/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/1/19/Iron_Window.jpg"
+  }
+}

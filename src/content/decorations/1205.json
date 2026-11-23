@@ -1,0 +1,44 @@
+{
+  "id": 1205,
+  "name": "Seer Floor",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "icon": "decorations/1205/icon.png",
+  "added": "2026-05-12",
+  "wikiTitle": "Seer Floor (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Seer Floor",
+    "sheet": "Homestead Recipe Book: Seer Catalogue Volume 1",
+    "id": 15683,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 15,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 2,
+        "item": "Pile of Shimmering Dust"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Brick of Clay"
+      }
+    ]
+  },
+  "original": {
+    "width": 1440,
+    "height": 1440,
+    "source": "decorations/1205/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/4/46/Seer_Floor_top.jpg"
+  }
+}

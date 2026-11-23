@@ -1,0 +1,37 @@
+{
+  "id": 949,
+  "name": "Graveyard Gate",
+  "description": "",
+  "categories": [
+    27
+  ],
+  "icon": "decorations/949/icon.png",
+  "added": "2025-10-07",
+  "wikiTitle": "Graveyard Gate",
+  "recipe": {
+    "rating": 0,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Graveyard Gate Recipe",
+    "id": 15186,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Refined Homestead Metal"
+      }
+    ]
+  },
+  "original": {
+    "width": 1099,
+    "height": 968,
+    "source": "decorations/949/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/e/ed/Graveyard_Gate_front.jpg"
+  }
+}

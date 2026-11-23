@@ -1,0 +1,50 @@
+{
+  "id": 1193,
+  "name": "Seer Painting",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    4,
+    20
+  ],
+  "icon": "decorations/1193/icon.png",
+  "added": "2026-05-12",
+  "wikiTitle": "Seer Painting (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Seer Painting",
+    "sheet": "Recipe: Seer Painting",
+    "id": 15684,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Pouch of Blue Pigment"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Pouch of White Pigment"
+      },
+      {
+        "slot": 4,
+        "quantity": 3,
+        "item": "Pouch of Black Pigment"
+      }
+    ]
+  },
+  "original": {
+    "width": 989,
+    "height": 1080,
+    "source": "decorations/1193/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/1/14/Seer_Painting.jpg"
+  },
+  "previewMissingSince": "2026-11-23"
+}

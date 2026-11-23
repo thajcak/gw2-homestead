@@ -1,0 +1,43 @@
+{
+  "id": 547,
+  "name": "Bronze Keep Construct Trophy",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    12
+  ],
+  "icon": "decorations/547/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Bronze Keep Construct Trophy (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Bronze Keep Construct Trophy",
+    "sheet": "Recipe: Bronze Keep Construct Trophy",
+    "id": 14338,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 36,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 10,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Keep Construct Rubble (trophy)"
+      }
+    ]
+  },
+  "original": {
+    "width": 697,
+    "height": 972,
+    "source": "decorations/547/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/83/Bronze_Keep_Construct_Trophy_detail.jpg"
+  }
+}

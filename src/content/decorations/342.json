@@ -1,0 +1,43 @@
+{
+  "id": 342,
+  "name": "Gold Vale Guardian Trophy",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    12
+  ],
+  "icon": "decorations/342/icon.png",
+  "added": "2025-03-11",
+  "wikiTitle": "Gold Vale Guardian Trophy (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Gold Vale Guardian Trophy",
+    "sheet": "Recipe: Gold Vale Guardian Trophy",
+    "id": 14834,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 130,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 100,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 5,
+        "item": "Vale Guardian Fragment"
+      }
+    ]
+  },
+  "original": {
+    "width": 773,
+    "height": 974,
+    "source": "decorations/342/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/e/e6/Gold_Vale_Guardian_Trophy_detail.jpg"
+  }
+}

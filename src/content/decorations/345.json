@@ -1,0 +1,44 @@
+{
+  "id": 345,
+  "name": "Haunted Armchair",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    25,
+    2
+  ],
+  "icon": "decorations/345/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Haunted Armchair (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Haunted Armchair",
+    "sheet": "Homestead Recipe Book: Halloween, Volume 3",
+    "id": 14486,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 29,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 75,
+        "item": "Pieces of Candy Corn"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Thick Leather Section"
+      }
+    ]
+  },
+  "original": {
+    "width": 526,
+    "height": 774,
+    "source": "decorations/345/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/74/Haunted_Armchair_floating.jpg"
+  }
+}

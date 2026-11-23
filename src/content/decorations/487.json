@@ -1,0 +1,44 @@
+{
+  "id": 487,
+  "name": "Bundle of Corn Stalks",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    14,
+    25
+  ],
+  "icon": "decorations/487/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Bundle of Corn Stalks (Handiwork)",
+  "recipe": {
+    "rating": 75,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Bundle of Corn Stalks",
+    "sheet": "Homestead Recipe Book: Halloween, Volume 1",
+    "id": 14706,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 27,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 8,
+        "item": "Linen Scrap"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Bandit Crest"
+      }
+    ]
+  },
+  "original": {
+    "width": 663,
+    "height": 950,
+    "source": "decorations/487/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/7/77/Bundle_of_Corn_Stalks_front.jpg"
+  }
+}

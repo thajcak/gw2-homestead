@@ -1,0 +1,44 @@
+{
+  "id": 100,
+  "name": "Mad Moon",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    25,
+    4
+  ],
+  "icon": "decorations/100/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Mad Moon (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "sheet",
+    "disciplines": "Handiworker",
+    "name": "Mad Moon",
+    "sheet": "Homestead Recipe Book: Halloween, Volume 2",
+    "id": 14623,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 31,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 7,
+        "item": "Glob of Ectoplasm"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Opal Orb"
+      }
+    ]
+  },
+  "original": {
+    "width": 1440,
+    "height": 1440,
+    "source": "decorations/100/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/6/6c/Mad_Moon.jpg"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": 267,
+  "name": "Obstacle: Tall Wall",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    1
+  ],
+  "icon": "decorations/267/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Obstacle: Tall Wall",
+  "recipe": {
+    "rating": 150,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "sheet": "Homestead Recipe Book: Guild Arena",
+    "id": 14548,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 4,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Iron Ore"
+      }
+    ]
+  },
+  "original": {
+    "width": 1306,
+    "height": 1190,
+    "source": "decorations/267/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/5/53/Obstacle-_Wall_%28top%29.jpg"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": 1123,
+  "name": "Deimos Statue",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "icon": "decorations/1123/icon.png",
+  "added": "2026-02-03",
+  "wikiTitle": "Deimos Statue (Handiwork)",
+  "recipe": {
+    "rating": 1,
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "disciplines": "Handiworker",
+    "name": "Deimos Statue",
+    "sheet": "Recipe: Deimos Statue",
+    "id": 15530,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 20,
+        "item": "Refined Homestead Metal"
+      }
+    ]
+  },
+  "original": {
+    "width": 1152,
+    "height": 1440,
+    "source": "decorations/1123/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/6/63/Deimos_Statue.jpg"
+  }
+}

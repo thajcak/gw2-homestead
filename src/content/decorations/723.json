@@ -1,0 +1,43 @@
+{
+  "id": 723,
+  "name": "Lynx Statue",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    4
+  ],
+  "icon": "decorations/723/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Lynx Statue (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Lynx Statue",
+    "sheet": "Homestead Recipe Book: Statues",
+    "id": 14560,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 27,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 50,
+        "item": "Jade Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 4,
+        "item": "Thick Leather Section"
+      }
+    ]
+  },
+  "original": {
+    "width": 1099,
+    "height": 888,
+    "source": "decorations/723/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/8/8c/Lynx_Statue_front_view.jpg"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "id": 1237,
+  "name": "Seer Ruins Rubble",
+  "description": "Crafted with Homesteading Mastery.\n\nRequires Guild Wars 2: Visions of Eternity.",
+  "categories": [
+    1,
+    20
+  ],
+  "icon": "decorations/1237/icon.png",
+  "added": "2026-09-15",
+  "wikiTitle": "Seer Ruins Rubble (Handiwork)",
+  "recipe": {
+    "id": 15727,
+    "name": "Seer Ruins Rubble",
+    "disciplines": "Handiworker",
+    "type": "Homestead Decoration",
+    "source": "recipe sheet",
+    "rating": 1,
+    "sheet": "Homestead Recipe Book: Seer Catalogue Volume 2",
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 10,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 30,
+        "item": "Onyx Core"
+      }
+    ]
+  },
+  "original": {
+    "width": 1113,
+    "height": 973,
+    "source": "decorations/1237/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/e/e6/Seer_Ruins_Rubble.jpg"
+  }
+}

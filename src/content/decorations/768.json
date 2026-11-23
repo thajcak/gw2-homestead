@@ -1,0 +1,43 @@
+{
+  "id": 768,
+  "name": "Silver Xera Trophy",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    12
+  ],
+  "icon": "decorations/768/icon.png",
+  "added": "2024-11-19",
+  "wikiTitle": "Silver Xera Trophy (Handiwork)",
+  "recipe": {
+    "rating": 300,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Silver Xera Trophy",
+    "sheet": "Recipe: Silver Xera Trophy",
+    "id": 14339,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 90,
+        "item": "Refined Homestead Fiber"
+      },
+      {
+        "slot": 2,
+        "quantity": 40,
+        "item": "Magnetite Shard"
+      },
+      {
+        "slot": 3,
+        "quantity": 3,
+        "item": "Ribbon Scrap"
+      }
+    ]
+  },
+  "original": {
+    "width": 611,
+    "height": 970,
+    "source": "decorations/768/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/4/40/Silver_Xera_Trophy_detail.jpg"
+  }
+}

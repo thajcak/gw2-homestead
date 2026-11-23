@@ -1,0 +1,43 @@
+{
+  "id": 87,
+  "name": "Spire Topiary",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    6
+  ],
+  "icon": "decorations/87/icon.png",
+  "added": "2024-11-08",
+  "wikiTitle": "Spire Topiary (Handiwork)",
+  "recipe": {
+    "rating": 225,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Spire Topiary",
+    "sheet": "Homestead Recipe Book: Plants, Volume 2",
+    "id": 14508,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 32,
+        "item": "Refined Homestead Wood"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Destroyer Lodestone"
+      },
+      {
+        "slot": 3,
+        "quantity": 1,
+        "item": "Krytan Lumber Core"
+      }
+    ]
+  },
+  "original": {
+    "width": 552,
+    "height": 1020,
+    "source": "decorations/87/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/c/cd/Spire_Topiary.jpg"
+  }
+}

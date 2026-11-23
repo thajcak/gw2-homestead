@@ -1,0 +1,44 @@
+{
+  "id": 546,
+  "name": "Astral Ward Pillar",
+  "description": "Crafted with Homesteading Mastery.",
+  "categories": [
+    18,
+    1
+  ],
+  "icon": "decorations/546/icon.png",
+  "added": "2025-03-11",
+  "wikiTitle": "Astral Ward Pillar (Handiwork)",
+  "recipe": {
+    "rating": 400,
+    "type": "Homestead Decoration",
+    "source": "Recipe Sheet",
+    "disciplines": "Handiworker",
+    "name": "Astral Ward Pillar",
+    "sheet": "Homestead Recipe Book: Amnytas, Volume 1",
+    "id": 14652,
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 28,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 1,
+        "item": "Amalgamated Gemstone"
+      },
+      {
+        "slot": 3,
+        "quantity": 10,
+        "item": "Pinch of Stardust"
+      }
+    ]
+  },
+  "original": {
+    "width": 720,
+    "height": 1440,
+    "source": "decorations/546/preview.webp",
+    "remoteSource": "https://wiki.guildwars2.com/images/4/41/Astral_Ward_Pillar_front.jpg"
+  }
+}
