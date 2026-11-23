@@ -10,10 +10,12 @@ const { categories } = Astro.props;
 ---
 
 <header class="header">
+  <h1 class="visually-hidden">Guild Wars 2 Homestead Decorations</h1>
   <div class="container header__inner">
     <div class="header__spacer" aria-hidden="true"></div>
 
     <div class="header__controls">
+      <label for="category-select" class="visually-hidden">Category</label>
       <select id="category-select" class="header__select">
         <option value="all">All Categories</option>
         {
@@ -35,9 +37,11 @@ const { categories } = Astro.props;
       </div>
 
       <div class="header__search-wrap">
+        <label for="search-input" class="visually-hidden">Search decorations</label>
         <input
           id="search-input"
           type="text"
+          autocomplete="off"
           class="header__search"
           placeholder="Search decorations..."
         />

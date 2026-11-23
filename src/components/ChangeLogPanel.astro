@@ -1,50 +1,39 @@
-<div id="changelog-panel" class="changelog-panel is-closed">
-  <button
-    id="changelog-backdrop"
-    class="changelog-panel__backdrop"
-    aria-label="Close recently added panel"
-    type="button"
-  ></button>
-
-  <aside
-    class="changelog-panel__drawer"
-    role="dialog"
-    aria-modal="true"
-    aria-label="Recently Added"
-  >
-    <div class="changelog-panel__header">
-      <div class="changelog-panel__title-row">
+<dialog id="changelog-panel" class="changelog-panel" aria-labelledby="changelog-title">
+  <div class="changelog-panel__header">
+    <div class="changelog-panel__title-row">
+      <h2 class="changelog-panel__heading">
         <button
           id="changelog-title"
           type="button"
           class="changelog-panel__title"
-          aria-label="Scroll additions list to top"
+          title="Scroll to top"
         >
           Recently Added
         </button>
-        <div class="changelog-panel__actions">
-          <button
-            id="changelog-scroll-top"
-            type="button"
-            class="changelog-panel__action"
-            aria-label="Scroll to top"
-          >
-            To Top
-          </button>
-          <button
-            id="close-changelog"
-            type="button"
-            class="changelog-panel__close"
-            aria-label="Close panel"
-          >
-            ×
-          </button>
-        </div>
+      </h2>
+      <div class="changelog-panel__actions">
+        <button
+          id="changelog-scroll-top"
+          type="button"
+          class="changelog-panel__action"
+          aria-label="Scroll to top"
+        >
+          To Top
+        </button>
+        <button
+          id="close-changelog"
+          type="button"
+          class="changelog-panel__close"
+          aria-label="Close panel"
+          autofocus
+        >
+          ×
+        </button>
       </div>
     </div>
+  </div>
 
-    <div id="changelog-scroll" class="changelog-panel__scroll">
-      <p class="changelog-panel__empty">Open to see recently added decorations.</p>
-    </div>
-  </aside>
-</div>
+  <div id="changelog-scroll" class="changelog-panel__scroll">
+    <p class="changelog-panel__empty">Open to see recently added decorations.</p>
+  </div>
+</dialog>

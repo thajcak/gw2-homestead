@@ -2,7 +2,7 @@ import { getCollection } from 'astro:content';
 import type { Category, Decoration } from '../types';
 import type { OptimizedImage } from '../types/optimizedImage';
 import { buildPreviewUrls } from '../utils/buildPreviewUrls';
-import { sanitizeDisplayName, sanitizeText } from '../utils/sanitizeText';
+import { meaningfulDescription, sanitizeDisplayName } from '../utils/sanitizeText';
 import { buildIconManifest } from './iconManifest';
 
 /** One row of catalog/search-index.json: everything the grid, search and filters need. */
@@ -57,7 +57,7 @@ export async function buildSearchIndex(): Promise<SearchIndexEntry[]> {
       return {
         id: decoration.id,
         name: sanitizeDisplayName(decoration.name),
-        description: sanitizeText(decoration.description ?? ''),
+        description: meaningfulDescription(decoration.description ?? ''),
         categories: decoration.categories,
         ...(icon ? { icon } : {}),
       };
@@ -70,7 +70,7 @@ export async function buildPublishedDecoration(decoration: Decoration): Promise<
   return {
     id: decoration.id,
     name: sanitizeDisplayName(decoration.name),
-    description: sanitizeText(decoration.description ?? ''),
+    description: meaningfulDescription(decoration.description ?? ''),
     categories: decoration.categories,
     ...(decoration.wikiTitle ? { wikiTitle: decoration.wikiTitle } : {}),
     ...(decoration.recipe != null ? { recipe: decoration.recipe } : {}),

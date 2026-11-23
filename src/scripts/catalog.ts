@@ -1,7 +1,7 @@
 import type { PublishedDecoration as Decoration, SearchIndexEntry } from '../build/catalogData';
 import type { Category } from '../types';
 import type { OptimizedImage } from '../types/optimizedImage';
-import { sanitizeDisplayName, sanitizeText } from '../utils/sanitizeText';
+import { sanitizeDisplayName } from '../utils/sanitizeText';
 
 export type { SearchIndexEntry };
 
@@ -10,6 +10,12 @@ const MAX_ICON_LOADS = 3;
 const SCROLL_SETTLE_MS = 150;
 const ICON_ROOT_MARGIN = '80px 0px';
 const SCROLL_HEADER_OFFSET = 94;
+const TOOLTIP_DELAY_MS = 300;
+/** After a tooltip hides, the next one within this window shows at once (moving along a row). */
+const TOOLTIP_WARM_MS = 400;
+const RESULTS_STATUS_DELAY_MS = 500;
+
+const EXPANDED_PANEL_ID = 'decoration-panel';
 
 type PanelScrollBehavior = ScrollBehavior | 'instant';
 
@@ -90,28 +96,19 @@ function getCategoryMap(categories: Category[]): Map<number, string> {
   return new Map(categories.map((category) => [category.id, category.name]));
 }
 
-function matchesFilters(
-  entry: SearchIndexEntry,
-  searchQuery: string,
-  selectedCategory: string
-): boolean {
-  if (searchQuery) {
-    const query = searchQuery.toLowerCase();
-    const nameMatch = entry.name.toLowerCase().includes(query);
-    const descriptionMatch = entry.description?.toLowerCase().includes(query);
-    if (!nameMatch && !descriptionMatch) {
-      return false;
-    }
-  }
+function normalizeSearchText(value: string): string {
+  return value.toLowerCase().replace(/[\u2018\u2019]/g, "'");
+}
 
-  if (selectedCategory !== 'all') {
-    const categoryId = Number(selectedCategory);
-    if (!entry.categories.includes(categoryId)) {
-      return false;
-    }
-  }
+/** Split a query into words; an entry matches when every word appears somewhere in its text. */
+function tokenizeQuery(query: string): string[] {
+  return normalizeSearchText(query).split(/\s+/).filter(Boolean);
+}
 
-  return true;
+/** Name, category names and description (boilerplate already removed at build time). */
+function buildSearchHaystack(entry: SearchIndexEntry, categoryMap: Map<number, string>): string {
+  const categoryNames = entry.categories.map((id) => categoryMap.get(id) ?? '');
+  return normalizeSearchText([entry.name, ...categoryNames, entry.description ?? ''].join(' '));
 }
 
 function renderPreviewImage(
@@ -206,7 +203,11 @@ function renderExpandedDecoration(
     </div>`;
   }
 
-  return `<div class="expanded-decoration is-collapsed" data-expanded-for="${decoration.id}" style="grid-row: auto;">
+  const description = decoration.description
+    ? `<p class="expanded-description">${escapeHtml(decoration.description)}</p>`
+    : '';
+
+  return `<div id="${EXPANDED_PANEL_ID}" class="expanded-decoration is-collapsed" data-expanded-for="${decoration.id}" role="region" aria-labelledby="${EXPANDED_PANEL_ID}-title" style="grid-row: auto;">
     <div class="expanded-decoration-gradient">
       <div class="decoration-indicator" style="left: ${indicatorLeft}"></div>
       <div class="expanded-decoration__body">
@@ -216,9 +217,10 @@ function renderExpandedDecoration(
           </div>
           <div class="expanded-decoration__details">
             <div class="expanded-heading">
-              <h2 class="expanded-title">${escapeHtml(displayName)}</h2>
+              <h2 id="${EXPANDED_PANEL_ID}-title" class="expanded-title">${escapeHtml(displayName)}</h2>
               ${wikiLink}
             </div>
+            ${description}
             <div class="expanded-tags">${categoryTags}</div>
             <div class="expanded-recipe-section">${recipeHtml}</div>
           </div>
@@ -234,8 +236,7 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   const categorySelect = document.getElementById('category-select') as HTMLSelectElement | null;
   const homeResetButton = document.getElementById('home-reset') as HTMLButtonElement | null;
   const openChangelogButton = document.getElementById('open-changelog') as HTMLButtonElement | null;
-  const changelogPanel = document.getElementById('changelog-panel');
-  const changelogBackdrop = document.getElementById('changelog-backdrop');
+  const changelogPanel = document.getElementById('changelog-panel') as HTMLDialogElement | null;
   const closeChangelogButton = document.getElementById('close-changelog');
   const changelogScrollTopButton = document.getElementById('changelog-scroll-top');
   const changelogTitleButton = document.getElementById('changelog-title');
@@ -246,6 +247,9 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   const filterPromptName = document.getElementById('filter-prompt-name');
   const grid = document.getElementById('icon-grid');
   const emptyState = document.getElementById('empty-state');
+  const resultsStatus = document.getElementById('results-status');
+  const tooltip = document.getElementById('catalog-tooltip');
+  const header = document.querySelector<HTMLElement>('.header');
   const categoryCountOptions = document.querySelectorAll<HTMLOptionElement>('[data-category-count]');
 
   if (!searchInput || !categorySelect || !grid) {
@@ -269,10 +273,13 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
 
   const categoryMap = getCategoryMap(categories);
   const searchIndexById = new Map(searchIndex.map((entry) => [entry.id, entry]));
+  const searchHaystacks = new Map(
+    searchIndex.map((entry) => [entry.id, buildSearchHaystack(entry, categoryMap)])
+  );
   const decorationCache = new Map<number, Decoration>();
   const knownDecorationIds = new Set<number>();
 
-  let searchQuery = '';
+  let searchTokens: string[] = [];
   let selectedCategory = 'all';
   let expandedItemId: number | null = null;
   let itemsPerRow = 0;
@@ -280,6 +287,9 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   let filterVisibilityPrompt: { id: number; name: string } | null = null;
   let changelogScrollTop = Number(sessionStorage.getItem('changelogScrollTop') ?? '0');
   let gridItems: HTMLElement[] = [];
+  const gridItemsById = new Map<number, HTMLElement>();
+  let resultsStatusTimer: ReturnType<typeof setTimeout> | null = null;
+  let announceResults = false;
   let changelogLoaded = false;
   let changelogLoading: Promise<void> | null = null;
   let activeExpandToken = 0;
@@ -334,10 +344,25 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     return gridItems.filter((item) => !item.classList.contains('is-hidden'));
   }
 
+  function matchesSearch(entry: SearchIndexEntry): boolean {
+    if (searchTokens.length === 0) {
+      return true;
+    }
+    const haystack = searchHaystacks.get(entry.id) ?? '';
+    return searchTokens.every((token) => haystack.includes(token));
+  }
+
+  function matchesFilters(entry: SearchIndexEntry): boolean {
+    return (
+      matchesSearch(entry) &&
+      (selectedCategory === 'all' || entry.categories.includes(Number(selectedCategory)))
+    );
+  }
+
   function getFilteredIds(): Set<number> {
     const ids = new Set<number>();
     for (const entry of searchIndex) {
-      if (matchesFilters(entry, searchQuery, selectedCategory)) {
+      if (matchesFilters(entry)) {
         ids.add(entry.id);
       }
     }
@@ -345,20 +370,27 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   }
 
   function getFilteredCount(categoryId?: number): number {
-    return searchIndex.filter((entry) => {
-      if (searchQuery) {
-        const query = searchQuery.toLowerCase();
-        const nameMatch = entry.name.toLowerCase().includes(query);
-        const descriptionMatch = entry.description?.toLowerCase().includes(query);
-        if (!nameMatch && !descriptionMatch) {
-          return false;
-        }
-      }
-      if (categoryId !== undefined) {
-        return entry.categories.includes(categoryId);
-      }
-      return true;
-    }).length;
+    return searchIndex.filter(
+      (entry) =>
+        matchesSearch(entry) && (categoryId === undefined || entry.categories.includes(categoryId))
+    ).length;
+  }
+
+  /** Tell screen readers how many decorations the filters left, once typing pauses. */
+  function scheduleResultsStatus(visibleCount: number): void {
+    if (!resultsStatus) {
+      return;
+    }
+    if (resultsStatusTimer != null) {
+      clearTimeout(resultsStatusTimer);
+    }
+    resultsStatusTimer = setTimeout(() => {
+      resultsStatusTimer = null;
+      resultsStatus.textContent =
+        visibleCount === 0
+          ? 'No decorations found'
+          : `${visibleCount.toLocaleString()} decoration${visibleCount === 1 ? '' : 's'}`;
+    }, RESULTS_STATUS_DELAY_MS);
   }
 
   function updateCategoryCounts(): void {
@@ -396,6 +428,12 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
 
     updateCategoryCounts();
 
+    // The first pass runs at startup; only changes the visitor makes are announced.
+    if (announceResults) {
+      scheduleResultsStatus(visibleCount);
+    }
+    announceResults = true;
+
     if (expandedItemId != null && !filteredIds.has(expandedItemId)) {
       collapseExpanded();
     }
@@ -404,6 +442,20 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
       const targetId = pendingOpenAfterFilterResetId;
       pendingOpenAfterFilterResetId = null;
       void openDecorationFromDeepLink(targetId);
+    }
+  }
+
+  /** Keep aria-expanded / aria-controls on grid buttons in step with the open panel. */
+  function markExpandedItem(id: number | null): void {
+    if (expandedItemId != null && expandedItemId !== id) {
+      const previous = gridItemsById.get(expandedItemId);
+      previous?.setAttribute('aria-expanded', 'false');
+      previous?.removeAttribute('aria-controls');
+    }
+    if (id != null) {
+      const item = gridItemsById.get(id);
+      item?.setAttribute('aria-expanded', 'true');
+      item?.setAttribute('aria-controls', EXPANDED_PANEL_ID);
     }
   }
 
@@ -467,6 +519,7 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
         removeExpandedPanel();
       }, ANIMATION_MS);
     }
+    markExpandedItem(null);
     expandedItemId = null;
     updateDeepLink(null);
   }
@@ -563,6 +616,7 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
       loadDeferredPreview(panel, SCROLL_SETTLE_MS);
     }
 
+    markExpandedItem(decorationId);
     expandedItemId = decorationId;
     updateDeepLink(decorationId);
   }
@@ -641,7 +695,7 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   }
 
   function clearFilters(): void {
-    searchQuery = '';
+    searchTokens = [];
     selectedCategory = 'all';
     searchInput!.value = '';
     categorySelect!.value = 'all';
@@ -679,6 +733,8 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
 
     if (filteredIds.has(id)) {
       await openDecorationById(id);
+      // Closing the dialog returned focus to its trigger; move it to the decoration just opened.
+      gridItemsById.get(id)?.focus({ preventScroll: true });
       return;
     }
 
@@ -688,11 +744,17 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   }
 
   function openChangelog(): void {
-    changelogPanel?.classList.remove('is-closed');
-    void ensureChangelogLoaded();
-    if (changelogScrollContainer) {
-      changelogScrollContainer.scrollTop = changelogScrollTop;
+    if (!changelogPanel || changelogPanel.open) {
+      return;
     }
+    hideTooltip();
+    // A modal <dialog> brings focus, focus trapping, Escape and the backdrop with it.
+    changelogPanel.showModal();
+    void ensureChangelogLoaded().then(() => {
+      if (changelogScrollContainer && changelogPanel.open) {
+        changelogScrollContainer.scrollTop = changelogScrollTop;
+      }
+    });
   }
 
   async function ensureChangelogLoaded(): Promise<void> {
@@ -719,11 +781,17 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
   }
 
   function closeChangelog(): void {
-    if (changelogScrollContainer) {
-      changelogScrollTop = changelogScrollContainer.scrollTop;
-      sessionStorage.setItem('changelogScrollTop', String(changelogScrollTop));
+    if (changelogPanel?.open) {
+      changelogPanel.close();
     }
-    changelogPanel?.classList.add('is-closed');
+  }
+
+  /**
+   * Runs on every close, Escape included. The position is tracked while the list scrolls,
+   * since by the time `close` fires the dialog is hidden and its scrollTop reads 0.
+   */
+  function rememberChangelogScroll(): void {
+    sessionStorage.setItem('changelogScrollTop', String(changelogScrollTop));
   }
 
   function scrollChangelogToTop(): void {
@@ -740,13 +808,15 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
       item.className = 'catalog-item';
       item.dataset.id = String(entry.id);
       item.dataset.categories = entry.categories.join(',');
-      item.dataset.searchText = `${displayName} ${sanitizeText(entry.description ?? '')}`.toLowerCase();
       item.setAttribute('aria-label', displayName);
+      item.setAttribute('aria-expanded', 'false');
       item.innerHTML = '<div class="catalog-icon" aria-hidden="true"></div>';
       item.addEventListener('click', () => {
+        hideTooltip();
         void openDecorationById(entry.id);
       });
       grid!.appendChild(item);
+      gridItemsById.set(entry.id, item);
       return item;
     });
   }
@@ -892,16 +962,146 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
     gridItems.forEach((item) => iconObserver.observe(item));
   }
 
+  // Name tooltip for grid icons (U1). One shared element, positioned over whichever icon is
+  // hovered or keyboard-focused. Purely visual: each button already carries an aria-label.
+  let tooltipTarget: HTMLElement | null = null;
+  let tooltipTimer: ReturnType<typeof setTimeout> | null = null;
+  let tooltipWarmUntil = 0;
+
+  function positionTooltip(item: HTMLElement): void {
+    if (!tooltip) {
+      return;
+    }
+    const gap = 8;
+    const edge = 8;
+    const itemRect = item.getBoundingClientRect();
+    const tipRect = tooltip.getBoundingClientRect();
+    const headerBottom = header?.getBoundingClientRect().bottom ?? 0;
+
+    let placement: 'top' | 'bottom' = 'top';
+    let top = itemRect.top - tipRect.height - gap;
+    if (top < headerBottom + edge) {
+      placement = 'bottom';
+      top = itemRect.bottom + gap;
+    }
+
+    const centerX = itemRect.left + itemRect.width / 2;
+    const maxLeft = window.innerWidth - tipRect.width - edge;
+    const left = Math.max(edge, Math.min(centerX - tipRect.width / 2, maxLeft));
+
+    tooltip.dataset.placement = placement;
+    tooltip.style.transform = `translate(${Math.round(left)}px, ${Math.round(top)}px)`;
+    tooltip.style.setProperty('--tooltip-arrow-x', `${Math.round(centerX - left)}px`);
+  }
+
+  function showTooltip(item: HTMLElement): void {
+    if (!tooltip || !item.isConnected || item.classList.contains('is-hidden')) {
+      return;
+    }
+    tooltipTarget = item;
+    tooltip.textContent = item.getAttribute('aria-label') ?? '';
+    tooltip.hidden = false;
+    positionTooltip(item);
+    tooltip.classList.add('is-visible');
+  }
+
+  function scheduleTooltip(item: HTMLElement): void {
+    if (item === tooltipTarget) {
+      return;
+    }
+    if (tooltipTimer != null) {
+      clearTimeout(tooltipTimer);
+      tooltipTimer = null;
+    }
+    if (tooltipTarget || performance.now() < tooltipWarmUntil) {
+      showTooltip(item);
+      return;
+    }
+    tooltipTimer = setTimeout(() => {
+      tooltipTimer = null;
+      showTooltip(item);
+    }, TOOLTIP_DELAY_MS);
+  }
+
+  function hideTooltip(): void {
+    if (tooltipTimer != null) {
+      clearTimeout(tooltipTimer);
+      tooltipTimer = null;
+    }
+    if (!tooltipTarget || !tooltip) {
+      return;
+    }
+    tooltipTarget = null;
+    tooltipWarmUntil = performance.now() + TOOLTIP_WARM_MS;
+    tooltip.classList.remove('is-visible');
+    tooltip.hidden = true;
+  }
+
+  function gridItemFromEvent(event: Event): HTMLElement | null {
+    return (event.target as HTMLElement | null)?.closest<HTMLElement>('.catalog-item') ?? null;
+  }
+
+  grid.addEventListener('pointerover', (event) => {
+    const item = gridItemFromEvent(event);
+    if (item && event.pointerType !== 'touch') {
+      scheduleTooltip(item);
+    }
+  });
+  grid.addEventListener('pointerout', (event) => {
+    const item = gridItemFromEvent(event);
+    const next = (event.relatedTarget as HTMLElement | null)?.closest?.('.catalog-item');
+    if (item && next !== item) {
+      hideTooltip();
+    }
+  });
+  grid.addEventListener('focusin', (event) => {
+    const item = gridItemFromEvent(event);
+    if (item && item.matches(':focus-visible')) {
+      scheduleTooltip(item);
+    }
+  });
+  grid.addEventListener('focusout', hideTooltip);
+  window.addEventListener('scroll', hideTooltip, { passive: true });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape' || event.defaultPrevented || changelogPanel?.open) {
+      return;
+    }
+
+    if (tooltipTarget || tooltipTimer != null) {
+      hideTooltip();
+      return;
+    }
+
+    if (filterVisibilityPrompt) {
+      hideFilterPrompt();
+      return;
+    }
+
+    if (expandedItemId == null) {
+      return;
+    }
+
+    const item = gridItemsById.get(expandedItemId);
+    const active = document.activeElement;
+    // Return focus to the icon unless the visitor is working in the search box or select.
+    const returnFocus = !active || active === document.body || grid.contains(active);
+    collapseExpanded();
+    if (returnFocus && item && !item.classList.contains('is-hidden')) {
+      item.focus({ preventScroll: true });
+    }
+  });
+
   searchInput.addEventListener('input', () => {
-    searchQuery = searchInput.value;
+    searchTokens = tokenizeQuery(searchInput.value);
     if (clearSearchButton) {
-      clearSearchButton.classList.toggle('is-hidden', searchQuery.length === 0);
+      clearSearchButton.classList.toggle('is-hidden', searchInput.value.length === 0);
     }
     applyFilters();
   });
 
   clearSearchButton?.addEventListener('click', () => {
-    searchQuery = '';
+    searchTokens = [];
     searchInput.value = '';
     clearSearchButton.classList.add('is-hidden');
     applyFilters();
@@ -914,8 +1114,24 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
 
   homeResetButton?.addEventListener('click', handleHomeReset);
   openChangelogButton?.addEventListener('click', openChangelog);
-  changelogBackdrop?.addEventListener('click', closeChangelog);
   closeChangelogButton?.addEventListener('click', closeChangelog);
+  changelogPanel?.addEventListener('close', rememberChangelogScroll);
+  changelogScrollContainer?.addEventListener(
+    'scroll',
+    () => {
+      if (changelogLoaded && changelogPanel?.open) {
+        changelogScrollTop = changelogScrollContainer.scrollTop;
+      }
+    },
+    { passive: true }
+  );
+  // The dialog's own box is covered by its header and list, so a click that lands on the
+  // dialog element itself came from the backdrop.
+  changelogPanel?.addEventListener('click', (event) => {
+    if (event.target === changelogPanel) {
+      closeChangelog();
+    }
+  });
   changelogScrollTopButton?.addEventListener('click', scrollChangelogToTop);
   changelogTitleButton?.addEventListener('click', scrollChangelogToTop);
 
@@ -990,7 +1206,7 @@ export async function initCatalog(baseUrl: string = '/'): Promise<void> {
 
   if (pendingDeepLinkId != null) {
     const entry = searchIndexById.get(pendingDeepLinkId);
-    if (entry && !matchesFilters(entry, searchQuery, selectedCategory)) {
+    if (entry && !matchesFilters(entry)) {
       clearFilters();
       pendingOpenAfterFilterResetId = pendingDeepLinkId;
       applyFilters();
