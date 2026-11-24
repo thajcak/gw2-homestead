@@ -12,8 +12,9 @@ services:
     container_name: gw2-homestead-sync
     restart: unless-stopped
     environment:
-      REPO_URL: git@github.com:thajcak/gw2-homestead.git
-      # GITHUB_TOKEN: github_pat_...   # only with an https:// REPO_URL instead of a deploy key
+      # REPO_URL defaults to git@github.com:thajcak/gw2-homestead.git (pushes with the deploy key).
+      # For a token instead, set REPO_URL to https://github.com/thajcak/gw2-homestead.git and:
+      # GITHUB_TOKEN: github_pat_...
       SYNC_MINUTE: "30"
       RUN_ON_START: "false"
       PUSH: "true"

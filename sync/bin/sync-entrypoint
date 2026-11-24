@@ -11,6 +11,13 @@ export HOME="$DATA_DIR/home"
 SSH_KEY_FILE=${SSH_KEY_FILE:-$DATA_DIR/deploy_key}
 
 if [[ $(id -u) -eq 0 && $PUID -ne 0 ]]; then
+  # ssh refuses to run as a uid with no account ("No user exists for uid 99").
+  if ! getent group "$PGID" >/dev/null; then
+    echo "homestead:x:$PGID:" >>/etc/group
+  fi
+  if ! getent passwd "$PUID" >/dev/null; then
+    echo "homestead:x:$PUID:$PGID::$HOME:/usr/sbin/nologin" >>/etc/passwd
+  fi
   mkdir -p "$HOME/.ssh"
   # ssh won't use a key that others can read, and the sync user can't read a root-owned one,
   # so copy it into the sync user's home with the right owner and mode.
@@ -18,6 +25,9 @@ if [[ $(id -u) -eq 0 && $PUID -ne 0 ]]; then
     install -m 600 -o "$PUID" -g "$PGID" "$SSH_KEY_FILE" "$HOME/.ssh/id_sync"
   fi
   chown "$PUID:$PGID" "$DATA_DIR" "$HOME" "$HOME/.ssh"
+  for file in "$DATA_DIR/sync.lock" "$DATA_DIR/last-success"; do
+    [[ -e $file ]] && chown "$PUID:$PGID" "$file"
+  done
   # After a PUID change, hand the clone over too (git refuses a repo another user owns).
   if [[ -d $DATA_DIR/repo && $(stat -c %u "$DATA_DIR/repo") != "$PUID" ]]; then
     echo "Changing the owner of $DATA_DIR/repo to $PUID:$PGID..."

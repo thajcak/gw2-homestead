@@ -12,7 +12,7 @@ set -euo pipefail
 
 log() { printf '%s %s\n' "$(date -u +%FT%TZ)" "$*"; }
 
-: "${REPO_URL:?Set REPO_URL to the repo to clone and push to.}"
+: "${REPO_URL:?REPO_URL is empty; remove the variable to use the default repo.}"
 REPO_DIR="$DATA_DIR/repo"
 DATA_PATHS=(src/content/ src/data/ src/assets/decorations/)
 

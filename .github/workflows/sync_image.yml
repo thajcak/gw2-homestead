@@ -65,6 +65,7 @@ jobs:
         uses: docker/build-push-action@v7
         with:
           context: sync
+          build-args: REPO_URL=git@github.com:${{ github.repository }}.git
           platforms: linux/amd64
           pull: true
           no-cache: ${{ github.event_name == 'schedule' }}
