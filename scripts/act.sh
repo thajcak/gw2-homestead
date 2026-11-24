@@ -6,7 +6,7 @@
 #                                   if: conditions). Runs no steps; only clones the actions used.
 #   scripts/act.sh fetch [ids]      Full run of the fetch workflow against the real GW2 API and
 #                                   wiki. Wiki lookups are limited to [ids] (default: a 7-item
-#                                   sample; pass "all" for every decoration, as scheduled runs
+#                                   sample; pass "all" for every decoration, as hourly runs
 #                                   do). The commit happens inside the container only; the Push
 #                                   step and the deploy call are skipped.
 #   scripts/act.sh deploy           Full build job of the deploy workflow; Pages upload and the
@@ -21,6 +21,7 @@ cd "$(dirname "$0")/.."
 
 FETCH_WF=.github/workflows/fetch_decorations.yml
 DEPLOY_WF=.github/workflows/deploy.yml
+IMAGE_WF=.github/workflows/sync_image.yml
 EVENTS=.github/act
 DEFAULT_IDS=1,2,3,4,500,860,1000
 
@@ -60,11 +61,12 @@ dry() {
 check() {
   step "check: dry-run every trigger"
   local failed=0
-  dry "fetch on schedule" 1 schedule -W "$FETCH_WF" -e "$EVENTS/dispatch.json" || failed=1
   dry "fetch on workflow_dispatch" 1 workflow_dispatch -W "$FETCH_WF" -e "$(fetch_event "$DEFAULT_IDS")" || failed=1
   # deploy job is skipped under act ("act": true in the payload), so only build runs.
   dry "deploy on push to main" 1 push -W "$DEPLOY_WF" -e "$EVENTS/push-main.json" || failed=1
   dry "deploy called by fetch" 1 workflow_call -W "$DEPLOY_WF" -e "$EVENTS/workflow-call.json" || failed=1
+  dry "sync image on push to main" 1 push -W "$IMAGE_WF" -e "$EVENTS/push-main.json" || failed=1
+  dry "sync image on schedule" 1 schedule -W "$IMAGE_WF" -e "$EVENTS/dispatch.json" || failed=1
   return $failed
 }
 

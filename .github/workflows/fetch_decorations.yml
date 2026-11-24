@@ -1,9 +1,8 @@
 name: Update and Fetch Decorations and Categories
 
+# The hourly sync runs in the container in sync/ (the wiki answers GitHub's runners with
+# HTTP 403 for some images). This workflow is a manual fallback only.
 on:
-  schedule:
-    # Hourly, off the top of the hour: GitHub delays or drops many runs scheduled at minute 0
-    - cron: '30 * * * *'
   workflow_dispatch: # Allows for manual trigger of the workflow
     inputs:
       allow_large_drop:

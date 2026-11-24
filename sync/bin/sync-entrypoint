@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+# Container entrypoint. As root it prepares $DATA_DIR and the SSH key, then runs the command
+# again as PUID:PGID (Unraid's nobody:users by default), so files on the volume aren't root's.
+#
+#   schedule          (default) sync every hour at SYNC_MINUTE past the hour (UTC)
+#   once [args...]    one sync now; args go to scripts/run-fetch-decorations.mjs
+#   <command>         any other command, as PUID:PGID (e.g. bash)
+set -euo pipefail
+
+export HOME="$DATA_DIR/home"
+SSH_KEY_FILE=${SSH_KEY_FILE:-$DATA_DIR/deploy_key}
+
+if [[ $(id -u) -eq 0 && $PUID -ne 0 ]]; then
+  mkdir -p "$HOME/.ssh"
+  # ssh won't use a key that others can read, and the sync user can't read a root-owned one,
+  # so copy it into the sync user's home with the right owner and mode.
+  if [[ -f $SSH_KEY_FILE ]]; then
+    install -m 600 -o "$PUID" -g "$PGID" "$SSH_KEY_FILE" "$HOME/.ssh/id_sync"
+  fi
+  chown "$PUID:$PGID" "$DATA_DIR" "$HOME" "$HOME/.ssh"
+  # After a PUID change, hand the clone over too (git refuses a repo another user owns).
+  if [[ -d $DATA_DIR/repo && $(stat -c %u "$DATA_DIR/repo") != "$PUID" ]]; then
+    echo "Changing the owner of $DATA_DIR/repo to $PUID:$PGID..."
+    chown -R "$PUID:$PGID" "$DATA_DIR/repo"
+  fi
+  exec setpriv --reuid="$PUID" --regid="$PGID" --clear-groups -- "$0" "$@"
+fi
+
+export SYNC_PREPARED=1
+mkdir -p "$HOME/.ssh"
+if [[ $PUID -eq 0 && -f $SSH_KEY_FILE ]]; then
+  install -m 600 "$SSH_KEY_FILE" "$HOME/.ssh/id_sync"
+fi
+
+# Rewritten on every start, so changing the container's settings takes effect.
+git config --global user.name "$GIT_USER_NAME"
+git config --global user.email "$GIT_USER_EMAIL"
+git config --global pull.rebase true
+if [[ -f $HOME/.ssh/id_sync ]]; then
+  git config --global core.sshCommand \
+    "ssh -i $HOME/.ssh/id_sync -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o BatchMode=yes"
+else
+  git config --global --unset core.sshCommand || true
+fi
+# A token is read from the environment when git asks, never written to disk.
+if [[ -n ${GITHUB_TOKEN:-} ]]; then
+  git config --global credential.https://github.com.helper \
+    '!f() { test "$1" = get && echo username=x-access-token && echo "password=$GITHUB_TOKEN"; }; f'
+else
+  git config --global --unset credential.https://github.com.helper || true
+fi
+
+case "${1:-schedule}" in
+  schedule) exec sync-schedule ;;
+  once) shift; exec sync-once "$@" ;;
+  *) exec "$@" ;;
+esac

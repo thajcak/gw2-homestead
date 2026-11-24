@@ -1,6 +1,7 @@
 /**
  * Full decoration sync: GW2 API -> merge stored enrichment -> wiki enrichment -> content files
- * -> local images. Used by the scheduled GitHub workflow and by `npm run fetch-decorations`.
+ * -> local images. Used by the sync container (sync/), the manual GitHub workflow and
+ * `npm run fetch-decorations`.
  */
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
