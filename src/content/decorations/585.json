@@ -6,6 +6,7 @@
     5
   ],
   "icon": "decorations/585/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/B1E61DD317E790F2BEFDA596F83A99F2DF559B14/1227737.png",
   "added": "2024-11-08",
   "wikiTitle": "Pillar Candle (Handiwork)",
   "recipe": {
@@ -35,9 +36,17 @@
     ]
   },
   "original": {
-    "width": 411,
-    "height": 575,
+    "width": 311,
+    "height": 599,
     "source": "decorations/585/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/73/Pillar_Candle_nighttime.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/d/d1/Pillar_Candle.jpg"
+  },
+  "views": [
+    {
+      "caption": "View at night",
+      "width": 411,
+      "height": 575,
+      "source": "https://wiki.guildwars2.com/images/7/73/Pillar_Candle_nighttime.jpg"
+    }
+  ]
 }

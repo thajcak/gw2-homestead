@@ -6,6 +6,7 @@
     2
   ],
   "icon": "decorations/412/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/C7E53A2E5107EBA5C5C56954F9D3F4AECC591BAE/1225954.png",
   "added": "2024-11-19",
   "wikiTitle": "Square Guild Banquet Table (Handiwork)",
   "recipe": {
@@ -35,9 +36,29 @@
     ]
   },
   "original": {
-    "width": 1482,
-    "height": 848,
+    "width": 1467,
+    "height": 869,
     "source": "decorations/412/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/0/0e/Square_Guild_Banquet_Table_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/f/f1/Square_Guild_Banquet_Table.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 1482,
+      "height": 848,
+      "source": "https://wiki.guildwars2.com/images/0/0e/Square_Guild_Banquet_Table_front.jpg"
+    },
+    {
+      "caption": "Top view",
+      "width": 987,
+      "height": 965,
+      "source": "https://wiki.guildwars2.com/images/4/4e/Square_Guild_Banquet_Table_top.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1458,
+      "height": 875,
+      "source": "https://wiki.guildwars2.com/images/5/57/Guild_Banquet_Table_side.jpg"
+    }
+  ]
 }

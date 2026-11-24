@@ -6,6 +6,7 @@
     12
   ],
   "icon": "decorations/503/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/EC76690BC736590C2907F1A0E2D95D2C21B51F62/2039313.png",
   "added": "2024-11-08",
   "wikiTitle": "Bronze Qadim Trophy (Handiwork)",
   "recipe": {
@@ -35,9 +36,35 @@
     ]
   },
   "original": {
-    "width": 469,
-    "height": 968,
+    "width": 363,
+    "height": 970,
     "source": "decorations/503/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/c/c3/Bronze_Qadim_Trophy_detail.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/b/b0/Bronze_Qadim_Trophy.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 291,
+      "height": 972,
+      "source": "https://wiki.guildwars2.com/images/f/f5/Bronze_Qadim_Trophy_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 291,
+      "height": 970,
+      "source": "https://wiki.guildwars2.com/images/7/78/Bronze_Qadim_Trophy_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 295,
+      "height": 972,
+      "source": "https://wiki.guildwars2.com/images/4/4a/Bronze_Qadim_Trophy_side.jpg"
+    },
+    {
+      "caption": "Close-up view",
+      "width": 469,
+      "height": 968,
+      "source": "https://wiki.guildwars2.com/images/c/c3/Bronze_Qadim_Trophy_detail.jpg"
+    }
+  ]
 }

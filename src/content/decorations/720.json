@@ -7,6 +7,7 @@
     9
   ],
   "icon": "decorations/720/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/5440A7179B2F44FA05392FC1F30F01D331DE33D5/3441833.png",
   "added": "2024-11-19",
   "wikiTitle": "Weapon Display Case",
   "recipe": {
@@ -40,8 +41,22 @@
   },
   "original": {
     "width": 1360,
-    "height": 1256,
+    "height": 818,
     "source": "decorations/720/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/d/d8/Weapon_Display_Case_active.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/d/d0/Weapon_Display_Case.jpg"
+  },
+  "views": [
+    {
+      "caption": "Active",
+      "width": 1360,
+      "height": 1256,
+      "source": "https://wiki.guildwars2.com/images/d/d8/Weapon_Display_Case_active.jpg"
+    },
+    {
+      "caption": "Based size comparison between Weapon and Armor Display Case",
+      "width": 1690,
+      "height": 564,
+      "source": "https://wiki.guildwars2.com/images/9/9c/Display_Case_comparison.jpg"
+    }
+  ]
 }

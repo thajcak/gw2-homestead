@@ -6,6 +6,7 @@
     12
   ],
   "icon": "decorations/26/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/2BB54BA422D3F3DA542A932BDB37A4AB17A6A6F3/1894796.png",
   "added": "2024-11-19",
   "wikiTitle": "Dhuum's Token (Handiwork)",
   "recipe": {
@@ -35,9 +36,29 @@
     ]
   },
   "original": {
-    "width": 893,
-    "height": 970,
+    "width": 998,
+    "height": 936,
     "source": "decorations/26/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/a/ab/Dhuum%27s_Token_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/9/9c/Dhuum%27s_Token.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 893,
+      "height": 970,
+      "source": "https://wiki.guildwars2.com/images/a/ab/Dhuum%27s_Token_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 841,
+      "height": 972,
+      "source": "https://wiki.guildwars2.com/images/3/3f/Dhuum%27s_Token_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 945,
+      "height": 970,
+      "source": "https://wiki.guildwars2.com/images/3/3e/Dhuum%27s_Token_side.jpg"
+    }
+  ]
 }

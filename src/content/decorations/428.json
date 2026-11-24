@@ -7,6 +7,7 @@
     14
   ],
   "icon": "decorations/428/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/F77E9EB92172D401C9F49EACD57D49571CF1A052/1769608.png",
   "added": "2025-03-11",
   "wikiTitle": "Awakened Tar Pit (Handiwork)",
   "recipe": {
@@ -36,9 +37,23 @@
     ]
   },
   "original": {
-    "width": 1275,
-    "height": 926,
+    "width": 1233,
+    "height": 932,
     "source": "decorations/428/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/1/18/Awakened_Tar_Pit_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/6/61/Awakened_Tar_Pit.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 1275,
+      "height": 926,
+      "source": "https://wiki.guildwars2.com/images/1/18/Awakened_Tar_Pit_front.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1089,
+      "height": 947,
+      "source": "https://wiki.guildwars2.com/images/3/33/Awakened_Tar_Pit_side.jpg"
+    }
+  ]
 }

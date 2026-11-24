@@ -7,6 +7,7 @@
     21
   ],
   "icon": "decorations/657/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/963AFA3D31FB3135CD4DD502ACE731A662C96342/1938767.png",
   "added": "2024-11-19",
   "wikiTitle": "Dog Statue (Handiwork)",
   "recipe": {
@@ -36,9 +37,23 @@
     ]
   },
   "original": {
-    "width": 1090,
+    "width": 811,
     "height": 960,
     "source": "decorations/657/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/85/Dog_Statue_side.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/7/7f/Dog_Statue.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 292,
+      "height": 960,
+      "source": "https://wiki.guildwars2.com/images/6/6b/Dog_Statue_front_view.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1090,
+      "height": 960,
+      "source": "https://wiki.guildwars2.com/images/8/85/Dog_Statue_side.jpg"
+    }
+  ]
 }

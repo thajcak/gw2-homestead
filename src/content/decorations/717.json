@@ -7,6 +7,7 @@
     10
   ],
   "icon": "decorations/717/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/C249F91AD870C77B9F0092F1B46D0CE6D86633A0/2306763.png",
   "added": "2024-11-19",
   "wikiTitle": "Dragon Bash Banner (Handiwork)",
   "recipe": {
@@ -36,9 +37,17 @@
     ]
   },
   "original": {
-    "width": 507,
+    "width": 325,
     "height": 971,
     "source": "decorations/717/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/b/b6/Dragon_Bash_Banner_detail.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/7/79/Dragon_Bash_Banner.jpg"
+  },
+  "views": [
+    {
+      "caption": "Close-up view",
+      "width": 507,
+      "height": 971,
+      "source": "https://wiki.guildwars2.com/images/b/b6/Dragon_Bash_Banner_detail.jpg"
+    }
+  ]
 }

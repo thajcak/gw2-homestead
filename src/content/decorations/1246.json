@@ -6,6 +6,7 @@
     20
   ],
   "icon": "decorations/1246/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/140ADB17F52F66D96DC0C6F80C14290438182573/3805871.png",
   "added": "2026-09-15",
   "wikiTitle": "Seer Casket (Handiwork)",
   "recipe": {
@@ -30,9 +31,35 @@
     ]
   },
   "original": {
-    "width": 1836,
-    "height": 598,
+    "width": 1494,
+    "height": 928,
     "source": "decorations/1246/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/9e/Seer_Casket_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/7/75/Seer_Casket.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 1836,
+      "height": 598,
+      "source": "https://wiki.guildwars2.com/images/9/9e/Seer_Casket_front.jpg"
+    },
+    {
+      "caption": "Top view",
+      "width": 1823,
+      "height": 709,
+      "source": "https://wiki.guildwars2.com/images/8/8b/Seer_Casket_top.jpg"
+    },
+    {
+      "caption": "Bottom view",
+      "width": 1855,
+      "height": 707,
+      "source": "https://wiki.guildwars2.com/images/9/9b/Seer_Casket_bottom.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1199,
+      "height": 915,
+      "source": "https://wiki.guildwars2.com/images/9/9b/Seer_Casket_side.jpg"
+    }
+  ]
 }

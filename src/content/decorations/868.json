@@ -7,6 +7,7 @@
     9
   ],
   "icon": "decorations/868/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/16470C66FC652E6E73B81172C221BFC843E840A8/3240046.png",
   "added": "2025-01-28",
   "wikiTitle": "Golden Dragon Statue (Handiwork)",
   "recipe": {
@@ -36,9 +37,23 @@
     ]
   },
   "original": {
-    "width": 844,
+    "width": 652,
     "height": 960,
     "source": "decorations/868/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/b/b0/Golden_Dragon_Statue_front_view.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/a/ae/Golden_Dragon_Statue.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 844,
+      "height": 960,
+      "source": "https://wiki.guildwars2.com/images/b/b0/Golden_Dragon_Statue_front_view.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 436,
+      "height": 960,
+      "source": "https://wiki.guildwars2.com/images/b/b6/Golden_Dragon_Statue_side_view.jpg"
+    }
+  ]
 }

@@ -6,6 +6,7 @@
     12
   ],
   "icon": "decorations/92/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/1670AC3EF62C570F0E40650443B3CFBCCD4CD6BF/1341330.png",
   "added": "2024-11-19",
   "wikiTitle": "Silver Sabetha Trophy (Handiwork)",
   "recipe": {
@@ -35,9 +36,35 @@
     ]
   },
   "original": {
-    "width": 499,
-    "height": 970,
+    "width": 477,
+    "height": 973,
     "source": "decorations/92/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/4/4e/Silver_Sabetha_Trophy_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/9/9e/Silver_Sabetha_Trophy.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 499,
+      "height": 970,
+      "source": "https://wiki.guildwars2.com/images/4/4e/Silver_Sabetha_Trophy_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 489,
+      "height": 968,
+      "source": "https://wiki.guildwars2.com/images/5/56/Silver_Sabetha_Trophy_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 319,
+      "height": 972,
+      "source": "https://wiki.guildwars2.com/images/2/2b/Silver_Sabetha_Trophy_side.jpg"
+    },
+    {
+      "caption": "Close-up view",
+      "width": 893,
+      "height": 972,
+      "source": "https://wiki.guildwars2.com/images/4/45/Silver_Sabetha_Trophy_detail.jpg"
+    }
+  ]
 }

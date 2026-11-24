@@ -6,6 +6,7 @@
     6
   ],
   "icon": "decorations/269/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/FD7D4B6D2536C6A49817BA066DE5EA0C07F8B0BC/1225832.png",
   "added": "2024-11-08",
   "wikiTitle": "Ceramic Planter (Handiwork)",
   "recipe": {
@@ -35,9 +36,29 @@
     ]
   },
   "original": {
-    "width": 1356,
-    "height": 767,
+    "width": 1275,
+    "height": 839,
     "source": "decorations/269/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/5/5d/Ceramic_Planter_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/9/9e/Ceramic_Planter.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 1356,
+      "height": 767,
+      "source": "https://wiki.guildwars2.com/images/5/5d/Ceramic_Planter_front.jpg"
+    },
+    {
+      "caption": "Top view",
+      "width": 1398,
+      "height": 920,
+      "source": "https://wiki.guildwars2.com/images/3/3b/Ceramic_Planter_top.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 963,
+      "height": 818,
+      "source": "https://wiki.guildwars2.com/images/1/18/Ceramic_Planter_side.jpg"
+    }
+  ]
 }

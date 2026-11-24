@@ -6,6 +6,7 @@
     22
   ],
   "icon": "decorations/568/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/A575440168FAF0F87649CACEFE0B39087A22C427/1418351.png",
   "added": "2024-11-19",
   "wikiTitle": "Super Rock Platform (Handiwork)",
   "recipe": {
@@ -35,9 +36,29 @@
     ]
   },
   "original": {
-    "width": 1055,
-    "height": 971,
+    "width": 1845,
+    "height": 536,
     "source": "decorations/568/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/4/47/Super_Rock_Platform_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/2/21/Super_Rock_Platform.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 1055,
+      "height": 971,
+      "source": "https://wiki.guildwars2.com/images/4/47/Super_Rock_Platform_top.jpg"
+    },
+    {
+      "caption": "Bottom view",
+      "width": 1049,
+      "height": 973,
+      "source": "https://wiki.guildwars2.com/images/0/0d/Super_Rock_Platform_bottom.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 105,
+      "height": 973,
+      "source": "https://wiki.guildwars2.com/images/4/40/Super_Rock_Platform_side.jpg"
+    }
+  ]
 }

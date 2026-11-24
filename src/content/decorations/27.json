@@ -6,6 +6,7 @@
     22
   ],
   "icon": "decorations/27/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/D92DD6C5A40EF5042A98C54F78759FA5EE06B9FB/1418355.png",
   "added": "2024-11-19",
   "wikiTitle": "Super Cloud (Handiwork)",
   "recipe": {
@@ -35,9 +36,29 @@
     ]
   },
   "original": {
-    "width": 927,
-    "height": 971,
+    "width": 1771,
+    "height": 777,
     "source": "decorations/27/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/0/0d/Super_Cloud_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/f/f1/Super_Cloud.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 927,
+      "height": 971,
+      "source": "https://wiki.guildwars2.com/images/0/0d/Super_Cloud_top.jpg"
+    },
+    {
+      "caption": "Bottom view",
+      "width": 915,
+      "height": 969,
+      "source": "https://wiki.guildwars2.com/images/4/46/Super_Cloud_bottom.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1693,
+      "height": 568,
+      "source": "https://wiki.guildwars2.com/images/e/e6/Super_Cloud_side.jpg"
+    }
+  ]
 }

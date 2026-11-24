@@ -6,6 +6,7 @@
     5
   ],
   "icon": "decorations/750/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/B1AD0310030C0FE1AB9D19E498047440596543D6/1227521.png",
   "added": "2024-11-08",
   "wikiTitle": "Campfire (Handiwork)",
   "recipe": {
@@ -30,9 +31,35 @@
     ]
   },
   "original": {
-    "width": 911,
-    "height": 967,
+    "width": 1579,
+    "height": 820,
     "source": "decorations/750/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/6/68/Campfire_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/8/84/Campfire_%28decoration%29.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 911,
+      "height": 967,
+      "source": "https://wiki.guildwars2.com/images/6/68/Campfire_top.jpg"
+    },
+    {
+      "caption": "Bottom view",
+      "width": 939,
+      "height": 968,
+      "source": "https://wiki.guildwars2.com/images/d/dd/Campfire_bottom.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1488,
+      "height": 883,
+      "source": "https://wiki.guildwars2.com/images/9/9a/Campfire_side.jpg"
+    },
+    {
+      "caption": "View at night",
+      "width": 969,
+      "height": 651,
+      "source": "https://wiki.guildwars2.com/images/7/70/Campfire_nighttime.jpg"
+    }
+  ]
 }

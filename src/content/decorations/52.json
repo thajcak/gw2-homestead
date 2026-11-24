@@ -6,6 +6,7 @@
     2
   ],
   "icon": "decorations/52/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/EE50E9BD39A3E255DE6870BF25BC58152A176631/1227605.png",
   "added": "2024-11-08",
   "wikiTitle": "Fancy Chair (Handiwork)",
   "recipe": {
@@ -35,9 +36,29 @@
     ]
   },
   "original": {
-    "width": 447,
+    "width": 588,
     "height": 966,
     "source": "decorations/52/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/0/04/Fancy_Chair_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/c/c6/Fancy_Chair.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 447,
+      "height": 966,
+      "source": "https://wiki.guildwars2.com/images/0/04/Fancy_Chair_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 477,
+      "height": 966,
+      "source": "https://wiki.guildwars2.com/images/4/47/Fancy_Chair_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 531,
+      "height": 966,
+      "source": "https://wiki.guildwars2.com/images/7/78/Fancy_Chair_side.jpg"
+    }
+  ]
 }

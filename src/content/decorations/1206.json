@@ -7,6 +7,7 @@
     20
   ],
   "icon": "decorations/1206/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/E7E07714D9DF636646D702F129A0B9D2CC652A71/3770096.png",
   "added": "2026-05-12",
   "wikiTitle": "Iron Stairs 120 x 120 (Handiwork)",
   "recipe": {
@@ -30,9 +31,32 @@
     ]
   },
   "original": {
-    "width": 801,
-    "height": 970,
+    "width": 1059,
+    "height": 946,
     "source": "decorations/1206/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/5/5d/Iron_Stairs_120_x_120_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/2/20/Iron_Stairs_120_x_120.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 801,
+      "height": 970,
+      "source": "decorations/1206/view-d27beb40d4bd.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/5/5d/Iron_Stairs_120_x_120_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 1295,
+      "height": 887,
+      "source": "decorations/1206/view-463f8b318aa5.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/1/1a/Iron_Stairs_120_x_120_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1080,
+      "height": 901,
+      "source": "decorations/1206/view-8b3809c609cb.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/e/ea/Iron_Stairs_120_x_120_side.jpg"
+    }
+  ]
 }

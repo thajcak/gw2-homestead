@@ -7,6 +7,7 @@
     5
   ],
   "icon": "decorations/312/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/9FB63D09069C30B604DC02DD1C3E2E3FC5F30D47/3375048.png",
   "added": "2024-11-08",
   "wikiTitle": "Kodan Crystal Candle",
   "recipe": {
@@ -34,9 +35,17 @@
     ]
   },
   "original": {
-    "width": 1039,
+    "width": 1019,
     "height": 1080,
     "source": "decorations/312/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/2/25/Kodan_Crystal_Candle_lit.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/1/19/Kodan_Crystal_Candle.jpg"
+  },
+  "views": [
+    {
+      "caption": "Lit",
+      "width": 1039,
+      "height": 1080,
+      "source": "https://wiki.guildwars2.com/images/2/25/Kodan_Crystal_Candle_lit.jpg"
+    }
+  ]
 }

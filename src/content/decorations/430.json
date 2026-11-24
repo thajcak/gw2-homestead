@@ -7,6 +7,7 @@
     24
   ],
   "icon": "decorations/430/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/D805D94EF7590F376F11DAA1B56838CADB7CE83D/2718365.png",
   "added": "2024-11-19",
   "wikiTitle": "Windmill Wheel (Handiwork)",
   "recipe": {
@@ -36,9 +37,21 @@
     ]
   },
   "original": {
-    "width": 1312,
-    "height": 1312,
+    "width": 1009,
+    "height": 1185,
     "source": "decorations/430/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/6/6b/Windmill_Wheel_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/5/52/Windmill_Wheel.jpg"
+  },
+  "views": [
+    {
+      "width": 1312,
+      "height": 1312,
+      "source": "https://wiki.guildwars2.com/images/6/6b/Windmill_Wheel_front.jpg"
+    },
+    {
+      "width": 720,
+      "height": 1440,
+      "source": "https://wiki.guildwars2.com/images/7/7c/Windmill_Wheel_side.jpg"
+    }
+  ]
 }

@@ -7,6 +7,7 @@
     5
   ],
   "icon": "decorations/149/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/712B1E6495B47C632A9D9CE40ECA5E2104139F9E/1769506.png",
   "added": "2024-11-08",
   "wikiTitle": "Signal Lantern (Handiwork)",
   "recipe": {
@@ -36,9 +37,23 @@
     ]
   },
   "original": {
-    "width": 672,
-    "height": 955,
+    "width": 1045,
+    "height": 959,
     "source": "decorations/149/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/6/62/Signal_Lantern_pillar_close-up.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/5/55/Signal_Lantern.jpg"
+  },
+  "views": [
+    {
+      "caption": "Pillar close-up",
+      "width": 672,
+      "height": 955,
+      "source": "https://wiki.guildwars2.com/images/6/62/Signal_Lantern_pillar_close-up.jpg"
+    },
+    {
+      "caption": "Lantern close-up",
+      "width": 762,
+      "height": 946,
+      "source": "https://wiki.guildwars2.com/images/e/ed/Signal_Lantern_close-up.jpg"
+    }
+  ]
 }

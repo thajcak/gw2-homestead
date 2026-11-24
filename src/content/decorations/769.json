@@ -6,6 +6,7 @@
     9
   ],
   "icon": "decorations/769/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/0CCF5315B3452E659196A2D2E064733A272E121C/1225667.png",
   "added": "2024-11-19",
   "wikiTitle": "Illuminated Fountain (Handiwork)",
   "recipe": {
@@ -35,9 +36,17 @@
     ]
   },
   "original": {
-    "width": 474,
-    "height": 928,
+    "width": 1431,
+    "height": 953,
     "source": "decorations/769/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/3/34/Illuminated_Fountain_details_view.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/2/2d/Illuminated_Fountain.jpg"
+  },
+  "views": [
+    {
+      "caption": "Details close-up view",
+      "width": 474,
+      "height": 928,
+      "source": "https://wiki.guildwars2.com/images/3/34/Illuminated_Fountain_details_view.jpg"
+    }
+  ]
 }

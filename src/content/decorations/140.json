@@ -7,6 +7,7 @@
     1
   ],
   "icon": "decorations/140/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/A2DBDD1E546A2F5EDAC301BA07FEA20F1B1C12A7/1223799.png",
   "added": "2024-11-08",
   "wikiTitle": "Sandstone Pillar (Handiwork)",
   "recipe": {
@@ -36,9 +37,29 @@
     ]
   },
   "original": {
-    "width": 807,
-    "height": 944,
+    "width": 210,
+    "height": 950,
     "source": "decorations/140/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/6/6c/Sandstone_Pillar_close-up.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/4/4b/Sandstone_Pillar.jpg"
+  },
+  "views": [
+    {
+      "caption": "Side view",
+      "width": 165,
+      "height": 953,
+      "source": "https://wiki.guildwars2.com/images/9/98/Sandstone_Pillar_side.jpg"
+    },
+    {
+      "caption": "Close-up view",
+      "width": 807,
+      "height": 944,
+      "source": "https://wiki.guildwars2.com/images/6/6c/Sandstone_Pillar_close-up.jpg"
+    },
+    {
+      "caption": "Broken and Regular reference",
+      "width": 592,
+      "height": 1183,
+      "source": "https://wiki.guildwars2.com/images/e/eb/Sandstone_Pillar_reference.jpg"
+    }
+  ]
 }

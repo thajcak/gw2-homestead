@@ -6,6 +6,7 @@
     27
   ],
   "icon": "decorations/911/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/0011413D2C452D047FEED69B095703939B6A460D/3629377.png",
   "added": "2025-06-03",
   "wikiTitle": "Ornate Grand Piano",
   "recipe": {
@@ -29,9 +30,23 @@
     ]
   },
   "original": {
-    "width": 1847,
-    "height": 1385,
+    "width": 1440,
+    "height": 1440,
     "source": "decorations/911/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/f/fe/Ornate_Grand_Piano_side.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/2/2f/Ornate_Grand_Piano.jpg"
+  },
+  "views": [
+    {
+      "caption": "Side view",
+      "width": 1847,
+      "height": 1385,
+      "source": "https://wiki.guildwars2.com/images/f/fe/Ornate_Grand_Piano_side.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 1800,
+      "height": 1440,
+      "source": "https://wiki.guildwars2.com/images/b/b5/Ornate_Grand_Piano_back.jpg"
+    }
+  ]
 }

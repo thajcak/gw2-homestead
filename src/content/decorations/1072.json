@@ -6,6 +6,7 @@
     27
   ],
   "icon": "decorations/1072/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/E15EF0A24DB425200240240B4EF90609B416A1FA/3729151.png",
   "added": "2025-11-18",
   "wikiTitle": "Underwater Anemone",
   "recipe": {
@@ -29,9 +30,25 @@
     ]
   },
   "original": {
-    "width": 1021,
-    "height": 959,
+    "width": 1141,
+    "height": 970,
     "source": "decorations/1072/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/b/b0/Underwater_Anemone_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/5/5b/Underwater_Anemone.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 1021,
+      "height": 959,
+      "source": "decorations/1072/view-593a9b455a69.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/b/b0/Underwater_Anemone_top.jpg"
+    },
+    {
+      "caption": "Bottom view",
+      "width": 1039,
+      "height": 970,
+      "source": "decorations/1072/view-8de9b59f594c.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/4/4a/Underwater_Anemone_bottom.jpg"
+    }
+  ]
 }

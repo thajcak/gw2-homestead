@@ -6,6 +6,7 @@
     12
   ],
   "icon": "decorations/848/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/5B10ACB1A60E00580F4D31DBB3E87E114991A651/3441819.png",
   "added": "2025-03-11",
   "wikiTitle": "Gold Ura Trophy (Handiwork)",
   "recipe": {
@@ -35,9 +36,35 @@
     ]
   },
   "original": {
-    "width": 425,
+    "width": 519,
     "height": 973,
     "source": "decorations/848/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/6/6e/Gold_Ura_Trophy_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/c/c4/Gold_Ura_Trophy.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 425,
+      "height": 973,
+      "source": "https://wiki.guildwars2.com/images/6/6e/Gold_Ura_Trophy_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 437,
+      "height": 971,
+      "source": "https://wiki.guildwars2.com/images/f/f9/Gold_Ura_Trophy_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 431,
+      "height": 971,
+      "source": "https://wiki.guildwars2.com/images/7/70/Gold_Ura_Trophy_side.jpg"
+    },
+    {
+      "caption": "Close-up view",
+      "width": 1025,
+      "height": 968,
+      "source": "https://wiki.guildwars2.com/images/3/3f/Gold_Ura_Trophy_detail.jpg"
+    }
+  ]
 }

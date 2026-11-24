@@ -6,6 +6,7 @@
     5
   ],
   "icon": "decorations/197/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/0B6DDA14351ADF3D63E9C81246D30E1C08589D2D/1225125.png",
   "added": "2024-11-08",
   "wikiTitle": "Bonfire (Handiwork)",
   "recipe": {
@@ -30,9 +31,35 @@
     ]
   },
   "original": {
-    "width": 891,
-    "height": 969,
+    "width": 1509,
+    "height": 881,
     "source": "decorations/197/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/c/c7/Bonfire_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/3/30/Bonfire_%28decoration%29.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 891,
+      "height": 969,
+      "source": "https://wiki.guildwars2.com/images/c/c7/Bonfire_top.jpg"
+    },
+    {
+      "caption": "Bottom view",
+      "width": 925,
+      "height": 969,
+      "source": "https://wiki.guildwars2.com/images/1/1b/Bonfire_bottom.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1593,
+      "height": 865,
+      "source": "https://wiki.guildwars2.com/images/6/68/Bonfire_side.jpg"
+    },
+    {
+      "caption": "View at night",
+      "width": 1089,
+      "height": 951,
+      "source": "https://wiki.guildwars2.com/images/8/80/Bonfire_nighttime.jpg"
+    }
+  ]
 }

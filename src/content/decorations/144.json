@@ -7,6 +7,7 @@
     25
   ],
   "icon": "decorations/144/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/9B405104056DB991F856FB94FFD1542D347B785B/2498616.png",
   "added": "2024-11-08",
   "wikiTitle": "Skewed Stairway (Right) (Handiwork)",
   "recipe": {
@@ -36,9 +37,29 @@
     ]
   },
   "original": {
-    "width": 1146,
-    "height": 965,
+    "width": 783,
+    "height": 920,
     "source": "decorations/144/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/6/66/Skewed_Stairway_%28Left%29_close-up.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/2/2c/Skewed_Stairway_%28Right%29.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 555,
+      "height": 965,
+      "source": "https://wiki.guildwars2.com/images/e/ed/Skewed_Stairway_%28Right%29_top.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1755,
+      "height": 773,
+      "source": "https://wiki.guildwars2.com/images/7/7c/Skewed_Stairway_%28Right%29_side.jpg"
+    },
+    {
+      "caption": "Close-up view",
+      "width": 1146,
+      "height": 965,
+      "source": "https://wiki.guildwars2.com/images/6/66/Skewed_Stairway_%28Left%29_close-up.jpg"
+    }
+  ]
 }

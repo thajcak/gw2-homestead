@@ -6,6 +6,7 @@
     12
   ],
   "icon": "decorations/195/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/B4BE0FC2ADB0EAC7070850DA9D41BBAE2BE9210C/2039319.png",
   "added": "2025-03-11",
   "wikiTitle": "Gold Qadim Trophy (Handiwork)",
   "recipe": {
@@ -35,9 +36,35 @@
     ]
   },
   "original": {
-    "width": 473,
-    "height": 972,
+    "width": 363,
+    "height": 970,
     "source": "decorations/195/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/96/Gold_Qadim_Trophy_detail.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/e/e0/Gold_Qadim_Trophy.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 305,
+      "height": 968,
+      "source": "https://wiki.guildwars2.com/images/9/9b/Gold_Qadim_Trophy_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 295,
+      "height": 970,
+      "source": "https://wiki.guildwars2.com/images/4/4e/Gold_Qadim_Trophy_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 285,
+      "height": 972,
+      "source": "https://wiki.guildwars2.com/images/c/cb/Gold_Qadim_Trophy_side.jpg"
+    },
+    {
+      "caption": "Close-up view",
+      "width": 473,
+      "height": 972,
+      "source": "https://wiki.guildwars2.com/images/9/96/Gold_Qadim_Trophy_detail.jpg"
+    }
+  ]
 }

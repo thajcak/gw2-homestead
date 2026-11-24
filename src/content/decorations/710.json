@@ -6,6 +6,7 @@
     2
   ],
   "icon": "decorations/710/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/E416C7F027009DD4C1720EA7F16E926FAA144EDC/1225946.png",
   "added": "2025-03-11",
   "wikiTitle": "Guild Banquet Table (Handiwork)",
   "recipe": {
@@ -35,9 +36,29 @@
     ]
   },
   "original": {
-    "width": 1458,
-    "height": 875,
+    "width": 1734,
+    "height": 893,
     "source": "decorations/710/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/5/57/Guild_Banquet_Table_side.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/2/20/Guild_Banquet_Table.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 1851,
+      "height": 389,
+      "source": "https://wiki.guildwars2.com/images/4/4e/Guild_Banquet_Table_front.jpg"
+    },
+    {
+      "caption": "Top view",
+      "width": 1830,
+      "height": 590,
+      "source": "https://wiki.guildwars2.com/images/d/d2/Guild_Banquet_Table_top.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1458,
+      "height": 875,
+      "source": "https://wiki.guildwars2.com/images/5/57/Guild_Banquet_Table_side.jpg"
+    }
+  ]
 }

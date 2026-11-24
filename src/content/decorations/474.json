@@ -6,6 +6,7 @@
     4
   ],
   "icon": "decorations/474/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/61D40ED09FBBCDA2B474F10A68A06FDF02A50C68/1634121.png",
   "added": "2024-11-19",
   "wikiTitle": "Fancy Urn (Handiwork)",
   "recipe": {
@@ -35,9 +36,29 @@
     ]
   },
   "original": {
-    "width": 426,
-    "height": 932,
+    "width": 444,
+    "height": 947,
     "source": "decorations/474/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/f/f2/Fancy_Urn_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/c/cc/Fancy_Urn.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 426,
+      "height": 932,
+      "source": "https://wiki.guildwars2.com/images/f/f2/Fancy_Urn_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 435,
+      "height": 950,
+      "source": "https://wiki.guildwars2.com/images/8/84/Fancy_Urn_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 441,
+      "height": 935,
+      "source": "https://wiki.guildwars2.com/images/a/a7/Fancy_Urn_side.jpg"
+    }
+  ]
 }

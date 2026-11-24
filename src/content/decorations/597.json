@@ -7,6 +7,7 @@
     25
   ],
   "icon": "decorations/597/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/55AA340EA6705C08C81FAA0428D37202342A9C10/2343749.png",
   "added": "2024-11-08",
   "wikiTitle": "Bat Lanterns (Handiwork)",
   "recipe": {
@@ -36,9 +37,23 @@
     ]
   },
   "original": {
-    "width": 960,
-    "height": 1920,
+    "width": 1920,
+    "height": 600,
     "source": "decorations/597/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/6/6a/Bat_Lanterns_detail_1.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/2/2a/Bat_Lanterns.jpg"
+  },
+  "views": [
+    {
+      "caption": "A bat with closed wings",
+      "width": 960,
+      "height": 1920,
+      "source": "https://wiki.guildwars2.com/images/6/6a/Bat_Lanterns_detail_1.jpg"
+    },
+    {
+      "caption": "A bat with open wings",
+      "width": 1920,
+      "height": 846,
+      "source": "https://wiki.guildwars2.com/images/e/ea/Bat_Lanterns_detail_2.jpg"
+    }
+  ]
 }

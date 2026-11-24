@@ -6,6 +6,7 @@
     5
   ],
   "icon": "decorations/198/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/341210610D401975736DB6AB5CDC1B5C58019BD7/1202580.png",
   "added": "2024-11-08",
   "wikiTitle": "Obstacle: Purple Torch (Handiwork)",
   "recipe": {
@@ -35,9 +36,17 @@
     ]
   },
   "original": {
-    "width": 827,
-    "height": 1102,
+    "width": 1062,
+    "height": 1328,
     "source": "decorations/198/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/9e/Obstacle-_Torch_unlit.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/3/3c/Obstacle-_Purple_Torch.jpg"
+  },
+  "views": [
+    {
+      "caption": "Unlit (default)",
+      "width": 827,
+      "height": 1102,
+      "source": "https://wiki.guildwars2.com/images/9/9e/Obstacle-_Torch_unlit.jpg"
+    }
+  ]
 }

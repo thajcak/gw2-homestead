@@ -6,6 +6,7 @@
     22
   ],
   "icon": "decorations/257/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/FE7B2EB3E29D263F44ECF0E8697910386D32C96C/2281911.png",
   "added": "2024-11-19",
   "wikiTitle": "Super Leaf Platform (Handiwork)",
   "recipe": {
@@ -35,9 +36,23 @@
     ]
   },
   "original": {
-    "width": 441,
-    "height": 973,
+    "width": 1812,
+    "height": 491,
     "source": "decorations/257/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/3/36/Super_Leaf_Platform_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/5/53/Super_Leaf_Platform.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 441,
+      "height": 973,
+      "source": "https://wiki.guildwars2.com/images/3/36/Super_Leaf_Platform_top.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 83,
+      "height": 973,
+      "source": "https://wiki.guildwars2.com/images/6/6b/Super_Leaf_Platform_side.jpg"
+    }
+  ]
 }

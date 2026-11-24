@@ -7,6 +7,7 @@
     25
   ],
   "icon": "decorations/559/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/B999BA72EC14F1A3731D604A705F13A6510B41DC/1226059.png",
   "added": "2024-11-08",
   "wikiTitle": "Spooky Cauldron (Handiwork)",
   "recipe": {
@@ -36,9 +37,23 @@
     ]
   },
   "original": {
-    "width": 879,
-    "height": 1080,
+    "width": 1448,
+    "height": 990,
     "source": "decorations/559/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/d/d9/Spooky_Cauldron_2.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/e/e4/Spooky_Cauldron.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 879,
+      "height": 1080,
+      "source": "https://wiki.guildwars2.com/images/d/d9/Spooky_Cauldron_2.jpg"
+    },
+    {
+      "caption": "Bottom view",
+      "width": 1325,
+      "height": 1080,
+      "source": "https://wiki.guildwars2.com/images/c/c1/Spooky_Cauldron_3.jpg"
+    }
+  ]
 }

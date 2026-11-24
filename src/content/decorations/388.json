@@ -6,6 +6,7 @@
     9
   ],
   "icon": "decorations/388/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/696A0E95CA567A047724E74B9CB26BF878566F5F/1224090.png",
   "added": "2024-11-08",
   "wikiTitle": "Distressed Lion Statue (Handiwork)",
   "recipe": {
@@ -35,9 +36,23 @@
     ]
   },
   "original": {
-    "width": 953,
-    "height": 1270,
+    "width": 1033,
+    "height": 1378,
     "source": "decorations/388/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/0/0d/Distressed_Lion_Statue_side.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/3/35/Distressed_Lion_Statue.jpg"
+  },
+  "views": [
+    {
+      "caption": "Side view",
+      "width": 953,
+      "height": 1270,
+      "source": "https://wiki.guildwars2.com/images/0/0d/Distressed_Lion_Statue_side.jpg"
+    },
+    {
+      "caption": "Moss texture will rotate itself to the top",
+      "width": 1732,
+      "height": 974,
+      "source": "https://wiki.guildwars2.com/images/5/55/Distressed_Lion_Statue_reference.jpg"
+    }
+  ]
 }

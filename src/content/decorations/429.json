@@ -6,6 +6,7 @@
     3
   ],
   "icon": "decorations/429/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/07FEA4AEA6C27E6BBA6A77CE630526CF04FBA638/1227586.png",
   "added": "2024-11-08",
   "wikiTitle": "Keg (Handiwork)",
   "recipe": {
@@ -35,9 +36,23 @@
     ]
   },
   "original": {
-    "width": 1122,
-    "height": 929,
+    "width": 1082,
+    "height": 953,
     "source": "decorations/429/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/e/ef/Keg_front_view.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/5/5e/Keg_%28decoration%29.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 1122,
+      "height": 929,
+      "source": "https://wiki.guildwars2.com/images/e/ef/Keg_front_view.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 799,
+      "height": 915,
+      "source": "https://wiki.guildwars2.com/images/0/02/Keg_side_view.jpg"
+    }
+  ]
 }

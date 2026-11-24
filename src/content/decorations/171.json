@@ -6,6 +6,7 @@
     9
   ],
   "icon": "decorations/171/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/0D17200C24050EAF9FAFBC44EAA45A3A5CED7102/1466237.png",
   "added": "2024-11-08",
   "wikiTitle": "Basic Commemorative Statue (Handiwork)",
   "recipe": {
@@ -35,9 +36,29 @@
     ]
   },
   "original": {
-    "width": 387,
+    "width": 300,
     "height": 965,
     "source": "decorations/171/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/2/24/Basic_Commemorative_Statue_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/a/af/Basic_Commemorative_Statue.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 387,
+      "height": 965,
+      "source": "https://wiki.guildwars2.com/images/2/24/Basic_Commemorative_Statue_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 408,
+      "height": 965,
+      "source": "https://wiki.guildwars2.com/images/c/c2/Basic_Commemorative_Statue_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 249,
+      "height": 965,
+      "source": "https://wiki.guildwars2.com/images/c/c6/Basic_Commemorative_Statue_side.jpg"
+    }
+  ]
 }

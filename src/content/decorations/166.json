@@ -6,6 +6,7 @@
     5
   ],
   "icon": "decorations/166/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/B826770F7802F7D7B1AACC06F56005C3DD5C1745/1223985.png",
   "added": "2024-11-19",
   "wikiTitle": "Divinity Streetlamp (Handiwork)",
   "recipe": {
@@ -35,9 +36,23 @@
     ]
   },
   "original": {
-    "width": 413,
+    "width": 175,
     "height": 973,
     "source": "decorations/166/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/a/a0/Divinity_Streetlamp_detail.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/4/40/Divinity_Streetlamp.jpg"
+  },
+  "views": [
+    {
+      "caption": "Close-up view",
+      "width": 413,
+      "height": 973,
+      "source": "https://wiki.guildwars2.com/images/a/a0/Divinity_Streetlamp_detail.jpg"
+    },
+    {
+      "caption": "View at night",
+      "width": 181,
+      "height": 971,
+      "source": "https://wiki.guildwars2.com/images/2/21/Divinity_Streetlamp_nighttime.jpg"
+    }
+  ]
 }

@@ -6,6 +6,7 @@
     22
   ],
   "icon": "decorations/762/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/0E43DF4B7A0FA19B210FB8DD1E0A16BF1CEFDE3A/2117557.png",
   "added": "2024-11-19",
   "wikiTitle": "Super Ice Wall (Handiwork)",
   "recipe": {
@@ -35,9 +36,23 @@
     ]
   },
   "original": {
-    "width": 795,
-    "height": 968,
+    "width": 515,
+    "height": 972,
     "source": "decorations/762/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/a/a9/Super_Ice_Wall_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/b/bc/Super_Ice_Wall.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 795,
+      "height": 968,
+      "source": "https://wiki.guildwars2.com/images/a/a9/Super_Ice_Wall_front.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 109,
+      "height": 971,
+      "source": "https://wiki.guildwars2.com/images/e/e3/Super_Ice_Wall_side.jpg"
+    }
+  ]
 }

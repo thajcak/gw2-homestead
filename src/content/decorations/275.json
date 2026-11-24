@@ -7,6 +7,7 @@
     4
   ],
   "icon": "decorations/275/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/0D0EE51C0D4653060C2906FC607BE52407FA2FF0/3374954.png",
   "added": "2024-11-08",
   "wikiTitle": "Red Bowl",
   "recipe": {
@@ -34,9 +35,29 @@
     ]
   },
   "original": {
-    "width": 960,
-    "height": 953,
+    "width": 984,
+    "height": 458,
     "source": "decorations/275/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/6/69/Red_Bowl_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/7/7e/Red_Bowl.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 960,
+      "height": 953,
+      "source": "https://wiki.guildwars2.com/images/6/69/Red_Bowl_top.jpg"
+    },
+    {
+      "caption": "Bottom view",
+      "width": 936,
+      "height": 950,
+      "source": "https://wiki.guildwars2.com/images/e/eb/Red_Bowl_bottom.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1020,
+      "height": 323,
+      "source": "https://wiki.guildwars2.com/images/0/05/Red_Bowl_side.jpg"
+    }
+  ]
 }

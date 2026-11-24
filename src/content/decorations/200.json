@@ -6,6 +6,7 @@
     12
   ],
   "icon": "decorations/200/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/57FFEF5F62B6CD18C375D46D2A0392444178CA19/2039284.png",
   "added": "2024-11-08",
   "wikiTitle": "Bronze Conjured Amalgamate Trophy (Handiwork)",
   "recipe": {
@@ -35,9 +36,35 @@
     ]
   },
   "original": {
-    "width": 801,
-    "height": 970,
+    "width": 577,
+    "height": 966,
     "source": "decorations/200/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/3/33/Bronze_Conjured_Amalgamate_Trophy_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/7/71/Bronze_Conjured_Amalgamate_Trophy.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 801,
+      "height": 970,
+      "source": "https://wiki.guildwars2.com/images/3/33/Bronze_Conjured_Amalgamate_Trophy_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 795,
+      "height": 968,
+      "source": "https://wiki.guildwars2.com/images/5/56/Bronze_Conjured_Amalgamate_Trophy_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 375,
+      "height": 970,
+      "source": "https://wiki.guildwars2.com/images/7/77/Bronze_Conjured_Amalgamate_Trophy_side.jpg"
+    },
+    {
+      "caption": "Close-up view",
+      "width": 1365,
+      "height": 970,
+      "source": "https://wiki.guildwars2.com/images/1/1f/Bronze_Conjured_Amalgamate_Trophy_detail.jpg"
+    }
+  ]
 }

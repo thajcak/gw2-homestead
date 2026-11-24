@@ -7,6 +7,7 @@
     20
   ],
   "icon": "decorations/1215/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/012D56DE5640F0B6F25D9D1D2902CDB7F83F7709/3770087.png",
   "added": "2026-05-12",
   "wikiTitle": "Iron Door (Handiwork)",
   "recipe": {
@@ -31,8 +32,17 @@
   },
   "original": {
     "width": 1080,
-    "height": 1500,
+    "height": 1920,
     "source": "decorations/1215/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/7c/Iron_Door_open.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/6/69/Iron_Door.jpg"
+  },
+  "views": [
+    {
+      "caption": "Open",
+      "width": 1080,
+      "height": 1500,
+      "source": "decorations/1215/view-fc436bfee111.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/7/7c/Iron_Door_open.jpg"
+    }
+  ]
 }

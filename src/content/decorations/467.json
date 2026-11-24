@@ -7,6 +7,7 @@
     26
   ],
   "icon": "decorations/467/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/AF532D0B6C01D1652BC6102159509871329A6BBF/1914837.png",
   "added": "2024-11-19",
   "wikiTitle": "Fog Machine (Handiwork)",
   "recipe": {
@@ -36,9 +37,23 @@
     ]
   },
   "original": {
-    "width": 582,
-    "height": 423,
+    "width": 675,
+    "height": 441,
     "source": "decorations/467/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/8e/Fog_Machine_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/4/41/Fog_Machine.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 582,
+      "height": 423,
+      "source": "https://wiki.guildwars2.com/images/8/8e/Fog_Machine_front.jpg"
+    },
+    {
+      "caption": "Effect once activated",
+      "width": 2081,
+      "height": 1170,
+      "source": "https://wiki.guildwars2.com/images/8/89/Fog_Machine_Detail.jpg"
+    }
+  ]
 }

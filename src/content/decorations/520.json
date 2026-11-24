@@ -7,6 +7,7 @@
     1
   ],
   "icon": "decorations/520/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/3B3CFEC00AEAA45B0C55F80718177CA87EC8B62F/1769406.png",
   "added": "2025-03-11",
   "wikiTitle": "Awakened Bone Wall (Handiwork)",
   "recipe": {
@@ -36,9 +37,29 @@
     ]
   },
   "original": {
-    "width": 1338,
+    "width": 915,
     "height": 965,
     "source": "decorations/520/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/95/Awakened_Bone_Wall_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/0/0a/Awakened_Bone_Wall.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 1338,
+      "height": 965,
+      "source": "https://wiki.guildwars2.com/images/9/95/Awakened_Bone_Wall_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 1269,
+      "height": 965,
+      "source": "https://wiki.guildwars2.com/images/1/1e/Awakened_Bone_Wall_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 552,
+      "height": 965,
+      "source": "https://wiki.guildwars2.com/images/9/98/Awakened_Bone_Wall_side.jpg"
+    }
+  ]
 }

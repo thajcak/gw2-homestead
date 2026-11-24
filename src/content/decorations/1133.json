@@ -7,6 +7,7 @@
     21
   ],
   "icon": "decorations/1133/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/F880D02177480B05E54C2C6E6655AEE6E039E854/3744695.png",
   "added": "2026-02-03",
   "wikiTitle": "Horse Statue (Handiwork)",
   "recipe": {
@@ -36,9 +37,32 @@
     ]
   },
   "original": {
-    "width": 817,
-    "height": 971,
+    "width": 613,
+    "height": 973,
     "source": "decorations/1133/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/a/a2/Horse_Statue_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/6/67/Horse_Statue.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 817,
+      "height": 971,
+      "source": "decorations/1133/view-cf52ed5d5eef.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/a/a2/Horse_Statue_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 855,
+      "height": 971,
+      "source": "decorations/1133/view-ef25ea121f51.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/d/dc/Horse_Statue_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 275,
+      "height": 973,
+      "source": "decorations/1133/view-2d49399002a7.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/5/59/Horse_Statue_side.jpg"
+    }
+  ]
 }

@@ -6,6 +6,7 @@
     10
   ],
   "icon": "decorations/563/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/BF21CBEE5927AE96FBBE4AA8F846E61C565469B4/1225306.png",
   "added": "2025-03-11",
   "wikiTitle": "Asuran Summit Flag (Handiwork)",
   "recipe": {
@@ -35,9 +36,17 @@
     ]
   },
   "original": {
-    "width": 507,
+    "width": 311,
     "height": 973,
     "source": "decorations/563/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/98/Asuran_Summit_Flag_detail.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/c/ce/Asuran_Summit_Flag.jpg"
+  },
+  "views": [
+    {
+      "caption": "Close-up view",
+      "width": 507,
+      "height": 973,
+      "source": "https://wiki.guildwars2.com/images/9/98/Asuran_Summit_Flag_detail.jpg"
+    }
+  ]
 }

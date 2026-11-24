@@ -6,6 +6,7 @@
     27
   ],
   "icon": "decorations/957/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/A3EF01FBC74BD0B25F45F9F29C33E2F5C833426F/3695509.png",
   "added": "2025-10-07",
   "wikiTitle": "Graveyard Charrgoyle",
   "recipe": {
@@ -29,9 +30,29 @@
     ]
   },
   "original": {
-    "width": 616,
-    "height": 968,
+    "width": 711,
+    "height": 965,
     "source": "decorations/957/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/70/Graveyard_Charrgoyle_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/d/d0/Graveyard_Charrgoyle.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 616,
+      "height": 968,
+      "source": "https://wiki.guildwars2.com/images/7/70/Graveyard_Charrgoyle_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 634,
+      "height": 968,
+      "source": "https://wiki.guildwars2.com/images/1/1b/Graveyard_Charrgoyle_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 756,
+      "height": 968,
+      "source": "https://wiki.guildwars2.com/images/0/0d/Graveyard_Charrgoyle_side.jpg"
+    }
+  ]
 }

@@ -7,6 +7,7 @@
     9
   ],
   "icon": "decorations/584/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/F00C55A15DA2776A44A1CA2C554C02CF09D5A17A/2604273.png",
   "added": "2025-03-11",
   "wikiTitle": "Stylized Stone Dragon Head (Handiwork)",
   "recipe": {
@@ -36,9 +37,23 @@
     ]
   },
   "original": {
-    "width": 1038,
+    "width": 1034,
     "height": 1440,
     "source": "decorations/584/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/4/49/Stone_Dragon_Head_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/e/ef/Stone_Dragon_Head.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 1038,
+      "height": 1440,
+      "source": "https://wiki.guildwars2.com/images/4/49/Stone_Dragon_Head_front.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1651,
+      "height": 1396,
+      "source": "https://wiki.guildwars2.com/images/7/74/Stone_Dragon_Head_side.jpg"
+    }
+  ]
 }

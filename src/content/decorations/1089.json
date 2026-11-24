@@ -6,6 +6,7 @@
     27
   ],
   "icon": "decorations/1089/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/4FC2CF4E5BA4503FA0A266293EBFF3960D3330FA/3734091.png",
   "added": "2025-12-09",
   "wikiTitle": "Gingerbread Window",
   "recipe": {
@@ -29,9 +30,32 @@
     ]
   },
   "original": {
-    "width": 637,
+    "width": 407,
     "height": 968,
     "source": "decorations/1089/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/4/4e/Gingerbread_Window_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/2/29/Gingerbread_Window.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 637,
+      "height": 968,
+      "source": "decorations/1089/view-de01ab3bb2c6.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/4/4e/Gingerbread_Window_front.jpg"
+    },
+    {
+      "caption": "Alternative front view",
+      "width": 641,
+      "height": 970,
+      "source": "decorations/1089/view-11469982acc4.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/f/f6/Gingerbread_Window_front_alt.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 153,
+      "height": 968,
+      "source": "decorations/1089/view-781d291d40bb.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/8/82/Gingerbread_Window_side.jpg"
+    }
+  ]
 }

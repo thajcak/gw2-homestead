@@ -6,6 +6,7 @@
     6
   ],
   "icon": "decorations/633/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/6C3E04DC9E090703C19FFDF576F3CB4B75ADE200/1227640.png",
   "added": "2024-11-19",
   "wikiTitle": "Hedge Planter (Handiwork)",
   "recipe": {
@@ -35,9 +36,23 @@
     ]
   },
   "original": {
-    "width": 939,
+    "width": 912,
     "height": 965,
     "source": "decorations/633/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/2/26/Hedge_Planter_side.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/1/1b/Hedge_Planter.jpg"
+  },
+  "views": [
+    {
+      "caption": "Side view",
+      "width": 939,
+      "height": 965,
+      "source": "https://wiki.guildwars2.com/images/2/26/Hedge_Planter_side.jpg"
+    },
+    {
+      "caption": "Top view",
+      "width": 948,
+      "height": 965,
+      "source": "https://wiki.guildwars2.com/images/5/5d/Hedge_Planter_top.jpg"
+    }
+  ]
 }

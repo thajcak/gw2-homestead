@@ -6,6 +6,7 @@
     27
   ],
   "icon": "decorations/949/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/ADFA0193A9D220516A32D6FF3EDA7DE496A8262D/3695513.png",
   "added": "2025-10-07",
   "wikiTitle": "Graveyard Gate",
   "recipe": {
@@ -29,9 +30,29 @@
     ]
   },
   "original": {
-    "width": 1099,
-    "height": 968,
+    "width": 772,
+    "height": 966,
     "source": "decorations/949/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/e/ed/Graveyard_Gate_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/b/b3/Graveyard_Gate.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 1099,
+      "height": 968,
+      "source": "https://wiki.guildwars2.com/images/e/ed/Graveyard_Gate_front.jpg"
+    },
+    {
+      "caption": "Opened gates view",
+      "width": 1172,
+      "height": 966,
+      "source": "https://wiki.guildwars2.com/images/1/13/Graveyard_Gate_opened.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 264,
+      "height": 968,
+      "source": "https://wiki.guildwars2.com/images/4/45/Graveyard_Gate_side.jpg"
+    }
+  ]
 }

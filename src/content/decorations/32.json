@@ -6,6 +6,7 @@
     9
   ],
   "icon": "decorations/32/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/94D7187AA7591D7FE9C70DE52EA74CD1CF4D381C/1227725.png",
   "added": "2024-11-08",
   "wikiTitle": "Immense Lion Statue (Handiwork)",
   "recipe": {
@@ -35,9 +36,29 @@
     ]
   },
   "original": {
-    "width": 699,
+    "width": 1344,
     "height": 965,
     "source": "decorations/32/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/e/e3/Immense_Lion_Statue_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/9/9e/Immense_Lion_Statue.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 699,
+      "height": 965,
+      "source": "https://wiki.guildwars2.com/images/e/e3/Immense_Lion_Statue_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 738,
+      "height": 965,
+      "source": "https://wiki.guildwars2.com/images/2/2b/Immense_Lion_Statue_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1536,
+      "height": 965,
+      "source": "https://wiki.guildwars2.com/images/a/a6/Immense_Lion_Statue_side.jpg"
+    }
+  ]
 }

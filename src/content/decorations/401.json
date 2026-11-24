@@ -6,6 +6,7 @@
     12
   ],
   "icon": "decorations/401/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/FE99CD0B42FD4ACC01F70F352870B7727D7321D1/1451119.png",
   "added": "2025-03-11",
   "wikiTitle": "Gold Keep Construct Trophy (Handiwork)",
   "recipe": {
@@ -35,9 +36,35 @@
     ]
   },
   "original": {
-    "width": 697,
-    "height": 972,
+    "width": 435,
+    "height": 970,
     "source": "decorations/401/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/89/Gold_Keep_Construct_Trophy_detail.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/d/dc/Gold_Keep_Construct_Trophy.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 375,
+      "height": 970,
+      "source": "https://wiki.guildwars2.com/images/5/50/Gold_Keep_Construct_Trophy_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 399,
+      "height": 972,
+      "source": "https://wiki.guildwars2.com/images/c/cf/Gold_Keep_Construct_Trophy_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 437,
+      "height": 970,
+      "source": "https://wiki.guildwars2.com/images/a/a9/Gold_Keep_Construct_Trophy_side.jpg"
+    },
+    {
+      "caption": "Close-up view",
+      "width": 697,
+      "height": 972,
+      "source": "https://wiki.guildwars2.com/images/8/89/Gold_Keep_Construct_Trophy_detail.jpg"
+    }
+  ]
 }

@@ -6,6 +6,7 @@
     27
   ],
   "icon": "decorations/1224/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/0C4480A2950B017AF6B52101E69A03C63911C601/3787082.png",
   "added": "2026-06-23",
   "wikiTitle": "Poolside Party Pool",
   "recipe": {
@@ -32,6 +33,21 @@
     "width": 2880,
     "height": 1440,
     "source": "decorations/1224/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/1/1a/Poolside_Party_Pool_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/1/17/Poolside_Party_Pool.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 2880,
+      "height": 1440,
+      "source": "decorations/1224/view-1caa98a4c390.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/1/1a/Poolside_Party_Pool_top.jpg"
+    },
+    {
+      "caption": "Bottom view",
+      "width": 2880,
+      "height": 1440,
+      "source": "https://wiki.guildwars2.com/images/3/36/Poolside_Party_Pool_bottom.jpg"
+    }
+  ]
 }

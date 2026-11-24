@@ -6,6 +6,7 @@
     12
   ],
   "icon": "decorations/411/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/2A57F7104625620A1F164C56F8C0FAB0D8082AF2/1451136.png",
   "added": "2024-11-19",
   "wikiTitle": "Silver Siege the Stronghold Trophy (Handiwork)",
   "recipe": {
@@ -35,9 +36,35 @@
     ]
   },
   "original": {
-    "width": 601,
-    "height": 970,
+    "width": 423,
+    "height": 968,
     "source": "decorations/411/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/6/66/Silver_Siege_the_Stronghold_Trophy_detail.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/8/89/Silver_Siege_the_Stronghold_Trophy.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 349,
+      "height": 972,
+      "source": "https://wiki.guildwars2.com/images/2/29/Silver_Siege_the_Stronghold_Trophy_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 363,
+      "height": 968,
+      "source": "https://wiki.guildwars2.com/images/b/b4/Silver_Siege_the_Stronghold_Trophy_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 365,
+      "height": 968,
+      "source": "https://wiki.guildwars2.com/images/c/c8/Silver_Siege_the_Stronghold_Trophy_side.jpg"
+    },
+    {
+      "caption": "Close-up view",
+      "width": 601,
+      "height": 970,
+      "source": "https://wiki.guildwars2.com/images/6/66/Silver_Siege_the_Stronghold_Trophy_detail.jpg"
+    }
+  ]
 }

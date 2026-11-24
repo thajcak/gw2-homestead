@@ -6,6 +6,7 @@
     27
   ],
   "icon": "decorations/903/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/20033F371721DD220F5C452A3151BA53D50EFA4A/3620559.png",
   "added": "2025-05-12",
   "wikiTitle": "Sea Raider Window",
   "recipe": {
@@ -29,9 +30,17 @@
     ]
   },
   "original": {
-    "width": 1002,
-    "height": 1336,
+    "width": 995,
+    "height": 1327,
     "source": "decorations/903/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/2/2b/Sea_Raider_Window_back.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/8/88/Sea_Raider_Window.jpg"
+  },
+  "views": [
+    {
+      "caption": "Back view",
+      "width": 1002,
+      "height": 1336,
+      "source": "https://wiki.guildwars2.com/images/2/2b/Sea_Raider_Window_back.jpg"
+    }
+  ]
 }

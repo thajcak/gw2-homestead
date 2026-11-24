@@ -6,6 +6,7 @@
     22
   ],
   "icon": "decorations/892/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/5AC25D57F002CEDCEFD2D77553CB7F03A9C7230B/3612583.png",
   "added": "2025-05-12",
   "wikiTitle": "Super Pagoda Roof (Handiwork)",
   "recipe": {
@@ -40,9 +41,29 @@
     ]
   },
   "original": {
-    "width": 1569,
-    "height": 980,
+    "width": 1957,
+    "height": 1097,
     "source": "decorations/892/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/d/d6/Super_Pagoda_Roof_side.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/8/8b/Super_Pagoda_Roof.jpg"
+  },
+  "views": [
+    {
+      "caption": "Side view",
+      "width": 1569,
+      "height": 980,
+      "source": "https://wiki.guildwars2.com/images/d/d6/Super_Pagoda_Roof_side.jpg"
+    },
+    {
+      "caption": "Top view",
+      "width": 1271,
+      "height": 1271,
+      "source": "https://wiki.guildwars2.com/images/a/a9/Super_Pagoda_Roof_top.jpg"
+    },
+    {
+      "caption": "Bottom view",
+      "width": 1260,
+      "height": 1260,
+      "source": "https://wiki.guildwars2.com/images/a/ae/Super_Pagoda_Roof_bottom.jpg"
+    }
+  ]
 }

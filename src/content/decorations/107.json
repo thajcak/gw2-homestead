@@ -6,6 +6,7 @@
     12
   ],
   "icon": "decorations/107/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/247830B00D4190345D0556CD9E0BBE1BDB629BFB/1634830.png",
   "added": "2024-11-19",
   "wikiTitle": "Rec Room Floor Tile (Handiwork)",
   "recipe": {
@@ -40,9 +41,25 @@
     ]
   },
   "original": {
-    "width": 1009,
-    "height": 968,
+    "width": 1868,
+    "height": 853,
     "source": "decorations/107/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/4/41/Rec_Room_Floor_Tile_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/4/44/Rec_Room_Floor_Tile.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 1009,
+      "height": 968,
+      "source": "decorations/107/view-67763ea255df.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/4/41/Rec_Room_Floor_Tile_top.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1870,
+      "height": 211,
+      "source": "decorations/107/view-5bbffe847b2e.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/1/12/Rec_Room_Floor_Tile_side.jpg"
+    }
+  ]
 }

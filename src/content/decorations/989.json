@@ -7,6 +7,7 @@
     20
   ],
   "icon": "decorations/989/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/3815EEE7E2E8470F46EC0CA9F756B709FB0D7F0C/3708876.png",
   "added": "2025-10-30",
   "wikiTitle": "Galleon Hull (Middle) (Handiwork)",
   "recipe": {
@@ -30,9 +31,29 @@
     ]
   },
   "original": {
-    "width": 1280,
-    "height": 960,
+    "width": 1172,
+    "height": 956,
     "source": "decorations/989/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/e/e1/Galleon_Hull_%28Middle%29_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/e/ee/Galleon_Hull_%28Middle%29.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 1280,
+      "height": 960,
+      "source": "https://wiki.guildwars2.com/images/e/e1/Galleon_Hull_%28Middle%29_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 1297,
+      "height": 971,
+      "source": "https://wiki.guildwars2.com/images/4/4e/Galleon_Hull_%28Middle%29_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 957,
+      "height": 973,
+      "source": "https://wiki.guildwars2.com/images/c/cf/Galleon_Hull_%28Middle%29_side.jpg"
+    }
+  ]
 }

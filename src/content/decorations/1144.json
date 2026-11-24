@@ -7,6 +7,7 @@
     20
   ],
   "icon": "decorations/1144/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/E713053D9102F47DA3C4FE2A6015DB714E745DB8/3805877.png",
   "added": "2026-09-15",
   "wikiTitle": "Seer Tablet (Astro) (Handiwork)",
   "recipe": {
@@ -31,9 +32,32 @@
     ]
   },
   "original": {
-    "width": 1080,
+    "width": 960,
     "height": 1860,
     "source": "decorations/1144/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/2/2e/Seer_Tablet_%28Astro%29_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/0/07/Seer_Tablet_%28Astro%29.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 1080,
+      "height": 1860,
+      "source": "decorations/1144/view-76ead2978173.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/2/2e/Seer_Tablet_%28Astro%29_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 1080,
+      "height": 1860,
+      "source": "decorations/1144/view-cab942187bcd.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/2/25/Seer_Tablet_%28Astro%29_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 600,
+      "height": 1860,
+      "source": "decorations/1144/view-5e4e687fd984.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/e/e1/Seer_Tablet_%28Astro%29_side.jpg"
+    }
+  ]
 }

@@ -6,6 +6,7 @@
     2
   ],
   "icon": "decorations/383/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/7E3DA248D3CA02AF335151CBB4403C03C43317F9/1227619.png",
   "added": "2024-11-08",
   "wikiTitle": "Yellow Cushion (Handiwork)",
   "recipe": {
@@ -35,9 +36,23 @@
     ]
   },
   "original": {
-    "width": 960,
-    "height": 942,
+    "width": 1557,
+    "height": 792,
     "source": "decorations/383/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/2/27/Yellow_Cushion_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/c/ca/Yellow_Cushion.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 960,
+      "height": 942,
+      "source": "https://wiki.guildwars2.com/images/2/27/Yellow_Cushion_top.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1575,
+      "height": 465,
+      "source": "https://wiki.guildwars2.com/images/a/a2/Yellow_Cushion_side.jpg"
+    }
+  ]
 }

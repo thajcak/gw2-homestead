@@ -6,6 +6,7 @@
     1
   ],
   "icon": "decorations/363/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/091614B7A01D56740A166E0AEAB677CAF01F1EF7/1223821.png",
   "added": "2025-03-11",
   "wikiTitle": "Gold Wall (Handiwork)",
   "recipe": {
@@ -35,9 +36,23 @@
     ]
   },
   "original": {
-    "width": 609,
+    "width": 603,
     "height": 965,
     "source": "decorations/363/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/2/26/Gold_Wall_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/d/db/Gold_Wall.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 609,
+      "height": 965,
+      "source": "https://wiki.guildwars2.com/images/2/26/Gold_Wall_front.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 360,
+      "height": 965,
+      "source": "https://wiki.guildwars2.com/images/6/63/Gold_Wall_side.jpg"
+    }
+  ]
 }

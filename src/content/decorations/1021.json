@@ -7,6 +7,7 @@
     20
   ],
   "icon": "decorations/1021/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/5D4E90A6F72050AA3190FE030B02B81D91EF07E9/3805875.png",
   "added": "2026-05-12",
   "wikiTitle": "Replica Castoran Mirror (Handiwork)",
   "recipe": {
@@ -36,9 +37,32 @@
     ]
   },
   "original": {
-    "width": 477,
-    "height": 975,
+    "width": 399,
+    "height": 973,
     "source": "decorations/1021/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/87/Replica_Castoran_Mirror_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/1/1d/Replica_Castoran_Mirror.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 477,
+      "height": 975,
+      "source": "decorations/1021/view-a27007e48873.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/8/87/Replica_Castoran_Mirror_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 469,
+      "height": 972,
+      "source": "decorations/1021/view-c9b47237d9a1.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/a/a2/Replica_Castoran_Mirror_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 149,
+      "height": 975,
+      "source": "decorations/1021/view-fae9e73e7d3b.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/3/3d/Replica_Castoran_Mirror_side.jpg"
+    }
+  ]
 }

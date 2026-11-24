@@ -7,6 +7,7 @@
     5
   ],
   "icon": "decorations/263/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/6734A7056C23F2A766B0C2B067DCB49165955580/3374980.png",
   "added": "2024-11-19",
   "wikiTitle": "Kodan Hanging Lantern",
   "recipe": {
@@ -34,9 +35,23 @@
     ]
   },
   "original": {
-    "width": 579,
-    "height": 1030,
+    "width": 187,
+    "height": 746,
     "source": "decorations/263/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/4/4c/Kodan_Lantern_comparison.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/f/f9/Kodan_Hanging_Lantern.jpg"
+  },
+  "views": [
+    {
+      "caption": "Lit",
+      "width": 200,
+      "height": 800,
+      "source": "https://wiki.guildwars2.com/images/c/c6/Kodan_Hanging_Lantern_on.jpg"
+    },
+    {
+      "caption": "Comparison between regular and hanging kodan lanterns",
+      "width": 579,
+      "height": 1030,
+      "source": "https://wiki.guildwars2.com/images/4/4c/Kodan_Lantern_comparison.jpg"
+    }
+  ]
 }

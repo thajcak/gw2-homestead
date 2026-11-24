@@ -6,6 +6,7 @@
     6
   ],
   "icon": "decorations/135/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/D31A04DFEC07E753742BD037DD18969808072230/1224815.png",
   "added": "2025-03-11",
   "wikiTitle": "Lattice Arbor (Handiwork)",
   "recipe": {
@@ -35,9 +36,29 @@
     ]
   },
   "original": {
-    "width": 711,
-    "height": 965,
+    "width": 747,
+    "height": 944,
     "source": "decorations/135/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/75/Lattice_Arbor_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/8/8d/Lattice_Arbor.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 711,
+      "height": 965,
+      "source": "https://wiki.guildwars2.com/images/7/75/Lattice_Arbor_front.jpg"
+    },
+    {
+      "caption": "Top view",
+      "width": 1044,
+      "height": 935,
+      "source": "https://wiki.guildwars2.com/images/a/ae/Lattice_Arbor_top.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 567,
+      "height": 941,
+      "source": "https://wiki.guildwars2.com/images/8/8d/Lattice_Arbor_side.jpg"
+    }
+  ]
 }

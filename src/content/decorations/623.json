@@ -6,6 +6,7 @@
     12
   ],
   "icon": "decorations/623/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/D7AC43DAD263F2BDF8ED4CF26EA7463FA134FDE8/1634864.png",
   "added": "2024-11-19",
   "wikiTitle": "Cairn the Indomitable Shard (Handiwork)",
   "recipe": {
@@ -35,9 +36,29 @@
     ]
   },
   "original": {
-    "width": 1261,
-    "height": 944,
+    "width": 1181,
+    "height": 970,
     "source": "decorations/623/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/3/32/Cairn_the_Indomitable_Shard_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/9/90/Cairn_the_Indomitable_Shard.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 1261,
+      "height": 944,
+      "source": "https://wiki.guildwars2.com/images/3/32/Cairn_the_Indomitable_Shard_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 1406,
+      "height": 946,
+      "source": "https://wiki.guildwars2.com/images/c/ce/Cairn_the_Indomitable_Shard_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 999,
+      "height": 926,
+      "source": "https://wiki.guildwars2.com/images/c/cc/Cairn_the_Indomitable_Shard_side.jpg"
+    }
+  ]
 }

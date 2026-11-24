@@ -6,6 +6,7 @@
     9
   ],
   "icon": "decorations/854/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/2500FADD4D66C5480AFD14C12DF1A8D71DE0CEFA/3592763.png",
   "added": "2025-03-11",
   "wikiTitle": "Charr Effigy (Handiwork)",
   "recipe": {
@@ -40,9 +41,23 @@
     ]
   },
   "original": {
-    "width": 960,
+    "width": 1158,
     "height": 1440,
     "source": "decorations/854/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/4/40/Charr_Effigy_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/e/e6/Charr_Effigy.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 960,
+      "height": 1440,
+      "source": "https://wiki.guildwars2.com/images/4/40/Charr_Effigy_front.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1222,
+      "height": 1414,
+      "source": "https://wiki.guildwars2.com/images/e/ea/Charr_Effigy_side.jpg"
+    }
+  ]
 }

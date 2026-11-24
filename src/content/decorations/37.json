@@ -6,6 +6,7 @@
     5
   ],
   "icon": "decorations/37/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/F5F702E5DC517A390D985413771C9A130BD4A507/1202582.png",
   "added": "2024-11-08",
   "wikiTitle": "Obstacle: White Torch (Handiwork)",
   "recipe": {
@@ -35,9 +36,17 @@
     ]
   },
   "original": {
-    "width": 827,
-    "height": 1102,
+    "width": 1152,
+    "height": 1440,
     "source": "decorations/37/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/9e/Obstacle-_Torch_unlit.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/c/cf/Obstacle-_White_Torch.jpg"
+  },
+  "views": [
+    {
+      "caption": "Unlit (default)",
+      "width": 827,
+      "height": 1102,
+      "source": "https://wiki.guildwars2.com/images/9/9e/Obstacle-_Torch_unlit.jpg"
+    }
+  ]
 }

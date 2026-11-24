@@ -7,6 +7,7 @@
     9
   ],
   "icon": "decorations/437/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/763CE305CFE0AD556F4A0DF99E1490434FF1C5F2/3592769.png",
   "added": "2025-03-11",
   "wikiTitle": "Armor Display Case",
   "recipe": {
@@ -41,8 +42,34 @@
   },
   "original": {
     "width": 1349,
-    "height": 1284,
+    "height": 597,
     "source": "decorations/437/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/d/df/Armor_Display_Case_Salute.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/7/77/Armor_Display_Case.jpg"
+  },
+  "views": [
+    {
+      "caption": "Salute",
+      "width": 1349,
+      "height": 1284,
+      "source": "https://wiki.guildwars2.com/images/d/df/Armor_Display_Case_Salute.jpg"
+    },
+    {
+      "caption": "Cheer",
+      "width": 1349,
+      "height": 1284,
+      "source": "https://wiki.guildwars2.com/images/a/ad/Armor_Display_Case_Cheer.jpg"
+    },
+    {
+      "caption": "Relax",
+      "width": 1349,
+      "height": 1284,
+      "source": "https://wiki.guildwars2.com/images/f/f9/Armor_Display_Case_Relax.jpg"
+    },
+    {
+      "caption": "Attack",
+      "width": 1349,
+      "height": 1284,
+      "source": "https://wiki.guildwars2.com/images/f/fb/Armor_Display_Case_Attack.jpg"
+    }
+  ]
 }

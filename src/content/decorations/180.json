@@ -6,6 +6,7 @@
     12
   ],
   "icon": "decorations/180/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/2FB8FEFA35B980A26AA6B6B6C36A37AA49C76B29/2039318.png",
   "added": "2024-11-19",
   "wikiTitle": "Silver Qadim Trophy (Handiwork)",
   "recipe": {
@@ -35,9 +36,35 @@
     ]
   },
   "original": {
-    "width": 475,
-    "height": 970,
+    "width": 369,
+    "height": 968,
     "source": "decorations/180/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/8f/Silver_Qadim_Trophy_detail.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/9/92/Silver_Qadim_Trophy.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 297,
+      "height": 972,
+      "source": "https://wiki.guildwars2.com/images/f/f9/Silver_Qadim_Trophy_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 291,
+      "height": 972,
+      "source": "https://wiki.guildwars2.com/images/b/b6/Silver_Qadim_Trophy_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 297,
+      "height": 970,
+      "source": "https://wiki.guildwars2.com/images/5/52/Silver_Qadim_Trophy_side.jpg"
+    },
+    {
+      "caption": "Close-up view",
+      "width": 475,
+      "height": 970,
+      "source": "https://wiki.guildwars2.com/images/8/8f/Silver_Qadim_Trophy_detail.jpg"
+    }
+  ]
 }

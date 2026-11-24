@@ -7,6 +7,7 @@
     20
   ],
   "icon": "decorations/1205/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/56307DBDFEF7BE38750CC7F72253409F2F15E641/3770100.png",
   "added": "2026-05-12",
   "wikiTitle": "Seer Floor (Handiwork)",
   "recipe": {
@@ -36,9 +37,25 @@
     ]
   },
   "original": {
-    "width": 1440,
+    "width": 3440,
     "height": 1440,
     "source": "decorations/1205/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/4/46/Seer_Floor_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/a/a0/Seer_Floor.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top",
+      "width": 1440,
+      "height": 1440,
+      "source": "decorations/1205/view-6c63d76b1311.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/4/46/Seer_Floor_top.jpg"
+    },
+    {
+      "caption": "Bottom",
+      "width": 1440,
+      "height": 1440,
+      "source": "decorations/1205/view-bf7a332b5e19.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/e/e1/Seer_Floor_bottom.jpg"
+    }
+  ]
 }

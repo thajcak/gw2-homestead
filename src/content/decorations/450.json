@@ -6,6 +6,7 @@
     1
   ],
   "icon": "decorations/450/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/AFBC4E3EBDB5E3BFBFD8F50BCB69BA5A012F670B/1769460.png",
   "added": "2024-11-08",
   "wikiTitle": "Weathered Elonian Arch (Handiwork)",
   "recipe": {
@@ -35,9 +36,17 @@
     ]
   },
   "original": {
-    "width": 813,
-    "height": 937,
+    "width": 703,
+    "height": 959,
     "source": "decorations/450/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/6/6e/Weathered_Elonian_Arch_front_view.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/c/c0/Weathered_Elonian_Arch.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 813,
+      "height": 937,
+      "source": "https://wiki.guildwars2.com/images/6/6e/Weathered_Elonian_Arch_front_view.jpg"
+    }
+  ]
 }

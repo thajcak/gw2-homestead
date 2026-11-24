@@ -7,6 +7,7 @@
     20
   ],
   "icon": "decorations/982/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/0FC54E9C25011AABD141CBAE0E68B9B8F17023F2/3708911.png",
   "added": "2025-10-30",
   "wikiTitle": "Wall Bracket Corner (Handiwork)",
   "recipe": {
@@ -30,9 +31,29 @@
     ]
   },
   "original": {
-    "width": 1063,
-    "height": 973,
+    "width": 1011,
+    "height": 971,
     "source": "decorations/982/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/0/00/Wall_Bracket_Corner_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/b/b0/Wall_Bracket_Corner.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 1063,
+      "height": 973,
+      "source": "https://wiki.guildwars2.com/images/0/00/Wall_Bracket_Corner_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 775,
+      "height": 973,
+      "source": "https://wiki.guildwars2.com/images/a/ac/Wall_Bracket_Corner_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 791,
+      "height": 971,
+      "source": "https://wiki.guildwars2.com/images/d/d2/Wall_Bracket_Corner_side.jpg"
+    }
+  ]
 }

@@ -6,6 +6,7 @@
     27
   ],
   "icon": "decorations/1178/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/1E3690305FC9632D7EF10F2B3843646A6FE7F4DD/3753612.png",
   "added": "2026-02-25",
   "wikiTitle": "Verdant Roof",
   "recipe": {
@@ -29,9 +30,25 @@
     ]
   },
   "original": {
-    "width": 960,
+    "width": 2160,
     "height": 1440,
     "source": "decorations/1178/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/8f/Verdant_Roof_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/3/34/Verdant_Roof.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 960,
+      "height": 1440,
+      "source": "decorations/1178/view-09ffcad2b185.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/8/8f/Verdant_Roof_top.jpg"
+    },
+    {
+      "caption": "Bottom view",
+      "width": 960,
+      "height": 1440,
+      "source": "decorations/1178/view-188cd893e405.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/9/96/Verdant_Roof_bottom.jpg"
+    }
+  ]
 }

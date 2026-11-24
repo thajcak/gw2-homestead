@@ -7,6 +7,7 @@
     26
   ],
   "icon": "decorations/120/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/080D0D6694717DDC710EB7F86D94699F3C35340D/1614396.png",
   "added": "2024-11-19",
   "wikiTitle": "Snowman Ice Sculpture (Handiwork)",
   "recipe": {
@@ -41,9 +42,39 @@
     ]
   },
   "original": {
-    "width": 619,
-    "height": 973,
+    "width": 537,
+    "height": 972,
     "source": "decorations/120/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/d/d8/Snowman_Ice_Sculpture_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/1/1b/Snowman_Ice_Sculpture.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 619,
+      "height": 973,
+      "source": "decorations/120/view-e32a4e0da301.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/d/d8/Snowman_Ice_Sculpture_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 593,
+      "height": 971,
+      "source": "decorations/120/view-ee5390394d10.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/3/3f/Snowman_Ice_Sculpture_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 515,
+      "height": 973,
+      "source": "decorations/120/view-3c015328832f.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/6/61/Snowman_Ice_Sculpture_side.jpg"
+    },
+    {
+      "caption": "When inactive",
+      "width": 937,
+      "height": 971,
+      "source": "decorations/120/view-7a9e62052f9a.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/9/9e/Reindeer_Ice_Sculpture_inactive.jpg"
+    }
+  ]
 }

@@ -6,6 +6,7 @@
     9
   ],
   "icon": "decorations/596/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/CB9710EA01DF9AC63441AF7BF36ECC0446CC0C68/1227732.png",
   "added": "2024-11-19",
   "wikiTitle": "Lion Fountain (Handiwork)",
   "recipe": {
@@ -35,9 +36,29 @@
     ]
   },
   "original": {
-    "width": 812,
-    "height": 945,
+    "width": 826,
+    "height": 948,
     "source": "decorations/596/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/97/Lion_Fountain_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/6/6f/Lion_Fountain.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 812,
+      "height": 945,
+      "source": "https://wiki.guildwars2.com/images/9/97/Lion_Fountain_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 828,
+      "height": 942,
+      "source": "https://wiki.guildwars2.com/images/a/a4/Lion_Fountain_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 816,
+      "height": 950,
+      "source": "https://wiki.guildwars2.com/images/9/90/Lion_Fountain_side.jpg"
+    }
+  ]
 }

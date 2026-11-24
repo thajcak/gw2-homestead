@@ -6,6 +6,7 @@
     4
   ],
   "icon": "decorations/723/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/ADB896B8DE0C465868029313FD9DC94701E8D206/1634124.png",
   "added": "2024-11-08",
   "wikiTitle": "Lynx Statue (Handiwork)",
   "recipe": {
@@ -35,9 +36,23 @@
     ]
   },
   "original": {
-    "width": 1099,
-    "height": 888,
+    "width": 1456,
+    "height": 934,
     "source": "decorations/723/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/8c/Lynx_Statue_front_view.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/e/e9/Lynx_Statue.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 1099,
+      "height": 888,
+      "source": "https://wiki.guildwars2.com/images/8/8c/Lynx_Statue_front_view.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1798,
+      "height": 776,
+      "source": "https://wiki.guildwars2.com/images/3/34/Lynx_Statue_side_view.jpg"
+    }
+  ]
 }

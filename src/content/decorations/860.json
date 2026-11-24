@@ -7,6 +7,7 @@
     26
   ],
   "icon": "decorations/860/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/0905AD5D4BE774700C0AB32C21FB525A5B11C8D3/3215296.png",
   "added": "2024-12-10",
   "wikiTitle": "Scarred Ice Monolith (Handiwork)",
   "recipe": {
@@ -36,9 +37,23 @@
     ]
   },
   "original": {
-    "width": 666,
-    "height": 947,
+    "width": 519,
+    "height": 965,
     "source": "decorations/860/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/d/d6/Scarred_Ice_Monolith_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/e/e3/Scarred_Ice_Monolith.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 666,
+      "height": 947,
+      "source": "https://wiki.guildwars2.com/images/d/d6/Scarred_Ice_Monolith_front.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 363,
+      "height": 947,
+      "source": "https://wiki.guildwars2.com/images/4/46/Scarred_Ice_Monolith_side.jpg"
+    }
+  ]
 }

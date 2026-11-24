@@ -6,6 +6,7 @@
     27
   ],
   "icon": "decorations/1088/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/9EFD781F74943E23F0A501AF22ECAADFEE3C6D5C/3734085.png",
   "added": "2025-12-09",
   "wikiTitle": "Gingerbread Doorway",
   "recipe": {
@@ -29,9 +30,32 @@
     ]
   },
   "original": {
-    "width": 1037,
-    "height": 968,
+    "width": 651,
+    "height": 966,
     "source": "decorations/1088/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/89/Gingerbread_Doorway_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/2/27/Gingerbread_Doorway.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 1037,
+      "height": 968,
+      "source": "decorations/1088/view-ebb71ecb37d1.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/8/89/Gingerbread_Doorway_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 1029,
+      "height": 970,
+      "source": "decorations/1088/view-29374c3fc3f9.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/a/a4/Gingerbread_Doorway_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 205,
+      "height": 970,
+      "source": "decorations/1088/view-277c61c3dae9.webp",
+      "remoteSource": "https://wiki.guildwars2.com/images/a/a7/Gingerbread_Doorway_side.jpg"
+    }
+  ]
 }

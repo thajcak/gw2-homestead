@@ -6,6 +6,7 @@
     10
   ],
   "icon": "decorations/505/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/11CFD429A10CBE916E7FEB57AE22D34BCE322204/1225310.png",
   "added": "2025-03-11",
   "wikiTitle": "Sylvari Summit Flag (Handiwork)",
   "recipe": {
@@ -35,9 +36,17 @@
     ]
   },
   "original": {
-    "width": 527,
-    "height": 973,
+    "width": 309,
+    "height": 970,
     "source": "decorations/505/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/3/36/Sylvari_Summit_Flag_detail.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/d/d1/Sylvari_Summit_Flag.jpg"
+  },
+  "views": [
+    {
+      "caption": "Close-up view",
+      "width": 527,
+      "height": 973,
+      "source": "https://wiki.guildwars2.com/images/3/36/Sylvari_Summit_Flag_detail.jpg"
+    }
+  ]
 }

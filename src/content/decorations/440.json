@@ -6,6 +6,7 @@
     2
   ],
   "icon": "decorations/440/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/9CC49FCA11E9CB4DABC0D50E989739AAC7F07C4F/1225924.png",
   "added": "2024-11-08",
   "wikiTitle": "Guild Barstool (Handiwork)",
   "recipe": {
@@ -35,9 +36,23 @@
     ]
   },
   "original": {
-    "width": 753,
-    "height": 740,
+    "width": 546,
+    "height": 923,
     "source": "decorations/440/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/2/2c/Guild_Barstool_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/3/36/Guild_Barstool.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 753,
+      "height": 740,
+      "source": "https://wiki.guildwars2.com/images/2/2c/Guild_Barstool_top.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 561,
+      "height": 950,
+      "source": "https://wiki.guildwars2.com/images/3/3e/Guild_Barstool_side.jpg"
+    }
+  ]
 }

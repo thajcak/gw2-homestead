@@ -6,6 +6,7 @@
     22
   ],
   "icon": "decorations/898/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/2B25943C0856F90F09FE1F7B206FD8FD01D6ED0A/3612578.png",
   "added": "2025-05-12",
   "wikiTitle": "Super Pagoda Arch (Handiwork)",
   "recipe": {
@@ -40,9 +41,23 @@
     ]
   },
   "original": {
-    "width": 1492,
-    "height": 1214,
+    "width": 1180,
+    "height": 1330,
     "source": "decorations/898/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/5/59/Super_Pagoda_Arch_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/e/e7/Super_Pagoda_Arch.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 1492,
+      "height": 1214,
+      "source": "https://wiki.guildwars2.com/images/5/59/Super_Pagoda_Arch_front.jpg"
+    },
+    {
+      "caption": "Top view",
+      "width": 2096,
+      "height": 330,
+      "source": "https://wiki.guildwars2.com/images/c/ca/Super_Pagoda_Arch_top.jpg"
+    }
+  ]
 }

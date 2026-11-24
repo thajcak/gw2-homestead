@@ -6,6 +6,7 @@
     1
   ],
   "icon": "decorations/354/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/7829221C39EE95540AB31622F7330C70D4746EC7/1223825.png",
   "added": "2025-03-11",
   "wikiTitle": "Capped Gold Pillar (Handiwork)",
   "recipe": {
@@ -35,9 +36,23 @@
     ]
   },
   "original": {
-    "width": 987,
+    "width": 270,
     "height": 965,
     "source": "decorations/354/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/b/bc/Capped_Gold_Pillar_close-up.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/8/8d/Capped_Gold_Pillar.jpg"
+  },
+  "views": [
+    {
+      "caption": "Side view",
+      "width": 198,
+      "height": 965,
+      "source": "https://wiki.guildwars2.com/images/2/22/Capped_Gold_Pillar_side.jpg"
+    },
+    {
+      "caption": "Close-up view",
+      "width": 987,
+      "height": 965,
+      "source": "https://wiki.guildwars2.com/images/b/bc/Capped_Gold_Pillar_close-up.jpg"
+    }
+  ]
 }

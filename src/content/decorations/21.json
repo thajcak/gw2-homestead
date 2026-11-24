@@ -7,6 +7,7 @@
     19
   ],
   "icon": "decorations/21/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/5B0B92193CFC1163D0FB0298DC2604A60B729FF4/3375040.png",
   "added": "2024-11-08",
   "wikiTitle": "Kodan Hero Statue",
   "recipe": {
@@ -34,9 +35,17 @@
     ]
   },
   "original": {
-    "width": 454,
+    "width": 371,
     "height": 1080,
     "source": "decorations/21/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/1/1a/Kodan_Hero_Statue_back.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/0/08/Kodan_Hero_Statue.jpg"
+  },
+  "views": [
+    {
+      "caption": "Back of the statue",
+      "width": 454,
+      "height": 1080,
+      "source": "https://wiki.guildwars2.com/images/1/1a/Kodan_Hero_Statue_back.jpg"
+    }
+  ]
 }

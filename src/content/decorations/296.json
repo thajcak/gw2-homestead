@@ -6,6 +6,7 @@
     1
   ],
   "icon": "decorations/296/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/5EEE4FE0197AAABAC9300BFF14BF5F6B65B1967D/1224096.png",
   "added": "2024-11-08",
   "wikiTitle": "Worn Arch (Handiwork)",
   "recipe": {
@@ -35,9 +36,17 @@
     ]
   },
   "original": {
-    "width": 562,
-    "height": 943,
+    "width": 472,
+    "height": 957,
     "source": "decorations/296/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/1/19/Worn_Arch_front_view.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/4/43/Worn_Arch.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 562,
+      "height": 943,
+      "source": "https://wiki.guildwars2.com/images/1/19/Worn_Arch_front_view.jpg"
+    }
+  ]
 }

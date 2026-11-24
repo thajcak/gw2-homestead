@@ -6,6 +6,7 @@
     4
   ],
   "icon": "decorations/471/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/F9B213913F0A43F59E109406EB3AD6AEB1DF96F1/1634123.png",
   "added": "2024-11-08",
   "wikiTitle": "Plush Rug (Handiwork)",
   "recipe": {
@@ -35,9 +36,17 @@
     ]
   },
   "original": {
-    "width": 1845,
-    "height": 688,
+    "width": 825,
+    "height": 959,
     "source": "decorations/471/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/0/0b/Plush_Rug.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/c/ca/Plush_Rug_top_view.jpg"
+  },
+  "views": [
+    {
+      "caption": "Angled view",
+      "width": 1845,
+      "height": 688,
+      "source": "https://wiki.guildwars2.com/images/0/0b/Plush_Rug.jpg"
+    }
+  ]
 }

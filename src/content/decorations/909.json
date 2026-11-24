@@ -6,6 +6,7 @@
     27
   ],
   "icon": "decorations/909/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/04603A7DB90E656DA7C1A008E466C24D1B122E11/3620558.png",
   "added": "2025-05-12",
   "wikiTitle": "Sea Raider Wall",
   "recipe": {
@@ -29,9 +30,23 @@
     ]
   },
   "original": {
-    "width": 1440,
-    "height": 1440,
+    "width": 1176,
+    "height": 1176,
     "source": "decorations/909/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/88/Sea_Raider_Wall_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/3/36/Sea_Raider_Wall.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 1440,
+      "height": 1440,
+      "source": "https://wiki.guildwars2.com/images/8/88/Sea_Raider_Wall_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 1440,
+      "height": 1440,
+      "source": "https://wiki.guildwars2.com/images/4/40/Sea_Raider_Wall_back.jpg"
+    }
+  ]
 }

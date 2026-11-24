@@ -6,6 +6,7 @@
     12
   ],
   "icon": "decorations/789/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/E129225AA7A71907C021242D61C9B1B300DE4535/1341331.png",
   "added": "2024-11-19",
   "wikiTitle": "Sabetha Flamethrower Fragment (Handiwork)",
   "recipe": {
@@ -35,9 +36,23 @@
     ]
   },
   "original": {
-    "width": 1355,
-    "height": 687,
+    "width": 903,
+    "height": 663,
     "source": "decorations/789/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/5/5b/Sabetha_Flamethrower_Fragment_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/7/7f/Sabetha_Flamethrower_Fragment.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 1355,
+      "height": 687,
+      "source": "https://wiki.guildwars2.com/images/5/5b/Sabetha_Flamethrower_Fragment_front.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 353,
+      "height": 661,
+      "source": "https://wiki.guildwars2.com/images/2/25/Sabetha_Flamethrower_Fragment_side.jpg"
+    }
+  ]
 }

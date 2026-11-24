@@ -6,6 +6,7 @@
     5
   ],
   "icon": "decorations/241/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/09FCEF4C4F7B362E422B91A0CC6791FA71C8BC74/1225163.png",
   "added": "2024-11-19",
   "wikiTitle": "Rustic Brazier (Handiwork)",
   "recipe": {
@@ -35,9 +36,29 @@
     ]
   },
   "original": {
-    "width": 824,
-    "height": 852,
+    "width": 429,
+    "height": 969,
     "source": "decorations/241/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/0/01/Rustic_Brazier_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/8/8d/Rustic_Brazier.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 824,
+      "height": 852,
+      "source": "https://wiki.guildwars2.com/images/0/01/Rustic_Brazier_top.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 431,
+      "height": 963,
+      "source": "https://wiki.guildwars2.com/images/9/9a/Rustic_Brazier_side.jpg"
+    },
+    {
+      "caption": "View at night",
+      "width": 425,
+      "height": 973,
+      "source": "https://wiki.guildwars2.com/images/c/c2/Rustic_Brazier_nighttime.jpg"
+    }
+  ]
 }

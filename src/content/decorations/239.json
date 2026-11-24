@@ -6,6 +6,7 @@
     4
   ],
   "icon": "decorations/239/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/1305ABB023362DF1DF63DB2E4A28B01B013FE574/1227706.png",
   "added": "2024-11-08",
   "wikiTitle": "Basic Basket (Handiwork)",
   "recipe": {
@@ -30,9 +31,17 @@
     ]
   },
   "original": {
-    "width": 935,
-    "height": 920,
+    "width": 916,
+    "height": 913,
     "source": "decorations/239/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/1/1d/Basic_Basket_top_view.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/e/e6/Basic_Basket.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 935,
+      "height": 920,
+      "source": "https://wiki.guildwars2.com/images/1/1d/Basic_Basket_top_view.jpg"
+    }
+  ]
 }

@@ -6,6 +6,7 @@
     9
   ],
   "icon": "decorations/511/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/12701EE529080D754E0535BCB0CAAAE611DA6CAA/1227626.png",
   "added": "2024-11-19",
   "wikiTitle": "Griffon Fountain (Handiwork)",
   "recipe": {
@@ -35,9 +36,23 @@
     ]
   },
   "original": {
-    "width": 879,
-    "height": 942,
+    "width": 905,
+    "height": 957,
     "source": "decorations/511/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/a/a4/Griffon_Fountain_wings_up_view.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/0/02/Griffon_Fountain.jpg"
+  },
+  "views": [
+    {
+      "caption": "Griffon with wings up view",
+      "width": 879,
+      "height": 942,
+      "source": "https://wiki.guildwars2.com/images/a/a4/Griffon_Fountain_wings_up_view.jpg"
+    },
+    {
+      "caption": "Griffon with wings down view",
+      "width": 896,
+      "height": 932,
+      "source": "https://wiki.guildwars2.com/images/4/46/Griffon_Fountain_wings_down_view.jpg"
+    }
+  ]
 }

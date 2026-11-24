@@ -7,6 +7,7 @@
     19
   ],
   "icon": "decorations/610/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/B9EA0AD5D59651D07A6018642356985F1175B6E8/3375006.png",
   "added": "2024-11-08",
   "wikiTitle": "Kodan Woodsy Armchair",
   "recipe": {
@@ -36,8 +37,16 @@
   },
   "original": {
     "width": 1080,
-    "height": 1500,
+    "height": 1600,
     "source": "decorations/610/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/a/ac/Kodan_Woodsy_Armchair_back.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/e/e3/Kodan_Woodsy_Armchair.jpg"
+  },
+  "views": [
+    {
+      "caption": "Back view",
+      "width": 1080,
+      "height": 1500,
+      "source": "https://wiki.guildwars2.com/images/a/ac/Kodan_Woodsy_Armchair_back.jpg"
+    }
+  ]
 }

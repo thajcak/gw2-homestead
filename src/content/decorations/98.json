@@ -7,6 +7,7 @@
     21
   ],
   "icon": "decorations/98/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/AFAE6842DD31F93248786D769749166A2E325C94/2100804.png",
   "added": "2024-11-19",
   "wikiTitle": "Boar Statue (Handiwork)",
   "recipe": {
@@ -36,9 +37,23 @@
     ]
   },
   "original": {
-    "width": 715,
+    "width": 758,
     "height": 960,
     "source": "decorations/98/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/b/be/Boar_Statue_front_view.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/2/2f/Boar_Statue.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 715,
+      "height": 960,
+      "source": "https://wiki.guildwars2.com/images/b/be/Boar_Statue_front_view.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 586,
+      "height": 960,
+      "source": "https://wiki.guildwars2.com/images/b/be/Boar_Statue_side_view.jpg"
+    }
+  ]
 }

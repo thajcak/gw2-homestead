@@ -6,6 +6,7 @@
     12
   ],
   "icon": "decorations/590/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/6AD9295AF333352352C7B91260C646AD96F9C1A6/1451122.png",
   "added": "2024-11-19",
   "wikiTitle": "Keep Construct Rubble (Handiwork)",
   "recipe": {
@@ -35,9 +36,29 @@
     ]
   },
   "original": {
-    "width": 1111,
-    "height": 972,
+    "width": 937,
+    "height": 968,
     "source": "decorations/590/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/b/bf/Keep_Construct_Rubble_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/c/c6/Keep_Construct_Rubble.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 1111,
+      "height": 972,
+      "source": "https://wiki.guildwars2.com/images/b/bf/Keep_Construct_Rubble_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 1069,
+      "height": 968,
+      "source": "https://wiki.guildwars2.com/images/9/9d/Keep_Construct_Rubble_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 781,
+      "height": 966,
+      "source": "https://wiki.guildwars2.com/images/7/76/Keep_Construct_Rubble_side.jpg"
+    }
+  ]
 }

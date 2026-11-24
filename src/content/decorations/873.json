@@ -6,6 +6,7 @@
     27
   ],
   "icon": "decorations/873/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/41A227DE2DCA10CB99289A09F0D3AE63C5F77164/3584327.png",
   "added": "2025-02-11",
   "wikiTitle": "Twisted Imaginarium Cabinet",
   "recipe": {
@@ -29,9 +30,23 @@
     ]
   },
   "original": {
-    "width": 808,
-    "height": 1344,
+    "width": 850,
+    "height": 1360,
     "source": "decorations/873/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/b/b1/Twisted_Imaginarium_Cabinet_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/d/dc/Twisted_Imaginarium_Cabinet.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 808,
+      "height": 1344,
+      "source": "https://wiki.guildwars2.com/images/b/b1/Twisted_Imaginarium_Cabinet_front.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 549,
+      "height": 1415,
+      "source": "https://wiki.guildwars2.com/images/b/bd/Twisted_Imaginarium_Cabinet_side.jpg"
+    }
+  ]
 }

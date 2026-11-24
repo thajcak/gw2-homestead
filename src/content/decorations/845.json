@@ -6,6 +6,7 @@
     12
   ],
   "icon": "decorations/845/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/5D01955BAA69010F5A19CD0A42DB19030F9451F7/3441817.png",
   "added": "2024-11-19",
   "wikiTitle": "Ura's Token (Homestead)",
   "recipe": {
@@ -34,9 +35,29 @@
     ]
   },
   "original": {
-    "width": 1097,
-    "height": 849,
+    "width": 1152,
+    "height": 867,
     "source": "decorations/845/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/f/f1/Ura%27s_Token_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/7/7e/Ura%27s_Token.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 1097,
+      "height": 849,
+      "source": "https://wiki.guildwars2.com/images/f/f1/Ura%27s_Token_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 1166,
+      "height": 886,
+      "source": "https://wiki.guildwars2.com/images/a/ab/Ura%27s_Token_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1200,
+      "height": 903,
+      "source": "https://wiki.guildwars2.com/images/e/e8/Ura%27s_Token_side.jpg"
+    }
+  ]
 }

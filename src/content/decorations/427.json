@@ -6,6 +6,7 @@
     2
   ],
   "icon": "decorations/427/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/6AC43E72CF535BD97F668022FA0634BB363A75E9/1225933.png",
   "added": "2024-11-08",
   "wikiTitle": "Guild Stool (Handiwork)",
   "recipe": {
@@ -35,9 +36,23 @@
     ]
   },
   "original": {
-    "width": 771,
-    "height": 764,
+    "width": 750,
+    "height": 881,
     "source": "decorations/427/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/0/09/Guild_Stool_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/a/ad/Guild_Stool.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 771,
+      "height": 764,
+      "source": "https://wiki.guildwars2.com/images/0/09/Guild_Stool_top.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 738,
+      "height": 791,
+      "source": "https://wiki.guildwars2.com/images/2/2c/Guild_Stool_side.jpg"
+    }
+  ]
 }

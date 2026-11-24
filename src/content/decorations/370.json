@@ -6,6 +6,7 @@
     12
   ],
   "icon": "decorations/370/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/1D51E308962629469BBD4AAC0A4B4E3E11C96033/1451135.png",
   "added": "2025-03-11",
   "wikiTitle": "Gold Siege the Stronghold Trophy (Handiwork)",
   "recipe": {
@@ -35,9 +36,35 @@
     ]
   },
   "original": {
-    "width": 631,
-    "height": 968,
+    "width": 419,
+    "height": 970,
     "source": "decorations/370/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/d/d7/Gold_Siege_the_Stronghold_Trophy_detail.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/6/63/Gold_Siege_the_Stronghold_Trophy.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 351,
+      "height": 972,
+      "source": "https://wiki.guildwars2.com/images/c/ce/Gold_Siege_the_Stronghold_Trophy_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 367,
+      "height": 970,
+      "source": "https://wiki.guildwars2.com/images/f/f5/Gold_Siege_the_Stronghold_Trophy_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 371,
+      "height": 972,
+      "source": "https://wiki.guildwars2.com/images/b/b0/Gold_Siege_the_Stronghold_Trophy_side.jpg"
+    },
+    {
+      "caption": "Close-up view",
+      "width": 631,
+      "height": 968,
+      "source": "https://wiki.guildwars2.com/images/d/d7/Gold_Siege_the_Stronghold_Trophy_detail.jpg"
+    }
+  ]
 }

@@ -6,6 +6,7 @@
     22
   ],
   "icon": "decorations/548/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/044D58306019CD5D456F1E3699E30DA0AC92E699/1418353.png",
   "added": "2024-11-19",
   "wikiTitle": "Super Rock Ramp (Handiwork)",
   "recipe": {
@@ -35,9 +36,29 @@
     ]
   },
   "original": {
-    "width": 945,
+    "width": 1219,
     "height": 973,
     "source": "decorations/548/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/77/Super_Rock_Ramp_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/a/a8/Super_Rock_Ramp.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 945,
+      "height": 973,
+      "source": "https://wiki.guildwars2.com/images/7/77/Super_Rock_Ramp_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 1053,
+      "height": 927,
+      "source": "https://wiki.guildwars2.com/images/6/6b/Super_Rock_Ramp_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1553,
+      "height": 970,
+      "source": "https://wiki.guildwars2.com/images/5/50/Super_Rock_Ramp_side.jpg"
+    }
+  ]
 }

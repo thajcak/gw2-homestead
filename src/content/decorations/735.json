@@ -6,6 +6,7 @@
     5
   ],
   "icon": "decorations/735/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/FD5CEF067E5E34E07BC4D5AADBF1EFB256F52CC6/1226160.png",
   "added": "2024-11-19",
   "wikiTitle": "Gold Firepit (Handiwork)",
   "recipe": {
@@ -35,9 +36,35 @@
     ]
   },
   "original": {
-    "width": 882,
-    "height": 927,
+    "width": 765,
+    "height": 970,
     "source": "decorations/735/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/a/af/Gold_Firepit_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/6/67/Gold_Firepit.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 882,
+      "height": 927,
+      "source": "https://wiki.guildwars2.com/images/a/af/Gold_Firepit_top.jpg"
+    },
+    {
+      "caption": "Bottom view",
+      "width": 926,
+      "height": 905,
+      "source": "https://wiki.guildwars2.com/images/2/2d/Gold_Firepit_bottom.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 723,
+      "height": 973,
+      "source": "https://wiki.guildwars2.com/images/8/85/Gold_Firepit_side.jpg"
+    },
+    {
+      "caption": "View at night",
+      "width": 669,
+      "height": 970,
+      "source": "https://wiki.guildwars2.com/images/d/dd/Gold_Firepit_nighttime.jpg"
+    }
+  ]
 }

@@ -7,6 +7,7 @@
     20
   ],
   "icon": "decorations/999/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/04B363C6492F164A5416D8E23B523C9856060C2C/3708867.png",
   "added": "2025-10-30",
   "wikiTitle": "Wooden Beam (16 x 120 x 16) (Handiwork)",
   "recipe": {
@@ -30,9 +31,23 @@
     ]
   },
   "original": {
-    "width": 465,
-    "height": 465,
+    "width": 217,
+    "height": 971,
     "source": "decorations/999/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/3/32/Wooden_Beam_%2816_x_120_x_16%29_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/3/32/Wooden_Beam_%2816_x_120_x_16%29.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 465,
+      "height": 465,
+      "source": "https://wiki.guildwars2.com/images/3/32/Wooden_Beam_%2816_x_120_x_16%29_top.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 171,
+      "height": 973,
+      "source": "https://wiki.guildwars2.com/images/5/5f/Wooden_Beam_%2816_x_120_x_16%29_side.jpg"
+    }
+  ]
 }

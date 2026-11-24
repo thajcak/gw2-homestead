@@ -6,6 +6,7 @@
     14
   ],
   "icon": "decorations/636/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/EA0D4A20C31B3B2B78CB5527779C6536952BFD2E/2038588.png",
   "added": "2025-03-11",
   "wikiTitle": "Teleporter Entrance (Handiwork)",
   "recipe": {
@@ -35,9 +36,23 @@
     ]
   },
   "original": {
-    "width": 561,
-    "height": 707,
+    "width": 555,
+    "height": 691,
     "source": "decorations/636/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/6/6f/Djinn_Teleportation_Device_Inactive.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/4/4e/Djinn_Teleportation_Device.jpg"
+  },
+  "views": [
+    {
+      "caption": "Inactive Portal",
+      "width": 561,
+      "height": 707,
+      "source": "https://wiki.guildwars2.com/images/6/6f/Djinn_Teleportation_Device_Inactive.jpg"
+    },
+    {
+      "caption": "Placement Radar",
+      "width": 749,
+      "height": 472,
+      "source": "https://wiki.guildwars2.com/images/8/8f/Djinn_Teleportation_Device_Radar.jpg"
+    }
+  ]
 }

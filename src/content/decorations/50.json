@@ -7,6 +7,7 @@
     26
   ],
   "icon": "decorations/50/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/0041D40A913D21D9226834A041E4A25E34011E0B/2571009.png",
   "added": "2024-11-19",
   "wikiTitle": "Infinirarium Deck (Handiwork)",
   "recipe": {
@@ -41,9 +42,29 @@
     ]
   },
   "original": {
-    "width": 993,
-    "height": 965,
+    "width": 1851,
+    "height": 830,
     "source": "decorations/50/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/77/Infinirarium_Deck_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/7/75/Infinirarium_Deck.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 993,
+      "height": 965,
+      "source": "https://wiki.guildwars2.com/images/7/77/Infinirarium_Deck_top.jpg"
+    },
+    {
+      "caption": "Bottom view",
+      "width": 954,
+      "height": 965,
+      "source": "https://wiki.guildwars2.com/images/a/af/Infinirarium_Deck_bottom.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1851,
+      "height": 470,
+      "source": "https://wiki.guildwars2.com/images/a/a0/Infinirarium_Deck_side.jpg"
+    }
+  ]
 }

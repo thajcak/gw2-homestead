@@ -6,6 +6,7 @@
     2
   ],
   "icon": "decorations/227/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/2AA21D5765353604CEB339E5DD986C3BE52D2463/1227600.png",
   "added": "2024-11-08",
   "wikiTitle": "Plush Armchair (Handiwork)",
   "recipe": {
@@ -35,9 +36,29 @@
     ]
   },
   "original": {
-    "width": 516,
-    "height": 950,
+    "width": 534,
+    "height": 965,
     "source": "decorations/227/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/85/Plush_Armchair_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/9/9b/Plush_Armchair.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 516,
+      "height": 950,
+      "source": "https://wiki.guildwars2.com/images/8/85/Plush_Armchair_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 525,
+      "height": 947,
+      "source": "https://wiki.guildwars2.com/images/1/10/Plush_Armchair_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 486,
+      "height": 947,
+      "source": "https://wiki.guildwars2.com/images/f/f9/Plush_Armchair_side.jpg"
+    }
+  ]
 }

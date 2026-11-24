@@ -6,6 +6,7 @@
     27
   ],
   "icon": "decorations/908/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/60C9193790FB317311E8FC2FB4403AEBC2019FDE/3620551.png",
   "added": "2025-05-12",
   "wikiTitle": "Sea Raider Doorway",
   "recipe": {
@@ -29,9 +30,23 @@
     ]
   },
   "original": {
-    "width": 1440,
-    "height": 1440,
+    "width": 1291,
+    "height": 1291,
     "source": "decorations/908/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/91/Sea_Raider_Doorway_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/e/e4/Sea_Raider_Doorway.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 1440,
+      "height": 1440,
+      "source": "https://wiki.guildwars2.com/images/9/91/Sea_Raider_Doorway_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 1440,
+      "height": 1440,
+      "source": "https://wiki.guildwars2.com/images/2/22/Sea_Raider_Doorway_back.jpg"
+    }
+  ]
 }

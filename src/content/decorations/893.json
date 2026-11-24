@@ -6,6 +6,7 @@
     22
   ],
   "icon": "decorations/893/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/3AA158C4E1207B90EB151BCECB04E5E408490D48/3278175.png",
   "added": "2025-05-12",
   "wikiTitle": "Super Grand Gate (Handiwork)",
   "recipe": {
@@ -35,9 +36,29 @@
     ]
   },
   "original": {
-    "width": 1001,
-    "height": 970,
+    "width": 675,
+    "height": 971,
     "source": "decorations/893/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/78/Super_Grand_Gate_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/1/11/Super_Grand_Gate.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 1001,
+      "height": 970,
+      "source": "https://wiki.guildwars2.com/images/7/78/Super_Grand_Gate_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 977,
+      "height": 972,
+      "source": "https://wiki.guildwars2.com/images/0/0e/Super_Grand_Gate_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 175,
+      "height": 973,
+      "source": "https://wiki.guildwars2.com/images/d/df/Super_Grand_Gate_side.jpg"
+    }
+  ]
 }

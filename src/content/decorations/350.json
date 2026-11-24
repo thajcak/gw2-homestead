@@ -6,6 +6,7 @@
     9
   ],
   "icon": "decorations/350/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/D9B76342CD69EBD5021AF8D4ED270F0CDEF63C39/1227579.png",
   "added": "2024-11-08",
   "wikiTitle": "Armor Stand (Handiwork)",
   "recipe": {
@@ -35,9 +36,29 @@
     ]
   },
   "original": {
-    "width": 411,
+    "width": 390,
     "height": 965,
     "source": "decorations/350/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/80/Armor_Stand_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/d/d1/Armor_Stand.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 411,
+      "height": 965,
+      "source": "https://wiki.guildwars2.com/images/8/80/Armor_Stand_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 414,
+      "height": 965,
+      "source": "https://wiki.guildwars2.com/images/6/6f/Armor_Stand_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 342,
+      "height": 965,
+      "source": "https://wiki.guildwars2.com/images/0/0a/Armor_Stand_side.jpg"
+    }
+  ]
 }

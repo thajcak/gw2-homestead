@@ -7,6 +7,7 @@
     26
   ],
   "icon": "decorations/702/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/5F9203CB3E73490DC95E096897651ECF65597EEA/2789291.png",
   "added": "2024-11-19",
   "wikiTitle": "Ice Slide (Handiwork)",
   "recipe": {
@@ -36,9 +37,29 @@
     ]
   },
   "original": {
-    "width": 747,
-    "height": 960,
+    "width": 858,
+    "height": 939,
     "source": "decorations/702/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/2/22/Ice_Slide_back.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/1/11/Ice_Slide.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 561,
+      "height": 960,
+      "source": "https://wiki.guildwars2.com/images/e/e2/Ice_Slide_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 747,
+      "height": 960,
+      "source": "https://wiki.guildwars2.com/images/2/22/Ice_Slide_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 879,
+      "height": 960,
+      "source": "https://wiki.guildwars2.com/images/c/c6/Ice_Slide_side.jpg"
+    }
+  ]
 }

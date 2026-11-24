@@ -6,6 +6,7 @@
     13
   ],
   "icon": "decorations/69/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/08011B94562F0A0F63D63FE515317E41BE246B40/2069921.png",
   "added": "2025-03-11",
   "wikiTitle": "Racetrack Upward Right Curve (Handiwork)",
   "recipe": {
@@ -34,9 +35,23 @@
     ]
   },
   "original": {
-    "width": 1440,
+    "width": 3440,
     "height": 1440,
     "source": "decorations/69/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/c/cc/Racetrack_Upward_Right_Curve_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/2/20/Racetrack_Upward_Right_Curve.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 1440,
+      "height": 1440,
+      "source": "https://wiki.guildwars2.com/images/c/cc/Racetrack_Upward_Right_Curve_top.jpg"
+    },
+    {
+      "caption": "Side view with local manipulator axes",
+      "width": 3440,
+      "height": 1205,
+      "source": "https://wiki.guildwars2.com/images/9/9f/Racetrack_Upward_Right_Curve_side.jpg"
+    }
+  ]
 }

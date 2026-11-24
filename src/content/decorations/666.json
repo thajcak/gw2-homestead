@@ -6,6 +6,7 @@
     2
   ],
   "icon": "decorations/666/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/B1B9295BC7BB5D65479C0A01DD07A721025B7576/1227620.png",
   "added": "2024-11-08",
   "wikiTitle": "Blue Cushion (Handiwork)",
   "recipe": {
@@ -35,9 +36,23 @@
     ]
   },
   "original": {
-    "width": 1002,
-    "height": 942,
+    "width": 1251,
+    "height": 690,
     "source": "decorations/666/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/e/ee/Blue_Cushion_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/9/9e/Blue_Cushion.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 1002,
+      "height": 942,
+      "source": "https://wiki.guildwars2.com/images/e/ee/Blue_Cushion_top.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1278,
+      "height": 447,
+      "source": "https://wiki.guildwars2.com/images/b/ba/Blue_Cushion_side.jpg"
+    }
+  ]
 }

@@ -6,6 +6,7 @@
     13
   ],
   "icon": "decorations/420/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/DC5BECC3D1F203C9A7E2DFE4E3939FBFF616D595/2069917.png",
   "added": "2025-03-11",
   "wikiTitle": "Racetrack Downward Ramp (Handiwork)",
   "recipe": {
@@ -34,9 +35,23 @@
     ]
   },
   "original": {
-    "width": 1152,
-    "height": 1440,
+    "width": 2348,
+    "height": 1321,
     "source": "decorations/420/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/9e/Racetrack_Downward_Ramp_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/f/f6/Racetrack_Downward_Ramp.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 1152,
+      "height": 1440,
+      "source": "https://wiki.guildwars2.com/images/9/9e/Racetrack_Downward_Ramp_top.jpg"
+    },
+    {
+      "caption": "Side view with local manipulator axes",
+      "width": 2016,
+      "height": 1440,
+      "source": "https://wiki.guildwars2.com/images/1/12/Racetrack_Downward_Ramp_side.jpg"
+    }
+  ]
 }

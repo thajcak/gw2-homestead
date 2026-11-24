@@ -7,6 +7,7 @@
     14
   ],
   "icon": "decorations/755/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/C2EEA0BF05D53F6622AEF40527627645FD26BF08/1769550.png",
   "added": "2024-11-19",
   "wikiTitle": "Spiral Elonian Windmill (Handiwork)",
   "recipe": {
@@ -36,9 +37,17 @@
     ]
   },
   "original": {
-    "width": 2305,
-    "height": 878,
+    "width": 1241,
+    "height": 1241,
     "source": "decorations/755/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/75/Spiral_Elonian_Windmill_side.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/4/4d/Spiral_Elonian_Windmill_top.jpg"
+  },
+  "views": [
+    {
+      "caption": "Side view",
+      "width": 2305,
+      "height": 878,
+      "source": "https://wiki.guildwars2.com/images/7/75/Spiral_Elonian_Windmill_side.jpg"
+    }
+  ]
 }

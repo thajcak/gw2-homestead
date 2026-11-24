@@ -6,6 +6,7 @@
     22
   ],
   "icon": "decorations/604/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/AFF4AE6E03FA0279F3AF7320E76668069BBE9142/2667231.png",
   "added": "2024-11-19",
   "wikiTitle": "Super Giant Cloud (Handiwork)",
   "recipe": {
@@ -35,9 +36,29 @@
     ]
   },
   "original": {
-    "width": 1049,
-    "height": 972,
+    "width": 1301,
+    "height": 973,
     "source": "decorations/604/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/0/0b/Super_Giant_Cloud_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/d/db/Super_Giant_Cloud.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 1049,
+      "height": 972,
+      "source": "https://wiki.guildwars2.com/images/0/0b/Super_Giant_Cloud_top.jpg"
+    },
+    {
+      "caption": "Bottom view",
+      "width": 1077,
+      "height": 973,
+      "source": "https://wiki.guildwars2.com/images/5/5a/Super_Giant_Cloud_bottom.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1307,
+      "height": 973,
+      "source": "https://wiki.guildwars2.com/images/6/67/Super_Giant_Cloud_side.jpg"
+    }
+  ]
 }

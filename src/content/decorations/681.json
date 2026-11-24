@@ -7,6 +7,7 @@
     26
   ],
   "icon": "decorations/681/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/E5D3779CC39C4438265B2C4AF7E29F102A62A737/1914826.png",
   "added": "2024-11-19",
   "wikiTitle": "Gingerbread-Man Ice Sculpture (Handiwork)",
   "recipe": {
@@ -36,9 +37,29 @@
     ]
   },
   "original": {
-    "width": 1124,
-    "height": 1440,
+    "width": 907,
+    "height": 1281,
     "source": "decorations/681/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/7b/Gingerbread-Man_Ice_Sculpture_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/e/ed/Gingerbread-Man_Ice_Sculpture.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 1124,
+      "height": 1440,
+      "source": "https://wiki.guildwars2.com/images/7/7b/Gingerbread-Man_Ice_Sculpture_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 1080,
+      "height": 1440,
+      "source": "https://wiki.guildwars2.com/images/7/72/Gingerbread-Man_Ice_Sculpture_back.jpg"
+    },
+    {
+      "caption": "Once not activated",
+      "width": 933,
+      "height": 921,
+      "source": "https://wiki.guildwars2.com/images/6/60/Ice_Sculpture_decoration_default.jpg"
+    }
+  ]
 }

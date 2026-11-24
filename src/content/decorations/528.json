@@ -6,6 +6,7 @@
     22
   ],
   "icon": "decorations/528/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/1F450A5B18DAD747CFC89304C0CB6211E96D94DA/1418361.png",
   "added": "2024-11-19",
   "wikiTitle": "Super Rock (Handiwork)",
   "recipe": {
@@ -35,9 +36,29 @@
     ]
   },
   "original": {
-    "width": 963,
-    "height": 973,
+    "width": 1170,
+    "height": 909,
     "source": "decorations/528/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/96/Super_Rock_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/f/fb/Super_Rock.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 963,
+      "height": 973,
+      "source": "https://wiki.guildwars2.com/images/9/96/Super_Rock_top.jpg"
+    },
+    {
+      "caption": "Bottom view",
+      "width": 987,
+      "height": 971,
+      "source": "https://wiki.guildwars2.com/images/2/22/Super_Rock_bottom.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 608,
+      "height": 958,
+      "source": "https://wiki.guildwars2.com/images/5/54/Super_Rock_side.jpg"
+    }
+  ]
 }

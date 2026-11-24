@@ -6,6 +6,7 @@
     22
   ],
   "icon": "decorations/84/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/F83D731EF26B57DA181A1DC8AD4500BB15ABAA19/1964624.png",
   "added": "2025-03-11",
   "wikiTitle": "Super Chest (Handiwork)",
   "recipe": {
@@ -35,9 +36,35 @@
     ]
   },
   "original": {
-    "width": 1489,
-    "height": 849,
+    "width": 1228,
+    "height": 910,
     "source": "decorations/84/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/7c/Super_Chest_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/e/e8/Super_Chest.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 1489,
+      "height": 849,
+      "source": "https://wiki.guildwars2.com/images/7/7c/Super_Chest_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 1513,
+      "height": 855,
+      "source": "https://wiki.guildwars2.com/images/5/56/Super_Chest_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1063,
+      "height": 939,
+      "source": "https://wiki.guildwars2.com/images/1/11/Super_Chest_side.jpg"
+    },
+    {
+      "caption": "When opened",
+      "width": 957,
+      "height": 972,
+      "source": "https://wiki.guildwars2.com/images/4/4d/Super_Chest_opened.jpg"
+    }
+  ]
 }

@@ -7,6 +7,7 @@
     9
   ],
   "icon": "decorations/870/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/1B1CCC4EEBDD2F182CAED55BDAB10B932DCAE544/3240045.png",
   "added": "2025-01-28",
   "wikiTitle": "Dragon Statue (Handiwork)",
   "recipe": {
@@ -36,9 +37,23 @@
     ]
   },
   "original": {
-    "width": 832,
+    "width": 793,
     "height": 960,
     "source": "decorations/870/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/d/d1/Dragon_Statue_%28decoration%29_front_view.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/f/f9/Dragon_Statue_%28decoration%29.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 832,
+      "height": 960,
+      "source": "https://wiki.guildwars2.com/images/d/d1/Dragon_Statue_%28decoration%29_front_view.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 451,
+      "height": 960,
+      "source": "https://wiki.guildwars2.com/images/a/ab/Dragon_Statue_%28decoration%29_side_view.jpg"
+    }
+  ]
 }

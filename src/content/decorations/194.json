@@ -6,6 +6,7 @@
     5
   ],
   "icon": "decorations/194/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/3F73CE046A675EDF3C0F80C612F1C740C16B15B3/1634119.png",
   "added": "2024-11-08",
   "wikiTitle": "Chandelier (Handiwork)",
   "recipe": {
@@ -35,9 +36,29 @@
     ]
   },
   "original": {
-    "width": 615,
+    "width": 575,
     "height": 973,
     "source": "decorations/194/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/b/b1/Chandelier_side.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/f/fa/Chandelier.jpg"
+  },
+  "views": [
+    {
+      "caption": "Side view",
+      "width": 615,
+      "height": 973,
+      "source": "https://wiki.guildwars2.com/images/b/b1/Chandelier_side.jpg"
+    },
+    {
+      "caption": "Close-up view",
+      "width": 1109,
+      "height": 973,
+      "source": "https://wiki.guildwars2.com/images/a/a1/Chandelier_detail.jpg"
+    },
+    {
+      "caption": "View at night",
+      "width": 613,
+      "height": 968,
+      "source": "https://wiki.guildwars2.com/images/b/bd/Chandelier_nighttime.jpg"
+    }
+  ]
 }

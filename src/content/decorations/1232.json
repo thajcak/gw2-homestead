@@ -7,6 +7,7 @@
     24
   ],
   "icon": "decorations/1232/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/6842DAA04562442BFD16EF7806BCBC09246B66D2/3795954.png",
   "added": "2026-08-11",
   "wikiTitle": "Canthan Merchant Stall (Open-Backed) (Handiwork)",
   "recipe": {
@@ -37,8 +38,34 @@
   },
   "original": {
     "width": 1080,
-    "height": 1400,
+    "height": 1880,
     "source": "decorations/1232/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/3/3e/Canthan_Merchant_Stall_%28Open-Backed%29_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/7/7f/Canthan_Merchant_Stall_%28Open-Backed%29.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 1080,
+      "height": 1400,
+      "source": "https://wiki.guildwars2.com/images/3/3e/Canthan_Merchant_Stall_%28Open-Backed%29_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 1080,
+      "height": 1400,
+      "source": "https://wiki.guildwars2.com/images/a/ac/Canthan_Merchant_Stall_%28Open-Backed%29_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1080,
+      "height": 1400,
+      "source": "https://wiki.guildwars2.com/images/2/2e/Canthan_Merchant_Stall_%28Open-Backed%29_side.jpg"
+    },
+    {
+      "caption": "Alternative side view",
+      "width": 1080,
+      "height": 1400,
+      "source": "https://wiki.guildwars2.com/images/e/e4/Canthan_Merchant_Stall_%28Open-Backed%29_side_2.jpg"
+    }
+  ]
 }

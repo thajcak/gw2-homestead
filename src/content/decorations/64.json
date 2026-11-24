@@ -6,6 +6,7 @@
     5
   ],
   "icon": "decorations/64/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/25131F995DC87CF744ED7509E23002E896919621/1227546.png",
   "added": "2024-11-19",
   "wikiTitle": "Divinity Lamp (Handiwork)",
   "recipe": {
@@ -35,9 +36,35 @@
     ]
   },
   "original": {
-    "width": 837,
-    "height": 970,
+    "width": 279,
+    "height": 971,
     "source": "decorations/64/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/b/bf/Divinity_Lamp_detail.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/1/14/Divinity_Lamp.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 193,
+      "height": 971,
+      "source": "https://wiki.guildwars2.com/images/9/99/Divinity_Lamp_front.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 307,
+      "height": 973,
+      "source": "https://wiki.guildwars2.com/images/f/f0/Divinity_Lamp_side.jpg"
+    },
+    {
+      "caption": "Close-up view",
+      "width": 837,
+      "height": 970,
+      "source": "https://wiki.guildwars2.com/images/b/bf/Divinity_Lamp_detail.jpg"
+    },
+    {
+      "caption": "View at night",
+      "width": 257,
+      "height": 971,
+      "source": "https://wiki.guildwars2.com/images/4/4d/Divinity_Lamp_nighttime.jpg"
+    }
+  ]
 }

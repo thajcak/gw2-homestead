@@ -6,6 +6,7 @@
     12
   ],
   "icon": "decorations/137/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/65B6A32142B6D4D267462965B9AE01DF54BC6027/2039317.png",
   "added": "2024-11-19",
   "wikiTitle": "Qadim's Token (Handiwork)",
   "recipe": {
@@ -35,9 +36,29 @@
     ]
   },
   "original": {
-    "width": 779,
-    "height": 972,
+    "width": 697,
+    "height": 970,
     "source": "decorations/137/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/0/06/Qadim%27s_Token_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/0/07/Qadim%27s_Token.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 779,
+      "height": 972,
+      "source": "https://wiki.guildwars2.com/images/0/06/Qadim%27s_Token_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 673,
+      "height": 966,
+      "source": "https://wiki.guildwars2.com/images/c/c4/Qadim%27s_Token_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 647,
+      "height": 972,
+      "source": "https://wiki.guildwars2.com/images/4/4b/Qadim%27s_Token_side.jpg"
+    }
+  ]
 }

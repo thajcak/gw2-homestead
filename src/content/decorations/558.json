@@ -6,6 +6,7 @@
     6
   ],
   "icon": "decorations/558/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/1C0AA9FDCD6ADD0DB06D6CAE3260BEEBDB2642A8/1224777.png",
   "added": "2024-11-19",
   "wikiTitle": "Head Topiary (Handiwork)",
   "recipe": {
@@ -35,9 +36,29 @@
     ]
   },
   "original": {
-    "width": 679,
-    "height": 971,
+    "width": 735,
+    "height": 973,
     "source": "decorations/558/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/3/34/Head_Topiary_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/9/9b/Head_Topiary.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 679,
+      "height": 971,
+      "source": "https://wiki.guildwars2.com/images/3/34/Head_Topiary_front.jpg"
+    },
+    {
+      "caption": "Top view",
+      "width": 841,
+      "height": 971,
+      "source": "https://wiki.guildwars2.com/images/5/58/Head_Topiary_top.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 805,
+      "height": 973,
+      "source": "https://wiki.guildwars2.com/images/a/ab/Head_Topiary_side.jpg"
+    }
+  ]
 }

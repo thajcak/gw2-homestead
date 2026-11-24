@@ -6,6 +6,7 @@
     5
   ],
   "icon": "decorations/812/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/C9C3382670EF770C99E44C1A0608022CD0E3A8B9/1227710.png",
   "added": "2024-11-08",
   "wikiTitle": "Basic Torch (Handiwork)",
   "recipe": {
@@ -35,9 +36,29 @@
     ]
   },
   "original": {
-    "width": 475,
-    "height": 969,
+    "width": 139,
+    "height": 970,
     "source": "decorations/812/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/2/2c/Basic_Torch_detail.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/a/a9/Basic_Torch_%28decoration%29.jpg"
+  },
+  "views": [
+    {
+      "caption": "Side view",
+      "width": 147,
+      "height": 972,
+      "source": "https://wiki.guildwars2.com/images/a/af/Basic_Torch_side.jpg"
+    },
+    {
+      "caption": "Close-up view",
+      "width": 475,
+      "height": 969,
+      "source": "https://wiki.guildwars2.com/images/2/2c/Basic_Torch_detail.jpg"
+    },
+    {
+      "caption": "View at night",
+      "width": 185,
+      "height": 963,
+      "source": "https://wiki.guildwars2.com/images/8/84/Basic_Torch_nighttime.jpg"
+    }
+  ]
 }

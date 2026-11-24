@@ -6,6 +6,7 @@
     27
   ],
   "icon": "decorations/907/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/0F7E7E5C13D4F22C3FD2474EFAA0286A8040AAD8/3620552.png",
   "added": "2025-05-12",
   "wikiTitle": "Sea Raider Floor",
   "recipe": {
@@ -29,9 +30,17 @@
     ]
   },
   "original": {
-    "width": 1409,
-    "height": 1409,
+    "width": 2419,
+    "height": 1048,
     "source": "decorations/907/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/6/6c/Sea_Raider_Floor_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/d/d9/Sea_Raider_Floor.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 1409,
+      "height": 1409,
+      "source": "https://wiki.guildwars2.com/images/6/6c/Sea_Raider_Floor_top.jpg"
+    }
+  ]
 }

@@ -7,6 +7,7 @@
     4
   ],
   "icon": "decorations/998/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/C86A3BF3932059BC22044CC762A74F6D6180E00A/3708852.png",
   "added": "2025-10-30",
   "wikiTitle": "Burlap Sack Pile (Handiwork)",
   "recipe": {
@@ -30,9 +31,23 @@
     ]
   },
   "original": {
-    "width": 1177,
-    "height": 969,
+    "width": 1141,
+    "height": 968,
     "source": "decorations/998/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/7/72/Burlap_Sack_Pile_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/7/74/Burlap_Sack_Pile.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 1177,
+      "height": 969,
+      "source": "https://wiki.guildwars2.com/images/7/72/Burlap_Sack_Pile_top.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1301,
+      "height": 935,
+      "source": "https://wiki.guildwars2.com/images/6/6b/Burlap_Sack_Pile_side.jpg"
+    }
+  ]
 }

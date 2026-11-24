@@ -6,6 +6,7 @@
     9
   ],
   "icon": "decorations/283/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/E7F10762EC21EA26AF717A0F397DF3BB2BD433B5/2199301.png",
   "added": "2024-11-19",
   "wikiTitle": "Branded Devourer Monument",
   "recipe": {
@@ -34,9 +35,29 @@
     ]
   },
   "original": {
-    "width": 829,
-    "height": 972,
+    "width": 987,
+    "height": 973,
     "source": "decorations/283/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/f/fd/Branded_Devourer_Monument_Token_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/f/fc/Branded_Devourer_Monument_Token.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 829,
+      "height": 972,
+      "source": "https://wiki.guildwars2.com/images/f/fd/Branded_Devourer_Monument_Token_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 845,
+      "height": 972,
+      "source": "https://wiki.guildwars2.com/images/0/0a/Branded_Devourer_Monument_Token_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1031,
+      "height": 971,
+      "source": "https://wiki.guildwars2.com/images/1/16/Branded_Devourer_Monument_Token_side.jpg"
+    }
+  ]
 }

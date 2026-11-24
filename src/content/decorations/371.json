@@ -6,6 +6,7 @@
     14
   ],
   "icon": "decorations/371/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/9C6C4594E79D9B7107B742C2DD50029DBEFE983C/1226139.png",
   "added": "2024-11-08",
   "wikiTitle": "Festival Tent (Handiwork)",
   "recipe": {
@@ -35,9 +36,17 @@
     ]
   },
   "original": {
-    "width": 555,
-    "height": 950,
+    "width": 690,
+    "height": 944,
     "source": "decorations/371/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/4/49/Festival_Tent_side.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/4/44/Festival_Tent.jpg"
+  },
+  "views": [
+    {
+      "caption": "Side view",
+      "width": 555,
+      "height": 950,
+      "source": "https://wiki.guildwars2.com/images/4/49/Festival_Tent_side.jpg"
+    }
+  ]
 }

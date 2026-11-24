@@ -6,6 +6,7 @@
     12
   ],
   "icon": "decorations/525/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/04030D7E9FA5F9D03F9BCF4AC4523890B19763D4/1894790.png",
   "added": "2025-03-11",
   "wikiTitle": "Gold Desmina Trophy (Handiwork)",
   "recipe": {
@@ -35,9 +36,35 @@
     ]
   },
   "original": {
-    "width": 601,
-    "height": 968,
+    "width": 423,
+    "height": 966,
     "source": "decorations/525/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/f/fe/Gold_Desmina_Trophy_detail.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/5/5c/Gold_Desmina_Trophy.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 345,
+      "height": 972,
+      "source": "https://wiki.guildwars2.com/images/6/67/Gold_Desmina_Trophy_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 337,
+      "height": 972,
+      "source": "https://wiki.guildwars2.com/images/3/39/Gold_Desmina_Trophy_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 465,
+      "height": 972,
+      "source": "https://wiki.guildwars2.com/images/4/4b/Gold_Desmina_Trophy_side.jpg"
+    },
+    {
+      "caption": "Close-up view",
+      "width": 601,
+      "height": 968,
+      "source": "https://wiki.guildwars2.com/images/f/fe/Gold_Desmina_Trophy_detail.jpg"
+    }
+  ]
 }

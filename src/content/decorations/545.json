@@ -6,6 +6,7 @@
     1
   ],
   "icon": "decorations/545/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/65FA039614FA472975E13C3891217245A299291D/1223822.png",
   "added": "2025-03-11",
   "wikiTitle": "Gold Pillar (Handiwork)",
   "recipe": {
@@ -35,9 +36,23 @@
     ]
   },
   "original": {
-    "width": 603,
-    "height": 947,
+    "width": 186,
+    "height": 932,
     "source": "decorations/545/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/1/15/Gold_Pillar_close-up.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/2/2c/Gold_Pillar.jpg"
+  },
+  "views": [
+    {
+      "caption": "Side view",
+      "width": 165,
+      "height": 965,
+      "source": "https://wiki.guildwars2.com/images/f/fc/Gold_Pillar_side.jpg"
+    },
+    {
+      "caption": "Close-up view",
+      "width": 603,
+      "height": 947,
+      "source": "https://wiki.guildwars2.com/images/1/15/Gold_Pillar_close-up.jpg"
+    }
+  ]
 }

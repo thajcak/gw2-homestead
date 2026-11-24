@@ -6,6 +6,7 @@
     2
   ],
   "icon": "decorations/343/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/21E2752DBECD94E319EDA2D2E56F0C4254FC2AFA/1227676.png",
   "added": "2024-11-19",
   "wikiTitle": "Fancy Round Table (Handiwork)",
   "recipe": {
@@ -35,9 +36,23 @@
     ]
   },
   "original": {
-    "width": 978,
-    "height": 965,
+    "width": 1335,
+    "height": 839,
     "source": "decorations/343/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/c/ca/Fancy_Round_Table_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/b/bc/Fancy_Round_Table.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 978,
+      "height": 965,
+      "source": "https://wiki.guildwars2.com/images/c/ca/Fancy_Round_Table_top.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1602,
+      "height": 785,
+      "source": "https://wiki.guildwars2.com/images/7/78/Fancy_Round_Table_side.jpg"
+    }
+  ]
 }

@@ -6,6 +6,7 @@
     22
   ],
   "icon": "decorations/481/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/5F68B0CEE02BB83B3E5EE755C4243309C7120CD3/2281909.png",
   "added": "2024-11-19",
   "wikiTitle": "Super Tree Trunk (Handiwork)",
   "recipe": {
@@ -35,9 +36,23 @@
     ]
   },
   "original": {
-    "width": 687,
-    "height": 715,
+    "width": 209,
+    "height": 971,
     "source": "decorations/481/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/93/Super_Tree_Trunk_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/a/a1/Super_Tree_Trunk.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 687,
+      "height": 715,
+      "source": "https://wiki.guildwars2.com/images/9/93/Super_Tree_Trunk_top.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 169,
+      "height": 973,
+      "source": "https://wiki.guildwars2.com/images/b/b6/Super_Tree_Trunk_side.jpg"
+    }
+  ]
 }

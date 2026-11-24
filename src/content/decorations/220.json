@@ -6,6 +6,7 @@
     6
   ],
   "icon": "decorations/220/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/319C0CC427D3A9F42A6068C95DAFA4E2733EEF69/1227633.png",
   "added": "2024-11-19",
   "wikiTitle": "Hedge Pillar (Handiwork)",
   "recipe": {
@@ -35,9 +36,23 @@
     ]
   },
   "original": {
-    "width": 1017,
+    "width": 435,
     "height": 965,
     "source": "decorations/220/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/6/68/Hedge_Pillar_close-up.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/f/f5/Hedge_Pillar.jpg"
+  },
+  "views": [
+    {
+      "caption": "Side view",
+      "width": 363,
+      "height": 965,
+      "source": "https://wiki.guildwars2.com/images/0/09/Hedge_Pillar_side.jpg"
+    },
+    {
+      "caption": "Close-up view",
+      "width": 1017,
+      "height": 965,
+      "source": "https://wiki.guildwars2.com/images/6/68/Hedge_Pillar_close-up.jpg"
+    }
+  ]
 }

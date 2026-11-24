@@ -7,6 +7,7 @@
     1
   ],
   "icon": "decorations/289/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/403F02C71CDF912324F86CD099055CF11306F46C/3122174.png",
   "added": "2025-03-11",
   "wikiTitle": "Astral Ward Tiled Circular Platform (Handiwork)",
   "recipe": {
@@ -36,9 +37,23 @@
     ]
   },
   "original": {
-    "width": 1440,
-    "height": 1440,
+    "width": 2454,
+    "height": 1147,
     "source": "decorations/289/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/88/Astral_Ward_Tiled_Circular_Platform_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/b/b3/Astral_Ward_Tiled_Circular_Platform.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 1440,
+      "height": 1440,
+      "source": "https://wiki.guildwars2.com/images/8/88/Astral_Ward_Tiled_Circular_Platform_top.jpg"
+    },
+    {
+      "caption": "Bottom view",
+      "width": 1440,
+      "height": 1440,
+      "source": "https://wiki.guildwars2.com/images/4/4d/Astral_Ward_Tiled_Circular_Platform_bottom.jpg"
+    }
+  ]
 }

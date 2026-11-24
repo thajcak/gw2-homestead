@@ -6,6 +6,7 @@
     22
   ],
   "icon": "decorations/170/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/A0D73B7A235E7A9B7861072C09F3A87E69150040/1964626.png",
   "added": "2024-11-19",
   "wikiTitle": "Super Large Rock (Handiwork)",
   "recipe": {
@@ -40,9 +41,29 @@
     ]
   },
   "original": {
-    "width": 975,
+    "width": 1135,
     "height": 971,
     "source": "decorations/170/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/9b/Super_Large_Rock_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/6/6e/Super_Large_Rock.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 975,
+      "height": 971,
+      "source": "https://wiki.guildwars2.com/images/9/9b/Super_Large_Rock_top.jpg"
+    },
+    {
+      "caption": "Bottom view",
+      "width": 1017,
+      "height": 972,
+      "source": "https://wiki.guildwars2.com/images/2/27/Super_Large_Rock_bottom.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 645,
+      "height": 968,
+      "source": "https://wiki.guildwars2.com/images/9/95/Super_Large_Rock_side.jpg"
+    }
+  ]
 }

@@ -6,6 +6,7 @@
     3
   ],
   "icon": "decorations/777/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/E93CC7CF923E43270961064179A97AA798A1A70B/1227648.png",
   "added": "2024-11-19",
   "wikiTitle": "Wide Library Shelf (Handiwork)",
   "recipe": {
@@ -35,9 +36,17 @@
     ]
   },
   "original": {
-    "width": 1060,
-    "height": 958,
+    "width": 877,
+    "height": 963,
     "source": "decorations/777/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/c/c7/Wide_Library_Shelf_front_view.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/f/ff/Wide_Library_Shelf.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 1060,
+      "height": 958,
+      "source": "https://wiki.guildwars2.com/images/c/c7/Wide_Library_Shelf_front_view.jpg"
+    }
+  ]
 }

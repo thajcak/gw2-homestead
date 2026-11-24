@@ -6,6 +6,7 @@
     22
   ],
   "icon": "decorations/802/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/5C5E751857C6E23EC8659DE695A80D97401CD01C/3023816.png",
   "added": "2024-11-19",
   "wikiTitle": "Super Cave Floor (Handiwork)",
   "recipe": {
@@ -35,9 +36,17 @@
     ]
   },
   "original": {
-    "width": 1424,
-    "height": 1424,
+    "width": 1556,
+    "height": 635,
     "source": "decorations/802/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/b/bc/Super_Cave_Floor_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/3/3c/Super_Cave_Floor.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 1424,
+      "height": 1424,
+      "source": "https://wiki.guildwars2.com/images/b/bc/Super_Cave_Floor_top.jpg"
+    }
+  ]
 }

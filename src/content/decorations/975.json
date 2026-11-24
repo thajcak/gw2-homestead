@@ -7,6 +7,7 @@
     20
   ],
   "icon": "decorations/975/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/FACE58A9F49F79C40665227B6CC977057A905F0C/3708907.png",
   "added": "2025-10-30",
   "wikiTitle": "Bamboo Wall (240 x 240) (Handiwork)",
   "recipe": {
@@ -30,9 +31,23 @@
     ]
   },
   "original": {
-    "width": 979,
-    "height": 967,
+    "width": 645,
+    "height": 970,
     "source": "decorations/975/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/f/f6/Bamboo_Wall_%28240_x_240%29_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/e/ed/Bamboo_Wall_%28240_x_240%29.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 979,
+      "height": 967,
+      "source": "https://wiki.guildwars2.com/images/f/f6/Bamboo_Wall_%28240_x_240%29_front.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 161,
+      "height": 970,
+      "source": "https://wiki.guildwars2.com/images/8/8f/Bamboo_Wall_%28240_x_240%29_side.jpg"
+    }
+  ]
 }

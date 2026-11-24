@@ -6,6 +6,7 @@
     12
   ],
   "icon": "decorations/212/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/B32FE2DBDCBECEF42EA9556006526B5350B421B6/1341356.png",
   "added": "2025-03-11",
   "wikiTitle": "Gold Shatterer Trophy (Handiwork)",
   "recipe": {
@@ -40,9 +41,29 @@
     ]
   },
   "original": {
-    "width": 1713,
+    "width": 888,
     "height": 1080,
     "source": "decorations/212/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/d/d5/Gold_Shatterer_Trophy_detail.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/6/6d/Gold_Shatterer_Trophy.jpg"
+  },
+  "views": [
+    {
+      "caption": "Close-up of the Shatterer",
+      "width": 1713,
+      "height": 1080,
+      "source": "https://wiki.guildwars2.com/images/d/d5/Gold_Shatterer_Trophy_detail.jpg"
+    },
+    {
+      "caption": "The Shatterer, as seen from the front",
+      "width": 1920,
+      "height": 1080,
+      "source": "https://wiki.guildwars2.com/images/4/41/Gold_Shatterer_Trophy_detail_front.jpg"
+    },
+    {
+      "caption": "The Shatterer, as seen from the back",
+      "width": 1878,
+      "height": 1080,
+      "source": "https://wiki.guildwars2.com/images/c/cb/Gold_Shatterer_Trophy_detail_back.jpg"
+    }
+  ]
 }

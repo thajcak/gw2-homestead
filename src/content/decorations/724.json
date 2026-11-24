@@ -6,6 +6,7 @@
     9
   ],
   "icon": "decorations/724/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/C3BA3A9130BC40E9E8B7A960F4193AF96C99E647/1424148.png",
   "added": "2025-03-11",
   "wikiTitle": "Globe of Whispers (Handiwork)",
   "recipe": {
@@ -35,9 +36,23 @@
     ]
   },
   "original": {
-    "width": 1004,
-    "height": 1328,
+    "width": 1113,
+    "height": 1313,
     "source": "decorations/724/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/0/00/Globe_of_Whispers_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/a/a8/Globe_of_Whispers.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 1004,
+      "height": 1328,
+      "source": "https://wiki.guildwars2.com/images/0/00/Globe_of_Whispers_front.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1277,
+      "height": 1242,
+      "source": "https://wiki.guildwars2.com/images/d/da/Globe_of_Whispers_side.jpg"
+    }
+  ]
 }

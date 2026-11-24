@@ -6,6 +6,7 @@
     2
   ],
   "icon": "decorations/280/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/F1FC261C7B90F605F0D380FC9A770BFEB35ED02B/1227621.png",
   "added": "2024-11-08",
   "wikiTitle": "Green Cushion (Handiwork)",
   "recipe": {
@@ -35,9 +36,29 @@
     ]
   },
   "original": {
-    "width": 1152,
-    "height": 792,
+    "width": 1125,
+    "height": 534,
     "source": "decorations/280/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/3/3f/Green_Cushion_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/d/d9/Green_Cushion.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 1215,
+      "height": 399,
+      "source": "https://wiki.guildwars2.com/images/e/eb/Green_Cushion_front.jpg"
+    },
+    {
+      "caption": "Top view",
+      "width": 1152,
+      "height": 792,
+      "source": "https://wiki.guildwars2.com/images/3/3f/Green_Cushion_top.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 858,
+      "height": 357,
+      "source": "https://wiki.guildwars2.com/images/a/a5/Green_Cushion_side.jpg"
+    }
+  ]
 }

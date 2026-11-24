@@ -7,6 +7,7 @@
     20
   ],
   "icon": "decorations/1238/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/E372443AFE0218B6673E05A5E34CAA93EAC573E9/3805873.png",
   "added": "2026-09-15",
   "wikiTitle": "Seer Oculus (Handiwork)",
   "recipe": {
@@ -31,9 +32,29 @@
     ]
   },
   "original": {
-    "width": 669,
-    "height": 974,
+    "width": 503,
+    "height": 975,
     "source": "decorations/1238/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/0/07/Seer_Oculus_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/e/eb/Seer_Oculus.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 669,
+      "height": 974,
+      "source": "https://wiki.guildwars2.com/images/0/07/Seer_Oculus_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 163,
+      "height": 975,
+      "source": "https://wiki.guildwars2.com/images/2/23/Seer_Oculus_side.jpg"
+    },
+    {
+      "caption": "Close-up view",
+      "width": 1051,
+      "height": 974,
+      "source": "https://wiki.guildwars2.com/images/c/c6/Seer_Oculus_detail.jpg"
+    }
+  ]
 }

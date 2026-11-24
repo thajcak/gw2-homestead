@@ -7,6 +7,7 @@
     25
   ],
   "icon": "decorations/643/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/FF027FFD44E60056A252A3BCBAD30AD260AE64C7/2498615.png",
   "added": "2024-11-08",
   "wikiTitle": "Shattered Stairway (Handiwork)",
   "recipe": {
@@ -36,9 +37,17 @@
     ]
   },
   "original": {
-    "width": 602,
-    "height": 956,
+    "width": 976,
+    "height": 954,
     "source": "decorations/643/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/6/65/Shattered_Stairway_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/3/36/Shattered_Stairway.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 602,
+      "height": 956,
+      "source": "https://wiki.guildwars2.com/images/6/65/Shattered_Stairway_front.jpg"
+    }
+  ]
 }

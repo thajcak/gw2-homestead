@@ -7,6 +7,7 @@
     4
   ],
   "icon": "decorations/967/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/4D4BF0BE65D3680107BCC2DE2BADE303E0B44291/3708851.png",
   "added": "2025-10-30",
   "wikiTitle": "Burlap Sack (Handiwork)",
   "recipe": {
@@ -30,9 +31,23 @@
     ]
   },
   "original": {
-    "width": 1283,
-    "height": 850,
+    "width": 1121,
+    "height": 418,
     "source": "decorations/967/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/8/85/Burlap_Sack_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/7/75/Burlap_Sack.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 1283,
+      "height": 850,
+      "source": "https://wiki.guildwars2.com/images/8/85/Burlap_Sack_top.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1338,
+      "height": 338,
+      "source": "https://wiki.guildwars2.com/images/2/2d/Burlap_Sack_side.jpg"
+    }
+  ]
 }

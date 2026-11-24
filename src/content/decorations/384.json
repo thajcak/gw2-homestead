@@ -6,6 +6,7 @@
     5
   ],
   "icon": "decorations/384/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/44076EB4E1F819CA0B5EDF1B5026A7C93794A00A/1227692.png",
   "added": "2024-11-08",
   "wikiTitle": "Square Firepit (Handiwork)",
   "recipe": {
@@ -35,9 +36,35 @@
     ]
   },
   "original": {
-    "width": 938,
-    "height": 954,
+    "width": 1054,
+    "height": 918,
     "source": "decorations/384/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/b/b6/Square_Firepit_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/f/f4/Square_Firepit.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 938,
+      "height": 954,
+      "source": "https://wiki.guildwars2.com/images/b/b6/Square_Firepit_top.jpg"
+    },
+    {
+      "caption": "Bottom view",
+      "width": 945,
+      "height": 968,
+      "source": "https://wiki.guildwars2.com/images/5/54/Square_Firepit_bottom.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1096,
+      "height": 891,
+      "source": "https://wiki.guildwars2.com/images/a/ad/Square_Firepit_side.jpg"
+    },
+    {
+      "caption": "View at night",
+      "width": 925,
+      "height": 838,
+      "source": "https://wiki.guildwars2.com/images/1/18/Square_Firepit_nighttime.jpg"
+    }
+  ]
 }

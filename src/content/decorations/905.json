@@ -6,6 +6,7 @@
     27
   ],
   "icon": "decorations/905/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/FF067199C64D34B6A5BF519F076F6EDCD10FBAF3/3620557.png",
   "added": "2025-05-12",
   "wikiTitle": "Sea Raider Roof Corner",
   "recipe": {
@@ -29,9 +30,29 @@
     ]
   },
   "original": {
-    "width": 2144,
-    "height": 1077,
+    "width": 2267,
+    "height": 1272,
     "source": "decorations/905/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/d/dc/Sea_Raider_Roof_Corner_side.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/2/29/Sea_Raider_Roof_Corner.jpg"
+  },
+  "views": [
+    {
+      "caption": "Side view",
+      "width": 2144,
+      "height": 1077,
+      "source": "https://wiki.guildwars2.com/images/d/dc/Sea_Raider_Roof_Corner_side.jpg"
+    },
+    {
+      "caption": "Top view",
+      "width": 1367,
+      "height": 1373,
+      "source": "https://wiki.guildwars2.com/images/a/a8/Sea_Raider_Roof_Corner_top.jpg"
+    },
+    {
+      "caption": "Bottom view",
+      "width": 1310,
+      "height": 1310,
+      "source": "https://wiki.guildwars2.com/images/a/ac/Sea_Raider_Roof_Corner_bottom.jpg"
+    }
+  ]
 }

@@ -7,6 +7,7 @@
     25
   ],
   "icon": "decorations/761/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/A31EDCC10099B8E0BA31669C2CD6B4C1FB0F1239/2752283.png",
   "added": "2024-11-08",
   "wikiTitle": "Spider's Web Wall (Handiwork)",
   "recipe": {
@@ -36,9 +37,17 @@
     ]
   },
   "original": {
-    "width": 984,
-    "height": 947,
+    "width": 1760,
+    "height": 1026,
     "source": "decorations/761/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/4/46/Spider%27s_Web_Floor_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/e/eb/Spider%27s_Web_Floor.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 1120,
+      "height": 1080,
+      "source": "https://wiki.guildwars2.com/images/4/46/Spider%27s_Web_Floor_top.jpg"
+    }
+  ]
 }

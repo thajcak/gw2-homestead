@@ -6,6 +6,7 @@
     5
   ],
   "icon": "decorations/678/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/396B6C4DBE5C4B31139C6E411503499FB228B7F2/1202578.png",
   "added": "2024-11-08",
   "wikiTitle": "Obstacle: Blue Torch (Handiwork)",
   "recipe": {
@@ -35,9 +36,17 @@
     ]
   },
   "original": {
-    "width": 827,
-    "height": 1102,
+    "width": 1001,
+    "height": 1251,
     "source": "decorations/678/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/9/9e/Obstacle-_Torch_unlit.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/3/38/Obstacle-_Blue_Torch.jpg"
+  },
+  "views": [
+    {
+      "caption": "Unlit (default)",
+      "width": 827,
+      "height": 1102,
+      "source": "https://wiki.guildwars2.com/images/9/9e/Obstacle-_Torch_unlit.jpg"
+    }
+  ]
 }

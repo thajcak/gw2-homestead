@@ -6,6 +6,7 @@
     12
   ],
   "icon": "decorations/360/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/0B2000BE572ACDC30F1C4CBAFCE440092A9649AA/1341255.png",
   "added": "2025-03-11",
   "wikiTitle": "Gold Gorseval Trophy (Handiwork)",
   "recipe": {
@@ -35,9 +36,35 @@
     ]
   },
   "original": {
-    "width": 639,
+    "width": 487,
     "height": 973,
     "source": "decorations/360/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/6/6b/Gold_Gorseval_Trophy_front.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/8/88/Gold_Gorseval_Trophy.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 639,
+      "height": 973,
+      "source": "https://wiki.guildwars2.com/images/6/6b/Gold_Gorseval_Trophy_front.jpg"
+    },
+    {
+      "caption": "Back view",
+      "width": 581,
+      "height": 973,
+      "source": "https://wiki.guildwars2.com/images/8/84/Gold_Gorseval_Trophy_back.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 543,
+      "height": 971,
+      "source": "https://wiki.guildwars2.com/images/c/c2/Gold_Gorseval_Trophy_side.jpg"
+    },
+    {
+      "caption": "Close-up view",
+      "width": 1269,
+      "height": 972,
+      "source": "https://wiki.guildwars2.com/images/5/55/Gold_Gorseval_Trophy_detail.jpg"
+    }
+  ]
 }

@@ -7,6 +7,7 @@
     24
   ],
   "icon": "decorations/1235/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/A712E335BFBF28AB064D753AB3BFA6BF09DA3EDA/3795953.png",
   "added": "2026-08-11",
   "wikiTitle": "Canthan Merchant Canopy (Handiwork)",
   "recipe": {
@@ -36,9 +37,23 @@
     ]
   },
   "original": {
-    "width": 1182,
-    "height": 1080,
+    "width": 1080,
+    "height": 1300,
     "source": "decorations/1235/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/3/3f/Canthan_Merchant_Canopy_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/2/2a/Canthan_Merchant_Canopy.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 1182,
+      "height": 1080,
+      "source": "https://wiki.guildwars2.com/images/3/3f/Canthan_Merchant_Canopy_top.jpg"
+    },
+    {
+      "caption": "Bottom view",
+      "width": 1060,
+      "height": 1080,
+      "source": "https://wiki.guildwars2.com/images/1/17/Canthan_Merchant_Canopy_bottom.jpg"
+    }
+  ]
 }

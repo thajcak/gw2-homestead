@@ -6,6 +6,7 @@
     2
   ],
   "icon": "decorations/308/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/F594FDBBF0A76FE6E1C80A95B9EA1E03276ADBCE/1227695.png",
   "added": "2024-11-08",
   "wikiTitle": "Square Cabinet (Handiwork)",
   "recipe": {
@@ -35,9 +36,17 @@
     ]
   },
   "original": {
-    "width": 1225,
-    "height": 939,
+    "width": 1081,
+    "height": 925,
     "source": "decorations/308/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/2/2c/Square_Cabinet_front_view.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/9/95/Square_Cabinet.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 1225,
+      "height": 939,
+      "source": "https://wiki.guildwars2.com/images/2/2c/Square_Cabinet_front_view.jpg"
+    }
+  ]
 }

@@ -7,6 +7,7 @@
     26
   ],
   "icon": "decorations/730/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/490A2428529FED35CFFEBF2978936D70B6FF010D/1322814.png",
   "added": "2024-11-19",
   "wikiTitle": "Holiday Wreath (Handiwork)",
   "recipe": {
@@ -36,9 +37,23 @@
     ]
   },
   "original": {
-    "width": 939,
+    "width": 354,
     "height": 960,
     "source": "decorations/730/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/2/2c/Holiday_Wreath_details.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/0/0e/Holiday_Wreath.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 390,
+      "height": 960,
+      "source": "https://wiki.guildwars2.com/images/0/06/Holiday_Wreath_front.jpg"
+    },
+    {
+      "caption": "Details close-up view",
+      "width": 939,
+      "height": 960,
+      "source": "https://wiki.guildwars2.com/images/2/2c/Holiday_Wreath_details.jpg"
+    }
+  ]
 }

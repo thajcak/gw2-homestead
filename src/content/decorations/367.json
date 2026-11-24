@@ -7,6 +7,7 @@
     6
   ],
   "icon": "decorations/367/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/D4070B5B2F2ABAD80DE2176EB541680B4D0CD41D/1226071.png",
   "added": "2024-11-08",
   "wikiTitle": "Pumpkin (Handiwork)",
   "recipe": {
@@ -37,8 +38,22 @@
   },
   "original": {
     "width": 1080,
-    "height": 1050,
+    "height": 1350,
     "source": "decorations/367/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/a/a7/Pumpkin_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/f/f7/Pumpkin.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 1080,
+      "height": 1050,
+      "source": "https://wiki.guildwars2.com/images/a/a7/Pumpkin_top.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1080,
+      "height": 1350,
+      "source": "https://wiki.guildwars2.com/images/9/90/Pumpkin_side.jpg"
+    }
+  ]
 }

@@ -7,6 +7,7 @@
     17
   ],
   "icon": "decorations/562/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/CDDFB5BD0208F3DB80F156D5290398E7689507A9/3592767.png",
   "added": "2025-03-11",
   "wikiTitle": "Kaineng City Umbrella",
   "recipe": {
@@ -36,9 +37,23 @@
     ]
   },
   "original": {
-    "width": 851,
-    "height": 851,
+    "width": 913,
+    "height": 861,
     "source": "decorations/562/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/2/25/Kaineng_City_Umbrella_night.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/9/97/Kaineng_City_Umbrella.jpg"
+  },
+  "views": [
+    {
+      "caption": "Night scene",
+      "width": 851,
+      "height": 851,
+      "source": "https://wiki.guildwars2.com/images/2/25/Kaineng_City_Umbrella_night.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1245,
+      "height": 1244,
+      "source": "https://wiki.guildwars2.com/images/a/a2/Kaineng_City_Umbrella_side.jpg"
+    }
+  ]
 }

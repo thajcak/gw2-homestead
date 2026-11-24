@@ -6,6 +6,7 @@
     27
   ],
   "icon": "decorations/1229/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/0DC614C07A9242CAEB3D2BDF680F0B576FEA6679/3787081.png",
   "added": "2026-06-23",
   "wikiTitle": "Poolside Party Floor",
   "recipe": {
@@ -29,9 +30,23 @@
     ]
   },
   "original": {
-    "width": 1440,
+    "width": 2972,
     "height": 1440,
     "source": "decorations/1229/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/5/5f/Poolside_Party_Floor_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/1/1c/Poolside_Party_Floor.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 1440,
+      "height": 1440,
+      "source": "https://wiki.guildwars2.com/images/5/5f/Poolside_Party_Floor_top.jpg"
+    },
+    {
+      "caption": "Bottom view",
+      "width": 1428,
+      "height": 1428,
+      "source": "https://wiki.guildwars2.com/images/f/f3/Poolside_Party_Floor_bottom.jpg"
+    }
+  ]
 }

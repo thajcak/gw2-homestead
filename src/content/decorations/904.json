@@ -6,6 +6,7 @@
     27
   ],
   "icon": "decorations/904/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/D8151A2A4C35B6F5BE56CDE73E5E24451C33BB61/3620556.png",
   "added": "2025-05-12",
   "wikiTitle": "Sea Raider Roof",
   "recipe": {
@@ -29,9 +30,29 @@
     ]
   },
   "original": {
-    "width": 2154,
-    "height": 1429,
+    "width": 1727,
+    "height": 1385,
     "source": "decorations/904/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/1/13/Sea_Raider_Roof_side.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/e/e3/Sea_Raider_Roof.jpg"
+  },
+  "views": [
+    {
+      "caption": "Side view",
+      "width": 2154,
+      "height": 1429,
+      "source": "https://wiki.guildwars2.com/images/1/13/Sea_Raider_Roof_side.jpg"
+    },
+    {
+      "caption": "Top view",
+      "width": 805,
+      "height": 1440,
+      "source": "https://wiki.guildwars2.com/images/8/83/Sea_Raider_Roof_top.jpg"
+    },
+    {
+      "caption": "Bottom view",
+      "width": 775,
+      "height": 1384,
+      "source": "https://wiki.guildwars2.com/images/d/db/Sea_Raider_Roof_bottom.jpg"
+    }
+  ]
 }

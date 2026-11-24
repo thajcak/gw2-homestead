@@ -6,6 +6,7 @@
     9
   ],
   "icon": "decorations/713/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/1313F3163B585427733F0E5C104BD7240636505D/1224087.png",
   "added": "2024-11-08",
   "wikiTitle": "Lion Statue (Handiwork)",
   "recipe": {
@@ -35,9 +36,23 @@
     ]
   },
   "original": {
-    "width": 744,
-    "height": 955,
+    "width": 663,
+    "height": 948,
     "source": "decorations/713/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/0/01/Lion_Statue_side_view.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/0/01/Lion_Statue.jpg"
+  },
+  "views": [
+    {
+      "caption": "Front view",
+      "width": 424,
+      "height": 945,
+      "source": "https://wiki.guildwars2.com/images/d/de/Lion_Statue_front_view.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 744,
+      "height": 955,
+      "source": "https://wiki.guildwars2.com/images/0/01/Lion_Statue_side_view.jpg"
+    }
+  ]
 }

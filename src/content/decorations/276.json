@@ -7,6 +7,7 @@
     4
   ],
   "icon": "decorations/276/icon.png",
+  "iconSource": "https://render.guildwars2.com/file/7A18A7EE4FAB180A02DE251B920FCA0303E4FC0D/3374956.png",
   "added": "2024-11-08",
   "wikiTitle": "Red Bowl of Food",
   "recipe": {
@@ -34,9 +35,29 @@
     ]
   },
   "original": {
-    "width": 942,
-    "height": 932,
+    "width": 1011,
+    "height": 410,
     "source": "decorations/276/preview.webp",
-    "remoteSource": "https://wiki.guildwars2.com/images/3/3b/Red_Bowl_of_Food_top.jpg"
-  }
+    "remoteSource": "https://wiki.guildwars2.com/images/1/18/Red_Bowl_of_Food.jpg"
+  },
+  "views": [
+    {
+      "caption": "Top view",
+      "width": 942,
+      "height": 932,
+      "source": "https://wiki.guildwars2.com/images/3/3b/Red_Bowl_of_Food_top.jpg"
+    },
+    {
+      "caption": "Bottom view",
+      "width": 936,
+      "height": 950,
+      "source": "https://wiki.guildwars2.com/images/e/eb/Red_Bowl_bottom.jpg"
+    },
+    {
+      "caption": "Side view",
+      "width": 1020,
+      "height": 323,
+      "source": "https://wiki.guildwars2.com/images/0/05/Red_Bowl_side.jpg"
+    }
+  ]
 }
