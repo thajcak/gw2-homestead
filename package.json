@@ -11,7 +11,6 @@
     "fetch-wiki": "node scripts/fetch-wiki-enrichment.mjs",
     "fetch-decorations": "node scripts/run-fetch-decorations.mjs",
     "act:check": "scripts/act.sh check",
-    "act:fetch": "scripts/act.sh fetch",
     "act:deploy": "scripts/act.sh deploy",
     "act:all": "scripts/act.sh all"
   },
