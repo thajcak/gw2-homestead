@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# Run sync-once every hour at SYNC_MINUTE past the hour (UTC), and once at start when
+# RUN_ON_START=true. A failed run is logged and the schedule carries on.
+set -uo pipefail
+
+log() { printf '%s %s\n' "$(date -u +%FT%TZ)" "$*"; }
+
+minute=$SYNC_MINUTE
+if ! [[ $minute =~ ^[0-9]+$ ]] || (( 10#$minute > 59 )); then
+  log "SYNC_MINUTE must be 0-59, not '$minute'."
+  exit 1
+fi
+minute=$((10#$minute))
+
+run() {
+  sync-once
+  local status=$?
+  (( status == 0 )) || log "Sync failed (exit $status)."
+}
+
+[[ $RUN_ON_START == true ]] && run
+
+while :; do
+  now=$(date -u +%s)
+  next=$(( now - now % 3600 + minute * 60 ))
+  (( next <= now )) && next=$(( next + 3600 ))
+  log "Next sync at $(date -u -d "@$next" +%FT%TZ)."
+  # In the background so `docker stop` doesn't wait for the sleep to end.
+  sleep $(( next - now )) &
+  wait $!
+  run
+done

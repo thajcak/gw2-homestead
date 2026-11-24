@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Healthy while a sync has succeeded (changes or not) in the last HEALTH_MAX_AGE_MINUTES.
+marker="$DATA_DIR/last-success"
+[[ -f $marker && -z $(find "$marker" -mmin +"$HEALTH_MAX_AGE_MINUTES") ]]

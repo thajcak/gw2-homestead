@@ -1,8 +1,8 @@
 name: Deploy Astro site to GitHub Pages
 
-# The fetch workflow calls this one (workflow_call) only when it pushed a data commit, so
-# no-op fetch runs don't deploy. Pushes by GITHUB_TOKEN don't trigger `push`, so that commit
-# isn't deployed twice.
+# The sync container (sync/) pushes its data commits with its own key, so they deploy through
+# `push`. The manual fetch workflow calls this one (workflow_call) only when it pushed a data
+# commit; pushes by GITHUB_TOKEN don't trigger `push`, so that commit isn't deployed twice.
 on:
   push:
     branches:

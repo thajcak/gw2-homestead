@@ -1,5 +1,4 @@
 # Guild Wars 2 Homestead Catalog
-[![Update and Fetch Decorations and Categories](https://github.com/thajcak/gw2-homestead/actions/workflows/fetch_decorations.yml/badge.svg)](https://github.com/thajcak/gw2-homestead/actions/workflows/fetch_decorations.yml)
 
 ---
 
@@ -8,7 +7,7 @@
 The Homestead Catalog is a static site that pulls data from the `/v2/homestead` endpoint to provide a quick way to view all Homestead decorations that are presumably available in game.
 
 ## Backend
-The backend is a GitHub Actions workflow (`fetch_decorations.yml`) that runs hourly (at :23) to pull every decoration and category from the GW2 API, enrich decorations from the [Guild Wars 2 Wiki](https://wiki.guildwars2.com) (page title, preview image, recipe), and commit any changes. When it pushes a commit it calls the deploy workflow (`deploy.yml`), which builds the site and publishes it to GitHub Pages. Pushes to `main` and manual runs also deploy.
+The backend is a sync that runs hourly (at :30 UTC) in a Docker container ([`sync/`](sync/README.md), on a home server) to pull every decoration and category from the GW2 API, enrich decorations from the [Guild Wars 2 Wiki](https://wiki.guildwars2.com) (page title, preview image, recipe), and commit any changes to `main`. Its push triggers the deploy workflow (`deploy.yml`), which builds the site and publishes it to GitHub Pages, as any push to `main` does. The container's image is built by `sync_image.yml` and published privately to GitHub's container registry, from which the server pulls it. The GitHub workflow that used to run the sync (`fetch_decorations.yml`) is kept as a manual fallback; the wiki answers some of GitHub's requests with HTTP 403.
 
 Decoration and category data live in Astro Content Collections under `src/content/`. Each entry holds its current state plus the day it was `added` (and `removed`, once a removal is confirmed). Everything that changes is appended to a monthly change log in `src/data/changes/YYYY-MM.json`: one entry per item per day (`New Item`, `Item Updated`, `Item Removed` or `Item Returned`), with each changed field's before and after values.
 
@@ -51,7 +50,7 @@ Other commands:
 
 - `npm run build` — production build to `dist/`
 - `npm run preview` — serve the production build locally (a small wrapper around Vite's preview server, so `/gw2-homestead?open={id}` works as it does on Pages)
-- `npm run fetch-decorations` — run the full sync the hourly workflow runs (GW2 API, wiki, content files, images). Every run checks every decoration on the wiki, batched up to 50 page titles per request. Options (after `--`):
+- `npm run fetch-decorations` — run the full sync the hourly container runs (GW2 API, wiki, content files, images). Every run checks every decoration on the wiki, batched up to 50 page titles per request. Options (after `--`):
   - `--ids 1,2` — limit wiki lookups to those IDs
   - `--dry-run` — fetch and print the wiki results without touching content, change log or images (work files go to `.local-sync/`)
   - `--allow-large-drop` — continue when the API lists many fewer items than are stored
@@ -59,9 +58,11 @@ Other commands:
 
 ### Testing GitHub Actions locally
 
+To try the sync container itself, see [sync/README.md](sync/README.md#try-it-locally).
+
 The workflows can be run locally with [act](https://github.com/nektos/act) (`brew install act`, Docker required). act copies the working tree into a container, so uncommitted changes are tested and nothing comes back to your checkout. Under act the fetch workflow commits inside the container but skips `git push`, and the deploy workflow builds but skips the Pages upload and deploy job.
 
-- `npm run act:check` — dry-run every trigger (schedule, dispatch, push, and the fetch workflow's `workflow_call` into deploy) and check which jobs would run
+- `npm run act:check` — dry-run every trigger (dispatch, push, the sync image's push and schedule, and the fetch workflow's `workflow_call` into deploy) and check which jobs would run
 - `npm run act:fetch` — run the fetch workflow end to end against the real GW2 API and wiki; wiki lookups are limited to a 7-item sample (`scripts/act.sh fetch 1,2,3` or `scripts/act.sh fetch all` to change that)
 - `npm run act:deploy` — run the deploy workflow's build job
 - `npm run act:all` — all of the above

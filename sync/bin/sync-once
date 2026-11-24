@@ -1,0 +1,116 @@
+#!/usr/bin/env bash
+# One sync: bring the clone up to origin, run scripts/run-fetch-decorations.mjs, commit what
+# changed and push it. Arguments go to that script:
+#   --ids 1,2             only query the wiki for these decoration IDs
+#   --allow-large-drop    continue when the API lists many fewer items than are stored
+#   --dry-run             fetch and print wiki results; change, commit and push nothing
+# Runs queue on a lock, so a manual run waits for a scheduled one instead of overlapping it.
+set -euo pipefail
+
+# `docker exec <container> sync-once` arrives as root without the entrypoint's setup.
+[[ ${SYNC_PREPARED:-} == 1 ]] || exec sync-entrypoint once "$@"
+
+log() { printf '%s %s\n' "$(date -u +%FT%TZ)" "$*"; }
+
+: "${REPO_URL:?Set REPO_URL to the repo to clone and push to.}"
+REPO_DIR="$DATA_DIR/repo"
+DATA_PATHS=(src/content/ src/data/ src/assets/decorations/)
+
+dry_run=false
+for arg in "$@"; do [[ $arg == --dry-run ]] && dry_run=true; done
+
+exec 9>"$DATA_DIR/sync.lock"
+if ! flock -n 9; then
+  log "Another sync is running; waiting for it."
+  flock 9
+fi
+
+if [[ ! -d $REPO_DIR/.git ]]; then
+  log "Cloning $REPO_URL ($BRANCH)..."
+  # Blobless: history without every past image, which is most of the repo's size. Older
+  # files are fetched only if a command ever needs them.
+  git clone --filter=blob:none --branch "$BRANCH" "$REPO_URL" "$REPO_DIR"
+fi
+cd "$REPO_DIR"
+
+git remote set-url origin "$REPO_URL"
+# Clear whatever an interrupted run left behind.
+git rebase --abort >/dev/null 2>&1 || true
+git checkout -q "$BRANCH"
+git reset -q --hard
+git clean -q -fd -- "${DATA_PATHS[@]}"
+
+log "Fetching origin/$BRANCH..."
+git fetch -q origin "$BRANCH"
+
+# A commit an earlier run couldn't push is replayed onto origin and pushed with this run's.
+# If it no longer applies, it is kept on a local branch and this run starts from origin (the
+# sync recomputes the same changes from the API anyway).
+unpushed=$(git rev-list --count "origin/$BRANCH..HEAD")
+if (( unpushed > 0 )) && [[ $PUSH != true ]]; then
+  git reset -q --hard "origin/$BRANCH"
+  log "PUSH=$PUSH: dropped $unpushed local commit(s) from an earlier run."
+elif (( unpushed > 0 )); then
+  if git rebase -q "origin/$BRANCH"; then
+    log "Carrying $unpushed unpushed commit(s) from an earlier run."
+  else
+    git rebase --abort >/dev/null 2>&1 || true
+    backup="unpushed-$(date -u +%Y%m%dT%H%M%SZ)"
+    git branch "$backup"
+    git reset -q --hard "origin/$BRANCH"
+    log "Set $unpushed unpushed commit(s) aside on local branch $backup."
+  fi
+else
+  git reset -q --hard "origin/$BRANCH"
+fi
+log "At $(git log -1 --format='%h %s')."
+
+# npm ci only when the lockfile or Node version changed since the last install.
+deps_hash=$({ node --version; cat package-lock.json; } | sha256sum | cut -d' ' -f1)
+if [[ ! -f node_modules/.sync-deps-hash || $(<node_modules/.sync-deps-hash) != "$deps_hash" ]]; then
+  log "Installing dependencies..."
+  npm ci --no-audit --no-fund --loglevel=error
+  echo "$deps_hash" >node_modules/.sync-deps-hash
+fi
+
+log "Running the sync${*:+ ($*)}..."
+node scripts/run-fetch-decorations.mjs "$@"
+
+if [[ $dry_run == true ]]; then
+  log "Dry run complete."
+  exit 0
+fi
+
+git add -- "${DATA_PATHS[@]}"
+if git diff --cached --quiet; then
+  log "No changes to commit."
+else
+  git commit -q -m "Update decoration data and changelog"
+  git show --stat --format='%h %s' HEAD | tail -n 25
+fi
+
+if [[ -z $(git rev-list "origin/$BRANCH..HEAD") ]]; then
+  :
+elif [[ $PUSH != true ]]; then
+  log "PUSH=$PUSH: committed locally, not pushed (the next run starts from origin again)."
+else
+  # Rebase onto anything that landed during the run, so its work isn't lost to a rejected push.
+  pushed=false
+  for attempt in 1 2 3; do
+    if git pull -q --rebase origin "$BRANCH" && git push -q origin "HEAD:$BRANCH"; then
+      pushed=true
+      break
+    fi
+    git rebase --abort >/dev/null 2>&1 || true
+    log "Push attempt $attempt failed."
+    (( attempt < 3 )) && sleep $(( attempt * 15 ))
+  done
+  if [[ $pushed != true ]]; then
+    log "Could not push; the next run will try again."
+    exit 1
+  fi
+  log "Pushed $(git rev-parse --short HEAD) to origin/$BRANCH."
+fi
+
+touch "$DATA_DIR/last-success"
+log "Sync complete."

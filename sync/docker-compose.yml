@@ -1,0 +1,26 @@
+# The decoration sync on Unraid (or any Docker host). See sync/README.md.
+#
+#   docker compose up -d       pull the image and start the hourly schedule
+#   docker compose pull        fetch a newer image (then `up -d` again)
+#   docker compose logs -f     follow the runs
+#   docker compose exec sync sync-once --ids 1,2   run once now
+#
+# The image is private: `docker login ghcr.io` first (see sync/README.md).
+services:
+  sync:
+    image: ghcr.io/thajcak/gw2-homestead-sync:latest
+    container_name: gw2-homestead-sync
+    restart: unless-stopped
+    environment:
+      REPO_URL: git@github.com:thajcak/gw2-homestead.git
+      # GITHUB_TOKEN: github_pat_...   # only with an https:// REPO_URL instead of a deploy key
+      SYNC_MINUTE: "30"
+      RUN_ON_START: "false"
+      PUSH: "true"
+      PUID: "99"
+      PGID: "100"
+      GIT_USER_NAME: gw2-homestead-sync
+      GIT_USER_EMAIL: gw2-homestead-sync@localhost
+    volumes:
+      # Holds the clone, the deploy key (deploy_key) and the sync's git config.
+      - /mnt/user/appdata/gw2-homestead-sync:/data
