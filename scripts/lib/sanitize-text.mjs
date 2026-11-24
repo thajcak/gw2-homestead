@@ -4,12 +4,30 @@
  */
 
 /**
- * Remove HTML and GW2 chat markup tags from catalog text.
+ * Apply `pattern` (a global regex) until the text stops changing, so removing one match can't
+ * join the pieces around it into a new one (e.g. `<scr<b>ipt>`).
+ * @param {string} text
+ * @param {RegExp} pattern
+ * @param {string} [replacement]
+ * @returns {string}
+ */
+export function replaceUntilStable(text, pattern, replacement = '') {
+  let previous;
+  do {
+    previous = text;
+    text = text.replace(pattern, replacement);
+  } while (text !== previous);
+  return text;
+}
+
+/**
+ * Remove HTML and GW2 chat markup tags from catalog text. A `<` left over after that (an
+ * unclosed tag) is dropped too, so no markup can survive.
  * @param {unknown} value
  * @returns {string}
  */
 export function stripMarkup(value) {
-  return String(value ?? '').replace(/<[^>]*>/g, '');
+  return replaceUntilStable(String(value ?? ''), /<[^>]*>/g).replace(/</g, '');
 }
 
 /**

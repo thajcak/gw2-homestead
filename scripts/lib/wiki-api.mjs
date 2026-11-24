@@ -8,7 +8,7 @@ import {
   remoteOriginalSource,
   utcToday,
 } from './content-store.mjs';
-import { sanitizeDisplayName } from './sanitize-text.mjs';
+import { replaceUntilStable, sanitizeDisplayName } from './sanitize-text.mjs';
 
 const WIKI_API = 'https://wiki.guildwars2.com/api.php';
 const WIKI_USER_AGENT = 'gw2-homestead-sync/1.0 (https://github.com/thajcak/gw2-homestead)';
@@ -355,7 +355,8 @@ export async function lookupWikiPagesBatch(decorations) {
  * something else.
  */
 export function parseDecorationInfobox(wikitext) {
-  const text = (wikitext ?? '').replace(/<!--[\s\S]*?-->/g, '');
+  // An unclosed comment runs to the end of the page, as MediaWiki treats it.
+  const text = replaceUntilStable(wikitext ?? '', /<!--[\s\S]*?(?:-->|$)/g);
   const start = text.search(/\{\{\s*decoration infobox\s*[|}]/i);
   if (start < 0) {
     return null;
@@ -668,9 +669,10 @@ export function applyWikiImageMetadata(decoration, lookup, today = utcToday()) {
  * period are dropped. Null when nothing is left or it is the template's "Click to enlarge".
  */
 export function cleanWikiCaption(caption) {
-  let text = (caption ?? '')
-    .replace(/<ref[^>]*\/>|<ref[^>]*>[\s\S]*?<\/ref>/gi, '')
-    .replace(/<[^>]+>/g, '');
+  let text = replaceUntilStable(
+    replaceUntilStable(caption ?? '', /<ref[^>]*\/>|<ref[^>]*>[\s\S]*?<\/ref>/gi),
+    /<[^>]+>/g,
+  ).replace(/</g, '');
   for (let pass = 0; pass < 5 && /\{\{[^{}]*\}\}/.test(text); pass += 1) {
     text = text.replace(/\{\{[^{}]*\}\}/g, '');
   }
