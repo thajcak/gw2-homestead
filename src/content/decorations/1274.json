@@ -7,5 +7,27 @@
   ],
   "icon": "decorations/1274/icon.png",
   "iconSource": "https://render.guildwars2.com/file/676221ADB6449279BD701B0DCE50197BBF27F478/3832963.png",
-  "added": "2026-11-10"
+  "added": "2026-11-10",
+  "wikiTitle": "Snowy Garden Fence",
+  "recipe": {
+    "type": "Homestead Decoration",
+    "rating": 0,
+    "source": "Recipe sheet",
+    "id": 15799,
+    "sheet": "Black Lion Snowy Garden Fence Recipe",
+    "disciplines": "Handiworker",
+    "ingredients": [
+      {
+        "slot": 1,
+        "quantity": 5,
+        "item": "Refined Homestead Metal"
+      },
+      {
+        "slot": 2,
+        "quantity": 5,
+        "item": "Refined Homestead Wood"
+      }
+    ]
+  },
+  "previewMissingSince": "2026-11-24"
 }
