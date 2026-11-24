@@ -43,9 +43,8 @@ GitHub makes a new package **private**, so pulling it needs a login. Check this 
    | Name | `gw2-homestead-sync` |
    | Repository | `ghcr.io/thajcak/gw2-homestead-sync:latest` |
    | Path: container `/data` | `/mnt/user/appdata/gw2-homestead-sync` |
-   | Variable `REPO_URL` | `git@github.com:thajcak/gw2-homestead.git` |
 
-   Add any other [settings](#settings) as variables the same way. Or, with the Docker Compose Manager plugin, add a stack with [`docker-compose.yml`](docker-compose.yml) and choose **Compose Up**.
+   The image already points at this repo (`REPO_URL`), so no variables are needed. To change a [setting](#settings), choose **Add another Path, Port, Variable, Label or Device**, pick **Variable** and use the setting's name as the key. Or, with the Docker Compose Manager plugin, add a stack with [`docker-compose.yml`](docker-compose.yml) and choose **Compose Up**.
 
 4. **Check the first run** without waiting for the schedule:
 
@@ -68,7 +67,7 @@ If a push fails (GitHub down, or a conflicting push to the data files), the comm
 
 | Variable | Default | |
 |---|---|---|
-| `REPO_URL` | (required) | `git@github.com:…` with a deploy key, or `https://github.com/…` with `GITHUB_TOKEN` |
+| `REPO_URL` | `git@github.com:thajcak/gw2-homestead.git` | Repo to clone and push to: `git@github.com:…` with a deploy key, or `https://github.com/…` with `GITHUB_TOKEN` |
 | `BRANCH` | `main` | Branch to sync and push |
 | `SYNC_MINUTE` | `30` | Minute past each hour (UTC) to run |
 | `RUN_ON_START` | `false` | Also run when the container starts |

@@ -20,7 +20,12 @@ RUN node -e "fetch('https://api.github.com/meta').then((r) => r.json()).then((m)
 
 COPY --chmod=755 bin/ /usr/local/bin/
 
-ENV DATA_DIR=/data \
+# The repo the sync clones and pushes to. The publish workflow passes the repo it runs in;
+# set REPO_URL on the container to sync somewhere else.
+ARG REPO_URL=git@github.com:thajcak/gw2-homestead.git
+
+ENV REPO_URL=$REPO_URL \
+    DATA_DIR=/data \
     BRANCH=main \
     SYNC_MINUTE=30 \
     RUN_ON_START=false \
