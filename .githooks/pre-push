@@ -3,7 +3,7 @@
 #   git config core.hooksPath .githooks
 #
 # When the pushed commits touch .github/ or scripts/, dry-runs every workflow trigger with act
-# (scripts/act.sh check). Set ACT_E2E=1 to also run the fetch and deploy workflows end to end.
+# (scripts/act.sh check). Set ACT_E2E=1 to also run the deploy workflow's build end to end.
 # Skips with a warning when act or Docker isn't available; bypass once with git push --no-verify.
 set -euo pipefail
 
