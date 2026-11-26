@@ -64,6 +64,8 @@ GitHub makes a new package **private**, so pulling it needs a login. Check this 
 - Health: the container turns unhealthy when no run has succeeded for 3 hours (`HEALTH_MAX_AGE_MINUTES`).
 - Update the image after the workflow publishes a new one: Unraid's **Check for Updates** on the Docker tab, then **Apply Update** (or **Compose Pull** and **Compose Up**). Pin a `sha-<commit>` tag instead of `latest` to stay on one build.
 
+Each commit's message says what the run detected, so GitHub's history reads as a change log. The subject sums it up (`Add decoration Snowy Garden Lantern`, or `Sync decorations: 1 new, 7 updated` when there's more than one), and the body lists the items by kind, with the fields each update changed (short values with their before and after) and how many files changed. To stay readable on GitHub, the subject keeps within 72 characters and the body lists at most 60 items, then says how many more there are. The change log file the commit adds to holds every detail.
+
 If a push fails (GitHub down, or a conflicting push to the data files), the commit stays in the clone and the next run rebases and pushes it. If it no longer applies, it's kept on a local `unpushed-…` branch in `/data/repo` and the run starts over from `origin/main`. The sync works out the same changes from the API again.
 
 ## Status page

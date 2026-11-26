@@ -6,8 +6,10 @@
 //   sync-runs set <id> <key> <value>           set a string field (e.g. head, commit)
 //   sync-runs detect <id> <rev>                record what commit <rev> changed (run in the clone)
 //   sync-runs finish <id> <exit-status>        record how the run ended; prune old runs
+//   sync-runs message                          print a commit message for the staged changes
 //
-// Errors are reported but never fail the sync: losing a record is better than losing a run.
+// Errors are reported but never fail the sync: losing a record is better than losing a run, and
+// `message` falls back to a plain message rather than leave the commit without one.
 import { execFileSync } from 'node:child_process';
 import { readdirSync, readFileSync, renameSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -45,12 +47,18 @@ function changeKey(entry) {
   return [entry.day, entry.collection, entry.id, entry.type, JSON.stringify(entry.changes ?? null)].join('|');
 }
 
+/** A file's JSON at a commit, or in the index when rev is ''. */
 function readJsonAt(rev, path) {
   try {
     return JSON.parse(git('show', `${rev}:${path}`));
   } catch {
     return [];
   }
+}
+
+/** `git diff` from commit `from` to commit `to`, or to the index when `to` is null. */
+function diffArgs(from, to) {
+  return to ? [from, to] : ['--cached', from];
 }
 
 /** Which part of the site a changed file belongs to, for the per-run file counts. */
@@ -62,11 +70,14 @@ function area(path) {
   return 'other';
 }
 
-function detect(id, rev) {
-  const record = readRecord(id);
-  const parent = `${rev}^`;
+/**
+ * What changed from `from` to `to` (a commit, or null for the index): file counts by area, and
+ * the change log entries added. The change log is append-only, so those entries are exactly
+ * what the sync detected.
+ */
+function diffSummary(from, to) {
   const files = { added: 0, modified: 0, deleted: 0, byArea: {} };
-  for (const line of git('diff', '--name-status', '--no-renames', parent, rev).split('\n')) {
+  for (const line of git('diff', '--name-status', '--no-renames', ...diffArgs(from, to)).split('\n')) {
     if (!line) continue;
     const [status, path] = line.split('\t');
     const kind = status === 'A' ? 'added' : status === 'D' ? 'deleted' : 'modified';
@@ -75,18 +86,22 @@ function detect(id, rev) {
     bucket[kind] += 1;
   }
 
-  // The change log is append-only, so what this run detected is every entry its commit added.
   const changes = [];
-  const changedLogs = git('diff', '--name-only', parent, rev, '--', CHANGES_DIR).split('\n').filter(Boolean);
+  const changedLogs = git('diff', '--name-only', ...diffArgs(from, to), '--', CHANGES_DIR).split('\n').filter(Boolean);
   for (const path of changedLogs) {
-    const before = new Set(readJsonAt(parent, path).map(changeKey));
-    for (const entry of readJsonAt(rev, path)) {
+    const before = new Set(readJsonAt(from, path).map(changeKey));
+    for (const entry of readJsonAt(to ?? '', path)) {
       if (!before.has(changeKey(entry))) {
         changes.push(entry);
       }
     }
   }
+  return { files, changes };
+}
 
+function detect(id, rev) {
+  const record = readRecord(id);
+  const { files, changes } = diffSummary(`${rev}^`, rev);
   record.commit = git('rev-parse', rev).trim();
   record.files = files;
   record.changes = changes;
@@ -112,6 +127,157 @@ function prune() {
     rmSync(join(RUNS_DIR, `${id}.json`), { force: true });
     rmSync(join(RUNS_DIR, `${id}.log`), { force: true });
   }
+}
+
+// ---- Commit messages ----------------------------------------------------------------------
+//
+// Git has no real limit on a message's size, but GitHub cuts a subject off after 72
+// characters in its lists, and a first sync of a big update can log over a thousand items. So
+// the subject stays within 72 characters, each item line within 120, and the body lists at most
+// 60 items; the rest are counted, and every detail is in the change log the commit adds to.
+
+const FALLBACK_MESSAGE = 'Update decoration data and changelog';
+const SUBJECT_MAX = 72;
+const LINE_MAX = 120;
+const ITEMS_MAX = 60;
+const VALUE_MAX = 40;
+
+const MESSAGE_TYPES = [
+  { type: 'New Item', word: 'new', heading: 'New', verb: 'Add' },
+  { type: 'Item Returned', word: 'returned', heading: 'Returned', verb: 'Restore' },
+  { type: 'Item Updated', word: 'updated', heading: 'Updated', verb: 'Update' },
+  { type: 'Item Removed', word: 'removed', heading: 'Removed', verb: 'Remove' },
+];
+const COLLECTIONS = [
+  { collection: 'categories', one: 'category', many: 'categories' },
+  { collection: 'decorations', one: 'decoration', many: 'decorations' },
+];
+const AREA_WORDS = { decorations: 'decoration files', categories: 'category files', images: 'images', other: 'other files' };
+
+function oneLine(text, max) {
+  const flat = String(text ?? '').replace(/\s+/g, ' ').trim();
+  return flat.length > max ? `${flat.slice(0, max - 1).trimEnd()}…` : flat;
+}
+
+function isShortScalar(value) {
+  return ['string', 'number', 'boolean'].includes(typeof value) && !/\n/.test(String(value)) && String(value).length <= VALUE_MAX;
+}
+
+/** One changed field in a few words: added, removed, "before" → "after", or just its name. */
+function describeField(field, changes) {
+  if (changes.length === 1) {
+    const [{ before, after }] = changes;
+    const empty = (value) => value == null || value === '' || (Array.isArray(value) && value.length === 0);
+    if (empty(before) && !empty(after)) return `${field} added`;
+    if (!empty(before) && empty(after)) return `${field} removed`;
+    if (isShortScalar(before) && isShortScalar(after)) {
+      return `${field} ${JSON.stringify(before)} → ${JSON.stringify(after)}`;
+    }
+  }
+  return field;
+}
+
+/** The fields an update touched; recipe.sheet, recipe.ingredients and so on count as recipe. */
+function describeChanges(entry) {
+  const byField = new Map();
+  for (const change of entry.changes ?? []) {
+    const field = change.field.startsWith('recipe.') ? 'recipe' : change.field;
+    byField.set(field, [...(byField.get(field) ?? []), change]);
+  }
+  return [...byField].map(([field, changes]) => describeField(field, changes)).join('; ');
+}
+
+/** How many updates touched each field, most first: "views 786, image 420". */
+function fieldTally(entries) {
+  const tally = new Map();
+  for (const entry of entries) {
+    const fields = new Set((entry.changes ?? []).map((change) => change.field.split('.')[0]));
+    for (const field of fields) tally.set(field, (tally.get(field) ?? 0) + 1);
+  }
+  return [...tally]
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .map(([field, count]) => `${field} ${count}`)
+    .join(', ');
+}
+
+function itemLine(entry) {
+  const name = `${oneLine(entry.name, 60) || 'Unnamed'} (#${entry.id})`;
+  const details = entry.type === 'Item Updated' ? describeChanges(entry) : '';
+  return oneLine(`- ${name}${details ? `: ${details}` : ''}`, LINE_MAX);
+}
+
+function countPhrase(changes) {
+  const parts = [];
+  for (const { collection, many } of [...COLLECTIONS].reverse()) {
+    const words = MESSAGE_TYPES.map(({ type, word }) => {
+      const count = changes.filter((entry) => entry.collection === collection && entry.type === type).length;
+      return count ? `${count} ${word}` : null;
+    }).filter(Boolean);
+    if (words.length) parts.push(`${many}: ${words.join(', ')}`);
+  }
+  return parts.join('; ');
+}
+
+function filesPhrase(files) {
+  const parts = [];
+  for (const [area, counts] of Object.entries(files.byArea)) {
+    if (area === 'changeLog') continue;
+    const words = [['added', counts.added], ['changed', counts.modified], ['deleted', counts.deleted]]
+      .filter(([, count]) => count > 0)
+      .map(([word, count]) => `${count} ${word}`);
+    if (words.length) parts.push(`${AREA_WORDS[area] ?? area} ${words.join(', ')}`);
+  }
+  return parts.join('; ');
+}
+
+function subjectFor(changes, files) {
+  if (changes.length === 1) {
+    const [entry] = changes;
+    const { verb } = MESSAGE_TYPES.find(({ type }) => type === entry.type) ?? { verb: 'Update' };
+    const { one } = COLLECTIONS.find(({ collection }) => collection === entry.collection) ?? { one: 'item' };
+    const fields = entry.type === 'Item Updated' ? [...new Set((entry.changes ?? []).map((c) => c.field.split('.')[0]))] : [];
+    const subject = `${verb} ${one} ${oneLine(entry.name, SUBJECT_MAX)}${fields.length ? ` (${fields.join(', ')})` : ''}`;
+    if (subject.length <= SUBJECT_MAX) return subject;
+  }
+  if (changes.length > 0) {
+    const phrase = countPhrase(changes);
+    const subject = `Sync ${phrase}`;
+    if (subject.length <= SUBJECT_MAX) return subject;
+    return `Sync ${changes.length} decoration and category changes`;
+  }
+  const areas = Object.keys(files.byArea);
+  return areas.length === 1 && areas[0] === 'images' ? 'Update decoration images' : 'Update decoration data';
+}
+
+function commitMessage() {
+  const head = git('rev-parse', '--verify', '-q', 'HEAD').trim();
+  const { files, changes } = diffSummary(head, null);
+  const lines = [subjectFor(changes, files), ''];
+
+  let listed = 0;
+  for (const { type, heading } of MESSAGE_TYPES) {
+    for (const { collection, one, many } of COLLECTIONS) {
+      const entries = changes.filter((entry) => entry.type === type && entry.collection === collection);
+      if (entries.length === 0) continue;
+      lines.push(`${heading} ${entries.length === 1 ? one : many} (${entries.length}):`);
+      if (type === 'Item Updated' && entries.length > 1) {
+        lines.push(oneLine(`Fields: ${fieldTally(entries)}`, LINE_MAX));
+      }
+      const room = Math.max(0, ITEMS_MAX - listed);
+      for (const entry of entries.slice(0, room)) lines.push(itemLine(entry));
+      listed += Math.min(room, entries.length);
+      if (entries.length > room) lines.push(`- …and ${entries.length - room} more`);
+      lines.push('');
+    }
+  }
+
+  const fileWords = filesPhrase(files);
+  if (fileWords) lines.push(`Files: ${fileWords}.`);
+  const months = [...new Set(changes.map((entry) => entry.day.slice(0, 7)))].sort();
+  if (months.length) {
+    lines.push(`Full details: ${months.map((month) => `${CHANGES_DIR}${month}.json`).join(', ')}`);
+  }
+  return `${lines.join('\n').trim()}\n`;
 }
 
 const [command, id, ...rest] = process.argv.slice(2);
@@ -144,9 +310,12 @@ try {
     record.counts ??= {};
     writeRecord(record);
     prune();
+  } else if (command === 'message') {
+    process.stdout.write(commitMessage());
   } else {
     throw new Error(`Unknown command: ${command ?? '(none)'}`);
   }
 } catch (error) {
   console.error(`sync-runs ${command}: ${error.message}`);
+  if (command === 'message') process.stdout.write(`${FALLBACK_MESSAGE}\n`);
 }

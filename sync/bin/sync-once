@@ -98,7 +98,13 @@ git add -- "${DATA_PATHS[@]}"
 if git diff --cached --quiet; then
   log "No changes to commit."
 else
-  git commit -q -m "Update decoration data and changelog"
+  # The message lists what the sync detected (sync-runs message), so GitHub's history says
+  # what each commit changed.
+  message_file=$(mktemp)
+  sync-runs message >"$message_file"
+  [[ -s $message_file ]] || echo "Update decoration data and changelog" >"$message_file"
+  git commit -q -F "$message_file"
+  rm -f "$message_file"
   git show --stat --format='%h %s' HEAD | tail -n 25
   sync-runs detect "$run_id" HEAD || true
 fi
