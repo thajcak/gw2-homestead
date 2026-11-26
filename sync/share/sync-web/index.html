@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homestead sync</title>
+  <link rel="stylesheet" href="app.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="top">
+    <div>
+      <h1>Homestead sync</h1>
+      <p class="sub" id="settings">Loading…</p>
+    </div>
+    <span class="badge" id="health">…</span>
+  </header>
+
+  <main>
+    <section class="cards" aria-label="Status">
+      <article class="card">
+        <h2>Last run</h2>
+        <p class="big" id="last-run">—</p>
+        <p class="note" id="last-run-note"></p>
+      </article>
+      <article class="card">
+        <h2>Next run</h2>
+        <p class="big" id="next-run">—</p>
+        <p class="note" id="next-run-note"></p>
+      </article>
+      <article class="card">
+        <h2>Last success</h2>
+        <p class="big" id="last-success">—</p>
+        <p class="note" id="last-success-note"></p>
+      </article>
+      <article class="card">
+        <h2>Last commit</h2>
+        <p class="big" id="last-commit">—</p>
+        <p class="note" id="last-commit-note"></p>
+      </article>
+    </section>
+
+    <section class="runs">
+      <div class="section-head">
+        <h2>Runs</h2>
+        <label class="toggle"><input type="checkbox" id="only-changes"> Only runs that found something</label>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Started</th>
+              <th>Trigger</th>
+              <th>Took</th>
+              <th>Result</th>
+              <th>Detected</th>
+            </tr>
+          </thead>
+          <tbody id="runs"></tbody>
+        </table>
+      </div>
+      <p class="empty" id="runs-empty" hidden>No runs recorded yet. The first one is at the next scheduled time, or run <code>docker exec gw2-homestead-sync sync-once</code>.</p>
+    </section>
+
+    <section class="detail" id="detail" hidden aria-live="polite">
+      <div class="section-head">
+        <h2 id="detail-title">Run</h2>
+        <button type="button" id="detail-close" class="link">Close</button>
+      </div>
+      <dl class="facts" id="detail-facts"></dl>
+      <div id="detail-changes"></div>
+      <details id="detail-log">
+        <summary>Log</summary>
+        <pre id="detail-log-text">Loading…</pre>
+      </details>
+    </section>
+  </main>
+</body>
+</html>

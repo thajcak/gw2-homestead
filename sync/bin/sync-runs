@@ -1,0 +1,152 @@
+#!/usr/bin/env node
+// Run history for the status page (sync-web). sync-once calls this to keep one JSON record per
+// run in $DATA_DIR/runs/<id>.json, next to that run's log (<id>.log):
+//
+//   sync-runs start <id> <trigger> [args...]   record a run that has started
+//   sync-runs set <id> <key> <value>           set a string field (e.g. head, commit)
+//   sync-runs detect <id> <rev>                record what commit <rev> changed (run in the clone)
+//   sync-runs finish <id> <exit-status>        record how the run ended; prune old runs
+//
+// Errors are reported but never fail the sync: losing a record is better than losing a run.
+import { execFileSync } from 'node:child_process';
+import { readdirSync, readFileSync, renameSync, rmSync, writeFileSync } from 'node:fs';
+import { join } from 'node:path';
+
+const RUNS_DIR = join(process.env.DATA_DIR ?? '/data', 'runs');
+const KEEP_RUNS = Number(process.env.RUN_HISTORY ?? 500) || 500;
+const ID_PATTERN = /^[0-9]{8}T[0-9]{6}Z-[0-9]+$/;
+const CHANGES_DIR = 'src/data/changes/';
+
+function recordPath(id) {
+  if (!ID_PATTERN.test(id ?? '')) {
+    throw new Error(`Bad run id: ${id}`);
+  }
+  return join(RUNS_DIR, `${id}.json`);
+}
+
+function readRecord(id) {
+  return JSON.parse(readFileSync(recordPath(id), 'utf8'));
+}
+
+/** Write through a temporary file, so the status page never reads half a record. */
+function writeRecord(record) {
+  const path = recordPath(record.id);
+  const temporary = `${path}.${process.pid}.tmp`;
+  writeFileSync(temporary, `${JSON.stringify(record, null, 2)}\n`);
+  renameSync(temporary, path);
+}
+
+function git(...args) {
+  return execFileSync('git', args, { encoding: 'utf8', maxBuffer: 256 * 1024 * 1024 });
+}
+
+/** Same key as scripts/lib/change-log.mjs, which skips an entry already logged under it. */
+function changeKey(entry) {
+  return [entry.day, entry.collection, entry.id, entry.type, JSON.stringify(entry.changes ?? null)].join('|');
+}
+
+function readJsonAt(rev, path) {
+  try {
+    return JSON.parse(git('show', `${rev}:${path}`));
+  } catch {
+    return [];
+  }
+}
+
+/** Which part of the site a changed file belongs to, for the per-run file counts. */
+function area(path) {
+  if (path.startsWith('src/content/decorations/')) return 'decorations';
+  if (path.startsWith('src/content/categories/')) return 'categories';
+  if (path.startsWith(CHANGES_DIR)) return 'changeLog';
+  if (path.startsWith('src/assets/decorations/')) return 'images';
+  return 'other';
+}
+
+function detect(id, rev) {
+  const record = readRecord(id);
+  const parent = `${rev}^`;
+  const files = { added: 0, modified: 0, deleted: 0, byArea: {} };
+  for (const line of git('diff', '--name-status', '--no-renames', parent, rev).split('\n')) {
+    if (!line) continue;
+    const [status, path] = line.split('\t');
+    const kind = status === 'A' ? 'added' : status === 'D' ? 'deleted' : 'modified';
+    files[kind] += 1;
+    const bucket = (files.byArea[area(path)] ??= { added: 0, modified: 0, deleted: 0 });
+    bucket[kind] += 1;
+  }
+
+  // The change log is append-only, so what this run detected is every entry its commit added.
+  const changes = [];
+  const changedLogs = git('diff', '--name-only', parent, rev, '--', CHANGES_DIR).split('\n').filter(Boolean);
+  for (const path of changedLogs) {
+    const before = new Set(readJsonAt(parent, path).map(changeKey));
+    for (const entry of readJsonAt(rev, path)) {
+      if (!before.has(changeKey(entry))) {
+        changes.push(entry);
+      }
+    }
+  }
+
+  record.commit = git('rev-parse', rev).trim();
+  record.files = files;
+  record.changes = changes;
+  record.counts = countChanges(changes);
+  writeRecord(record);
+}
+
+function countChanges(changes) {
+  const counts = {};
+  for (const entry of changes) {
+    counts[entry.type] = (counts[entry.type] ?? 0) + 1;
+  }
+  return counts;
+}
+
+function prune() {
+  const ids = readdirSync(RUNS_DIR)
+    .filter((name) => name.endsWith('.json'))
+    .map((name) => name.slice(0, -'.json'.length))
+    .filter((id) => ID_PATTERN.test(id))
+    .sort();
+  for (const id of ids.slice(0, Math.max(0, ids.length - KEEP_RUNS))) {
+    rmSync(join(RUNS_DIR, `${id}.json`), { force: true });
+    rmSync(join(RUNS_DIR, `${id}.log`), { force: true });
+  }
+}
+
+const [command, id, ...rest] = process.argv.slice(2);
+try {
+  if (command === 'start') {
+    const [trigger, ...args] = rest;
+    writeRecord({
+      id,
+      pid: process.ppid,
+      trigger: trigger || 'manual',
+      args,
+      dryRun: args.includes('--dry-run'),
+      startedAt: new Date().toISOString(),
+      status: 'running',
+    });
+  } else if (command === 'set') {
+    const [key, value] = rest;
+    const record = readRecord(id);
+    record[key] = value;
+    writeRecord(record);
+  } else if (command === 'detect') {
+    detect(id, rest[0] ?? 'HEAD');
+  } else if (command === 'finish') {
+    const record = readRecord(id);
+    const exitStatus = Number(rest[0]);
+    record.finishedAt = new Date().toISOString();
+    record.exitStatus = exitStatus;
+    record.status = exitStatus === 0 ? 'success' : 'failed';
+    delete record.pid;
+    record.counts ??= {};
+    writeRecord(record);
+    prune();
+  } else {
+    throw new Error(`Unknown command: ${command ?? '(none)'}`);
+  }
+} catch (error) {
+  console.error(`sync-runs ${command}: ${error.message}`);
+}

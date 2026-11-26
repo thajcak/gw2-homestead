@@ -1,0 +1,207 @@
+#!/usr/bin/env node
+// The status page: when the sync last ran, when it runs next, and what each run found. Reads
+// the records sync-runs keeps in $DATA_DIR/runs/ and serves them, read-only, on WEB_PORT.
+//
+//   /                      the page (sync/share/sync-web/)
+//   /api/status            schedule, health and the latest run
+//   /api/runs?limit=n      the latest runs, newest first, without their change lists
+//   /api/runs/<id>         one run with everything it detected
+//   /api/runs/<id>/log     that run's output
+import { createServer } from 'node:http';
+import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const DATA_DIR = process.env.DATA_DIR ?? '/data';
+const RUNS_DIR = join(DATA_DIR, 'runs');
+const PORT = Number(process.env.WEB_PORT ?? 8080);
+const SHARE_DIR = join(dirname(fileURLToPath(import.meta.url)), '..', 'share', 'sync-web');
+const ID_PATTERN = /^[0-9]{8}T[0-9]{6}Z-[0-9]+$/;
+
+const STATIC_FILES = {
+  '/': ['index.html', 'text/html; charset=utf-8'],
+  '/app.js': ['app.js', 'text/javascript; charset=utf-8'],
+  '/app.css': ['app.css', 'text/css; charset=utf-8'],
+};
+
+function log(message) {
+  console.log(`${new Date().toISOString().replace(/\.\d+Z$/, 'Z')} ${message}`);
+}
+
+/** The repo's GitHub page, for commit links; null for any other host. */
+function repoWebUrl() {
+  const match = /github\.com[:/]([\w.-]+)\/([\w.-]+?)(?:\.git)?\/?$/.exec(process.env.REPO_URL ?? '');
+  return match ? `https://github.com/${match[1]}/${match[2]}` : null;
+}
+
+/** The next run, worked out as sync-schedule does: SYNC_MINUTE past the hour, UTC. */
+function nextRunAt(now = Date.now()) {
+  const minute = Number(process.env.SYNC_MINUTE ?? 30);
+  if (!Number.isInteger(minute) || minute < 0 || minute > 59) return null;
+  const hour = 3600 * 1000;
+  let next = now - (now % hour) + minute * 60 * 1000;
+  if (next <= now) next += hour;
+  return new Date(next).toISOString();
+}
+
+function isAlive(pid) {
+  try {
+    process.kill(pid, 0);
+    return true;
+  } catch (error) {
+    return error.code === 'EPERM';
+  }
+}
+
+/** Parsed records, cached until their file changes. */
+const cache = new Map();
+
+function readRun(id) {
+  const path = join(RUNS_DIR, `${id}.json`);
+  let stat;
+  try {
+    stat = statSync(path);
+  } catch {
+    return null;
+  }
+  const cached = cache.get(id);
+  if (cached?.mtimeMs === stat.mtimeMs) return cached.record;
+  try {
+    const record = JSON.parse(readFileSync(path, 'utf8'));
+    cache.set(id, { mtimeMs: stat.mtimeMs, record });
+    return record;
+  } catch {
+    return cached?.record ?? null;
+  }
+}
+
+/** A run whose process is gone without finishing (the container was killed) is interrupted. */
+function withLiveStatus(record) {
+  if (record.status === 'running' && !(Number.isInteger(record.pid) && isAlive(record.pid))) {
+    return { ...record, status: 'interrupted' };
+  }
+  return record;
+}
+
+function summary(record) {
+  const { changes, ...rest } = withLiveStatus(record);
+  return rest;
+}
+
+function runIds() {
+  if (!existsSync(RUNS_DIR)) return [];
+  const ids = readdirSync(RUNS_DIR)
+    .filter((name) => name.endsWith('.json'))
+    .map((name) => name.slice(0, -'.json'.length))
+    .filter((id) => ID_PATTERN.test(id))
+    .sort()
+    .reverse();
+  const known = new Set(ids);
+  for (const id of cache.keys()) if (!known.has(id)) cache.delete(id);
+  return ids;
+}
+
+function latestRuns(limit) {
+  return runIds()
+    .slice(0, limit)
+    .map(readRun)
+    .filter(Boolean)
+    .map(summary);
+}
+
+function mtime(path) {
+  try {
+    return statSync(path).mtime;
+  } catch {
+    return null;
+  }
+}
+
+function status() {
+  const maxAgeMinutes = Number(process.env.HEALTH_MAX_AGE_MINUTES ?? 180);
+  const lastSuccess = mtime(join(DATA_DIR, 'last-success'));
+  const runs = latestRuns(20);
+  return {
+    now: new Date().toISOString(),
+    branch: process.env.BRANCH ?? 'main',
+    push: process.env.PUSH !== 'false',
+    syncMinute: Number(process.env.SYNC_MINUTE ?? 30),
+    nextRunAt: nextRunAt(),
+    lastSuccessAt: lastSuccess?.toISOString() ?? null,
+    healthy: Boolean(lastSuccess && Date.now() - lastSuccess.getTime() <= maxAgeMinutes * 60 * 1000),
+    healthMaxAgeMinutes: maxAgeMinutes,
+    repoWebUrl: repoWebUrl(),
+    running: runs.find((run) => run.status === 'running') ?? null,
+    lastRun: runs.find((run) => run.status !== 'running') ?? null,
+    lastCommitRun: runs.find((run) => run.files) ?? null,
+  };
+}
+
+const SECURITY_HEADERS = {
+  'Content-Security-Policy': "default-src 'self'; img-src 'self' data:; frame-ancestors 'none'",
+  'X-Content-Type-Options': 'nosniff',
+  'Referrer-Policy': 'no-referrer',
+};
+
+function send(response, code, type, body) {
+  response.writeHead(code, { 'Content-Type': type, 'Cache-Control': 'no-store', ...SECURITY_HEADERS });
+  response.end(body);
+}
+
+function sendJson(response, code, value) {
+  send(response, code, 'application/json; charset=utf-8', JSON.stringify(value));
+}
+
+function handle(request, response) {
+  if (request.method !== 'GET' && request.method !== 'HEAD') {
+    return send(response, 405, 'text/plain; charset=utf-8', 'Read-only.\n');
+  }
+  const url = new URL(request.url, 'http://localhost');
+  const path = url.pathname;
+
+  const file = STATIC_FILES[path];
+  if (file) {
+    return send(response, 200, file[1], readFileSync(join(SHARE_DIR, file[0])));
+  }
+  if (path === '/api/status') {
+    return sendJson(response, 200, status());
+  }
+  if (path === '/api/runs') {
+    const limit = Math.min(500, Math.max(1, Number.parseInt(url.searchParams.get('limit') ?? '100', 10) || 100));
+    return sendJson(response, 200, latestRuns(limit));
+  }
+
+  const match = /^\/api\/runs\/([^/]+)(\/log)?$/.exec(path);
+  if (match && ID_PATTERN.test(match[1])) {
+    const [, id, wantsLog] = match;
+    if (wantsLog) {
+      const logPath = join(RUNS_DIR, `${id}.log`);
+      if (!existsSync(logPath)) return send(response, 404, 'text/plain; charset=utf-8', 'No log for this run.\n');
+      return send(response, 200, 'text/plain; charset=utf-8', readFileSync(logPath));
+    }
+    const record = readRun(id);
+    return record ? sendJson(response, 200, withLiveStatus(record)) : sendJson(response, 404, { error: 'No such run' });
+  }
+
+  send(response, 404, 'text/plain; charset=utf-8', 'Not found.\n');
+}
+
+const server = createServer((request, response) => {
+  try {
+    handle(request, response);
+  } catch (error) {
+    log(`Status page error on ${request.url}: ${error.message}`);
+    if (!response.headersSent) send(response, 500, 'text/plain; charset=utf-8', 'Server error.\n');
+    else response.end();
+  }
+});
+
+server.on('error', (error) => {
+  log(`Status page could not start on port ${PORT}: ${error.message}`);
+  process.exit(1);
+});
+
+server.listen(PORT, () => log(`Status page on port ${PORT}.`));
+for (const signal of ['SIGTERM', 'SIGINT']) {
+  process.on(signal, () => process.exit(0));
+}

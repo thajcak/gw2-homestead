@@ -5,6 +5,7 @@
 #   --allow-large-drop    continue when the API lists many fewer items than are stored
 #   --dry-run             fetch and print wiki results; change, commit and push nothing
 # Runs queue on a lock, so a manual run waits for a scheduled one instead of overlapping it.
+# Each run is recorded, with its log, in $DATA_DIR/runs/ for the status page (sync-runs).
 set -euo pipefail
 
 # `docker exec <container> sync-once` arrives as root without the entrypoint's setup.
@@ -24,6 +25,17 @@ if ! flock -n 9; then
   log "Another sync is running; waiting for it."
   flock 9
 fi
+
+run_id="$(date -u +%Y%m%dT%H%M%SZ)-$$"
+mkdir -p "$DATA_DIR/runs"
+exec > >(tee -a "$DATA_DIR/runs/$run_id.log") 2>&1
+sync-runs start "$run_id" "${SYNC_TRIGGER:-manual}" "$@" || true
+record() { sync-runs set "$run_id" "$@" || true; }
+finish() { local status=$?; sync-runs finish "$run_id" "$status"; }
+trap finish EXIT
+# `docker stop` ends the run through the EXIT trap, so it is recorded as stopped.
+trap 'exit 143' TERM
+trap 'exit 130' INT
 
 if [[ ! -d $REPO_DIR/.git ]]; then
   log "Cloning $REPO_URL ($BRANCH)..."
@@ -77,6 +89,7 @@ log "Running the sync${*:+ ($*)}..."
 node scripts/run-fetch-decorations.mjs "$@"
 
 if [[ $dry_run == true ]]; then
+  record result "Dry run: nothing changed"
   log "Dry run complete."
   exit 0
 fi
@@ -87,11 +100,13 @@ if git diff --cached --quiet; then
 else
   git commit -q -m "Update decoration data and changelog"
   git show --stat --format='%h %s' HEAD | tail -n 25
+  sync-runs detect "$run_id" HEAD || true
 fi
 
 if [[ -z $(git rev-list "origin/$BRANCH..HEAD") ]]; then
-  :
+  record result "No changes"
 elif [[ $PUSH != true ]]; then
+  record result "Committed locally, not pushed (PUSH=$PUSH)"
   log "PUSH=$PUSH: committed locally, not pushed (the next run starts from origin again)."
 else
   # Rebase onto anything that landed during the run, so its work isn't lost to a rejected push.
@@ -106,9 +121,13 @@ else
     (( attempt < 3 )) && sleep $(( attempt * 15 ))
   done
   if [[ $pushed != true ]]; then
+    record result "Could not push; the next run will try again"
     log "Could not push; the next run will try again."
     exit 1
   fi
+  # The rebase may have given this run's commit a new hash: record the one on GitHub.
+  record pushed "$(git rev-parse HEAD)"
+  record result "Pushed $(git rev-parse --short HEAD) to $BRANCH"
   log "Pushed $(git rev-parse --short HEAD) to origin/$BRANCH."
 fi
 
