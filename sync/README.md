@@ -36,33 +36,81 @@ GitHub makes a new package **private**, so pulling it needs a login. Check this 
 
    On GitHub, open the repo's **Settings → Deploy keys → Add deploy key**, paste the contents of `deploy_key.pub` and tick **Allow write access**. The key can push to this repo only, and it doesn't expire. (Alternatively, use a fine-grained personal access token with Contents: read and write on this repo only, set `REPO_URL` to the `https://` URL and pass the token as `GITHUB_TOKEN`.)
 
-3. **Add the container.** In Unraid's **Docker** tab choose **Add Container** and fill in:
+3. **Add the container from the template.** [`unraid/gw2-homestead-sync.xml`](unraid/gw2-homestead-sync.xml) fills in everything: the image, the `/data` folder, the status page port and its **WebUI** link. In the Unraid terminal, save it where Unraid keeps your own templates:
 
-   | Field | Value |
-   |---|---|
-   | Name | `gw2-homestead-sync` |
-   | Repository | `ghcr.io/thajcak/gw2-homestead-sync:latest` |
-   | Path: container `/data` | `/mnt/user/appdata/gw2-homestead-sync` |
+   ```bash
+   curl -fsSL -o /boot/config/plugins/dockerMan/templates-user/my-gw2-homestead-sync.xml https://raw.githubusercontent.com/thajcak/gw2-homestead/main/sync/unraid/gw2-homestead-sync.xml
+   ```
 
-   For the [status page](#status-page), choose **Add another Path, Port, Variable, Label or Device**, pick **Port** and map host port `8080` (or any free one) to container port `8080`; then set **WebUI** under **Advanced View** to `http://[IP]:[PORT:8080]/`, so the container's menu on the Docker tab gets a **WebUI** link.
+   If the container already exists, this replaces its saved settings with the template's. Note any you changed first (such as **Sync minute**) and set them again in the next step. Your data folder isn't touched.
 
-   The image already points at this repo (`REPO_URL`), so no variables are needed. To change a [setting](#settings), choose **Add another Path, Port, Variable, Label or Device**, pick **Variable** and use the setting's name as the key. Or, with the Docker Compose Manager plugin, add a stack with [`docker-compose.yml`](docker-compose.yml) and choose **Compose Up**.
+   Then, in the **Docker** tab:
 
-4. **Check the first run** without waiting for the schedule:
+   1. If a `gw2-homestead-sync` container is already there, click its icon and choose **Stop**, then **Remove**. Leave **also remove image** unticked. Its data stays in `/mnt/user/appdata/gw2-homestead-sync`.
+   2. Click **Add Container** at the bottom of the page.
+   3. In the **Template** dropdown at the top, under **User templates**, choose **gw2-homestead-sync**. The form fills in.
+   4. Check **Network Type** is **Bridge**. Check **Status page port** is a port nothing else on the server uses: `8080` is popular, and if another container has it, Apply fails with *port is already allocated*. Use `8089` or any other free port in that case.
+   5. Click **Apply**. Unraid pulls the image and starts the container, and **Done** takes you back to the Docker tab.
+
+   Or, with the Docker Compose Manager plugin, add a stack with [`docker-compose.yml`](docker-compose.yml) and choose **Compose Up**.
+
+4. **Check it's working.** Click the container's icon and choose **WebUI**, or open `http://<server>:8080` (with your port, if you changed it). The page says *No runs recorded yet* until the first run at :30 past the hour. To run one now:
 
    ```bash
    docker exec gw2-homestead-sync sync-once
    ```
 
-   The first run clones the repo: only the current files plus history, without every past image.
+   The first run clones the repo: only the current files plus history, without every past image. The page shows it as it runs.
+
+### If the status page doesn't load
+
+Run these in the Unraid terminal, in order. The first one that doesn't give what's shown says what's wrong.
+
+1. **Is the container on the image that has the page?**
+
+   ```bash
+   docker exec gw2-homestead-sync ls /usr/local/bin/sync-web
+   ```
+
+   This should print the path. *No such file or directory* means the container still runs an image from before the status page (built before 26 November 2026). Unraid often can't check a private image for updates (it shows **not available**), so **Apply Update** never appears. Pull the image yourself, then recreate the container from it (click the container's icon → **Edit** → **Apply**):
+
+   ```bash
+   docker pull ghcr.io/thajcak/gw2-homestead-sync:latest
+   ```
+
+   *unauthorized* or *denied* from the pull means the GitHub login is gone (it doesn't survive a reboot): run the `docker login` line from step 1 again.
+
+2. **Did the page start?**
+
+   ```bash
+   docker logs gw2-homestead-sync 2>&1 | grep 'Status page'
+   ```
+
+   This should print *Status page on port 8080.* Nothing at all means the container was started with a command other than the default schedule (the page only runs beside it): in **Edit**, under **Advanced View**, clear **Post Arguments** and click **Apply**. *Status page could not start* gives the reason.
+
+3. **Is the port published?**
+
+   ```bash
+   docker port gw2-homestead-sync
+   ```
+
+   This should print `8080/tcp -> 0.0.0.0:8080` (the second port is the one to open in the browser). Nothing means the container has no port mapping: it was set up without the template's port, or its **Network Type** is **Host** or a custom one such as **br0**. Recreate it from the template (step 3), with **Bridge**. On **br0** the page is at the container's own IP instead: `http://<container IP>:8080`.
+
+4. **Does it answer on the server?**
+
+   ```bash
+   curl -s http://localhost:8080/api/status
+   ```
+
+   Use the port from step 3. JSON here but no page in your browser means something between them blocks the port: check the address in the browser is the server's, with that port.
 
 ## Use
 
-- Status page: `http://<server>:8080` (see [below](#status-page)).
+- Status page: the container's **WebUI**, or `http://<server>:8080` (see [below](#status-page)).
 - Logs: `docker logs -f gw2-homestead-sync`, or the container's log icon in Unraid.
 - Run now: `docker exec gw2-homestead-sync sync-once`, with the script's options after it: `--ids 1,2` (only query the wiki for those IDs), `--allow-large-drop` (continue when the API lists many fewer items than are stored) or `--dry-run` (change, commit and push nothing). A run started while another is going waits for it.
 - Health: the container turns unhealthy when no run has succeeded for 3 hours (`HEALTH_MAX_AGE_MINUTES`).
-- Update the image after the workflow publishes a new one: Unraid's **Check for Updates** on the Docker tab, then **Apply Update** (or **Compose Pull** and **Compose Up**). Pin a `sha-<commit>` tag instead of `latest` to stay on one build.
+- Update the image after the workflow publishes a new one: Unraid's **Check for Updates** on the Docker tab, then **Apply Update** (or **Compose Pull** and **Compose Up**). If Unraid shows the update as **not available** (it often can't check a private image), run `docker pull ghcr.io/thajcak/gw2-homestead-sync:latest` and then the container's **Edit** → **Apply**. Pin a `sha-<commit>` tag instead of `latest` to stay on one build.
 
 Each commit's message says what the run detected, so GitHub's history reads as a change log. The subject sums it up (`Add decoration Snowy Garden Lantern`, or `Sync decorations: 1 new, 7 updated` when there's more than one), and the body lists the items by kind, with the fields each update changed (short values with their before and after) and how many files changed. To stay readable on GitHub, the subject keeps within 72 characters and the body lists at most 60 items, then says how many more there are. The change log file the commit adds to holds every detail.
 
