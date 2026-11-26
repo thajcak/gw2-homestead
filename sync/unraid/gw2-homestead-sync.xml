@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+  Unraid template for the decoration sync (see sync/README.md). Install it on the server with:
+
+    curl -fsSL -o /boot/config/plugins/dockerMan/templates-user/my-gw2-homestead-sync.xml https://raw.githubusercontent.com/thajcak/gw2-homestead/main/sync/unraid/gw2-homestead-sync.xml
+
+  then Docker tab → Add Container → Template: gw2-homestead-sync → Apply.
+-->
+<Container version="2">
+  <Name>gw2-homestead-sync</Name>
+  <Repository>ghcr.io/thajcak/gw2-homestead-sync:latest</Repository>
+  <Registry>https://github.com/thajcak/gw2-homestead/pkgs/container/gw2-homestead-sync</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/thajcak/gw2-homestead/blob/main/sync/README.md</Support>
+  <Project>https://github.com/thajcak/gw2-homestead</Project>
+  <Overview>Syncs Guild Wars 2 homestead decorations from the GW2 API and wiki every hour and pushes the changes to the gw2-homestead repo on GitHub. The WebUI is a read-only status page: when the sync last ran, when it runs next, and what each run found.</Overview>
+  <Category>Tools:</Category>
+  <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+  <TemplateURL/>
+  <Icon/>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled/>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>Log in to ghcr.io first (the image is private) and add the deploy key to the data folder: see the Support link.</Requires>
+  <Config Name="Status page port" Target="8080" Default="8080" Mode="tcp" Description="Port on the server for the status page (the WebUI). If 8080 is taken by another container, use any free one, such as 8089." Type="Port" Display="always" Required="true" Mask="false">8080</Config>
+  <Config Name="Data" Target="/data" Default="/mnt/user/appdata/gw2-homestead-sync" Mode="rw" Description="Holds the deploy key (deploy_key), the clone of the repo and the run history." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/gw2-homestead-sync</Config>
+  <Config Name="Sync minute" Target="SYNC_MINUTE" Default="30" Mode="" Description="Minute past each hour (UTC) to run, 0-59." Type="Variable" Display="always" Required="false" Mask="false">30</Config>
+  <Config Name="Run on start" Target="RUN_ON_START" Default="false" Mode="" Description="true to also run as soon as the container starts." Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="Push" Target="PUSH" Default="true" Mode="" Description="false commits in the clone but never pushes (for trying it out)." Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="User the sync runs as (99 is Unraid's nobody)." Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Group the sync runs as (100 is Unraid's users)." Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+</Container>
