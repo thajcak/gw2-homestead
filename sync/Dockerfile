@@ -19,6 +19,8 @@ RUN node -e "fetch('https://api.github.com/meta').then((r) => r.json()).then((m)
     })" > /etc/ssh/ssh_known_hosts
 
 COPY --chmod=755 bin/ /usr/local/bin/
+# The status page sync-web serves.
+COPY share/ /usr/local/share/
 
 # The repo the sync clones and pushes to. The publish workflow passes the repo it runs in;
 # set REPO_URL on the container to sync somewhere else.
@@ -35,10 +37,14 @@ ENV REPO_URL=$REPO_URL \
     GIT_USER_NAME=gw2-homestead-sync \
     GIT_USER_EMAIL=gw2-homestead-sync@localhost \
     HEALTH_MAX_AGE_MINUTES=180 \
+    WEB_PORT=8080 \
     ASTRO_TELEMETRY_DISABLED=1 \
     NPM_CONFIG_UPDATE_NOTIFIER=false
 
 VOLUME /data
+
+# The status page: when the sync last ran and what each run found (sync-web).
+EXPOSE 8080
 
 # Unhealthy when no run has succeeded for HEALTH_MAX_AGE_MINUTES (Unraid shows it on the
 # container). The start period covers the wait for the first scheduled run.

@@ -13,12 +13,12 @@ fi
 minute=$((10#$minute))
 
 run() {
-  sync-once
+  SYNC_TRIGGER=$1 sync-once
   local status=$?
   (( status == 0 )) || log "Sync failed (exit $status)."
 }
 
-[[ $RUN_ON_START == true ]] && run
+[[ $RUN_ON_START == true ]] && run start
 
 while :; do
   now=$(date -u +%s)
@@ -28,5 +28,5 @@ while :; do
   # In the background so `docker stop` doesn't wait for the sleep to end.
   sleep $(( next - now )) &
   wait $!
-  run
+  run schedule
 done

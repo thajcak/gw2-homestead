@@ -2,7 +2,8 @@
 # Container entrypoint. As root it prepares $DATA_DIR and the SSH key, then runs the command
 # again as PUID:PGID (Unraid's nobody:users by default), so files on the volume aren't root's.
 #
-#   schedule          (default) sync every hour at SYNC_MINUTE past the hour (UTC)
+#   schedule          (default) sync every hour at SYNC_MINUTE past the hour (UTC), and serve
+#                     the status page on WEB_PORT
 #   once [args...]    one sync now; args go to scripts/run-fetch-decorations.mjs
 #   <command>         any other command, as PUID:PGID (e.g. bash)
 set -euo pipefail
@@ -28,11 +29,14 @@ if [[ $(id -u) -eq 0 && $PUID -ne 0 ]]; then
   for file in "$DATA_DIR/sync.lock" "$DATA_DIR/last-success"; do
     [[ -e $file ]] && chown "$PUID:$PGID" "$file"
   done
-  # After a PUID change, hand the clone over too (git refuses a repo another user owns).
-  if [[ -d $DATA_DIR/repo && $(stat -c %u "$DATA_DIR/repo") != "$PUID" ]]; then
-    echo "Changing the owner of $DATA_DIR/repo to $PUID:$PGID..."
-    chown -R "$PUID:$PGID" "$DATA_DIR/repo"
-  fi
+  # After a PUID change, hand the clone and run history over too (git refuses a repo another
+  # user owns).
+  for dir in "$DATA_DIR/repo" "$DATA_DIR/runs"; do
+    if [[ -d $dir && $(stat -c %u "$dir") != "$PUID" ]]; then
+      echo "Changing the owner of $dir to $PUID:$PGID..."
+      chown -R "$PUID:$PGID" "$dir"
+    fi
+  done
   exec setpriv --reuid="$PUID" --regid="$PGID" --clear-groups -- "$0" "$@"
 fi
 
@@ -61,7 +65,13 @@ else
 fi
 
 case "${1:-schedule}" in
-  schedule) exec sync-schedule ;;
+  schedule)
+    # The status page runs beside the schedule; tini stops both together.
+    if [[ -n ${WEB_PORT:-} && $WEB_PORT != off ]]; then
+      sync-web &
+    fi
+    exec sync-schedule
+    ;;
   once) shift; exec sync-once "$@" ;;
   *) exec "$@" ;;
 esac

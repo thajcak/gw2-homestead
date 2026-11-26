@@ -4,6 +4,7 @@
 #   docker compose pull        fetch a newer image (then `up -d` again)
 #   docker compose logs -f     follow the runs
 #   docker compose exec sync sync-once --ids 1,2   run once now
+#   http://<server>:8080       the status page: last run, next run and what each run found
 #
 # The image is private: `docker login ghcr.io` first (see sync/README.md).
 services:
@@ -22,6 +23,9 @@ services:
       PGID: "100"
       GIT_USER_NAME: gw2-homestead-sync
       GIT_USER_EMAIL: gw2-homestead-sync@localhost
+    ports:
+      # The status page, at http://<server>:8080. It has no login: keep it on your own network.
+      - "8080:8080"
     volumes:
-      # Holds the clone, the deploy key (deploy_key) and the sync's git config.
+      # Holds the clone, the deploy key (deploy_key), the run history and the sync's git config.
       - /mnt/user/appdata/gw2-homestead-sync:/data
